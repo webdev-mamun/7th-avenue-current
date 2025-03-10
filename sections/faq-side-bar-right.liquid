@@ -1,0 +1,25 @@
+{% if section.settings.sidebarContent != blank %}
+  <div class="sidebar-content">
+    {{ section.settings.sidebarContent }}
+  </div>
+{% endif %}
+{% schema %}
+  {
+    "name": "Faq sidebar right",
+    "tag": "aside",
+    "class": "faq-sidebar-right",
+    "settings": [
+      {
+        "type": "html",
+        "id": "sidebarContent",
+        "label": "Sidebar Content"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

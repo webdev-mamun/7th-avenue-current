@@ -1,0 +1,296 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "slideshow",
+      "blocks": {
+        "df2d87a9-1628-40a4-9644-a96fff7fdafc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hero.jpg",
+            "slide_title": "The World’s <span class=\"typewrite\" data-period=\"3500\" data-type='[\"Greatest\", \"Deepest\"]'><span class=\"wrap\">Greatest</span></span><br>Modular Sofa.",
+            "slide_text": "",
+            "showCaptionDesktop": false,
+            "btn_text": "SHOP SEATING",
+            "btn_url": "",
+            "alignment": "center",
+            "si_bg": "",
+            "s_title_color": "",
+            "s_text_color": "",
+            "sip_x": "center",
+            "sip_x_v": 31,
+            "sip_y": "top",
+            "sip_y_v": 8,
+            "sip_width": "max-content",
+            "sip_height": "max-content",
+            "si_padding": "",
+            "si_margin": "",
+            "si_text_margin": "",
+            "si_title_margin": ""
+          }
+        }
+      },
+      "block_order": [
+        "df2d87a9-1628-40a4-9644-a96fff7fdafc"
+      ],
+      "settings": {
+        "autoplaySpeed": "",
+        "review_text": "4.9/5.0 | 120 Reviews",
+        "review_url": "",
+        "start_date": "",
+        "end_date": "",
+        "color": "#000000",
+        "background": "#f3f3f3"
+      }
+    },
+    "imageWithText": {
+      "type": "image-with-text",
+      "settings": {
+        "box": false,
+        "text_left": false,
+        "title": "Making your dream home should be easy.",
+        "text": "Buying furniture online is hard. From the abundance cheaply-made fast furniture, to inability for customers to touch & feel their most important product.",
+        "btn_url": "#",
+        "btn_text": "READ ABOUT US",
+        "borderTop": false,
+        "borderBot": false,
+        "top_gutter": 40,
+        "bottom_gutter": 40,
+        "top_gutter_m": 10,
+        "bottom_gutter_m": 10,
+        "color": "#000000",
+        "bg_color": "#ffffff"
+      }
+    },
+    "bestSellers": {
+      "type": "sofa-page-feature-product",
+      "settings": {
+        "title": "Shop Modular Seating",
+        "text": "Our best selling modular sofa configurations.<br>Find the perfect fit for every home size & style.",
+        "collection": "best-sellers",
+        "product_limit": 8,
+        "speed": "5000",
+        "btn_url": "shopify://collections/all-products",
+        "btn_text": "SHOP ALL SEATING",
+        "info": "",
+        "paddingTop": 20,
+        "paddingBottom": 25,
+        "paddingTopMobile": 10,
+        "paddingBottomMobile": 10,
+        "background": "#F3F3F3"
+      }
+    },
+    "expandedContent": {
+      "type": "product-special-feature",
+      "blocks": {
+        "fd0efe3d-8660-4cfa-84c2-14d7f4f493d2": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/1 Spill Compressed.mp4",
+            "title": "Feels like floating on a cloud.",
+            "text": "A truly comfortable sitting experience, you might as well feel like you’re floating. We use the same technology and construction as high-end mattresses, because you equally deserve the best: while sleeping and while living life."
+          }
+        },
+        "feature_LMLYVM": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/2 Modular Compressed V2.mp4",
+            "title": "Feels like floating on a cloud.",
+            "text": "A truly comfortable sitting experience, you might as well feel like you’re floating. We use the same technology and construction as high-end mattresses, because you equally deserve the best: while sleeping and while living life."
+          }
+        },
+        "f3da96f4-673e-4222-b877-3306716f3e1b": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/3 Covers Compressed.mp4",
+            "title": "Feels like floating on a cloud.",
+            "text": "A truly comfortable sitting experience, you might as well feel like you’re floating. We use the same technology and construction as high-end mattresses, because you equally deserve the best: while sleeping and while living life."
+          }
+        },
+        "feature_MBadGg": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "title": "Feels like floating on a cloud.",
+            "text": "A truly comfortable sitting experience, you might as well feel like you’re floating. We use the same technology and construction as high-end mattresses, because you equally deserve the best: while sleeping and while living life."
+          }
+        }
+      },
+      "block_order": [
+        "fd0efe3d-8660-4cfa-84c2-14d7f4f493d2",
+        "feature_LMLYVM",
+        "f3da96f4-673e-4222-b877-3306716f3e1b",
+        "feature_MBadGg"
+      ],
+      "settings": {
+      }
+    },
+    "comparisonChart": {
+      "type": "sofa-compare",
+      "settings": {
+        "title": "How We Compare",
+        "subtitle": "A whole lot more features, at an even better pricing.",
+        "brand_1_logo_svg": "",
+        "brand_1": "7thavenue",
+        "brand_2_logo_svg": "",
+        "brand_2": "Restoration Hardware (RH)",
+        "brand_3_logo_svg": "",
+        "brand_3": "West elm",
+        "product_details_title": "COMPARABLE Product",
+        "product_details_1": "4-Seat Modular<br>Chaise Sectional",
+        "product_details_2": "RH Cloud<br>Sectional in Classic",
+        "product_details_3": "Harmony Modular<br>Chaise Sectional",
+        "row_1": true,
+        "title_1": "Comparable Fabric",
+        "brand_1_comp_1_checked": false,
+        "brand_1_comp_1_crossed": false,
+        "brand_1_comp_1": "All Performance Textured Fabric",
+        "brand_2_comp_1_checked": false,
+        "brand_2_comp_1_crossed": false,
+        "brand_2_comp_1": "Performance Fabrics",
+        "brand_3_comp_1_checked": false,
+        "brand_3_comp_1_crossed": false,
+        "brand_3_comp_1": "Performance Basket Slub",
+        "row_2": true,
+        "title_2": "PRICE",
+        "brand_1_comp_2_checked": false,
+        "brand_1_comp_2_crossed": false,
+        "brand_1_comp_2": "$3,850",
+        "brand_2_comp_2_checked": false,
+        "brand_2_comp_2_crossed": false,
+        "brand_2_comp_2": "$12,080",
+        "brand_3_comp_2_checked": false,
+        "brand_3_comp_2_crossed": false,
+        "brand_3_comp_2": "$4,997",
+        "row_3": true,
+        "title_3": "TOTAL WIDTH",
+        "brand_1_comp_3_checked": false,
+        "brand_1_comp_3_crossed": false,
+        "brand_1_comp_3": "130”",
+        "brand_2_comp_3_checked": false,
+        "brand_2_comp_3_crossed": false,
+        "brand_2_comp_3": "119”",
+        "brand_3_comp_3_checked": false,
+        "brand_3_comp_3_crossed": false,
+        "brand_3_comp_3": "121”",
+        "row_4": true,
+        "title_4": "SEAT DEPTH",
+        "brand_1_comp_4_checked": false,
+        "brand_1_comp_4_crossed": false,
+        "brand_1_comp_4": "38”",
+        "brand_2_comp_4_checked": false,
+        "brand_2_comp_4_crossed": false,
+        "brand_2_comp_4": "40”",
+        "brand_3_comp_4_checked": false,
+        "brand_3_comp_4_crossed": false,
+        "brand_3_comp_4": "43”",
+        "row_5": true,
+        "title_5": "CUSHION FILL",
+        "brand_1_comp_5_checked": false,
+        "brand_1_comp_5_crossed": false,
+        "brand_1_comp_5": "Down Alternative",
+        "brand_2_comp_5_checked": false,
+        "brand_2_comp_5_crossed": false,
+        "brand_2_comp_5": "Down Feather",
+        "brand_3_comp_5_checked": false,
+        "brand_3_comp_5_crossed": false,
+        "brand_3_comp_5": "Fiber Fills",
+        "row_6": true,
+        "title_6": "CUSHION FIRMNESS",
+        "brand_1_comp_6_checked": false,
+        "brand_1_comp_6_crossed": false,
+        "brand_1_comp_6": "Medium-Soft or Medium-Firm",
+        "brand_2_comp_6_checked": false,
+        "brand_2_comp_6_crossed": false,
+        "brand_2_comp_6": "Extra Soft",
+        "brand_3_comp_6_checked": false,
+        "brand_3_comp_6_crossed": false,
+        "brand_3_comp_6": "Soft",
+        "row_7": true,
+        "title_7": "WATER REPELLENT",
+        "brand_1_comp_7_checked": true,
+        "brand_1_comp_7_crossed": false,
+        "brand_1_comp_7": "Content 7",
+        "brand_2_comp_7_checked": false,
+        "brand_2_comp_7_crossed": true,
+        "brand_2_comp_7": "Content 7",
+        "brand_3_comp_7_checked": false,
+        "brand_3_comp_7_crossed": true,
+        "brand_3_comp_7": "Content 7",
+        "row_8": true,
+        "title_8": "MACHINE WASHABLE",
+        "brand_1_comp_8_checked": true,
+        "brand_1_comp_8_crossed": false,
+        "brand_1_comp_8": "Content 8",
+        "brand_2_comp_8_checked": false,
+        "brand_2_comp_8_crossed": true,
+        "brand_2_comp_8": "Content 8",
+        "brand_3_comp_8_checked": false,
+        "brand_3_comp_8_crossed": true,
+        "brand_3_comp_8": "Content 8",
+        "row_9": true,
+        "title_9": "FULLY REMOVABLE COVERS",
+        "brand_1_comp_9_checked": true,
+        "brand_1_comp_9_crossed": false,
+        "brand_1_comp_9": "Content 9",
+        "brand_2_comp_9_checked": true,
+        "brand_2_comp_9_crossed": false,
+        "brand_2_comp_9": "Content 9",
+        "brand_3_comp_9_checked": false,
+        "brand_3_comp_9_crossed": true,
+        "brand_3_comp_9": "Content 9",
+        "row_10": true,
+        "title_10": "ADJUSTABLE BACK FIRMNESS",
+        "brand_1_comp_10_checked": true,
+        "brand_1_comp_10_crossed": false,
+        "brand_1_comp_10": "Content 10",
+        "brand_2_comp_10_checked": false,
+        "brand_2_comp_10_crossed": true,
+        "brand_2_comp_10": "Content 10",
+        "brand_3_comp_10_checked": false,
+        "brand_3_comp_10_crossed": true,
+        "brand_3_comp_10": "Content 10",
+        "row_11": true,
+        "title_11": "Solid wood",
+        "brand_1_comp_11_checked": true,
+        "brand_1_comp_11_crossed": false,
+        "brand_1_comp_11": "Content 11",
+        "brand_2_comp_11_checked": true,
+        "brand_2_comp_11_crossed": false,
+        "brand_2_comp_11": "Content 11",
+        "brand_3_comp_11_checked": false,
+        "brand_3_comp_11_crossed": true,
+        "brand_3_comp_11": "Content 11",
+        "row_12": true,
+        "title_12": "CERTIFICATIONS",
+        "brand_1_comp_12_checked": false,
+        "brand_1_comp_12_crossed": false,
+        "brand_1_comp_12": "OEKO-TEX fabrics, FSC wood, B-Corp",
+        "brand_2_comp_12_checked": false,
+        "brand_2_comp_12_crossed": false,
+        "brand_2_comp_12": "Unknown",
+        "brand_3_comp_12_checked": false,
+        "brand_3_comp_12_crossed": false,
+        "brand_3_comp_12": "FSC wood only"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "imageWithText",
+    "bestSellers",
+    "expandedContent",
+    "comparisonChart"
+  ]
+}

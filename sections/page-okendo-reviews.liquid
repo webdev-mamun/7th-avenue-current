@@ -1,0 +1,115 @@
+{{ 'custom-tabs.css' | asset_url |stylesheet_tag }}
+<script src="{{ 'custom-tabs.js' | asset_url }}" defer></script>
+<div data-section-id="{{ section.id }}" data-section-type="page-section">
+  <div id="page-okendo-reviews" class="row">   
+    <div id="contact-page" class="desktop-12 tablet-12 mobile-12 contact_form_column" style="border-right: none;">
+      <div class="rte" style="min-height: 1px">
+        <div class="section-title okeReviews-margin">
+          <h2 class="big_title_reviews">{{ settings.reviews_heading }}</h2>
+        </div>
+        <custom-tabs>
+         <div class="custom-tab-buttons" role="tablist">
+           {%- for block in section.blocks -%}
+             {%- if block.type == 'reviewTab' -%}
+               <button class="custom-tab-button{% if forloop.first %} active{% endif %}" role="tab" aria-controls="panel-{{ section.id }}-{{ block.id }}" id="tab-{{ section.id }}-{{ block.id }}" tabindex="{% if forloop.first %}0{% else %}-1{% endif %}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">
+                 {{ block.settings.title }}
+               </button>
+             {%- endif -%}
+           {%- endfor -%}
+         </div>
+         <div class="custom-tab-contents">
+             {%- for block in section.blocks -%}
+               {%- if block.type == 'reviewTab' -%}
+                 <div class="custom-tab-content{% if forloop.first %} active{% endif %}" id="panel-{{ section.id }}-{{ block.id }}" role="tabpanel" aria-labelledby="tab-{{ section.id }}-{{ block.id }}">
+                   {%- if block.settings.reviewGroupId != blank -%}
+                    <div data-oke-widget="" data-oke-reviews-group-id="{{ block.settings.reviewGroupId }}"></div>
+                   {%- else -%}
+                     <p>Please Input a okendo review group id on section block settings</p>
+                   {%- endif -%}
+                 </div>
+               {%- endif -%}
+             {%- endfor -%}
+         </div>
+      </custom-tabs>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  #shopify-section-page-okendo-reviews .collection_inner_contact {
+  	color: {{ section.settings.title_color }};
+    flex-direction: column;
+  }
+  
+  
+  div#page-okendo-reviews {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding:
+  }
+  
+  .review-page-content {
+  	font-family: 'Ortica-Light';
+    font-size: 14pt;
+    line-height: 1.4px;
+    letter-spacing: 0;
+    margin-top: 20px;
+    text-align: center;
+    padding: 0 10px;
+  }
+  
+  @media screen and (max-width: 740px){
+    div#shopify-section-page-okendo-reviews .collection-banner {
+      height: 320px;
+    }
+ 
+    div#page-okendo-reviews {
+      padding: 0 0%;
+    }
+  }
+</style>
+
+{% schema %}
+{
+    "name": "Okendo reviews page",
+    "settings": [			
+        {
+          "type": "color",
+          "id": "title_bg",
+          "label": "Banner Backgroung",
+		  "default": "#000"
+        },
+		{
+          "type": "color",
+          "id": "title_color",
+          "label": "Banner Color",
+		  "default": "#fff"
+        },
+		{
+          "type": "color",
+          "id": "title_border_color",
+          "label": "Banner Border Color",
+		  "default": "#fff"
+        }
+  ],
+  "blocks": [
+    {
+      "name": "Review Tab",
+      "type": "reviewTab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Review tab"
+        },
+        {
+          "type": "textarea",
+          "id": "reviewGroupId",
+          "label": "Review group id"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

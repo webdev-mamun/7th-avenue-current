@@ -1,0 +1,59 @@
+<script src="{{ 'address-confirmation-popup.js' | asset_url }}" defer></script>
+{{ 'address-confirmation-popup.css' | asset_url | stylesheet_tag }}
+<thank-you-popup>
+  <div class="thank-you-popup-overlay">
+    
+  </div>
+  <div class="thank-you-popup-main">
+    <div class="thank-you-popup-inner">
+      <div class="thank-you-popup-header">
+        {% comment %}
+      {%- if section.settings.logo != blank -%}
+        <div class="thank-you-popup-logo">
+          {{ section.settings.logo | image_url: width: 125 | image_tag }}
+        </div>
+        {%- endif -%}
+        {% endcomment %}
+        <button type="button">
+          <svg role="img" viewBox="0 0 14 14" aria-labelledby="title"><title id="Close-title">Close</title><path d="M14 1.41L12.59 0 7 5.59 1.41 0 0 1.41 5.59 7 0 12.59 1.41 14 7 8.41 12.59 14 14 12.59 8.41 7z" fill="#fff" fill-rule="nonzero"></path></svg>
+        </button>
+      </div>
+      <div class="thank-you-popup-body">
+        <div class="thank-you-popup-checkmark">
+          <svg height="40px" width="40px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="check_x5F_alt"> <path style="fill:#000000;" d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M13.52,23.383 L6.158,16.02l2.828-2.828l4.533,4.535l9.617-9.617l2.828,2.828L13.52,23.383z"></path> </g> </g> </g></svg>
+        </div>
+        {%- if section.settings.heading != blank -%}
+        <h3 class="thank-you-popup-heading">{{ section.settings.heading }}</h3>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+        <div class="thank-you-popup-text">{{ section.settings.text }}</div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</thank-you-popup>
+
+{% schema %}
+  {
+    "name": "Thank You popup",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Thank you for confirming your address."
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>You should be receiving an address confirmation email shortly! If you have any questions please reach out to us at <a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a></p>"
+      }
+    ],
+	"presets":[
+	   {
+		  "name":"Thank You popup",
+	   }
+	]
+  }
+{% endschema %}

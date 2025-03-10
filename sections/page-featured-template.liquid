@@ -1,0 +1,222 @@
+{% schema %}
+  {
+    "name": "Featured Page",
+    "settings": [
+	  {
+		"type": "textarea",
+		"id": "page_title",
+		"label": "Page Title",
+		"default": "Featured <span>on Grafiti</span>"
+	  },
+	  {
+		"type": "header",
+		"content": "Heoro section"
+	  },
+	  {
+		"type": "textarea",
+		"id": "h_title",
+		"label": "Title"
+	  },
+	  {
+		"type": "textarea",
+		"id": "h_text",
+		"label": "Text"
+	  },
+	  {
+		"type": "text",
+		"id": "h_link_text",
+		"label": "Link Text"
+	  },
+	  {
+		"type": "url",
+		"id": "h_link",
+		"label": "Link"
+	  },
+	  {
+		"type": "product",
+		"id": "h_product_left",
+		"label": "Product Left"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "h_product_left_image",
+		"label": "Product Left Override Image"
+	  },
+	  {
+		"type": "product",
+		"id": "h_product_right",
+		"label": "Product Right"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "h_product_right_image",
+		"label": "Product Right Override Image"
+	  },
+	  {
+		"type": "header",		
+		"content": "Featured Medium Section"
+	  },
+	  {
+		"type": "text",
+		"id": "fm_title",
+		"label": "Title"
+	  },
+	  {
+		"type": "text",
+		"id": "fm_link_text",
+		"label": "Link Text"
+	  },
+	  {
+		"type": "url",
+		"id": "fm_link",
+		"label": "Link"
+	  },
+	  {
+		"type": "collection",
+		"id": "f_featured_collection",
+		"label": "Featured Collection"
+	  }
+	]
+  }
+{% endschema %}
+
+<section class="featured_section">
+  <div class="grid_wrapper container f_page_title mw">
+    <div class="desktop-12 span-12">
+      <h1 class="page_title">{{section.settings.page_title}}</h1>
+    </div>
+  </div>
+  <div class="f_hero_wrapper">    
+    <div class="grid_wrapper container mw">
+      <div class="desktop-6 span-6">
+        <div class="fh_info">
+          <h2 class="big_title">{{section.settings.h_title}}</h2>
+          <p>{{section.settings.h_text}}</p>
+          {% if section.settings.h_link_text != blank %}<a class="boder_bottom_link" href="{{section.settings.h_link}}">{{section.settings.h_link_text}}</a>{% endif %}
+        </div>        
+      </div>
+      <div class="desktop-6 span-6">
+        {% if section.settings.h_product_right != blank %}
+        {% assign product_right = all_products[section.settings.h_product_right] %}
+      	<div class="fh_product_right text-center">
+          <a href="{{product_right.url}}">
+            <div class="fhp_img">
+              {% if section.settings.h_product_right_image != blank %}
+                {% render 'basic-responsive-image',  section.settings.h_product_right_image %}
+              {% else %}
+                {% render 'basic-responsive-image',  product_right.featured_image %}
+              {% endif %}
+             </div>
+            <h3>{{product_right.title}}</h3>
+            <div class="price">
+              {% if product_right.price < product_right.compare_at_price %}
+              <div class="onsale">
+                <span class="money">{{ product_right.price | money }}</span>
+              </div>
+              <div class="was-listing">
+                <span class="money">{{ product_right.compare_at_price | money }}</span>
+              </div>
+              {% else %}
+              <div class="prod-price">
+                {% if product_right.price_varies %}
+                {{ 'products.general.from' | t }} <span class="money">{{ product_right.price_min | money }}</span> - <span class="money">{{ product_right.price_max | money }}</span>
+                {% else %}
+                <span class="money">{{ product_right.price | money }}</span>
+                {% endif %}
+              </div>
+              {% endif %}
+            </div>
+          </a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="container mw">
+    <div class="grid_wrapper">
+      <div class="desktop-6 span-6">
+      	{% if section.settings.h_product_left != blank %}
+        {% assign product_left = all_products[section.settings.h_product_left] %}        
+        <div class="fh_product_left text-center">
+          <a href="{{product_left.url}}">
+            <div class="fhp_img">
+              {% if section.settings.h_product_left_image != blank %}
+                {% render 'basic-responsive-image', type:  section.settings.h_product_left_image %}
+              {% else %}
+                {% render 'basic-responsive-image', type:  product_left.featured_image %}
+              {% endif %}
+            </div>
+            <h3>{{product_left.title}}</h3>
+            <div class="price">
+              {% if product_left.price < product_left.compare_at_price %}
+              <div class="onsale">
+                <span class="money">{{ product_left.price | money }}</span>
+              </div>
+              <div class="was-listing">
+                <span class="money">{{ product_left.compare_at_price | money }}</span>
+              </div>
+              {% else %}
+              <div class="prod-price">
+                {% if product_left.price_varies %}
+                {{ 'products.general.from' | t }} <span class="money">{{ product_left.price_min | money }}</span> - <span class="money">{{ product_left.price_max | money }}</span>
+                {% else %}
+                <span class="money">{{ product_left.price | money }}</span>
+                {% endif %}
+              </div>
+              {% endif %}
+            </div>
+          </a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="f_featured_collection_wrapper">
+    <div class="f_featured_collection">
+      <div class="grid_wrapper container mw">
+        <div class="desktop-12 span-12 text-center">
+          <h2 class="big_title">{{section.settings.fm_title}}</h2>
+          {% if section.settings.fm_link_text != blank %}<div class="fm_link"><a class="boder_bottom_link" href="">{{section.settings.fm_link_text}}</a></div>{% endif %}
+        </div>
+      </div>
+      {% if collections[section.settings.f_featured_collection].products.size > 0 %}
+      {% assign number = 12 %}
+      <div class="grid_wrapper product-loop container tap_product_slider mw" id="featured_medium">
+        {% for product in collections[section.settings.f_featured_collection].products limit: number %}
+      	<div class="desktop-4 tablet-2 mobile-half span-4">{% render 'product-listing', product: product %}</div>
+        {% endfor %}
+      </div>
+      <script>
+        (function(){    
+          $(window).on('load resize', function() {
+            if($(this).width() > 740) {
+              $('#featured_medium').slick({
+                autoplay: true,
+                autoplaySpeed: 5000,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                nextArrow: '<i class="la la-angle-right" aria-hidden="true"></i>',
+                prevArrow: '<i class="la la-angle-left" aria-hidden="true"></i>',
+                responsive: [
+                  {
+                    breakpoint: 740,
+                    settings: {
+                      slidesToShow: 2,
+                      slidesToScroll: 2
+                    }
+                  }
+                ]
+              });
+            } else {
+              if($('#featured_medium').hasClass('slick-initialized')){
+                $('#featured_medium').slick('unslick');
+              }
+            }
+          });
+        })();
+      </script>
+      {% endif %}
+    </div>
+  </div>
+</section>

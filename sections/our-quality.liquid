@@ -1,0 +1,150 @@
+{% schema %}
+  {
+	"name": "Our Quality",
+	"settings": [
+	  {
+		"type": "textarea",
+		"id": "page_title",
+		"label": "Page Title",
+		"default": "Our <span>Quality</span>"
+	  },
+	  {
+		"type": "textarea",
+		"id": "page_text",
+		"label": "Page Info"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "hero_img",
+		"label": "Hero Section Image"
+	  },
+	  {
+		"type": "textarea",
+		"id": "section_title_1",
+		"label": "Section Title #1"
+	  },
+	  {
+		"type": "textarea",
+		"id": "section_text_1",
+		"label": "Section Text #1"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "section_img_1",
+		"label": "Section Image #1"
+	  },
+	  {
+		"type": "textarea",
+		"id": "section_title_2",
+		"label": "Section Title #2"
+	  },
+	  {
+		"type": "textarea",
+		"id": "section_text_2",
+		"label": "Section Text #2"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "section_img_2",
+		"label": "Section Image #2"
+	  },
+	  {
+		"type": "textarea",
+		"id": "section_title_3",
+		"label": "Section Title #3"
+	  },
+	  {
+		"type": "textarea",
+		"id": "section_text_3",
+		"label": "Section Text #3"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "section_img_3",
+		"label": "Section Image #3"
+	  }
+
+	]
+  }
+{% endschema %}
+<div data-section-id="{{ section.id }}" data-section-type="page-section">
+  <div class="page_hero_section">
+    <div class="page_hero_row mw">
+      <div class="page_hero_img">
+        {% render 'image-lazyload', image: section.settings.hero_img %}
+      </div>
+      <div class="page_hero_info">
+        <h1>{{section.settings.page_title}}</h1>
+        <p>{{section.settings.page_text}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="page_main">        
+    <div class="page_container full_width p_m mw">
+      <div class="page_row metarials">
+        <div class="page_col desktophide">
+          <div class="quality_production_img">
+            {% render 'image-lazyload', image: section.settings.section_img_1 %}
+          </div>
+        </div>
+        <div class="page_col">
+          <div class="quality_production_info left">
+            <h3>{{section.settings.section_title_1}}</h3>
+            <p>{{section.settings.section_text_1}}</p>
+          </div>
+        </div>
+        <div class="page_col mobilehide">
+          <div class="quality_production_img">
+            {% render 'image-lazyload', image: section.settings.section_img_1 %}
+          </div>
+        </div>
+      </div>
+      <div class="page_row quality_prodction">
+        <div class="page_col">
+          <div class="quality_production_img">
+            {% render 'image-lazyload', image: section.settings.section_img_2 %}
+          </div>
+        </div>
+        <div class="page_col">
+          <div class="quality_production_info right">
+            <h3>{{section.settings.section_title_2}}</h3>
+            <p>{{section.settings.section_text_2}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="page_row quality_prodction">
+        <div class="page_col desktophide">
+          <div class="quality_production_img">
+            {% render 'image-lazyload', image: section.settings.section_img_3 %}
+          </div>
+        </div>
+        <div class="page_col">
+          <div class="quality_production_info left">
+            <h3>{{section.settings.section_title_3}}</h3>
+            <p>{{section.settings.section_text_3}}</p>
+          </div>
+        </div>
+        <div class="page_col mobilehide">
+          <div class="quality_production_img">
+            {% render 'image-lazyload', image: section.settings.section_img_3 %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page_bottom">
+    <div class="page_container">
+      <div class="page_row">     
+        <div class="page_col">
+          <a href="">Shop Featured</a>
+        </div>
+        <div class="page_col">
+          <a href="">Shop Featured</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

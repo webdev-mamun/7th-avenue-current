@@ -1,0 +1,64 @@
+{% schema %}
+  {
+    "name": "PDP Qaulity Detail #2",
+    "settings": [	
+      {
+		"type": "image_picker",
+		"id": "image1",
+		"label": "Image #1"
+	  },  
+      {
+		"type": "textarea",
+		"id": "title1",
+		"label": "Title #1"
+	  },
+      {
+		"type": "textarea",
+		"id": "text1",
+		"label": "Text #1"
+	  },
+      {
+		"type": "image_picker",
+		"id": "image2",
+		"label": "Image #2"
+	  },
+      {
+		"type": "textarea",
+		"id": "title2",
+		"label": "Title #2"
+	  },
+      {
+		"type": "textarea",
+		"id": "text2",
+		"label": "Text #2"
+	  }
+	]
+  }
+{% endschema %}
+
+<div class="pdp_quality_detail_two_section">
+  <div class="pdp_quality_detail_two_wrapper mw">
+    <div class="pdp_quality_detail_two_row">
+      <div class="pdpqdt_info mobilehide">
+        <h2 class="big_title">{{section.settings.title1}}</h2>
+        <p>{{section.settings.text1}}</p>
+      </div>
+      <div class="pdpqdt_img">
+        {% render 'image-lazyload', image: section.settings.image1 %}
+      </div>
+      <div class="pdpqdt_info desktophide">
+        <h2 class="big_title">{{section.settings.title1}}</h2>
+        <p>{{section.settings.text1}}</p>
+      </div>
+    </div>
+    <div class="pdp_quality_detail_two_row second">      
+      <div class="pdpqdt_img">
+        {% render 'image-lazyload', image: section.settings.image2 %}
+      </div>
+      <div class="pdpqdt_info">
+        <h2 class="big_title">{{section.settings.title2}}</h2>
+        <p>{{section.settings.text2}}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,293 @@
+{%- liquid
+	assign color = section.settings.color
+    assign bg_color = section.settings.bg_color
+    assign bt_color = section.settings.bt_color
+    assign bt_bg = section.settings.bt_bg
+    assign card_bg = section.settings.card_bg
+    assign title = section.settings.title
+    assign title_mob = section.settings.title_mob
+    assign subtitle = section.settings.subtitle
+    assign subtitle_mob = section.settings.subtitle_mob
+    assign box_per_row = section.settings.box_per_row
+    assign padding_top = section.settings.padding_top
+    assign padding_bot = section.settings.padding_bot
+    assign padding_top_mob = section.settings.padding_top_mob
+    assign padding_bot_mob = section.settings.padding_bot_mob
+    assign border_top = section.settings.border_top
+    assign border_bot = section.settings.border_bot
+    assign active_geo = section.settings.active_geo
+-%}
+
+<style>
+  .showroom .section-boxed-column {
+    order: var(--order);
+  }
+  
+  #shopify-section-{{ section.id }} {
+    --color: {{ color }};
+    --bg-color: {{ bg_color }};
+    --bt-color: {{ bt_color }};
+    --bt-bg: {{ bt_bg }};
+    --card-bg: {{ card_bg }};
+    --padding-top: {{ padding_top }}px;
+    --padding-bot: {{ padding_bot }}px;
+    --padding-top-mob: {{ padding_top_mob }}px;
+    --padding-bot-mob: {{ padding_bot_mob }}px;
+    }
+  .active_geo .section-boxed-column.hide:not(.mobile-hide) {
+    display: block;
+  }
+  .section-boxed-column.mobile-hide {
+    display: none;
+  }
+    @media screen and (min-width: 991px) {
+      .active_geo .section-boxed-column.hide {
+        display: none;
+      }
+      .section-boxed-column.mobile-hide:not(.hide) {
+        display: block;
+      }
+    }
+</style>
+
+<section class="showroom showroom-{{ section.id }}"{% if template.name == 'product' %} id="pdp-showroom-section"{% endif %}>
+  {%- if border_top == true -%}
+    <div class="border-top">
+      <div class="section-divider"></div>
+    </div>
+  {%- endif -%}
+  <div class="section-boxed" column="1" column-lg="{{ box_per_row }}">
+    {%- if title != blank or subtitle != blank or title_mob != blank or subtitle_mob != blank -%}
+      <div class="section-header">
+        {%- if title -%}
+        	<h2 class="section-title show-desktop">{{ title }}</h2>
+        {%- endif -%}
+        {%- if title_mob != blank -%}
+        	<h2 class="section-title show-mobile">{{ title_mob }}</h2>
+        {%- endif -%}
+        {%- if subtitle != blank -%}
+        	<p class="section-subtitle show-desktop">{{ subtitle }}</p>
+        {%- endif -%}
+        {%- if subtitle_mob != blank -%}
+        	<p class="section-subtitle show-mobile">{{ subtitle_mob }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    <div class="section-boxed-row{% if active_geo %} active_geo{% endif %}">
+      {%- if section.settings.get_data_from_metaobject -%}
+        {% assign showrooms = shop.metaobjects.showroom.values %}
+        {% for showroom in showrooms %}
+          {%- liquid
+              assign title = showroom.title
+              assign appointment_text = showroom.appointment_status
+              assign showroom_address = showroom.address
+              assign button_text = showroom.button_label
+              assign button_url = showroom.button_url
+              assign text = showroom.description
+              assign longitude = showroom.longitude
+              assign latitude = showroom.latitude
+              assign image = showroom.image
+              if longitude != blank and latitude != blank
+              assign id = longitude | remove: '.' | append: latitude | remove: '.' | abs
+              endif
+            -%}
+          <div class="section-boxed-column" data-showroom-order {% if id != blank %} data-id="{{ id }}"{% endif %}{% if latitude != blank %} data-latitude="{{ latitude }}"{% endif %}{% if longitude != blank %} data-longitude="{{ longitude }}"{% endif %} style="--order:{{forloop.index0}}">
+            <div class="showroom-card">
+              <div class="showroom-card__header">
+                {%- if title != blank -%}
+                	<h2 class="showroom-card__title">{{ title }}</h2>
+                {%- endif -%}
+                {%- if appointment_text != blank or showroom_address != blank -%}
+                  <ul class="showroom-card__meta">
+                    {%- if appointment_text != blank -%}
+                    <li class="showroom-card__meta-item"><img src="{{ 'wall-clock.svg' | file_url }}" width="100%" height="100%" loading="lazy"><span>{{ appointment_text }}</span></li>
+                    {%- endif -%}
+                    {%- if showroom_address != blank -%}
+                    <li class="showroom-card__meta-item"><img src="{{ 'pin.svg' | file_url }}" width="100%" height="100%" loading="lazy"><span class="showroom-card__address">{{ showroom_address }}</span></li>
+                    {%- endif -%}
+                  </ul>
+                {%- endif -%}
+              </div>
+              {%- if button_text != blank -%}
+              	<a href="{{ button_url }}" traget="_blank" rel="nofollow noopener noreferrer" class="showroom-card__button">{{ button_text }}</a>
+              {%- endif -%}
+              {%- if text != blank or image != blank -%}
+              <div class="showroom-card__footer gallery-inline">
+                	<div class="showroom-card__text-gallery-inline">
+                    {%- if image != blank -%}
+                    	<div class="showroom-card__gallery-inline">
+                    		<div class="showroom-card__gallery-item">
+                              <a href="{{ image | img_url: '1000x' }}" data-fancybox="gallery-item-{{ block.id }}">
+                                <img src="{{ image | img_url: '500x500' , crop: 'center' }}" alt="{{ image.alt | escape }}" width="100%" height="100%" loading="lazy">
+                              </a>
+                            </div>
+                    	</div>
+                    {%- endif -%}
+                    {%- if text != blank -%}
+                		<div class="showroom-card__text-inline">{{ text }}</div>
+                    {%- endif -%}
+                	</div>
+              </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {% endfor %}
+      {%- endif -%}
+    </div>
+  </div>
+  {%- if border_bot == true -%}
+    <div class="border-bot">
+      <div class="section-divider"></div>
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+   "name":"Showroom",
+   "presets":[
+      {
+         "name":"Showroom"
+      }
+   ],
+   "settings":[
+      {
+         "type":"text",
+         "id":"title",
+         "label":"Title",
+         "default":"California"
+      },
+	  {
+         "type":"text",
+         "id":"title_mob",
+         "label":"Title (Mobile)",
+         "default":"California"
+      },
+      {
+         "type":"text",
+         "id":"subtitle",
+         "label":"Subtitle"
+      },
+      {
+         "type":"text",
+         "id":"subtitle_mob",
+         "label":"Subtitle (Mobile)"
+      },
+      {
+        "type": "checkbox",
+        "id": "get_data_from_metaobject",
+        "label": "Get data from Metaobject",
+        "default": false
+      },
+      {
+         "type":"range",
+         "id":"box_per_row",
+         "label":"Box per row",
+         "min":1,
+         "max":3,
+         "step":1,
+         "default":3
+      },
+	  {
+		"type": "checkbox",
+		"id": "active_geo",
+		"label": "show nearby locations first",
+		"default": false
+	  },
+	  {
+		"type": "header",
+		"content": "Border"
+	  },
+	  {
+		"type": "checkbox",
+		"id": "border_top",
+		"label": "Border top",
+		"default": false
+	  },
+	  {
+		"type": "checkbox",
+		"id": "border_bot",
+		"label": "Border Bottom",
+		"default": false
+	  },
+      {
+         "type":"header",
+         "content":"color"
+      },
+      {
+         "type":"color",
+         "id":"color",
+         "label":"Color",
+         "default":"#000000"
+      },
+      {
+         "type":"color",
+         "id":"bg_color",
+         "label":"Background color",
+         "default":"#ffffff"
+      },
+      {
+         "type":"color",
+         "id":"card_bg",
+         "label":"Card background color",
+         "default":"#f3f3f3"
+      },
+      {
+         "type":"color",
+         "id":"bt_color",
+         "label":"Button color",
+         "default":"#ffffff"
+      },
+      {
+         "type":"color",
+         "id":"bt_bg",
+         "label":"Button background",
+         "default":"#000000"
+      },
+	  {
+		"type": "header",
+		"content": "Specing"
+	  },
+	  {
+		"type": "range",
+		"id": "padding_top",
+		"label": "Padding top",
+		"min": 0,
+		"max": 100,
+		"step": 2,
+		"unit": "px",
+		"default": 60
+	  },
+	  {
+		"type": "range",
+		"id": "padding_bot",
+		"label": "Padding bottom",
+		"min": 0,
+		"max": 100,
+		"step": 2,
+		"unit": "px",
+		"default": 60
+	  },
+	  {
+		"type": "range",
+		"id": "padding_top_mob",
+		"label": "Padding top(Mobile)",
+		"min": 0,
+		"max": 100,
+		"step": 2,
+		"unit": "px",
+		"default": 30
+	  },
+	  {
+		"type": "range",
+		"id": "padding_bot_mob",
+		"label": "Padding bottom(Mobile)",
+		"min": 0,
+		"max": 100,
+		"step": 2,
+		"unit": "px",
+		"default": 30
+	  }
+   ]
+}
+{% endschema %}

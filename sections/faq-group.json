@@ -1,0 +1,1263 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "aside",
+  "name": "Faq group",
+  "sections": {
+    "b11570cc-69d6-4c8b-a470-a0a8bd005cd1": {
+      "type": "main-faq",
+      "blocks": {
+        "8f65002a-1f60-486d-b429-9ebc61f92dbc": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How do I spot clean my fabrics?",
+            "answer": "<p><span style=\"text-decoration:underline\"><strong>For light scuffs -  Dry Paper Towel</strong></span></p><p>This method is perfect for lighter dirt marks that appear to be sitting on the surface (e.g shoe or pet scuff marks), a simple dry paper towel can be used to brush away the dirt.</p><p><em>Instructions:</em> Grab a paper towel, bunch it into a ball, then scrub the area with and against the grain. This should remove most of the light dirt and scuff marks. If this does not work, proceed to below.</p><p><span style=\"text-decoration:underline\"><strong>For mild stains, scuffs, and marks - Wet Wipes (e.g Clorox wipes)</strong></span></p><p>For slightly more stubborn marks, we recommend using gentle wet wipes that contain mild cleaning agents, like Clorox wipes or baby wipes. These are the most effective at cleaning small scuff marks without damaging the fabric.</p><p><em>Instructions:</em> Bunch the wet wipe into a ball and scrub the stain/mark with and against the grain until the fabric is covered thoroughly. Use the wet wipe to slightly dampen the stain, then continue wiping until the stain is removed. Then let the mark dry and you should see a noticeable improvement. If this does not work, proceed to stubborn stains instructions.</p><p><span style=\"text-decoration:underline\"><strong>For stubborn stains -  Upholstery Cleaners (e.g Folex or Bissell’s Little Green Machine)</strong></span></p><p>Upholstery cleaners and cleaning machines such as <a href=\"https://www.amazon.com/Bottles-FOLEX-Instant-Cleaning-Upholstery/dp/B0937MVG6W/ref=asc_df_B0937MVG6W/?tag=hyprod-20&linkCode=df0&hvadid=693447702880&hvpos=&hvnetw=g&hvrand=4297706934946659074&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9031033&hvtargid=pla-1395435073199&psc=1&mcid=5448a9690cd432a086586211eb773dfc&gad_source=1\" target=\"_blank\">Folex</a> or <a href=\"https://www.bissell.com/little-green-portable-carpet-cleaner-1400B.html\" target=\"_blank\">Bissell Little Green Machine</a> are very effective for removing stubborn dirt, scuffs, and stains from your fabrics. These include stains that have permeated the fabric for quite some time.</p><p><em>Instructions:</em> For best results, follow the instructions on the back of the Folex bottle and Bissell Little Green machine. For the Bissell machine we recommend using the Spot and Stain formula for maximum cleaning power. If this does not work, proceed to washing the covers via machine-wash or dry cleaning - instructions <a href=\"https://7thavenue.co/pages/frequently-asked-questions#faq-how-do-i-machine-wash-dry-my-fabrics\"><strong>here</strong></a>.</p>"
+          }
+        },
+        "39d4042d-5196-4189-ace2-1199067fe00f": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How do I machine wash & dry my fabrics?",
+            "answer": "<p>Before washing your fabrics, we recommend attempting to <a href=\"https://7thavenue.co/pages/frequently-asked-questions#faq-how-do-i-spot-clean-my-fabrics\" title=\"https://7thavenue.co/pages/frequently-asked-questions#faq-how-do-i-spot-clean-my-fabrics\">spot-clean your fabrics</a>. If spot cleaning does not work, proceed with washing your fabrics in a standard washing machine. <br/><br/>Washing your fabrics at home is easy. Simply remove the covers and throw them in your washing machine. Set your washing machine to ‘Gentle’ or ‘Delicate’ cycle, using cold water. Use any regular gentle detergent. Please do not use any bleach, bleach alternatives, or 3-in-1 pod with bleach as this may discolor fabrics. </p><p>If you have white covers, you may add bleach-free whiteners such as Oxiclean to your wash. This will keep your white covers fresh and showroom-ready.</p><p>Please note: all of our cushion inserts are not washable - do not wash them inside the washing machine.</p><p>Once washing has been completed, we recommend air-drying your fabrics. No heat allowed. Hang-drying your fabrics overnight is recommended to allow for maximum drying time. You can also put your fabrics in the dryer but please make sure to set it to ‘Tumble Dry’ without any heat. Putting the fabrics inside the dryer with any heat cycle will potentially damage and shrink the fabrics. Once completed, you may proceed to steaming your fabrics to achieve that crisp showroom look. </p>"
+          }
+        },
+        "question_answer_wBnVxT": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How do I keep my white covers looking fresh?",
+            "answer": "<p>In order to keep your white covers looking fresh and showroom-ready, we recommend routinely soaking your covers in bleach-free whiteners such as Oxiclean.</p><p><em>Instructions:</em> Start by filling a container with warm water and mixing generous amounts of Oxiclean into the water. Ensure the Oxiclean is thoroughly mixed, then place your fabric into the water and allow it to soak for several hours or overnight. Once the fabrics have finished soaking, we recommend hang-drying the fabrics or putting them in the dryer on tumble dry - no heat. Remember, if a stain is not coming out, you can always order individual replacement fabrics to keep your sofa looking its best!</p>"
+          }
+        },
+        "7e0a1b1c-96f8-4045-a6ff-87741976bcc5": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Can I dry clean my fabrics?",
+            "answer": "<p>Yes, dry cleaning is often the easiest and preferred cleaning method. When having professionals clean your fabrics, let them know that a mild process is recommended in tetrachloroethene and hydrocarbons, and all solvents are approved for use on the fabrics.</p>"
+          }
+        },
+        "question_answer_kDQAgq": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What other methods do you recommend to clean our fabrics?",
+            "answer": "<p>If you have attempted to spot-clean your fabrics and still find that a dirt mark or small stain persists, we have successfully removed those marks with the Bissell Little Green machine. Bissel's Spot and stain cleaning solutions are particularly effective for dirt scuffs and mild liquid stains. For best results, it is highly recommended that you clean your fabrics right after a spill or stain occurs.</p><p>When using any steam cleaning machine, always exercise caution and test the machine on a small, inconspicuous area of the fabric before applying it to the area in question.</p>"
+          }
+        },
+        "466aeaa9-52e8-4bb3-9e5f-26c05ca8db0e": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Can I use a steamer on my fabrics to remove wrinkles?",
+            "answer": "<p>Yes! Steaming your fabrics will help you achieve that crisp showroom look. we recommend doing a gentle steaming of the covers once assembly is completed to make sure that all covers are wrinkle-free. Use a medium to strong steamer to ensure sufficient steam is put on. We also recommend steaming after every time you wash your covers for a smooth finish.</p><p>When steaming, we recommend steaming them gently from a distance of 3-6” to avoid direct contact with fabrics. Direct contact could lead to damage to the DWR due to the high heat generated by the steamer.</p>"
+          }
+        },
+        "dcf408c9-853a-42e8-80ad-862c97a03888": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What is a rub count?",
+            "answer": "<p>A \"rub count\" refers to the number of rubs or abrasions a fabric can withstand before showing signs of wear. It is a measure used in the textile industry to assess the durability and lifespan of fabrics, particularly for upholstery and furniture materials. The rub count is determined through a testing method known as the Martindale abrasion test.</p><p>In the Martindale test, a piece of fabric is subjected to the repeated motion of an abrasive surface or rubbing action, simulating the wear and tear that can occur with regular use. The number of rub cycles completed before visible damage, such as pilling or abrasion, occurs is recorded as the fabric's rub count.</p><p>The rub count is often expressed as a numerical value, such as 20,000, 50,000, or higher. Generally, the higher the rub count, the more durable and resistant to wear the fabric is considered to be. Fabrics with higher rub counts are often recommended for applications where there is a higher likelihood of frequent use or heavy wear, such as in commercial settings or on furniture that receives a lot of traffic.</p>"
+          }
+        },
+        "question_answer_dTEYnx": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How often can I wash my covers?",
+            "answer": "<p>The DWR C0 coating on your 7th Avenue fabrics is designed to withstand 10-20 wash cycles when washed and cleaned properly. Washing your fabrics is helpful when it comes time for a deep clean and you want that new showroom look. However, for small scuffs and stains, we recommend spot cleaning first. For questions on how to wash your fabrics, <a href=\"https://7thavenue.co/pages/frequently-asked-questions#faq-how-do-i-wash-my-fabrics\">see here.</a> After 10-20 washes, you may notice the DWR coating is not as water-repellant as it once was. Our fabrics are designed to be replaceable, so you can always order replacement fabrics via <a href=\"mailto:sales@7thavenue.co\">sales@7thavenue.co.</a></p>"
+          }
+        },
+        "question_answer_wr3Xc8": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What are the rub counts for our fabrics?",
+            "answer": "<p>Rub count will vary by fabric type:</p><ul><li>Performance Textured Weave (Pure White, Natural White) - 100,000</li><li>Plush Performance Velvet - 100,000</li><li>Performance Textured Weave (Charcoal Black) - 75,000</li><li>Performance Flat Weave (Heather Grey & Oatmeal Beige) - 50,000</li></ul>"
+          }
+        },
+        "35614b39-6012-40ed-863b-c829881d4f88": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Why do the fabrics have different levels of softness? Does this depend on the rub count?",
+            "answer": "<p>The level of softness for each fabric will vary depending on the fabric's overall rub count. When a fabric has a higher rub count, it tends to be tougher and able to withstand a higher number of abrasions. However, this also means that they tend to be slightly rougher.</p><p>For example, our Charcoal Black fabric has a rub count of 100,000 - which means that they are incredibly tough. In fact, at 100,000 rub count, our Charcoal Black fabric qualifies as a commercial-grade fabric that can be used in hospitality settings such as hotel lobbies or airports. However, the Charcoal Black fabric is also noticeably rougher compared to the best-selling Natural White and Pure White fabrics that have a rub count of 75,000.</p>"
+          }
+        },
+        "question_answer_HKwp7h": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What is the difference between lint vs piling? How can I tell the difference?",
+            "answer": "<p>Regarding sofa fabrics, lint and piling are two completely different occurrences.</p><p><strong>Lint:</strong> Fabric lint refers to <strong>fibers from other fabrics</strong> that accumulate over time when they come into contact with your sofa covers. These pieces of lint typically come from clothing, blankets, and comforters - some types of clothing, such as yoga pants, can be more susceptible to leaving lint on your sofa.  Lint can also accumulate when washing and drying your sofa covers when they come into contact with other fabrics or from the residue in your machines.</p><p><strong>Piling:</strong> Fabric piling refers to <strong>fibers from the sofa fabrics</strong> that form clusters on the surface of the covers. These pills are often the result of wear and friction during everyday use and washing. Piling on upholstery does not mean your fabric is defective or causes concern. Piling is a byproduct of textiles in general. Please note: Pilling is an inherent characteristic of many upholstered fabrics, not a fabric fault or defect.</p>"
+          }
+        },
+        "question_answer_CYCEBr": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What can I do about lint and pilling on my sofa?",
+            "answer": "<p>When you notice fabric clusters on your sofa covers, please check the following steps to differentiate between lint and piling.</p><p>1. Visual Color Check: Are the fiber clusters the same color as your fabrics? Or are they a different or darker color than the fabrics on your sofa?</p><ul><li>If the fiber clusters are a different color than the fabric, they are lint, which can be easily removed using a lint roller. However, depending on the type of material, lint can sometimes be stubborn and stick to the fabrics.</li><li>If the fiber clusters are the same color as your sofa fabrics, this may be piling. To ensure that it is piling, follow the steps below.</li></ul><p>2. Lint Roll Check: If you believe your fabrics have lint on them, try removing them with a lint roller.</p><ul><li>Apply the lint roller to the areas in question and re-roll as necessary until all pieces of lint are picked up. Depending on the fabric type, some pressure may be required.</li><li>If you find that the lint roller is not successfully picking up the fabric clusters and is pulling on threads from the fabric, stop the lint roller and use a fabric brush or pull the individual thread out by hand.</li></ul>"
+          }
+        },
+        "question_answer_a8BADz": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What can I do to help prevent lint?",
+            "answer": "<ol><li><strong>Regular Cleaning:</strong> Emptying lint traps in dryers and cleaning filters in washing machines can help reduce lint accumulation.</li><li><strong>Lint Rollers:</strong> Lint rollers or brushes can easily remove lint from clothing and upholstery.</li><li><strong>Proper Washing and Drying:</strong> Following care instructions, such as turning items inside out, using gentle cycles, and no high-heat drying, can help minimize lint.</li></ol>"
+          }
+        },
+        "question_answer_FUYyxz": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What can I do to help prevent pilling?",
+            "answer": "<ol><li><strong>Follow Care Instructions:</strong> Proper care, including following the manufacturer's care instructions, can help preserve the fabric and minimize pilling.</li><li><strong>Avoid Abrasive Surfaces:</strong> Limit contact with rough or abrasive surfaces that can accelerate wear and contribute to pilling.</li><li><strong>Turn fabrics Inside Out:</strong> When washing, turning items inside out can minimize friction and reduce the likelihood of pilling.</li></ol>"
+          }
+        },
+        "question_answer_UxRndY": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Are your fabrics flammable?",
+            "answer": "<p>Our fabrics have passed federal and state requirements pertaining to California Technical Bulletin CA TB 117-2013 Section 1.</p>"
+          }
+        },
+        "question_answer_t6YjPT": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Can your fabrics withstand dark denim or dyed fabrics?",
+            "answer": "<p>Typically, dark denim and dyed fabrics will not stain or transfer onto our sofas. With that being said, if your clothes have a warning label recommending washing before wearing them or avoiding contact with lighter-colored fabrics, it is because that product is likely to transfer to other items due to the type of dye and material. If that label is found on your clothes, please be cautious of this when sitting on your 7th Avenue sofa.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "8f65002a-1f60-486d-b429-9ebc61f92dbc",
+        "39d4042d-5196-4189-ace2-1199067fe00f",
+        "question_answer_wBnVxT",
+        "7e0a1b1c-96f8-4045-a6ff-87741976bcc5",
+        "question_answer_kDQAgq",
+        "466aeaa9-52e8-4bb3-9e5f-26c05ca8db0e",
+        "dcf408c9-853a-42e8-80ad-862c97a03888",
+        "question_answer_dTEYnx",
+        "question_answer_wr3Xc8",
+        "35614b39-6012-40ed-863b-c829881d4f88",
+        "question_answer_HKwp7h",
+        "question_answer_CYCEBr",
+        "question_answer_a8BADz",
+        "question_answer_FUYyxz",
+        "question_answer_UxRndY",
+        "question_answer_t6YjPT"
+      ],
+      "settings": {
+        "heading": "Fabrics & Fabric Care"
+      }
+    },
+    "main_faq_r3XAmL": {
+      "type": "main-faq",
+      "blocks": {
+        "question_answer_eaxUEn": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How do I machine-wash & dry my Performance Velvet fabrics?",
+            "answer": "<p>Washing your Performance Velvet fabrics at home is easy and similar to our Performance Textured Weave fabrics. Simply remove the covers and throw them in your washing machine. Set your washing machine to ‘Gentle’ or ‘Delicate’ cycle and cold water. Use any regular gentle detergent. Please do not use bleach, bleach alternatives, or a 3-in-1 pod with bleach, as this may discolor fabrics. Please note: all of our cushion inserts are not washable—do not wash them inside the washing machine.</p><p>Once washing has been completed, you can put your velvet fabrics in the Dryer. Once the fabrics are in the dryer, make sure to set it to ‘Tumble Dry’. Set the heat cycle to ‘Low Heat’ or ‘No Heat’.</p>"
+          }
+        },
+        "question_answer_8JYqdj": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Are your velvet fabrics pet-friendly and scratch-resistant?",
+            "answer": "<p><strong>Yes! Our velvet fabrics are pet-friendly and</strong> are our most <strong>scratch-resistant offering due to their short, non-woven, flat piles that make them less enticing for pets (in particular, cats).</strong> However, our fabrics are not scratch-proof. This means that if your pets tend to scratch and dig on your sofa, the fabrics are more likely to incur damage such as pilling or scratches.</p><p>Velvet fabrics have an <strong>incredibly high-rub count at 100,000 rubs which makes them more resistant to piling & abrasions.</strong> The higher upholstery rub count means that it is harder to create abrasions for the fabric and harder for the claws to penetrate.</p><p>Additionally, our velvet fabrics are <strong>especially great for removing pet hair & fur.</strong> Due to their short, non-woven flat piles, pet hair, and fur do not stick to the fabrics and are easily lint rolled.</p><p>All of our covers are designed to be replacable! This means that if your pet ever completely ruins the covers, you can purchase the covers separately either as individual covers or as a set by emailing us at <a href=\"mailto:support@7thavenue.co\" title=\"mailto:support@7thavenue.co\">support@7thavenue.co</a>.</p><p><em>Please note: pet damage is not covered under our Limited Lifetime Warranty which does not cover wear & tear. </em></p>"
+          }
+        },
+        "question_answer_BHGwaH": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Can I use a steamer on my velvet fabrics to remove wrinkles?",
+            "answer": "<p>Yes! You can steam your velvet fabrics to achieve that crisp showroom look. We recommend gently steaming the covers if you find any wrinkles after assembly/washing.</p><p>We recommend steaming them gently from a distance of 6\" to avoid direct contact. Always make sure that when steaming you go in the direction of the pile. Steaming against the pile and making direct contact with velvet during steaming could lead to damage due to the high heat generated by the steamer.</p>"
+          }
+        },
+        "question_answer_qGLFNM": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Do your velvet fabrics have the same water-repellent coating as your non-velvet fabrics?",
+            "answer": "<p>In short, no. Our performance velvet fabrics are naturally water-repellant and stain-resistant but do not contain the DWR coating on our textured and cross-weave fabrics. The naturally water-repellant and stain-resistant nature of our velvet fabrics means that if a spill happens, you are still protected because the short flat pile of the velvets help to repel liquids naturally.</p>"
+          }
+        },
+        "question_answer_jfwQTy": {
+          "type": "question-answer",
+          "settings": {
+            "title": "I just spilled on my velvet fabrics, what do i do?",
+            "answer": "<p>First and foremost, don’t panic! When a spill occurs, we recommend wiping it up as soon as possible with paper towels. If possible, try not to let the spill sit or dry on your fabrics. When a spill occurs, there may be slight discoloration on your fabrics while they are wet. Don’t panic. Let the fabric dry, and there should be no visible mark after thoroughly wiping down the spill with the paper towels.</p><p><strong>If a slight mark is visible after wiping down the spill, we recommend washing your covers using our instructions above!</strong></p><p><strong>Please note, some spills and stains may require more than wash,</strong> if you wash your fabrics and find that a mark is still visible, try washing your covers one more time using the same wash method as before.</p>"
+          }
+        },
+        "question_answer_rHtAfJ": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How do I keep my velvet fabrics looking fresh?",
+            "answer": "<p>To keep your velvet fabrics looking fresh, occasionally throw your covers in the dryer. Set the dryer to ‘Low Heat’ and run the cycle for 10 minutes. This will help your velvet fabrics keep their shape, and remove lingering wrinkles or any noticeable wear and tear (including minor scratches).</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_answer_eaxUEn",
+        "question_answer_8JYqdj",
+        "question_answer_BHGwaH",
+        "question_answer_qGLFNM",
+        "question_answer_jfwQTy",
+        "question_answer_rHtAfJ"
+      ],
+      "settings": {
+        "heading": "Velvet Fabrics & Care"
+      }
+    },
+    "f68e62bf-cae3-4a2e-9489-35432997df6e": {
+      "type": "main-faq",
+      "blocks": {
+        "84efb0d2-38fa-43aa-a973-3c545f7295d3": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How do I book an appointment to visit a showroom?",
+            "answer": "<p>Booking an appointment is quick and easy, and can be done directly on our website here <a href=\"https://7thavenue.co/pages/find-a-showroom\">https://7thavenue.co/pages/find-a-showroom</a> - scroll down and choose the showroom you wish to visit. Select the “Book an Appointment” button for your intended showroom and choose the day and time that best suits your schedule. If you need assistance booking an appointment, please reach out to <a href=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a> and we’re more than happy to assist!</p>"
+          }
+        },
+        "81e5ed96-e274-4370-8693-1f9996f801cb": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Why do I have to book an appointment to visit a showroom?",
+            "answer": "<p>Our appointment-based model is designed to provide you with the best possible customer experience. When you book an appointment at one of our showrooms, we will pair you up with your very own dedicated Sales Consultant. Conducted in a private, one-on-one setting, your appointment allows the Sales Consultant to provide you with a full product demonstration (including a spill test!), answer any questions you have, and assist you in finding the perfect configuration for your space.</p>"
+          }
+        },
+        "e6636681-31d6-4df1-957f-48664d9c43ef": {
+          "type": "question-answer",
+          "settings": {
+            "title": "I won’t be able to book an appointment. Am I still allowed to come to the showroom?",
+            "answer": "<p>Our showrooms are generally appointment-based. If you are unable to find an appointment that fits your schedule, you may visit the showroom without an appointment during our open hours. However, our Sales Consultants may be in an appointment and will work with you as best as they can. They are instructed to give priority to customers who booked an appointment at that time. We ask that you be patient and understand that our Sales Consultants will do their best to answer your questions in between their appointments.</p>"
+          }
+        },
+        "309fb098-6ac3-4502-9190-aac93ee98ae9": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Can I bring a dog to the showroom?",
+            "answer": "<p>Of course! Dogs like to test out furniture too! All of our fabrics are pet-friendly so we welcome them to visit with you at each of our showrooms. We do ask that you be mindful of the other guests in the showroom when bringing your pets with you and ensure they are on a leash.</p>"
+          }
+        },
+        "2ae42a9a-c215-467e-aade-74dc624ac7ad": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How do I get in touch with my Sales Consultant or talk to someone else?",
+            "answer": "<p>You can contact your dedicated Sales Consultant via phone or email (no carrier pigeons though). If for any reason you do not have your Sales Consultant’s contact information or need to reach someone else from our sales team, please contact <a href=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a> and we will be happy to assist you.</p>"
+          }
+        },
+        "54cc0231-10dc-4140-85bf-dea79147259c": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How do I cancel/ reschedule my appointment?",
+            "answer": "<p>If for any reason you need to cancel or reschedule your showroom appointment, you may decline by clicking the “Cancel” or “Reschedule” links at the bottom of our appointment confirmation email. You can also email your Sales Consultant directly or our team email <a href=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a>. If you have other times that fit your schedule better, feel free to let us know and our team will try our best to accommodate!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "84efb0d2-38fa-43aa-a973-3c545f7295d3",
+        "81e5ed96-e274-4370-8693-1f9996f801cb",
+        "e6636681-31d6-4df1-957f-48664d9c43ef",
+        "309fb098-6ac3-4502-9190-aac93ee98ae9",
+        "2ae42a9a-c215-467e-aade-74dc624ac7ad",
+        "54cc0231-10dc-4140-85bf-dea79147259c"
+      ],
+      "settings": {
+        "heading": "Showrooms & Appointments"
+      }
+    },
+    "071fd506-6e4f-475c-af9a-e5e8ba7f18dd": {
+      "type": "main-faq",
+      "blocks": {
+        "64c12df6-16f2-4aca-8946-a2f4003b706d": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What is the best way to place an order?",
+            "answer": "<p>The best way to place an order is online on our website or with your dedicated Sales Consultant. If you need assistance with design and configuration or have any product-related questions, feel free to contact <a href=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a> to get immediate assistance or to be connected to your dedicated Sales Consultant.</p>"
+          }
+        },
+        "e05348a4-eb7b-48c6-a1fb-e8163767e76f": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Can I buy individual pieces to expand my sofa?",
+            "answer": "<p>Yes, our customizable system is entirely modular and you can always add on to your sofa. Please contact <a href=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a> for help with design concepts or if you need to place orders for individual modular pieces to add to your existing configuration.</p>"
+          }
+        },
+        "e935143c-c1ab-445b-9cc0-ba7aa31bf05f": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How do I purchase new covers, replacement covers, and new color covers?",
+            "answer": "<p>Please contact <a href=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a> for assistance placing an order for new covers. They will create an invoice with the covers you need.</p>"
+          }
+        },
+        "95de2409-c59b-4b2d-bda8-abc9fcbf18b7": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Can I change my payment method after I place an order?",
+            "answer": "<p>Yes, changing your payment method after you place an order is possible. Our sales team can send you a new invoice to place the order with your new payment method. After that order has been placed, we will immediately cancel and refund your existing order.</p><p>If you would like to update your payment method, contact <a href=\"mailto:sales@7thavenue.co\"><strong>sales@7thavenue.co</strong></a> with your order number.</p><p>Please note: updating your payment method will not lead to a change in your lead time. We will honor the lead time that would start from the original order date.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "64c12df6-16f2-4aca-8946-a2f4003b706d",
+        "e05348a4-eb7b-48c6-a1fb-e8163767e76f",
+        "e935143c-c1ab-445b-9cc0-ba7aa31bf05f",
+        "95de2409-c59b-4b2d-bda8-abc9fcbf18b7"
+      ],
+      "settings": {
+        "heading": "Placing An Order"
+      }
+    },
+    "48f2058c-cb90-40df-a4e0-db506686a9ff": {
+      "type": "main-faq",
+      "blocks": {
+        "2f9253f7-b6ff-43c9-9d81-8d7e871374d5": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Does 7th Avenue offer financing or payment plans?",
+            "answer": "<p>We offer financing options through our third-party partners, Affirm and Klarna. All underwriting and offers are provided directly by these partners and outside of the management of 7th Avenue.</p>"
+          }
+        },
+        "2476bb49-ab85-45ca-b568-dfff68d3ccec": {
+          "type": "question-answer",
+          "settings": {
+            "title": "I can’t find the financing option on the checkout page - only credit card",
+            "answer": "<p>If you do not see the financing options under the credit card payment section, please double-check that you are not logged into Shop Pay. If you are, the options will not appear and you will need to log out by clicking “<strong>Continue as a guest</strong>” on the checkout page. If this does not work, please contact <a href=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a> for support.</p>"
+          }
+        },
+        "d62b09ae-dd0b-4205-bcd4-e9560f1fe3cb": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How are the financing offers evaluated?",
+            "answer": "<p>Since our financing program is managed by third-party partners, please check their FAQ page to ensure you have the latest information on how they evaluate applications. Please find the links here:</p><ul><li>Klarna: <a href=\"https://www.klarna.com/us/customer-service/\">https://www.klarna.com/us/customer-service/</a></li><li>Affirm: <a href=\"https://helpcenter.affirm.com/s/\">https://helpcenter.affirm.com/s/</a></li></ul>"
+          }
+        },
+        "b27ad752-303b-4f11-a759-a2b909b4413c": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Will applying for financing hurt my credit score?",
+            "answer": "<p>Our third-party partners Klarna and Affirm do a “soft” check on your credit. Therefore, simply applying for financing will not impact your credit score. For additional questions about this, please see the following pages:</p><ul><li>Klarna: <a href=\"https://www.klarna.com/us/customer-service/\">https://www.klarna.com/us/customer-service/</a></li><li>Affirm: <a href=\"https://helpcenter.affirm.com/s/\">https://helpcenter.affirm.com/s/</a></li></ul>"
+          }
+        },
+        "8ad159bc-f6d8-488d-8c0a-3ff037f9a773": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Why don’t I see the 0% APR option?",
+            "answer": "<p>We do not have specific information on or any involvement in the underwriting process of our third-party financing partners. If you do not see favorable options for financing, please try adjusting the duration of the loan. We also encourage you to see what offer the different platforms offer you and you are free to evaluate the best offer that works for you, including by your credit card provider.</p>"
+          }
+        },
+        "e5d82a1e-00e6-4def-aaa0-2604347c9dac": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What happens if I miss a payment? Will it hurt my credit score or have late fees?",
+            "answer": "<p>Our financing program is managed by third-party partners. Please check the following links for the most up-to-date information on late payments with our partners:</p><ul><li>Klarna: <a href=\"https://www.klarna.com/us/customer-service/what-happens-if-i-cant-pay-on-time/\">https://www.klarna.com/us/customer-service/what-happens-if-i-cant-pay-on-time/</a></li><li>Affirm: <a href=\"https://helpcenter.affirm.com/s/article/late-payments\">https://helpcenter.affirm.com/s/article/late-payments</a></li></ul>"
+          }
+        },
+        "510833c6-45aa-4801-af5d-65fb173a0bcb": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How would it work with financing if I returned or canceled my order?",
+            "answer": "<p>If you were to return the sofa or cancel, the refund would be applied to the balance of the loan. For cancellations, this would close the loan out in its entirety. For returns, the shipping fees collected would not be returned, leaving a small balance to pay off.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "2f9253f7-b6ff-43c9-9d81-8d7e871374d5",
+        "2476bb49-ab85-45ca-b568-dfff68d3ccec",
+        "d62b09ae-dd0b-4205-bcd4-e9560f1fe3cb",
+        "b27ad752-303b-4f11-a759-a2b909b4413c",
+        "8ad159bc-f6d8-488d-8c0a-3ff037f9a773",
+        "e5d82a1e-00e6-4def-aaa0-2604347c9dac",
+        "510833c6-45aa-4801-af5d-65fb173a0bcb"
+      ],
+      "settings": {
+        "heading": "Financing"
+      }
+    },
+    "03c7014d-5796-428e-890a-236b22254596": {
+      "type": "main-faq",
+      "blocks": {
+        "2fc83347-141a-4d38-a626-082d3d9ae612": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Do you offer swatches? Are they free?",
+            "answer": "<p>Yes, we offer complimentary swatches in all colors for you to review in your home. See how our fabrics look with your unique lighting, paint, and decor to help with your decision-making process.</p><p>You can request fabric swatches here: <a href=\"https://7thavenue.co/pages/request-swatches\">https://7thavenue.co/pages/request-swatches</a></p>"
+          }
+        },
+        "1a34ee9b-ed55-49db-b4e6-fe0c86aa74d3": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Can I order multiple swatches of the same color?",
+            "answer": "<p>Due to high demand, we can only send one swatch per color at this time.</p>"
+          }
+        },
+        "da642445-9d22-42a7-bda1-b0bd9468e309": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Are the swatches water-repellent & stain-resistant?",
+            "answer": "<p>Yes, our swatches have the same water-repellent and stain-resistant features you’ll enjoy with a full sofa. Treat them as you would your sofa.</p>"
+          }
+        },
+        "75891756-844c-4d43-8e2c-eafb90d95ede": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Will I receive a notification when my swatches have shipped out?",
+            "answer": "<p>Yes, once your swatches have shipped our fulfillment team will email you with the tracking link. All swatches ship via FedEx envelope.</p>"
+          }
+        },
+        "0a0cb14c-3d58-4ca6-9e3b-5d6c9833f7ec": {
+          "type": "question-answer",
+          "settings": {
+            "title": "I submitted a swatch request several days ago but still have not received a shipping notification.",
+            "answer": "<p>Please reach out to <a href=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a> and we will look into why they have not shipped and ensure you receive your swatches.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "2fc83347-141a-4d38-a626-082d3d9ae612",
+        "1a34ee9b-ed55-49db-b4e6-fe0c86aa74d3",
+        "da642445-9d22-42a7-bda1-b0bd9468e309",
+        "75891756-844c-4d43-8e2c-eafb90d95ede",
+        "0a0cb14c-3d58-4ca6-9e3b-5d6c9833f7ec"
+      ],
+      "settings": {
+        "heading": "Swatches"
+      }
+    },
+    "ce95b115-3302-44fa-bdb9-0fcff76265b2": {
+      "type": "main-faq",
+      "blocks": {
+        "3f09dcee-7eb1-4df5-9c32-92ef8b29dee1": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Where can I see the lead time for my configuration and fabric color choice?",
+            "answer": "<p>Our lead times can fluctuate for some fabrics and configurations. For the most accurate and up-to-date information, please refer to the quoted lead times on individual product pages on our website. After selecting your seating depth and fabric color choice, lead times will update for your specific product selection so you are aware prior to purchasing. Once you have completed an order, you can find your order’s quoted lead time in the “Notes” section of your order confirmation email.</p>"
+          }
+        },
+        "b9ce1fac-fa2b-42d5-a227-418a2e91b521": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Does the lead time include in-transit time? If not, what is the in-transit time?",
+            "answer": "<p>No. The quoted lead time is the expected time it takes from purchase for your order to be shipped out from our Los Angeles warehouse.</p><p>The typical in-transit time once the boxes have been scanned depends on where you are located. If you are located on the West Coast, the in-transit time is anywhere between 1-3 days. If you are located on the East Coast, the in-transit time is anywhere between 4-7 days. If you are in between both coasts, the in-transit time is between 2-4 days.</p>"
+          }
+        },
+        "54e71def-d714-4290-be5b-48566a5a44bd": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Why am I seeing a shorter lead time on the website compared to when I ordered?",
+            "answer": "<p>Lead times fluctuate according to the overall customer demand and available upcoming inventory. If you see a shorter lead time on the website, it does not replace your quoted lead time at the time of purchase. We are hard at work fulfilling orders on a first-in, first-out basis and will always prioritize your shipment in the order in which it was received.</p>"
+          }
+        },
+        "a5acb60a-202f-481d-bdaf-aa057efb1297": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Do you offer expedited shipping? How do you process orders?",
+            "answer": "<p>Unfortunately, we do not offer any way to expedite the delivery of your order. We work hard to make sure that our customers' orders are shipped within the lead time quoted and it is our policy to ensure customers’ orders are fulfilled in the order in which they were received.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "3f09dcee-7eb1-4df5-9c32-92ef8b29dee1",
+        "b9ce1fac-fa2b-42d5-a227-418a2e91b521",
+        "54e71def-d714-4290-be5b-48566a5a44bd",
+        "a5acb60a-202f-481d-bdaf-aa057efb1297"
+      ],
+      "settings": {
+        "heading": "Lead Times"
+      }
+    },
+    "fd802dfc-3129-4fde-bf7e-cae538dbe7b0": {
+      "type": "main-faq",
+      "blocks": {
+        "e9d9f356-ff1b-498f-8766-6ddf0bf08887": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Where do you ship?",
+            "answer": "<p>We currently ship to all of the 48 contiguous United States. Unfortunately, we do not ship Alaska, Hawaii, Canada, Mexico, Puerto Rico, and all other countries. Please note that we do not ship to PO Boxes or APOs at this time.</p>"
+          }
+        },
+        "1decaa87-f4dd-4b21-8059-3d13fa7c8f46": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How will my order ship? Will I receive a tracking number?",
+            "answer": "<p>All orders currently ship via FedEx Ground from our Los Angeles warehouse. Flat-rate shipping is automatically applied at checkout depending on your shipping address. Once your sofa has been put on the FedEx trailer at our warehouse in Los Angeles, you will receive an email containing your FedEx tracking URL.</p>"
+          }
+        },
+        "ec45b533-df6d-4df8-85ef-4f6cba8439ef": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How are the modular sofas shipped? Are they heavy?",
+            "answer": "<p>Your new sofa will ship via FedEx in 7th Avenue branded double-walled corrugated boxes. Due to the modular nature of your sofa, we will ship each item in individual boxes via FedEx Ground from our Los Angeles warehouse. All fabric covers are shipped separately from the frames in their own dedicated box.</p><p>Each modular box will weigh around 45lbs for the seats and 25lbs for the arms and the backs. The box containing all the covers will weigh around 25lbs - 45lbs depending on the size of your configuration.</p>"
+          }
+        },
+        "4675eed6-eb0e-44c7-92b0-1932a890fa49": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Does the shipment require a signature? Who can sign for the packages?",
+            "answer": "<p>Our default shipping process requires a direct signature upon FedEx delivery for all packages, so please ensure that someone is home at the time of delivery. If this poses a problem for you, please notify us before your order is set to ship so we can remove the signature requirement.</p><p>FedEx will accept a signature from anyone present at the delivery address. It is not a requirement for the shipping recipient to be at home to sign.</p><p>If you have any questions on FedEx signature requirements, please find more information on FedEx’s website here <a href=\"https://www.fedex.com/en-us/delivery-options/signature-services.html\">https://www.fedex.com/en-us/delivery-options/signature-services.html</a></p>"
+          }
+        },
+        "e0fd1926-c095-48b3-9335-b6b2e90c89a7": {
+          "type": "question-answer",
+          "settings": {
+            "title": "I did not waive the signature requirement but no one will be present at home to sign",
+            "answer": "<p>If the signature requirement is not removed by our team and no one will be present at home to sign, you have the option to authorize the shipment to be released without anyone present. This change can be requested for FedEx Express packages through FedEx Delivery Manager® or by signing a FedEx door tag.</p><p>If no one is at the address, FedEx will typically try to deliver the package up to three times.</p><p>If you have any questions on FedEx signature requirements, please find more information on FedEx’s website here <a href=\"https://www.fedex.com/en-us/delivery-options/signature-services.html\">https://www.fedex.com/en-us/delivery-options/signature-services.html</a></p>"
+          }
+        },
+        "f305573d-5684-4ced-bf8b-11aca6f29d3d": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What happens if I’m not home when FedEx attempts delivery?",
+            "answer": "<p>FedEx will attempt delivery three times. If you are unable to be available for any of these three delivery attempts you can use the vacation hold feature by calling FedEx directly or using the ‘Manage Delivery’ section in your tracking link.  If you have any questions, please reach out to <a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> immediately to advise so we can possibly arrange an alternative delivery day with FedEx.</p>"
+          }
+        },
+        "f012dfa4-37ee-4bad-8773-665c0c4120a8": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Where will FedEx drop the boxes? Are they able to drop them all the way in my living room?",
+            "answer": "<p>You will receive your 7th Avenue shipment the way you currently receive other shipments from FedEx at your location. They are unable to deliver the boxes inside nor can they be instructed to deliver boxes to a certain location or inside your residence. Please plan accordingly to receive your delivery.</p>"
+          }
+        },
+        "2112cebd-a552-4fc3-9856-b82f41d216cf": {
+          "type": "question-answer",
+          "settings": {
+            "title": "I live in an apartment complex. Will FedEx carry the boxes to my unit?",
+            "answer": "<p>No, FedEx is not required to carry boxes to a certain unit, upstairs, or via elevator. If you live in an apartment they most likely will deliver to a mailroom and are not required to deliver to your apartment. If you are unsure how delivery will work for your specific location please reach out to <a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> to see if we have an alternative solution.</p>"
+          }
+        },
+        "80e6e782-2eda-4d54-befd-e1e602bad962": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Some of the boxes are damaged in transit. What do I do?",
+            "answer": "<p>Don’t worry, we have you covered! First, please open the boxes to see if any pieces are damaged. If there are no damages, you are able to start the assembly process. If there are damages please email <a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> with photos of the damages so we can assess the extent of the problem and coordinate replacements.</p>"
+          }
+        },
+        "e57ecad5-a657-428c-b4ec-9091bf1e3f44": {
+          "type": "question-answer",
+          "settings": {
+            "title": "I’m missing some of the boxes even if my tracking link says the shipment is delivered.",
+            "answer": "<p>On rare occasions, FedEx may do a partial delivery of your order due to the large size of our boxes. This means that FedEx may make multiple deliveries, usually in the span of 1-2 days, to deliver all of your boxes.</p><p>If you have concerns that your order may be delivered with partial deliveries, please check your FedEx tracking link and you will be able to see the status of each individual box. Scroll down on the page to see how many boxes to expect and when. Specifically, the status will show as “Out for Delivery” if the package is on the delivery truck to be delivered that day.</p><p>If you are still missing any items from your order after 1-2 days please reach out to our Concierge team at <a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> so we can follow up with FedEx for you and provide a resolution.</p>"
+          }
+        },
+        "question_answer_Qc44dF": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Does the order ship with white glove delivery?",
+            "answer": "<p>No, we do not offer traditional White Glove delivery services. All orders outside of Southern California will ship via FedEx Ground. FedEx does not provide in-room deliveries and will typically drop packages off where you usually receive them.</p><p>If assembly services have been purchased and you are located outside our local delivery network, we will provide complete assembly services through our 3rd party assemblers via TaskRabbit and Thumbtack.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "e9d9f356-ff1b-498f-8766-6ddf0bf08887",
+        "1decaa87-f4dd-4b21-8059-3d13fa7c8f46",
+        "ec45b533-df6d-4df8-85ef-4f6cba8439ef",
+        "4675eed6-eb0e-44c7-92b0-1932a890fa49",
+        "e0fd1926-c095-48b3-9335-b6b2e90c89a7",
+        "f305573d-5684-4ced-bf8b-11aca6f29d3d",
+        "f012dfa4-37ee-4bad-8773-665c0c4120a8",
+        "2112cebd-a552-4fc3-9856-b82f41d216cf",
+        "80e6e782-2eda-4d54-befd-e1e602bad962",
+        "e57ecad5-a657-428c-b4ec-9091bf1e3f44",
+        "question_answer_Qc44dF"
+      ],
+      "settings": {
+        "heading": "Shipping & Delivery"
+      }
+    },
+    "9cf23b67-875f-47a9-95c6-9ac24a286278": {
+      "type": "main-faq",
+      "blocks": {
+        "5ed1ea6b-b25b-4ff8-8084-6066325e7a1e": {
+          "type": "question-answer",
+          "settings": {
+            "title": "I live in Southern California; how would my order get delivered?",
+            "answer": "<p>If you are located within 4<strong>0 miles of Los Angeles,</strong> your order will be delivered via our 7th Avenue Local Delivery team. They will provide, unbox, and assemble your sofa and remove all boxes prior to departing.</p><p>Please note: the assembly team is not required to move or remove any existing furniture from your space.</p>"
+          }
+        },
+        "58f07e21-f992-4d95-93e6-417e46e093a6": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How do I book a Local Delivery?",
+            "answer": "<p>Approximately one week prior to when your sofa will be ready for delivery, our local delivery coordinator will reach out to schedule delivery and assembly. As always, if you have any questions, you can reach out to our support team at support@7thavenue.co or <a href=\"tel:+18776441506\">+1 (877) 644 - 1506</a>.</p>"
+          }
+        },
+        "f9e6f4cd-3510-44c9-88d5-0e57710926b1": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How would I know if the Local Delivery team is on their way?",
+            "answer": "<p>On the day of your delivery, our team will provide a time window for when to expect your sofa delivery and assembly. This window helps accommodate any unforeseen issues that may arise in the normal course of a day.</p><p>Approximately 30 minutes prior to arrival, the team will contact you to confirm they are en route. If you have an emergency on the day of delivery and need to make changes or reschedule, please immediately call our support line at +1 (877) 382-7751 or email us at <a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> so we can ensure accommodations are made.</p>"
+          }
+        },
+        "be76ecb5-123e-452b-9d72-ba4ce83d820e": {
+          "type": "question-answer",
+          "settings": {
+            "title": "I am within my scheduled delivery window but why has no one shown up?",
+            "answer": "<p>Although extremely rare, unexpected local delivery delays may occur. Please call us immediately with any questions or concerns about your delivery at +1 877 644 1506 and request to speak to our Local Operations team for a prompt resolution. Our team will communicate with the delivery drivers and find out about their arrival status for you.</p>"
+          }
+        },
+        "f8c50557-4c0c-48a7-a3f0-69c70242fb80": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Can I ask my Local Delivery team to move my existing furniture?",
+            "answer": "<p>Unfortunately, our Local Delivery team is instructed to only be able to work on 7th Avenue products, which includes carrying our boxes into your requested space, unboxing them, assembling the sofa, and removing all packaging. Due to our team’s insurance requirements and liabilities, our team is unable to assist you in other work that is not related to your 7th Avenue order. This includes moving and throwing your existing furniture.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "5ed1ea6b-b25b-4ff8-8084-6066325e7a1e",
+        "58f07e21-f992-4d95-93e6-417e46e093a6",
+        "f9e6f4cd-3510-44c9-88d5-0e57710926b1",
+        "be76ecb5-123e-452b-9d72-ba4ce83d820e",
+        "f8c50557-4c0c-48a7-a3f0-69c70242fb80"
+      ],
+      "settings": {
+        "heading": "Local Delivery"
+      }
+    },
+    "2615b372-c60e-414c-b237-b34fa88cd09e": {
+      "type": "main-faq",
+      "blocks": {
+        "c925a7a8-549f-4609-a90e-ff800f34aac8": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Is Assembly Service included with my order?",
+            "answer": "<p>For a small fee, you may choose to include assembly service with your order. Assembly will be conducted by a verified third-party assembler from platforms such as TaskRabbit or Thumbtack. Each assembler has been background-checked by their respective platform, and our team will coordinate directly with each assembler on the proper instructions on how to assemble your sofa.</p>"
+          }
+        },
+        "f8c8aafa-34d5-4901-97fb-1c8380577903": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How do I book my assembler?",
+            "answer": "<p>Once your sofa arrives and all of the boxes are in the room where your sofa will be assembled, please reach out to <a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> via email to schedule your Assembly Service appointment. Our dedicated Assembly Concierge team will coordinate your entire assembly appointment from start to finish.&lt;\\/p&gt;</p><p>Assembly will be conducted by a verified third-party assembler via platforms such as TaskRabbit or Thumbtack. Each assembler has been background-checked, and our team will ensure each assembler is versed in the proper instructions on how to best assemble your sofa configuration before they arrive onsite.</p>"
+          }
+        },
+        "7a3208bf-0d7c-4d2c-a982-37554eb41ca8": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How quickly can I schedule Assembly Service? Can I do same-day assembly?",
+            "answer": "<p>Typically, we are able to have your assembly appointment scheduled within 24 hours of your initial assembly request. Please note our third-party assemblers are based on area availability. Any specifically requested days and times may not be available. We are unable to schedule assemblies after 5 pm local time. <strong>Please note, that due to the wide FedEx delivery windows, we do not guarantee same-day assembly and are unable to assemble on certain holidays and blackout dates.</strong></p><p>Please also note that we have a 24-hour cancellation policy. If you contact us the same day to cancel, we cannot refund your assembly fee.</p>"
+          }
+        },
+        "baae3e56-d34f-462a-b7d6-b84c52e80f54": {
+          "type": "question-answer",
+          "settings": {
+            "title": "I paid for Assembly Service but I decided to assemble the sofa myself. Can I get a refund?",
+            "answer": "<p>Of course! If you choose to complete the assembly by yourself and have purchased the Assembly Service, please let us know and we can provide you with a refund for the assembly service.</p>"
+          }
+        },
+        "5c21a341-36fb-435f-93a1-2e204d4df6ff": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Is Assembly Service guaranteed in my area?",
+            "answer": "<p>For some rural areas and remote locations, we may not be able to guarantee assembler availability. While we will do our very best, if you live in a rural area there is a possibility that we will not be able to coordinate the assembly service if selected. When this happens, we will refund you the assembly cost and our team will guide you through the assembly process.</p>"
+          }
+        },
+        "question_answer_4B3xYr": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Do you offer same-day assembly?",
+            "answer": "<p>Due to the wide FedEx delivery window, we do not guarantee same-day assembly and are unable to assemble on certain holidays and blackout dates.</p>"
+          }
+        },
+        "2f8c60e2-91c6-41a3-b6ea-ba6a55d16d86": {
+          "type": "question-answer",
+          "settings": {
+            "title": "I already have an assembly booked, can I cancel anytime?",
+            "answer": "<p>While you can cancel at any time, we do have a non-refundable 24-hour cancellation policy from scheduled assembly time. We understand that life happens, if you are unable to make it at your scheduled time, please email us to cancel. If it is within 24 hours we will not be able to refund the assembly fee.</p>"
+          }
+        },
+        "16c2b0a6-e7c9-4f5d-bce5-67a3fdeffd2a": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What if my assembler is late?",
+            "answer": "<p>Don’t panic! Please note that our assemblers are often traveling from other jobs and may face traffic or unforeseen delays when en route to your assembly appointment. We typically account for a 30-minute buffer, but If your assembler is beyond 30 minutes late and has not communicated with you, please reach out to us so we can follow up with them directly to get you a status update.</p>"
+          }
+        },
+        "67d093ba-d0ca-4321-ba71-9867c48a5072": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Can my assembler remove and throw the packaging boxes away?",
+            "answer": "<p>Our assemblers are unable to remove or dispose of your boxes at the landfill. However, they are instructed to leave your space in a clean manner with the boxes broken down for your easy disposal.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "c925a7a8-549f-4609-a90e-ff800f34aac8",
+        "f8c8aafa-34d5-4901-97fb-1c8380577903",
+        "7a3208bf-0d7c-4d2c-a982-37554eb41ca8",
+        "baae3e56-d34f-462a-b7d6-b84c52e80f54",
+        "5c21a341-36fb-435f-93a1-2e204d4df6ff",
+        "question_answer_4B3xYr",
+        "2f8c60e2-91c6-41a3-b6ea-ba6a55d16d86",
+        "16c2b0a6-e7c9-4f5d-bce5-67a3fdeffd2a",
+        "67d093ba-d0ca-4321-ba71-9867c48a5072"
+      ],
+      "settings": {
+        "heading": "Assembly Service"
+      }
+    },
+    "7f7e8354-9d96-458a-beab-b9828d3e4da9": {
+      "type": "main-faq",
+      "blocks": {
+        "53bba3d1-0761-4cb2-96fc-99867bbef7dc": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Do you have any assembly instructions?",
+            "answer": "<p>We do! We have a step-by-step video you can watch at your own pace that will guide you through how to assemble your 7th Avenue sectional. You can view all instructions on how to assemble your sofa here:</p><p><strong>Classic</strong> -<a href=\"http://www.bit.ly/7thAvenueClassicAssembly\">www.bit.ly/7thAvenueClassicAssembly</a></p><p><strong>Extra-Deep</strong> - <a href=\"http://www.bit.ly/7thAvenueDeepAssembly\">www.bit.ly/7thAvenueDeepAssembly</a></p><p>Don't forget, if you've ordered Medium-Firm or if you'd like to customize the level of your back cushion firmness, you will need to use the Down Alternative Fill Packets. Please watch <a href=\"http://www.bit.ly/7thAvenueBackCushion\">www.bit.ly/7thAvenueBackCushion</a> on how to add the fill.</p>"
+          }
+        },
+        "35a47580-2dec-44dc-a1e6-9de7bacfe75f": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How do I customize the firmness of my back cushions?",
+            "answer": "<p>If you've ordered Medium-Firm back cushions or if you'd like to customize the firmness of your back cushions, you can do so using the provided Down Alternative Fill Packets. The fill packets are typically packed in your fabric box and come in a fabric case that measures</p><p>Adjusting them is easy and can be done in a matter of minutes. Watch the following video on how to add the fill: <a href=\"http://www.bit.ly/7thAvenueBackCushion\">www.bit.ly/7thAvenueBackCushion</a></p>"
+          }
+        },
+        "3fcc4e2c-35e8-46fa-a707-04f0e195f23f": {
+          "type": "question-answer",
+          "settings": {
+            "title": "It seems that I received the wrong pieces / have pieces missing from my order.",
+            "answer": "<p>Don’t worry, we’ve got you covered! Please reach out to support@7thavenue.co with a list of items you have received and/or are missing and our Concierge team will ensure that the correct items are sent to you ASAP.</p>"
+          }
+        },
+        "0160a50b-f7d7-47b4-8e9f-c3b4d520756a": {
+          "type": "question-answer",
+          "settings": {
+            "title": "I finished assembling my sofa - how do I get the wrinkles off my covers?",
+            "answer": "<p>It is totally normal to have wrinkles on your covers right after assembly is completed - they have been wrapped and folded in their packaging for a period of time before getting to you! If you want your covers to look showroom crisp, we recommend doing a gentle steaming of the covers once assembly is completed to make sure that all covers are wrinkle-free. Use a medium to strong steamer to ensure sufficient steam is put on. We also recommend steaming after every time you wash your covers for a smooth finish.</p><p>When steaming, we recommend steaming them gently from a distance of 3-6” to avoid direct contact with fabrics. Direct contact could lead to damage to the DWR due to the high heat generated by the steamer.</p>"
+          }
+        },
+        "65871d86-c56d-43ec-8b61-a962c02426c5": {
+          "type": "question-answer",
+          "settings": {
+            "title": "I opened my seat & side boxes and they were the wrong color.",
+            "answer": "<p>Our frames do not ship with the covers already put on! Your covers are shipped separately from the frames and need to be put on the frames during the assembly process. The covers can be found in a separate box that typically measures 20” x 20” x 20”.</p><p>If you believe that you have received your seat & side boxes, but not your fabric box, FedEx may be doing a partial delivery for you. This means that FedEx may make multiple deliveries, usually in the span of 1-2 days, to deliver all of your boxes.</p><p>If you have concerns that your order may be delivered with partial deliveries, please check your FedEx tracking link and you will be able to see the status of your individual boxes & how many boxes to expect by scrolling down on the page. Specifically, the status will show as “Out for Delivery” if the package is on the delivery truck to be delivered that day.</p><p>If you are still missing any items from your order after 1-2 days please reach out to our Concierge team at <a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> so we can follow up with FedEx for you.</p>"
+          }
+        },
+        "bf23a701-c603-4860-bcb5-04d0bf88a4a9": {
+          "type": "question-answer",
+          "settings": {
+            "title": "I received small packets smaller than throw pillows - what are they?",
+            "answer": "<p>If you ordered a Medium-Firm back cushion or requested additional fill packets to customize your back cushion firmness, then you will receive complimentary fill packets with your order. The fill packets come in a small 12” x 12” bag that is smaller than the throw pillow and contains the fill you will need to make your back cushions firmer.</p><p>Watch the following video on how to add the fill: <a href=\"http://www.bit.ly/7thAvenueBackCushion\">www.bit.ly/7thAvenueBackCushion</a></p>"
+          }
+        },
+        "731af6e2-9d46-4f95-8c85-ddf1f4ec2272": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What if the holes on my covers don't line up with the screwholes on the frame?",
+            "answer": "<p>As a reminder, our directions are labeled as if you are facing the sofa. Please make sure that you have all orientations correct since our Corner Right covers and Corner Left covers are not interchangeable.</p><p>If you find that the holes on your covers don’t line up with the screwholes on the frame, please try swapping the fabrics to the other corner. For example, if you are putting on a Corner Left cover and notice that the holes are not lining up properly, please swap that cover to the Corner Right side and you should find that the cover will line up properly. Similarly, if you are putting a Corner Right cover and notice that the holes are not lining up properly, please swap that cover to the Corner Left side.</p><p>If you are still unable to complete the assembly process, please reach out to us at <a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> for further assistance!</p>"
+          }
+        },
+        "8e49d583-52d7-4b2a-addf-3c5bd2e8b332": {
+          "type": "question-answer",
+          "settings": {
+            "title": "I noticed one of my seat/ ottoman base covers has an unusually visible hole / slit.",
+            "answer": "<p>Our seat base covers are designed for a specific type of seat and are not interchangeable. For example, the seat base cover for an Armless Seat cannot be used for a Corner Seat or an Ottoman, and vice versa.</p><p>If you noticed that your seat base cover has an unusually visible slit, please make sure that you are using the correct seat base cover. One tip on how to differentiate the different seat base covers is by identifying how many slits they have:</p><p>- Armless Seat Base Cover: 1 slit</p><p>- Corner Seat Base Cover: 3 slits</p><p>- Ottoman Seat Base Cover: no slits</p><p>If you believe that you have received the incorrect seat base, please reach out to <a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> with a list of items you have received and/or are missing and our Concierge team will ensure that the correct items are sent to you ASAP.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "53bba3d1-0761-4cb2-96fc-99867bbef7dc",
+        "35a47580-2dec-44dc-a1e6-9de7bacfe75f",
+        "3fcc4e2c-35e8-46fa-a707-04f0e195f23f",
+        "0160a50b-f7d7-47b4-8e9f-c3b4d520756a",
+        "65871d86-c56d-43ec-8b61-a962c02426c5",
+        "bf23a701-c603-4860-bcb5-04d0bf88a4a9",
+        "731af6e2-9d46-4f95-8c85-ddf1f4ec2272",
+        "8e49d583-52d7-4b2a-addf-3c5bd2e8b332"
+      ],
+      "settings": {
+        "heading": "Assembly Instructions"
+      }
+    },
+    "aacf1a02-0a62-4c97-8c81-65537768fa34": {
+      "type": "main-faq",
+      "blocks": {
+        "ec3ca66f-4be2-4938-a60f-cc2968541b36": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Are your fabrics pet-friendly?",
+            "answer": "<p>Yes! Our fabrics are pet-friendly thanks to the high rub count found on all of our fabrics ranging between 50,000-100,000. The higher upholstery rub count means that it is harder to create abrasions for the fabric and harder for the claws to penetrate through. As a comparison, the typical residential upholstery fabric only has a rub count of 15,000-25,000.</p><p>All covers (including base, arms, and back covers) are also removable and washable. This means that if your pet ever stains or dirties the covers, they can be washed immediately by putting them inside a washing machine under a cold/ delicate setting. We also recommend dry cleaning for more extensive stains. For more information on how to clean & maintain our fabrics, please go to the “Fabrics & Fabric Care” section of our FAQ page.</p><p>In addition, all of our covers are designed to be replacable! This means that if your pet ever completely ruins the covers, you can purchase the covers separately either as individual covers or as a set by emailing us at <a href=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a>.</p><p>Please note: pet damages will not be covered under our Limited Lifetime Warranty which does not cover wear and tear.</p>"
+          }
+        },
+        "7310a418-11ee-4c5a-ba95-8408becefbaa": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What about pet hair? Is it hard to remove?",
+            "answer": "<p>It is very easy to remove pet hair from our fabrics! You can simply use lint rollers and the hair will easily come off. For ultra-fine pet hair, you may have to apply the lint roller with a bit of pressure.</p><p>If your pet has ultra-fine hairs that you have found difficult to remove from your previous sofas, we recommend selecting our premium velvet fabrics. Our premium velvet fabrics are especially <strong>great at removing pet hair & fur.</strong> Due to their short, non-woven flat piles, pet hair or fur won’t stick to the fabrics and you can easily lint roll them away.</p>"
+          }
+        },
+        "11b71c2c-6e68-495a-8f52-c51c6b3ba34b": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Are your fabrics scratch-resistant? What is the difference between scratch-resistant and scratch-proof?",
+            "answer": "<p>Our fabrics are scratch-resistant thanks to the high rub count found on all of our fabrics ranging between 50,000-100,000. The higher upholstery rub count means that it is harder to create abrasions for the fabric and harder for the claws to penetrate through. As a comparison, the typical residential upholstery fabric only has a rub count of 15,000-25,000.</p><p>However, our fabrics are <strong>not scratch-proof.</strong> This means that if your pets have a tendency to use the sofa as a scratching post then the fabrics are more likely to incur pilling and damage.</p><p>In addition, all of our covers are designed to be replaceable! This means that if your pet ever completely ruins the covers, you can purchase the covers separately either as individual covers or as a set by emailing us at <a href=\"mailto:support@7thavenue.co\" title=\"mailto:support@7thavenue.co\">support@7thavenue.co</a>.</p><p>If you have concerns over your pet severely scratching your sofa or using your sofa, we strongly recommend selecting our premium velvet fabrics. Our velvet fabrics are<strong> the most scratch-resistant offering we have since they have short, non-woven, flat piles that make them less enticing for pets (in particular, cats) to scratch or dig.</strong></p><p>Please note: all damages from scratching and clawing will not be covered under our Limited Lifetime Warranty which does not cover wear and tear.</p>"
+          }
+        },
+        "abdc8af8-b0ba-410f-8af2-f2c5df159d60": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What is the difference between scratch-resistant and scratch-proof?",
+            "answer": "<p>Our fabrics are scratch-resistant, not scratch-proof. While they sound similar, scratch-resistant and scratch-proof offer distinctly different levels of protection. Like our fabrics, scratch-resistant is defined as a surface that protects against only minor scratches and abrasions. What this does not mean is protection against repeated abrasions or high-intensity scratches in numerous succession.</p><p>However, if something is scratch proof that means that it will absolutely be guaranteed that the fabrics will withstand repeated abuse from sharp edges without showing signs of wear and damage - which unfortunately we do not offer.</p>"
+          }
+        },
+        "2f2515ae-cccb-408d-9a6c-7b44308fe605": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What about cat claws or cat urine?",
+            "answer": "<p>While we love our furry feline friends, cat claws are unique in their ability to destroy even the hardest of materials such as wood. Our fabrics can withstand heavy wear due to the higher rub count of the fabrics, but if your cat uses the sofa as a scratching post it will likely lead to damage due to the sharpness of their claws. We strongly advise cat owners to deter their cats from scratching the sofa or using it as a scratching post.</p><p>Cat urine also tends to be more acidic/ has a lower pH, meaning that it will stain the fabric much faster. If your cat urinates on the covers, please wipe down the urine ASAP or wash them in the washing machine immediately. Using any gentle soap or detergent during the wash should remove most cat urine stains. We also recommend dry cleaning for more extensive cat urine stains. For more information on how to clean & maintain our fabrics, please go to the “Fabrics & Fabric Care” section of our FAQ page.</p><p>In addition, all of our covers are designed to be replaceable! This means that if your cat ever completely ruins the covers, you can purchase the covers separately either as individual covers or as a set by emailing us at <a href=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a>.</p><p>Please note: all damages from cat claws or urine will not be covered under our Limited Lifetime Warranty which does not cover wear and tear.</p>"
+          }
+        },
+        "82135a7c-b4c4-41d2-9a13-33a0f0b00474": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What if my pet eats and destroys the cushions?",
+            "answer": "<p>If the cushions or fabrics are destroyed, we sell everything individually for replacement. Please reach out to <a href=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a> to reach a Sales Consultant who can assist with your order.</p><p>Please note: destroyed cushions are not covered under our Limited Lifetime Warranty which does not cover wear and tear.</p>"
+          }
+        },
+        "question_answer_xECbtQ": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Is dirt from pet paws hard to clean? Can they stain the sofa?",
+            "answer": "<p>In general, dirt from pet paws will wipe off easily. Light dirt marks from paws can be brushed off using a bunched-up paper towel and lightly brushing over the area with the paw prints. Additionally, if the dirt marks on your sectional are more stubborn than anticipated, you can use the suggestions from our spot-cleaning section <a href=\"https://www.notion.so/FAQs-5441888beec04479b64cafd43bac9191?pvs=21\">here</a>.</p><p>Please note that stains can come from paw prints as our fabrics are stain-resistant and not stain-proof. Things like mud or urine that are tracked onto the sofa and sit for an extended period are more likely to stain.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ec3ca66f-4be2-4938-a60f-cc2968541b36",
+        "7310a418-11ee-4c5a-ba95-8408becefbaa",
+        "11b71c2c-6e68-495a-8f52-c51c6b3ba34b",
+        "abdc8af8-b0ba-410f-8af2-f2c5df159d60",
+        "2f2515ae-cccb-408d-9a6c-7b44308fe605",
+        "82135a7c-b4c4-41d2-9a13-33a0f0b00474",
+        "question_answer_xECbtQ"
+      ],
+      "settings": {
+        "heading": "For Pet Parents"
+      }
+    },
+    "a59fba36-b274-4b54-8783-88bec87f3735": {
+      "type": "main-faq",
+      "blocks": {
+        "ea67c476-06b3-49da-885f-49dbfb53e2cd": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Are your sofas safe to use for babies and kids?",
+            "answer": "<p>Our fabrics are OEKO-TEX certified, meaning that they have passed rigorous testing to be free from harmful chemicals that pollute the skin and the environment. They are also free from microplastics such as PFAS/ PFOA/ PFOS. This means that the sofa is safe to use for babies & kids if you are concerned about toxic chemicals on our sofa fabrics.</p><p>On top of being free from PFAS, our fabrics are also free from formaldehyde, and melamine derivatives, and contain no APEOs. Our sofas also do not contain any flame-retardant chemicals, pursuant to California laws that ban toxic flame-retardant chemicals in furniture & upholstery.</p><p>To learn more about the work that we do to make our sofas non-toxic, please go to the “Non-Toxic & PFAS-free” section of our FAQ page.</p>"
+          }
+        },
+        "0279650d-a7e1-46f1-900e-7f844163a8f9": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Do your fabrics handle juice spills well? What about food/ fruit stains?",
+            "answer": "<p>Yes! Our water-repellent fabrics generally handle spills from juices such as orange juice very well. If spilled, you can simply wipe them away or remove the covers and wash them in the washing machine.</p><p>If your baby/ kid blotches their food or fruit on the covers, they are unlikely to get repelled. However, you can immediately proceed to remove & wash the covers! Most food, fruit, and even oil stains should come in the washing machine by using gentle soap/ detergent. For a more extensive stain, we recommend dry cleaning. For more information on how to clean & maintain our fabrics, please go to the “Fabrics & Fabric Care” section of our FAQ page.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ea67c476-06b3-49da-885f-49dbfb53e2cd",
+        "0279650d-a7e1-46f1-900e-7f844163a8f9"
+      ],
+      "settings": {
+        "heading": "For Human Parents"
+      }
+    },
+    "6fe34877-b1da-4984-b89d-c9d57673135d": {
+      "type": "main-faq",
+      "blocks": {
+        "0366447b-2a0e-4b2a-aa35-de29abd5bb58": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Are your fabrics water-repellent & stain-resistant?",
+            "answer": "<p>Yes! We have engineered water-repellent & stain-resistant fabrics, meaning that they have the ability to withstand & temporarily repel water-based liquids such as water, coffee, sodas, juices, sports hydration drinks, pet urine, and even wine. However, <strong>they are not waterproof or stainproof</strong>, meaning that if the spills are left unwiped or uncleaned, they are able to seep in and stain the fabrics.</p><p>The good news is all of our covers (including base, arms, and back covers) are removable & washable! This means that if spills stain the fabrics because they are not quickly wiped away, you can remove the covers & wash them in a washing machine under a cold/ delicate setting. We also recommend dry cleaning for more extensive stains. For more information on how to clean & maintain our fabrics, please go to the “Fabrics & Fabric Care” section of our FAQ page.</p><p>In addition, all of our covers are designed to be replaceable! This means that in the case of permanent staining, you can purchase the covers separately either as individual covers or as a set by emailing us at <a href=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a>.</p><p>Please note: stains on fabrics and cushions are not covered under our Limited Lifetime Warranty which does not cover wear and tear.</p>"
+          }
+        },
+        "0ff527db-e5ef-4079-93c7-eac80e0969a5": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How do you make your fabrics stain-resistant and water-repellent?",
+            "answer": "<p>To achieve water repellency, we utilize PFAS-free Durable Water Repellent (DWR) coating - a technology that is regularly used in raincoats and outdoor jackets. Our DWR coating is specifically engineered for application on indoor upholstery which allows our fabrics to remain smooth.</p>"
+          }
+        },
+        "186102ce-ca95-4702-aac7-45d209b6fb13": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What is the difference between stain-resistant and stain-proof? Similarly, what is the difference between water-repellent and water-proof?",
+            "answer": "<p>While they sound similar, stain-resistant and stain-proof offer distinctly different levels of protection. Like our fabrics, <em>stain-resistant</em> means a material or surface that is designed to resist and repel stains, making it more difficult for stains to be permanently set since they can be easily cleaned by spot cleaning or by washing. <em>Stain proof</em> implies complete immunity to stains, with the material being impervious and no stain can permanently set - which unfortunately our fabrics do not offer.</p><p>The same concept applies to differentiating between water-repellent and water-proof. <em>Water-repellent</em> means that liquids are temporarily repelled and cannot easily penetrate the material. The technical term for water-repellent is “hydrophobic”. <em>Waterproof</em>, on the other hand, means that the water and liquids are completely unable to penetrate the material - which unfortunately our fabrics also do not offer.</p>"
+          }
+        },
+        "262a2b38-b4ac-4219-a07f-bde183727d89": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Why are my covers stained? Are all substances guaranteed to come off?",
+            "answer": "<p>While our Durable Water Repellent (DWR) coating is extremely effective in temporarily repelling liquids and making stains wash away more easily, our covers are not waterproof or stainproof - meaning that they can’t protect against everything and are not magic.</p><p>For example, hot liquids (such as hot coffee) or highly acidic liquids (such as strong red wine or cat urine) might stain the fabrics faster. The DWR coating also mainly protects against liquids and won’t protect against oils or fatty substances (such as hot sauce or greasy foods). In the case of spills, we recommend cleaning the spills up as quickly as possible. The longer a spill sits the higher the likelihood a mark or stain could be left from the spill.</p><p>The good news is all of our covers (including base, arms, and back covers) are removable & washable! This means that most stains can be taken care of by washing them in a washing machine under a cold/ delicate setting. For tougher stains, we recommend dry cleaning the fabrics. Unfortunately, substances that will typically permanently stain your clothes (such as permanent markets or car grease) also will stain our covers permanently. For more information on how to clean & maintain our fabrics, please go to the “Fabrics & Fabric Care” section of our FAQ page.</p><p>In addition, all of our covers are designed to be replacable! This means that in the case of permanent staining, you can purchase the covers separately either as individual covers or as a set by emailing us at <a href=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a>.</p><p>Please note: stains on fabrics and cushions are not covered under our Limited Lifetime Warranty which does not cover wear and tear.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "0366447b-2a0e-4b2a-aa35-de29abd5bb58",
+        "0ff527db-e5ef-4079-93c7-eac80e0969a5",
+        "186102ce-ca95-4702-aac7-45d209b6fb13",
+        "262a2b38-b4ac-4219-a07f-bde183727d89"
+      ],
+      "settings": {
+        "heading": "Water-Repellent & Stain-Resistant"
+      }
+    },
+    "7c6dde0e-024b-4599-8a55-5d1eb89e6bd4": {
+      "type": "main-faq",
+      "blocks": {
+        "db61ca7b-30f9-432d-b338-bf84c675a2e8": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What does it mean to be OEKO-TEX certified? How do I check your certification?",
+            "answer": "<p>Our fabrics are OEKO-TEX certified, meaning that they have passed rigorous testing to be free from the most common harmful chemicals that pollute the human body and the environment.</p><p>In order to check the validity of our certification, please visit OEKO-TEX’s Label Check page here <a href=\"https://www.oeko-tex.com/en/label-check\">https://www.oeko-tex.com/en/label-check</a> and enter our certificate number <strong>BD015 173825 TESTEX</strong> into the label checker.</p>"
+          }
+        },
+        "e08ad8c2-ea71-48be-b344-30a8ea84912c": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Do your stain-resistant fabrics contain PFAS or “forever chemicals”? How do you make your sofas water-repellent & stain-resistant without using PFAS?",
+            "answer": "<p>No! Unlike other performance or stain-resistant products in the furniture space, our latest fabrics are free from microplastics such as PFAS/ PFOA/ PFOS (commonly known as “forever chemicals”).</p><p>To achieve this, instead of using fluorine-based DWR, we use a “<strong>C0 DWR</strong>” coating technology that is made out of dispersion of fat-modified compounds and paraffin. C0 DWR does not contain PFAS/PFOA/PFOS and is the treatment that we use to make our fabrics water-repellent & stain-resistant, without harming the people or environment that use them.</p><p>Not only is C0 DWR safer for human health, but it is also better for the environment. PFAS and PFOA chemicals do not break down easily and remain in the environment for a long time, causing damage to ecosystems. C0 DWR, on the other hand, breaks down more easily and does not pose a threat to the environment.</p>"
+          }
+        },
+        "4bdaeb4a-0938-47f6-afce-2290bd38f87a": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Do you have any independent lab report verifying that your stain-resistant fabrics are free from PFAS or “forever chemicals”?",
+            "answer": "<p>Yes, we do! Please find our independent lab report here <a href=\"https://drive.google.com/file/d/1_KRfNcmgLcEvjBSOogpp2MpfXQWjwD2P/view?usp=drive_link\">https://drive.google.com/file/d/1_KRfNcmgLcEvjBSOogpp2MpfXQWjwD2P/view?usp=drive_link</a></p><p>On Page 3 of the report, you can see that our fabrics are undetected for PFOA and PFOS, the two major types of PFAS. Please refer to Page 13 and Page 14 for terminology reference.</p>"
+          }
+        },
+        "dbfd2060-4313-4bf4-95cf-7fe6178809f9": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What other harmful chemicals are your sofas free from? What about flame-retardant chemicals?",
+            "answer": "<p>Keeping our customers and our planet safe is a top priority. On top of being free from PFAS, our fabrics are also free from formaldehyde, and melamine derivatives, and contain no APEOs. Our sofas also do not contain any flame-retardant chemicals, pursuant to California laws that ban toxic flame-retardant chemicals in furniture & upholstery.</p>"
+          }
+        },
+        "question_answer_V6fRHj": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What do I do if I am allergic to any of your materials?",
+            "answer": "<p>If you find that you are allergic to any of the materials found in our sofa please contact <a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a>.  If you are curious about the materials found in our sofas, here is a list of the most commonly found materials in our sectionals and sofas: wood, polyester, Down-Alternative, plywood, microfiber, chenille, paraffin commonly found in DWR coatings.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "db61ca7b-30f9-432d-b338-bf84c675a2e8",
+        "e08ad8c2-ea71-48be-b344-30a8ea84912c",
+        "4bdaeb4a-0938-47f6-afce-2290bd38f87a",
+        "dbfd2060-4313-4bf4-95cf-7fe6178809f9",
+        "question_answer_V6fRHj"
+      ],
+      "settings": {
+        "heading": "Non-Toxic & PFAS-Free"
+      }
+    },
+    "90bd793e-6bc6-487a-9832-7e5798f4c9bb": {
+      "type": "main-faq",
+      "blocks": {
+        "f174a5fe-89d6-4138-810b-e38cbd4b0c41": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Do the modular pieces attach together?",
+            "answer": "<p>Yes, all of our modular pieces are connected by strong metal brackets that prevent them from sliding and separating.</p>"
+          }
+        },
+        "80b9d456-4b6d-4119-bb2e-368749302aa2": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Can I convert armless seats, corner seats, and ottomans into each other?",
+            "answer": "<p>Yes, you can! However, different types of seats may require different components. For example, if you are attempting to convert a Classic Armless Seat into a Classic Corner Seat, you would need two additional Modular Sides - a 30” Side and a 47” Side. You are able to return the 38” Side that you won’t be needing.</p><p>In order to assist you with such configuration conversion, please reach out to <a href=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a> - our team will be able to help you advise on the next steps and send you any invoice needed.</p>"
+          }
+        },
+        "2ff5b626-b198-498d-875e-3373127aa4c2": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What are your seat cushions made of?",
+            "answer": "<p>Our seat cushions are made out of layers of premium foam (similar to high-end mattresses) that are engineered to give the perfect balance between comfort & support.</p><ul><li><strong>MEMORY FOAM BLEND</strong>: super soft, high-density memory foam layer that provides extra comfort and bounce to your seat.</li><li><strong>HIGH-RESILIENCY FOAM</strong>: the highest-grade polyurethane foam that is extremely elastic, distributes pressure equally across an entire surface and is extremely durable (can last &gt;10 years).</li></ul><p>Our cushion foam layers are then wrapped with ultra-fine Down Alternative and encased in shell casing. Unlike feather-filled cushions, our Down Alternative-filled cushions are hypoallergenic, vegan, cruelty-free, and do not require constant fluffing.</p>"
+          }
+        },
+        "41d75e36-aad4-41c2-9cc0-62b8286d171b": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What is the foam density rating of your cushions?",
+            "answer": "<p>Foam Density rating is 3.2 Lbs Per Cubic Foot (PCF). In the scale of cushion ratings, this places our cushions in the high-longevity, high-density category.</p>"
+          }
+        },
+        "b66a8d88-3c43-4759-a709-3b3a0b54e4a0": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Do your cushions require constant fluffing?",
+            "answer": "<p>They do not! Our cushions use premium Down Alternative which makes it hypoallergenic, vegan, and cruelty-free. Unlike down feather sofas, our cushions maintain its shape well and don't need to be constantly fluffed after you sit down.</p><p>In addition, seat cushions contain a memory foam blend - a blend between memory foam and high-density foam - formulated so that they always bounce back and retain their shape after sitting. This means you won’t need to worry about fluffing them to try and make them look full.</p>"
+          }
+        },
+        "029cc79e-11f7-47e1-affe-0c6808fe1722": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Do the cushions slide around? Are they secured to the base?",
+            "answer": "<p>No, they do not! Our seat cushions are secured to the base with velcro. This allows you to be able to sit and lounge on your sofa without fearing that the seat cushions with slide.</p><p>Please note: the older versions of our sofa did not come with any velcro. If you purchased our older model, you are eligible for a cover upgrade where you would find that the seat cushion covers are secured to the base via velcro. Feel free to reach out to <a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> for any cover upgrades.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "f174a5fe-89d6-4138-810b-e38cbd4b0c41",
+        "80b9d456-4b6d-4119-bb2e-368749302aa2",
+        "2ff5b626-b198-498d-875e-3373127aa4c2",
+        "41d75e36-aad4-41c2-9cc0-62b8286d171b",
+        "b66a8d88-3c43-4759-a709-3b3a0b54e4a0",
+        "029cc79e-11f7-47e1-affe-0c6808fe1722"
+      ],
+      "settings": {
+        "heading": "Modularity & Cushions"
+      }
+    },
+    "main_faq_HdixbL": {
+      "type": "main-faq",
+      "blocks": {
+        "question_answer_UHeTPk": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What kind of foam do we use in our seats?",
+            "answer": "<p>We use 100% Quick Dry Foam for all of our outdoor seat cushions. Quick dry foam has been specifically designed for outdoor use in residential applications.</p>"
+          }
+        },
+        "question_answer_C4qwrX": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Do the fabrics fade under direct sun exposure? Will it vary depending on where I live?",
+            "answer": "<p>If your fabrics have been exposed to direct sunlight for extended periods of time you may find that your fabrics will fade to varying degrees. Where you live and how you care for the fabric can have a direct impact on how likely your fabrics are to fade with time.</p>"
+          }
+        },
+        "question_answer_EBbrTE": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How can I protect my fabrics and teak furniture from the weather?",
+            "answer": "<p>When it comes to rain and inclimate weather, we recommend using your dedicated 7th Avenue protective covers to shield your frames and fabrics from the elements. Covering your frames and cushions via the protective covers is highly recommended when your outdoor furniture is not in use and will help lead to a long healthy life for your teak.</p>"
+          }
+        },
+        "question_answer_AmYzBe": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Does your solid teak frame require special care and maintenance?",
+            "answer": "<p>Caring for your teak is like caring for a new car. If you want to keep your solid Teak frames in showroom condition you can regularly oil the frames, but if you want to let the teak weather to a beautiful silvery patina you can do that too. Either way, regular cleaning and oiling is what we recommend via these simple care guidelines:</p><p><strong>Simple Cleaning:</strong> Grab a soft brush and make a<br/><br/>?˘mild soapy water to clean the furniture occasionally. Rinse with clean water and let it dry fully.</p><p><strong>Re-oiling:</strong> Apply teak oil once or twice a year to maintain the wood’s natural protection and appearance.</p><p><strong>Avoid Harsh Chemicals:</strong> Stick to gentle cleaners specifically designed for teak to avoid damaging the wood.</p><p><strong>Covering:</strong> Protect the furniture with covers during extreme weather or when not in use to extend its life.</p><p><strong>Sanding:</strong> If the surface becomes rough, lightly sand it with fine-grit sandpaper and apply teak oil to refresh its look.</p><p><strong>Power Washing:</strong> We do not recommend using any power washer to clean your wood furniture.</p>"
+          }
+        },
+        "question_answer_gHimnR": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Will Solid Teak wood fade over time?",
+            "answer": "<p>Yes, solid teak wood can gradually change in color when exposed to the elements for long periods of time. Teak will typically fade from its original golden brown to a silvery-gray patina with time, this is part of the natural aging process that occurs due to exposure to sunlight and weather conditions. <br/><br/>To maintain the original color of your Teak frames, we strongly recommend regular treatment of teak sealer or oil at the start and end of each season to slow this natural fading process.</p>"
+          }
+        },
+        "question_answer_FPaU9i": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Why do my frames vary in color and texture?",
+            "answer": "<p>Our outdoor furniture is crafted from solid Indonesian teak, renowned for its durability and aesthetic appeal. Each piece of teak wood is unique, exhibiting its own distinctive characteristics. This variation is a testament to the natural beauty of the wood, where differences in grain, color, knots, and overall texture are not just expected but celebrated.</p><p>These individual traits ensure that no two pieces are exactly alike, allowing each item of furniture to represent a unique story of the tree from which it was sourced. The high quality of our teak not only enhances the visual appeal of your outdoor space but also ensures lasting beauty and durability.</p>"
+          }
+        },
+        "question_answer_Gx9b9z": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Why do we use Solid Teak wood for our frames?",
+            "answer": "<p>Solid Teak is chosen for its superior durability and resistance to the elements, making it ideal for outdoor furniture. Its natural oils provide inherent pest resistance and decay prevention, ensuring lasting beauty and functionality.</p>"
+          }
+        },
+        "question_answer_VLKxdT": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Is Solid Teak wood susceptible to moisture, warping, rotting, and splitting?",
+            "answer": "<p>Changes in weather and moisture can cause the wood to crack and split over time, but it does not effect the structural integrity or quality of the wood. Seasonally oiling, covering and properly caring for the wood will reduce the likelihood of wood cracks and splitting and will help preserve the look of your teak furniture.</p>"
+          }
+        },
+        "question_answer_eiUWgV": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Where is your Solid Teak sourced from? Is it sustainably sourced?",
+            "answer": "<p>Our Solid Teak wood is responsibly sourced from certified sustainable forests in Indonesia. We are committed to environmental stewardship, ensuring that our teak is harvested following the highest ecological and social standards. This ensures not only the quality of the wood but also supports sustainable forest management practices.</p>"
+          }
+        },
+        "question_answer_XDaDr6": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How heavy is the Solid Teak furniture?",
+            "answer": "<p>Solid Teak furniture is known for its robustness and durability, which means it can be heavier than furniture made from other types of wood. The weight of our pieces range from 20lbs for our backs to 70lbs for our seat frames. Our teak furniture is substantial enough to ensure stability and resist being moved by strong winds, yet still manageable to rearrange for those looking to refresh their outdoor setup. </p>"
+          }
+        },
+        "question_answer_i4kUPq": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Do I need to store Solid Teak Outdoor Furniture indoors in the winter?",
+            "answer": "<p>No, it's not necessary to store Solid Teak furniture indoors during winter. Teak's natural oils make it highly resistant to weather and temperature changes. However, covering your furniture is strongly recommended to help maintain its appearance and prolong its life. Covering your teak to protect it from the elements will also help to reduce the likelihood of cracks and splits over time due to weathering.</p>"
+          }
+        },
+        "question_answer_fbYtwL": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Can I change or add to my configuration in the future? How do they connect?",
+            "answer": "<p>Yes, our sofas are endlessly modular, allowing you to add to them anytime in the future. They are held together through strong screw connectors for the backs and sides and metal brackets between the seats, ensuring easy adjustments and secure configurations as your needs evolve.<br/></p>"
+          }
+        },
+        "question_answer_FBPkif": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Will you have more fabric options in the future?",
+            "answer": "<p>Yes, we are continually expanding our color options to better meet our customers preferences. Stay tuned for updates on new color releases!</p>"
+          }
+        },
+        "question_answer_EgXxcH": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Is the fabric water-repellent and stain-resistant?",
+            "answer": "<p>Yes, as with all of our indoor fabrics, our Outdoor fabrics are designed to be water-repellent and stain-resistant! This makes them ideal for everyday use and outdoor environments. This ensures longevity and easy maintenance of your outdoor furniture for years to come.</p>"
+          }
+        },
+        "question_answer_PDjGqD": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Is your fabric OEKO-TEX certified? How about GreenGuard Gold Certified?",
+            "answer": "<p>Yes, our fabrics are <strong>BOTH</strong> OEKO-TEX certified and GreenGuard Gold Certified, ensuring they meet high safety and environmental standards. These certification guarantees that our fabrics are free from harmful chemicals, making them safe for you and your family while providing you with maximum protection from spills and stains.</p>"
+          }
+        },
+        "question_answer_MqJNJC": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What is the rub count of the fabric?",
+            "answer": "<p>Our fabrics are designed with durability in mind, featuring a rub count of up to 50,000. This high rub count indicates strong resistance to wear and tear, ensuring our furniture can handle frequent use and maintain its appearance over time.<br/></p>"
+          }
+        },
+        "question_answer_Y4TLG3": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What do I do if my fabrics get dirty?",
+            "answer": "<p>Don’t worry! Our fabrics are designed to be spilled on, used, and enjoyed. If a spill, scuff, or stain happens to find its way onto your fabrics, we have you covered.</p><p>For lighter dirt marks that appear to be sitting on the surface (e.g shoe scuff marks), a simple dry paper towel can be used to brush away the dirt. Start by grabbing a paper towel and bunching it up into a ball, then scrub the area in question with and against the grain. This should remove most of the light dirt and scuff marks from the fabric.</p><p>For marks that are slightly more stubborn, we recommend using gentle, wet wipes that contain mild cleaning agents such as Clorox wipes or baby wipes. These prove to be the most effective at cleaning small marks and scuffs without damaging the fabrics. Grab your wipe, bunch it into a ball and scrub the area in question with and against the grain to ensure that it fully covers the scuff. Once you have thoroughly scrubbed the area, let it sit and dry for a bit and you should see a noticeable improvement. Feel free to repeat this step again if needed.</p><p>Note: We do not recommend using concentrated stain or spot removers such as Folex because the chemicals in those sprays are highly concentrated and may cause discolorations as well as lessen the effect of the DWR coating.</p><p>For even more persistent marks, you can try spot-cleaning using paper towel, with a small amount of Dawn dish soap mixed with warm water. Pour a small amount of Dawn soap into a dish, mix it with warm water until it has a soapy consistency, then dip a towel into the water and let it soak. Once the towel is sufficiently soaked, scrub the area of the fabric that is in question with and against the grain. Once done, rinse the towel with warm water and scrub the fabric again with the wet towel to ensure no soap is left on the fabric. After the soap has been cleared from the fabric, we recommend letting the fabrics sit and air dry.</p>"
+          }
+        },
+        "question_answer_CLeck4": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Can I machine-wash my outdoor fabrics?",
+            "answer": "<p>Before washing your fabrics, we recommend attempting to spot-clean your fabrics. If spot cleaning does not work, proceed with washing your fabrics in a standard washing machine.</p><p>Washing your fabrics at home is easy. Simply remove the covers and throw them in your washing machine. Set your washing machine to ‘Gentle’ or ‘Delicate’ cycle, using cold water. Use any regular gentle detergent. Please do not use any bleach, bleach alternatives, or 3-in-1 pod with bleach as this may discolor fabrics. Please note: all of our cushion inserts are not washable - do not wash them inside the washing machine.</p><p>Once washing has been completed, we recommend air-drying your fabrics. No heat allowed. Hang-drying your fabrics overnight is recommended to allow for maximum drying time. You can also put your fabrics in the dryer but make sure to set it to ‘Tumble Dry - No Heat’. Putting the fabrics inside the dryer with any heat cycle will potentially damage and shrink the fabrics.</p><p>Once completed, you may proceed to steaming your fabrics to achieve that crisp showroom look. When steaming, we recommend steaming them gently from a distance of 3-6” to avoid direct contact with fabrics.</p>"
+          }
+        },
+        "question_answer_qtXHyK": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Do I need to be worried about sun exposure on my outdoor covers?",
+            "answer": "<p>Our proprietary fabrics are designed to withstand the world’s harshest element -  the sun.  They are rated to withstand 2,000 hours of UV Fastness. UV Fastness is a measure of how the fabric will withstand intense sun exposure.  For context, a typical performance outdoor fabric will have 800-1,000 hours of UV Fastness, making ours more than twice as resistant to the sun. </p>"
+          }
+        },
+        "question_answer_YEBYMa": {
+          "type": "question-answer",
+          "settings": {
+            "title": "Do I need to be worried if my cushions get wet? Will they get Mildew or Moldy and Rot?",
+            "answer": "<p>Our seat cushions are made out of <strong>Quick Dry Foam that is Mold, Rot, and Mildew Resistant. </strong>This special type of foam is commonly used in boats, yachts, and poolside settings. <strong>It does not retain water and dries very quickly. </strong>This is especially important if you live in a humid environment, or if you live near a body of water such as near the ocean or lakes, or if you have a lot of morning condensation.</p>"
+          }
+        },
+        "question_answer_EGGd7r": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How can I protect my fabrics from the elements when i’m not using them?",
+            "answer": "<p>We have you covered… literally! We offer outdoor protective covers that are specifically designed to shield your teak, cushions, and covers from the elements. They are available for purchase at any point in time - these are thick, waterproof covers that allow you to protect the sofa while it is not in use. Our Protective Covers are modular, meaning that you can protect any custom configuration that you make with us!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_answer_UHeTPk",
+        "question_answer_C4qwrX",
+        "question_answer_EBbrTE",
+        "question_answer_AmYzBe",
+        "question_answer_gHimnR",
+        "question_answer_FPaU9i",
+        "question_answer_Gx9b9z",
+        "question_answer_VLKxdT",
+        "question_answer_eiUWgV",
+        "question_answer_XDaDr6",
+        "question_answer_i4kUPq",
+        "question_answer_fbYtwL",
+        "question_answer_FBPkif",
+        "question_answer_EgXxcH",
+        "question_answer_PDjGqD",
+        "question_answer_MqJNJC",
+        "question_answer_Y4TLG3",
+        "question_answer_CLeck4",
+        "question_answer_qtXHyK",
+        "question_answer_YEBYMa",
+        "question_answer_EGGd7r"
+      ],
+      "settings": {
+        "heading": "Outdoor - Solid Teak"
+      }
+    },
+    "a8d1dd99-8233-49bd-8bcb-5562ed0cb0cb": {
+      "type": "main-faq",
+      "blocks": {
+        "f910aa16-368f-4209-90f8-e292a922e3d9": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What is your return policy?",
+            "answer": "<p>Within 10 days of the complete delivery of your order, we offer free returns.  The full merchandise value will be refunded, minus any shipping/assembly fees. Refunds will typically be refunded within 72 hours of the product being received & quality-checked at our warehouse.</p><p>Please note: we are only able to process refunds to the original payment method.</p>"
+          }
+        },
+        "67c5dc65-a6c2-494c-84c9-81ed46c958f2": {
+          "type": "question-answer",
+          "settings": {
+            "title": "How do I process an exchange?",
+            "answer": "<p>We do not offer full product exchanges.  However, we do offer free <strong>fabric</strong> exchanges if you’d like to change your fabric <strong>color</strong> within 30 days of receiving your sofa.  If you are interested in exchanging your fabrics for a different color, please reach out to our Support team at <a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> or your dedicated Sales Consultant to initiate your fabrics exchange.</p><p>Please note: there will be a quoted lead time for fabric exchanges and fabric exchanges are limited to 1 exchange per order. Due to limited fabric availability, quoted lead time for fabric exchanges may be longer than the lead time shown on the website for new orders.</p>"
+          }
+        },
+        "59eb139a-9cc1-4b9b-ab75-00076a8b86c1": {
+          "type": "question-answer",
+          "settings": {
+            "title": "I’d like to upgrade to an Extra Deep. How do I do so?",
+            "answer": "<p>Great choice, you won’t be disappointed! Our Extra-Deep seat cushion provides one of the best lounging experiences in the market.</p><p>Please contact your dedicated Sales Consultant or our sales team at <a href=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a> in order to receive a quote and lead time for upgrading to Extra-Deep seating.</p>"
+          }
+        },
+        "2973f2b5-36c0-4133-9883-61868194656f": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What is your warranty policy?",
+            "answer": "<p>We have a Limited Lifetime Warranty on all of our modular sofas. This means that we have a full warranty on all construction.  Construction refers to the frame, wood, springs, and hardware. Our warranty does not cover wear & tear on our cushions and fabrics.</p><p>However, if there are any manufacturer defects on cushions and fabrics, we are more than happy to assist and replace them as necessary.  For assistance on any warranty replacements, please contact our <a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> email for assistance.</p><p>Please note: original receipt or order number is required for all warranty claims. All products purchased via secondary or secondhand market will have their warranties voided and not be eligible for warranty replacements.</p>"
+          }
+        },
+        "question_answer_z6tnja": {
+          "type": "question-answer",
+          "settings": {
+            "title": "What is the warranty policy for your Outdoor Seating?",
+            "answer": "<p>We have a Limited Lifetime Warranty on all of our Outdoor modular sofas. This means that we have a full warranty on all construction related components.  Construction refers to the teak and hardware. Our warranty does not cover wear & tear on our cushions, fabrics, cracks or any cosmetic blemishes that do not impact the structural integrity of the teak frames.  You can read more about our Outdoor warranty <a href=\"https://7thavenue.co/pages/outdoor-warranty\" title=\"https://7thavenue.co/pages/outdoor-warranty\"><strong>here</strong></a><strong>.</strong></p><p>However, if there are any manufacturer defects on cushions and fabrics, we are more than happy to assist and replace them as necessary.  For assistance on any warranty replacements, please contact our <a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> email for assistance.</p><p>Please note: original receipt or order number is required for all warranty claims. All products purchased via secondary or secondhand market will have their warranties voided and not be eligible for warranty replacements.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "f910aa16-368f-4209-90f8-e292a922e3d9",
+        "67c5dc65-a6c2-494c-84c9-81ed46c958f2",
+        "59eb139a-9cc1-4b9b-ab75-00076a8b86c1",
+        "2973f2b5-36c0-4133-9883-61868194656f",
+        "question_answer_z6tnja"
+      ],
+      "settings": {
+        "heading": "Returns, Exchanges, & Warranty"
+      }
+    }
+  },
+  "order": [
+    "b11570cc-69d6-4c8b-a470-a0a8bd005cd1",
+    "main_faq_r3XAmL",
+    "f68e62bf-cae3-4a2e-9489-35432997df6e",
+    "071fd506-6e4f-475c-af9a-e5e8ba7f18dd",
+    "48f2058c-cb90-40df-a4e0-db506686a9ff",
+    "03c7014d-5796-428e-890a-236b22254596",
+    "ce95b115-3302-44fa-bdb9-0fcff76265b2",
+    "fd802dfc-3129-4fde-bf7e-cae538dbe7b0",
+    "9cf23b67-875f-47a9-95c6-9ac24a286278",
+    "2615b372-c60e-414c-b237-b34fa88cd09e",
+    "7f7e8354-9d96-458a-beab-b9828d3e4da9",
+    "aacf1a02-0a62-4c97-8c81-65537768fa34",
+    "a59fba36-b274-4b54-8783-88bec87f3735",
+    "6fe34877-b1da-4984-b89d-c9d57673135d",
+    "7c6dde0e-024b-4599-8a55-5d1eb89e6bd4",
+    "90bd793e-6bc6-487a-9832-7e5798f4c9bb",
+    "main_faq_HdixbL",
+    "a8d1dd99-8233-49bd-8bcb-5562ed0cb0cb"
+  ]
+}

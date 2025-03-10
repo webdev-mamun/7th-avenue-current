@@ -1,0 +1,115 @@
+<div class="article article-main">
+  <div class="reading-progress-indicator">
+    <progress></progress>
+  </div>
+
+  {% if article.image != blank %}
+  <div class="article-image-container">
+    {{ article.image | image_url: width: 1920 | image_tag: width: 1920, class: 'article-image', loading: 'lazy' }}
+  </div>
+  {% endif %}
+  <div class="article-content-container">
+    <div class="article-content-header">
+      <div class="article-content-header-inner">
+        <p class="artile-category">
+          <span class="align-top-paddign">{{ blog.title | link_to: blog.url }}</span>
+          {% if article.tags[0] != blank %}
+            <span class="article-category-icon">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+            	 viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+                <line fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" x1="26" y1="16" x2="4" y2="16"/>
+                <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" points="18,7.5 26.5,16 18,24.5 "/>
+              </svg>
+            </span>
+            <span class="align-top-paddign">{{ article.tags[0] | link_to_tag: article.tags[0] }}</span>
+          {% endif %}
+        </p>
+      <h1 class="article-title">{{ article.title }}</h1>
+      <div class="article-author-and-date">
+        {%- if article.author -%}
+         <p class="article-author">
+           {%- if article.user.image != blank -%}
+            <span class="article-author-image">
+              {{ article.user.image | image_url: width: 20 | image_tag }}
+            </span>
+           {%- else -%}
+             <span class="article-author-image">
+              <img src="https://cdn.shopify.com/s/files/1/0602/7195/2115/files/Logo_-_Borders.svg?v=1637126699" alt="7th avenue" width="100%" height="100%" loading="lazy">
+             </span>
+           {%- endif -%}
+           <span class="align-top-paddign" style="color: #032E6B;">{% if article.author == 'Billy Shaw' %}Team 7th Avenue{% else %}{{ article.author }}{% endif %}</span>
+         </p>
+        {%- endif -%}
+        <p class="article-date">
+          <span class="article-icon">
+            <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>calendar [#1322]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-60.000000, -2319.000000)" fill="currentColor"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M21.971246,2167 L5.99680511,2167 L5.99680511,2163.971 C5.99680511,2163.435 6.43111022,2163 6.96625399,2163 L7.99361022,2163 L7.99361022,2165 L9.99041534,2165 L9.99041534,2163 L17.9776358,2163 L17.9776358,2165 L19.9744409,2165 L19.9744409,2163 L20.9728435,2163 C21.5239617,2163 21.971246,2163.448 21.971246,2164 L21.971246,2167 Z M21.971246,2176 C21.971246,2176.55 21.5219649,2177 20.9728435,2177 L6.99520767,2177 C6.44408946,2177 5.99680511,2176.552 5.99680511,2176 L5.99680511,2169 L21.971246,2169 L21.971246,2176 Z M4.06389776,2176.761 C4.06389776,2177.865 5.02136581,2179 6.12360224,2179 L22.0980431,2179 C23.201278,2179 24,2177.979 24,2176.761 C24,2176.372 23.9680511,2164.36 23.9680511,2163.708 C23.9680511,2161.626 23.6875,2161 19.9744409,2161 L19.9744409,2159 L17.9776358,2159 L17.9776358,2161 L9.99041534,2161 L9.99041534,2159 L7.99361022,2159 L7.99361022,2161 L5.99680511,2161 C4.8985623,2161 4,2161.9 4,2163 L4.06389776,2176.761 Z" id="calendar-[#1322]"> </path> </g> </g> </g> </g></svg>
+          </span>
+          <span class="align-top-paddign article-published">{{ article.published_at | date: "%d %b, %Y" }}</span>
+        </p>
+        {%- liquid 
+          assign total_words = article.content | strip_html | split: ' ' | size
+          assign words_per_minute = 200
+          assign read_time = total_words | divided_by: words_per_minute | plus: 1
+        -%}
+        {% if read_time != blank %}
+        <p class="article-read-time">
+          <span class="article-icon">
+            <svg fill="currentColor" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-9.03 -9.03 319.05 319.05" xml:space="preserve" stroke="currentColor" stroke-width="15.0494"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M150.494,0.001C67.511,0.001,0,67.512,0,150.495s67.511,150.493,150.494,150.493s150.494-67.511,150.494-150.493 S233.476,0.001,150.494,0.001z M150.494,285.987C75.782,285.987,15,225.206,15,150.495S75.782,15.001,150.494,15.001 s135.494,60.782,135.494,135.493S225.205,285.987,150.494,285.987z"></path> <polygon points="142.994,142.995 83.148,142.995 83.148,157.995 157.994,157.995 157.994,43.883 142.994,43.883 "></polygon> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg>
+          </span>
+          <span class="align-top-paddign">{{ read_time }} Minutes Read</span>
+        </p>
+        {% endif %}
+      </div>
+      </div>
+    </div>
+    <div class="article-content-body">
+      <div class="article-content-body-inner">{{ article.content }}</div>
+    </div>
+    <div class="article-social-share">
+      <div class="article-social-share-inner">
+        <p>Share</p>
+        <div class="article-social-share-icons">
+          <a title="{{ 'social.icons.facebook' | t }}" href="//www.facebook.com/sharer.php?u={{ shop.url }}{% if template contains 'blog' or template == 'article' %}{{ article.url }}{% else %}{{ product.url }}{% endif %}" class="facebook" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M25.932 12.4053C25.932 5.6982 20.2846 0.259888 13.3196 0.259888C6.35451 0.259888 0.707031 5.6982 0.707031 12.4053C0.707031 18.4672 5.31849 23.4918 11.3488 24.4037V15.9172H8.1456V12.4053H11.3488V9.7295C11.3488 6.6861 13.2323 5.00364 16.1129 5.00364C17.493 5.00364 18.9367 5.24113 18.9367 5.24113V8.23029H17.3455C15.7795 8.23029 15.2897 9.16614 15.2897 10.128V12.4053H18.7874L18.2288 15.9172H15.2903V24.4048C21.3206 23.4934 25.932 18.4688 25.932 12.4053Z" fill="#1E1E1E"/>
+            </svg>
+          </a>
+          <a title="{{ 'social.icons.twitter' | t }}"  href="//twitter.com/home?status={{ shop.url }}{% if template contains 'blog' or template == 'article' %}{{ article.url }}{% else %}{{ product.url }}{% endif %} via @{{ settings.twittername }}" title="Share on Twitter" target="_blank" class="twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="23" viewBox="0 0 28 23" fill="none">
+              <path d="M27.437 3.13004C26.4232 3.57055 25.3505 3.86077 24.2529 3.99153C25.4064 3.31607 26.2738 2.24298 26.6926 0.973532C25.602 1.61125 24.4109 2.05869 23.1701 2.29672C22.6477 1.74915 22.0193 1.31356 21.3233 1.0164C20.6272 0.719242 19.8779 0.566727 19.1212 0.568125C16.057 0.568125 13.5773 3.0118 13.5773 6.02417C13.5751 6.44317 13.6231 6.86093 13.7203 7.26852C11.5231 7.16552 9.37153 6.60501 7.40334 5.62285C5.43514 4.64068 3.69363 3.25851 2.2902 1.56473C1.79786 2.39475 1.53748 3.34177 1.53627 4.30683C1.53627 6.19872 2.52332 7.871 4.01373 8.85072C3.1307 8.82976 2.26577 8.59605 1.49235 8.16941V8.23698C1.49235 10.8834 3.40675 13.0849 5.94053 13.586C5.46406 13.7131 4.97306 13.7774 4.47994 13.7775C4.13005 13.7781 3.78095 13.7441 3.43772 13.6761C4.14211 15.8439 6.1922 17.4205 8.62068 17.4655C6.64737 18.9863 4.22466 19.8082 1.73334 19.8022C1.29113 19.8016 0.849323 19.7752 0.410156 19.7234C2.94458 21.3417 5.89066 22.1977 8.89771 22.1896C19.1094 22.1896 24.6881 13.8732 24.6881 6.66042C24.6881 6.42394 24.6819 6.18745 24.6707 5.9566C25.7535 5.18637 26.6902 4.2292 27.437 3.13004Z" fill="#1E1E1E"/>
+            </svg>
+          </a>
+          {% if template contains 'blog' or template contains 'article' %}
+          {% if article.image %}
+            <a title="{{ 'social.icons.pinterest' | t }}" target="blank" href="//pinterest.com/pin/create/button/?url={{ shop.url }}{{ article.url }}&amp;media={{ article.image.src | img_url: 'grande' | prepend: 'http:' }}" title="Pin This Article" class="pinterest">
+              <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                <path d="M13.2572 0.952393C6.18006 0.952393 0.44165 6.68823 0.44165 13.7623C0.44165 19.0063 3.59978 23.5126 8.11384 25.497C8.07951 24.6049 8.10811 23.5298 8.33696 22.5576C8.58298 21.5168 9.98468 15.5751 9.98468 15.5751C9.98468 15.5751 9.57275 14.7573 9.57275 13.5507C9.57275 11.6521 10.6712 10.2338 12.0443 10.2338C13.2115 10.2338 13.7721 11.1088 13.7721 12.1553C13.7721 13.3276 13.0227 15.0776 12.6393 16.7017C12.3189 18.0628 13.3202 19.1664 14.6647 19.1664C17.0904 19.1664 18.7268 16.0497 18.7268 12.3555C18.7268 9.54759 16.833 7.44883 13.3945 7.44883C9.50982 7.44883 7.08401 10.3482 7.08401 13.585C7.08401 14.7001 7.41585 15.4893 7.93076 16.0954C8.16532 16.3756 8.19966 16.49 8.11384 16.8104C8.05091 17.0448 7.91359 17.6109 7.85066 17.8397C7.76483 18.1657 7.50166 18.2801 7.20988 18.1599C5.41914 17.4279 4.58384 15.4721 4.58384 13.2647C4.58384 9.62764 7.65614 5.26429 13.7435 5.26429C18.6353 5.26429 21.8563 8.80415 21.8563 12.6014C21.8563 17.628 19.0586 21.3795 14.9393 21.3795C13.5547 21.3795 12.256 20.6305 11.8098 19.784C11.8098 19.784 11.066 22.7349 10.9058 23.3068C10.6369 24.2961 10.1048 25.2797 9.61852 26.0518C10.7982 26.3996 12.0216 26.5767 13.2515 26.5779C20.3288 26.5779 26.0671 20.842 26.0671 13.768C26.0671 6.69396 20.3344 0.952393 13.2572 0.952393Z" fill="#1E1E1E"/>
+              </svg>
+            </a>
+          {% endif %}
+          {% endif %}
+          {% if template contains 'product' or template contains 'index' %}
+          <a title="{{ 'social.icons.pinterest' | t }}" target="blank" href="//pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&amp;media={{ product.images[0] | product_img_url: '1024x1024' | prepend: 'http:' }}" title="Pin This Product" class="pinterest">
+            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+              <path d="M13.2572 0.952393C6.18006 0.952393 0.44165 6.68823 0.44165 13.7623C0.44165 19.0063 3.59978 23.5126 8.11384 25.497C8.07951 24.6049 8.10811 23.5298 8.33696 22.5576C8.58298 21.5168 9.98468 15.5751 9.98468 15.5751C9.98468 15.5751 9.57275 14.7573 9.57275 13.5507C9.57275 11.6521 10.6712 10.2338 12.0443 10.2338C13.2115 10.2338 13.7721 11.1088 13.7721 12.1553C13.7721 13.3276 13.0227 15.0776 12.6393 16.7017C12.3189 18.0628 13.3202 19.1664 14.6647 19.1664C17.0904 19.1664 18.7268 16.0497 18.7268 12.3555C18.7268 9.54759 16.833 7.44883 13.3945 7.44883C9.50982 7.44883 7.08401 10.3482 7.08401 13.585C7.08401 14.7001 7.41585 15.4893 7.93076 16.0954C8.16532 16.3756 8.19966 16.49 8.11384 16.8104C8.05091 17.0448 7.91359 17.6109 7.85066 17.8397C7.76483 18.1657 7.50166 18.2801 7.20988 18.1599C5.41914 17.4279 4.58384 15.4721 4.58384 13.2647C4.58384 9.62764 7.65614 5.26429 13.7435 5.26429C18.6353 5.26429 21.8563 8.80415 21.8563 12.6014C21.8563 17.628 19.0586 21.3795 14.9393 21.3795C13.5547 21.3795 12.256 20.6305 11.8098 19.784C11.8098 19.784 11.066 22.7349 10.9058 23.3068C10.6369 24.2961 10.1048 25.2797 9.61852 26.0518C10.7982 26.3996 12.0216 26.5767 13.2515 26.5779C20.3288 26.5779 26.0671 20.842 26.0671 13.768C26.0671 6.69396 20.3344 0.952393 13.2572 0.952393Z" fill="#1E1E1E"/>
+            </svg>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Article",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,86 @@
+{% if page.handle == 'sharemy7thavenue' %}
+  <style>
+  @media screen and (max-width: 740px){
+    .collection_info h1 {
+      font-size: 36px;
+    }
+  }
+    
+  @media screen and (max-width: 375px){
+    .collection_info h1 {
+      font-size: 25px;
+    }
+  }
+  </style>
+{% endif %}
+{% if page.handle == 'request-swatches' %}
+ <style>
+  #content.contact.noteform {
+    margin-top: 70px !important;
+  }
+  
+  #content.noteform {
+    margin-bottom: 70px  !important;
+  }
+  
+  @media screen and (max-width: 576px) {
+   #content.contact.noteform {
+     margin-top: 40px !important;
+      margin-bottom: 40px !important;
+    }
+  }
+
+   #content.contact.noteform div#contact-page {
+     margin-top: 0;
+   }
+ </style>
+{% endif %}
+<div data-section-id="{{ section.id }}" data-section-type="page-section">  
+  <div class="collection-banner" 
+       style="
+              background: {{ section.settings.title_bg }};
+              box-shadow: 0px 0px 0px 1px {{ section.settings.title_border_color }} inset;
+              ">      
+    <div class="collection_inner_contact">  
+      <div class="collection_info">
+        <h1 style="color: {{ section.settings.title_color }}">{{page.title}}</h1>
+      </div>
+    </div>
+  </div>  
+
+  <div id="content" class="row contact{% if page.handle == 'request-swatches' %} noteform{% endif %}">   
+    <div id="contact-page" class="desktop-12 tablet-12 mobile-12 contact_form_column" style="border-right: none;">
+      <div class="rte" style="min-height: 1px">
+        {{ page.content }}
+        
+      </div>
+    </div>
+  </div>
+</div>
+{% comment %}{% endcomment %}
+
+{% schema %}
+{
+    "name": "Page Template",
+    "settings": [			
+        {
+          "type": "color",
+          "id": "title_bg",
+          "label": "Banner Backgroung",
+		  "default": "#000"
+        },
+		{
+          "type": "color",
+          "id": "title_color",
+          "label": "Banner Color",
+		  "default": "#fff"
+        },
+		{
+          "type": "color",
+          "id": "title_border_color",
+          "label": "Banner Border Color",
+		  "default": "#fff"
+        }
+  ]
+}
+{% endschema %}

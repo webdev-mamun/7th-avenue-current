@@ -1,0 +1,173 @@
+{% if section.blocks.size > 0 %}
+
+<div class="collection__review collection__review--{{ section.id }}" data-section-id="{{ section.id }}" data-speed="{{ section.settings.speed }}">
+  <div class="row">
+    <h2 class="collection__review--title">{{ section.settings.title }}</h2>
+  </div>
+  <div class="collection__review--slider-wrapper">
+    <button class="slider__controller slider__controller--prev"></button>
+    <button class="slider__controller slider__controller--next"></button>
+    <div class="row">
+      <div class="collection__review--slider">
+        {% for block in section.blocks %}
+        <div class="collection__review--item">
+          <div class="collection__review--item_star">
+            <img src="{{ 'review-star.svg' | asset_url }}" alt="5 star" width="100%"
+              height="100%"
+              loading="lazy"/>
+          </div>
+          <p class="collection__review--item_text">“{{ block.settings.text }}”</p>
+          <p class="collection__review--item_title">-{{ block.settings.title }}</p>
+          <div class="collection__review--item_buyer">
+            <span><img src="https://cdn.shopify.com/s/files/1/0602/7195/2115/files/tick-mark.svg?v=1731908522"  width="100%"
+              height="100%"
+              loading="lazy"/></span><span>Verified Buyer</span>
+          </div>
+          {%- liquid
+          	assign image_1 = block.settings.image_1
+            assign image_2 = block.settings.image_2
+            assign image_3 = block.settings.image_3
+          -%}
+          {%- if image_1 != blank or image_2 != blank or image_3 != blank -%}
+          <div class="collection__review--gallery">
+            {%- if image_1 != blank -%}
+            <div class="collection__review--gallery-item">
+            	<a href="{{ image_1 | image_url: width: 500, height: 500 }}" data-fancybox="{{ block.id }}">
+                  <img src="{{ image_1 | image_url: width: 100, height: 100 , crop: 'center' }}" alt="{{ image_1.alt | escape }}"  width="100%"
+                    height="100%"
+                    loading="lazy">
+                </a>
+            </div>
+            {%- endif -%}
+            {%- if image_2 != blank -%}
+            <div class="collection__review--gallery-item">
+            	<a href="{{ image_2 | image_url: width: 500, height: 500 }}" data-fancybox="{{ block.id }}">
+                  <img src="{{ image_2 | image_url: width: 100, height: 100 , crop: 'center' }}" alt="{{ image_2.alt | escape }}"  width="100%"
+                    height="100%"
+                    loading="lazy">
+                </a>
+            </div>
+            {%- endif -%}
+            {%- if image_3 != blank -%}
+            <div class="collection__review--gallery-item">
+            	<a href="{{ image_3 | image_url: width: 500, height: 500 }}" data-fancybox="{{ block.id }}">
+                  <img src="{{ image_3 | image_url: width: 100, height: 100 , crop: 'center' }}" alt="{{ image_3.alt | escape }}"  width="100%"
+                    height="100%"
+                    loading="lazy">
+                </a>
+            </div>
+            {%- endif -%}
+          </div>
+          {%- endif -%}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <a href="{{ section.settings.btn_url }}" class="collection__review--btn">{{ section.settings.btn_text }}</a>
+  </div>
+  <div class="section-divider"></div>
+</div>
+{%- style -%}
+  .section-divider {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    border-bottom: 1px solid #D3D3D3;
+    margin-top: 30px;
+  }
+{%- endstyle -%}
+
+{% endif %}
+
+
+
+{% schema %}
+  {
+    "name": "Review",
+    "settings": [
+		{
+			"type":"textarea",
+			"id":"title",
+			"label":"Title",
+			"default":"Here’s what hundreds of satisfied customers have to say about their dream sofa"
+		},
+		{
+			"type":"url",
+			"id":"btn_url",
+			"label":"Button url"
+		},
+		{
+			"type":"text",
+			"id":"btn_text",
+			"label":"Button text",
+			"default":"SEE ALL REVIEWs"
+		},
+		{
+			"type":"text",
+			"id":"speed",
+			"label":"Auto play speed",
+			"default":"5000",
+			"info":"Millisecond"
+		}
+	],
+	"blocks": [
+		{
+			"type":"review",
+			"name":"Review",
+			"settings": [
+				{
+					"type":"textarea",
+					"id":"text",
+					"label":"Text",
+					"default":"The best online shopping experience for furniture. Innovative experiential showroom concept"
+				},
+				{
+					"type":"textarea",
+					"id":"title",
+					"label":"Title",
+					"default":"SUSAN B (SAN FRANCISCO, CA)"
+				},
+				{
+					"type":"image_picker",
+					"id":"image_1",
+					"label":"Image 1"
+				},
+				{
+					"type":"image_picker",
+					"id":"image_2",
+					"label":"Image 2"
+				},
+				{
+					"type":"image_picker",
+					"id":"image_3",
+					"label":"Image 3"
+				}
+			]
+		}
+	],
+    "presets": [
+	  {
+		"name": "Customer Reviews",
+        "blocks": [
+          {
+          	"type": "review"
+          },
+          {
+          	"type": "review"
+          },
+          {
+          	"type": "review"
+          },
+          {
+          	"type": "review"
+          },
+          {
+          	"type": "review"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

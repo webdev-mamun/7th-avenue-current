@@ -1,0 +1,489 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product-template",
+      "settings": {
+        "full_width": true,
+        "show_banner": false,
+        "enable_zoom": true,
+        "click_to_enlarge": true,
+        "image_section_size": "ultra",
+        "image_options": "static",
+        "make_gallery_sticky": true,
+        "make_atc_sticky": true,
+        "atc_animation_time": "0",
+        "atc_position": "top_gallery",
+        "thumbnails": "below",
+        "thumbs_to_show": 5,
+        "thumbs_to_show_mobile": 4,
+        "slide_controls": "arrows",
+        "product_description_title": "Details",
+        "product_description": "<ul>\n<li>Water-repellent & stain-resistant covers using PFAS-free DWR coating technology. Withstands & temporarily repels everyday household spills such as water, coffee, sodas, juices, soy sauce, energy drinks, pet urine, and even wine.</li>\n<li>Endlessly modular & re-arrangeable into any configuration. If your household grows, simply add a modular seat instead of buying a new sofa.</li>\n<li>Removable & washable covers allowing for covers to be cleaned when they get dirty. Dry clean or machine-wash at home in cold & delicate setting. Air dry or tumble dry no heat. No bleach.</li>\n<li>Removable covers also means that sofa color can be changed anytime you get bored or need a home makeover.</li>\n<li>Adjustable back cushion firmness. Choose between Medium-Soft or Medium Firm, or use our complimentary fill packets to customize your own back cushion firmness.</li>\n<li>Our cushions use premium Down Alternative which makes it hypoallergenic, vegan, and cruelty-free. Unlike down feather sofas, our cushions maintain its shape well and don't need to be constantly fluffed after you sit down.\n</li>\n<li>Memory foam blend cushions for extra comfort and that feeling of sinking into the seat.</li>\n<li>OEKO-TEX certified cover fabrics, meaning that they passed rigorous testings to be free from harmful chemicals that pollute skin and the environment.</li>\n<li>Free from \"forever chemicals\" or microplastics such as PFAS/PFOA/PFOS. They are also free from any toxic flame-retardant chemicals, formaldehyde, and others.</li>\n<li>Strong solid, hardwood frame that is sustainably-sourced and certified by the Forest Stewardship Council (FSC).</li>\n<li>Steel-reinforced legs & corner-joint blockings that give extra lifespan & durability.</li>\n<li>Lifetime durability of 10 years or more.</li>\n<li>\nQuick & easy assembly in 15-30 minutes per seat.\n</li>\n</ul>",
+        "product_return_title": "Shipping & Assembly",
+        "product_return": "<ul>\n<li>We currently ship all orders from our warehouse in Los Angeles, CA. We charge a flat shipping rate shown at checkout. </li>\n<li>We want to make you sure you love your sofa. We will cover all damages that occur in shipping or sofa parts that are missing.</li>\n<li>We will ship all modular pieces via FedEx. For safety, signature is required upon FedEx delivery unless requested otherwise.</li>\n<li>If you are located within 40 miles of Los Angeles, orders are delivered via our own Local Delivery team who will deliver, unbox, and assemble your sofa.</li>\n<li>For a small fee, you may also choose to include assembly with your order. Assembly will be conducted by a verified 3rd party assembler from TaskRabbit or other platforms.</li>\n<li>For shipping outside of the contiguous U.S or internationally, please contact our team at <u><a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a></u>\n</li>\n</ul>",
+        "product_tab_5_title": "Returns & Exchanges",
+        "product_tab_5_content": "<ul>\n<li>We offer 10-day free returns or refunds for any purchase. Shipping charges would apply and must return in original packaging.</li>\n<li>If you are unhappy with your fabric color selection, we offer 30-day free exchanges if you’d like to change your fabrics color. Fabric exchanges are limited to one-time per order.</li>\n<li>If you would like to add assembly to your fabric exchange, contact <u><a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> for additional information. Additional assembly fee will apply.</u>\n</li>\n<li>Love your sofa but need to return a single seat/ back/ arm? Contact <u><a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> for additional information.</u>\n</li>\n</ul>",
+        "description_background": "rgba(0,0,0,0)",
+        "show_vendor": false,
+        "show_sku": false,
+        "show_quantity_selector": false,
+        "product_variants": "swatches",
+        "color_swatch_options": "custom-image",
+        "back_in_stock": false,
+        "back_in_stock_text": "<p>Email me when this is available</p>",
+        "show_payment_button": false,
+        "show_social_share": false,
+        "product_description_position": "below",
+        "lower_description": "small",
+        "lower_description_background": "rgba(0,0,0,0)",
+        "show_product_size_chart": false,
+        "show_product_video": false,
+        "show_product_model": false,
+        "popup_text": "All of our back cushions are adjustable in firmness, even after delivery. If you’d like to increase your back cushion firmness, we can send you complimentary down alternative fill packets for you to firm up your back cushions",
+        "before_price": "Starting at",
+        "after_price": "with",
+        "month": "36",
+        "section_to_go": "#shopify-section-pdp-sofa-affirm",
+        "logo1": "shopify://shop_images/Shop_Pay_logo_-_Brandlogos.net_de4cd06b-8780-4a71-8c97-0aae2543abe5.svg",
+        "logo2": "shopify://shop_images/Affirm_logo_-_Brandlogos.net_4db516ad-e3bc-40e6-972f-6f6f8816a214.svg"
+      }
+    },
+    "artist_highlight": {
+      "type": "artist-highlight",
+      "blocks": {
+        "artist_1591486519227": {
+          "type": "artist",
+          "settings": {
+            "name": "Alexis Adam",
+            "city": "Los Angeles, California",
+            "description": "At a young age Alexis found photography as her creative outlet to express the way she saw the world. Her work lies in her fascination with light, color, and notions of beauty. She blends portraits, still life, and landscapes that feel timeless. Her mentors throughout the years have been renowned celebrity and beauty photographers, Ben Watts and Ben Hassett. Alexis’ passion is in travel, capturing  all the experiences and beauty the world has to offer through her lens",
+            "quote": "“To enter a creative space you must leave the city of your comfort and go into the wilderness of your intuition. Open your heart and soul to new and exciting wonders of the world.“"
+          }
+        },
+        "artist_1591485104381": {
+          "type": "artist",
+          "settings": {
+            "name": "Chris Murray",
+            "city": "Syracuse, New York",
+            "description": "Chris is a photographer working primarily in the landscape of my home, the woods, lakes, mountains, and streams of New York State. His interest in photographing landscapes is derived mainly from his love of the natural world and in the opportunity to create art in an environment that ceaselessly inspires and invigorates him.  Chris’ photography style tends towards the quiet and intimate, scenes within a scene with a creative focus on simplicity, detail, and strong graphic content.",
+            "quote": "\"Ultimately, I wish for my work to reflect what it is to me, a celebration of the creative experience in nature.\""
+          }
+        },
+        "artist_1591475021767": {
+          "type": "artist",
+          "settings": {
+            "name": "David Keenan",
+            "city": "Ballston Lake, New York",
+            "description": "David is a contemporary artist & military illustrator who draws inspiration from multiple styles such as impressionism, abstract, and pop art as well as artists like Van Gogh and Franz Kline. David has never been afraid to color outside of the lines, and firmly believes that artists should learn the rules of art and bend them.",
+            "quote": "\"I always try to step outside my visual boundaries with my art. l want to leave enough undone so the viewer can add their own detail and imagination to the painting\""
+          }
+        },
+        "artist_1591475663122": {
+          "type": "artist",
+          "settings": {
+            "name": "Elena Kulikova",
+            "city": "Los Angeles, California",
+            "description": "Elena Kulikova is a Los Angeles-based artist and photographer with a passion for capturing nature, including human nature. Her feminine sensibility and innovative processing push her photography work to new levels with her unique multi-layered mixed-media process which expands and deepens her work of art.",
+            "quote": "\"If so many men, so many minds, certainly so many hearts, so many kinds of love.\" - Leo Tolstoy"
+          }
+        },
+        "artist_1591496320032": {
+          "type": "artist",
+          "settings": {
+            "name": "JB Jakubek",
+            "city": "Huntington Beach, California",
+            "description": "JB Jakubek is a Southern California based commercial photographer. He found his calling in photography after following the traditional path of many career professionals. But with a desire to share his creative passion with the world, he embarked on the journey of becoming a professional photographer.\n\n\nWith every image he looks to intrigue the eye through the capture of a scene’s perfect composition, energy, light and line. With every closure of the shutter, he hopes to evoke emotion and take the viewer on a visual journey. His clients, to name a few, include Inc. Magazine, Rolling Stone Magazine, Hurley, Kevin Barry Fine Arts, HPA Design Group and Sotheby’s International Realty.",
+            "quote": "“Let’s make this world something great to look at!”"
+          }
+        },
+        "artist_1591476016416": {
+          "type": "artist",
+          "settings": {
+            "name": "Liam Roberts",
+            "city": "Cheltenham, United Kingdom",
+            "description": "Liam is an artist from Cheltenham, UK, dedicated to creating harmonious geometric forms. His background in design helps him to create visually pleasing, carefully constructed and balanced abstract works that appeal to a sense of order and structure, while maintaining a sense of playfulness.",
+            "quote": "\"My aim is to simplify the complexity of nature, mathematics, and architecture into bold and harmonious pieces for the world to enjoy.\""
+          }
+        },
+        "artist_1591482852151": {
+          "type": "artist",
+          "settings": {
+            "name": "Natalie Obradovich",
+            "city": "New York, New York",
+            "description": "Natalie Obradovich is a New York and Los Angeles-based travel photographer inspired by work in interior design, travel, and love of all things coastal. A graduate of University of Southern California, Natalie worked for the iconic Kelly Wearstler in Los Angeles followed by tenures in New York under other prestigious interior designers including Thad Hayes and Neal Beckstedt before continuing on with her own interior design firm. Her work has be featured in Architectural Digest, People, New York Magazine, as well as several other publications.",
+            "quote": "\"Born and raised in Manhattan Beach, California, my childhood set the stage for a lifelong love of documenting seaside living.\""
+          }
+        },
+        "artist_1591480818911": {
+          "type": "artist",
+          "settings": {
+            "name": "Nishiko",
+            "city": "Tokyo, Japan",
+            "description": "Nishiko is an contemporary pop artist hailing from Japan. As an artist she utilizes many traditional tools and techniques and blends them with modern technology. Nishiko's muse is the woman's spirit, an embodiment of her boldness, her power and grace, and her pain. Her paintings are a promise and at the same time a prayer to mankind that we may be  true to ourselves to claim a true life.",
+            "quote": "“Creators who don't want to change the world should quit.” - Jan Švankmajer"
+          }
+        },
+        "artist_1591476529076": {
+          "type": "artist",
+          "settings": {
+            "name": "Ross Cunningham",
+            "city": "Belfast, United Kingdom",
+            "description": "After studying architecture, Ross has worked in the creative industry for the past twenty years, with a primary focus on identity design and architectural photography. The influences of a rigorous approach to composition, along with the use of strong graphical elements are evident in much of his painting work. Pre-production workflow is often carried out on the computer, using skills developed in commercial design practice. Specific artistic influences cited are Richard Diebenkorn and Milton Avery.",
+            "quote": "\"Why talk when you can paint?\" - Milton Avery"
+          }
+        },
+        "artist_1591026062124": {
+          "type": "artist",
+          "settings": {
+            "name": "Samir Belhamra",
+            "city": "Paris, France",
+            "description": "Samir Belhamra is a France-based photographer & visual artist. Born to a modest family in a small neighborhood, he became fascinated with digital art as he discovered the internet, photography, and digital tools such as Photoshop that gave him an endless horizon to graphic universes. He then began to create art that was the culmination of technology and imagination. \n\nToday, his style of art is atypical, situated between reality and imagination.",
+            "quote": "\"With each piece, I hope that my artwork will help people to dream, travel, and change their perspective much the same way drawing and graffiti did for me growing up.\""
+          }
+        },
+        "artist_1591494126133": {
+          "type": "artist",
+          "settings": {
+            "name": "Sebastien Lory",
+            "city": "Paris, France",
+            "description": "Sebastien is an art photographer who lives in the ‘city of lights’, Paris. His passion for photography is driven by living in the most romantic city in the world. In Paris, the city invites you to indulge in the beauty of everyday life, cherishing the little moments, paying close attention to the little things in life. Sebastien’s art focuses on capturing cityscapes, landscapes, and architecture with a subtle touch of post-processing to make his art pop out without losing the beauty of the original.",
+            "quote": "“In photography, we can create our reality, a mix of the true reality and a creative process that unveils our emotions from that particular moment we shot.”"
+          }
+        },
+        "artist_1591480360727": {
+          "type": "artist",
+          "settings": {
+            "name": "Selvon Ramsawak",
+            "city": "New York, New York",
+            "description": "Selvon Ramsawak is a digital artist and photographer whose style focuses on capturing iconic spots throughout New York City, blending in the heart of the city while still telling the story of its surroundings.",
+            "quote": ""
+          }
+        },
+        "artist_1591482418570": {
+          "type": "artist",
+          "settings": {
+            "name": "Sophie Mazarro",
+            "city": "Los Angeles, California",
+            "description": "Born and raised, Sophie moved to Los Angeles at 16 and started her journey as an artist. Since then, Sophie has become a world-renowned visual artist, custom sneakerhead, and muralist. She specializes in one-of-a-kind street & pop art, imbued with political social commentary. Her client list and collaborations include the likes of Steve Aoki, Halle Berry, RedFoo, Dj Skee, The Bob Marley Estate, and the Simpsons to name a few. Her creations have been featured in exhibits with Obey Giant and in the world-famous Miami’s Art Basel.",
+            "quote": "\"I started painting when I was 6 years old and I did it wherever I could: whether it was on the walls of my nursery or doodling on my notebooks. I even got kicked out of classes for drawing on my desk.\""
+          }
+        },
+        "artist_1591476867946": {
+          "type": "artist",
+          "settings": {
+            "name": "Steely Cao",
+            "city": "Vancouver, Canada",
+            "description": "Steely Cao is a Vancouver-based photographer & digital artist originally hailing from China. She has a committed relationship to light and color in nature, and seeks to capture the sunset nightly from different angles in the world. Steely uses photography as a means to communicate with nature to the same extent as to her inner-self.",
+            "quote": "\"I hope that my artwork will inspire viewers to see the strength in the soft, the light in the dark, and to rediscover the deep connection with nature and within themselves.\""
+          }
+        },
+        "artist_1591478930784": {
+          "type": "artist",
+          "settings": {
+            "name": "Yasemen Asad",
+            "city": "Los Angeles, California",
+            "description": "Yasemen Asad is a Los Angeles based contemporary pop artist who originally hails from Azerbaijan. Working as an artist and a mother has led her to think more about everyone's place in the world, how we are all connected, and about the legacy she will leave for her children. This has played a significant role in her development as an artist and as a constant reminder of the importance of striking a balance between creativity and passion.",
+            "quote": "\"It's important for me to find a way to be constantly creating and expressing myself because I want my daughters to be empowered to do that as well.\""
+          }
+        },
+        "artist_1591484047824": {
+          "type": "artist",
+          "settings": {
+            "name": "Kenny Eicher",
+            "city": "Hudson Valley, New York",
+            "description": "Kenny Eicher is an impressionist ink artist and illustrator, residing in New York’s rural Hudson Valley. Holding a Bachelor of Fine Arts from the Pratt Institute, Kenny has built a successful 20-year career as an illustrator and graphic designer. Eicher’s art mostly centers around nature and wildlife, with the Hudson River School being a major early influence. Finding beauty in the imperfect, his sketched ink strokes bring an excitement to the work that energizes and surprises.",
+            "quote": "“There’s nothing more fulfilling in life than just sitting down and creating - deciding to make something that simply did not exist before.”"
+          }
+        },
+        "artist_1591484639680": {
+          "type": "artist",
+          "settings": {
+            "name": "Cintia Garcia",
+            "city": "Barcelona, Spain",
+            "description": "Cintia's artworks arise from the confrontation between she wants and she gets; a leap into uncertainty between the desire to do and the impotence of doing it. The body “oscillating” is in the middle. Each line is the trace of a movement. The work is constructed by accumulation, color on color and line upon line. The strokes are like a bridge between two shores, a web that links fragments.",
+            "quote": "\"Intensity is an essential component of my work and forms part of a vital dynamic of the art.\""
+          }
+        },
+        "artist_1594620070473": {
+          "type": "artist",
+          "settings": {
+            "name": "Jonathan Schute",
+            "city": "Los Angeles, California",
+            "description": "Jonathan Schute is a Los Angeles-based graphic designer and photographer. He is drawn to simplifying the world around him, especially in Los Angeles with its dynamic landscapes and abundant typography. Each composition begins with a photograph and is then reduced to flat artwork capturing its minimal essence. Jonathan is a graduate of the Rhode Island School of Design where he was taken with design and typography.",
+            "quote": "“Less is more.”<br>\n– Ludwig Mies van der Rohe"
+          }
+        },
+        "artist_1594787902260": {
+          "type": "artist",
+          "settings": {
+            "name": "Michael Hugue",
+            "city": "Miami, Florida",
+            "description": "Michael is a Miami-based artist who leverages various painting techniques for his craft: from dry brush, freestyle, and blending just to name a few, using a unique style of monochromatic. He identifies as both a painter and as a visual artist, creating pieces with the ultimate goal of capturing the attention of the viewer, asking them to momentarily halt the world around them; using art to divert the noise of the world to the inner reflection of the self.",
+            "quote": "\"I believe in the idea that form doesn't necessarily need function, but function has to work with form.\""
+          }
+        },
+        "artist_1598582956734": {
+          "type": "artist",
+          "settings": {
+            "name": "Mr. Oizif",
+            "city": "Champagne, France",
+            "description": "",
+            "quote": "\"Puisque je suis dessinateur et non pas écrivain, je laisse mes tableaux parler...\" - Mr. Oizif"
+          }
+        },
+        "artist_1598583187957": {
+          "type": "artist",
+          "settings": {
+            "name": "Pratiksha Muir",
+            "city": "Austin, Texas",
+            "description": "Pratiksha is an Austin based abstract and pop artist who specializes in creating modern and contemporary artwork. She is best known for her elegant yet edgy large-scale paintings. Since losing her father to ALS, Pratiksha’s ultimate goal is to replace white walls with life and color. Pratiksha has since left her corporate job and opened her art studio in Austin. A portion of her original artwork sales go to the ALS Association.",
+            "quote": "“Art is the best way I can live a life that outlives me”"
+          }
+        },
+        "artist_1598583369438": {
+          "type": "artist",
+          "settings": {
+            "name": "Phoebe Joynt",
+            "city": "Austin, Texas",
+            "description": "FeeBee is an Austin based artist, designer, and muralist.  She is known for incorporating modern, urban, and street art elements into her ever-developing pop art style. Her background of street art and illustration was greatly influenced during her time in Brooklyn, NY. FeeBee was born in upstate NY and received her Bachelor's degree in Communications Design from the Pratt Institute in New York City. She continues to explore what is possible with her creative style in the studio and on the streets. \nFeebee currently resides in Austin, TX.",
+            "quote": "\"My singular goal is to create something beautiful, eye-catching, and exciting for the viewer.\""
+          }
+        },
+        "artist_1598584759167": {
+          "type": "artist",
+          "settings": {
+            "name": "Madelyn Bass",
+            "city": "San Diego, California",
+            "description": "Hailing from San Diego, California, Madelyn has found that art is one of the best forms of sharing stories and perspectives. Over the past year, she has found an interest and passion for one-line design, inspired by different art eras of cubism and minimalism. She hopes to continue learning, growing, and being inspired by the simple things throughout this life-long creative journey.",
+            "quote": "\"How many pages have I produced? I don't care. Are they any good? I don't even think about it. All that matters is I've put in my time and hit it with all I've got.\" - Steven Pressfield, The War of Art"
+          }
+        },
+        "artist_1598586608593": {
+          "type": "artist",
+          "settings": {
+            "name": "Morgan Smalley",
+            "city": "Seattle, Washington",
+            "description": "Morgan Smalley is an abstract visual artist who incorporates vibrant colors, dramatic lines, and organic movement to portray a scene imaginable only in your most whimsical dreams. Without formal training, her experience stems from years of trial and error, experimentation, and a vivid imagination. Morgan has created a wide variety of collections that were inspired by her profound love and deep-rooted connection with nature - the mountains and waterways of her home in the Pacific Northwest.",
+            "quote": "“My skin has been lived in and the freckles and scars are my proof, my trophies fo battles lost and won and of my good fortune or lack thereof”"
+          }
+        },
+        "artist_1598586608594": {
+          "type": "artist",
+          "settings": {
+            "name": "Novi Lim",
+            "city": "Raleigh, North Carolina",
+            "description": "Ethereal and calming, Novi Lim's painting transports the audience to a land that is both dreamlike, yet familiar. Lim finds inspiration in the natural world and seeks to capture the essence through an organic and sensory creative process. Guided by instinctive feeling, Lim lets the movements of her paintbrush flow as she experiments with atmospheric lighting, transparency, and color. The result is an ambiguous landscape that treads between the subconscious and waking world.",
+            "quote": "“I love a good mystery and something that flows out of me will always be somewhat equivocal and cryptic. A flower might not be a flower, but it can be a flower. There’s also a dramatic allure to it -- which is just how I like things to be in real life.”"
+          }
+        },
+        "artist_1598586608595": {
+          "type": "artist",
+          "settings": {
+            "name": "Grace Strode",
+            "city": "Phoenix, Arizona",
+            "description": "Grace Strode is an American Photographer and Travel Designer based in Phoenix, Arizona. Her work captures the natural beauty of the under-captured and raw American landscape and the primal energy of nature itself. A world traveler and lover of nature, Grace finds peace in capturing the most natural of environments.",
+            "quote": "\"Art has the ability to transport you and to take you on the trip of a lifetime.\""
+          }
+        },
+        "artist_1598586608596": {
+          "type": "artist",
+          "settings": {
+            "name": "Adam Zaff",
+            "city": "Los Angeles, CA",
+            "description": "Adam Zaff is a Los Angeles-based photographer specializing in travel, nature, and landscape photography. He began shooting film photography 17 years ago while in secondary school, an experience that has proved vital to his understanding of light and exposure. Whether shooting in his native city of Los Angeles, or traveling the world, he almost always has a camera at his side.",
+            "quote": "\"With a unique perspective, coupled with a passion for the medium I create striking and emotionally charged images which transport the viewer, whatever their background.\""
+          }
+        },
+        "artist_1598586608597": {
+          "type": "artist",
+          "settings": {
+            "name": "Hope Bainbridge",
+            "city": "California, USA",
+            "description": "Hope is an artist and textile designer based in Northern California. Having grown up in the foothills of the Sierra Nevada mountains, Hope continues to draw her inspiration from nature. After graduating, she began working for Leftbank Art under the artist name, Emma McCartney, where her pieces were selected by companies such as Crate & Barrel, Neiman Marcus, and Anthropologie.\nShe works with a variety of mediums including oils, acrylics, watercolors and digital design.",
+            "quote": ""
+          }
+        },
+        "artist_1598586608598": {
+          "type": "artist",
+          "settings": {
+            "name": "Jeff Poe",
+            "city": "Manhattan Beach, CA",
+            "description": "Jeff is a photographer based out of Manhattan Beach, CA.  Jeff has been traveling with his camera since before college and has been printing his work for over 15 years.  He enjoys the challenge of shooting everything from landscape photography, surreal night portraits, and events.  \n <br><br>\nHis love for photography started at an early age and as he began to travel more, it was a way for him to document his adventures.  Still constantly traveling, he has since been to over 18 countries and 40 states.  In his free time, you will find him playing beach volleyball, surfing, hiking, and checking out local museums and galleries.",
+            "quote": "“I’m inspired by the beauty and serenity of nature, and my goal is to bring that beauty to everyone”"
+          }
+        },
+        "artist_1598586608599": {
+          "type": "artist",
+          "settings": {
+            "name": "Kyle Sherry",
+            "city": "Santa Barbara, CA",
+            "description": "Born and raised in the midwest and a recent Santa Barbara transplant, my time in Southern California has been nothing short of a creative wonderland. Through photography and travel, I’ve fostered my love and creative eye for the natural world in the Pacific North West, the Santa Ynez Mountains, and the Sierras. Nature offers the opportunity to the world as it once was and as it is in its most raw form. Capturing that through my photography allows me to share how I see the world in its most natural state.",
+            "quote": "“My art consists of landscapes from all over the West Coast. I look for bright and unique colored sunsets, bold mountains, and views from within the forest. I want to help others feel the moods of nature and inspire them to explore.”"
+          }
+        }
+      },
+      "block_order": [
+        "artist_1591486519227",
+        "artist_1591485104381",
+        "artist_1591475021767",
+        "artist_1591475663122",
+        "artist_1591496320032",
+        "artist_1591476016416",
+        "artist_1591482852151",
+        "artist_1591480818911",
+        "artist_1591476529076",
+        "artist_1591026062124",
+        "artist_1591494126133",
+        "artist_1591480360727",
+        "artist_1591482418570",
+        "artist_1591476867946",
+        "artist_1591478930784",
+        "artist_1591484047824",
+        "artist_1591484639680",
+        "artist_1594620070473",
+        "artist_1594787902260",
+        "artist_1598582956734",
+        "artist_1598583187957",
+        "artist_1598583369438",
+        "artist_1598584759167",
+        "artist_1598586608593",
+        "artist_1598586608594",
+        "artist_1598586608595",
+        "artist_1598586608596",
+        "artist_1598586608597",
+        "artist_1598586608598",
+        "artist_1598586608599"
+      ],
+      "settings": {
+      }
+    },
+    "related_product_by_vendor": {
+      "type": "related-product-by-vendor",
+      "settings": {
+        "product_recommendations_heading": "More works by"
+      }
+    },
+    "instagram_gallery": {
+      "type": "instagram-gallery",
+      "settings": {
+      }
+    },
+    "pdp_quality_detail_one": {
+      "type": "pdp-quality-detail-one",
+      "settings": {
+        "title": "Contemporary Art<span>\nfrom Gallery Artists</span>",
+        "text": "Every Grafiti piece is hand-selected from artists across the world. We set out to curate art that stand out in any room; they are bold, creative, and expressive - created by gallery artists whose work you won’t find in other home decor stores."
+      }
+    },
+    "advanced_content": {
+      "type": "advanced-content",
+      "blocks": {
+        "advanced_1584040414909": {
+          "type": "image-with-icon-and-text",
+          "settings": {
+            "title": "Premium Mahogany Wood Frames",
+            "svg1": "fsc-black.svg",
+            "text1": "Most wall art frames are made of styrofoam. Not ours. We use FSC-certified & handcrafted mahogany wood frames.",
+            "svg2": "cotton-black.svg",
+            "text2": "Our fine art canvases are 100% cotton and comes from a mill in France with over 150 years of crafting history.",
+            "svg3": "frame-black.svg",
+            "text3": "Our canvases are hand mounted on premium quality, solid-wood stretcher bars.",
+            "block_width": 85,
+            "image_position": "right",
+            "image_position_on_mobile": "top"
+          }
+        },
+        "advanced_1584040333393": {
+          "type": "image-with-text",
+          "settings": {
+            "title": "Handcrafted in Los Angeles",
+            "text": "<p>Each piece is produced and framed by hand by our team of experts with decades of combined craftsmanship experience.</p>\n\n<p>We use professional-grade fine art materials and Giclée printing techniques to protect and preserve the integrity of the artwork. Each piece is then coated with a fine art glaze that enriches colors, creates a water-resistant barrier, and prevents cracking.</p>",
+            "block_width": 85,
+            "image_position": "left",
+            "image_position_on_mobile": "top"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_1584040414909",
+        "advanced_1584040333393"
+      ],
+      "settings": {
+      }
+    },
+    "product_sizing_chart": {
+      "type": "product-sizing-chart",
+      "blocks": {
+        "1574983876863": {
+          "type": "sizing_hcart",
+          "settings": {
+          }
+        },
+        "1574983827135": {
+          "type": "sizing_hcart",
+          "settings": {
+          }
+        },
+        "1574983786881": {
+          "type": "sizing_hcart",
+          "settings": {
+          }
+        },
+        "1574983708168": {
+          "type": "sizing_hcart",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "1574983876863",
+        "1574983827135",
+        "1574983786881",
+        "1574983708168"
+      ],
+      "settings": {
+        "size_1": "18\"x24\"",
+        "size_2": "20\"x26\"",
+        "size_3": "22\"x28\"",
+        "size_4": "24\"x30\""
+      }
+    },
+    "review_widget_hnChH6": {
+      "type": "review-widget",
+      "blocks": {
+        "okendo_reviews_widget_G4eam8": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_G4eam8"
+      ],
+      "settings": {
+        "reviews_heading": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "artist_highlight",
+    "related_product_by_vendor",
+    "instagram_gallery",
+    "pdp_quality_detail_one",
+    "advanced_content",
+    "product_sizing_chart",
+    "review_widget_hnChH6"
+  ]
+}

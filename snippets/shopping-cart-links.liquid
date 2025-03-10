@@ -1,0 +1,38 @@
+{% if settings.show_multiple_currencies %}
+  <li class="currsw">
+    {% render 'currencies-switcher' %}
+  </li>
+{% endif %}
+
+{% if shop.customer_accounts_enabled %}
+  {% if customer  %}
+    <li class="cust">
+      <a href="/account">
+        <i class="la la-user" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="cust">
+      <a href="/account/logout" class="logout-link">
+        <i class="la la-user-times" aria-hidden="true"></i>
+      </a>
+    </li>
+  {% else %}
+    <li class="cust">
+      <a href="/account/login">Account</a>
+    </li>
+  {% endif %}
+{% endif %}
+<li class="seeks">
+  <a id="search_trigger" href="#">
+    {{- 'icon-search.svg' | inline_asset_content -}}
+    <!-- <img src="https://cdn.shopify.com/s/files/1/0602/7195/2115/files/search-interface-symbol.png?width=18" width="16" height="16" alt="search"> -->
+  </a>
+</li>
+<li>
+  <a href="/cart" {% if settings.ajax_cart_method == 'drawer' %}class="site-header__cart-toggle" aria-controls="CartDrawer" id="cart-icon-bubble" aria-expanded="false"{% endif %}>  
+    {{- 'icon-shopping-bag.svg' | inline_asset_content -}}
+    <!-- <img src="https://cdn.shopify.com/s/files/1/0602/7195/2115/files/shopping-bag.png?width=18" width="16" height="18" alt="cart"> -->
+    <span class="cart_count{% if cart.item_count == 0 %} hidden{% endif %}">{{ cart.item_count }}</span>
+  </a>
+</li>
+

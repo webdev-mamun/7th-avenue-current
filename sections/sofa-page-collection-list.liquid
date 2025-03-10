@@ -1,0 +1,218 @@
+{% if section.blocks.size > 0 %}
+{%- liquid 
+	assign top_gutter = section.settings.top_gutter
+	assign bottom_gutter = section.settings.bottom_gutter
+	assign top_gutter_m = section.settings.top_gutter_m
+	assign bottom_gutter_m = section.settings.bottom_gutter_m
+    assign top_divider = section.settings.topDivider
+    assign bottom_divider = section.settings.bottomDivider
+    assign title = section.settings.title
+    assign text = section.settings.text
+-%}
+<div class="sofa-page-collection-list__wrapper collection-list__wrapper--{{ section.id }}">
+  <div class="">
+  {% if top_divider %}
+  <div class="border-top">
+    <div class="section-divider"></div>
+  </div>
+  {% endif %}
+  {% if title != blank or text != blank %}
+  <div class="sofa-page-section-title__container">
+    {% if title != blank %}
+  	<h2 class="title">{{ title }}</h2>
+    {% endif %}
+    {% if text != blank %}
+    <p class="text">{{ text }}</p>
+    {% endif %}
+  </div>
+  {% endif %}
+  <div class="sofa-page-collection-list">
+	{% assign final_size = 0 %}
+    {% assign block_size = section.blocks.size %}
+    {% if section.settings.url != blank %}
+      {% assign block_size = block_size | plus: 1 %}
+    {% endif %}
+    {% assign block_mod = block_size | modulo: 3 %}
+  	{% for block in section.blocks %}
+	{%- liquid
+	assign collection = collections[block.settings.collection]
+    assign title = block.settings.title | default: collection.title
+	assign col_title = block.settings.title | default: collection.title 
+	assign show_desktop = block.settings.show_desktop
+	assign show_mobile = block.settings.show_mobile
+	assign title_size = col_title | size
+	if title_size > final_size
+	assign final_size = title_size
+	assign final_title = col_title
+	endif
+	-%}
+
+    <div data-size="{{ block_size }}" class="sofa-page-collection{% if show_desktop and show_mobile == false %} show-desktop{% endif %}{% if show_mobile and show_desktop == false %} show-mobile{% endif %}"> 
+      <a href="{{ collection.url }}">
+        <div class="sofa-page-collection__image">
+          {% render "basic-responsive-image", type: collection.image %}
+        </div>
+        <h3 class="sofa-page-collection__title">{{ title }}</h3>
+      </a>
+    </div>
+    {% endfor %}
+	{%- if section.settings.url != blank -%}
+    <div class="sofa-page-collection{% if block_mod == 1 %} sofa-page-collection-center{% endif %}">
+      <a href="{{ section.settings.url }}">
+        <div class="sofa-page-all-collection-btn">
+          <p class="sofa-page-all-collection-btn-text">{{ section.settings.btn_text }}</p>
+        </div>
+		<h3 class="sofa-page-collection__title">
+			{{ final_title }}
+		</h3>
+      </a>
+    </div>
+	{%- endif -%}
+  </div>
+  {% if bottom_divider %}
+  <div class="border-bot">
+    <div class="section-divider"></div>
+  </div>
+  {% endif %}
+  </div>
+</div>
+<style>
+	.collection-list__wrapper--{{ section.id }} {
+		padding-top: {{ top_gutter_m }}px;
+		padding-bottom: {{ bottom_gutter_m }}px;
+	}
+	@media screen and (min-width: 751px){
+		.collection-list__wrapper--{{ section.id }} {
+			padding-top: {{ top_gutter }}px;
+			padding-bottom: {{ bottom_gutter }}px;
+		}
+	}
+</style>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Collection list",
+    "settings": [
+		{
+			"type":"textarea",
+			"id":"title",
+			"label":"Title",
+			"default":"Shop Modular Seating"
+		},
+		{
+			"type":"textarea",
+			"id":"text",
+			"label":"Text",
+			"default":"Our best selling modular sofa configurations.<br>Find the perfect fit for every home size & style."
+		},
+		{
+			"type":"url",
+			"id":"url",
+			"label":"Button url"
+		},
+		{
+			"type":"text",
+			"id":"btn_text",
+			"label":"Button text",
+			"default":"SHOP ALL SEATING"
+		},
+        {
+          "type": "header",
+          "content": "Divider"
+        },
+        {
+          "type": "checkbox",
+          "id": "topDivider",
+          "label": "Top",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "bottomDivider",
+          "label": "Bottom",
+          "default": false
+        },
+		{
+			"type": "header",
+			"content": "Gutter"
+		},
+		{
+			"type": "range",
+			"id": "top_gutter",
+			"min": 0,
+			"max": 300,
+			"step": 5,
+			"unit": "px",
+			"label": "Top gutter",
+			"default": 40
+		},
+		{
+			"type": "range",
+			"id": "bottom_gutter",
+			"min": 0,
+			"max": 300,
+			"step": 5,
+			"unit": "px",
+			"label": "Bottom gutter",
+			"default": 50
+		},
+		{
+			"type": "range",
+			"id": "top_gutter_m",
+			"min": 0,
+			"max": 300,
+			"step": 5,
+			"unit": "px",
+			"label": "Top gutter (Mobile)",
+			"default": 20
+		},
+		{
+			"type": "range",
+			"id": "bottom_gutter_m",
+			"min": 0,
+			"max": 300,
+			"step": 5,
+			"unit": "px",
+			"label": "Bottom gutter (Mobile)",
+			"default": 25
+		}
+	],
+	"blocks": [
+		{
+			"name":"Collection",
+			"type":"collection",
+			"settings": [
+				{
+                    "type":"collection",
+                    "id":"collection",
+                    "label":"Collection"
+                },
+                {
+                  "type": "text",
+                  "id": "title",
+                  "label": "Title"
+                },
+				{
+					"type": "checkbox",
+					"id": "show_desktop",
+					"label": "Show desktop only",
+					"default": false
+				},
+				{
+					"type": "checkbox",
+					"id": "show_mobile",
+					"label": "Show mobile only",
+					"default": false
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name":"sofa collection list"
+		}
+	]
+  }
+{% endschema %}
+

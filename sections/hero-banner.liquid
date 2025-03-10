@@ -1,0 +1,67 @@
+{%- liquid 
+    assign image = section.settings.image 
+    assign image_mobile = section.settings.image_mobile
+    if section.settings.image_mobile == blank 
+    assign image_mobile = section.settings.image
+    endif
+    assign title = section.settings.title
+    assign btn_text = section.settings.btn_text 
+    assign btn_url = section.settings.btn_url
+-%}
+<section class="hero-banner hero-banner__{{ section.id }}">
+    <div class="hero-banner__image--desktop">
+        {% render "basic-responsive-image", type: image %}
+    </div>
+    <div class="hero-banner__image--mobile">
+        {% render "basic-responsive-image", type: image_mobile %}
+    </div>
+    <div class="hero-banner__content--wrapper">
+        <div class="hero-banner__content">
+            {%- if title != blank -%}
+            <h2 class="hero-banner__title">{{ title }}</h2>
+            {%- endif -%}
+            {%- if btn_url != blank -%}
+            <a href="{{ btn_url }}" class="hero-banner__btn">{{ btn_text }}</a>
+            {%- endif -%}
+        </div>
+    </div>
+</section>
+{% schema %}
+    {
+        "name": "Hero banner",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_mobile",
+                "label": "Image (Mobile)"
+            },
+            {
+                "type": "textarea",
+                "id": "title",
+                "label": "Title",
+                "default": "A good couch is <br />worth a thousand husbands."
+            },
+            {
+                "type": "url",
+                "id": "btn_url",
+                "label": "Button url"
+            },
+            {
+                "type": "text",
+                "id": "btn_text",
+                "label": "Button text",
+                "default": "SHOP SEATING"
+            }
+        ],
+        "presets": [
+            {
+                "name":"Hero banner"
+            }
+        ]
+    }
+{% endschema %}

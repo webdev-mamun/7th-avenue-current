@@ -1,0 +1,640 @@
+{% assign ordered_value = settings.color_option_order | split: ', ' %}
+{% assign popup_text = section.settings.popup_text %}
+{% assign option_name = option.name | downcase %}
+{% assign fabric_options = shop.metaobjects.fabric_options.values %}
+
+{% assign color_swatch_options = 'color, colour' | split: ', ' %}
+{% assign back_firmness = 'back firmness' %}
+{% assign seating_depth = 'seating depth' %}
+{% assign current_option = 'option' | append: option.position %}
+
+{% assign other_options = 'option1 option2 option3' | remove: current_option | strip | split: ' ' %}
+{% assign option_value = '' %}
+<style>
+  .swatch-element[data-value] {
+    order: {{ ordered_value.size }};
+  }
+  {%- for value in ordered_value -%}
+    {%- unless forloop.last -%}
+      .swatch-element[data-value*="{{ value }}"] {
+        order: {{ forloop.index }};
+      }
+    {%- endunless -%}
+  {%- endfor -%}
+</style>
+<div
+  class="swatch clearfix {{option_name}}"
+  data-option-index="{{ option.position }}"
+  data-other-options="{{ other_options | json }}"
+>
+  {% assign current_value = current_variant.title | split: '/' | first | strip %}
+  <h5>
+    <span class="option-position">{{ option.position }}</span>
+    {% if color_swatch_options contains option_name -%}
+      Choose Fabric Color
+    {% elsif back_firmness contains option_name -%}
+      Back Cushion Firmness
+    {% elsif seating_depth contains option_name -%}
+      Choose Seating Depth
+    {% elsif option_name == 'orientation' -%}
+      {{- option_name }} (FACING THE SOFA)
+    {% elsif option_name == 'size' -%}
+      {{- option.name }} | <span class="selected_size">Small</span>
+    {%- else -%}
+      {{- option.name }}
+    {% endif %}
+    {%- if option.name == 'Back Firmness' -%}
+      <div class="variant--info">
+        <span class="variant-info--icon" data-option="{{ option.name | handle}}">
+          <svg width="13" height="13" viewBox="7 7 18 18" fill="none" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M25 16C25 20.9696 20.9696 25 16 25C11.0295 25 7 20.9701 7 16C7 11.029 11.029 7 16 7C20.9701 7 25 11.0295 25 16ZM23 16C23 12.1341 19.8655 9 16 9C12.1336 9 9 12.1336 9 16C9 19.8655 12.1341 23 16 23C19.865 23 23 19.865 23 16ZM17.0535 20.7429H14.9455V15.4576H17.0535V20.7429ZM17.0535 13.1763H14.9455V11.2576H17.0535V13.1763Z" fill="#737373"></path>
+          </svg>
+        </span>
+        <div class="variant-info-wrapper">
+          <div class="variant-info-content">
+            {{ popup_text }}
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  </h5>
+  <div class="swatch-wrapper">
+    {% for value in option.values %}
+      {% assign option_value = value %}
+      {% assign image_url = value | handle | append: '.png' | file_url %}
+
+      {% assign css_color = value | split: ' ' | last | handle %}
+
+      {% capture id %}swatch-{{ option.position }}-{{ value | handle }}{% endcapture %}
+
+      {% assign available = false %}
+
+      {% for variant in product.variants %}
+        {% unless variant.available %}
+          {% continue %}
+        {% endunless %}
+
+        {% unless variant[current_option] == value %}
+          {% continue %}
+        {% endunless %}
+
+        {% unless variant[other_options[0]] == current_variant[other_options[0]] %}
+          {% continue %}
+        {% endunless %}
+
+        {% unless variant[other_options[1]] == current_variant[other_options[1]] %}
+          {% continue %}
+        {% endunless %}
+
+        {% assign available = true %}
+      {% endfor %}
+
+      {% for variant in product.variants %}
+        {% unless variant[current_option] == value %}
+          {% continue %}
+        {% endunless %}
+
+        {% unless variant[other_options[0]] == current_variant[other_options[0]] %}
+          {% continue %}
+        {% endunless %}
+
+        {% unless variant[other_options[1]] == current_variant[other_options[1]] %}
+          {% continue %}
+        {% endunless %}
+
+        {% assign variant_image_url = blank %}
+
+        {% if variant.image %}
+          {% assign variant_image_url = variant.image | image_url: width: 1000 %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign checked = '' %}
+
+      {% if current_variant[current_option] == value %}
+        {% assign checked = 'checked="checked"' %}
+      {% endif %}
+
+      {% capture radio_button %}
+      <input type="radio" id="{{ id }}" name="{{ option_name }}" value="{{ value | escape }}" data-position="{{ option.position }}" {{ checked }} />
+    {% endcapture %}
+
+      {% capture sold_out_image %}
+      <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" height="auto" width="auto">
+    {% endcapture %}
+
+      {% capture regular_swatch %}
+      <div class="swatch-element {{ option.name | handle }}__{{ option_value | handle }}{% unless available %} soldout{% endunless %}">
+        {{ radio_button }}
+
+        <label for="{{ id }}">
+          {{ value }}{% if value == 'Classic' and settings.classic-depth != blank %} {{ settings.classic-depth }}{% elsif value == 'Extra-Deep' and settings.extra-deep-depth != blank %} {{ settings.extra-deep-depth }}{% endif %}
+          {{ sold_out_image }}
+        </label>
+      </div>
+    {% endcapture %}
+      {% unless color_swatch_options contains option_name %}
+        {{ regular_swatch }}
+      {% endunless %}
+    {% endfor %}
+
+    {%- if color_swatch_options contains option_name -%}
+      <div class="color-swatch-tab">
+        {%- liquid
+          assign fabric_list = ''
+          assign color_group_list = ''
+
+          for variant in product.variants
+            if fabric_list == ''
+              assign fabric_list = variant.metafields.custom.fabric
+            else
+              assign fabric_list = fabric_list | append: ', ' | append: variant.metafields.custom.fabric
+            endif
+
+            if color_group_list == ''
+              assign color_group_list = variant.metafields.custom.color_group
+            else
+              assign color_group_list = color_group_list | append: ', ' | append: variant.metafields.custom.color_group
+            endif
+          endfor
+          assign fabric_list = fabric_list | split: ', ' | uniq
+          assign color_group_list = color_group_list | split: ', ' | uniq
+        -%}
+        <div class="color-swatch-tab-titles">
+          {% if fabric_list != '' %}
+            <a class="color-swatch-tab-title active" href="#fabric-type">By Fabric Type</a>
+          {% endif %}
+          {% if color_group_list != blank %}
+            <a class="color-swatch-tab-title" href="#shade">By Shade</a>
+          {% endif %}
+        </div>
+        <div class="color-swatch-tab-contents">
+          {% assign is_selected = false %}
+          {% if fabric_list != '' %}
+            <div class="color-swatch-tab-content active" id="fabric-type" data-type="fabric">
+              {% assign fabric_ordered_value = settings.fabric_option_order | split: ', ' %}
+              <style>
+                .swatch-color-groups-with-title[data-fabric-type] {
+                    --order: {{ fabric_ordered_value.size }};
+                 }
+                {%- for value in fabric_ordered_value -%}
+                  {%- unless forloop.last -%}
+                    .swatch-color-groups-with-title[data-fabric-type="{{ value }}"] {
+                      --order: {{ forloop.index }};
+                    }
+                  {%- endunless -%}
+                {%- endfor -%}
+              </style>
+              {% for fabric in fabric_list %}
+                {% if fabric != blank %}
+                  <div
+                    class="swatch-color-groups-with-title"
+                    data-fabric-type="{{ fabric }}"
+                    data-group-value="{{ fabric }}"
+                  >
+                    {% for value in option.values %}
+                      {% if value == current_value %}
+                        {% if value.variant.metafields.custom.fabric == fabric %}
+                          {% assign is_selected = true %}
+                        {% else %}
+                          {% assign is_selected = false %}
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                    <h5>
+                      <span class="fabric-option">
+                        <span class="fabric-option-label-wrapper">
+                          <span class="fabric-option-label">{{ fabric }}</span>
+                          <span class="fabric-option-divider{% if is_selected %} selected{% endif %}"> | </span>
+                        </span>
+                        <span class="fabric-option-info{% if is_selected %} selected{% endif %}">
+                          <span class="selected_color">{{ current_value }}</span>
+                          <span class="fabric__info-icon" title="More information about {{ option.name }}">
+                            <svg width="13" height="13" viewBox="7 7 18 18" fill="none" aria-hidden="true">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M25 16C25 20.9696 20.9696 25 16 25C11.0295 25 7 20.9701 7 16C7 11.029 11.029 7 16 7C20.9701 7 25 11.0295 25 16ZM23 16C23 12.1341 19.8655 9 16 9C12.1336 9 9 12.1336 9 16C9 19.8655 12.1341 23 16 23C19.865 23 23 19.865 23 16ZM17.0535 20.7429H14.9455V15.4576H17.0535V20.7429ZM17.0535 13.1763H14.9455V11.2576H17.0535V13.1763Z" fill="#737373"></path>
+                            </svg>
+                          </span>
+                        </span>
+                      </span>
+                    </h5>
+                    <div class="swatch-color-groups">
+                      {% for value in option.values %}
+                        {% liquid
+                          assign available = false
+                          assign option_value = value
+                          assign css_color = value | split: ' ' | last | handle
+                          assign fabric_options = shop.metaobjects.fabric_options.values
+                          assign fabric_info_found = false
+                          assign swatch_thumbnail = ''
+                          assign fabric_title = ''
+                          assign fabric_image = ''
+                          assign fabric_type = ''
+                          assign fabric_features = ''
+                          assign fabric_description = ''
+
+                          for fabric_option in fabric_options
+                            if value == fabric_option.title.value
+                              assign fabric_title = fabric_option.title.value
+                              assign fabric_image = fabric_option.image
+                              assign fabric_type = fabric_option.type
+                              assign fabric_features = fabric_option.features
+                              assign fabric_description = fabric_option.description
+
+                              if fabric_title != '' or fabric_image != '' or fabric_type != '' or fabric_features != '' or fabric_description != ''
+                                assign fabric_info_found = true
+                              endif
+
+                              assign swatch_thumbnail = fabric_option.thumbnail | image_url: width: 150
+                              if swatch_thumbnail == blank
+                                assign swatch_thumbnail = fabric_option.image | image_url: width: 150
+                              endif
+                              if value contains '(Limited Edition)'
+                                assign fabric_title = fabric_title | append: ' (Limited Edition)'
+                              endif
+                              break
+                            endif
+                          endfor
+
+                          if fabric_info_found == false
+                            for fabric_option in fabric_options
+                              if value contains fabric_option.title.value or fabric_option.title.value contains value
+                                assign fabric_title = fabric_option.title.value
+                                assign fabric_image = fabric_option.image
+                                assign fabric_type = fabric_option.type
+                                assign fabric_features = fabric_option.features
+                                assign fabric_description = fabric_option.description
+
+                                if fabric_title != '' or fabric_image != '' or fabric_type != '' or fabric_features != '' or fabric_description != ''
+                                  assign fabric_info_found = true
+                                endif
+
+                                assign swatch_thumbnail = fabric_option.thumbnail | image_url: width: 150
+                                if swatch_thumbnail == blank
+                                  assign swatch_thumbnail = fabric_option.image | image_url: width: 150
+                                endif
+
+                                if value contains '(Limited Edition)'
+                                  assign fabric_title = fabric_title | append: ' (Limited Edition)'
+                                endif
+
+                                break
+                              endif
+                            endfor
+                          endif
+
+                          assign value_found = false
+                          for variant in product.variants
+                            unless variant.available
+                              continue
+                            endunless
+
+                            unless variant[current_option] == value
+                              continue
+                            endunless
+
+                            unless variant[other_options[0]] == current_variant[other_options[0]]
+                              continue
+                            endunless
+
+                            unless variant[other_options[1]] == current_variant[other_options[1]]
+                              continue
+                            endunless
+
+                            assign available = true
+                          endfor
+
+                          for variant in product.variants
+                            if variant.option1 == value and variant.metafields.custom.fabric == fabric
+                              assign value_found = true
+                            endif
+                          endfor
+                        %}
+
+                        {% capture id %}fabric-swatch-{{ option.position }}-{{ value | handle }}{% endcapture %}
+
+                        {% assign checked = '' %}
+                        {% if current_variant[current_option] == value %}
+                          {% assign checked = 'checked="checked"' %}
+                        {% endif %}
+
+                        {% capture radio_button %}
+                      <input type="radio" id="{{ id }}" name="{{ option_name }}" value="{{ value | escape }}" data-group-value="{{ fabric }}" data-position="{{ option.position }}" {{ checked }} />
+                    {% endcapture %}
+
+                        {% capture sold_out_image %}
+                      <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" height="auto" width="auto">
+                    {% endcapture %}
+                        {% unless value == 'Custom Color'
+                          or value contains 'Custom Color'
+                          or value == 'Custom Fabric'
+                          or value contains 'Custom Fabric'
+                        %}
+                          {% if value_found %}
+                            <div
+                              class="swatch-element color{% unless available %} soldout{% endunless %}"
+                              data-value="{{ option_value }}"
+                            >
+                              {{ radio_button }}
+
+                              <label for="{{ id }}" class="{{ value | downcase | replace: ' ', '_'}}">
+                                {% if template contains 'collection' %}
+                                  {% assign swatch_type = settings.color_swatch_options %}
+                                {% elsif template contains 'product' or template contains 'index' %}
+                                  {% assign swatch_type = section.settings.color_swatch_options %}
+                                {% endif %}
+
+                                {% if swatch_type == 'variant-image' and variant_image_url != blank %}
+                                  <img class="variant-image" src="{{ variant_image_url }}" alt="{{ value }}" height="auto" width="auto">
+                                {% elsif section.settings.color_swatch_options == 'custom-image' %}
+                                  <div
+                                    class="custom-image css-color"
+                                    style="background-color: {{ css_color }};{% if swatch_thumbnail != '' %} background-image: url({{ swatch_thumbnail }});{% endif %}"
+                                  ></div>
+                                {% else %}
+                                  <div class="css-color" style="background-color: {{ css_color }};"></div>
+                                {% endif %}
+                              </label>
+                              {% if fabric_info_found %}
+                                <div class="option-info" style="display: none;">
+                                  {% if fabric_image != blank %}
+                                    <div class="variant-details-image">
+                                      <img
+                                        src="{{ fabric_image | image_url: width: fabric_image.width }}"
+                                        width="{{ fabric_image.width }}"
+                                        height="{{ fabric_image.height }}"
+                                      >
+                                    </div>
+                                  {% endif %}
+                                  <div class="variant-details">
+                                    {% if fabric_title != blank %}
+                                      <h5 class="variant-details-title">{{ fabric_title }}</h5>
+                                    {% endif %}
+                                    {% if fabric_type != blank %}
+                                      <h5 class="variant-details-title">{{ fabric_type }}</h5>
+                                    {% endif %}
+                                    {% if fabric_features != blank %}
+                                      <div class="variant-details-feature">
+                                        {% assign fabric_features = fabric_features | split: ',' %}
+                                        {% for feature in fabric_features %}
+                                          <span>{{ feature }}</span>
+                                        {% endfor %}
+                                      </div>
+                                    {% endif %}
+                                    {% if fabric_description != blank %}
+                                      <p class="variant-details-description">{{ fabric_description }}</p>
+                                    {% endif %}
+                                  </div>
+                                </div>
+                              {% endif %}
+                            </div>
+                          {% endif %}
+                        {% endunless %}
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if color_group_list != blank %}
+            <div class="color-swatch-tab-content" id="shade" data-type="shade">
+              {% assign shade_ordered_value = settings.shade_order | split: ', ' %}
+              <style>
+                .swatch-color-groups-with-title[data-shade-type] {
+                    --order: {{ shade_ordered_value.size }};
+                 }
+                {%- for value in shade_ordered_value -%}
+                  {% unless forloop.last %}
+                    .swatch-color-groups-with-title[data-shade-type="{{ value }}"] {
+                      --order: {{ forloop.index }};
+                    }
+                  {%- endunless -%}
+                {%- endfor -%}
+              </style>
+              {% for color_group in color_group_list %}
+                {% if color_group != blank %}
+                  <div
+                    class="swatch-color-groups-with-title"
+                    data-shade-type="{{ color_group }}"
+                    data-group-value="{{ color_group }}"
+                  >
+                    {% for value in option.values %}
+                      {% if value == current_value %}
+                        {% if value.variant.metafields.custom.color_group == color_group %}
+                          {% assign is_selected = true %}
+                        {% else %}
+                          {% assign is_selected = false %}
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                    <h5>
+                      <span class="fabric-option">
+                        <span class="fabric-option-label-wrapper">
+                          <span class="fabric-option-label">{{ color_group }}</span>
+                          <span class="fabric-option-divider{% if is_selected %} selected{% endif %}"> | </span>
+                        </span>
+                        <span class="fabric-option-info{% if is_selected %} selected{% endif %}">
+                          <span class="selected_color">{{ current_value }}</span>
+                          <span class="fabric__info-icon" title="More information about {{ option.name }}">
+                            <svg width="13" height="13" viewBox="7 7 18 18" fill="none" aria-hidden="true">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M25 16C25 20.9696 20.9696 25 16 25C11.0295 25 7 20.9701 7 16C7 11.029 11.029 7 16 7C20.9701 7 25 11.0295 25 16ZM23 16C23 12.1341 19.8655 9 16 9C12.1336 9 9 12.1336 9 16C9 19.8655 12.1341 23 16 23C19.865 23 23 19.865 23 16ZM17.0535 20.7429H14.9455V15.4576H17.0535V20.7429ZM17.0535 13.1763H14.9455V11.2576H17.0535V13.1763Z" fill="#737373"></path>
+                            </svg>
+                          </span>
+                        </span>
+                      </span>
+                    </h5>
+                    <div class="swatch-color-groups">
+                      {% for value in option.values %}
+                        {% liquid
+                          assign option_value = value
+                          assign css_color = value | split: ' ' | last | handle
+
+                          assign fabric_options = shop.metaobjects.fabric_options.values
+                          assign fabric_info_found = false
+                          assign swatch_thumbnail = ''
+                          assign fabric_title = ''
+                          assign fabric_image = ''
+                          assign fabric_type = ''
+                          assign fabric_features = ''
+                          assign fabric_description = ''
+                          for fabric_option in fabric_options
+                            if value == fabric_option.title.value
+                              assign fabric_title = fabric_option.title.value
+                              assign fabric_image = fabric_option.image
+                              assign fabric_type = fabric_option.type
+                              assign fabric_features = fabric_option.features
+                              assign fabric_description = fabric_option.description
+
+                              if fabric_title != '' or fabric_image != '' or fabric_type != '' or fabric_features != '' or fabric_description != ''
+                                assign fabric_info_found = true
+                              endif
+
+                              assign swatch_thumbnail = fabric_option.thumbnail | image_url: width: 150
+                              if swatch_thumbnail == blank
+                                assign swatch_thumbnail = fabric_option.image | image_url: width: 150
+                              endif
+                              if value contains '(Limited Edition)'
+                                assign fabric_title = fabric_title | append: ' (Limited Edition)'
+                              endif
+                              break
+                            endif
+                          endfor
+
+                          if fabric_info_found == false
+                            for fabric_option in fabric_options
+                              if value contains fabric_option.title.value or value == fabric_option.title.value or fabric_option.title.value contains value
+                                assign fabric_title = fabric_option.title.value
+                                assign fabric_image = fabric_option.image
+                                assign fabric_type = fabric_option.type
+                                assign fabric_features = fabric_option.features
+                                assign fabric_description = fabric_option.description
+                                if fabric_title != '' or fabric_image != '' or fabric_type != '' or fabric_features != '' or fabric_description != ''
+                                  assign fabric_info_found = true
+                                endif
+                                if fabric_option.thumbnail != blank
+                                  assign swatch_thumbnail = fabric_option.thumbnail | image_url: width: 150
+                                else
+                                  assign swatch_thumbnail = fabric_option.image | image_url: width: 150
+                                endif
+                                if value contains '(Limited Edition)'
+                                  assign fabric_title = fabric_title | append: ' (Limited Edition)'
+                                endif
+                                break
+                              endif
+                            endfor
+                          endif
+
+                          assign value_found = false
+                          for variant in product.variants
+                            unless variant.available
+                              continue
+                            endunless
+
+                            unless variant[current_option] == value
+                              continue
+                            endunless
+
+                            unless variant[other_options[0]] == current_variant[other_options[0]]
+                              continue
+                            endunless
+
+                            unless variant[other_options[1]] == current_variant[other_options[1]]
+                              continue
+                            endunless
+
+                            assign available = true
+                          endfor
+
+                          assign value_found = false
+                          for variant in product.variants
+                            if variant.option1 == value and variant.metafields.custom.color_group == color_group
+                              assign value_found = true
+                            endif
+                          endfor
+                        %}
+
+                        {% capture id %}color-swatch-{{ option.position }}-{{ value | handle }}{% endcapture %}
+                        {% assign checked = '' %}
+                        {% if current_variant[current_option] == value %}
+                          {% assign checked = 'checked="checked"' %}
+                        {% endif %}
+
+                        {% capture radio_button %}
+                      <input type="radio" id="{{ id }}" name="{{ option_name }}" value="{{ value | escape }}" data-group-value="{{ color_group }}" data-position="{{ option.position }}" {{ checked }} />
+                    {% endcapture %}
+
+                        {% capture sold_out_image %}
+                      <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" height="auto" width="auto">
+                    {% endcapture %}
+                        {% unless value == 'Custom Color'
+                          or value contains 'Custom Color'
+                          or value == 'Custom Fabric'
+                          or value contains 'Custom Fabric'
+                        %}
+                          {% if value_found %}
+                            <div
+                              class="swatch-element color{% unless available %} soldout{% endunless %}"
+                              data-value="{{ option_value }}"
+                            >
+                              {{ radio_button }}
+
+                              <label for="{{ id }}" class="{{ value | downcase | replace: ' ', '_'}}">
+                                {% if template contains 'collection' %}
+                                  {% assign swatch_type = settings.color_swatch_options %}
+                                {% elsif template contains 'product' or template contains 'index' %}
+                                  {% assign swatch_type = section.settings.color_swatch_options %}
+                                {% endif %}
+
+                                {% if swatch_type == 'variant-image' and variant_image_url != blank %}
+                                  <img class="variant-image" src="{{ variant_image_url }}" alt="{{ value }}" height="auto" width="auto">
+                                {% elsif section.settings.color_swatch_options == 'custom-image' %}
+                                  <div
+                                    class="custom-image css-color"
+                                    style="background-color: {{ css_color }};{% if swatch_thumbnail != '' %} background-image: url({{ swatch_thumbnail }});{% endif %}"
+                                  ></div>
+                                {% else %}
+                                  <div class="css-color" style="background-color: {{ css_color }};"></div>
+                                {% endif %}
+                              </label>
+                              {% if fabric_info_found %}
+                                <div class="option-info" style="display: none;">
+                                  {% if fabric_image != blank %}
+                                    <div class="variant-details-image">
+                                      <img
+                                        src="{{ fabric_image | image_url: width: fabric_image.width }}"
+                                        width="{{ fabric_image.width }}"
+                                        height="{{ fabric_image.height }}"
+                                      >
+                                    </div>
+                                  {% endif %}
+                                  <div class="variant-details">
+                                    {% if fabric_title != blank %}
+                                      <h5 class="variant-details-title">{{ fabric_title }}</h5>
+                                    {% endif %}
+                                    {% if fabric_type != blank %}
+                                      <h5 class="variant-details-title">{{ fabric_type }}</h5>
+                                    {% endif %}
+                                    {% if fabric_features != blank %}
+                                      <div class="variant-details-feature">
+                                        {% assign fabric_features = fabric_features | split: ',' %}
+                                        {% for feature in fabric_features %}
+                                          <span>{{ feature }}</span>
+                                        {% endfor %}
+                                      </div>
+                                    {% endif %}
+                                    {% if fabric_description != blank %}
+                                      <p class="variant-details-description">{{ fabric_description }}</p>
+                                    {% endif %}
+                                  </div>
+                                </div>
+                              {% endif %}
+                            </div>
+                          {% endif %}
+                        {% endunless %}
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+  <div class="variant-details-wrapper">
+    <div class="variant-details-wrapper-inner"></div>
+  </div>
+  <div class="variant-details-wrapper-mobile">
+    <div class="variant-details-wrapper-mobile-bg"></div>
+    <div class="variant-details-wrapper-mobile-inner">
+      <button class="variant-details-close" title="Close" type="button">
+        <svg width="14" height="14" role="img" viewBox="0 0 14 14" aria-labelledby="title">
+          <title id="Close-title">Close</title><path d="M14 1.41L12.59 0 7 5.59 1.41 0 0 1.41 5.59 7 0 12.59 1.41 14 7 8.41 12.59 14 14 12.59 8.41 7z" fill="#fff" fill-rule="nonzero"></path>
+        </svg>
+      </button>
+      <div class="variant-details-wrapper-mobile-main"></div>
+    </div>
+  </div>
+</div>

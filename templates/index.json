@@ -1,0 +1,871 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+    "sections": {
+        "slideshow": {
+            "type": "slideshow",
+            "blocks": {
+              "1635243117aa94abc2-0": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/Homepage_Hero_-_Desktop_b9466cb7-e4fe-40e4-b2db-4ad769181d3a.jpg",
+                  "mobile_hero_image": "shopify://shop_images/Original_Homepage_Hero.png",
+                  "slide_title": "The World’s <span class=\"typewrite\" data-period=\"1000\" data-type='[\"Greatest\", \"Deepest\"]'><span class=\"wrap\">Greatest</span></span><br>Modular Sofa.",
+                  "slide_text": "Explore our collections of functional, beautiful modular sofas - all paired with our water-repellent, removable, & machine-washable covers.",
+                  "showCaptionDesktop": false,
+                  "btn_text": "SHOP MODULAR INDOOR",
+                  "btn_url": "shopify://collections/best-sellers",
+                  "alignment": "center",
+                  "si_bg": "",
+                  "s_title_color": "",
+                  "s_text_color": "",
+                  "sip_x": "center",
+                  "sip_x_v": 31,
+                  "sip_y": "top",
+                  "sip_y_v": 8,
+                  "sip_width": "max-content",
+                  "sip_height": "max-content",
+                  "si_padding": "",
+                  "si_margin": "",
+                  "si_text_margin": "",
+                  "si_title_margin": ""
+                }
+              },
+              "image_jpimpe": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/Homepage_Hero_-_Desktop_-_Water-Repellent_159429f0-8fae-43de-a2f7-27c76ce9f2a0.jpg",
+                  "mobile_hero_image": "shopify://shop_images/Homepage_Hero_-_Mobile_-_Water-Repellent_Zoomed_In.jpg",
+                  "slide_title": "Water Repellent &<br>Stain Resistant.",
+                  "slide_text": "Our fabrics have the ability to withstand & temporarily repel everyday household spills. Perfect for households with kids, pets, or drunk people.",
+                  "showCaptionDesktop": false,
+                  "btn_text": "SHOP BEST SELLERS",
+                  "btn_url": "shopify://collections/best-sellers",
+                  "alignment": "left",
+                  "si_bg": "",
+                  "s_title_color": "",
+                  "s_text_color": "",
+                  "sip_x": "left",
+                  "sip_x_v": 6,
+                  "sip_y": "top",
+                  "sip_y_v": 24,
+                  "sip_width": "max-content",
+                  "sip_height": "max-content",
+                  "si_padding": "",
+                  "si_margin": "",
+                  "si_text_margin": "",
+                  "si_title_margin": ""
+                }
+              },
+              "6a6cf8e3-ac51-4593-85a9-eccf127376c0": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/Homepage_Hero_-_Desktop_-_Extra-Deep.jpg",
+                  "mobile_hero_image": "shopify://shop_images/1_1.jpg",
+                  "slide_title": "Lounge Perfectly<br>\nin Extra-Deep.",
+                  "slide_text": "The deepest modular sofa in the market. Perfect for people who really like to lounge - whether for movie nights, family hangouts, or being a couch potato.",
+                  "showCaptionDesktop": false,
+                  "btn_text": "SHOP EXTRA-DEEP",
+                  "btn_url": "shopify://collections/best-sellers",
+                  "alignment": "right",
+                  "si_bg": "",
+                  "s_title_color": "",
+                  "s_text_color": "",
+                  "sip_x": "right",
+                  "sip_x_v": 6,
+                  "sip_y": "bottom",
+                  "sip_y_v": 10,
+                  "sip_width": "max-content",
+                  "sip_height": "max-content",
+                  "si_padding": "",
+                  "si_margin": "",
+                  "si_text_margin": "",
+                  "si_title_margin": ""
+                }
+              },
+              "57afc61f-d108-445b-b0b6-9c9072152def": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/Homepage_Hero_-_Desktop_-_Olive_Josh_8204b84b-2dde-4fc6-bbd5-8970b59067ce.jpg",
+                  "mobile_hero_image": "shopify://shop_images/1.jpg",
+                  "slide_title": "Plush & Premium<br>\nPerformance Velvets.",
+                  "slide_text": "Plush, luxury velvets in the richest and most vibrant colors. Designed to withstand life’s toughest demands, from your fur-babies to actual babies.",
+                  "showCaptionDesktop": false,
+                  "btn_text": "SHOP PREMIUM VELVETS",
+                  "btn_url": "shopify://collections/best-sellers",
+                  "alignment": "left",
+                  "si_bg": "rgba(0,0,0,0)",
+                  "s_title_color": "#ffffff",
+                  "s_text_color": "#ffffff",
+                  "sip_x": "left",
+                  "sip_x_v": 6,
+                  "sip_y": "bottom",
+                  "sip_y_v": 24,
+                  "sip_width": "max-content",
+                  "sip_height": "max-content",
+                  "si_padding": "",
+                  "si_margin": "",
+                  "si_text_margin": "",
+                  "si_title_margin": ""
+                }
+              },
+              "image_Kcnnh7": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/Homepage_Hero_-_Desktop_-_Outdoor_Teak_FINAL_809180c5-b9e0-4f44-b590-309b118cf4a4.jpg",
+                  "mobile_hero_image": "shopify://shop_images/Homepage_Hero_-_Mobile_-_Outdoor_Teak_1.jpg",
+                  "slide_title": "Introducing:<br>Solid Teak Outdoor",
+                  "slide_text": "The best of our indoor, reimagined for the great outdoors. Featuring Grade-A Solid Teak, top of the line quick-dry foam, & durable UV-resistant fabrics.",
+                  "showCaptionDesktop": false,
+                  "btn_text": "SHOP TEAK OUTDOOR",
+                  "btn_url": "shopify://collections/best-sellers-outdoor",
+                  "alignment": "right",
+                  "si_bg": "",
+                  "s_title_color": "",
+                  "s_text_color": "",
+                  "sip_x": "right",
+                  "sip_x_v": 10,
+                  "sip_y": "top",
+                  "sip_y_v": 6,
+                  "sip_width": "max-content",
+                  "sip_height": "max-content",
+                  "si_padding": "",
+                  "si_margin": "",
+                  "si_text_margin": "",
+                  "si_title_margin": ""
+                }
+              }
+            },
+            "block_order": [
+              "1635243117aa94abc2-0",
+              "image_jpimpe",
+              "6a6cf8e3-ac51-4593-85a9-eccf127376c0",
+              "57afc61f-d108-445b-b0b6-9c9072152def",
+              "image_Kcnnh7"
+            ],
+            "settings": {
+              "autoplaySpeed": "3500",
+              "review_text": "4.8/5.0",
+              "review_url": "shopify-section-1645849719f9d6d8f8",
+              "start_date": "",
+              "end_date": "",
+              "color": "#000000",
+              "background": "#ffffff"
+            }
+          },
+          "feature-in": {
+            "type": "feature-in",
+            "blocks": {
+              "10afa9fe-0e54-41a9-b252-2e99e63b902b-16723157054111b23d-0": {
+                "type": "feature_in",
+                "settings": {
+                  "text": "\"Stylish, modular, non-toxic, affordable, stain-resistant and machine-washable, the 7th Avenue sofa has it all.\"",
+                  "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/forbes_7thavenue.svg?v=1672946484",
+                  "url": "shopify://pages/reviews",
+                  "new_window": true
+                }
+              },
+              "10afa9fe-0e54-41a9-b252-2e99e63b902b-16723157054111b23d-1": {
+                "type": "feature_in",
+                "settings": {
+                  "text": "“I really love our 7th Avenue sofa, so much so that I would & have recommended it to others.”",
+                  "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/living_cozy_7thavenue.svg?v=1672946485",
+                  "url": "shopify://pages/reviews",
+                  "new_window": true
+                }
+              },
+              "10afa9fe-0e54-41a9-b252-2e99e63b902b-16723157054111b23d-2": {
+                "type": "feature_in",
+                "settings": {
+                  "text": "\"As a pet parent, never thought I'd be able to have a white sofa before 7th Avenue...the  fabric is a game changer.\"",
+                  "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/image_19.png?v=1714316814",
+                  "url": "shopify://pages/reviews",
+                  "new_window": true
+                }
+              }
+            },
+            "block_order": [
+              "10afa9fe-0e54-41a9-b252-2e99e63b902b-16723157054111b23d-0",
+              "10afa9fe-0e54-41a9-b252-2e99e63b902b-16723157054111b23d-1",
+              "10afa9fe-0e54-41a9-b252-2e99e63b902b-16723157054111b23d-2"
+            ],
+            "settings": {
+              "border_top": false,
+              "border_bottom": false,
+              "color": "#000000",
+              "bg_color": "#f3f3f3"
+            }
+          },
+          "sofa-page-feature-product": {
+            "type": "sofa-page-feature-product",
+            "settings": {
+              "title": "Shop Best Sellers: Indoor",
+              "text": "Our best selling modular indoor configurations.<br>Find the perfect fit for every living room size & style.",
+              "collection": "best-sellers",
+              "product_limit": 10,
+              "selected_color": "",
+              "speed": "5000",
+              "btn_url": "shopify://collections/best-sellers",
+              "btn_text": "SHOP BEST SELLERS",
+              "info": "",
+              "paddingTop": 20,
+              "paddingBottom": 10,
+              "paddingTopMobile": 10,
+              "paddingBottomMobile": 10,
+              "background": ""
+            }
+          },
+          "sofa-page-video": {
+            "type": "sofa-page-video",
+            "settings": {
+              "videoRatio": "3/2",
+              "image": "shopify://shop_images/Website_Photo_-_4_fbe34f52-b6e5-4cb7-840a-05cd7d046a39.jpg",
+              "fullImage": true,
+              "title": "Functional design meets contemporary luxury.",
+              "icon_svg_1": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/modular_6.svg?v=1635316203",
+              "text_1": "ENDLESSLY MODULAR & RE-ARRANGEABLE",
+              "icon_svg_2": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/waterproof-fabric_1.svg?v=1635315926",
+              "text_2": "WATER-REPELLENT & STAIN-RESISTANT",
+              "icon_svg_3": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/cloud_2.svg?v=1635316369",
+              "text_3": "CLASSIC OR EXTRA-DEEP SEATING",
+              "icon_svg_4": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/pillows_2.svg?v=1635316488",
+              "text_4": "REMOVABLE & WASHABLE COVERS",
+              "icon_svg_5": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/muscle_2.svg?v=1635316686",
+              "text_5": "RIDICULOUSLY DURABLE",
+              "icon_svg_6": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/ecology_1.svg?v=1635218930",
+              "text_6": "SUSTAINABLY-BUILT & NON-TOXIC",
+              "marginTop": 20,
+              "marginBottom": 20,
+              "marginTopMobile": 0,
+              "marginBottomMobile": 0,
+              "btn_url": "",
+              "btn_text": "SHOP MODULAR SOFAS",
+              "background": "#F3F3F3"
+            }
+          },
+          "sofa_page_badge_rPGGGA": {
+            "type": "sofa-page-badge",
+            "blocks": {
+              "badge_hhJLxE": {
+                "type": "badge",
+                "disabled": true,
+                "settings": {
+                  "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/shipped_acbf6ef3-3676-46e8-a5cd-a1916a17b1e7.svg?v=1635203974",
+                  "title": "NATIONWIDE DELIVERY & ASSEMBLY",
+                  "text": "We offer delivery & assembly services nationwide throughout contiguous U.S."
+                }
+              },
+              "badge_Dp67Hn": {
+                "type": "badge",
+                "settings": {
+                  "svg": "",
+                  "icon": "shopify://shop_images/exchange_pdp_white.svg",
+                  "title": "FREE 30-DAY FABRIC EXCHANGE",
+                  "text": "Can’t decide a color? We offer free fabric exchange within 30 days of delivery"
+                }
+              },
+              "badge_e7FNkf": {
+                "type": "badge",
+                "settings": {
+                  "svg": "",
+                  "icon": "shopify://shop_images/returns.svg",
+                  "title": "RISK-FREE HOME TRIALS",
+                  "text": "Don't like your sofa? We offer free<br>returns within 10 days of delivery."
+                }
+              },
+              "badge_fXRweR": {
+                "type": "badge",
+                "settings": {
+                  "svg": "",
+                  "icon": "shopify://shop_images/money.svg",
+                  "title": "LIMITED LIFETIME WARRANTY",
+                  "text": "Any damages? We offer a lifetime warranty <br>on the frame & construction of the sofa."
+                }
+              }
+            },
+            "block_order": [
+              "badge_hhJLxE",
+              "badge_Dp67Hn",
+              "badge_e7FNkf",
+              "badge_fXRweR"
+            ],
+            "settings": {
+              "color": "#ffffff",
+              "bg_color": "#032e6b"
+            }
+          },
+          "sofa_page_feature_product_raEMAp": {
+            "type": "sofa-page-feature-product",
+            "settings": {
+              "title": "Shop Best Sellers: Outdoor",
+              "text": "Our best selling modular outdoor configurations.<br>Find the perfect fit for every patio & backyard.",
+              "collection": "best-sellers-outdoor",
+              "product_limit": 10,
+              "selected_color": "",
+              "speed": "5000",
+              "btn_url": "shopify://collections/best-sellers-outdoor",
+              "btn_text": "SHOP BEST SELLERS",
+              "info": "",
+              "paddingTop": 20,
+              "paddingBottom": 10,
+              "paddingTopMobile": 10,
+              "paddingBottomMobile": 10,
+              "background": "#FFF"
+            }
+          },
+          "sofa_page_video_KFd4VK": {
+            "type": "sofa-page-video",
+            "settings": {
+              "videoRatio": "4/3",
+              "image": "shopify://shop_images/Website_Photo_-_Homepage.jpg",
+              "fullImage": true,
+              "title": "The best of our indoor,<br>now for the great outdoors.",
+              "icon_svg_1": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/wood_1_0dc94aa1-f914-4977-bd88-c2d1217df218.svg?v=1714361987",
+              "text_1": "GRADE-A SOLID INDONESIAN TEAK",
+              "icon_svg_2": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/foam_1_5d0f172f-e481-4220-b595-1f82cb459580.svg?v=1714361755",
+              "text_2": "MOLD-RESISTANTQUICK-DRY FOAM",
+              "icon_svg_3": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/UV.svg?v=1714361603",
+              "text_3": "UV & FADING-RESISTANT FABRICS",
+              "icon_svg_4": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/waterproof-fabric_1.svg?v=1635315926",
+              "text_4": "WATER-REPELLENT & STAIN-RESISTANT",
+              "icon_svg_5": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/pillows_2.svg?v=1635316488",
+              "text_5": "REMOVABLE & WASHABLE COVERS",
+              "icon_svg_6": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/modular_6.svg?v=1635316203",
+              "text_6": "ENDLESSLY MODULAR & RE-ARRANGEABLE",
+              "marginTop": 20,
+              "marginBottom": 20,
+              "marginTopMobile": 0,
+              "marginBottomMobile": 0,
+              "btn_url": "",
+              "btn_text": "SHOP BEST SELLERS",
+              "background": "#F3F3F3"
+            }
+          },
+          "sofa_page_badge_TmWgD3": {
+            "type": "sofa-page-badge",
+            "blocks": {
+              "badge_LcpzzU": {
+                "type": "badge",
+                "settings": {
+                  "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/switch-camera.svg?v=1714359567",
+                  "title": "FREE 30-DAY FABRIC EXCHANGE",
+                  "text": "If you're unhappy with your fabric choice or color selection, exchange for free within 30-days."
+                }
+              },
+              "badge_AAxHpX": {
+                "type": "badge",
+                "settings": {
+                  "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/waterproof-fabric-70.svg?v=1714359834",
+                  "title": "FREE OUTDOOR PROTECTIVE COVERS",
+                  "text": "Buy matching indoor & outdoor configurations and get free outdoor waterproof covers."
+                }
+              },
+              "badge_UqbaCh": {
+                "type": "badge",
+                "settings": {
+                  "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/guarantee_1.svg?v=1714359860",
+                  "title": "LIMITED LIFETIME WARRANTY",
+                  "text": "Applies to all frame and construction-related components. Excludes normal wear & tear."
+                }
+              }
+            },
+            "block_order": [
+              "badge_LcpzzU",
+              "badge_AAxHpX",
+              "badge_UqbaCh"
+            ],
+            "settings": {
+              "color": "#ffffff",
+              "bg_color": "#000000"
+            }
+          },
+          "collection-review": {
+            "type": "collection-review",
+            "blocks": {
+              "476247e6-451f-4501-8481-bb1c56dfea83": {
+                "type": "review",
+                "settings": {
+                  "text": "My dream couch! I’ve always dreamt of having a white couch, but basically gave up on that dream after having kids — until I met this couch 🤩 Overall, we absolutely LOVE it.",
+                  "title": "IVY C (SAN DIEGO, CA)",
+                  "image_1": "shopify://shop_images/a293129a-96b2-4117-ac90-d0ffac1b345e_large_a8d2ee56-6491-4934-883d-3f5be1395ca6.jpg",
+                  "image_2": "shopify://shop_images/5f4d0927-a3e1-416e-857d-d5eab4a94072_large_b2c2d5ee-3e30-4045-94c9-b44d00eb2251.jpg"
+                }
+              },
+              "1645849719f9d6d8f8-3": {
+                "type": "review",
+                "settings": {
+                  "text": "After living with the sectional for over a week, I am thrilled to say that I have found the sectional of my dreams! The entire experience from start to finish was completely seamless and the quality of this sofa is exceptional!",
+                  "title": "JACOB M (NEW YORK, NY)",
+                  "image_1": "shopify://shop_images/Image_from_iOS_17.jpg",
+                  "image_2": "shopify://shop_images/Screen_Shot_2022-02-03_at_7.10.34_PM.png"
+                }
+              },
+              "17fd8a92-bcdf-4d69-aa27-e4cafc10edaa": {
+                "type": "review",
+                "settings": {
+                  "text": "This furniture is absolutely fantastic. The quality is beyond excellent! Everything about the pieces are perfect, the way they fit together, the fabric, the color ( we chose charcoal) the comfort.",
+                  "title": "PATTY B (LAGUNA BEACH, CA)",
+                  "image_1": "shopify://shop_images/79ecd926-2935-4af4-bdcf-b3f1458b8500_large_92fa80fa-b5bb-43f7-a9a8-4b27d8843ad7.jpg",
+                  "image_2": "shopify://shop_images/440ab599-cb3f-4fab-8db6-f2de3babe5dc_large_39134b21-2d97-44b9-bf03-b08be6f5fa67.jpg"
+                }
+              },
+              "1645849719f9d6d8f8-0": {
+                "type": "review",
+                "settings": {
+                  "text": "This is the best sectional I've ever purchased. It’s beautiful, functional, and elegant. Love lounging and sitting on it to watch tv, and even my dog loves it!",
+                  "title": "JOHANNA B (LOS ANGELES, CA)",
+                  "image_1": "shopify://shop_images/4e742a16-8324-4328-bc15-8932ecbca85a_large_a3d9709c-0205-42b7-8aca-a06351145f92.jpg",
+                  "image_2": "shopify://shop_images/5b522334-4370-4595-84e6-333592e071f6_large_90489eba-64c8-4545-a9bc-7e567c8060aa.jpg",
+                  "image_3": "shopify://shop_images/194b2fd7-c3aa-4e05-99e2-55a69084c4e5_large_17cabafc-ea54-44bf-8a48-f3e3638ee85e.jpg"
+                }
+              },
+              "1645849719f9d6d8f8-4": {
+                "type": "review",
+                "settings": {
+                  "text": "Dog owners need this sofa! We ordered the natural white fabric and within the first week, our dog peed on the sofa.... All I had to do was wipe it down with water and it didn’t stain!!! 100% worth it and couldn’t believe it.",
+                  "title": "JAZMINE J (SANTA ANA, CA)",
+                  "image_1": "shopify://shop_images/Image_from_iOS_15.jpg",
+                  "image_2": "shopify://shop_images/Screen_Shot_2022-03-28_at_2.52.46_PM.png"
+                }
+              },
+              "868b200c-c558-4e22-9cf7-82506891ed18": {
+                "type": "review",
+                "settings": {
+                  "text": "Most of our friends thought we were crazy for buying a white couch with young kids. It’s stands up well. It’s easy to wipe off dirt, liquid and shows no wear and tear.",
+                  "title": "MEGAN P (ALISO VIEJO, CA)",
+                  "image_1": "shopify://shop_images/megan_2_419d8aa1-b22d-48c8-9d31-3b1fb76c5de2.jpg",
+                  "image_2": "shopify://shop_images/megan_1_4af06fb0-779b-4932-83c1-b3a94e3bd748.jpg"
+                }
+              }
+            },
+            "block_order": [
+              "476247e6-451f-4501-8481-bb1c56dfea83",
+              "1645849719f9d6d8f8-3",
+              "17fd8a92-bcdf-4d69-aa27-e4cafc10edaa",
+              "1645849719f9d6d8f8-0",
+              "1645849719f9d6d8f8-4",
+              "868b200c-c558-4e22-9cf7-82506891ed18"
+            ],
+            "settings": {
+              "title": "Here’s what many of our satisfied customers have to say about their dream sofa",
+              "btn_url": "shopify://pages/reviews",
+              "btn_text": "SEE ALL REVIEWS",
+              "speed": "5000"
+            }
+          },
+          "showroom": {
+            "type": "showroom",
+            "settings": {
+              "title": "Find a Showroom Near You",
+              "title_mob": "Find a Showroom Near You",
+              "subtitle": "EXPERIENCE “THE WORLDS GREATEST MODULAR SOFA” IN PERSON.",
+              "subtitle_mob": "",
+              "get_data_from_metaobject": true,
+              "box_per_row": 3,
+              "active_geo": true,
+              "border_top": false,
+              "border_bot": false,
+              "color": "#000000",
+              "bg_color": "#ffffff",
+              "card_bg": "#f3f3f3",
+              "bt_color": "#ffffff",
+              "bt_bg": "#032e6a",
+              "padding_top": 18,
+              "padding_bot": 40,
+              "padding_top_mob": 20,
+              "padding_bot_mob": 20
+            }
+          },
+          "image-with-text": {
+            "type": "image-with-text",
+            "settings": {
+              "box": true,
+              "image": "shopify://shop_images/Website_Virtual_Appointment_-_2.jpg",
+              "text_left": false,
+              "title": "Unable to visit a showroom? Book a virtual appointment.",
+              "text": "Chat via video call with one of our Sales Consultants to see our modular sofas live, explore fabric options,  watch a full product demo, and ask any questions you might have!",
+              "btn_url": "https://calendly.com/7thavenue/virtual-design-consult",
+              "btn_text": "BOOK AN APPOINTMENT",
+              "btn_url2": "",
+              "btn_text2": "READ ABOUT US",
+              "borderTop": true,
+              "borderBot": true,
+              "top_gutter": 40,
+              "bottom_gutter": 40,
+              "top_gutter_m": 20,
+              "bottom_gutter_m": 20,
+              "color": "#000000",
+              "bg_color": "rgba(0,0,0,0)"
+            }
+          },
+          "sofa-page-collection-list": {
+            "type": "sofa-page-collection-list",
+            "blocks": {
+              "741ef8d1-799e-4bc2-a6ee-483efc290c26": {
+                "type": "collection",
+                "settings": {
+                  "collection": "best-sellers",
+                  "title": "",
+                  "show_desktop": false,
+                  "show_mobile": false
+                }
+              },
+              "6166d58a-b5fa-4a9e-b145-b538f9d8fea3": {
+                "type": "collection",
+                "settings": {
+                  "collection": "sectionals",
+                  "title": "",
+                  "show_desktop": false,
+                  "show_mobile": false
+                }
+              },
+              "ca9f1211-eb14-484a-8aa3-41e2fc5fa9fb": {
+                "type": "collection",
+                "settings": {
+                  "collection": "sofas-and-loveseats",
+                  "title": "",
+                  "show_desktop": false,
+                  "show_mobile": false
+                }
+              },
+              "273a29d0-7626-4be8-aabc-2a65a9fd6d52": {
+                "type": "collection",
+                "settings": {
+                  "collection": "armchairs",
+                  "title": "",
+                  "show_desktop": false,
+                  "show_mobile": false
+                }
+              },
+              "2c83a29d-5c85-41f0-90dc-783c62358e4b": {
+                "type": "collection",
+                "settings": {
+                  "collection": "daybeds-and-pits",
+                  "title": "",
+                  "show_desktop": false,
+                  "show_mobile": false
+                }
+              },
+              "2c77dca7-b624-47a9-a3de-7aa03b28cad8": {
+                "type": "collection",
+                "settings": {
+                  "collection": "living-room-sets",
+                  "title": "",
+                  "show_desktop": false,
+                  "show_mobile": false
+                }
+              }
+            },
+            "block_order": [
+              "741ef8d1-799e-4bc2-a6ee-483efc290c26",
+              "6166d58a-b5fa-4a9e-b145-b538f9d8fea3",
+              "ca9f1211-eb14-484a-8aa3-41e2fc5fa9fb",
+              "273a29d0-7626-4be8-aabc-2a65a9fd6d52",
+              "2c83a29d-5c85-41f0-90dc-783c62358e4b",
+              "2c77dca7-b624-47a9-a3de-7aa03b28cad8"
+            ],
+            "settings": {
+              "title": "Shop Indoor Collections",
+              "text": "Find the perfect indoor configuration for any living room.",
+              "url": "",
+              "btn_text": "",
+              "topDivider": false,
+              "bottomDivider": true,
+              "top_gutter": 20,
+              "bottom_gutter": 20,
+              "top_gutter_m": 40,
+              "bottom_gutter_m": 0
+            }
+          },
+          "sofa_page_collection_list_Kniy8g": {
+            "type": "sofa-page-collection-list",
+            "blocks": {
+              "collection_zQWqnV": {
+                "type": "collection",
+                "settings": {
+                  "collection": "best-sellers-outdoor",
+                  "title": "",
+                  "show_desktop": false,
+                  "show_mobile": false
+                }
+              },
+              "collection_UqhJ4j": {
+                "type": "collection",
+                "settings": {
+                  "collection": "outdoor-sectionals",
+                  "title": "Sectionals",
+                  "show_desktop": false,
+                  "show_mobile": false
+                }
+              },
+              "collection_KPMeTe": {
+                "type": "collection",
+                "settings": {
+                  "collection": "outdoor-sofas-loveseats",
+                  "title": "Sofas & Loveseats",
+                  "show_desktop": false,
+                  "show_mobile": false
+                }
+              },
+              "collection_cd4GU6": {
+                "type": "collection",
+                "settings": {
+                  "collection": "outdoor-armchairs",
+                  "title": "Armchairs",
+                  "show_desktop": false,
+                  "show_mobile": false
+                }
+              },
+              "collection_UjJqCW": {
+                "type": "collection",
+                "settings": {
+                  "collection": "outdoor-daybeds",
+                  "title": "Daybeds & Pit Sofas",
+                  "show_desktop": false,
+                  "show_mobile": false
+                }
+              },
+              "collection_9eTrMn": {
+                "type": "collection",
+                "settings": {
+                  "collection": "outdoor-sets",
+                  "title": "",
+                  "show_desktop": false,
+                  "show_mobile": false
+                }
+              }
+            },
+            "block_order": [
+              "collection_zQWqnV",
+              "collection_UqhJ4j",
+              "collection_KPMeTe",
+              "collection_cd4GU6",
+              "collection_UjJqCW",
+              "collection_9eTrMn"
+            ],
+            "settings": {
+              "title": "Shop Outdoor Collections",
+              "text": "Find the perfect outdoor configuration for every outdoor space.",
+              "url": "",
+              "btn_text": "SHOP ALL SEATING",
+              "topDivider": false,
+              "bottomDivider": false,
+              "top_gutter": 20,
+              "bottom_gutter": 35,
+              "top_gutter_m": 20,
+              "bottom_gutter_m": 20
+            }
+          },
+          "image-with-text-e45e5": {
+            "type": "image-with-text",
+            "settings": {
+              "box": false,
+              "image": "shopify://shop_images/Homepage_Detail_2.jpg",
+              "text_left": false,
+              "title": "Luxury furniture, functionally designed.",
+              "text": "The perfect combination of design and function wrapped in luxury. At 7th Avenue, we make furniture that is not only beautiful, but also functional and able to withstand the needs of your daily life.",
+              "btn_url": "shopify://collections/best-sellers",
+              "btn_text": "Shop Modular Indoor",
+              "btn_url2": "shopify://collections/best-sellers-outdoor",
+              "btn_text2": "Shop Modular Outdoor",
+              "borderTop": false,
+              "borderBot": false,
+              "top_gutter": 40,
+              "bottom_gutter": 40,
+              "top_gutter_m": 20,
+              "bottom_gutter_m": 20,
+              "color": "#000000",
+              "bg_color": "#f3f3f3"
+            }
+          },
+          "custom-gallery": {
+            "type": "custom-gallery",
+            "blocks": {
+              "1645954608cb49cf97-0": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/6fd4de403d3ecd92d5ce4067b2ab9e54.jpg",
+                  "big_image": true
+                }
+              },
+              "1645954608cb49cf97-2": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/cdd20ac884dbe03f0ef40453257927d9.jpg",
+                  "big_image": false
+                }
+              },
+              "1645954608cb49cf97-1": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/39a64b46ee605c9dddb20b1efa071644.jpg",
+                  "big_image": false
+                }
+              },
+              "1645954608cb49cf97-3": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/7232d778a03969b2e9dc6c7c2fbe8867.jpg",
+                  "big_image": false
+                }
+              },
+              "1645954608cb49cf97-4": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/e3d503ae300721a1b7b9cda647471062.jpg",
+                  "big_image": false
+                }
+              },
+              "1645954608cb49cf97-5": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/39a64b46ee605c9dddb20b1efa071644.jpg",
+                  "big_image": false
+                }
+              },
+              "1645954608cb49cf97-6": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/cdd20ac884dbe03f0ef40453257927d9.jpg",
+                  "big_image": false
+                }
+              },
+              "1645954608cb49cf97-7": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/7232d778a03969b2e9dc6c7c2fbe8867.jpg",
+                  "big_image": false
+                }
+              },
+              "1645954608cb49cf97-8": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/e3d503ae300721a1b7b9cda647471062.jpg",
+                  "big_image": false
+                }
+              }
+            },
+            "block_order": [
+              "1645954608cb49cf97-0",
+              "1645954608cb49cf97-2",
+              "1645954608cb49cf97-1",
+              "1645954608cb49cf97-3",
+              "1645954608cb49cf97-4",
+              "1645954608cb49cf97-5",
+              "1645954608cb49cf97-6",
+              "1645954608cb49cf97-7",
+              "1645954608cb49cf97-8"
+            ],
+            "disabled": true,
+            "settings": {
+              "title": "",
+              "subtitle": "",
+              "border_top": true,
+              "border_bottom": true
+            }
+          },
+          "help-desk": {
+            "type": "help-desk",
+            "blocks": {
+              "164655594354c3de75-0": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/6fd4de403d3ecd92d5ce4067b2ab9e54.jpg"
+                }
+              },
+              "164655594354c3de75-1": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/39a64b46ee605c9dddb20b1efa071644.jpg"
+                }
+              },
+              "164655594354c3de75-2": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/cdd20ac884dbe03f0ef40453257927d9.jpg"
+                }
+              },
+              "164655594354c3de75-3": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/7232d778a03969b2e9dc6c7c2fbe8867.jpg"
+                }
+              },
+              "164655594354c3de75-4": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/e3d503ae300721a1b7b9cda647471062.jpg"
+                }
+              },
+              "164655594354c3de75-5": {
+                "type": "image",
+                "settings": {
+                  "image": "shopify://shop_images/Best_Sellers_44d359e1-41f0-488f-b30f-9a7cef938a9e.jpg"
+                }
+              }
+            },
+            "block_order": [
+              "164655594354c3de75-0",
+              "164655594354c3de75-1",
+              "164655594354c3de75-2",
+              "164655594354c3de75-3",
+              "164655594354c3de75-4",
+              "164655594354c3de75-5"
+            ],
+            "disabled": true,
+            "settings": {
+              "covet_pic": "<covet-pics-widget gallery-embed-id=\"219147\"></covet-pics-widget>",
+              "title": "Need a Custom Configuration?",
+              "text": "Talk to one of our Design Consultants to make the modular Configuration that fits in your space exactly how you want it",
+              "btn_1_url": "",
+              "btn_1_reamaze": true,
+              "btn_1_text": "Help",
+              "btn_2_url": "shopify://collections/best-sellers",
+              "btn_2_reamaze": false,
+              "btn_2_text": "Shop now"
+            }
+          },
+          "advanced-content": {
+            "type": "advanced-content",
+            "disabled": true,
+            "settings": {}
+          },
+          "collection-instagram-gallery": {
+            "type": "collection-instagram-gallery",
+            "settings": {
+              "title": "7th Avenue in Real Homes.",
+              "handle": "FOLLOW US @7THAVENUECO",
+              "instagram_handle": "https://www.instagram.com/7thavenueco/",
+              "app_code": "<covet-pics-widget gallery-embed-id=\"219025\"></covet-pics-widget>"
+            }
+          }
+    },
+    "order": [
+        "slideshow",
+        "feature-in",
+        "sofa-page-feature-product",
+        "sofa-page-video",
+        "sofa_page_badge_rPGGGA",
+        "sofa_page_feature_product_raEMAp",
+        "sofa_page_video_KFd4VK",
+        "sofa_page_badge_TmWgD3",
+        "collection-review",
+        "showroom",
+        "image-with-text",
+        "sofa-page-collection-list",
+        "sofa_page_collection_list_Kniy8g",
+        "image-with-text-e45e5",
+        "custom-gallery",
+        "help-desk",
+        "advanced-content",
+        "collection-instagram-gallery"
+    ]
+  }
+  

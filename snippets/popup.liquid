@@ -1,0 +1,67 @@
+<div class="popup_section" style="display: none">
+  <div class="popup_wrapper">
+    <div class="popup_body">
+      <div class="popup_close"><i class="la la-close"></i></div>
+      <div class="popup_row">
+        <div>
+          {% render 'image-lazyload', image: settings.email_image %}
+        </div>
+        <div>
+          <form id="newsletter_popup" 
+                class="klaviyo_gdpr_embed_TstdpE" 
+                action="//manage.kmail-lists.com/subscriptions/subscribe" 
+                data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+            <div  class="before-signup">
+              {% if settings.mail_popup_title %}
+              <h3>{{ settings.mail_popup_title }}</h3>
+              {% endif %}
+              {% if settings.mail_popup_text %}
+              <p>{{ settings.mail_popup_text }}</p>
+              {% endif %}
+            </div>
+            <div class="form_data">
+              <input type="hidden" name="g" value="TstdpE">
+              <label for="k_id_email">{{ 'general.newsletter_form.newsletter_email' | t }}</label>
+              <input type="email" name="email" id="k_id_email" class="k_id_email">
+              <button type="submit" class="klaviyo_submit_buttosn">{{ settings.mail_button_text }}</button> 
+              {% if settings.mail_gdpr_text %}
+              <p class="gdpr-text before-signup"><em>{{ settings.mail_gdpr_text }}</em></p>
+              {% endif %}
+            </div>            
+            
+            <div class="klaviyo_messages">
+              <div class="success_message" style="display:none;">
+                <h3 class="success">{{ 'general.newsletter_form.popup_thanks' | t }}
+                  {% if settings.show_discount_code %}<span class="discount_code">{{ settings.generic_coupon_code }}</span>{%endif%}
+                </h3>
+              </div>
+              <div class="error_message" style="display:none;"></div>
+            </div>
+          </form>        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var duration = {{settings.popup_duration}};
+    setTimeout(function(){
+      {% if settings.test_mode == false %}
+      var check_cookie = $.cookie('mailing_list_popup');
+      if(check_cookie == null) {
+        {% endif%}
+        setTimeout(function(){
+          $('.popup_wrapper, .popup_section').addClass('open');
+        }, duration);
+        {% if settings.test_mode == false %}
+      }
+      {% endif%}
+
+      $(document).on('click', '.popup_close', function() {
+        $('.popup_wrapper, .popup_section').removeClass('open');     
+        $.cookie('mailing_list_popup', 'expires_seven_days', { expires: 7 });
+      });
+    }, 1000);
+  });
+</script>

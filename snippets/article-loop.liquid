@@ -1,0 +1,75 @@
+{% capture articleCycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+
+<div data-aos="{{ settings.scroll_animation }}" class="single-article {% if articleCycle == 'even' %}even{% elsif articleCycle == 'odd' %}odd{% endif %}{% if template contains 'article' %}odd{% endif %}">
+{% capture articleImage %}
+  <div class="article-image">
+    {% if article.image != blank %}
+      <a href="{{ article.url }}">
+        {% render "basic-responsive-image", type: article.image %}
+      </a>
+    {% else %}
+      {% if article.content contains "<img" and ".jpg" %}
+        {% assign src = article.content | split: 'src="' | last %}
+        {% assign src = src | split: '.jpg' | first | append: '.jpg' %}
+        <img src="{{ src }}" width="100%" width="100%" height="100%" loading="lazy">
+      {% elsif article.content contains "<img" and ".png" %}
+        {% assign src = article.content | split: 'src="' | last %}
+        {% assign src = src | split: '.png' | first | append: '.png' %}
+        <img src="{{ src }}" width="100%" width="100%" height="100%" loading="lazy">
+      {% endif %}
+    {% endif %}
+  </div>
+  {% endcapture %}
+
+  {% if articleCycle == 'odd' %}
+  {{ articleImage }}
+  {% else %}
+  <div class="mobile-image">
+    {{ articleImage }}
+  </div>
+  {% endif %}
+
+  <div class="article-body" data-aos="{{ settings.scroll_animation }}" data-aos-delay="300" data-aos-duration="1000">
+    <h3>
+      <a href="{{ article.url }}">
+        {{ article.title }}
+      </a>
+    </h3>
+    <div class="clear"></div>
+    <div class="rte">
+      {% if article.excerpt != blank %}
+        {{ article.excerpt }}
+      {% else %}
+        {{ article.content | strip_html | truncatewords: 30 }} <a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }}</a>
+      {% endif %}
+    </div>
+    <div class="clear"></div>
+    <div class="post_meta">
+      {% assign published_at = article.published_at | date: "%b %d, %Y" %}
+        <span class="posted">
+          {{ 'blogs.article.posted_on_date_html' | t: date: published_at }}
+        </span>
+        {% if section.settings.show_author %}
+        <span class="posted_by">
+          By {{ article.user.first_name }}
+        </span>
+      {% endif %}
+      {% if article.tags.size > 0 and section.settings.post_tags %}
+        <ul>
+          {% for tag in article.tags %}
+            <li class="tags">
+              <a href="{{ blog.url }}/tagged/{{ tag | handle }}">
+                {{ tag }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if articleCycle == 'even' %}
+  {{ articleImage }}
+  {% endif %}
+
+</div>

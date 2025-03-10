@@ -1,0 +1,202 @@
+{% liquid
+  assign address = ''
+  assign color = 'rgb(204 240 0)'
+  assign time_zone = 'America/New_York'
+  assign showrooms = shop.metaobjects.showroom.values
+  for showroom in showrooms
+    assign page_handle = pages[showroom.conformation_page].handle
+    if page_handle == page.handle
+      assign address = showroom.address | replace: '<br>', ''
+      assign color = showroom.color | default: color
+      assign time_zone = showroom.time_zone_identifier
+    endif
+  endfor
+%}
+
+<section class="calendly-message">
+  <div class="calendly-message__wrapper row">
+    <div class="calendly-message__main">
+      <header>
+        <img src="https://d3v0px0pttie1i.cloudfront.net/uploads/team/avatar/255797/baf3b4b8.png" alt="7th avenue logo" class="calendly-appo__logo" width="80" height="80"loading="lazy"/>
+        <p class="calendly-appo__confirmed">Confirmed</p>
+        <p class="calendly-appo__assigned-to"></p>
+      </header>
+      <ul>
+        <li class="calendly-appo__name" style="--color: {{ color }}"></li>
+        <li class="calendly-appo__time"></li>
+        <li class="calendly-appo__time-zone"></li>
+        {% if address != blank %}
+        <li class="calendly-appo__location">
+          {{ address }}
+        </li>
+        {% endif %}
+        <li class="calendly-appo__invite">Please see the calendar invite for directions & parking instructions. We look forward to seeing you in person!</li>
+      </ul>
+      <p class="calendly-appo__ins">A calendar invitation has been sent to your email address.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const searchParams = new URLSearchParams(window.location.search);
+  const startTimeString = searchParams.get('event_start_time');
+  const endTimeString = searchParams.get('event_end_time');
+  const eventTypeName = searchParams.get('event_type_name')
+
+  const timeZone = '{{ time_zone }}';
+  
+  const elements = {
+    eventTime: document.querySelector('.calendly-appo__time'),
+    eventName: document.querySelector('.calendly-appo__name'),
+    assignTo: document.querySelector('.calendly-appo__assigned-to'),
+    timeZone: document.querySelector('.calendly-appo__time-zone')
+  };
+  
+  const formatDate = (dateString, options) => new Date(dateString).toLocaleString('en-US', { timeZone, ...options });
+  
+  const startTime = formatDate(startTimeString, { hour: 'numeric', minute: 'numeric' });
+  const endTime = formatDate(endTimeString, { hour: 'numeric', minute: 'numeric' });
+  const date = formatDate(startTimeString, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  
+  const setElementText = (element, text, hideIfEmpty = false) => {
+    if (element) {
+      if (text) {
+        element.innerText = text;
+      } else if (hideIfEmpty) {
+        element.style.display = 'none';
+      }
+    }
+  };
+  
+  // Function to convert time zone identifier to short name
+  const getTimeZoneAbbreviation = (timeZone) => {
+    const abbreviations = {
+      // Pacific Time Zone
+      'America/Los_Angeles': 'PST',  // Pacific Standard Time
+    
+      // Mountain Time Zone
+      'America/Denver': 'MST',       // Mountain Standard Time
+      'America/Phoenix': 'MST',      // Mountain Standard Time (no DST)
+    
+      // Central Time Zone
+      'America/Chicago': 'CST',      // Central Standard Time
+    
+      // Eastern Time Zone
+      'America/New_York': 'EST',     // Eastern Standard Time
+    
+      // Alaska Time Zone
+      'America/Anchorage': 'AKST',   // Alaska Standard Time
+    
+      // Hawaii Time Zone
+      'Pacific/Honolulu': 'HST',     // Hawaii Standard Time (no DST)
+    
+      // Other US Territories
+      'America/Adak': 'HST',         // Hawaii-Aleutian Standard Time
+      'America/Sitka': 'AKST',       // Alaska Standard Time
+    
+      // Atlantic Time Zone (Puerto Rico, US Virgin Islands)
+      'America/Puerto_Rico': 'AST',  // Atlantic Standard Time (no DST)
+      'America/St_Thomas': 'AST',    // Atlantic Standard Time (no DST)
+    };
+  
+    
+    return abbreviations[timeZone] || timeZone;
+  };
+  
+  // Set event time
+  setElementText(elements.eventTime, startTime && endTime && date ? `${startTime} - ${endTime}, ${date}` : '', true);
+  
+  // Set event name
+  setElementText(elements.eventName, searchParams.get('event_type_name'), true);
+  
+  // Set assigned person
+  setElementText(elements.assignTo, searchParams.get('assigned_to') ? `You are scheduled with ${searchParams.get('assigned_to')}.` : '', true);
+  
+  // Set time zone abbreviation
+  setElementText(elements.timeZone, getTimeZoneAbbreviation(timeZone));
+
+  theme.pixel = {
+      event_type_name: eventTypeName,
+      event_type_date: date,
+      event_type_time: startTime
+  }
+</script>
+
+<script>
+  // impact tracking code
+  (function(a,b,c,d,e,f,g){e['ire_o']=c;e[c]=e[c]||function(){(e[c].a=e[c].a||[]).push(arguments)};f=d.createElement(b);g=d.getElementsByTagName(b)[0];f.async=1;f.src=a;g.parentNode.insertBefore(f,g);})('https://utt.impactcdn.com/A4224452-9440-43f6-a42d-115513139a081.js','script','ire',document,window);
+  
+  // Create a new script element for sha1.min.js and append it manually
+  var sha1Script = document.createElement('script');
+  sha1Script.src = "{{ 'sha1.min.js' | asset_url }}";
+  sha1Script.async = true;
+  document.head.appendChild(sha1Script);
+  
+  function hashOrNull(value) {
+    return value ? sha1(value) : null;
+  }
+
+  // Once sha1.min.js is loaded, execute the following code
+  sha1Script.onload = function() {
+    // Instantiate URLSearchParams to access query parameters
+    const searchParams = new URLSearchParams(window.location.search);
+    
+    // Check if the required query params are available
+    const inviteeUUID = searchParams.get('invitee_uuid');
+    const inviteeEmail = searchParams.get('invitee_email');
+    const inviteeFullName = searchParams.get('invitee_full_name');
+    const textReminderNumbe = searchParams.get('text_reminder_number');
+    
+     Object.assign(theme.pixel, {
+        invitee_name: hashOrNull(inviteeFullName),
+        invitee_email: hashOrNull(inviteeEmail),
+        invitee_phone: hashOrNull(textReminderNumbe)
+     });
+
+    if (inviteeUUID && inviteeEmail) {
+      // impact identify code
+      ire('identify', {
+        customerId: inviteeUUID, 
+        customerEmail: sha1(inviteeEmail) // sha1 is now available
+      });
+  
+      // impact trackConversion code
+      ire('trackConversion', 37464, {
+        orderId: "{{ 'now' | date: '%s'}}",
+        customerId: inviteeUUID,
+        customerEmail: sha1(inviteeEmail)
+      },
+      {
+        verifySiteDefinitionMatch: true
+      });
+    } else {
+      console.error('invitee_uuid or invitee_email is missing in the URL parameters.');
+    }
+  };
+</script>
+
+<script>
+window.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
+    if (theme.pixel.event_type_name != null) {
+      fbq('track', 'schedule_confirmed', {
+        event_type_name: theme.pixel.event_type_name,
+        event_type_date: theme.pixel.event_type_date,
+        event_type_time: theme.pixel.event_type_time,
+        invitee_name: theme.pixel.invitee_name,
+        invitee_email: theme.pixel.invitee_email,
+        invitee_phone: theme.pixel.invitee_phone
+      });
+    } else {
+      return;
+    }
+  }, 2000);
+});
+</script>
+
+{% schema %}
+  {
+    "name": "Calendly form",
+    "settings": []
+  }
+{% endschema %}

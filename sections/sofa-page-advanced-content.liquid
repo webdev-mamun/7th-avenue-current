@@ -1,0 +1,95 @@
+{% if section.blocks.size > 0 %}
+<div class="pdp-advanced-content__wrapper">
+  {% for block in section.blocks %}
+  {%- liquid
+  	assign video = block.settings.video
+  	assign is_video = false
+    if video != blank
+    assign is_video = true
+    endif
+    assign image_right = block.settings.image_right
+    assign image = block.settings.image
+  -%}
+  <div class="pdp-advanced-content">
+    <div class="pdp-advanced-content__row {% if image_right %}image__right{% endif %}">
+      
+      <div class="pdp-advanced-content__image{% if video!= false %} responcive__video{% endif %}">
+        {%- if is_video == false -%}
+          {%- if image != blank -%}
+            {% render "basic-responsive-image", type: image %}
+          {%- else -%}
+              {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        {%- else -%}
+        <video preload="yes" autoplay loop="true" muted playsinline>
+          <source src="{{ video }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        {%- endif -%}
+      </div>
+      
+      <div class="pdp-advanced-content__content">
+        {% if block.settings.title != blank %}
+          <h2 class="title">{{ block.settings.title }}</h2>
+        {% endif %}
+        {% if block.settings.text != blank %}
+          <div class="text">{{ block.settings.text }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  {% endfor %}
+</div>
+{% endif %}
+
+
+{% schema %}
+{
+   "name":"Advanced content",
+   "settings":[
+      
+   ],
+   "blocks":[
+      {
+         "type":"advanced_content",
+         "name":"Advanced content",
+         "settings":[
+            {
+               "type":"image_picker",
+               "id":"image",
+               "label":"Image"
+            },
+			{
+               "type":"url",
+               "id":"video",
+               "label":"Video"
+            },
+            {
+               "type":"checkbox",
+               "id":"image_right",
+               "label":"Media position right",
+               "default":false
+            },
+            {
+               "type":"text",
+               "id":"title",
+               "label":"Title",
+               "default":"Fabrics that can handle life."
+            },
+            {
+               "type":"textarea",
+               "id":"text",
+               "label":"content",
+               "default":"Anti-stain, anti-liquid, anti-scratch, anti-kids, anti-pets fabrics allows you to live your life freely. Now, you can just let the tiny two-legged and four-legged run free."
+            }
+         ]
+      }
+   ],
+    "presets": [
+	    {
+		    "name": "Advanced content[New]"
+      }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,131 @@
+{% schema %}
+  {
+    "name": "Our Story",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "page_title",
+        "label": "Page Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "img1",
+        "label": "Image #1"
+      },
+      {
+        "type": "image_picker",
+        "id": "img2",
+        "label": "Image #2"
+      },
+      {
+        "type": "image_picker",
+        "id": "img3",
+        "label": "Image #3"
+      },
+      {
+        "type": "textarea",
+        "id": "hero_title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "hero_text",
+        "label": "Text"
+      },
+      {
+        "type": "header",
+		"content": "Brand Value"
+      },
+      {
+        "type": "image_picker",
+        "id": "bv_image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "bv_title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "bv_text",
+        "label": "Text"
+      },
+      {
+        "type": "header",
+		"content": "Our Commitment"
+      },
+      {
+        "type": "image_picker",
+        "id": "c_image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "c_title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "c_text",
+        "label": "Text"
+      }
+    ]
+  }
+{% endschema %}
+<div class="story_wrapper">
+  <div class="story_hero_section">
+    <div class="sh_row mw">
+      <div class="sh_col desktophide">
+      	<h1 class="page_title">{{section.settings.page_title}}</h1>
+      </div>
+      <div class="sh_img_col">
+        <div class="mobilehide sh_page_title">
+          <h1 class="page_title">{{section.settings.page_title}}</h1>
+        </div>
+        <div class="sh_img_grid">
+          <div class="">{% render 'image-lazyload', image: section.settings.img1 %}</div>
+          <div class="mobilehide">{% render 'image-lazyload', image: section.settings.img2 %}</div>
+          <div class="mobilehide">{% render 'image-lazyload', image: section.settings.img3 %}</div>
+        </div>
+      </div>
+      <div class="sh_text_col">
+        <div class="sh_text">
+          {% if section.settings.hero_title != blank %}<h3>{{section.settings.hero_title}}</h3>{% endif %}
+          {% if section.settings.hero_text != blank %}<p>{{section.settings.hero_text}}</p>{% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="brand_value_section">
+    <div class="sbv_row mw">
+      <div class="sbv_img_col">
+        <div class="svb_img">
+        	{% render 'image-lazyload', image: section.settings.bv_image %}
+        </div>
+      </div>
+      <div class="sbv_info_col">
+        <h2>{{section.settings.bv_title}}</h2>
+        <div>{{section.settings.bv_text}}</div>
+      </div>
+    </div>
+  </div>
+    <div class="commitment_section">
+    <div class="sbv_row mw">
+      <div class="sbv_info_col mobilehide">
+        <h2>{{section.settings.c_title}}</h2>
+        <div>{{section.settings.c_text}}</div>
+      </div>
+      <div class="sbv_img_col">
+        <div class="svb_img">
+        	{% render 'image-lazyload', image: section.settings.c_image %}
+        </div>
+      </div>
+      <div class="sbv_info_col desktophide">
+        <h2>{{section.settings.c_title}}</h2>
+        <div>{{section.settings.c_text}}</div>
+      </div>
+    </div>
+  </div>
+  
+</div>

@@ -1,0 +1,54 @@
+{%- section 'collection-banner' -%}
+{%- section 'sofa-page-collection-list' -%}
+
+{%- comment -%}
+<div class="grid_wrapper">
+  <div class="desktop-12 span-12">      
+    <div class="collection-banner"> 
+      {% if settings.collections_banner_image != blank %}
+      {% assign img_url = settings.collections_banner_image | img_url: 'master' %}
+      {% else %}
+      {% assign img_url = 'shop-art.jpg' | file_img_url: 'master' %}
+      {% endif %}
+      <div class="collection-banner" style="background: #ddd;background-image: url('{{img_url}}'); background-size:cover;background-position: center">      
+        <div class="collection_inner">          
+          <div class="collection_info width_100">
+            <div class="row">
+              <h1>Shop Wall Art</h1>
+              <h2 class="banner_dsc">Contemporary art by gallery artists from around the world.</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="content" class="row">
+  <div id="main-content" class="collection_grid_wrapper">
+    <div class="sidebar_col">
+      <div class="c_section collection_sidebar_area">        
+        {% section 'collection-page-sidebar-template' %}
+      </div>
+    </div>     
+    <div class="content_col">    
+      <div class="row">
+        {% section 'products-block-by-collection' %}
+        {% section 'collection-products-section' %}
+      </div>
+      {% comment %}
+      <div class="row test">
+        {% section 'best-seller-section' %}
+        
+        <div class="clear-collections-list"></div>
+        {% section 'popular-cat' %}        
+        
+        <div class="clear-collections-list"></div>
+        {% section 'recently-add' %}
+        <div class="clear-collections-list"></div>
+        {% section 'collection-products-section' %}        
+      </div>
+      {% endcomment %}
+    </div>
+  </div>
+</div>
+{%- endcomment -%}

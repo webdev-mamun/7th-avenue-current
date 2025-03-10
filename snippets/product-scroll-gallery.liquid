@@ -1,0 +1,27 @@
+{% assign product_image_box_ratio_max = 0 %}
+{% for image in product.images %}
+  {% assign image_box_ratio = image.height | append: ".0" | times: 1 | divided_by: image.width | times: 100 %}
+  {% if image_box_ratio > product_image_box_ratio_max %}
+    {% assign product_image_box_ratio_max = image_box_ratio %}
+  {% endif %}
+{% endfor %}
+{% assign product_image_box_ratio_max = product_image_box_ratio_max | append: "%" %}
+{% assign featured_image = current_variant.image | default: product.featured_image %}
+
+
+<div class="product-main-images mobile-3 desktop-12 tablet-6 span-12">
+  <div class="product-image-container show-all">
+    {% for image in product.images %}
+      {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+      {% if section.settings.click_to_enlarge %}<a data-fancybox="images" href="{{ image | img_url: '2400x' }}" data-thumb="{{ image | img_url: '150x' }}">{% endif %}
+        <div class="product_image product-main-image {% if image.id == featured_image.id %}selected{% endif %}" data-image-id="{{ image.id }}" data-aos="{{ settings.scroll_animation }}">
+          <img id="{{ product.id }}" class="product__image lazyload lazyload-fade"
+               data-src="{{ img_url }}"
+               data-sizes="auto"
+               data-zoom-src="{{ img_url }}"
+               alt="{{ image.alt | escape }}" width="100%" height="100%" loading="lazy">
+        </div>
+      {% if section.settings.click_to_enlarge %}</a>{% endif %}
+    {% endfor %}
+  </div>
+</div>

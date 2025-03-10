@@ -1,0 +1,63 @@
+{% assign products = article.metafields.custom.products.value %}
+{% if products != blank %}
+  <div class="article-page-products sofa-page-feature-product sofa-page-feature-product__{{ section.id }}" data-section-id="{{ section.id }}">
+    <div class="row">
+      <div class="sofa-page-section-title__container article-featured-product-title-container">
+        {% if article.metafields.custom.recommended_products_title != blank %}
+          <h2 class="title">{{ article.metafields.custom.recommended_products_title }}</h2>
+          {% else %}
+        <h2 class="title">{{ section.settings.title }}</h2>
+          {% endif %}
+      </div>
+    </div>
+    <div class="sofa-page-feature-product-slider-wrapper">
+      <button class="slider__controller slider__controller--prev"></button>
+      <button class="slider__controller slider__controller--next"></button>
+      <div class="row">
+        <div class="sofa-page-feature-product-slider">
+          {% for product in products limit: section.settings.product_limit %}
+  			  <div class="product-index">
+            {% include 'sofa-product-listing' %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% schema %}
+  {
+    "name": "Products for article",
+    "settings": [
+      {
+			"type":"textarea",
+			"id":"title",
+			"label":"Title",
+			"default":"Shop Modular Seating"
+		},
+		{
+			"type": "range",
+			"id": "product_limit",
+			"min": 8,
+			"max": 24,
+			"step": 2,
+			"unit": "Prd",
+			"label": "Product limit",
+			"default": 8
+		},
+		{
+			"type":"text",
+			"id":"speed",
+			"label":"Auto play speed",
+			"default":"5000",
+			"info":"Millisecond"
+		}
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,81 @@
+{% schema %}
+  {
+    "name": "Our story",
+    "settings": [
+	  {
+		"type": "image_picker",
+		"id": "image",
+		"label": "Story Image"
+	  },
+      {
+		"type": "image_picker",
+		"id": "mobile_image",
+		"label": "Story Mobile Image"
+	  },
+	  {
+		"type": "textarea",
+		"id": "title",
+		"label": "Title"
+	  },
+	  {
+		"type": "textarea",
+		"id": "text",
+		"label": "Text"
+	  },
+	  {
+		"type": "textarea",
+		"id": "mobile_text",
+		"label": " Mobile Text"
+	  },
+	  {
+		"type": "text",
+		"id": "link_text",
+		"label": "Link Text"
+	  },
+	  {
+		"type": "url",
+		"id": "link",
+		"label": "Link"
+	  },
+	  {
+		"type": "textarea",
+		"id": "dialog_1",
+		"label": "Dialog 1"
+	  },
+	  {
+		"type": "textarea",
+		"id": "dialog_2",
+		"label": "Dialog 2"
+	  }
+	
+	],
+	"presets": [{
+      "name": "Our story"
+  	}]
+  }
+{% endschema %}
+
+<section class="home homepage-section story_section" data-section-id="{{ section.id }}" data-section-type="story-section">
+  <div class="our_story_section">
+	<div class="dialog_col">
+      <div>
+        {% if section.settings.dialog_1 %}<h2 class="first">{{section.settings.dialog_1}}</h2>{% endif %}
+        {% if section.settings.dialog_2 %}<h2 class="second">{{section.settings.dialog_2}}</h2>{% endif %}
+      </div>
+    </div>
+    <div class="story_col">
+      <div class="story_col_contents">
+        <div class="story_img_col">
+          <div class="mobilehide">{% render 'image-lazyload', image: section.settings.image %}</div>
+          <div class="desktophide">{% render 'image-lazyload', image: section.settings.mobile_image %}</div>
+        </div>
+        <div class="story_info_col">
+          <h2 class="big_title">{{section.settings.title}}</h2>
+          <p class="mobilehide">{{section.settings.text}}</p>
+          <p class="desktophide">{{section.settings.mobile_text}}</p>
+          <div><a href="{{section.settings.link}}">{{section.settings.link_text}}</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,83 @@
+<div class="collection--banner__container">
+  {% for block in section.blocks %}
+    {% liquid
+       assign coll = collections[block.settings.collection]
+    %}
+    {% if coll.handle == collection.handle %}
+      {%- liquid
+        assign image = block.settings.image | img_url: 'master'
+        assign image_mobile = block.settings.image_mobile | img_url: 'master'
+        if block.settings.image_mobile == blank
+          assign image_mobile = block.settings.image | img_url: 'master'
+        endif
+        assign video = block.settings.video
+        assign mobileVideo = block.settings.mobileVideo
+        if block.settings.mobileVideo == blank
+          assign mobileVideo = block.settings.video
+        endif
+      -%}
+      
+      <div class="collection--banner">
+        {% if video != blank %}
+           <div class="collection--banner-video">
+             <div class="collection--banner-video__wrapper desktop-video" style="aspect-ratio: {{  video.aspect_ratio }}">
+              {{ video | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false }}
+            </div>
+            <div class="collection--banner-video__wrapper mobile-video" style="aspect-ratio: {{  mobileVideo.aspect_ratio }}">
+              {{ mobileVideo | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false }}
+            </div>
+          </div>
+        {% else %}
+          <div class="collection-banner__desktop {{ coll.handle }}" style="background-image: url({{ image }})"></div>
+          <div class="collection-banner__mobile" style="background-image: url({{ image_mobile }})"></div>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Collection banner",
+    "settings": [],
+	"blocks": [
+		{
+			"type":"banner",
+			"name":"Banner",
+			"settings": [
+				{
+                  "type": "collection",
+                  "id": "collection",
+                  "label": "Collection"
+				},
+                {
+                  "type": "video",
+                  "id": "video",
+                  "label": "A Shopify-hosted video"
+                },
+                {
+                  "type": "video",
+                  "id": "mobileVideo",
+                  "label": "A Shopify-hosted video(Mobile)"
+                },
+				{
+                  "type":"image_picker",
+                  "id":"image",
+                  "label":"Image"
+				},
+				{
+                  "type":"image_picker",
+                  "id":"image_mobile",
+                  "label":"Image mobile"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,120 @@
+{% assign cats0 = '' %}
+{% if settings.item_content_1 != blank %}
+{% assign cats0 = settings.item_content_0 | split: '|' %}
+{% endif %}
+
+{% assign cats1 = '' %}
+{% if settings.item_content_1 != blank %}
+{% assign cats1 = settings.item_content_1 | split: '|' %}
+{% endif %}
+
+{% assign cats2 = '' %}
+{% if settings.item_content_2 != blank %}
+{% assign cats2 = settings.item_content_2 | split: '|' %}
+{% endif %}
+
+{% assign cats3 = '' %}
+{% if settings.item_content_3 != blank %}
+{% assign cats3 = settings.item_content_3 | split: '|' %}
+{% endif %}
+
+
+<button type="button" class="button hideondesktop sidebarToggle">Explore Art</button>
+<div class="sidebar_items_featured_collections">
+  <div class="sidebar_item_header">
+    <h4>{{ settings.shop_filter_item_0}}</h4>
+  </div>
+  <div class="sidebar_item_body">    
+    <ul class="featured_slider" id="featured_slider">
+    {% for coll in collections %}
+    {% if cats0 contains coll.handle %}
+      <li><a {% if coll.handle == collection.handle %}class="active" {% endif%}href="{{ coll.url }}">{{coll.title}}</a></li>
+    {% endif %}
+    {% endfor %}
+    </ul>
+  </div>	
+</div>
+<div class="collection_sidebar_wrapper">
+  <div class="sidebar_items">
+    <div class="sidebar_close sidebarToggle"><i class="la la-remove"></i></div>
+    {% if settings.shop_filter_item_1 != blank %}
+    <div class="sidebar_item first open">
+      <div class="sidebar_item_header open">
+        <h4>{{ settings.shop_filter_item_1}}</h4>
+      </div>
+      <div class="sidebar_item_body">        
+      	{% for coll in collections %}
+        {% if cats1 contains coll.handle %}
+        <a {% if coll.handle == collection.handle %}class="active" {% endif%}href="{{ coll.url }}">{{coll.title}}</a>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    {% if settings.shop_filter_item_2 != blank %}
+    <div class="sidebar_item mid open">
+      <div class="sidebar_item_header open">
+        <h4>{{settings.shop_filter_item_2}}</h4>
+      </div>
+      <div class="sidebar_item_body">      	
+      	{% for coll in collections %}
+        {% if cats2 contains coll.handle %}
+        <a {% if coll.handle == collection.handle %}class="active" {% endif%}href="{{ coll.url }}">{{coll.title}}</a>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    {% if settings.shop_filter_item_3 != blank %}
+    <div class="sidebar_item last open">
+      <div class="sidebar_item_header open">
+        <h4>{{settings.shop_filter_item_3}}</h4>
+      </div>
+      <div class="sidebar_item_body">
+      	{% for coll in collections %}
+        {% if cats3 contains coll.handle %}
+        <a {% if coll.handle == collection.handle %}class="active" {% endif%}href="{{ coll.url }}">{{coll.title}}</a>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  <div class="static_links">
+    <a class="button coll_link" href="/collections/all">Shop All</a>       	
+  </div> 
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    (function(){
+      $('.sidebar_item .sidebar_item_header').on('click', function() {
+        $this = $(this);
+        $this.toggleClass('open');      
+        $this.next().slideToggle('fast').toggleClass('open');
+      });
+      $('.sidebarToggle').on('click', function() {    
+        $('.collection_sidebar_wrapper').toggleClass('open');        
+      });
+    })();
+    (function(){    
+      $(window).on('load resize', function() {
+        if($(this).width() < 741) {
+          $('#featured_slider').not('.slick-initialized').slick({
+            autoplay: false,
+            centerMode: false,
+            speed: 1000,
+            slidesToShow: 1,
+            infinite: false,
+            arrows: false,
+            variableWidth: true
+          });
+        } else {
+          if($('#featured_slider').hasClass('slick-initialized')){
+            $('#featured_slider').slick('unslick');
+          }
+        }
+      });
+    })();
+  });
+</script>
+

@@ -1,0 +1,364 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product-template",
+      "settings": {
+        "full_width": true,
+        "show_banner": false,
+        "enable_zoom": true,
+        "click_to_enlarge": true,
+        "image_section_size": "ultra",
+        "image_options": "static",
+        "make_gallery_sticky": true,
+        "make_atc_sticky": true,
+        "atc_animation_time": "300",
+        "atc_position": "above_gallery",
+        "thumbnails": "below",
+        "thumbs_to_show": 5,
+        "thumbs_to_show_mobile": 4,
+        "slide_controls": "arrows",
+        "product_description_title": "Details",
+        "product_description": "<ul>\n<li>Premium, grade A solid Indonesian teak.</li>\n<li>Solid teak is naturally weather-resistant as the wood produces natural oils that make it resistant to moisture, warping, rotting, and splitting. The natural oils create a beautiful silvery patina that emerges over time.</li>\n<li>Outdoor fabrics with fade resistance rated for up to 2,000 hours of UV Fastness.</li>\n<li>Quick-dry cushion foam that are resistant to mold, rot, and mildew due to its open-cell structure and inability to retain water and humidity. Typically used in boats, yachts, and poolside settings.</li>\n<li>Variations in grain and color are natural and make each piece of teak unique.</li>\n<li>Sustainably and responsibly-sourced teak wood certified by the Indonesian Sustainable Forest Management (SFM) and Verification of Timber Legality (V-Legal Export Certificate). Strictly adheres to the Indonesian government’s best sustainability practices.</li>\n<li>Water-repellent & stain-resistant covers using PFAS-free DWR coating technology.</li>\n<li>Endlessly modular & re-arrangeable into any configuration. If your household grows, simply add a seat instead of buying a new sofa.</li>\n<li>Removable & washable covers allow for fabrics to be easily cleaned when they get dirty. Dry clean or machine-wash at home in cold water & delicate setting. Air dry or tumble dry no heat.</li>\n<li>Ready for a refresh? Removable covers also means that sofa color can be changed anytime you get bored or need a home makeover.</li>\n<li>Adjustable back cushion firmness. Use our complimentary fill packets to customize your own back cushion firmness.</li>\n<li>Our back cushions use premium Quick-Dry Down Alternative which makes it hypoallergenic, vegan, and cruelty-free. Our cushions maintain their shape and don't require constant fluffing to look their best.\n</li>\n<li>OEKO-TEX & GreenGuard Gold certified cover fabrics, meaning that they passed rigorous testing to be free from harmful chemicals that pollute skin and the environment.\n</li>\n<li>Free from fluorine (PFAS/PFOA/PFC), formaldehyde, melamine derivatives, and contain no APEOs.</li>\n<li>Lifetime durability of 10 years or more.</li>\n<li>\nQuick & easy assembly in 5-10 minutes per seat.\n</li>\n</ul>",
+        "product_return_title": "Shipping & Assembly",
+        "product_return": "<ul>\n<li>We currently ship all orders from our warehouse in Los Angeles, CA. We charge a flat shipping rate shown at checkout. </li>\n<li>We want to make you sure you love your sofa. We will cover all damages that occur in shipping or sofa parts that are missing.</li>\n<li>We will ship all modular pieces via FedEx. For safety, signature is required upon FedEx delivery unless requested otherwise.</li>\n<li>If you are located within 40 miles of Los Angeles, orders are delivered via our own Local Delivery team who will deliver, unbox, and assemble your sofa.</li>\n<li>For a small fee, you may also choose to include assembly with your order. Assembly will be conducted by a verified 3rd party assembler from TaskRabbit or other platforms.</li>\n<li>For shipping outside of the contiguous U.S or internationally, please contact our team at <u><a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a></u>\n</li>\n</ul>",
+        "product_tab_5_title": "Returns & Exchanges",
+        "product_tab_5_content": "<ul>\n<li>We offer 10-day free returns or refunds for any purchase. Shipping charges would apply and must return in original packaging.</li>\n<li>If you are unhappy with your fabric color selection, we offer 30-day free exchanges if you’d like to change your fabrics color. Fabric exchanges are limited to one-time per order.</li>\n<li>If you would like to add assembly to your fabric exchange, contact <u><a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> for additional information. Additional assembly fee will apply.</u>\n</li>\n<li>Love your sofa but need to return a single seat/ back/ arm? Contact <u><a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> for additional information.</u>\n</li>\n</ul>",
+        "description_background": "",
+        "show_vendor": false,
+        "show_sku": false,
+        "show_quantity_selector": false,
+        "product_variants": "swatches",
+        "color_swatch_options": "custom-image",
+        "back_in_stock": false,
+        "back_in_stock_text": "<p>Email me when this is available</p>",
+        "show_payment_button": false,
+        "show_social_share": false,
+        "product_description_position": "below",
+        "lower_description": "small",
+        "lower_description_background": "",
+        "show_product_size_chart": false,
+        "show_product_video": false,
+        "show_product_model": false,
+        "popup_text": "All of our back cushions are adjustable in firmness, even after delivery. If you’d like to increase your back cushion firmness, we can send you complimentary down alternative fill packets for you to firm up your back cushions",
+        "before_price": "Starting at",
+        "after_price": "with",
+        "month": "36",
+        "section_to_go": "#shopify-section-pdp-sofa-affirm",
+        "logo1": "shopify://shop_images/Shop_Pay_logo_-_Brandlogos.net_de4cd06b-8780-4a71-8c97-0aae2543abe5.svg",
+        "logo2": "shopify://shop_images/Affirm_logo_-_Brandlogos.net_4db516ad-e3bc-40e6-972f-6f6f8816a214.svg"
+      }
+    },
+    "product_details_ePCA89": {
+      "type": "product-details",
+      "blocks": {
+        "details_9FCgmL": {
+          "type": "details",
+          "repeater": "{{ product.metafields.details.product_details.value }}",
+          "settings": {
+            "primary_tab_title": "{{ block.repeater.primary_tab_title.value }}",
+            "primary_tab_description": "{{ block.repeater.primary_tab_description | metafield_tag }}",
+            "primary_image": "{{ block.repeater.primary_image.value }}",
+            "primary_image_title_optional": "{{ block.repeater.primary_image_title_optional.value }}",
+            "secondary_image_optional": "{{ block.repeater.secondary_image_optional.value }}",
+            "secondary_image_title_optional": "{{ block.repeater.secondary_image_title_optional.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "details_9FCgmL"
+      ],
+      "settings": {
+        "title": "Let's get into the details."
+      }
+    },
+    "product-special-feature": {
+      "type": "product-special-feature",
+      "blocks": {
+        "feature_EDDLtB": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/Teak COMPRESSED.mov",
+            "title": "Premium solid Indonesian teak.",
+            "text": "One of the most premium and sought-after hardwoods on ​the market, our Grade-A Solid Teak frames are strong, ​durable, and sleek. Natural protective oils produced by the solid teak make it resistant to moisture, rotting, and splitting while creating a beautiful silvery patina over time."
+          }
+        },
+        "feature_hyzT6D": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/Water Repellent COMPRESSED.mov",
+            "title": "Water repellent & stain resistant.",
+            "text": "Our fabrics have the ability to withstand & temporarily repel everyday household spills such as water, coffee, sodas, juices, soy sauce, energy drinks, and even wine. Perfect for households with kids, pets, or drunk people."
+          }
+        },
+        "feature_BNUmLe": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/Elements COMPRESSED.mov",
+            "title": "Designed to withstand the elements.",
+            "text": "Our proprietary outdoor fabrics are designed to be resistant to fading and withstand ​intense sun exposure. ​We use premium quick-dry foam cushions - typically used in boats, yachts, and poolside settings - that do not retain water and are resistant to mold & mildew."
+          }
+        },
+        "feature_XFiVT8": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/Machine Washable COMPRESSED.mov",
+            "title": "Removable, washable, & replaceable covers.",
+            "text": "All of our outdoor covers are ​removable & machine washable. Ready for a new look? ​Now you can extend the life of your existing fabrics by ​swapping out the covers to a new color instead of buying ​an entirely new piece of furniture."
+          }
+        },
+        "feature_LFxnnT": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/Back Cushion COMPRESSED.mov",
+            "title": "Adjustable back cushion firmness.",
+            "text": "Our back cushions are adjustable to your liking. Choose between Medium-Firm (recommended) and Medium-Soft, or use our complimentary fill packets to customize your own back cushion firmness."
+          }
+        }
+      },
+      "block_order": [
+        "feature_EDDLtB",
+        "feature_hyzT6D",
+        "feature_BNUmLe",
+        "feature_XFiVT8",
+        "feature_LFxnnT"
+      ],
+      "settings": {}
+    },
+    "sofa-page-advanced-content": {
+      "type": "sofa-page-advanced-content",
+      "blocks": {
+        "advanced_content_BacJ7X": {
+          "type": "advanced_content",
+          "settings": {
+            "video": "https://cdn.shopify.com/videos/c/o/v/e6388e7263f24cfeb07e94d07f65c438.mp4",
+            "image_right": true,
+            "title": "Endlessly modular for any configuration.",
+            "text": "Our simple modular outdoor system features 3 core components - a Corner Seat, an Armless Seat, and an Ottoman - all of which can be arranged into any configuration to perfectly fit your outdoor space."
+          }
+        },
+        "advanced_content_xABPwF": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/Non_toxic_sustainably_built_702ee8b5-af4c-43c0-ae19-080c2f5fe131.jpg",
+            "video": "",
+            "image_right": false,
+            "title": "Non-toxic & safe for the environment.",
+            "text": "Keeping our customers and our planet safe is a top priority. Our fabrics are OEKO-TEX certified & are free from \"forever chemicals\" such as PFAS/PFOA/PFOS. They are also free from any toxic flame-retardant chemicals, formaldehyde, and others."
+          }
+        },
+        "advanced_content_ezzWmx": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/PDP_-_Teak.jpg",
+            "video": "",
+            "image_right": true,
+            "title": "Sustainably & responsibly-sourced.",
+            "text": "Our solid teak is sustainably-sourced in adherence and regulation by the Indonesian Government’s Sustainable Forest Management (SFM)  and Verification of Timber Legality (V-Legal Export Certificate)."
+          }
+        }
+      },
+      "block_order": [
+        "advanced_content_BacJ7X",
+        "advanced_content_xABPwF",
+        "advanced_content_ezzWmx"
+      ],
+      "settings": {}
+    },
+    "product_compare": {
+      "type": "product-compare",
+      "blocks": {
+        "details_JFqWTK": {
+          "type": "details",
+          "repeater": "{{ product.metafields.custom.compare_product.value }}",
+          "settings": {
+            "heading": "{{ block.repeater.name.value }}",
+            "name_1": "{{ block.repeater.data_set_text_2nd_column | metafield_tag }}",
+            "logo_1": "{{ block.repeater.data_set_image_2nd_column.value }}",
+            "name_2": "{{ block.repeater.data_set_text_3rd_column | metafield_tag }}",
+            "logo_2": "{{ block.repeater.data_set_image_3rd_column.value }}",
+            "name_3": "{{ block.repeater.data_set_text_4th_column | metafield_tag }}",
+            "logo_3": "{{ block.repeater.data_set_image_4th_column.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "details_JFqWTK"
+      ],
+      "settings": {
+        "title": "How We Compare",
+        "subtitle": "A whole lot more features, at an even better pricing."
+      }
+    },
+    "showroom": {
+      "type": "showroom",
+      "settings": {
+        "title": "Find a Showroom Near You",
+        "title_mob": "Find a Showroom Near You",
+        "subtitle": "Experience “The Worlds Greatest Modular Sofa” in person.",
+        "subtitle_mob": "",
+        "get_data_from_metaobject": true,
+        "box_per_row": 3,
+        "active_geo": true,
+        "border_top": false,
+        "border_bot": false,
+        "color": "#000000",
+        "bg_color": "#ffffff",
+        "card_bg": "#f3f3f3",
+        "bt_color": "#ffffff",
+        "bt_bg": "#032e6a",
+        "padding_top": 30,
+        "padding_bot": 40,
+        "padding_top_mob": 20,
+        "padding_bot_mob": 20
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "box": false,
+        "image": "shopify://shop_images/Website_Virtual_Appointment_-_2.jpg",
+        "text_left": false,
+        "title": "Unable to visit a showroom? Book a virtual appointment.",
+        "text": "Chat via video call with one of our Sales Consultants to see our modular sofas live, explore fabric options,  watch a full product demo, and ask any questions you might have!",
+        "btn_url": "https://calendly.com/7thavenue/virtual-design-consult",
+        "btn_text": "BOOK AN APPOINTMENT",
+        "btn_url2": "",
+        "btn_text2": "READ ABOUT US",
+        "borderTop": true,
+        "borderBot": false,
+        "top_gutter": 40,
+        "bottom_gutter": 40,
+        "top_gutter_m": 20,
+        "bottom_gutter_m": 0,
+        "color": "#000000",
+        "bg_color": "rgba(0,0,0,0)"
+      }
+    },
+    "pdp-sofa-affirm": {
+      "type": "pdp-sofa-affirm",
+      "blocks": {
+        "option_4BEEyF": {
+          "type": "option",
+          "settings": {
+            "top": "12/24/36",
+            "bottom": "MONTHS INSTALLMENT"
+          }
+        },
+        "option_eR8KUk": {
+          "type": "option",
+          "settings": {
+            "top": "0%",
+            "bottom": "APR AVAILABLE"
+          }
+        },
+        "option_pMFfU6": {
+          "type": "option",
+          "settings": {
+            "top": "$0",
+            "bottom": "HIDDEN FEES"
+          }
+        },
+        "button_tigA89": {
+          "type": "button",
+          "settings": {
+            "btnTyep": "klarna",
+            "btnText": "FINANCE WITH klarna",
+            "btnUrl": ""
+          }
+        },
+        "button_FEP4L6": {
+          "type": "button",
+          "settings": {
+            "btnTyep": "shoppay",
+            "btnText": "Finance With Shop Pay",
+            "btnUrl": ""
+          }
+        },
+        "button_LqR3Vg": {
+          "type": "button",
+          "settings": {
+            "btnTyep": "affirm",
+            "btnText": "Finance With Affirm",
+            "btnUrl": ""
+          }
+        },
+        "logo_DYdQUP": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/klarna-logo.svg",
+            "logoType": "klarna"
+          }
+        },
+        "logo_B3A7Nm": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Shop_Pay_logo_-_Brandlogos.net_de4cd06b-8780-4a71-8c97-0aae2543abe5.svg",
+            "logoType": "shoppay"
+          }
+        },
+        "logo_R4ewd7": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Affirm_logo_-_Brandlogos.net_4db516ad-e3bc-40e6-972f-6f6f8816a214.svg",
+            "logoType": "affirm"
+          }
+        }
+      },
+      "block_order": [
+        "option_4BEEyF",
+        "option_eR8KUk",
+        "option_pMFfU6",
+        "button_tigA89",
+        "button_FEP4L6",
+        "button_LqR3Vg",
+        "logo_DYdQUP",
+        "logo_B3A7Nm",
+        "logo_R4ewd7"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Buy_Now_Pay_Later_-_Outdoor_cb2f37d1-6738-4efe-b111-f3e2f50e0e28.jpg",
+        "before_price": "Buy now, pay later. Starts at",
+        "after_price": "with",
+        "month": "36",
+        "info": "*Based on 36-month financing",
+        "pt": 30,
+        "pb": 35,
+        "ptm": 15,
+        "pbm": 25
+      }
+    },
+    "pdp-sofa-review": {
+      "type": "pdp-sofa-review",
+      "settings": {
+        "groupId": "b48006a9-a611-4a37-ac99-bcee37d41861",
+        "enable_media_grid": false,
+        "filter_review": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_details_ePCA89",
+    "product-special-feature",
+    "sofa-page-advanced-content",
+    "product_compare",
+    "showroom",
+    "image-with-text",
+    "pdp-sofa-affirm",
+    "pdp-sofa-review"
+  ]
+}

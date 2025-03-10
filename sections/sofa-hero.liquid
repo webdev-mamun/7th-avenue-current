@@ -1,0 +1,83 @@
+{% assign image = section.settings.image %}
+{% assign image_mobile = section.settings.image_mobile %}
+{% unless section.settings.image_mobile != blank  %}
+	{% assign image_mobile = section.settings.image %}
+{% endunless %}
+
+<div class="hero">
+  {% if image != blank %}
+  <div class="hero-image hero-image__desktop">
+    {% render "basic-responsive-image", type: image %}
+  </div>
+  <div class="hero-image hero-image__mobile">
+  	{% render 'basic-responsive-image', type:image_mobile %}
+  </div>
+  <div class="gradiant__bg"></div>
+  <div class="hero-text__container">
+    {% if section.settings.title != blank %}
+    <h2 class="hero-text__title">{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.text != blank %}
+    <p class="hero-text__content">{{ section.settings.text }}</p>
+    {% endif %}
+    {% if section.settings.star != blank %}
+    <p class="hero-text__star">{{ section.settings.star }}</p>
+    {% endif %}
+    {% if section.settings.btn_url != blank %}
+    <a href="{{ section.settings.btn_url }}" class="hero-text__btn">{{ section.settings.btn_text }}</a>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Sofa hero",
+    "settings": [
+		{
+			"type":"image_picker",
+			"id":"image",
+			"label":"Image(Desktop)"
+		},
+		{
+			"type":"image_picker",
+			"id":"image_mobile",
+			"label":"Image(Mobile)"
+		},
+		{
+			"type":"textarea",
+			"id":"title",
+			"label":"Title",
+			"default":"The World’s<br>Greatest Sofa."
+		},
+		{
+			"type":"textarea",
+			"id":"text",
+			"label":"Text",
+			"default":"Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum."
+		},
+		{
+			"type":"textarea",
+			"id":"star",
+			"label":"Star",
+			"default":"★★★★★ 5.0/50"
+		},
+		{
+			"type":"url",
+			"id":"btn_url",
+			"label":"Button url"
+		},
+		{
+			"type":"text",
+			"id":"btn_text",
+			"label":"Button text",
+			"default":"SHOP NOW"
+		}
+	],
+	"presets": [
+		{
+			"name":"Sofa hero"
+		}
+	]
+  }
+{% endschema %}

@@ -1,0 +1,120 @@
+<div class="product-special-feature">
+  {% for block in section.blocks %}
+    {% liquid
+      assign current_variant_title = product.selected_or_first_available_variant.title | downcase
+      assign extra_deep = block.settings.extra_deep
+      if current_variant_title contains 'extra-deep' and extra_deep
+        assign is_active = true
+      else
+        assign is_active = false
+      endif
+    %}
+    <div class="product-special-feature__container{% if extra_deep %} only-extra-deep{% endif %}{% if is_active %} active{% endif %}">
+      {% assign video = false %}
+      {% if block.settings.videotype != blank %}
+        {% assign video = true %}
+      {% endif %}
+      {% if video == false %}
+        {% assign image = block.settings.image %}
+        {% if block.settings.image_mobile != blank %}
+          {% assign image_mobile = block.settings.image_mobile %}
+        {% else %}
+          {% assign image_mobile = block.settings.image %}
+        {% endif %}
+        <div class="product-special-feature__image">
+          <div class="product-special-feature__image--desktop">
+            {% render 'basic-responsive-image', product: product, type: image %}
+            <noscript>
+              <img
+                src="{{ image | image_url: width: 350 }}"
+                alt="{{ image.alt | escape }}"
+                width="100%"
+                height="100%"
+                loading="lazy"
+              >
+            </noscript>
+          </div>
+          <div class="product-special-feature__image--mobile">
+            {% render 'basic-responsive-image', product: product, type: image_mobile %}
+            <noscript>
+              <img
+                src="{{ image_mobile | image_url: width: 350 }}"
+                alt="{{ image_mobile.alt | escape }}"
+                width="100%"
+                height="100%"
+                loading="lazy"
+              >
+            </noscript>
+          </div>
+        </div>
+      {% else %}
+        <div class="product-special-feature__video responcive__video">
+          {{
+            block.settings.videotype
+            | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false
+          }}
+        </div>
+      {% endif %}
+      <div class="gradiant__bg"></div>
+      <div class="product-special-feature__content">
+        <div class="product-special-feature__content--inner">
+          <h2 class="title">{{ block.settings.title }}</h2>
+          <div class="content">{{ block.settings.text }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Product special feature",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "extra_deep",
+          "label": "Only for extra deep"
+        },
+        {
+          "type": "video",
+          "id": "videotype",
+          "label": "A Shopify-hosted video"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image[Desktop]"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image[Mobile]"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Feels like floating on a cloud."
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "A truly comfortable sitting experience, you might as well feel like you’re floating. We use the same technology and construction as high-end mattresses, because you equally deserve the best: while sleeping and while living life."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Special feature"
+    }
+  ]
+}
+{% endschema %}

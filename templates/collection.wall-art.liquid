@@ -1,0 +1,41 @@
+{% section 'collection-sofa-banner' %}
+<div id="content" class="row">
+  <div id="main-content">
+    <div class="collection-header">
+      <div class="collection-header__row">
+        <div class="collection-header__col">
+          <h1 class="title">Shop {{ collection.title }}</h1>
+        </div>
+        <div class="collection-header__col">
+          <p class="description">{{ collection.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div  class="collection_grid_wrapper">
+      <div class="sidebar_col">
+        <div class="c_section collection_sidebar_area">        
+          {% section 'collection-page-sidebar-template' %}
+        </div>
+      </div>     
+      <div class="content_col">    
+        <div class="row">
+          {% section 'products-block-by-collection' %}
+          {% section 'collection-products-section' %}
+        </div>
+        {% comment %}
+        <div class="row test">
+          {% section 'best-seller-section' %}
+
+          <div class="clear-collections-list"></div>
+          {% section 'popular-cat' %}        
+
+          <div class="clear-collections-list"></div>
+          {% section 'recently-add' %}
+          <div class="clear-collections-list"></div>
+          {% section 'collection-products-section' %}        
+        </div>
+        {% endcomment %}
+      </div>
+    </div>
+  </div>
+</div>

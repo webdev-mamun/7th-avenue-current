@@ -1,0 +1,107 @@
+<section class="homepage-blog-{{ section.id }} blog-template"
+data-aos="{{ settings.scroll_animation }}"
+ data-section-id="{{ section.id }}">
+
+  {% if section.settings.full_width %}<div class="gridlock-fluid"><div class="row">{% endif %}
+  {%- assign blog = blogs[section.settings.blog] -%}
+  {% if section.settings.heading != blank %}
+    <div class="section-title row">
+      <h2><a href="{{ blog.url }}">{{ section.settings.heading | escape }}</a></h2>
+    </div>
+  {% endif %}
+
+  {%- assign post_limit = section.settings.post_limit -%}
+  <div class="row">
+    {% if blog == blank %}
+      {% include 'onboard-blog' %}
+    {% else %}
+      {% for article in blog.articles limit: post_limit %}
+        {% include 'article-loop' %}
+      {% endfor %}
+    {% endif %}
+  </div>
+  {% if section.settings.full_width %}</div></div>{% endif %}
+
+</section>
+<div class="clear"></div>
+
+<style>
+  section.homepage-blog-{{ section.id }} {
+    background: {{ section.settings.background_color }};
+    padding-bottom: 0;
+  }
+  section.homepage-blog-{{ section.id }} h2, section.homepage-blog-{{ section.id }} h2 a {
+    color: {{ section.settings.heading_color }} !important;
+    {% if settings.section_titles != 'text_only' %}
+    border-color: {{ section.settings.heading_color }} !important;
+    {% endif %}
+  }
+</style>
+
+
+{% schema %}
+{
+  "name": "Blog posts",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width"
+    },
+    {
+      "id": "blog",
+      "type": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Blog posts"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#fff"
+    },
+    {
+      "type": "range",
+      "id": "post_limit",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "label": "Posts shown",
+      "default": 2
+    },
+    {
+      "type": "checkbox",
+      "id": "post_tags",
+      "label": "Show tags",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Show post author",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog posts",
+      "settings": {
+        "blog": "News",
+        "post_limit": 2
+      }
+    }
+  ]
+}
+{% endschema %}

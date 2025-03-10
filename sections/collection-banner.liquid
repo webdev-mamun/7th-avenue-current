@@ -1,0 +1,80 @@
+{%- liquid
+	assign title = section.settings.title
+    assign content = section.settings.content
+-%}
+
+<div class="collection-banner collection-banner__{{ section.id }}" 
+     style="
+            background: {{ section.settings.title_bg }};
+            box-shadow: 0px 0px 0px 1px {{ section.settings.title_border_color }} inset;
+            ">      
+  <div class="collection_inner_contact">  
+    <div class="collection_info">
+      <h3 style="color: {{ section.settings.title_color }}">{{title}}</h3>
+    </div>
+    <p class="review-page-content">{{ content }}</p>
+  </div>
+</div> 
+
+{%- style -%}
+	.collection_inner_contact {
+      color: #fff;
+      flex-direction: column;
+  }
+
+ .review-page-content {
+    font-family: 'SuisseIntl-Regular';
+    font-size: 12pt;
+    line-height: 30px;
+    letter-spacing: 0;
+    margin-top: 20px;
+    text-align: center;
+    padding: 0 10px;
+}
+{%- endstyle -%}
+
+
+{% schema %}
+  {
+    "name": "Collection banner",
+    "settings": [
+{
+	"type": "textarea",
+	"id": "title",
+	"label": "Title",
+	"default": "Shop Modular Seating"
+},
+{
+	"type": "textarea",
+	"id": "content",
+	"label": "Content",
+	"default": "Our best selling modular sofa configurations.< br />Find the perfect fit for every home size & style."
+},
+
+	{
+          "type": "color",
+          "id": "title_bg",
+          "label": "Banner Backgroung",
+		  "default": "#000"
+        },
+		{
+          "type": "color",
+          "id": "title_color",
+          "label": "Banner Color",
+		  "default": "#fff"
+        },
+		{
+          "type": "color",
+          "id": "title_border_color",
+          "label": "Banner Border Color",
+		  "default": "#fff"
+        }
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

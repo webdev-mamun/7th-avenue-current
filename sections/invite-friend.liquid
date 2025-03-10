@@ -1,0 +1,36 @@
+{% schema %}
+  {
+    "name": "Invite a Friend",
+    "settings": [
+	  {
+		"type": "textarea",
+		"id": "title",
+		"label": "Title"
+	  },
+	  {
+		"type": "textarea",
+		"id": "text",
+		"label": "Text"
+	  }	  
+	],
+	"presets": [
+	  {
+		"name": "Invite a Friend"
+	  }
+	]
+  }
+{% endschema %}
+
+
+<div class="customer__wrapper homepage-section" id="refer">
+  <div class="customer_invite_friend_wrapper mw">
+    <div class="invite_left">
+      <h2>{{section.settings.title}}</h2>
+      <p>{{section.settings.text}}</p>
+    </div>
+    <div class="invite_right">
+     <div id="conjured_referral"></div>
+      <script src="https://app.conjured.co/shopify/referral/widget.js?shop=grafiti-home.myshopify.com&cmp=2353" defer></script>
+    </div>
+  </div>
+</div>

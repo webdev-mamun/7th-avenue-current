@@ -1,0 +1,721 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "slideshow",
+      "blocks": {
+        "c1066701-5779-4944-aeae-a5972d494459": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hero.jpg",
+            "slide_title": "The World's <u>Deepest</u> <br>Modular Sofa.",
+            "slide_text": "",
+            "showCaptionDesktop": false,
+            "btn_text": "SHOP SEATING",
+            "btn_url": "shopify://collections/best-sellers",
+            "alignment": "center",
+            "si_bg": "",
+            "s_title_color": "",
+            "s_text_color": "",
+            "sip_x": "center",
+            "sip_x_v": 31,
+            "sip_y": "top",
+            "sip_y_v": 8,
+            "sip_width": "max-content",
+            "sip_height": "max-content",
+            "si_padding": "",
+            "si_margin": "",
+            "si_text_margin": "",
+            "si_title_margin": ""
+          }
+        }
+      },
+      "block_order": [
+        "c1066701-5779-4944-aeae-a5972d494459"
+      ],
+      "settings": {
+        "autoplaySpeed": "",
+        "review_text": "4.9/5.0",
+        "review_url": "product-reviews",
+        "start_date": "",
+        "end_date": "",
+        "color": "#000000",
+        "background": "#f3f3f3"
+      }
+    },
+    "b078c71e-2483-4dd2-bf7f-870a8a815824": {
+      "type": "feature-in",
+      "blocks": {
+        "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-0": {
+          "type": "feature_in",
+          "settings": {
+            "text": "“7th Avenue is a furniture company with one job & they’re doing it better than anyone else”",
+            "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/forbes_7thavenue.svg?v=1672946484",
+            "url": "shopify://pages/reviews",
+            "new_window": true
+          }
+        },
+        "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-1": {
+          "type": "feature_in",
+          "settings": {
+            "text": "“I really love our 7th Avenue sofa, so much so that I would & have recommended it to others.”",
+            "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/living_cozy_7thavenue.svg?v=1672946485",
+            "url": "shopify://pages/reviews",
+            "new_window": true
+          }
+        },
+        "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-2": {
+          "type": "feature_in",
+          "settings": {
+            "text": "“Highly versatile and designed with water-repellent fabrics that are easily removable and washable.”",
+            "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/yahoo_7thavenue.svg?v=1672946484",
+            "url": "shopify://pages/reviews",
+            "new_window": true
+          }
+        }
+      },
+      "block_order": [
+        "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-0",
+        "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-1",
+        "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-2"
+      ],
+      "settings": {
+        "border_top": false,
+        "border_bottom": false,
+        "color": "#000000",
+        "bg_color": "#ffffff"
+      }
+    },
+    "video": {
+      "type": "sofa-page-video",
+      "settings": {
+        "videoRatio": "4/3",
+        "image": "shopify://shop_images/video.jpg",
+        "fullImage": true,
+        "title": "Functional design meets contemporary luxury.",
+        "icon_svg_1": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/modular_6.svg?v=1635316203",
+        "text_1": "ENDLESSLY MODULAR",
+        "icon_svg_2": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/waterproof-fabric_1.svg?v=1635315926",
+        "text_2": "WATER-REPELLENT & STAIN-RESISTANT",
+        "icon_svg_3": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/cloud_2.svg?v=1635316369",
+        "text_3": "MEMORY FOAM BLEND CUSHIONS",
+        "icon_svg_4": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/pillows_2.svg?v=1635316488",
+        "text_4": "REMOVABLE, WASHABLE COVERS",
+        "icon_svg_5": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/muscle_2.svg?v=1635316686",
+        "text_5": "RIDICULOUSLY DURABLE",
+        "icon_svg_6": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/ecology_1.svg?v=1635218930",
+        "text_6": "SUSTAINABLY-BUILT & NON-TOXIC",
+        "marginTop": 0,
+        "marginBottom": 0,
+        "marginTopMobile": 0,
+        "marginBottomMobile": 0,
+        "btn_url": "",
+        "btn_text": "SHOP BEST SELLERS",
+        "background": "#F3F3F3"
+      }
+    },
+    "bestSeller": {
+      "type": "sofa-page-feature-product",
+      "settings": {
+        "title": "Shop Best Sellers",
+        "text": "Our best selling modular sofa configurations.<br>Find the perfect fit for every home size & style.",
+        "collection": "best-sellers",
+        "product_limit": 10,
+        "speed": "5000",
+        "btn_url": "shopify://collections/best-sellers",
+        "btn_text": "SHOP ALL SEATING",
+        "info": "",
+        "paddingTop": 20,
+        "paddingBottom": 25,
+        "paddingTopMobile": 10,
+        "paddingBottomMobile": 10,
+        "background": "#F3F3F3"
+      }
+    },
+    "specialFeature": {
+      "type": "product-special-feature",
+      "blocks": {
+        "a9216570-1148-40bb-8a47-ba0ea398518f": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/1 Spill Compressed.mp4",
+            "title": "Water repellent & stain resistant.",
+            "text": "We have engineered a strong water-repellant cover technology that is able to withstand stains &amp; spills ranging from water, sodas, pet urine, ketchup, and even wine - making them great for use with kids, pets, or drunk people."
+          }
+        },
+        "1dccdf53-c719-432f-b147-2f259120c0c4": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/2 Modular Compressed V2.mp4",
+            "title": "Endlessly modular & re-arrangable.",
+            "text": "Each modular seat & side can be easily arranged into any sofa configuration and size, allowing our sofas to fit perfectly into any space and making it the most flexible modular sofa you can find."
+          }
+        },
+        "9d8af6a7-276c-4dc0-996b-eeed2c0545e6": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/3 Covers Compressed.mp4",
+            "title": "Removable & washable covers.",
+            "text": "All of our covers, including the seat & side covers, are removable & washable. Bored of your sofa color? Simply get different-colored covers instead of buying an entirely new sofa."
+          }
+        },
+        "6c18ffaa-08e9-497b-a719-af9316e2f6cc": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/4 Fill Compressed.mp4",
+            "title": "Adjustable back cushion firmness.",
+            "text": "Our back cushions are adjustable to your liking. The Medium-Soft cushions are perfect for the cozy lounger. Need more back support or firmer cushions? Choose our Medium-Firm cushions or use our complimentary fill packets to firm up the cushions yourself."
+          }
+        }
+      },
+      "block_order": [
+        "a9216570-1148-40bb-8a47-ba0ea398518f",
+        "1dccdf53-c719-432f-b147-2f259120c0c4",
+        "9d8af6a7-276c-4dc0-996b-eeed2c0545e6",
+        "6c18ffaa-08e9-497b-a719-af9316e2f6cc"
+      ],
+      "settings": {
+      }
+    },
+    "advancedContent": {
+      "type": "sofa-page-advanced-content",
+      "blocks": {
+        "c54416f5-f914-469a-a9d6-0834a4a7d76f": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/Non_toxic_sustainably_built_702ee8b5-af4c-43c0-ae19-080c2f5fe131.jpg",
+            "video": "",
+            "image_right": true,
+            "title": "Non-toxic &<br>free from PFAS.",
+            "text": "From our OEKO-TEX certified fabrics to our FSC-certified solid wood, our sofas are built to be sustainable and meet the highest standards of social & environmental impact."
+          }
+        },
+        "40618786-dc98-47d2-8e75-d4d70c98d545": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/Solid_Wood.jpg",
+            "video": "",
+            "image_right": false,
+            "title": "Ridiculously durable & made to last.",
+            "text": "Our sofas are designed to last 8-10 years - constructed by using Indonesian solid hardwood (never composite wood or MDF), steel reinforcements, and high-density foam."
+          }
+        },
+        "d8240561-3ec4-434f-af71-28536857ee5e": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/Feather-free_afcc99d3-2485-4b5b-ba53-8fccbebfd5fa.jpg",
+            "video": "",
+            "image_right": true,
+            "title": "No feathers, no hassles.",
+            "text": "Our cushions use premium Down Alternative which makes it hypoallergenic, vegan, and cruelty-free. Unlike down feather sofas, our cushions maintain its shape well and don't need to be constantly fluffed after you sit down."
+          }
+        }
+      },
+      "block_order": [
+        "c54416f5-f914-469a-a9d6-0834a4a7d76f",
+        "40618786-dc98-47d2-8e75-d4d70c98d545",
+        "d8240561-3ec4-434f-af71-28536857ee5e"
+      ],
+      "settings": {
+      }
+    },
+    "1662924910155a782c": {
+      "type": "sofa-compare",
+      "settings": {
+        "title": "How We Compare",
+        "subtitle": "A whole lot more features, at an even better pricing.",
+        "brand_1_logo_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/White_Logo_-_Black_White_Borders.svg?v=1641757343",
+        "brand_1": "7thavenue",
+        "brand_2_logo_svg": "",
+        "brand_2": "Restoration Hardware (RH)",
+        "brand_3_logo_svg": "",
+        "brand_3": "West Elm",
+        "product_details_title": "COMPARABLE Product",
+        "product_image_1": "shopify://shop_images/Compare_-_4-Seat_Chaise_Sectional_f24f2c72-3c4d-4804-9556-bcba710dac52.jpg",
+        "product_details_1": "4-Seat Modular<br>Chaise Sectional",
+        "product_image_2": "shopify://shop_images/Compare_-_RH_4-Seat_Chaise_Sectional_-_RH_1.jpg",
+        "product_details_2": "RH Cloud Sectional<br>in Classic Depth",
+        "product_image_3": "shopify://shop_images/Compare_-_4-Seat_Chaise_Sectional_-_West_Elm_27be741d-3889-45c8-9110-771077991abe.jpg",
+        "product_details_3": "Harmony Modular<br>Chaise Sectional",
+        "row_1": true,
+        "title_1": "Comparable Fabric",
+        "brand_1_comp_1_checked": false,
+        "brand_1_comp_1_crossed": false,
+        "brand_1_comp_1": "All Performance Fabrics",
+        "brand_2_comp_1_checked": false,
+        "brand_2_comp_1_crossed": false,
+        "brand_2_comp_1": "Perennials® Performance",
+        "brand_3_comp_1_checked": false,
+        "brand_3_comp_1_crossed": false,
+        "brand_3_comp_1": "Performance Basket Slub",
+        "row_2": true,
+        "title_2": "PRICE",
+        "brand_1_comp_2_checked": false,
+        "brand_1_comp_2_crossed": false,
+        "brand_1_comp_2": "$3,850",
+        "brand_2_comp_2_checked": false,
+        "brand_2_comp_2_crossed": false,
+        "brand_2_comp_2": "$12,080",
+        "brand_3_comp_2_checked": false,
+        "brand_3_comp_2_crossed": false,
+        "brand_3_comp_2": "$4,997",
+        "row_3": true,
+        "title_3": "TOTAL WIDTH",
+        "brand_1_comp_3_checked": false,
+        "brand_1_comp_3_crossed": false,
+        "brand_1_comp_3": "130”",
+        "brand_2_comp_3_checked": false,
+        "brand_2_comp_3_crossed": false,
+        "brand_2_comp_3": "119”",
+        "brand_3_comp_3_checked": false,
+        "brand_3_comp_3_crossed": false,
+        "brand_3_comp_3": "121”",
+        "row_4": true,
+        "title_4": "TOTAL DEPTH",
+        "brand_1_comp_4_checked": false,
+        "brand_1_comp_4_crossed": false,
+        "brand_1_comp_4": "38”",
+        "brand_2_comp_4_checked": false,
+        "brand_2_comp_4_crossed": false,
+        "brand_2_comp_4": "40”",
+        "brand_3_comp_4_checked": false,
+        "brand_3_comp_4_crossed": false,
+        "brand_3_comp_4": "43”",
+        "row_5": true,
+        "title_5": "CUSHION FILL",
+        "brand_1_comp_5_checked": false,
+        "brand_1_comp_5_crossed": false,
+        "brand_1_comp_5": "Down Alternative",
+        "brand_2_comp_5_checked": false,
+        "brand_2_comp_5_crossed": false,
+        "brand_2_comp_5": "Down Feather",
+        "brand_3_comp_5_checked": false,
+        "brand_3_comp_5_crossed": false,
+        "brand_3_comp_5": "Fiber Fills",
+        "row_6": true,
+        "title_6": "CUSHION FIRMNESS",
+        "brand_1_comp_6_checked": false,
+        "brand_1_comp_6_crossed": false,
+        "brand_1_comp_6": "Medium-Soft or Medium-Firm",
+        "brand_2_comp_6_checked": false,
+        "brand_2_comp_6_crossed": false,
+        "brand_2_comp_6": "Extra Soft",
+        "brand_3_comp_6_checked": false,
+        "brand_3_comp_6_crossed": false,
+        "brand_3_comp_6": "Soft",
+        "row_7": true,
+        "title_7": "WATER REPELLENT",
+        "brand_1_comp_7_checked": true,
+        "brand_1_comp_7_crossed": false,
+        "brand_1_comp_7": "Content 7",
+        "brand_2_comp_7_checked": false,
+        "brand_2_comp_7_crossed": true,
+        "brand_2_comp_7": "Content 7",
+        "brand_3_comp_7_checked": false,
+        "brand_3_comp_7_crossed": true,
+        "brand_3_comp_7": "Content 7",
+        "row_8": true,
+        "title_8": "MACHINE WASHABLE",
+        "brand_1_comp_8_checked": true,
+        "brand_1_comp_8_crossed": false,
+        "brand_1_comp_8": "Content 8",
+        "brand_2_comp_8_checked": false,
+        "brand_2_comp_8_crossed": true,
+        "brand_2_comp_8": "Content 8",
+        "brand_3_comp_8_checked": false,
+        "brand_3_comp_8_crossed": true,
+        "brand_3_comp_8": "Content 8",
+        "row_9": true,
+        "title_9": "FULLY REMOVABLE COVERS",
+        "brand_1_comp_9_checked": true,
+        "brand_1_comp_9_crossed": false,
+        "brand_1_comp_9": "Content 9",
+        "brand_2_comp_9_checked": true,
+        "brand_2_comp_9_crossed": false,
+        "brand_2_comp_9": "Content 9",
+        "brand_3_comp_9_checked": false,
+        "brand_3_comp_9_crossed": true,
+        "brand_3_comp_9": "Content 9",
+        "row_10": true,
+        "title_10": "ADJUSTABLE BACK FIRMNESS",
+        "brand_1_comp_10_checked": true,
+        "brand_1_comp_10_crossed": false,
+        "brand_1_comp_10": "Content 10",
+        "brand_2_comp_10_checked": false,
+        "brand_2_comp_10_crossed": true,
+        "brand_2_comp_10": "Content 10",
+        "brand_3_comp_10_checked": false,
+        "brand_3_comp_10_crossed": true,
+        "brand_3_comp_10": "Content 10",
+        "row_11": false,
+        "title_11": "Solid wood",
+        "brand_1_comp_11_checked": true,
+        "brand_1_comp_11_crossed": false,
+        "brand_1_comp_11": "Content 11",
+        "brand_2_comp_11_checked": true,
+        "brand_2_comp_11_crossed": false,
+        "brand_2_comp_11": "Content 11",
+        "brand_3_comp_11_checked": false,
+        "brand_3_comp_11_crossed": true,
+        "brand_3_comp_11": "Content 11",
+        "row_12": true,
+        "title_12": "CERTIFICATIONS",
+        "brand_1_comp_12_checked": false,
+        "brand_1_comp_12_crossed": false,
+        "brand_1_comp_12": "OEKO-TEX fabrics, FSC wood",
+        "brand_2_comp_12_checked": false,
+        "brand_2_comp_12_crossed": false,
+        "brand_2_comp_12": "Unknown",
+        "brand_3_comp_12_checked": false,
+        "brand_3_comp_12_crossed": false,
+        "brand_3_comp_12": "FSC wood only"
+      }
+    },
+    "badge": {
+      "type": "badge",
+      "blocks": {
+        "a4843bc9-d8c3-4556-a89d-a2c3cc66b9d3": {
+          "type": "badge",
+          "settings": {
+            "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/shipped_acbf6ef3-3676-46e8-a5cd-a1916a17b1e7.svg?v=1635203974",
+            "title": "NATIONWIDE DELIVERY & ASSEMBLY",
+            "text": "We offer delivery & assembly services nationwide throughout contiguous U.S."
+          }
+        },
+        "6dd6b6cb-4fce-440f-9f30-f8b8c12681ce": {
+          "type": "badge",
+          "settings": {
+            "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/returns.svg?v=1635203761",
+            "title": "RISK-FREE HOME TRIALS",
+            "text": "Don't like your sofa? We offer free returns<br>within 10 days of delivery."
+          }
+        },
+        "33f623dc-1d9c-49e2-bd30-9391240e64a5": {
+          "type": "badge",
+          "settings": {
+            "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/money.svg?v=1635203761",
+            "title": "BEST-IN-CLASS WARRANTY",
+            "text": "We want you to love your sofa. Let us know about any damages, and we'll make it right!"
+          }
+        }
+      },
+      "block_order": [
+        "a4843bc9-d8c3-4556-a89d-a2c3cc66b9d3",
+        "6dd6b6cb-4fce-440f-9f30-f8b8c12681ce",
+        "33f623dc-1d9c-49e2-bd30-9391240e64a5"
+      ],
+      "settings": {
+        "color": "#ffffff",
+        "bg_color": "#032e6b"
+      }
+    },
+    "review": {
+      "type": "collection-review",
+      "blocks": {
+        "95bc8a1e-a113-44bd-9072-a022d070b165": {
+          "type": "review",
+          "settings": {
+            "text": "This couch was exactly what I was looking for: big fluffy pillow style, actually extremely comfortable, attractive, modular/reconfigurable and very reasonably priced. This thing hits the comfy spot perfectly, and it’s CUTE TOO.",
+            "title": "SAMI N (LOS ANGELES, CA)",
+            "image_1": "shopify://shop_images/Image_from_iOS_22_03c3bd9b-11fa-4b84-86fb-f8909678b368.jpg",
+            "image_2": "shopify://shop_images/Image_from_iOS_23_5fdea4f6-d59a-4cf5-b291-e055ce52e8b0.jpg"
+          }
+        },
+        "c31861af-9481-4c99-a51e-20e05718be05": {
+          "type": "review",
+          "settings": {
+            "text": "This is the best sectional I've ever purchased. It’s beautiful, functional, and elegant. Love lounging and sitting on it to watch tv, and even my dog loves it!",
+            "title": "JOHANNA B (LOS ANGELES, CA)",
+            "image_1": "shopify://shop_images/4e742a16-8324-4328-bc15-8932ecbca85a_large_9f4b851e-c44b-4846-89f5-8facdbf7b9d6.jpg",
+            "image_2": "shopify://shop_images/5b522334-4370-4595-84e6-333592e071f6_large_f46c570b-4369-45d9-9760-91a7da0f2354.jpg",
+            "image_3": "shopify://shop_images/194b2fd7-c3aa-4e05-99e2-55a69084c4e5_large_318a21b2-4cbc-43c5-be78-9141e3a417b5.jpg"
+          }
+        },
+        "03a078ae-7a50-4e88-b68d-65d8cd82b5fb": {
+          "type": "review",
+          "settings": {
+            "text": "This furniture is absolutely fantastic. The quality is beyond excellent! Everything about the pieces are perfect, the way they fit together, the fabric, the color ( we chose charcoal) the comfort.",
+            "title": "PATTY B (LAGUNA BEACH, CA)",
+            "image_1": "shopify://shop_images/79ecd926-2935-4af4-bdcf-b3f1458b8500_large_8897b449-9eea-481a-973f-9e9ddfb4a5c9.jpg",
+            "image_2": "shopify://shop_images/440ab599-cb3f-4fab-8db6-f2de3babe5dc_large_c21662d1-a1d0-4925-a5f3-511b8bd7d1be.jpg"
+          }
+        },
+        "0ed3107d-ba79-4720-b2db-3b6ff2bd2887": {
+          "type": "review",
+          "settings": {
+            "text": "Fast delivery, Great Service, Amazing Couch. Overall an amazing experience! Will be ordering another sofa in the coming months for other rooms in my house.",
+            "title": "JEFF J (SANTA ANA, CA)",
+            "image_1": "shopify://shop_images/819646cb-7afa-47e7-b5e2-1fd3719abc8e_large_e3b19ca5-fee0-47a7-abe6-f3b8f04e7bde.jpg",
+            "image_2": "shopify://shop_images/Image_from_iOS_21_4a951ddc-433a-4f08-8a92-2f7163436d8c.jpg",
+            "image_3": "shopify://shop_images/PXL_20220115_222217946.jpg"
+          }
+        },
+        "e87f502a-2593-4880-adb6-5618f717f6d4": {
+          "type": "review",
+          "settings": {
+            "text": "After living with the sectional for over a week, I am thrilled to say that I have found the sectional of my dreams! The entire experience from start to finish was completely seamless and the quality of this sofa is exceptional!",
+            "title": "JACOB M (NEW YORK, NY)",
+            "image_1": "shopify://shop_images/Image_from_iOS_17_b4cfb33a-6735-4628-ae0e-a998c683d42c.jpg",
+            "image_2": "shopify://shop_images/Screen_Shot_2022-02-03_at_7.10.34_PM_0d173b47-dc7e-4017-a07a-5c8cd36334f1.png"
+          }
+        },
+        "d966a3bd-da79-4989-a8f0-a25199b9ec32": {
+          "type": "review",
+          "settings": {
+            "text": "Dog owners need this sofa! We ordered the natural white fabric and within the first week, our dog peed on the sofa.... All I had to do was wipe it down with water and it didn’t stain!!! 100% worth it and couldn’t believe it.",
+            "title": "JAZMINE J (SANTA ANA, CA)",
+            "image_1": "shopify://shop_images/f467432f-31e8-400f-98f0-9fdca37a3c97_large_5634845e-6862-46c9-800a-9bf94cada911.jpg"
+          }
+        },
+        "23be5805-742b-4335-b94a-11b5ea46f1d0": {
+          "type": "review",
+          "settings": {
+            "text": "Most of our friends thought we were crazy for buying a white couch with young kids. It’s stands up well. It’s easy to wipe off dirt, liquid and shows no wear and tear.",
+            "title": "MEGAN P (ALISO VIEJO, CA)",
+            "image_1": "shopify://shop_images/megan_2.jpg",
+            "image_2": "shopify://shop_images/megan_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "95bc8a1e-a113-44bd-9072-a022d070b165",
+        "c31861af-9481-4c99-a51e-20e05718be05",
+        "03a078ae-7a50-4e88-b68d-65d8cd82b5fb",
+        "0ed3107d-ba79-4720-b2db-3b6ff2bd2887",
+        "e87f502a-2593-4880-adb6-5618f717f6d4",
+        "d966a3bd-da79-4989-a8f0-a25199b9ec32",
+        "23be5805-742b-4335-b94a-11b5ea46f1d0"
+      ],
+      "settings": {
+        "title": "Here’s what many of our satisfied customers have to say about their dream sofa",
+        "btn_url": "shopify://pages/reviews",
+        "btn_text": "SEE ALL REVIEWS",
+        "speed": "5000"
+      }
+    },
+    "1650919648ecbeb0e5": {
+      "type": "showroom",
+      "settings": {
+        "title": "Find a Showroom Near You",
+        "subtitle": "Experience “The Worlds Greatest Modular Sofa” in person.",
+        "color": "#000000"
+      }
+    },
+    "f47b81bf-45ff-494e-8bc2-664c4fca2a80": {
+      "type": "image-with-text",
+      "settings": {
+        "box": true,
+        "image": "shopify://shop_images/Website_Virtual_Appointment_-_2.jpg",
+        "text_left": false,
+        "title": "Unable to visit a showroom? Book a virtual appointment.",
+        "text": "Chat via video call with one of our Sales Consultants to see our modular sofas live, explore fabric options,  watch a full product demo, and ask any questions you might have!",
+        "btn_url": "https://calendly.com/7thavenue/virtual-design-consult",
+        "btn_text": "BOOK AN APPOINTMENT",
+        "btn_url2": "",
+        "btn_text2": "READ ABOUT US",
+        "borderTop": true,
+        "borderBot": true,
+        "top_gutter": 40,
+        "bottom_gutter": 40,
+        "top_gutter_m": 20,
+        "bottom_gutter_m": 20,
+        "color": "#000000",
+        "bg_color": "rgba(0,0,0,0)"
+      }
+    },
+    "collectionList": {
+      "type": "sofa-page-collection-list",
+      "blocks": {
+        "17c4026a-278d-4dfe-8d6f-b798bf2a798b": {
+          "type": "collection",
+          "settings": {
+            "collection": "best-sellers",
+            "title": "",
+            "show_desktop": false,
+            "show_mobile": false
+          }
+        },
+        "61866240-3c4f-410c-9758-621cb1c5bbf0": {
+          "type": "collection",
+          "settings": {
+            "collection": "sectionals",
+            "title": "",
+            "show_desktop": false,
+            "show_mobile": false
+          }
+        },
+        "961ae567-6f32-4119-b675-b5e51b84d395": {
+          "type": "collection",
+          "settings": {
+            "collection": "sofas-and-loveseats",
+            "title": "",
+            "show_desktop": false,
+            "show_mobile": false
+          }
+        },
+        "380f9580-56ac-4cb3-a7f6-51a73290377f": {
+          "type": "collection",
+          "settings": {
+            "collection": "daybeds-and-pits",
+            "title": "",
+            "show_desktop": false,
+            "show_mobile": false
+          }
+        },
+        "391a416f-df99-4ae7-bce4-d1606a9c0f76": {
+          "type": "collection",
+          "settings": {
+            "collection": "armchairs",
+            "title": "",
+            "show_desktop": false,
+            "show_mobile": false
+          }
+        },
+        "ac973561-6f90-48ea-b44f-5cf63bf8d69a": {
+          "type": "collection",
+          "settings": {
+            "collection": "living-room-sets",
+            "title": "",
+            "show_desktop": false,
+            "show_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "17c4026a-278d-4dfe-8d6f-b798bf2a798b",
+        "61866240-3c4f-410c-9758-621cb1c5bbf0",
+        "961ae567-6f32-4119-b675-b5e51b84d395",
+        "380f9580-56ac-4cb3-a7f6-51a73290377f",
+        "391a416f-df99-4ae7-bce4-d1606a9c0f76",
+        "ac973561-6f90-48ea-b44f-5cf63bf8d69a"
+      ],
+      "settings": {
+        "title": "",
+        "text": "",
+        "url": "",
+        "btn_text": "",
+        "topDivider": false,
+        "bottomDivider": false,
+        "top_gutter": 0,
+        "bottom_gutter": 50,
+        "top_gutter_m": 0,
+        "bottom_gutter_m": 25
+      }
+    },
+    "4a0d3e37-3ba7-4be8-ae02-9be6db95d035": {
+      "type": "pdp-sofa-affirm",
+      "blocks": {
+        "template--16666647363827__4a0d3e37-3ba7-4be8-ae02-9be6db95d035-1666974898aa96b3aa-0": {
+          "type": "option",
+          "settings": {
+            "top": "12/24/36",
+            "bottom": "MONTHS INSTALLMENT"
+          }
+        },
+        "template--16666647363827__4a0d3e37-3ba7-4be8-ae02-9be6db95d035-1666974898aa96b3aa-1": {
+          "type": "option",
+          "settings": {
+            "top": "0%",
+            "bottom": "APR AVAILABLE"
+          }
+        },
+        "template--16666647363827__4a0d3e37-3ba7-4be8-ae02-9be6db95d035-1666974898aa96b3aa-2": {
+          "type": "option",
+          "settings": {
+            "top": "$0",
+            "bottom": "HIDDEN FEES"
+          }
+        }
+      },
+      "block_order": [
+        "template--16666647363827__4a0d3e37-3ba7-4be8-ae02-9be6db95d035-1666974898aa96b3aa-0",
+        "template--16666647363827__4a0d3e37-3ba7-4be8-ae02-9be6db95d035-1666974898aa96b3aa-1",
+        "template--16666647363827__4a0d3e37-3ba7-4be8-ae02-9be6db95d035-1666974898aa96b3aa-2"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Affirm_Photo_fd50769f-a55c-4837-82b2-c0b6bd5264f4.jpg",
+        "before_price": "Buy now, pay later. Starts at",
+        "after_price": "with",
+        "month": "36",
+        "info": "*Based on 36-month financing",
+        "pt": 30,
+        "pb": 35,
+        "ptm": 15,
+        "pbm": 25
+      }
+    },
+    "751ea304-141c-4595-8c52-30e3876be521": {
+      "type": "collection-instagram-gallery",
+      "settings": {
+        "title": "Join us on Instagram",
+        "handle": "FOLLOW US @7THAVENUECO",
+        "instagram_handle": "https://www.instagram.com/7thavenueco/",
+        "app_code": "<covet-pics-widget gallery-embed-id=\"219025\"></covet-pics-widget>"
+      }
+    },
+    "1667672863c4281f68": {
+      "type": "apps",
+      "blocks": {
+        "59ed38d4-7726-4681-9c88-8b938dd5fdfb": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "",
+            "widget_type": "reviews_widget"
+          }
+        },
+        "7afa87ea-773b-406f-be7c-48901d285cb2": {
+          "type": "shopify://apps/okendo/blocks/media-grid/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "disabled": true,
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "59ed38d4-7726-4681-9c88-8b938dd5fdfb",
+        "7afa87ea-773b-406f-be7c-48901d285cb2"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1bdb2963-08d1-430f-ab42-1498cc8c1e14": {
+      "type": "okendo-reviews",
+      "custom_css": [
+        "#product-reviews {scroll-margin-top: 50px;}"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "b078c71e-2483-4dd2-bf7f-870a8a815824",
+    "video",
+    "bestSeller",
+    "specialFeature",
+    "advancedContent",
+    "1662924910155a782c",
+    "badge",
+    "review",
+    "1650919648ecbeb0e5",
+    "f47b81bf-45ff-494e-8bc2-664c4fca2a80",
+    "collectionList",
+    "4a0d3e37-3ba7-4be8-ae02-9be6db95d035",
+    "751ea304-141c-4595-8c52-30e3876be521",
+    "1667672863c4281f68",
+    "1bdb2963-08d1-430f-ab42-1498cc8c1e14"
+  ]
+}

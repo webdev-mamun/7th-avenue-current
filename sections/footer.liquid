@@ -1,0 +1,341 @@
+<footer data-section-id="{{ section.id }}">
+  <div id="footer-wrapper">
+    <div id="footer" class="row footer_row">
+      {% assign column_width = 'footer_col' %}
+
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'menu' %}
+            <div class="{{ column_width }} footer-menu f_accordion f_item--{{forloop.index}}">
+              <div class="togglecontent{% if forloop.index == 2%} open{% endif %}">
+                <h4>{{ block.settings.title }}</h4>
+              </div>
+              <div class="footer-block-content footer-navigation-menu">
+                <ul {{ block.shopify_attributes }}>
+                  {% for link in linklists[block.settings.footer_nav].links %}
+                    <li>
+                      {{ link.title | link_to: link.url }}
+                      {% if link.links != blank %}
+                        <ul>
+                          {% for subLink in link.links %}
+                            <li>{{ subLink.title | link_to: subLink.url }}</li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% when 'newsletter' %}
+            <div class="{{ column_width }} newsletter_col footer-menu">
+              <div class="cont">
+                <h4>{{ block.settings.title | escape }}</h4>
+              </div>
+              <div id="footer_signup" class="footer-block-content newsletter">
+                {{ block.settings.mailing_subheading }}
+                <p>{{ settings.footer_signup_text | escape }}</p>
+                <form
+                  id="newsletter_popup_footer"
+                  class="klaviyo_gdpr_embed_Y9T87Y"
+                  action="//manage.kmail-lists.com/subscriptions/subscribe"
+                  data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe"
+                  method="GET"
+                  target="_blank"
+                  novalidate="novalidate"
+                >
+                  <div class="footer_form_data">
+                    <input type="hidden" name="g" value="Y9T87Y">
+                    <label for="k_id_email" class="email_label">
+                      {{- 'general.newsletter_form.newsletter_email' | t -}}
+                    </label>
+                    <input type="email" name="email" id="k_id_email" class="k_id_email">
+                    <input type="submit" id="footer-subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
+                  </div>
+
+                  <div class="klaviyo_messages">
+                    <div class="clear"></div>
+                    <div class="success_message" style="display:none;">
+                      <p class="success">{{ 'password.general.thanks' | t }}</p>
+                    </div>
+                    <div class="error_message" style="display:none;"></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          {% when 'text' %}
+            <div class="{{ column_width }} footer-menu f_accordion">
+              <div class="togglecontent">
+                <h4>{{ block.settings.title | escape }}</h4>
+              </div>
+              <div class="rte footer-block-content">{{ block.settings.footer_text }}</div>
+              <ul class="text-column-social">
+                {% if settings['instagram-id'] != blank %}
+                  <li class="social-item">
+                    <a href="//instagram.com/{{ settings.instagram-id }}" target="_blank">
+                      <img
+                        class="social-icon"
+                        src="https://cdn.shopify.com/s/files/1/0602/7195/2115/files/ig.svg?v=1635958896"
+                        alt="Instagram"
+                        width="100%"
+                        height="100%"
+                        loading="lazy"
+                      >
+                      Instagram
+                    </a>
+                  </li>
+                {% endif %}
+                {% if settings.tiktok_url != blank %}
+                  <li class="social-item">
+                    <a href="{{ settings.tiktok_url }}" target="_blank">
+                      <img
+                        class="social-icon"
+                        src="https://cdn.shopify.com/s/files/1/0602/7195/2115/files/tiktok.svg?v=1635958896"
+                        alt="TikTok"
+                        width="100%"
+                        height="100%"
+                        loading="lazy"
+                      >
+                      TikTok
+                    </a>
+                  </li>
+                {% endif %}
+                {% if settings.facebook_url != blank %}
+                  <li class="social-item">
+                    <a href="{{ settings.facebook_url }}" target="_blank">
+                      <img
+                        class="social-icon"
+                        src="https://cdn.shopify.com/s/files/1/0602/7195/2115/files/facebook.svg?v=1635958896"
+                        alt="Facebook"
+                        width="100%"
+                        height="100%"
+                        loading="lazy"
+                      >
+                      Facebook
+                    </a>
+                  </li>
+                {% endif %}
+              </ul>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+    <div class="clear"></div>
+    <div class="row footer_bottom_section">
+      <ul id="footer-icons" class="desktop-12 tablet-6 mobile-3">
+        {% if settings.facebook_url != blank %}
+          <li>
+            <a href="{{ settings.facebook_url }}" target="_blank">
+              <i class="fab fa-facebook-f la-2x" aria-hidden="true"></i>
+            </a>
+          </li>
+        {% endif %}
+        {% if settings['instagram-id'] != blank %}
+          <li>
+            <a href="//instagram.com/{{ settings.instagram-id }}" target="_blank">
+              <i class="la la-instagram la-2x" aria-hidden="true"></i>
+            </a>
+          </li>
+        {% endif %}
+        {% if settings.twittername != blank %}
+          <li>
+            <a href="{{ settings.twittername }}" target="_blank">
+              <i class="la la-twitter la-2x" aria-hidden="true"></i>
+            </a>
+          </li>
+        {% endif %}
+        {% if settings.pinterest_url != blank %}
+          <li>
+            <a href="{{ settings.pinterest_url }}" target="_blank">
+              <i class="la la-pinterest la-2x" aria-hidden="true"></i>
+            </a>
+          </li>
+        {% endif %}
+        {% if settings.tumblr_url != blank %}
+          <li>
+            <a href="{{ settings.tumblr_url }}" target="_blank">
+              <i class="la la-tumblr la-2x" aria-hidden="true"></i>
+            </a>
+          </li>
+        {% endif %}
+        {% if settings.youtube_url != blank %}
+          <li>
+            <a href="{{ settings.youtube_url }}" target="_blank">
+              <i class="la la-youtube la-2x" aria-hidden="true"></i>
+            </a>
+          </li>
+        {% endif %}
+        {% if settings.googleplus_url != blank %}
+          <li>
+            <a href="{{ settings.googleplus_url }}" target="_blank">
+              <i class="la la-google-plus la-2x" aria-hidden="true"></i>
+            </a>
+          </li>
+        {% endif %}
+        {% if settings['snapchat-id'] != blank %}
+          <li>
+            <a href="//snapchat.com/add/{{ settings.snapchat-id }}" target="_blank">
+              <i class="fab fa-snapchat-ghost la-2x" aria-hidden="true"></i>
+            </a>
+          </li>
+        {% endif %}
+        {% if settings['weibo-id'] != blank %}
+          <li>
+            <a href="//weibo.com/{{ settings.weibo-id }}" target="_blank">
+              <i class="la la-weibo la-2x" aria-hidden="true"></i>
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+      <div class="clear"></div>
+      <div class="credit desktop-12 tablet-6 mobile-3">
+        <div id="payment">
+          {% if section.settings.show_credit_cards %}
+            {% for type in shop.enabled_payment_types %}
+              {{ type | payment_type_svg_tag: class: 'payment-icon' }}
+            {% endfor %}
+          {% endif %}
+        </div>
+        <ul class="footer_bottom desktop">
+          {% for link in linklists[section.settings.footer_bottom_nav_desktop].links %}
+            <li>{{ link.title | link_to: link.url }}</li>
+          {% endfor %}
+          <li>
+            <a id="preferenceCenterLink" href="#" onclick="ketch('once', 'hideExperience', (reason) => window.scrollTo(0,0));ketch('showPreferences')">
+              Your Privacy Choices
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 14" style="width: 30px">
+                <title>California Consumer Privacy Act (CCPA) Opt-Out Icon</title><path d="m7.4,12.8h6.8l3.1-11.6H7.4c-3.2,0-5.8,2.6-5.8,5.8s2.6,5.8,5.8,5.8Z" style="fill:#fff;fill-rule:evenodd;stroke-width:0px"></path><path d="m22.6,0H7.4C3.5,0,.4,3.1.4,7s3.1,7,7,7h15.2c3.9,0,7-3.1,7-7S26.4,0,22.6,0ZM1.6,7C1.6,3.8,4.2,1.2,7.4,1.2h9.9l-3.1,11.6h-6.8c-3.2,0-5.8-2.6-5.8-5.8Z" style="fill: #3b3b3b;fill-rule:evenodd;stroke-width:0px"></path><path d="m24.6,4c.2.2.2.6,0,.8h0l-2.1,2.2,2.2,2.2c.2.2.2.6,0,.8s-.6.2-.8,0h0l-2.2-2.2-2.2,2.2c-.2.2-.6.2-.8,0-.2-.2-.2-.6,0-.8h0l2.1-2.2-2.2-2.2c-.2-.2-.2-.6,0-.8.2-.2.6-.2.8,0h0l2.2,2.2,2.2-2.2c.2-.2.6-.2.8,0Z" style="fill:#fff;stroke-width:0px"></path><path d="m12.7,4.1c.2.2.3.6.1.8h0l-4.2,4.9c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1h0l-2.2-2.2c-.2-.2-.2-.6,0-.8.2-.2.6-.2.8,0h0l1.8,1.7,3.8-4.5c.2-.2.6-.2.9,0Z" style="fill: #3b3b3b;stroke-width:0px"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <ul class="footer_bottom mobile">
+          {% for link in linklists[section.settings.footer_bottom_nav].links %}
+            <li>{{ link.title | link_to: link.url }}</li>
+          {% endfor %}
+          <li id="preferenceCenter">
+            <a id="preferenceCenterLink" href="#" onclick="ketch('once', 'hideExperience', (reason) => window.scrollTo(0,0));ketch('showPreferences')">
+              Your Privacy Choices
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 14" style="width: 30px">
+                <title>California Consumer Privacy Act (CCPA) Opt-Out Icon</title><path d="m7.4,12.8h6.8l3.1-11.6H7.4c-3.2,0-5.8,2.6-5.8,5.8s2.6,5.8,5.8,5.8Z" style="fill:#fff;fill-rule:evenodd;stroke-width:0px"></path><path d="m22.6,0H7.4C3.5,0,.4,3.1.4,7s3.1,7,7,7h15.2c3.9,0,7-3.1,7-7S26.4,0,22.6,0ZM1.6,7C1.6,3.8,4.2,1.2,7.4,1.2h9.9l-3.1,11.6h-6.8c-3.2,0-5.8-2.6-5.8-5.8Z" style="fill: #3b3b3b;fill-rule:evenodd;stroke-width:0px"></path><path d="m24.6,4c.2.2.2.6,0,.8h0l-2.1,2.2,2.2,2.2c.2.2.2.6,0,.8s-.6.2-.8,0h0l-2.2-2.2-2.2,2.2c-.2.2-.6.2-.8,0-.2-.2-.2-.6,0-.8h0l2.1-2.2-2.2-2.2c-.2-.2-.2-.6,0-.8.2-.2.6-.2.8,0h0l2.2,2.2,2.2-2.2c.2-.2.6-.2.8,0Z" style="fill:#fff;stroke-width:0px"></path><path d="m12.7,4.1c.2.2.3.6.1.8h0l-4.2,4.9c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1h0l-2.2-2.2c-.2-.2-.2-.6,0-.8.2-.2.6-.2.8,0h0l1.8,1.7,3.8-4.5c.2-.2.6-.2.9,0Z" style="fill: #3b3b3b;stroke-width:0px"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  #footer-wrapper {
+    text-align: {{ section.settings.footer_text_align }};
+  }
+</style>
+
+{% schema %}
+{
+  "name":"Footer",
+  "max_blocks":5,
+  "settings":[
+     {
+        "type":"select",
+        "id":"footer_text_align",
+        "label":"Footer text align",
+        "options":[
+           {
+              "value":"left",
+              "label":"Left"
+           },
+           {
+              "value":"center",
+              "label":"Center"
+           },
+           {
+              "value":"right",
+              "label":"Right"
+           }
+        ]
+     },
+     {
+        "type":"checkbox",
+        "id":"show_credit_cards",
+        "label":"Show credit card icons",
+        "default":true,
+        "info":"The icons that show are determined by your store's payment settings."
+     },
+     {
+        "type":"link_list",
+        "id":"footer_bottom_nav",
+        "label":"Footer Bottom menu(Mobile)"
+     },
+    {
+        "type":"link_list",
+        "id":"footer_bottom_nav_desktop",
+        "label":"Footer Bottom menu(desktop)"
+     },
+     {
+        "type":"url",
+        "id":"footer_bottom_logo",
+        "label":"Footer bottom logo"
+     }
+  ],
+  "blocks":[
+     {
+        "type":"menu",
+        "name":"Menu",
+        "settings":[
+           {
+              "type":"link_list",
+              "id":"footer_nav",
+              "label":"Sidebar menu",
+              "info":"This menu won't show dropdown items"
+           },
+           {
+              "type":"text",
+              "id":"title",
+              "label":"Menu title",
+              "default":"Explore"
+           }
+        ]
+     },
+     {
+        "type":"text",
+        "name":"Text",
+        "settings":[
+           {
+              "type":"text",
+              "id":"title",
+              "label":"Text title",
+              "default":"About"
+           },
+           {
+              "id":"footer_text",
+              "type":"textarea",
+              "label":"Text",
+              "default":"<p>Adding text to your footer helps introduce your business to new customers.</p>"
+           }
+        ]
+     },
+     {
+        "type":"newsletter",
+        "name":"Newsletter signup",
+        "limit":1,
+        "settings":[
+           {
+              "type":"text",
+              "id":"title",
+              "label":"Mailing list section title",
+              "default":"connect"
+           },
+           {
+              "type":"richtext",
+              "id":"mailing_subheading",
+              "label":"Mailing list subheading",
+              "default":"<p>Join our mailing list for updates</p>"
+           }
+        ]
+     }
+  ]
+}
+{% endschema %}

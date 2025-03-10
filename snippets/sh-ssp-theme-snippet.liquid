@@ -1,0 +1,29 @@
+<script>
+  if (typeof(Spurit) === 'undefined') {
+    Spurit = {};
+  }
+  if (typeof(Spurit.globalSnippet) === 'undefined') {
+    Spurit.globalSnippet = {
+      shop_currency: '{{ shop.currency }}',
+      money_format: '{{ shop.money_format }}',
+      customer_id: '{{ customer.id }}',
+      cart: {{ cart | json }}
+    };
+  }
+
+	var SSPParams = {
+		"id": "71fdc49cd0542854f5baaee5f37dc912",
+		"app": "49",
+		"maxConditions": 10,
+		"default_split_tag": "multiple-payment",
+		"default_share_tag": "share-payment",
+		"pagination_limit": 10,
+		"currency": '{{ shop.currency }}',
+		"customer_email": '{{ customer.email }}',
+		"note": "This order is the part of split order."
+	};
+
+	if (typeof window.upsellParamsDiff != 'undefined') window.upsellParamsDiff.showOn = 'load';
+    else window.upsellParamsDiff = { showOn: 'load' };
+</script>
+<script src="https://cdn-spurit.com/shopify-apps/split-payments/common.js" defer></script>

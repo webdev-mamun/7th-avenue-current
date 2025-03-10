@@ -1,0 +1,311 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "collection-sofa-banner",
+      "blocks": {
+        "a185f20d-16ba-433a-a196-49612dac793c": {
+          "type": "banner",
+          "settings": {
+            "collection": "sectionals",
+            "image": "shopify://shop_images/Sectional_Banner_fe780836-8b6c-483d-b381-2e677c046173.jpg",
+            "image_mobile": "shopify://shop_images/Sectional_Banner_Mobile_e07d6079-870d-457d-b0d3-44606527b46a.jpg"
+          }
+        },
+        "4dd3bfc3-6d78-4137-9854-188f5d52d617": {
+          "type": "banner",
+          "settings": {
+            "collection": "sofas-and-loveseats",
+            "image": "shopify://shop_images/Sofa_Banner_bce954bf-238c-44e8-b861-44d99925516c.jpg",
+            "image_mobile": "shopify://shop_images/Sofa_Banner_Mobile_3384913e-e08e-48b1-ac92-929437270d1a.jpg"
+          }
+        },
+        "b1517d51-a225-4cc0-9df3-172caefd1839": {
+          "type": "banner",
+          "settings": {
+            "collection": "daybeds-and-pits",
+            "image": "shopify://shop_images/Daybed_Pits_Banner_18789ad0-c724-4a28-8119-85ba0d039cd3.jpg",
+            "image_mobile": "shopify://shop_images/Daybeds_Pits_Banner_Mobile_f2157fa1-5963-4058-8e82-25ffe1ddb221.jpg"
+          }
+        },
+        "56446896-b1ff-4791-9d2c-4b9c896450c6": {
+          "type": "banner",
+          "settings": {
+            "collection": "armchairs",
+            "image": "shopify://shop_images/Armchairs_8e1adacb-92c5-4307-b739-30a5ce0fd328.jpg",
+            "image_mobile": "shopify://shop_images/Armchairs_Mobile_da26ca6b-b22e-4011-afdd-922b946ad7c7.jpg"
+          }
+        },
+        "a8ddd12b-bb26-4017-abb2-635a403b20d5": {
+          "type": "banner",
+          "settings": {
+            "collection": "living-room-sets",
+            "image": "shopify://shop_images/Living_Room_Set_Banner.jpg",
+            "image_mobile": "shopify://shop_images/Living_Room_Set_Mobile.jpg"
+          }
+        },
+        "da6cfe3c-e989-455f-a36f-539a23d26c93": {
+          "type": "banner",
+          "settings": {
+            "collection": "best-sellers",
+            "image": "shopify://shop_images/Indoor_Seating_Banner_6336fa46-aad7-4c4b-a0fa-2637acf175f8.jpg",
+            "image_mobile": "shopify://shop_images/Indoor_Seating_Banner_Mobile_314d01ff-7b93-41ea-9350-766cf4801c80.jpg"
+          }
+        },
+        "banner_HyFBi4": {
+          "type": "banner",
+          "settings": {
+            "collection": "cover-sets",
+            "image": "shopify://shop_images/Cover_Set.jpg",
+            "image_mobile": "shopify://shop_images/IMG_2171.jpg"
+          }
+        },
+        "banner_VWkUzm": {
+          "type": "banner",
+          "settings": {
+            "collection": "indoor-seating",
+            "image": "shopify://shop_images/Best_Sellers_d0b97933-8b14-4c29-8ccc-91e65691671f.jpg",
+            "image_mobile": "shopify://shop_images/Best_Sellers_Banner_Mobile_cabc66d8-97eb-4716-ab80-5baf3bb22853.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "a185f20d-16ba-433a-a196-49612dac793c",
+        "4dd3bfc3-6d78-4137-9854-188f5d52d617",
+        "b1517d51-a225-4cc0-9df3-172caefd1839",
+        "56446896-b1ff-4791-9d2c-4b9c896450c6",
+        "a8ddd12b-bb26-4017-abb2-635a403b20d5",
+        "da6cfe3c-e989-455f-a36f-539a23d26c93",
+        "banner_HyFBi4",
+        "banner_VWkUzm"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "sofa-collection-page-template",
+      "blocks": {
+        "e01c45af-ef94-4324-8a15-9341fbdaba55": {
+          "type": "video",
+          "settings": {
+            "videoRatio": "3/2",
+            "video_position": "6",
+            "image": "shopify://shop_images/Website_Photo_-_4_1e5da05e-0a3b-4ead-b1e7-96ec6ebd3293.jpg",
+            "fullImage": true,
+            "title": "Functional design meets contemporary luxury.",
+            "icon_svg_1": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/modular_6.svg?v=1635316203",
+            "text_1": "ENDLESSLY MODULAR & RE-ARRANGEABLE",
+            "icon_svg_2": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/waterproof-fabric_1.svg?v=1635315926",
+            "text_2": "WATER-REPELLENT & STAIN-RESISTANT",
+            "icon_svg_3": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/cloud_2.svg?v=1635316369",
+            "text_3": "CLASSIC OR EXTRA-DEEP SEATING",
+            "icon_svg_4": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/pillows_2.svg?v=1635316488",
+            "text_4": "REMOVABLE & WASHABLE COVERS",
+            "icon_svg_5": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/muscle_2.svg?v=1635316686",
+            "text_5": "RIDICULOUSLY DURABLE",
+            "icon_svg_6": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/ecology_1.svg?v=1635218930",
+            "text_6": "SUSTAINABLY-BUILT & NON-TOXIC"
+          }
+        },
+        "bc4abbe8-5e0b-4d8a-a9ea-e23d69176a7a": {
+          "type": "video_or_image",
+          "settings": {
+            "collection": "sectionals",
+            "videoRatio": "3/2",
+            "image": "shopify://shop_images/Website_Photo_d3bf5c89-d5a1-4293-b04c-2a0173f195ba.jpg",
+            "fullImage": true
+          }
+        },
+        "7e95a8e4-7501-4c70-8d4f-bf2dbe6e753b": {
+          "type": "video_or_image",
+          "settings": {
+            "collection": "sofas-and-loveseats",
+            "videoRatio": "4/3",
+            "image": "shopify://shop_images/Sofas_and_Loveseats.jpg",
+            "fullImage": true
+          }
+        },
+        "e528715a-4a33-4594-91db-bf0c5edd4244": {
+          "type": "video_or_image",
+          "settings": {
+            "collection": "daybeds-and-pits",
+            "videoRatio": "4/3",
+            "image": "shopify://shop_images/Daybeds.jpg",
+            "fullImage": true
+          }
+        },
+        "ce311d8e-ec83-42f2-8e2e-0c98465982e1": {
+          "type": "video_or_image",
+          "settings": {
+            "collection": "armchairs",
+            "videoRatio": "4/3",
+            "image": "shopify://shop_images/Website_Photo_-_6_c41c7b21-120e-45f4-8824-4b84c072b36e.jpg",
+            "fullImage": true
+          }
+        },
+        "4ea779b0-84e4-4be3-bb51-193756d5ca24": {
+          "type": "video_or_image",
+          "settings": {
+            "collection": "living-room-sets",
+            "videoRatio": "4/3",
+            "image": "shopify://shop_images/Living_Room_Sets.jpg",
+            "fullImage": true
+          }
+        }
+      },
+      "block_order": [
+        "e01c45af-ef94-4324-8a15-9341fbdaba55",
+        "bc4abbe8-5e0b-4d8a-a9ea-e23d69176a7a",
+        "7e95a8e4-7501-4c70-8d4f-bf2dbe6e753b",
+        "e528715a-4a33-4594-91db-bf0c5edd4244",
+        "ce311d8e-ec83-42f2-8e2e-0c98465982e1",
+        "4ea779b0-84e4-4be3-bb51-193756d5ca24"
+      ],
+      "settings": {
+        "seriallyVariant": false,
+        "grid": 3,
+        "products_per_page": 30,
+        "infinite_scroll": false,
+        "description_position": "bottom_description",
+        "filter_position": "top_filters",
+        "is_sticky": false,
+        "filter_bg_color": "#ffffff",
+        "filter_border_color": "#333333",
+        "filter_text_color": "#333333"
+      }
+    },
+    "badge": {
+      "type": "badge",
+      "blocks": {
+        "badge_4yYHV6": {
+          "type": "badge",
+          "settings": {
+            "svg": "",
+            "icon": "shopify://shop_images/exchange_pdp_white.svg",
+            "title": "FREE 30-DAY FABRIC EXCHANGE",
+            "text": "Can’t decide a color? We offer free fabric exchange within 30 days of delivery"
+          }
+        },
+        "7d395652-8221-441e-9f8c-93ac5a1eaf1f": {
+          "type": "badge",
+          "disabled": true,
+          "settings": {
+            "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/shipped_acbf6ef3-3676-46e8-a5cd-a1916a17b1e7.svg?v=1635203974",
+            "title": "NATIONWIDE DELIVERY & ASSEMBLY",
+            "text": "We offer delivery & assembly services nationwide throughout continguous U.S."
+          }
+        },
+        "c5baf005-b96b-4ced-9ba0-4366a78fe0a6": {
+          "type": "badge",
+          "settings": {
+            "svg": "",
+            "icon": "shopify://shop_images/returns.svg",
+            "title": "RISK-FREE HOME TRIALS",
+            "text": "Don't like your sofa? We offer free<br>returns within 10 days of delivery."
+          }
+        },
+        "214a66e0-8015-40f4-84d0-0ebc946b56b7": {
+          "type": "badge",
+          "settings": {
+            "svg": "",
+            "icon": "shopify://shop_images/money.svg",
+            "title": "LIMITED LIFETIME WARRANTY",
+            "text": "Any damages? We offer a lifetime warranty <br>on the frame & construction of the sofa."
+          }
+        }
+      },
+      "block_order": [
+        "badge_4yYHV6",
+        "7d395652-8221-441e-9f8c-93ac5a1eaf1f",
+        "c5baf005-b96b-4ced-9ba0-4366a78fe0a6",
+        "214a66e0-8015-40f4-84d0-0ebc946b56b7"
+      ],
+      "settings": {
+        "color": "#ffffff",
+        "bg_color": "#032e6a"
+      }
+    },
+    "pdp-sofa-help": {
+      "type": "pdp-sofa-help",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "showroom": {
+      "type": "showroom",
+      "settings": {
+        "title": "Find a Showroom Near You",
+        "title_mob": "Find a Showroom Near You",
+        "subtitle": "Experience “The Worlds Greatest Modular Sofa” in person.",
+        "subtitle_mob": "",
+        "get_data_from_metaobject": true,
+        "box_per_row": 3,
+        "active_geo": true,
+        "border_top": false,
+        "border_bot": false,
+        "color": "#000000",
+        "bg_color": "#ffffff",
+        "card_bg": "#f3f3f3",
+        "bt_color": "#ffffff",
+        "bt_bg": "#032e6a",
+        "padding_top": 30,
+        "padding_bot": 20,
+        "padding_top_mob": 20,
+        "padding_bot_mob": 0
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "box": true,
+        "image": "shopify://shop_images/Website_Virtual_Appointment_-_2.jpg",
+        "text_left": false,
+        "title": "Unable to visit a showroom? Book a virtual appointment.",
+        "text": "Chat via video call with one of our Sales Consultants to see our modular sofas live, explore fabric options, watch a full product demo, and ask any questions you might have!",
+        "btn_url": "https://calendly.com/7thavenue/virtual-design-consult",
+        "btn_text": "BOOK AN APPOINTMENT",
+        "btn_url2": "",
+        "btn_text2": "READ ABOUT US",
+        "borderTop": true,
+        "borderBot": false,
+        "top_gutter": 40,
+        "bottom_gutter": 40,
+        "top_gutter_m": 10,
+        "bottom_gutter_m": 10,
+        "color": "#000000",
+        "bg_color": "#ffffff"
+      }
+    },
+    "help-desk": {
+      "type": "help-desk",
+      "settings": {
+        "covet_pic": "<covet-pics-widget gallery-embed-id=\"219147\"></covet-pics-widget>",
+        "title": "Need a Custom Configuration?",
+        "text": "Contact one of our Design Consultants to make the modular configuration that fits in your space, exactly how you dream it to be.",
+        "btn_1_url": "",
+        "btn_1_reamaze": true,
+        "btn_1_text": "Chat with us",
+        "btn_2_url": "",
+        "btn_2_reamaze": false,
+        "btn_2_text": "Shop now"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "main",
+    "badge",
+    "pdp-sofa-help",
+    "showroom",
+    "image-with-text",
+    "help-desk"
+  ]
+}

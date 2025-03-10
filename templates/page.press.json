@@ -1,0 +1,89 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "header": {
+      "type": "page-header",
+      "settings": {
+        "title": "",
+        "text": "",
+        "color": "#ffffff",
+        "bgColor": "#000000"
+      }
+    },
+    "main": {
+      "type": "main-press",
+      "blocks": {
+        "press_FzNLxX": {
+          "type": "press",
+          "settings": {
+            "heading": "CNN",
+            "description": "Parachute Home just launched its first mattress line, and it's a total game-changer when it comes to sleeping soundly.",
+            "btn_url": "#"
+          }
+        },
+        "press_gGLx4Y": {
+          "type": "press",
+          "settings": {
+            "heading": "Architectural Digest",
+            "description": "Our longtime favorite home textiles brand Parachute wants to outfit not just your bedroom and bathroom but your whole home: Today is the debut of its new four-piece rug collection.",
+            "btn_url": "#"
+          }
+        },
+        "press_LBJWaq": {
+          "type": "press",
+          "settings": {
+            "heading": "Elle Decor",
+            "description": "Comprised of seven community spaces, a massive kitchen, comfortable seating areas, conference rooms, and communal desks, Parachute’s headquarters is as much of a productive workspace as it is an extension of home.",
+            "btn_url": "#"
+          }
+        },
+        "press_7nNVgw": {
+          "type": "press",
+          "settings": {
+            "heading": "CNBC",
+            "description": "Parachute raises $30 million as home decor category heats up.",
+            "btn_url": "#"
+          }
+        },
+        "press_AiMhGw": {
+          "type": "press",
+          "settings": {
+            "heading": "Men's Journal",
+            "description": "If you’re still on the fence about Parachute, rest assured that all the stories, all the buzz, all the fuss is…absolutely justified. This stuff is the best.",
+            "btn_url": "#"
+          }
+        },
+        "press_MNgfqB": {
+          "type": "press",
+          "settings": {
+            "heading": "Huffpost",
+            "description": "From Thanksgiving to Cyber Monday, Parachute sold one of its best-selling bathrobes every 60 seconds...that’s nearly 6,000 robes purchased in 96 hours.",
+            "btn_url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "press_FzNLxX",
+        "press_gGLx4Y",
+        "press_LBJWaq",
+        "press_7nNVgw",
+        "press_AiMhGw",
+        "press_MNgfqB"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "header",
+    "main"
+  ]
+}

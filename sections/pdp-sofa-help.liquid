@@ -1,0 +1,125 @@
+{% if section.blocks.size > 0 %}
+<div class="pdp-help__container">
+  <div class="pdp-help__row">
+  {% for block in section.blocks %}
+    <div class="pdp-help__col {% if block.settings.is_appointment == true %}appointment_col{% endif %}">
+      <div class="pdp-help">
+        <div class="pdp-help__inner">
+          {% if block.settings.image != blank or block.settings.image_svg != blank %}
+          <div class="pdb-help__image">
+          	{% if block.settings.image_svg != blank %}
+            <img src="{{ block.settings.image_svg }}"  width="100%"
+               height="100%"
+               loading="lazy" alt="feature in">
+            {% else %}
+            {% render "basic-responsive-image", type: block.settings.image %}
+            <noscript>
+              <img src="{{ block.settings.image | img_url: '350x' }}"  width="100%"
+               height="100%"
+               loading="lazy" alt="{{ block.settings.image.alt | escape }}">
+            </noscript>
+            {% endif %}
+          </div>
+           {% endif %}
+          {% if block.settings.title != blank %}
+          <h2 class="title">{{ block.settings.title }}</h2>
+          {% endif %}
+          {% if block.settings.text != blank %}
+          <div class="text">{{ block.settings.text }}</div>
+          {% endif %}
+          {% if block.settings.btn_url != blank %}
+          <a href="{{ block.settings.btn_url }}" class="special__button {% unless block.settings.is_appointment == true %}booknow-btn{% endunless %}" target="_blank">{{ block.settings.btn_text }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    $('.booknow-btn').on('click', function(e) {
+      e.preventDefault();
+      Reamaze.popup();                 
+    });
+  });
+</script>
+{% endif %}
+
+
+{% schema %}
+{
+   "name":"Help",
+   "max_blocks":2,
+   "settings":[
+      
+   ],
+   "blocks":[
+      {
+         "type":"help",
+         "name":"Help",
+         "settings":[
+            {
+              "type":"url",
+              "id":"image_svg",
+              "label":"Svg URL"
+            },
+            {
+              "type":"image_picker",
+              "id":"image",
+              "label":"Image"
+            },
+            {
+               "type":"textarea",
+               "id":"title",
+               "label":"Title",
+               "default":"Book Virtual Design Consultation"
+            },
+            {
+               "type":"textarea",
+               "id":"text",
+               "label":"Text",
+               "default":"Our Design Consultants are always ready to help. Show us your home and we can recommend sofa styles, custom configurations, colors, & more."
+            },
+            {
+               "type":"url",
+               "id":"btn_url",
+               "label":"Button url"
+            },
+			{
+			   "type":"checkbox",
+               "id":"is_appointment",
+               "label":"Appointment Button?"
+			},
+            {
+               "type":"text",
+               "id":"btn_text",
+               "label":"Button text",
+               "default":"BOOK NOW"
+            }
+         ]
+      }
+   ],
+   "default":{
+      "blocks":[
+         {
+            "type":"help",
+            "settings":{
+               "title":"Book Virtual Design Consultation",
+               "text":"Our Design Consultants are always ready to help. Show us your home and we can recommend sofa styles, custom configurations, colors, & more.",
+               "btn_url":"#"
+            }
+         },
+         {
+            "type":"help",
+            "settings":{
+               "title":"Book Design Consultation",
+               "text":"Our Design Consultants are always ready to help. Show us your home and we can recommend sofa styles, custom configurations, colors, & more."
+            }
+         }
+      ]
+   }
+}
+{% endschema %}
+

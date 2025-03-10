@@ -1,0 +1,20 @@
+{% if shop.metafields.okendo.settings.isWidgetPlusEnabled == true %}
+	{% assign render_widget_plus_content = true %}
+{% elsif shop.metafields.okendo.settings.isWidgetPlusAdminEnabled == true and theme.role == "unpublished" %}
+	{% if request.design_mode or theme.role == "unpublished" %}
+		{% assign render_widget_plus_content = true %}
+	{% endif %}
+{% endif %}
+
+
+{% if render_widget_plus_content == true %}
+  {%- if shop.metafields.okendo.WidgetPreRenderBodyStyleTags != blank -%}
+      {{- shop.metafields.okendo.WidgetPreRenderBodyStyleTags }}
+  {%- endif -%}
+    <div
+        data-oke-widget
+        data-oke-reviews-product-id="shopify-{{ product.id }}"
+    >
+        {{ product.metafields.okendo.ReviewsWidgetSnippet }}
+    </div>
+{% endif %}

@@ -1,0 +1,173 @@
+<div class="product-special-feature">
+  {% for block in section.blocks %}
+  <div class="product-special-feature__container">
+    {% assign video = false %}
+    {% if block.settings.videotype != blank %}
+    	{% assign video = true %}
+    {% endif %}
+    {% if video == false %}
+    {% assign image = block.settings.image %}
+    {% if block.settings.image_mobile != blank %}
+    	{% assign image_mobile = block.settings.image_mobile %}
+    {% else %}
+    	{% assign image_mobile = block.settings.image %}
+    {% endif %}
+    <div class="product-special-feature__image">
+      <div class="product-special-feature__image--desktop">
+        {% render "basic-responsive-image", type: image %}
+        <noscript>
+          <img src="{{ image | image_url: width: 350 }}" alt="{{ image.alt | escape }}" width="100%"
+            height="100%"
+            loading="lazy">
+        </noscript>
+      </div>
+      <div class="product-special-feature__image--mobile">
+        {% render "basic-responsive-image", type: image_mobile %}
+        <noscript>
+          <img src="{{ image_mobile | image_url: width: 350 }}" alt="{{ image_mobile.alt | escape }}" width="100%"
+            height="100%"
+            loading="lazy">
+        </noscript>
+      </div>
+    </div>
+    {% else %}
+    <div class="product-special-feature__video responcive__video">
+      {{ block.settings.videotype | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false }}
+    </div>
+    {% endif %}
+    <div class="gradiant__bg"></div>
+    <div class="product-special-feature__content">
+      <div class="product-special-feature__content--inner">
+        <h2 class="title">{{ block.settings.title }}</h2>
+        <div class="content">{{ block.settings.text }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  {% endfor %}
+</div>
+
+<script>
+  function play() {
+    var h = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+    var headerHeight = document.querySelector('#navigation').offsetHeight;
+    var videos =  document.querySelectorAll('.product-special-feature__video video');
+    videos.forEach(function(video){
+      var videoHeight = video.offsetHeight;
+      var videoTopPosition = video.getBoundingClientRect().top;
+      var videoBottomPosition = video.getBoundingClientRect().bottom;
+
+      if(video && (videoTopPosition + videoHeight / 2) < headerHeight || (videoTopPosition + videoHeight / 2) > h) {
+        video.pause();
+      } else {
+        video.play();
+      }
+    });
+  }
+
+  play();
+  window.addEventListener('scroll', function(){
+    play();
+  });
+
+
+
+
+  function stickyContent() {
+    var h = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+    var w = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+    var headerHeight = document.querySelector('#navigation').offsetHeight;
+    var containerS = document.querySelectorAll('.product-special-feature__container');
+    window.addEventListener('resize', function(){
+    	w = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+    })
+      
+      window.addEventListener('scroll', function(){
+        var containerHeight, containerTopPosition, containerBottomPosition, content, contentHeight, contentTopPosition,  contentBottomPosition, contentBlankSpace, rect;
+
+        containerS.forEach(function(container){
+          containerHeight = container.offsetHeight;
+          containerTopPosition = container.getBoundingClientRect().top;
+          containerBottomPosition =container.getBoundingClientRect().bottom;
+          content = container.querySelector('.product-special-feature__content--inner');
+          contentHeight = content.offsetHeight;
+          contentTopPosition = content.getBoundingClientRect().top;
+          contentBottomPosition = content.getBoundingClientRect().bottom;
+          contentBlankSpace = (containerHeight - contentHeight);
+          if(containerTopPosition < headerHeight && w > 751) {
+            if(containerBottomPosition < contentBottomPosition) {
+              rect = `${(containerBottomPosition - contentBottomPosition) + contentHeight }px`;
+            } else {
+              rect = 'auto';
+            }
+            content.style.cssText = ` position: fixed; top: ${contentTopPosition}px; clip: rect(0px,auto, ${rect},0px)`;
+
+          } else {
+            content.removeAttribute('style');
+          }
+        });
+
+      });
+  }
+
+  stickyContent();
+
+  window.addEventListener('resize', function(){
+    stickyContent();
+  });
+
+
+</script>
+
+{% schema %}
+{
+   "name":"Special feature",
+   "settings":[
+      
+   ],
+   "blocks":[
+      {
+         "type":"feature",
+         "name":"Feature",
+         "settings":[
+            {
+              "type": "video",
+              "id": "videotype",
+              "label": "A Shopify-hosted video"
+            },
+            {
+               "type":"image_picker",
+               "id":"image",
+               "label":"Image[Desktop]"
+            },
+            {
+               "type":"image_picker",
+               "id":"image_mobile",
+               "label":"Image[Mobile]"
+            },
+            {
+               "type":"text",
+               "id":"title",
+               "label":"Title",
+               "default":"Feels like floating on a cloud."
+            },
+            {
+               "type":"textarea",
+               "id":"text",
+               "label":"Text",
+               "default":"A truly comfortable sitting experience, you might as well feel like you’re floating. We use the same technology and construction as high-end mattresses, because you equally deserve the best: while sleeping and while living life."
+            }
+         ]
+      }
+   ]
+}
+{% endschema %}
+

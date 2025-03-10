@@ -1,0 +1,204 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "header": {
+      "type": "page-header",
+      "settings": {
+        "title": "",
+        "text": "",
+        "color": "#ffffff",
+        "bgColor": "#000000"
+      }
+    },
+    "165525560213b9b011": {
+      "type": "showroom",
+      "settings": {
+        "title": "Find a Showroom Near You",
+        "title_mob": "Find a Showroom Near You",
+        "subtitle": "",
+        "subtitle_mob": "",
+        "get_data_from_metaobject": true,
+        "box_per_row": 3,
+        "active_geo": true,
+        "border_top": false,
+        "border_bot": false,
+        "color": "#000000",
+        "bg_color": "#ffffff",
+        "card_bg": "#f3f3f3",
+        "bt_color": "#ffffff",
+        "bt_bg": "#032e6a",
+        "padding_top": 40,
+        "padding_bot": 40,
+        "padding_top_mob": 30,
+        "padding_bot_mob": 20
+      }
+    },
+    "ae274ad0-ada8-434b-8168-9e3dd9561534": {
+      "type": "image-with-text",
+      "settings": {
+        "box": true,
+        "image": "shopify://shop_images/Website_Virtual_Appointment_-_2.jpg",
+        "text_left": false,
+        "title": "Unable to visit a showroom? Book a virtual appointment.",
+        "text": "Chat via video call with one of our Design Consultants to see our modular sofas live, explore fabric options,  watch a full product demo, and ask any questions you might have!",
+        "btn_url": "https://calendly.com/7thavenue/virtual-design-consult",
+        "btn_text": "BOOK AN APPOINTMENT",
+        "btn_url2": "",
+        "btn_text2": "READ ABOUT US",
+        "borderTop": true,
+        "borderBot": true,
+        "top_gutter": 40,
+        "bottom_gutter": 40,
+        "top_gutter_m": 20,
+        "bottom_gutter_m": 20,
+        "color": "#000000",
+        "bg_color": "rgba(0,0,0,0)"
+      }
+    },
+    "main": {
+      "type": "showroom",
+      "disabled": true,
+      "settings": {
+        "title": "California",
+        "title_mob": "California",
+        "subtitle": "",
+        "subtitle_mob": "",
+        "get_data_from_metaobject": false,
+        "box_per_row": 3,
+        "active_geo": false,
+        "border_top": false,
+        "border_bot": false,
+        "color": "#000000",
+        "bg_color": "#ffffff",
+        "card_bg": "#f3f3f3",
+        "bt_color": "#ffffff",
+        "bt_bg": "#000000",
+        "padding_top": 60,
+        "padding_bot": 60,
+        "padding_top_mob": 30,
+        "padding_bot_mob": 30
+      }
+    },
+    "7dc0c0e0-9ffa-4793-9e07-f7388460dded": {
+      "type": "showroom",
+      "disabled": true,
+      "settings": {
+        "title": "Nevada",
+        "title_mob": "California",
+        "subtitle": "",
+        "subtitle_mob": "",
+        "get_data_from_metaobject": false,
+        "box_per_row": 3,
+        "active_geo": false,
+        "border_top": false,
+        "border_bot": false,
+        "color": "#000000",
+        "bg_color": "#ffffff",
+        "card_bg": "#f3f3f3",
+        "bt_color": "#ffffff",
+        "bt_bg": "#000000",
+        "padding_top": 60,
+        "padding_bot": 60,
+        "padding_top_mob": 30,
+        "padding_bot_mob": 30
+      }
+    },
+    "5a3d3c57-e5c8-41ad-8ca0-23efb1349b81": {
+      "type": "showroom",
+      "disabled": true,
+      "settings": {
+        "title": "Texas",
+        "title_mob": "California",
+        "subtitle": "",
+        "subtitle_mob": "",
+        "get_data_from_metaobject": false,
+        "box_per_row": 3,
+        "active_geo": false,
+        "border_top": false,
+        "border_bot": false,
+        "color": "#000000",
+        "bg_color": "#ffffff",
+        "card_bg": "#f3f3f3",
+        "bt_color": "#ffffff",
+        "bt_bg": "#000000",
+        "padding_top": 60,
+        "padding_bot": 60,
+        "padding_top_mob": 30,
+        "padding_bot_mob": 30
+      }
+    },
+    "4727d977-a61e-4940-8110-6ad7663e7d76": {
+      "type": "sofa-page-advanced-content",
+      "blocks": {
+        "e7017d85-38ad-4832-8d56-dc04f93b21d3": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/Showroom_1_9374b911-64b7-43f4-a0eb-81520b37088a.jpg",
+            "video": "",
+            "image_right": true,
+            "title": "Try out the modular sofas in-person.",
+            "text": "Experience The World's Greatest\nModular Sofa in real-life. Find your perfect configuration, fabric color, and back cushion during our private 30-minute appointments."
+          }
+        },
+        "facb6c53-6db4-477a-b8e3-d8cf38f3ded9": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/Showroom_4_32e072f0-03ea-4c52-b208-657f116227d8.jpg",
+            "video": "",
+            "image_right": false,
+            "title": "Get a product demo, even a live spill-test.",
+            "text": "See it to believe it. Get a full explanation on all of our sofa's functional features, and see the live-demo of our water-repellent spill test."
+          }
+        },
+        "16d0e778-cc66-4b33-a180-877fe3e75552": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/Showroom_2_826bc612-f3a5-4554-8ce7-ebaa58e39d68.jpg",
+            "video": "",
+            "image_right": true,
+            "title": "Explore fabric options & swatches.",
+            "text": "Get a feel of our fabrics and find the best color that will match your home style. Our dedicated Design Consultant can give you the best style recommendations for you."
+          }
+        },
+        "46ca8dee-5bce-435c-aa4b-161275dbbf08": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/Showroom_3.jpg",
+            "video": "",
+            "image_right": false,
+            "title": "A private, dedicated appointment time.",
+            "text": "All of our appointments are Appointment-Only, meaning that you get the full attention from one of our Design Consultants to answer any questions you might have."
+          }
+        }
+      },
+      "block_order": [
+        "e7017d85-38ad-4832-8d56-dc04f93b21d3",
+        "facb6c53-6db4-477a-b8e3-d8cf38f3ded9",
+        "16d0e778-cc66-4b33-a180-877fe3e75552",
+        "46ca8dee-5bce-435c-aa4b-161275dbbf08"
+      ],
+      "custom_css": [
+        ".pdp-advanced-content__wrapper {margin: 40px 0 20px;}"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "header",
+    "165525560213b9b011",
+    "ae274ad0-ada8-434b-8168-9e3dd9561534",
+    "main",
+    "7dc0c0e0-9ffa-4793-9e07-f7388460dded",
+    "5a3d3c57-e5c8-41ad-8ca0-23efb1349b81",
+    "4727d977-a61e-4940-8110-6ad7663e7d76"
+  ]
+}

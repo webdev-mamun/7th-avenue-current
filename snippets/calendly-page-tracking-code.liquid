@@ -1,0 +1,12 @@
+{%- if request.page_type == 'page' -%}
+  {%- assign showrooms = shop.metaobjects.showroom.values -%}
+  {%- for showroom in showrooms -%}
+    {%- assign page_handle = pages[showroom.conformation_page].handle -%}
+    {%- if page_handle == page.handle -%}
+      {%- assign tracking_code = showroom.google_ad_words_tracking_code -%}
+      <script>
+        gtag('event', 'conversion', {'send_to': '{{ tracking_code }}'});
+      </script>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}

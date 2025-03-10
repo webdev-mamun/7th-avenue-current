@@ -1,0 +1,179 @@
+{%- liquid
+  assign selected_color = section.settings.selected_color | split: ", "
+  assign color_count = selected_color.size
+  assign active_color = ''
+  assign paddingTop = section.settings.paddingTop
+  assign paddingBottom = section.settings.paddingBottom
+  assign paddingTopMobile = section.settings.paddingTopMobile
+  assign paddingBottomMobile = section.settings.paddingBottomMobile
+  assign background = section.settings.background
+-%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ paddingTop }}px;
+    --padding-bottom: {{ paddingBottom }}px;
+    --padding-top-mobile: {{ paddingTopMobile }}px;
+    --padding-bottom-mobile: {{ paddingBottomMobile }}px;
+    --background: {{ background }};
+  }
+</style>
+<div class="sofa-page-feature-product sofa-page-feature-product__{{ section.id }}" data-section-id="{{ section.id }}">
+  <!-- sofa-page-feature-product -->
+  <div class="row">
+    <div class="sofa-page-section-title__container">
+      <h2 class="title">{{ section.settings.title }}</h2>
+      <p class="text">{{ section.settings.text }}</p>
+    </div>
+  </div>
+  <div class="sofa-page-feature-product-slider-wrapper">
+    <button class="slider__controller slider__controller--prev"></button>
+    <button class="slider__controller slider__controller--next"></button>
+    <div class="row">
+      <div class="sofa-page-feature-product-slider">
+        {% liquid 
+         assign collection = collections[section.settings.collection]
+        %}
+        {% for product in collection.products limit: section.settings.product_limit %}
+        {% liquid
+          assign active_color_index = forloop.index0 | modulo: color_count
+          assign active_color = selected_color[active_color_index] | default: settings.custom_selected_option
+        %}
+		    <div class="product-index">
+          {% render 'sofa-product-listing-v2', collectionFilters: collection.filters, product:product, active_color: active_color %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <a href="{{ section.settings.btn_url }}" class="sofa-page-feature-product__btn">{{ section.settings.btn_text }}</a>
+      <p class="sofa-page-feature-product__info">{{ section.settings.info }}</p>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Home collection slider",
+    "settings": [
+		{
+			"type":"textarea",
+			"id":"title",
+			"label":"Title",
+			"default":"Shop Modular Seating"
+		},
+		{
+			"type":"textarea",
+			"id":"text",
+			"label":"Text",
+			"default":"Our best selling modular sofa configurations.<br>Find the perfect fit for every home size & style."
+		},
+		{
+			"type":"collection",
+			"id":"collection",
+			"label":"Collection"
+		},
+		{
+			"type": "range",
+			"id": "product_limit",
+			"min": 5,
+			"max": 25,
+			"step": 1,
+			"unit": "Prd",
+			"label": "Product limit",
+			"default": 15
+		},
+        {
+          "type": "textarea",
+          "id": "selected_color",
+          "label": "Highlighted color",
+          "info": "Enter color values separated by commas and spaces that you want to highlight, e.g., Ivory White, Onyx Black, Olive Green, Emerald Green, Cobalt Blue."
+        },
+		{
+			"type":"text",
+			"id":"speed",
+			"label":"Auto play speed",
+			"default":"5000",
+			"info":"Millisecond"
+		},
+		{
+			"type":"url",
+			"id":"btn_url",
+			"label":"Button url"
+		},
+		{
+			"type":"text",
+			"id":"btn_text",
+			"label":"Button text",
+			"default":"SHOP ALL SEATING"
+		},
+		{
+			"type":"textarea",
+			"id":"info",
+			"label":"Info",
+			"default":"Want to try the sofa in-person? Find a showroom here <br> & save $200 off your purchase upon visit."
+		},
+        {
+          "type": "header",
+          "content": "Section padding"
+        },
+        {
+          "type": "range",
+          "id": "paddingTop",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "Top padding",
+          "unit": "px",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "paddingBottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "Bottom padding",
+          "unit": "px",
+          "default": 25
+        },
+        {
+          "type": "range",
+          "id": "paddingTopMobile",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "Top padding(Mobile)",
+          "unit": "px",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "paddingBottomMobile",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "Bottom padding(Mobile)",
+          "unit": "px",
+          "default": 10
+        },
+        {
+          "type": "header",
+          "content": "Color"
+        },
+        {
+          "type": "color_background",
+          "id": "background",
+          "label": "Background",
+          "default": "#F3F3F3"
+        }
+	],
+	"presets":[
+	   {
+		  "name":"Featured collection slider"
+	   }
+	]
+  }
+{% endschema %}
+

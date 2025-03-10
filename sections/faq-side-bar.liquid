@@ -1,0 +1,75 @@
+{% if section.blocks.size > 0 %}
+<div class="faq-sidebar-inner">
+  <div class="faq-dropdown-wrapper">
+    <div class="faq-dropdown-inner">
+      <select>
+         {% for block in section.blocks %}
+            {% if block.type == "title" %}
+              <option>
+                {{ block.settings.title }}
+              </option>
+            {% endif %}
+         {% endfor %}
+      </select>
+      <span class="faq-dropdown">
+        <button class="faq-dropdown-btn">
+          <span class="filter-icon"></span>
+          <span>Browse by Topic</span>
+        </button>
+        <div class="faq-dropdown-content">
+          <ul>
+           {% for block in section.blocks %}
+            {% if block.type == "title" %}
+              <li>
+                <a href="#{{ block.settings.title | handle }}" class="faq-dropdown-link">{{ block.settings.title }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+        </div>
+      </span>
+    </div>
+  </div>
+  <ul class="faq-sidebar-linklist">
+    {% for block in section.blocks %}
+        <li>
+          <a href="#{{ block.settings.title | handle }}" class="faq-sidebar-link">{{ block.settings.title }}</a>
+        </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+{% schema %}
+  {
+    "name": "Faq sidebar",
+    "tag": "aside",
+    "class": "faq-sidebar",
+    "settings": [
+      {
+        "type": "html",
+        "id": "sidebarContent",
+        "label": "Sidebar Content"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Section Title",
+        "type": "title",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Title"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

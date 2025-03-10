@@ -1,0 +1,240 @@
+{% liquid
+  assign collection = collections[section.settings.collection]
+%}
+
+<div id="content" class="row sofa-collection">
+  <div id="main-content" class="collection_grid_wrapper">
+
+  <div class="collection-page-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="collection-section">
+    <div class="collection-header">
+      <div class="collection-header__row">
+        <div class="collection-header__col">
+  		<h1 class="title">Shop {{ collection.title }}</h1>
+        </div>
+        <div class="collection-header__col">
+          <p class="description">{{ collection.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    {% # theme-check-disable %}
+    {%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+    {%- assign pageUrl = contentForQuerystring | split:'"pageurl":"' | last | split:'"' | first | split:'.myshopify.com' | last |
+     replace:'\/','/' | 
+    replace:'%20',' ' | 
+    replace:'\u0026','&'
+    -%}
+    {% # theme-check-enable %}
+
+    {% assign segments = pageUrl | split: '/' %}
+    {% if segments[2] contains 'vendors?q=' and segments[2] contains '&grid_item' %}
+    {% assign params = segments[2] | split: '&grid_item=' | last %}
+    {% assign grid_item = params | split: '&' | first | times: 1 %}
+    {% assign prod_limit = params | split: '&' | last | split: '=' | last | times: 1 %}
+    {% else %} 
+    {% assign grid_item = section.settings.grid %}
+    {% endif %}
+  
+    {% if prod_limit != blank %}
+    {% assign number =  prod_limit %}
+    {% else %} 
+    {% assign number = section.settings.products_per_page %}
+    {% endif %}
+    
+    {% paginate collection.products by number %}
+    {% assign sidebar = false %}
+  
+    {% case grid_item %}
+    {% when 2 %}
+    {%- assign grid_item_width = 'desktop-6 tablet-3 mobile-full span-6' -%}
+    {% when 3 %}
+    {%- assign grid_item_width = 'desktop-4 tablet-2 mobile-half span-4' -%}
+    {% when 4 %}
+    {%- assign grid_item_width = 'desktop-3 tablet-2 mobile-full span-6' -%}
+    {% when 5 %}
+    {%- assign grid_item_width = 'desktop-fifth tablet-2 mobile-half span-one-fifth' -%}
+    <style>
+      @media screen and ( min-width: 981px ) {
+        @supports (display: grid) {
+          .collection-page-{{ section.id }} .product-loop.grid_wrapper {
+            grid-template-columns: repeat(5, 1fr);
+          }
+        }
+      }
+      @media screen and ( min-width: 741px ) and ( max-width: 980px ) {
+        @supports (display: grid) {
+          .collection-page-{{ section.id }} .product-loop.grid_wrapper {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+      }
+      @media screen and ( max-width: 740px ) {
+        @supports (display: grid) {
+          .collection-page-{{ section.id }} .product-loop.grid_wrapper {
+            grid-template-columns: repeat(1, 1fr);
+          }
+        }
+      }
+    </style>
+    {% when 6 %}
+    {%- assign grid_item_width = 'desktop-2 tablet-2 mobile-half span-2' -%}
+    {% endcase %}
+
+    <div class="collection-filter">
+    filter
+    </div>
+    <div class="grid_wrapper product-loop{% if section.settings.infinite_scroll %} is_infinite{% endif %}" id="sofa-collection">      
+      {% assign new_arrivals = false %}
+      {% if collection.handle == 'new-arrivalsss' %} 
+      {% assign new_arrivals = true %}
+      {% endif %}
+      
+      {% for product in collection.products %}
+   
+  
+      {% assign date_published = product.published_at | date:'%s' %}
+      {% assign date_now = 'now' | date:'%s' %}
+      {% assign date_difference = date_now | minus: date_published | divided_by: 3600 | divided_by: 24%}
+  
+        <div class="{{ grid_item_width }} product-index" id="prod-{{ product.id }}" data-alpha="{{ product.title }}" data-price="{{ product.price }}" data-aos="{{ settings.scroll_animation }}">
+          {% include 'sofa-product-listing' %}       
+        </div>
+      {% endfor %}
+  
+    </div>
+    <style type="text/css" media="screen">
+      {% if section.settings.grid == 2 %}
+      .collection-page-{{ section.id }} .product-index:nth-child(2n + 1) {
+        clear:left;
+      }
+      {% elsif section.settings.grid == 3 %}
+      .collection-page-{{ section.id }} .product-index:nth-child(3n + 1) {
+        clear:left;
+      }
+      {% elsif section.settings.grid == 4 %}
+      .collection-page-{{ section.id }} .product-index:nth-child(4n + 1) {
+        clear:left;
+      }
+      {% elsif section.settings.grid == 5 %}
+      .collection-page-{{ section.id }} .product-index:nth-child(5n + 1) {
+        clear:left;
+      }
+      {% elsif section.settings.grid == 6 %}
+      .collection-page-{{ section.id }} .product-index:nth-child(6n + 1) {
+        clear:left;
+      }
+      {% endif %}
+    </style>
+  
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        $('#collection-filters').offcanvas({
+          modifiers: 'right, overlay', // default options
+          triggerButton: '#filtersButton' // btn to open offcanvas
+        });
+      })
+    </script>
+  
+    {% comment %}
+    {% include 'pagination' %}
+    {% endcomment %}
+    {% if paginate.next %}
+    <div class="page-load-status">
+      <div class="infinite-scroll-request">
+        <div class="spinner"></div>
+      </div>
+    </div>
+    {% endif %}
+    {% endpaginate %}
+  </div>
+  <div class="clear"></div>
+  </div>
+</div>
+
+<script>
+  var container = document.querySelectorAll('.product-index');
+  container.forEach(function(el){
+    var variants = el.querySelectorAll('.color__swatch li');
+    var activeVariant = el.querySelector('.color__swatch li.open');
+    var images = el.querySelectorAll('.reveal .variant__image');
+    var links = el.querySelectorAll('a');
+    var price = el.querySelector('.price__container .variant__price');
+    var monthlyPriceContainer = el.querySelector('.price__container .monthly__price');
+    variants.forEach(function(variant, variantIndex){
+      variant.addEventListener('click', function() {
+        variant.classList.add('open')
+        if(activeVariant && activeVariant != variant) {
+          activeVariant.classList.remove('open')
+        }
+        activeVariant = variant;
+
+        images.forEach(function(image){
+          var variantUrl, variantPrice, monthlyPrice;
+          if(variant.dataset.optionName == image.dataset.image){
+            image.classList.add('open');
+            variantUrl = image.dataset.variantUrl;
+            variantPrice = image.dataset.variantPrice;
+            monthlyPrice = image.dataset.monthlyPrice;
+          } else {
+            image.classList.remove('open');
+          }
+
+          if(variantUrl != undefined) {
+            links.forEach(function(link) {
+              var url = link.href;
+              link.href = variantUrl;
+            });
+          }
+
+          if(variantPrice != undefined) {
+            price.innerText = variantPrice;
+          }
+          
+          if(monthlyPrice != undefined) {
+            monthlyPriceContainer.innerText = monthlyPrice;
+          }
+        });
+
+      });
+    });
+  })
+
+</script>
+
+
+{% schema %}
+{
+   "name":"Collection (Page)",
+   "settings":[
+       {
+		"type": "collection",
+		"id": "collection",
+		"label": "Select Collection"
+  	  },
+      {
+         "type":"range",
+         "id":"grid",
+         "min":2,
+         "max":6,
+         "step":1,
+         "label":"Products per row",
+         "default":3
+      },
+      {
+         "type":"range",
+         "id":"products_per_page",
+         "min":12,
+         "max":48,
+         "step":1,
+         "label":"Products per page",
+         "default":30
+      },
+      {
+         "type":"checkbox",
+         "id":"infinite_scroll",
+         "label":"Infinite scroll products",
+         "info":"Pagination will not show, products will continuously load as you scroll down the page"
+      }
+   ]
+}
+{% endschema %}

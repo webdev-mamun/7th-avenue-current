@@ -1,0 +1,49 @@
+<tab-container class="product-tabs-container">
+  <div class="product-tabs-tablist-container">
+    <ul aria-labelledby="{{ product.title | handle }}" role="tablist">
+        {%- if section.settings.product_description != blank and section.settings.product_description_title != blank -%}
+        <li role="presentation">
+          <a id="tab-{{ section.settings.product_description_title | handle }}" href="#product-tab-{{ section.settings.product_description_title | handle }}-{{ id }}" role="tab" tabindex="-1" aria-selected="true">{{ section.settings.product_description_title }}</a>
+        </li>
+        {%- endif -%}
+        {%- if product.metafields.specification.config != blank -%}
+        <li role="presentation">
+          <a id="tab-configuration" href="#product-tab-configuration-{{ id }}" role="tab" tabindex="-1" aria-selected="false">Configuration</a>
+        </li>
+        {%- endif -%}
+        {%- if section.settings.product_return != blnak and section.settings.product_return_title != blank -%}
+        <li role="presentation">
+          <a id="tab-{{ section.settings.product_return_title | handle }}" href="#product-tab-{{ section.settings.product_return_title | handle }}-{{ id }}" role="tab" tabindex="-1" aria-selected="false">{{ section.settings.product_return_title }}</a>
+        </li>
+        {%- endif -%}
+        {%- if section.settings.product_tab_5_content != blnak and section.settings.product_tab_5_title != blank -%}
+        <li role="presentation">
+          <a id="tab-{{ section.settings.product_tab_5_title | handle }}" href="#product-tab-{{ section.settings.product_tab_5_title | handle }}-{{ id }}" role="tab" tabindex="-1" aria-selected="false">{{ section.settings.product_tab_5_title }}</a>
+        </li>
+        {%- endif -%}
+    </ul>
+    <span class="product-tab-indicator"></span>
+  </div>
+  <div class="tabs__panels">
+    {%- if section.settings.product_description != blank and section.settings.product_description_title != blank -%}
+    <div id="product-tab-{{ section.settings.product_description_title | handle }}-{{ id }}" aria-labelledby="tab-{{ section.settings.product_description_title | handle }}" role="tabpanel" tabindex="0">
+        {{ section.settings.product_description }}
+    </div>
+    {%- endif -%}
+    {%- if product.metafields.specification.config != blank -%}
+    <div id="product-tab-configuration-{{ id }}" aria-labelledby="tab-configuration" role="tabpanel" tabindex="0" hidden>
+       {{ product.metafields.specification.config | metafield_tag }}
+    </div>
+    {%- endif -%}
+    {%- if section.settings.product_return != blnak and section.settings.product_return_title != blank -%}
+    <div id="product-tab-{{ section.settings.product_return_title | handle }}-{{ id }}" aria-labelledby="tab-{{ section.settings.product_return_title | handle }}" role="tabpanel" tabindex="0" hidden>
+       {{ section.settings.product_return }}
+    </div>
+    {%- endif -%}
+    {%- if section.settings.product_tab_5_content != blnak and section.settings.product_tab_5_title != blank -%}
+    <div id="product-tab-{{ section.settings.product_tab_5_title | handle }}-{{ id }}" aria-labelledby="tab-{{ section.settings.product_tab_5_title | handle }}" role="tabpanel" tabindex="0" hidden>
+       {{ section.settings.product_tab_5_content }}
+    </div>
+    {%- endif -%}
+  </div>
+</tab-container>

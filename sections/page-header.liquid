@@ -1,0 +1,73 @@
+{%- liquid
+	assign title = section.settings.title | default: page.title
+    assign text = section.settings.text | default: page.content
+    assign color = section.settings.color
+    assign bgColor = section.settings.bgColor
+-%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --color: {{ color }};
+    --bg-color: {{ bgColor }};
+  }
+</style>
+
+{%- if title != blank or text != blank -%}
+  <section class="page-header">
+    <div class="section-boxed" column="1">
+      <div class="section-boxed-row">
+        <div class="section-boxed-column">
+          <div class="page-header__inner">
+            {%- if title != blank -%}
+                <h1 class="page-header__title">{{ title }}</h1>
+            {%- endif -%}
+            {% unless page.handle == 'contact-us' %}
+            {%- if text != blank -%}
+                <p class="page-header__content">{{ text }}</p>
+            {%- endif -%}
+            {% endunless %}
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<div class="clear"></div>
+{%- endif -%}
+{% schema %}
+  {
+    "name": "Page header",
+	"presets":[
+      {
+         "name":"Page header"
+      }
+   ],
+    "settings": [
+		{
+			"type": "textarea",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "textarea",
+			"id": "text",
+			"label": "Text"
+		},
+		{
+			"type": "header",
+			"content": "color"
+		},
+		{
+			"type": "color",
+			"id": "color",
+			"label": "Color",
+			"default": "#ffffff"
+		},
+		{
+			"type": "color",
+			"id": "bgColor",
+			"label": "Background color",
+			"default": "#000000"
+		}
+	]
+  }
+{% endschema %}

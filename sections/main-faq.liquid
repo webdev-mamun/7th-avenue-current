@@ -1,0 +1,108 @@
+{% if section.blocks.size > 0 %}
+  <div class="faq-content-wrapper">
+    {% if section.settings.heading != blank %}
+      {% assign title_handle = section.settings.heading | handle %}
+      <h2 class="faq-section-title" id="{{ title_handle }}">
+        <span>{{ section.settings.heading }}</span>
+        <share-url class="section-share" data-url="{{ request.origin | append: request.path }}#{{ title_handle }}">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_3940_3866)">
+            <path d="M35.596 0.850781C35.2005 0.302133 34.5666 0 33.8108 0C33.4561 0 33.0757 0.0668672 32.6804 0.198703L2.0644 10.404C1.0069 10.7565 0.278041 11.4768 0.0646429 12.3805C-0.148756 13.2842 0.18094 14.2547 0.969213 15.0431C1.04628 15.1203 1.13487 15.185 1.23176 15.235L14.1215 21.8793L20.7661 34.7691C20.816 34.8659 20.8807 34.9545 20.9578 35.0316C21.5912 35.6651 22.3218 36 23.0706 36.0001H23.0708C24.2048 36.0001 25.1729 35.2092 25.5969 33.9365L35.8024 3.32051C36.1233 2.35765 36.0499 1.48057 35.596 0.850781ZM2.11756 12.8653C2.15792 12.6942 2.39318 12.5179 2.73139 12.4052L31.7905 2.71877L14.7034 19.8059L2.3607 13.4437C2.17479 13.2264 2.08289 13.0121 2.11756 12.8653ZM23.5958 33.2695C23.4957 33.5698 23.3052 33.8906 23.0708 33.8906C22.9288 33.8906 22.7429 33.7987 22.5573 33.64L16.1949 21.2974L33.2825 4.20989L23.5958 33.2695Z" fill="black"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_3940_3866">
+            <rect width="36" height="36" fill="white"/>
+            </clipPath>
+            </defs>
+          </svg>
+          <span class="copied-tooltip">URL copied to clipboard!</span>
+        </share-url>
+      </h2>
+    {% endif %}
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'question-answer' -%}
+          <div class="faq" {{ block.shopify_attributes }}>
+            <h3 class="question" id="faq-{{ block.settings.title | handle }}">
+              <span>{{ block.settings.title }}</span>
+              <div class="faq-icon-container">
+                <span class="down-arrow">
+                  <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_3940_3873)">
+                    <path d="M0.344164 14.9287C-0.106166 14.4626 -0.0931833 13.7196 0.37299 13.2692C0.827831 12.83 1.54882 12.83 2.00355 13.2692L26.9941 38.2574L51.9823 13.2669C52.4326 12.8008 53.1755 12.7879 53.6418 13.2381C54.1079 13.6884 54.1208 14.4313 53.6706 14.8976C53.6611 14.9074 53.6516 14.917 53.6418 14.9264L27.8227 40.7455C27.3644 41.2037 26.6215 41.2037 26.1632 40.7455L0.344164 14.9287Z" fill="#F44336"/>
+                    <path d="M53.9868 14.0976C53.988 13.4494 53.4634 12.9231 52.8153 12.9219C52.5028 12.9213 52.203 13.0454 51.9823 13.2667L26.9941 38.2572L2.00599 13.2667C1.54708 12.8078 0.803096 12.8078 0.344184 13.2667C-0.114728 13.7256 -0.114728 14.4696 0.344184 14.9285L26.1633 40.7476C26.6215 41.2058 27.3644 41.2058 27.8228 40.7476L53.6418 14.9285C53.8626 14.7085 53.9868 14.4094 53.9868 14.0976Z" fill="black"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_3940_3873">
+                    <rect width="54" height="54" fill="white" transform="matrix(0 1 1 0 0 0)"/>
+                    </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <share-url class="question-share" data-url="{{ request.origin | append: request.path }}#faq-{{ block.settings.title | handle }}">
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_3940_3866)">
+                    <path d="M35.596 0.850781C35.2005 0.302133 34.5666 0 33.8108 0C33.4561 0 33.0757 0.0668672 32.6804 0.198703L2.0644 10.404C1.0069 10.7565 0.278041 11.4768 0.0646429 12.3805C-0.148756 13.2842 0.18094 14.2547 0.969213 15.0431C1.04628 15.1203 1.13487 15.185 1.23176 15.235L14.1215 21.8793L20.7661 34.7691C20.816 34.8659 20.8807 34.9545 20.9578 35.0316C21.5912 35.6651 22.3218 36 23.0706 36.0001H23.0708C24.2048 36.0001 25.1729 35.2092 25.5969 33.9365L35.8024 3.32051C36.1233 2.35765 36.0499 1.48057 35.596 0.850781ZM2.11756 12.8653C2.15792 12.6942 2.39318 12.5179 2.73139 12.4052L31.7905 2.71877L14.7034 19.8059L2.3607 13.4437C2.17479 13.2264 2.08289 13.0121 2.11756 12.8653ZM23.5958 33.2695C23.4957 33.5698 23.3052 33.8906 23.0708 33.8906C22.9288 33.8906 22.7429 33.7987 22.5573 33.64L16.1949 21.2974L33.2825 4.20989L23.5958 33.2695Z" fill="black"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_3940_3866">
+                    <rect width="36" height="36" fill="white"/>
+                    </clipPath>
+                    </defs>
+                  </svg>
+                  <span class="copied-tooltip">URL copied to clipboard!</span>
+                </share-url>
+              </div>
+            </h3>
+            <div class="answer">{{ block.settings.answer }}</div>
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+{% endif %}
+{% schema %}
+  {
+    "name": "FAQ",
+    "class": "faq-main",
+    "tag": "div",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Title",
+        "default": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Question answer",
+        "type": "question-answer",
+        "settings":[
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Question",
+            "default": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer",
+            "default": "<p>Answer</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "FAQ"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

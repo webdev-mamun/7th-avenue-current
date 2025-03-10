@@ -1,0 +1,116 @@
+<div class="better_togather_section_wrapper">
+  <div class="better_togather_wrapper mw">
+    <div class="bt__container">
+      <div class="bt__row">
+		<div class="bt__info">
+          {% if section.settings.section_badge != blank %}<p class="bt__section_badge">{{section.settings.section_badge}}</p>{% endif %}
+          {% if section.settings.title != blank %}<h2 class="bt__title big_title">{{section.settings.title}}</h2>{% endif %}
+          {% if section.settings.brand_image != blank %}<div class="brand_logo"><a href="{{section.settings.brand_image}}">{% render 'basic-responsive-image', type: section.settings.brand_image %}</a></div>{% endif %}
+          {% if section.settings.text != blank %}<div class="bt__text">{{section.settings.text}}</div>{% endif %}
+          {% if section.settings.section_badge != blank %}<a href="{{section.settings.link}}" class="bt__btn">{{section.settings.button_text}}</a>{% endif %}
+          {% if section.settings.section_badge != blank %}
+          <div class="bt__icons">
+            {% if section.settings.icon1 != blank %}<div class="bt__icon"><a href="{{section.settings.icon1_link}}">{% render 'basic-responsive-image', type: section.settings.icon1 %}</a></div>{% endif %}
+            {% if section.settings.icon2 != blank %}<div class="bt__icon"><a href="{{section.settings.icon2_link}}">{% render 'basic-responsive-image', type: section.settings.icon2 %}</a></div>{% endif %}
+          </div>
+          {% endif %}
+        </div>
+        <div class="bt__images">
+          {% if section.settings.right_image1 != blank %}
+          <div class="bt__image">{% render 'basic-responsive-image', type: section.settings.right_image1 %}</div>
+          {% endif %}
+          {% if section.settings.right_image2 != blank %}
+          <div class="bt__image">{% render 'basic-responsive-image', type: section.settings.right_image2 %}</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Better Togather",
+    "settings": [
+	  {
+		"type": "header",
+		"content": "Left side"
+	  },
+	  {
+		"type": "text",
+		"id": "section_badge",
+		"label": "Mini title",
+		"default": "Better Togather"
+	  },
+	  {
+		"type": "textarea",
+		"id": "title",
+		"label": "Title"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "brand_image",
+		"label": "Brand image"
+	  },
+	  {
+		"type": "url",
+		"id": "brand_image_link",
+		"label": "Brand image Link"
+	  },
+	  {
+		"type": "textarea",
+		"id": "text",
+		"label": "Text"
+	  },
+	  {
+		"type": "url",
+		"id": "link",
+		"label": "Link"
+	  },
+	  {
+		"type": "text",
+		"id": "button_text",
+		"label": "Button text"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "icon1",
+		"label": "Icon #1"
+	  },
+	  {
+		"type": "url",
+		"id": "icon1_link",
+		"label": "Icon #1 link"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "icon2",
+		"label": "Icon #2"
+	  },
+	  {
+		"type": "url",
+		"id": "icon2_link",
+		"label": "Icon #2 link"
+	  },
+	  {
+		"type": "header",
+		"content": "Right side"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "right_image1",
+		"label": "Image #1"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "right_image2",
+		"label": "Image #2"
+	  }
+	],
+	"presets": [
+	  {
+		"name": "Better Togather"
+	  }
+	]
+  }
+{% endschema %}

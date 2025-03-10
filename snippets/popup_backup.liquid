@@ -1,0 +1,226 @@
+{% if settings.popup %}
+  <div class="mailing-popup" style="display:none">
+    <div id="mailing-popup">
+      {% if settings.email_image != blank and settings.popup_image == 'content' %}
+        <div class="popup-content-image"></div>
+      {% endif %}
+      <div id="subscribe_popup">
+        <div id="subs-container" class="clearfix">
+          {% form 'customer' %}
+            <div id="mc_embed_signup" {% if form.posted_successfully? %}class="form-submitted"{% endif %}>
+              <div class="before-signup">
+                {% if settings.mail_popup_title %}
+                  <h3>{{ settings.mail_popup_title }}</h3>
+                {% endif %}
+                {% if settings.mail_popup_text %}
+                  <p>{{ settings.mail_popup_text }}</p>
+                {% endif %}
+                <input type="hidden" name="contact[tags]" value="prospect, password page">
+                <input type="email" name="contact[email]" id="mce-EMAIL" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}">
+                <input type="submit" id="mc-embedded-subscribe" value="{{ settings.mail_button_text }}">
+                {% if settings.mail_gdpr_text %}
+                  <p class="gdpr-text before-signup"><em>{{ settings.mail_gdpr_text }}</em></p>
+                {% endif %}
+              </div>
+
+              {% if form.posted_successfully? %}
+                <script>
+                  $.fancybox.open({
+                    src  : '#mailing-popup',
+                    baseClass: "subscribe-popup",
+                    type : 'inline'
+                  });
+                </script>
+
+                {% if settings.show_discount_code %}
+                  <h3 class="success">{{ 'general.newsletter_form.popup_thanks' | t }}</h3>
+                  <h1 class="success">{{ settings.generic_coupon_code }}</h1>
+                {% else %}
+                  <h3 class="success">{{ 'general.newsletter_form.thanks' | t }}</h3>
+                {% endif %}
+              {% else %}
+                {{ form.errors | default_errors }}
+              {% endif %}
+
+            </div>
+          {% endform %}
+        </div>
+        <div class="clear"></div>
+        <div class="fb-like" data-href="{{ shop.url }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+      </div>
+    </div>
+    <style media="screen">
+      #mailing-popup,
+      .subscribe-popup .fancybox-stage {
+        height: 654px;
+        width: 600px;
+        text-align: center;
+        overflow: hidden;
+        margin: 0 auto;
+        background-color: {{ settings.popup_background_color }};
+      }
+      .subscribe-popup .fancybox-stage {
+        top: 10%;
+      }
+      .subscribe-popup .fancybox-slide {
+        overflow: hidden;
+        padding: 0 !important;
+      }
+      .subscribe-popup .fancybox-slide:before {
+        margin: 0 !important;
+      }
+      #subscribe_popup {
+        margin: 0 auto;
+      }
+      #mailing-popup #subscribe_popup h3,
+      #mailing-popup #subscribe_popup p {
+        color: {{ settings.popup_text_color }};
+      }
+      #mailing-popup #subscribe_popup .gdpr-text {
+        opacity: 0.9;
+        font-size: 14px;
+      }
+      #mailing-popup #subscribe_popup h3 {
+        font-size: {{ settings.popup_h3_size }}px;
+      }
+      #mailing-popup #subscribe_popup p {
+        font-size: {{ settings.popup_subheading_size }}px;
+      }
+      #mailing-popup #subscribe_popup {
+        float: none;
+      }
+      #mailing-popup h1.success {
+        background: white;
+        border: 1px solid #eee;
+        display: inline-block;
+        padding: 10px;
+      }
+      #mailing-popup h3.success {
+        max-width: 400px;
+        margin: 10px auto 30px;
+      }
+      #mailing-popup #mce-EMAIL {
+        float: none;
+        padding: 0;
+        vertical-align: top;
+        height: 48px;
+        text-align: center;
+      }
+      #mailing-popup #mc_embed_signup {
+        min-width: 400px;
+        text-align: center;
+      }
+      #mailing-popup #mc-embedded-subscribe {
+        height: 48px;
+        vertical-align: top;
+        float: none;
+        font-size: 12px;
+      }
+      #mailing-popup form {
+        margin-bottom: 0;
+      }
+      #form-submitted .before-signup {
+        display: none;
+      }
+
+      @media screen and (max-width: 740px) {
+        #mailing-popup,
+        .subscribe-popup .fancybox-stage {
+          min-width: 340px !important;
+          width: 300px;
+          min-height: 360px;
+          overflow: hidden !important;
+        }
+        #mailing-popup #subscribe_popup h3 {
+          font-size: 20px;
+        }
+        #mailing-popup #subscribe_popup p {
+          font-size: 14px;
+        }
+        #mailing-popup .gdpr-text {
+          font-size: 12px !important;
+          line-height: 14px !important;
+        }
+        #mailing-popup #mce-EMAIL,
+        #mailing-popup #mc-embedded-subscribe {
+          display: block;
+          width: 250px;
+          min-width: 250px;
+          text-align: center;
+        }
+        #mailing-popup #mc_embed_signup {
+          width: 260px;
+          min-width: 260px;
+        }
+      }
+      {% if settings.popup_image == 'content' %}
+        #mailing-popup {
+          padding: 0 !important;
+        }
+        #mailing-popup #subscribe_popup {
+          padding: 40px;
+        }
+      {% endif %}
+
+      {% if settings.popup_image == 'background' %}
+        #mailing-popup #subscribe_popup {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+        }
+      {% endif %}
+
+        #mailing-popup #subscribe_popup .gdpr-text {
+          max-width: 420px;
+          margin: 0 auto;
+        }
+
+
+      {% if settings.email_image != blank and settings.popup_image == 'background' %}
+        #mailing-popup {
+          background: url({{ settings.email_image | img_url: '1200x'}});
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+      {% else %}
+      #mailing-popup .popup-content-image {
+        background: url({{ settings.email_image | img_url: '1200x'}});
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 100%;
+        min-height: 300px;
+      }
+      {% endif %}
+    </style>
+    <script type="text/javascript">
+      // Fancybox Join our mailing list popup
+      $(document).ready(function(){
+
+        {% if settings.test_mode == false %}
+          var check_cookie = $.cookie('mailing_list_delay_popup');
+          if(check_cookie == null){
+            $.cookie('mailing_list_delay_popup', 'expires_seven_days', { expires: 7 });
+        {% endif %}
+          //fire your fancybox here
+          setTimeout(function(){
+            $.fancybox.open({
+              src  : '#mailing-popup',
+              type : 'inline',
+              baseClass: "subscribe-popup",
+            });
+          }, 5000);
+        {% if settings.test_mode == false %}
+        }
+        {% endif %}
+      });
+    </script>
+
+  </div>
+
+{% endif %}

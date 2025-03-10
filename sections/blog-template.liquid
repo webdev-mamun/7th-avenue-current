@@ -1,0 +1,170 @@
+<div class="blog-template" data-section-id="{{ section.id }}">
+  <div class="blog_landing_header">
+    <h1>{{section.settings.title}}</h1>
+    <p>{{section.settings.text}}</p>
+  </div>
+  {% assign farticlehandle = section.settings.featured_article %}
+  {% if section.settings.featured_article != blank %}
+  {% assign featured_article = articles[section.settings.featured_article] %}
+  <div class="blog_featured_article">
+    <a class="f_img_link" href="{{featured_article.url}}">
+      <img src="{{ featured_article.image | img_url: 'master', format: 'pjpg' }}" alt="{{featured_article.image.alt}}" width="100%" height="100%" loading="lazy">
+    </a>
+    <h2><a href="{{featured_article.url}}">{{featured_article.title}}</a></h2>
+    <p>{{featured_article.content | strip_html | truncatewords: 35}}</p>
+    <a class="blog_link" href="{{featured_article.url}}">READ MORE</a>
+  </div>
+  {% endif %}
+  <div class="bfa_items_grid">
+    <div class="bfa_row">
+      {% for article in blog.articles limit: 3 %}
+      {% if article.handle != farticlehandle %}
+      {% capture articleCycle %}{% cycle '', 'rev' %}{% endcapture %}
+      <div class="bfa_item {{articleCycle}}">
+        {% capture articleImage %}
+        <div class="article_image">
+          {% if article.image != blank %}
+            <a href="{{ article.url }}">
+              <img src="{{ article.image | img_url: '325x325', crop: 'center' }}" alt="{{article.image.alt}}" width="100%" height="100%" loading="lazy">
+            </a>
+          {% else %}
+            {% if article.content contains "<img" and ".jpg" %}
+              {% assign src = article.content | split: 'src="' | last %}
+              {% assign src = src | split: '.jpg' | first | append: '.jpg' %}
+              <img src="{{ src }}" width="100%" width="100%" height="100%" loading="lazy">
+            {% elsif article.content contains "<img" and ".png" %}
+              {% assign src = article.content | split: 'src="' | last %}
+              {% assign src = src | split: '.png' | first | append: '.png' %}
+              <img src="{{ src }}" width="100%" width="100%" height="100%" loading="lazy">
+            {% endif %}
+          {% endif %}
+        </div>
+        {% endcapture %}
+        {{articleImage}}
+        <div class="bfa_info">
+          <h3><a href="{{ article.url }}">{{article.title}}</a></h3>
+          <p>{{ article.content | strip_html | truncatewords: 15 }}</p>
+          <a class="blog_link" href="{{ article.url }}">READ MORE</a>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  {% include 'blog-newsletter' %}
+  
+  <div class="bfa_items_grid two_col">
+    <div class="bfa_row">
+      {% for article in blog.articles offset: 3 %}
+      {% if article.handle != farticlehandle %}
+      <div class="bfa_item">
+        {% capture articleImage %}
+        <div class="article_image">
+          {% if article.image != blank %}
+            <a href="{{ article.url }}">
+              {% if forloop.first %}
+              	{% assign size = '712x325' %}
+              {% else %}
+              	{% assign size = '325x325' %}
+              {% endif%}
+              <img src="{{ article.image | img_url: size, crop: 'center' }}" alt="{{article.image.alt}}" width="100%" height="100%" loading="lazy">
+            </a>
+          {% else %}
+          	<a href="{{ article.url }}">
+            {% if article.content contains "<img" and ".jpg" %}
+              {% assign src = article.content | split: 'src="' | last %}
+              {% assign src = src | split: '.jpg' | first | append: '.jpg' %}
+              <img src="{{ src }}" width="100%" width="100%" height="100%" loading="lazy">
+            {% elsif article.content contains "<img" and ".png" %}
+              {% assign src = article.content | split: 'src="' | last %}
+              {% assign src = src | split: '.png' | first | append: '.png' %}
+              <img src="{{ src }}" width="100%" width="100%" height="100%" loading="lazy">
+            {% endif %}
+          	</a>
+          {% endif %}
+        </div>
+        {% endcapture %}
+        {{articleImage}}
+        <div class="bfa_info">
+          <h3><a href="{{ article.url }}">{{article.title}}</a></h3>
+          <p>{{ article.content | strip_html | truncatewords: 15 }}</p>
+          <a class="blog_link" href="{{ article.url }}">Read More</a>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Blog",
+    "settings": [
+      {
+        "type":"header",
+        "content": "Blog description"
+      },
+      {
+        "id": "title",
+        "type": "textarea",
+        "label": "title",
+        "default": "Designer's Digest"
+      },	  
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text",
+        "default": "More on our artist, product and process"
+      },
+      {
+        "type":"header",
+        "content": "Featured Article"
+      },
+      {
+        "type": "article",
+        "id": "featured_article",
+        "label": "Featured Article"
+      },
+      {
+       "type": "select",
+       "id": "text_align",
+       "label": "Align text",
+       "options":[
+         {
+           "value":"left",
+           "label":"Left"
+         },
+         {
+           "value":"center",
+           "label":"Center"
+         }
+       ]
+      },
+      {
+        "type": "checkbox",
+        "id": "post_tags",
+        "label": "Show tags",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_author",
+        "label": "Show post author",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "excerpt_bg_color",
+        "label": "Post excerpt BG color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "excerpt_text_color",
+        "label": "Post excerpt text color",
+        "default": "#000000"
+      }
+    ]
+  }
+{% endschema %}

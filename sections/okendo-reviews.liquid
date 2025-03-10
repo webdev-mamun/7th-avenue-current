@@ -1,0 +1,19 @@
+<div id="product-reviews" class="{{ lower }} pdb-sofa-review row">
+  <div class="section-title okeReviews-margin">
+    <h2 class="big_title_reviews">{{ settings.reviews_heading }}</h2>
+  </div>
+  <div data-oke-widget></div>
+</div>
+<div class="clear"></div>
+
+{% schema %}
+  {
+    "name": "Review",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Review"
+      }
+    ]
+  }
+{% endschema %}

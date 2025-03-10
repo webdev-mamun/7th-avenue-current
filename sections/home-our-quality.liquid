@@ -1,0 +1,75 @@
+{% schema %}
+  {
+    "name": "Our Qaulity",
+    "settings": [
+	  {
+		"type": "image_picker",
+		"id": "image1",
+		"label": "Image Left"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "image2",
+		"label": "Image Right"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "mobile_image2",
+		"label": "Mobile Image Right"
+	  },
+	  {
+		"type": "textarea",
+		"id": "title",
+		"label": "Title"
+	  },
+	  {
+		"type": "textarea",
+		"id": "text",
+		"label": "Text"
+	  },
+	  {
+		"type": "textarea",
+		"id": "mobile_text",
+		"label": "Mobile Text"
+	  },
+	  {
+		"type": "text",
+		"id": "link_text",
+		"label": "Link Text"
+	  },
+	  {
+		"type": "url",
+		"id": "link",
+		"label": "Link"
+	  }
+	
+	],
+	"presets": [{
+      "name": "Our Qaulity"
+  	}]
+  }
+{% endschema %}
+
+<section class="home homepage-section quality-section" data-section-id="{{ section.id }}" data-section-type="quality-section">  
+  <div class="our_quality_wrapper mw">
+    <div class="quality_row">
+      <div class="q_img_col mobilehide">
+        <div>{% render 'image-lazyload', image: section.settings.image1 %}</div>
+      </div>
+      <div class="q_info_col">
+        <div class="q_info_contents">
+          <div class="q_info_img">
+            <div class="mobilehide">{% render 'image-lazyload', image: section.settings.image2 %}</div>
+            <div class="desktophide">{% render 'image-lazyload', image: section.settings.mobile_image2 %}</div>
+          </div>
+          <div class="q_info">
+            <h2 class="big_title">{{section.settings.title}}</h2>
+            <p class="mobilehide">{{section.settings.text}}</p>
+            <p class="desktophide">{{section.settings.mobile_text}}</p>
+            <div><a href="{{section.settings.link}}">{{section.settings.link_text}}</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</section>

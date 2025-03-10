@@ -1,0 +1,42 @@
+{% if section.settings.enable_product_recommendations %}
+  <div
+    class="product-recommendations sofa-page-feature-product sofa-page-feature-product__{{ section.id }}" data-section-id="{{ section.id }}"
+    data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=10&intent=related"
+  >
+    {%- if recommendations.performed? and recommendations.products_count > 0 -%}
+      <div class="row"> 
+        <div class="sofa-page-section-title__container"> 
+          <h2 class="title">Related Configurations</h2> 
+          <p class="text">Our best selling modular configurations.<br>Find the perfect fit for every home size &amp; style.</p>
+        </div>
+      </div>
+    <div class="sofa-page-feature-product-slider-wrapper"> 
+      <button class="slider__controller slider__controller--prev slick-arrow" style="display: inline-block;"></button> 
+      <button class="slider__controller slider__controller--next slick-arrow" style="display: inline-block;"></button> 
+      <div class="row">
+        <div class="sofa-page-feature-product-slider">
+        {%- for product in recommendations.products -%}
+        <div class="product-index">
+            {% render 'sofa-product-listing', product: product %}
+          </div>
+        {%- endfor -%}
+      </div>
+      </div>
+    </div>
+    {%- endif -%}
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Product recommendations",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_product_recommendations",
+        "label": "Show recommendations product",
+        "default": false
+      }
+    ]
+  }
+{% endschema %}

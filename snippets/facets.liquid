@@ -1,0 +1,221 @@
+{%- liquid
+  assign sort_by = results.sort_by | default: results.default_sort_by
+  assign total_active_values = 0
+  if results.url
+    assign results_url = results.url
+  else
+    assign terms = results.terms | escape
+    assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+  endif
+  assign ordered_value_color = settings.color_option_order | split: ', '
+  assign ordered_value_fabric = settings.fabric_option_order | split: ', '
+  assign filter_size = 0
+-%}
+
+<style>
+  facet-remove {
+     order: {{ ordered_value_color.size | plus: 1 }}
+  }
+  
+  .filter-item-wrapper li[data-filter-value],
+  facet-remove[data-active-facet] {
+    order: {{ ordered_value_color.size }};
+  }
+  {%- for value in ordered_value_color -%}
+    {%- unless forloop.last -%}
+      .filter-item-wrapper li[data-filter-value="{{ value }}"],
+      facet-remove[data-active-facet="{{ value }}"]{
+        order: {{ forloop.index }};
+      }
+    {%- endunless -%}
+  {%- endfor -%}
+  {%- for value in ordered_value_fabric -%}
+    {%- unless forloop.last -%}
+      .filter-item-wrapper li[data-filter-value="{{ value }}"] {
+        order: {{ forloop.index }};
+      }
+    {%- endunless -%}
+  {%- endfor -%}
+</style>
+<div class="collection-filter">
+   <facet-filters-form class="facets"> 
+     <form id="FacetFiltersForm">
+       <div class="js-filters-wrapper">
+        <div class="filter-section">
+          <div class="filter-section-mobile">
+            <button class="mobile-filter-opener" type="button" class="active-filter-item"><span class="filter-icon"></span><span class="filter-label">Filter</span></button>
+            <div class="mobile-filter">
+              <div class="mobile-filter-header">
+                <h3>Filter</h3>
+                <button type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-close" fill="none" viewBox="0 0 18 17">
+                    <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
+                  </path>
+                  </svg>
+                </button>
+              </div>
+              <div class="mobile-filter-body">
+                  {%- for filter in results.filters -%}
+                    {%- if filter.type == 'boolean' or 'list' -%}
+                      {% if filter.values.size > 1 %}
+                        {%- liquid
+                          assign avtive_value = ''
+                          assign sorted_values = filter.values
+                          if filter.operator == 'AND'
+                            assign active_filter_values = filter.values | where: 'active', true
+                            assign inactive_filter_values = filter.values | where: 'active', false
+                            assign sorted_values = active_filter_values | concat: inactive_filter_values
+                          endif
+                        -%}
+                        <div class="js-filter-wrapper" data-index="{{ forloop.index }}">
+                          <button type="button" class="active-filter-item">
+                            <span class="filter-label">{% if avtive_value != '' %}{{ avtive_value }}{% else %}{% if filter.label == 'Seating Depth' %}Depth{% else %}{{ filter.label }}{% endif %}{% endif %}</span>
+                            <span class="filter-icon"></span>
+                          </button>
+                          <div class="filter-outer" style="--size: {{ filter.values.size }}">
+                            <ul class="filter-item-wrapper">
+                               {%- for value in sorted_values -%}
+                                 {% unless value.label contains 'Custom Fabric'%}
+                                 {% liquid
+                                   assign display_value = value.label | split: '_' | last
+                                   assign input_id = 'Mobile-filter-' | append: filter.param_name | handle | escape | append: '-' | append: forloop.index
+                                   assign device_id = 'Filter-' | append: filter.param_name | handle | escape | append: '-' | append: forloop.index
+                                   assign is_disabled = false
+                                   if value.count == 0 and value.active == false
+                                    assign is_disabled = true
+                                   endif
+                                 %}
+                                 {%- capture label_class -%}
+                                    facets__label facet-checkbox{% if is_disabled %} disabled{% endif %}{% if value.active %} active{% endif %}
+                                 {%- endcapture -%}
+                                {% render 'filter-checkbox', value: value, label_class: label_class, displayValue: display_value, input_id: input_id, is_disabled: is_disabled, device_id: device_id  %}
+                                {% endunless %}
+                               {%- endfor -%}
+                            </ul>
+                          </div>
+                        </div>
+                      {% endif %}
+                    {%- endif -%}
+                  {%- endfor -%}
+              </div>
+            </div>
+          </div>
+          <div class="filter-section-desktop">
+            {%- for filter in results.filters -%}
+              {%- if filter.type == 'boolean' or 'list' -%}
+                {% if filter.values.size > 1 %}
+                  {%- liquid
+                    assign avtive_value = ''
+                    assign sorted_values = filter.values
+                    assign filter_size = forloop.index
+                    if filter.operator == 'AND'
+                      assign active_filter_values = filter.values | where: 'active', true
+                      assign inactive_filter_values = filter.values | where: 'active', false
+                      assign sorted_values = active_filter_values | concat: inactive_filter_values
+                    endif
+                  -%}
+                  <div class="js-filter-wrapper{% if forloop.index > 3 %} should-hide hide{% endif %}" data-index="{{ forloop.index }}">
+                    <button type="button" class="active-filter-item"><span class="filter-icon"></span><span class="filter-label">{% if avtive_value != '' %}{{ avtive_value }}{% else %}{% if filter.label == 'Seating Depth' %}Depth{% else %}{{ filter.label }}{% endif %}{% endif %}</span></button>
+                    <div class="filter-outer" style="--size: {{ filter.values.size }}">
+                      <ul class="filter-item-wrapper">
+                          {%- for value in sorted_values -%}
+                          {% unless value.label contains 'Custom Fabric'%}
+                           {% liquid
+                             assign displayValue = value.label | split: '_' | last
+                             assign input_id = 'Filter-' | append: filter.param_name | handle | escape | append: '-' | append: forloop.index
+                             assign device_id = 'Mobile-filter-' | append: filter.param_name | handle | escape | append: '-' | append: forloop.index
+                             assign is_disabled = false
+                             if value.count == 0 and value.active == false
+                              assign is_disabled = true
+                             endif
+                           %}
+                           {%- capture label_class -%}
+                              facets__label facet-checkbox{% if is_disabled %} disabled{% endif %}{% if value.active %} active{% endif %}
+                           {%- endcapture -%}
+                          {% render 'filter-checkbox', value: value, label_class: label_class, displayValue: displayValue, input_id: input_id, is_disabled: is_disabled, device_id: device_id %}
+                          {% endunless %}
+                         {%- endfor -%}
+                      </ul>
+                    </div>
+                  </div>
+                {% endif %}
+              {%- endif -%}
+            {%- endfor -%}
+            {% if filter_size > 3 %}
+              <div class="toggle-button" id="toggleButton">
+                <div class="dots">
+                  <div class="dot dot1"></div>
+                  <div class="dot dot2"></div>
+                  <div class="dot dot3"></div>
+                </div>
+                <div class="cross">
+                  <div class="line line1"></div>
+                  <div class="line line2"></div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+     </div>
+     <div class="filter-sort_by">
+       <div class="js-filter-wrapper" data-index="0">
+          <select id="sort-by" name="sort_by" class="js-filter">
+              <option value="">Sort By</option>
+              <option value="manual"{% if 'manual' == sort_by %} selected="selected"{% endif %}>Featured</option>
+              <option value="best-selling"{% if 'best-selling' == sort_by %} selected="selected"{% endif %}>Best selling</option>
+              <option value="price-ascending"{% if 'price-ascending' == sort_by %} selected="selected"{% endif %}>Price, low to high</option>
+              <option value="price-descending"{% if 'price-descending' == sort_by %} selected="selected"{% endif %}>Price, high to low</option>
+           </select>
+         <button type="button" class="active-filter-item"><span class="filter-icon"></span><span class="filter-label">Sort By</span></button>
+         <div class="filter-outer" style="--size: 4">
+            <ul class="filter-item-wrapper">
+               <li class="filter-item" data-value="manual">Featured</li>
+               <li class="filter-item" data-value="best-selling">Best selling</li>
+               <li class="filter-item" data-value="price-ascending">Price, low to high</li>
+               <li class="filter-item" data-value="price-descending">Price, high to low</li>
+            </ul>
+         </div>
+        </div>
+        <noscript>
+          <input type="submit">
+        </noscript>
+     </div>
+     </div>
+     <div class="filter-active-values active-facets">
+       {%- for filter in results.filters -%}
+          {%- for value in filter.active_values -%}
+            <facet-remove data-active-facet="{{ value.label | split: '_' | last | escape }}">
+              <a href="{{ value.url_to_remove }}" class="active-facets__button" data-value="{{ value.label }}">
+                <span>{{ filter.label }}:</span>
+                <span class="active-facets__button-inner">
+                  {{ value.label | split: '_' | last | escape }}
+                </span>
+                <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    width="12"
+                    height="13"
+                    class="icon icon-close-small"
+                    viewBox="0 0 12 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M8.48627 9.32917L2.82849 3.67098" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2.88539 9.38504L8.42932 3.61524" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+              </a>
+            </facet-remove>
+          {%- endfor -%}
+       {%- endfor -%}
+        <facet-remove class="active-facets__button-wrapper">
+          <a href="{{ results_url }}" class="active-facets__button underlined-link" data-clear-all>
+            <span>Clear All</span>
+          </a>
+        </facet-remove>
+     </div>
+     {%- if results.terms -%}
+      <input type="hidden" name="q" value="{{ results.terms | escape }}">
+      <input name="options[prefix]" type="hidden" value="last">
+    {%- endif -%}
+   </form>
+ </facet-filters-form>
+</div>

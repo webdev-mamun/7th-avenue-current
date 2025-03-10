@@ -1,0 +1,52 @@
+<div id="product-reviews" class="pdb-sofa-review row" data-current-variant="{{ product.selected_or_first_available_variant.title }}" data-filter-review-with-variant="{{ section.settings.filter_review | json }}">
+  {% if section.settings.enable_media_grid == false %}
+  <div id="main-review"></div>
+  {% endif %}
+  <div class="section-title okeReviews-margin">
+    <h2 class="big_title_reviews">{{ settings.reviews_heading }}</h2>
+    {% render 'okendo-reviews-product-rating-summary', product: product %}
+  </div>
+  {% if section.settings.enable_media_grid %}
+    {% render 'okendo-reviews-media-grid', product: product, groupId: section.settings.groupId %}
+    <div id="main-review"></div>
+  {% endif %}
+  {% render 'okendo-reviews-widget', product: product, groupId: section.settings.groupId %}
+</div>
+<div class="clear"></div>
+
+<style>
+  .data-oke-media-grid {
+    margin: 20px 0 40px;
+  }
+</style>
+{% schema %}
+  {
+    "name": "Review",
+    "settings": [
+      {
+        "type": "text",
+        "id": "groupId",
+        "label": "Group id"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_media_grid",
+        "label": "Show okendo media grid",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "filter_review",
+        "label": "Filter review with active variant",
+        "default": true,
+        "info": "Enable association of the review filter with the active variant."
+      }
+    ],
+    "presets": [
+      {
+        "name": "Review"
+      }
+    ]
+  }
+{% endschema %}
+

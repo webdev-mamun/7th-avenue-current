@@ -1,0 +1,75 @@
+{% if section.settings.calendly_url != blank %}
+<style>
+  .page__calendly-form-inline .page-header__title {
+    font-size: 30pt;
+  }
+  
+  @media screen and (min-width: 420px){
+    .page__calendly-form-inline .page-header__title {
+      font-size: 40pt;
+    }
+  }
+  
+  .calendly-inline-widget {
+    overflow-y: hidden !important;
+    --height: 1200px;
+    margin-top: 15px;
+  }
+  @media screen and (min-width: 350px){
+    .calendly-inline-widget {
+      --height: 1190px;
+    }
+  }
+
+  @media screen and (min-width: 375px){
+    .calendly-inline-widget {
+      margin-top: 35px;
+    }
+  }
+  
+  @media screen and (min-width: 554px){
+    .calendly-inline-widget {
+      --height: 1150px;
+    }
+  }
+  @media screen and (min-width: 706px){
+    .calendly-inline-widget {
+      --height: 1290px;
+      margin-top: 0;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (min-width: 1220px){
+    .calendly-inline-widget {
+      --height: 660px;
+    }
+  }
+</style>
+<section class="calendly-form-inline">
+  <div class="calendly-form-inline__wrapper row">
+    <div class="calendly-form-inline__main">
+      <div class="calendly-inline-widget" data-url="{{ section.settings.calendly_url }}" style="min-width:320px;height: var(--height);"></div>
+    </div>
+  </div>
+</section>
+
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Calendly form inline",
+    "settings": [
+      {
+        "type": "url",
+        "id": "calendly_url",
+        "label": "Calendly URL"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

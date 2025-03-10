@@ -1,0 +1,209 @@
+
+<div data-section-id="{{ section.id }}" data-section-type="page-section">  
+  {% if section.settings.image != blank %}
+  <div class="collection-banner" style="background: #ddd;background-image: url('{{section.settings.image|img_url: 'master'}}'); background-size:cover;background-position: center">      
+    <div class="collection_inner_contact">  
+      <div class="collection_info">
+        <h3>{{page.title}}</h3>
+      </div>
+    </div>
+  </div>  
+  {% endif %}
+
+  <div id="content" class="row {{template | split: '.' | last}}">    
+    {% if section.settings.form_position != 'center' %}
+    <div id="contact-page hello" class="desktop-4 tablet-6 mobile-3{% if section.settings.form_position == 'left' %} form-left{% endif %}">
+      <div class="rte" style="min-height: 1px">
+        {{ page.content }}
+      </div>
+    </div>
+    <div class="desktop-8 mobile-3 tablet-6 contact_form_column">
+      <div class="form_fields_top">
+        <h1>{{section.settings.form_title}}</h1>
+        <p>{{section.settings.form_text}}</p>
+      </div>
+      {% include 'custom-contact' type: section %}
+    </div>
+    {% else %}
+    {% comment %}If we have the contact form centered only {% endcomment %}
+    <div id="page hello" class="desktop-8 desktop-push-2 tablet-6 mobile-3 centered-form">
+      <div class="rte">
+        {{ page.content }}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  <style media="screen">
+    div#contact-page.form-left {
+      float: right;
+    }
+  </style>
+</div>
+
+
+{% schema %}
+{
+    "name": "Contact page",
+    "settings": [			
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Banner image"
+        },
+		{
+        "type": "select",
+        "id": "form_position",
+        "label": "Contact form position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "form_title",
+        "label": "Form title"
+      },
+      {
+        "type": "textarea",
+        "id": "form_text",
+        "label": "Form text"
+      },
+      {
+        "type": "checkbox",
+        "id": "cf_show_first_name",
+        "label": "Show first name",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "cf_show_last_name",
+        "label": "Show last name",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "cf_show_company_name",
+        "label": "Show company name",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "cf_show_address",
+        "label": "Show address",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "cf_show_website_url",
+        "label": "Show website url",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "cf_show_phone",
+        "label": "Show phone number",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "cf_show_subject",
+        "label": "Show subject",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Custom Field One"
+      },
+      {
+        "type": "checkbox",
+        "id": "cf_show_custom_field_one",
+        "label": "Show custom field one",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "cf_custom_field_one",
+        "label": "Field Placeholder",
+        "default": "Custom Field One"
+      },
+      {
+       "type":      "select",
+       "id":        "cf_custom_field_one_type",
+       "label":     "Field Type",
+       "default":   "input",
+       "options": [
+         {
+           "value": "textarea",
+           "label": "Multiple line text"
+         },
+         {
+           "value": "input",
+           "label": "Single line text"
+         }
+       ]
+     },
+     {
+       "type": "header",
+       "content": "Custom Field Two"
+     },
+     {
+       "type": "checkbox",
+       "id": "cf_show_custom_field_two",
+       "label": "Show custom field one",
+       "default": false
+     },
+     {
+       "type": "text",
+       "id": "cf_custom_field_two",
+       "label": "Field Placeholder",
+       "default": "Custom Field Two"
+     },
+     {
+      "type":      "select",
+      "id":        "cf_custom_field_two_type",
+      "label":     "Field Type",
+      "default":   "input",
+      "options": [
+        {
+          "value": "textarea",
+          "label": "Multiple line text"
+        },
+        {
+          "value": "input",
+          "label": "Single line text"
+        }
+      ]
+    },
+     {
+       "type": "header",
+       "content": "Contact us bottom section"
+     },
+     {
+       "type": "text",
+       "id": "contact_bottom_title",
+		"label": "Title"
+     },
+     {
+       "type": "textarea",
+       "id": "contact_bottom_text",
+		"label": "Title"
+     },
+     {
+       "type": "image_picker",
+       "id": "contact_bottom_image",
+		"label": "Image"
+     }
+  ]
+}
+{% endschema %}

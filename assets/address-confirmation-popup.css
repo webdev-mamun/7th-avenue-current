@@ -1,0 +1,130 @@
+thank-you-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+thank-you-popup.active {
+  z-index: 99;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  background-color: transparent;
+}
+
+.thank-you-popup-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.thank-you-popup-main {
+  width: 90%;
+  max-width: 600px;
+  /* padding: 30px; */
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
+}
+
+.thank-you-popup-main button {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 40px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 42px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 42px;
+  background-color: rgba(38,38,38,.4);
+  margin: 0;
+  padding: 0;
+}
+
+.thank-you-popup-main button:hover {
+  background-color: #032e6a;
+}
+
+.thank-you-popup-main button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.thank-you-popup-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.thank-you-popup-logo {
+  width: 125px;
+  line-height: 0;
+}
+
+.thank-you-popup-heading {
+  font-size: 22pt;
+  margin-bottom: 0;
+}
+
+.thank-you-popup-text, .thank-you-popup-text > * {
+  font-size: 14pt;
+}
+
+.thank-you-popup-text a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.thank-you-popup-text > *:last-child {
+  margin-bottom: 0;
+}
+
+.thank-you-popup-header + .thank-you-popup-heading {
+  margin-top: 20px;
+}
+
+.thank-you-popup-checkmark + .thank-you-popup-heading {
+margin-top: 13px;
+}
+
+.thank-you-popup-header + .thank-you-popup-text,
+.thank-you-popup-heading + .thank-you-popup-text {
+  margin-top: 20px;
+}
+
+.thank-you-popup-checkmark {
+  line-height: 0;
+}
+
+.thank-you-popup-header + .thank-you-popup-checkmark {
+  margin-top: 20px;
+}
+
+.thank-you-popup-header {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px;
+}
+
+.thank-you-popup-body {
+  padding: 0 40px 30px;
+}

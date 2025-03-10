@@ -1,0 +1,33 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "kendo-reviews-media-grid": {
+      "type": "okendo-reviews-media-grid",
+      "settings": {
+      }
+    },
+    "okendo-reviews-media-carousel": {
+      "type": "okendo-reviews-media-carousel",
+      "settings": {
+      }
+    },
+    "okendo-reviews-carousel": {
+      "type": "okendo-reviews-carousel",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "kendo-reviews-media-grid",
+    "okendo-reviews-media-carousel",
+    "okendo-reviews-carousel"
+  ]
+}

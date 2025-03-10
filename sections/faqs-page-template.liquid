@@ -1,0 +1,215 @@
+<div class="faqs_page_container">
+  <div class="hero_section_wrapper">
+    <div class="hero_section_wrapper_img">
+      {% render 'basic-responsive-image', type: section.settings.hero_img %}
+      <div class="overlay_contents">
+        <h1>{{section.settings.title}}</h1>
+      </div>
+    </div>
+    <div class="hero_section_wrapper_text">
+      <h2>{{section.settings.text}}</h2>
+    </div>
+  </div>
+  
+  <div class="faqs_section_wrapper">    
+    <div class="row">
+      <div class="grid_wrapper">
+        <div class="desktop-12 span-12">
+          <div class="faqs_container">
+            <div class="faqs_item">
+              <div class="faqs_header open">
+                <h3>General</h3>
+              </div>
+              <div class="faqs_body open">
+                <div class="faqs_body_inner">
+                  <ul class="question_list">
+                    {% for block in section.blocks %}
+                    {% if block.settings.question_cat == 'general' %}
+                    <li>
+                      <h4>Q: {{block.settings.title}}</h4>
+                      <p>A: {{block.settings.answer}}</p>
+                    </li>
+                    {% endif %}
+            		{% endfor %}
+                  </ul>  
+                </div>
+              </div>
+            </div>
+            <div class="faqs_item">
+              <div class="faqs_header">
+                <h3>Orders & Shipping</h3>
+              </div>
+              <div class="faqs_body">
+                <div class="faqs_body_inner">
+                  <ul class="question_list">
+                    {% for block in section.blocks %}
+                    {% if block.settings.question_cat == 'order-and-shipping' %}
+                    <li>
+                      <h4>Q: {{block.settings.title}}</h4>
+                      <p>A: {{block.settings.answer}}</p>
+                    </li>
+                    {% endif %}
+            		{% endfor %}
+                  </ul>  
+                </div>
+              </div>
+            </div>
+            <div class="faqs_item">
+              <div class="faqs_header">
+                <h3>Returns & Exchanges</h3>
+              </div>
+              <div class="faqs_body">
+                <div class="faqs_body_inner">
+                  <ul class="question_list">
+                    {% for block in section.blocks %}
+                    {% if block.settings.question_cat == 'returns-and-exchanges' %}
+                    <li>
+                      <h4>Q: {{block.settings.title}}</h4>
+                      <p>A: {{block.settings.answer}}</p>
+                    </li>
+                    {% endif %}
+            		{% endfor %}
+                  </ul>  
+                </div>
+              </div>
+            </div>
+            <div class="faqs_item">
+              <div class="faqs_header">
+                <h3>Products</h3>
+              </div>
+              <div class="faqs_body">
+                <div class="faqs_body_inner">
+                  <ul class="question_list">
+                    {% for block in section.blocks %}
+                    {% if block.settings.question_cat == 'products' %}
+                    <li>
+                      <h4>Q: {{block.settings.title}}</h4>
+                      <p>A: {{block.settings.answer}}</p>
+                    </li>
+                    {% endif %}
+            		{% endfor %}
+                  </ul>  
+                </div>
+              </div>
+            </div>            
+            <div class="faqs_item">
+              <div class="faqs_header">
+                <h3>Artist</h3>
+              </div>
+              <div class="faqs_body">
+                <div class="faqs_body_inner">
+                  <ul class="question_list">
+                    {% for block in section.blocks %}
+                    {% if block.settings.question_cat == 'artist' %}
+                    <li>
+                      <h4>Q: {{block.settings.title}}</h4>
+                      <p>A: {{block.settings.answer}}</p>
+                    </li>
+                    {% endif %}
+            		{% endfor %}
+                  </ul>  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    $(document).ready(function(){
+      $('.faqs_body.open').css('height', $('.faqs_body.open .faqs_body_inner').height()+'px');
+      $(document).on('click','.faqs_header', function() {
+        var $body = $(this).next();
+        var $trigger = $(this);
+        var $height = $body.children('.faqs_body_inner').height();
+        $trigger.toggleClass('open');
+
+        $body.toggleClass('open');
+        if($body.hasClass('open')){
+          $body.css('height', $height+'px');
+        } else {
+          $body.removeAttr('style');
+        }
+
+        $('.faqs_header').not($(this)).removeClass('open').removeAttr('style');
+        $('.faqs_body').not($(this).next()).removeClass('open').removeAttr('style');
+      });
+    });
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "FAQs",
+    "settings": [
+      {
+		"type": "header",
+		"content": "FAQs hero section"
+      },
+      {
+		"type": "text",
+		"id": "title",
+        "label": "Title"
+      },
+      {
+		"type": "image_picker",
+		"id": "hero_img",
+        "label": "Background Image"
+      },
+      {
+		"type": "textarea",
+		"id": "text",
+        "label": "Text"
+      }
+    ],
+    "blocks": [
+	  {
+		"type": "faqs",
+		"name": "FAQs",
+		"settings": [
+		  {
+			"type": "select",
+			"id": "question_cat",
+			"label": "Category",
+			"options": [
+			  {
+				"label": "General",
+				"value": "general"
+			  },
+			  {
+				"label": "Orders & Shipping",
+				"value": "order-and-shipping"
+			  },
+			  {
+				"label": "Returns & Exchanges",
+				"value": "returns-and-exchanges"
+			  },
+			  {
+				"label": "Products",
+				"value": "products"
+			  },
+			  {
+				"label": "Artist",
+				"value": "artist"
+			  }
+			]
+		  },
+		  {
+			"type": "text",
+			"id": "title",
+			"label": "Question"
+		  },
+		  {
+			"type": "textarea",
+			"id": "answer",
+			"label": "Answer"
+		  }
+		]
+      }
+    ]
+  }
+{% endschema %}

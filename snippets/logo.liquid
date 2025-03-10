@@ -1,0 +1,30 @@
+<div id="logo">
+  {% if section.settings.logo != blank or section.settings.logo_url != blank %}
+  <div class="first_logo">
+    <a href="/">
+      {% if section.settings.logo_url == blank %}
+        <img class="{% if template == 'index' %}mobilehide{% endif %}" src="{{ section.settings.logo | image_url: width: 400 }}" width="400" height="auto" itemprop="logo">
+      {% else %}
+        <img class="{% if template == 'index' %}mobilehide{% endif %}" src="{{ section.settings.logo_url }}" itemprop="logo" width="100%" height="100%" loading="lazy">
+      {% endif %}
+
+      {% if template == 'index' %}
+        {% if section.settings.logo != blank and section.settings.logo_url == blank %}
+          <img class="desktophide mobile_onfixed_logo" src="{{ section.settings.logo | image_url: width: 400 }}" width="400" height="auto" itemprop="logo">
+        {% else %}
+          <img class="desktophide mobile_onfixed_logo" src="{{ section.settings.logo_url }}" itemprop="logo" width="100%" height="100%" loading="lazy">
+        {% endif %}
+      {% endif %}
+    </a>
+  </div>
+  {% if section.settings.logo_alt != blank %}
+      <div class="second_logo">
+        <a href="/">
+          <img src="{{ section.settings.logo_alt | image_url: width: 400 }}" width="400" height="auto" itemprop="logo">
+        </a>
+      </div>
+    {% endif %}
+  {% else %}
+    <a href="/">{{ shop.name }}</a>
+  {% endif %}
+</div>

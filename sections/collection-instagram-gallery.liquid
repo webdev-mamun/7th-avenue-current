@@ -1,0 +1,217 @@
+{% if section.settings.app_code != blank %}
+  <style>
+    .covetpics-gallery{display:grid;grid-template:auto/1fr}.covetpics-gallery-fake,covet-pics-widget{grid-area:1/1/2/2}.covetpics-gallery-fake{display:grid;gap:5px;grid-template-columns:repeat(3,1fr);grid-auto-flow:dense}.covetpics-gallery-fake-item{width:100%;height:100%;position:relative;line-height:0}.covetpics-gallery-fake-item img{width:100%;height:100%;object-fit:cover;aspect-ratio:1}.covetpics-gallery-fake div:nth-child(13),.covetpics-gallery-fake div:nth-child(4){grid-column-end:span 2;grid-row-end:span 2}@media (min-width:800px){.covetpics-gallery-fake{grid-template-columns:repeat(8,1fr);gap:10px}.covetpics-gallery-fake div:nth-child(12),.covetpics-gallery-fake div:nth-child(3){grid-column-end:span 2;grid-row-end:span 2}.covetpics-gallery-fake div:nth-child(13),.covetpics-gallery-fake div:nth-child(4){grid-column-end:span 1;grid-row-end:span 1}}
+  </style>
+  <div class="collection__instagram-gallery instagram-gallery">
+    {% if section.settings.title != blank %}
+      <h2 class="big_title">{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.handle != blank and section.settings.instagram_handle != blank %}
+      <h3 class="instagram_handle">
+        <a href="{{ section.settings.instagram_handle }}" target="_blank">{{ section.settings.handle }}</a>
+      </h3>
+    {% endif %}
+    <div class="covetpics-gallery">
+      <div class="covetpics-gallery-fake">
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/posts/19655246/standard_resolution/f29a657cccef38059aedb72b7c89ff6c"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 1"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/posts/19512332/standard_resolution/e2d8b168760ebac3cd437f53b03c9722"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 2"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/posts/19514264/standard_resolution/468b04d656cc30a72d8d242ac0f153b5"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 3"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/posts/19514396/standard_resolution/912d8a1514599c11c6f5c45adef8f709"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 4"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/posts/19514307/c0db0653d1e2a6035eaf6ee04b8cf694"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 5"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/posts/19514265/standard_resolution/bb46414ad6618db89d143ea57e5119db"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 6"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/postassets/15728805/f5c35ca363293ccd55d66fb32644f59b"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 7"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/posts/19512388/standard_resolution/a863ce87b841bb14df96b576652871d2"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 8"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/postassets/12988098/standard_resolution/89454ddee9db931205b67e5a46883fbe"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 9"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/postassets/15728796/standard_resolution/f497fd292ccb48ec492411b2a83873cf"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 10"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/posts/18690618/standard_resolution/215bc102e94192cc8ff048b99b6bbee0"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 11"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/posts/19007487/standard_resolution/c308702043c21f837a818cac9901c687"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 12"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/postassets/15728803/cfdf16306a7d26372104728e663b5a95"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 13"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/postassets/14192259/standard_resolution/78f32ab9ddc2a06cf50fd4fdc1ea86e2"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 14"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/posts/19512337/standard_resolution/59e9a68211fd84f26ee18ddd429ffecc"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 15"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/postassets/14406119/standard_resolution/8f1ba583319a0021f02d58a3262bb1b0"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 16"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/posts/19514333/standard_resolution/251b0cfc3740fadf1512192e43fe553f"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 17"
+          >
+        </div>
+        <div class="covetpics-gallery-fake-item">
+          <img
+            src="https://assets.covet.pics/postassets/13744525/standard_resolution/40381e103d9f54e3d92552dcdfbb6561"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="Image 18"
+          >
+        </div>
+      </div>
+      {{ section.settings.app_code }}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Instagram gallery",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Join us on Instagram"
+    },
+    {
+      "type": "text",
+      "id": "handle",
+      "label": "Instagram handle text",
+      "default": "FOLLOW US @GRAFITIHOME"
+    },
+    {
+      "type": "url",
+      "id": "instagram_handle",
+      "label": "Instagram handle"
+    },
+    {
+      "type": "textarea",
+      "id": "app_code",
+      "label": "Covet pics gallery code"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram gallery"
+    }
+  ]
+}
+{% endschema %}

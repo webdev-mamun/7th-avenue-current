@@ -1,0 +1,131 @@
+{% if section.blocks.size > 0 %}
+
+<div class="badge badge__{{ section.id }}">
+  <div class="row">
+    <div class="grid_wrapper">
+      {% for block in section.blocks %}
+      {% case section.blocks.size %}
+      {% when 1 %}
+      {% assign width = 'span-12' %}
+      {% when 2 %}
+      {% assign width = 'span-6' %}
+      {% when 3 %}
+      {% assign width = 'span-4' %}
+      {% when 4 %}
+      {% assign width = 'span-3' %}
+      {% endcase %}
+      <div class="{{ width }}">
+        <div class="badge__item">
+          {% if block.settings.icon != blank  %}
+          <div class="badge__image">
+            <img src="{{ block.settings.icon | image_url: width: 48 }}" height="48" width="48">
+          </div>
+          {% endif %}
+          {% if block.settings.title != blank  %}
+          <p class="badge__title">{{ block.settings.title }}</p>
+          {% endif %}
+          {% if block.settings.text != blank  %}
+          <p class="badge__text">{{ block.settings.text }}</p>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<style>
+  .badge__{{ section.id }} {
+    color: {{ section.settings.color }};
+    background-color: {{ section.settings.bg_color }};	
+  }
+</style>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Badge",
+	"max_blocks": 4,
+    "settings": [
+		{
+			"type":"color",
+			"id":"color",
+			"label":"Color",
+			"default":"#000000"
+		},
+		{
+			"type":"color",
+			"id":"bg_color",
+			"label":"Background color",
+			"default":"#979797"
+		}
+	],
+	"blocks": [
+		{
+			"type":"badge",
+			"name":"Badge",
+			"settings": [
+				{
+					"type":"url",
+					"id":"svg",
+					"label":"Svg url"
+				},
+				{
+					"type":"image_picker",
+					"id":"icon",
+					"label":"Icon"
+				},
+				{
+					"type":"text",
+					"id":"title",
+					"label":"Title",
+					"default":"title"
+				},
+				{
+					"type":"textarea",
+					"id":"text",
+					"label":"Text",
+					"default":"text"
+				}
+			]
+		}
+	],
+	"default": {
+		"blocks": [
+			{
+				"type":"badge",
+				"settings": {
+					"title":"0% APR FINANCING VIA AFTERPAY",
+					"text":"We partner with Affirm to  offer 0% APR flexible financing option from 12, 24, or 36 months."
+				}
+			},
+			{
+				"type":"badge",
+				"settings": {
+					"title":"FREE And CONTACTLESS DELIVERY",
+					"text":"We offer free delivery to all contiguous U.S (except Alaska, Hawaii, and Puerto Rico)."
+				}
+			},
+			{
+				"type":"badge",
+				"settings": {
+					"title":"SHIPS WITHIN 5-7 BUSINESS DAYS",
+					"text":"We want you to love your sofa. Cancel for any reason within your first 14 days of delivery."
+				}
+			},
+			{
+				"type":"badge",
+				"settings": {
+					"title":"FREE RETURNS And EXCHANGES",
+					"text":"We partner with Affirm to  offer 0% APR flexible financing option from 12, 24, or 36 months."
+				}
+			}
+		]
+	}
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

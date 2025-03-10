@@ -1,0 +1,1181 @@
+<style>
+   .pdp-sofa-compare__table--column-feature img {
+      width: 20px
+  }
+  @media screen and (min-width: 1200px) {
+   .pdp-sofa-compare__table--column-feature img {
+       width: 30px
+   }
+}
+</style>
+
+<div class="pdp-sofa-compare__wrapper">
+  <div class="pdp-sofa-compare">
+    <div class="pdp-sofa-compare__title--section">
+      {% if section.settings.title != blank %}
+      <h2 class="title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+      <h5 class="subtitle">{{ section.settings.subtitle }}</h5>
+      {% endif %}
+    </div>
+    <div class="pdp-sofa-compare__table">
+      <div class="pdp-sofa-compare__table--header">
+        <div class="pdp-sofa-compare__table--row">
+          <div class="pdp-sofa-compare__table--column"></div>
+          {% for i in (1..3) %}
+          {% assign brand = 'brand_' | append: i %}
+          {% assign logo = '_logo' %}
+          {% assign brand_logo = 'brand_' | append: i | append: logo %}
+          {% assign brand_logo_svg = 'brand_' | append: i | append: logo | append: '_svg' %}
+
+          <div class="pdp-sofa-compare__table--column">
+            {% if section.settings[brand_logo_svg] != blank %}
+            <div class="pdp-sofa-compare__table--column-brand-logo">
+              <img src="{{ section.settings[brand_logo_svg] }}" alt="brand logo" width="100%" height="100%" loading="lazy">
+            </div>
+            {%- elsif section.settings[brand_logo] != blank and section.settings[brand_logo_svg] == blank -%}
+            <div class="pdp-sofa-compare__table--column-brand-logo">
+              {% render "basic-responsive-image", type: section.settings[brand_logo] %}
+            </div>
+            {% else %}
+            	{% if forloop.index == 1 %}
+                    <div class="pdp-sofa-compare__table--column-brand-logo">
+                      <img src="https://cdn.shopify.com/s/files/1/0602/7195/2115/files/White_Logo_-_Black_White_Borders.svg?v=1641757343" alt="7thavenue" width="100%" height="100%" loading="lazy">
+                    </div>
+              	{% else %}
+              		<div class="pdp-sofa-compare__table--column-brand">{{ section.settings[brand] }}</div>
+              	{% endif %}
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        <div class="pdp-sofa-compare__table--row pdp-sofa-compare__table--row-product">
+          {% for i in (1..4) %}
+          {% assign index = forloop.index | minus: 1 %}
+          {% assign product_image = 'product_image_' | append: index %}
+          {% assign product_details = 'product_details_' | append: index %}
+          {% if forloop.first %}
+          <div class="pdp-sofa-compare__table--column">
+            <div class="pdp-sofa-compare__table--column-title">{{ section.settings.product_details_title }}</div>
+          </div>
+          {% else %}
+          <div class="pdp-sofa-compare__table--column">
+            <div class="pdp-sofa-compare__table--column-product">
+              {% if section.settings[product_image] != blank %}
+              <div class="pdp-sofa-compare__table--column-product-image">
+                {% render "basic-responsive-image", type: section.settings[product_image] %}
+              </div>
+              {% else %}
+              	{% if forloop.index == 2 %}
+              		<img src="https://cdn.shopify.com/s/files/1/0264/8218/0174/files/placeholder_sectional_a3fdbde9-d81c-455e-84da-bed669b751b2_3024x.png?v=1628719987" alt="grafiti" width="100%" height="100%" loading="lazy">
+              	{% elsif forloop.index == 3 %}
+              		<img src="https://cdn.shopify.com/s/files/1/0264/8218/0174/files/rh_sectional_3024x.png?v=1628720002" alt="grafiti" width="100%" height="100%" loading="lazy">
+              	{% elsif forloop.index == 4 %}
+              		<img src="https://cdn.shopify.com/s/files/1/0264/8218/0174/files/lovesac_sectional_3024x.png?v=1628720071" alt="grafiti" width="100%" height="100%" loading="lazy">
+              	{% endif %}
+              {% endif %}
+              {% if section.settings[product_details] != blank %}
+              <div class="pdp-sofa-compare__table--column-product-details">{{ section.settings[product_details] }}</div>
+              {% endif %}
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% for i in (1..12) %}
+      {% assign row = 'row_' | append: i %}
+      {% if section.settings[row] %}
+      <div class="pdp-sofa-compare__table--row{% if forloop.last %} table__last--row{% endif %}">
+        {% for j in (1..4) %}
+        {% assign brand_number = forloop.index | minus: 1 %}
+        {% assign title = 'title_' | append: i %}
+        {% assign text = '_comp_' %}
+        {% assign comp = 'brand_' | append: brand_number | append: text | append: i %}
+        {% assign check = '_checked' %}
+        {% assign checkbox = 'brand_' | append: brand_number | append: text | append: i | append: check %}
+		{% assign cross_text = '_crossed' %}
+        {% assign crossed = 'brand_' | append: brand_number | append: text | append: i | append: cross_text %}
+        
+        {% if forloop.first %}
+        <div class="pdp-sofa-compare__table--column">
+          <div class="pdp-sofa-compare__table--column-title">{{ section.settings[title] | downcase }}</div>
+        </div>
+        {% else %}
+        <div class="pdp-sofa-compare__table--column">
+          {% if section.settings[checkbox] %}
+          <div class="pdp-sofa-compare__table--column-feature">
+            <img src="https://cdn.shopify.com/s/files/1/0264/8218/0174/files/tick-mark_bfa3da6b-bda1-4800-983f-fcd3f7c5cbaf.svg?v=1627853263" alt="Tick mark" width="100%" height="100%" loading="lazy">
+          </div>
+          {% elsif section.settings[checkbox] == false and section.settings[crossed] == true %}
+          <div class="pdp-sofa-compare__table--column-feature">
+            <img src="https://cdn.shopify.com/s/files/1/0602/7195/2115/files/cross-red.svg?v=1648670752" alt="crossed" width="100%" height="100%" loading="lazy">
+          </div>
+          {% elsif section.settings[checkbox] == false and section.settings[comp] != blank %}
+          <div class="pdp-sofa-compare__table--column-feature">{{ section.settings[comp] }}</div>
+          {% endif %}
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="pdp-sofa-compare__table--mobile">
+      <div class="pdp-sofa-compare__table--title-container">
+
+        {% for i in (1..14) %}
+        {% assign index = i | minus: 2 %}
+        {% assign mobile_tite = 'title_' | append: index %}
+        {% if forloop.first %}
+        <div class="pdp-sofa-compare__table--title table__row--{{i}}">
+        </div>
+        {% elsif forloop.index == 2 %}
+        <div class="pdp-sofa-compare__table--title table__row--{{i}}">
+          <div class="pdp-sofa-compare__table--column-title">{{ section.settings.product_details_title | downcase }}</div>
+        </div>
+        {% else %}
+        <div class="pdp-sofa-compare__table--title table__row--{{i}}">
+          <div class="pdp-sofa-compare__table--column-title">{{ section.settings[mobile_tite] | downcase }}</div>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="pdp-sofa-compare__table--body-container">
+        <div class="pdp-sofa-compare__table--body-container__inner">
+        {% for i in (1..14) %}
+        {% if forloop.first %}
+        <div class="pdp-sofa-compare__table--mobile-row table__row--{{i}}">
+          {% for j in (1..3) %}
+          {% assign brand = 'brand_' | append: j %}
+          {% assign logo = '_logo' %}
+          {% assign brand_logo = 'brand_' | append: j | append: logo %}
+          {% assign brand_logo_svg = 'brand_' | append: j | append: logo | append: '_svg' %}
+          <div class="pdp-sofa-compare__table--mobile-column">
+            {% if section.settings[brand_logo_svg] != blank %}
+            <div class="pdp-sofa-compare__table--column-brand-logo">
+              <img src="{{ section.settings[brand_logo_svg] }}" alt="brand logo" width="100%" height="100%" loading="lazy">
+            </div>
+            {%- elsif section.settings[brand_logo] != blank and section.settings[brand_logo_svg] == blank -%}
+            <div class="pdp-sofa-compare__table--column-brand-logo">
+              {% render "basic-responsive-image", type: section.settings[brand_logo] %}
+            </div>
+            {% else %}
+            <div class="pdp-sofa-compare__table--column-brand">{{ section.settings[brand] }}</div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        {% elsif forloop.index == 2 %}
+        <div class="pdp-sofa-compare__table--mobile-row table__row--{{i}}">
+          {% for j in (1..3) %}
+          {% assign product_image = 'product_image_' | append: j %}
+          {% assign product_details = 'product_details_' | append: j %}
+          <div class="pdp-sofa-compare__table--mobile-column">
+            <div class="pdp-sofa-compare__table--column-product">
+            {% if section.settings[product_image] != blank %}
+            <div class="pdp-sofa-compare__table--column-product-image">
+              {% render "basic-responsive-image", type: section.settings[product_image] %}
+            </div>
+            {% endif %}
+            {% if section.settings[product_details] != blank %}
+            <div class="pdp-sofa-compare__table--column-product-details">{{ section.settings[product_details] }}</div>
+            {% endif %}
+          </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="pdp-sofa-compare__table--mobile-row table__row--{{i}}">
+          {% assign index = i | minus: 2 %}
+          {% for j in (1..3) %}
+          {% assign text = '_comp_' %}
+          {% assign comp = 'brand_' | append: j | append: text | append: index %}
+          {% assign check = '_checked' %}
+          {% assign checkbox = 'brand_' | append: j | append: text | append: index | append: check %}
+          {% assign cross_text = '_crossed' %}
+          {% assign crossed = 'brand_' | append: j | append: text | append: index | append: cross_text %}
+          <div class="pdp-sofa-compare__table--mobile-column">
+            {% if section.settings[checkbox] %}
+            <div class="pdp-sofa-compare__table--column-feature">
+              <img src="https://cdn.shopify.com/s/files/1/0264/8218/0174/files/tick-mark_bfa3da6b-bda1-4800-983f-fcd3f7c5cbaf.svg?v=1627853263" alt="Tick mark" width="100%" height="100%" loading="lazy">
+            </div>
+            {% elsif section.settings[checkbox] == false and section.settings[crossed] == true %}
+            <div class="pdp-sofa-compare__table--column-feature">
+              <img src="https://cdn.shopify.com/s/files/1/0602/7195/2115/files/cross-red.svg?v=1648670752" alt="crossed" width="100%" height="100%" loading="lazy">
+            </div>
+            {% elsif section.settings[checkbox] == false and section.settings[comp] != blank %}
+            <div class="pdp-sofa-compare__table--column-feature">{{ section.settings[comp] }}</div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+   "name":"Compare",
+   "settings":[
+      {
+         "type":"textarea",
+         "id":"title",
+         "label":"Title",
+         "default":"How We Compare"
+      },
+      {
+         "type":"textarea",
+         "id":"subtitle",
+         "label":"Subtitle",
+         "default":"A whole lot more features, at an even better pricing."
+      },
+      {
+         "type":"header",
+         "content":"Brand name"
+      },
+      {
+         "type":"image_picker",
+         "id":"brand_1_logo",
+         "label":"Brand 1 logo"
+      },
+      {
+         "type":"url",
+         "id":"brand_1_logo_svg",
+         "label":"Brand 1 logo SVG"
+      },
+      {
+         "type":"textarea",
+         "id":"brand_1",
+         "label":"Brand 1 name",
+         "default":"7thavenue"
+      },
+      {
+         "type":"image_picker",
+         "id":"brand_2_logo",
+         "label":"Brand 2 logo"
+      },
+      {
+         "type":"url",
+         "id":"brand_2_logo_svg",
+         "label":"Brand 2 logo SVG"
+      },
+      {
+         "type":"textarea",
+         "id":"brand_2",
+         "label":"Brand 2 name",
+         "default":"Restoration Hardware (RH)"
+      },
+      {
+         "type":"image_picker",
+         "id":"brand_3_logo",
+         "label":"Brand 3 logo"
+      },
+      {
+         "type":"url",
+         "id":"brand_3_logo_svg",
+         "label":"Brand 3 logo SVG"
+      },
+      {
+         "type":"textarea",
+         "id":"brand_3",
+         "label":"Brand 3 name",
+         "default":"West elm"
+      },
+      {
+         "type":"header",
+         "content":"Comparable product"
+      },
+      {
+         "type":"textarea",
+         "id":"product_details_title",
+         "label":"Title",
+         "default":"COMPARABLE Product"
+      },
+      {
+         "type":"image_picker",
+         "id":"product_image_1",
+         "label":"Product image 1"
+      },
+      {
+         "type":"textarea",
+         "id":"product_details_1",
+         "label":"Product details 1",
+         "default":"4-Seat Modular<br>Chaise Sectional"
+      },
+      {
+         "type":"image_picker",
+         "id":"product_image_2",
+         "label":"Product image 2"
+      },
+      {
+         "type":"textarea",
+         "id":"product_details_2",
+         "label":"Product details 2",
+         "default":"RH Cloud<br>Sectional in Classic"
+      },
+      {
+         "type":"image_picker",
+         "id":"product_image_3",
+         "label":"Product image 3"
+      },
+      {
+         "type":"textarea",
+         "id":"product_details_3",
+         "label":"Product details 3",
+         "default":"Harmony Modular<br>Chaise Sectional"
+      },
+      {
+         "type":"header",
+         "content":"Row 1"
+      },
+      {
+         "type":"checkbox",
+         "id":"row_1",
+         "label":"Enable row",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"title_1",
+         "label":"Title",
+         "default":"Comparable Fabric"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_1_checked",
+         "label":"Brand 1 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_1_crossed",
+         "label":"Brand 1 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_1_comp_1",
+         "label":"Brand 1 content",
+         "default":"All Performance Textured Fabric"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_1_checked",
+         "label":"Brand 2 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_1_crossed",
+         "label":"Brand 2 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_2_comp_1",
+         "label":"Brand 2 content",
+         "default":"Performance Fabrics"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_1_checked",
+         "label":"Brand 3 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_1_crossed",
+         "label":"Brand 3 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_3_comp_1",
+         "label":"Brand 3 content",
+         "default":"Performance Basket Slub"
+      },
+      {
+         "type":"header",
+         "content":"Row 2"
+      },
+      {
+         "type":"checkbox",
+         "id":"row_2",
+         "label":"Enable row",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"title_2",
+         "label":"Title",
+         "default":"PRICE"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_2_checked",
+         "label":"Brand 1 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_2_crossed",
+         "label":"Brand 1 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_1_comp_2",
+         "label":"Brand 1 content",
+         "default":"$3,850"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_2_checked",
+         "label":"Brand 2 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_2_crossed",
+         "label":"Brand 2 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_2_comp_2",
+         "label":"Brand 2 content",
+         "default":"$12,080"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_2_checked",
+         "label":"Brand 3 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_2_crossed",
+         "label":"Brand 3 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_3_comp_2",
+         "label":"Brand 3 content",
+         "default":"$4,997"
+      },
+      {
+         "type":"header",
+         "content":"Row 3"
+      },
+      {
+         "type":"checkbox",
+         "id":"row_3",
+         "label":"Enable row",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"title_3",
+         "label":"Title",
+         "default":"TOTAL WIDTH"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_3_checked",
+         "label":"Brand 1 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_3_crossed",
+         "label":"Brand 1 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_1_comp_3",
+         "label":"Brand 1 content",
+         "default":"130”"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_3_checked",
+         "label":"Brand 2 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_3_crossed",
+         "label":"Brand 2 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_2_comp_3",
+         "label":"Brand 2 content",
+         "default":"119”"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_3_checked",
+         "label":"Brand 3 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_3_crossed",
+         "label":"Brand 3 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_3_comp_3",
+         "label":"Brand 3 content",
+         "default":"121”"
+      },
+      {
+         "type":"header",
+         "content":"Row 4"
+      },
+      {
+         "type":"checkbox",
+         "id":"row_4",
+         "label":"Enable row",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"title_4",
+         "label":"Title",
+         "default":"SEAT DEPTH"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_4_checked",
+         "label":"Brand 1 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_4_crossed",
+         "label":"Brand 1 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_1_comp_4",
+         "label":"Brand 1 content",
+         "default":"38”"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_4_checked",
+         "label":"Brand 2 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_4_crossed",
+         "label":"Brand 2 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_2_comp_4",
+         "label":"Brand 2 content",
+         "default":"40”"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_4_checked",
+         "label":"Brand 3 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_4_crossed",
+         "label":"Brand 3 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_3_comp_4",
+         "label":"Brand 3 content",
+         "default":"43”"
+      },
+      {
+         "type":"header",
+         "content":"Row 5"
+      },
+      {
+         "type":"checkbox",
+         "id":"row_5",
+         "label":"Enable row",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"title_5",
+         "label":"Title",
+         "default":"CUSHION FILL"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_5_checked",
+         "label":"Brand 1 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_5_crossed",
+         "label":"Brand 1 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_1_comp_5",
+         "label":"Brand 1 content",
+         "default":"Down Alternative"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_5_checked",
+         "label":"Brand 2 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_5_crossed",
+         "label":"Brand 2 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_2_comp_5",
+         "label":"Brand 2 content",
+         "default":"Down Feather"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_5_checked",
+         "label":"Brand 3 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_5_crossed",
+         "label":"Brand 3 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_3_comp_5",
+         "label":"Brand 3 content",
+         "default":"Fiber Fills"
+      },
+      {
+         "type":"header",
+         "content":"Row 6"
+      },
+      {
+         "type":"checkbox",
+         "id":"row_6",
+         "label":"Enable row",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"title_6",
+         "label":"Title",
+         "default":"CUSHION FIRMNESS"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_6_checked",
+         "label":"Brand 1 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_6_crossed",
+         "label":"Brand 1 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_1_comp_6",
+         "label":"Brand 1 content",
+         "default":"Medium-Soft or Medium-Firm"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_6_checked",
+         "label":"Brand 2 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_6_crossed",
+         "label":"Brand 2 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_2_comp_6",
+         "label":"Brand 2 content",
+         "default":"Extra Soft"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_6_checked",
+         "label":"Brand 3 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_6_crossed",
+         "label":"Brand 3 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_3_comp_6",
+         "label":"Brand 3 content",
+         "default":"Soft"
+      },
+      {
+         "type":"header",
+         "content":"Row 7"
+      },
+      {
+         "type":"checkbox",
+         "id":"row_7",
+         "label":"Enable row",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"title_7",
+         "label":"Title",
+         "default":"WATER REPELLENT"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_7_checked",
+         "label":"Brand 1 tick mark",
+         "default":true
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_7_crossed",
+         "label":"Brand 1 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_1_comp_7",
+         "label":"Brand 1 content",
+         "default":"Content 7"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_7_checked",
+         "label":"Brand 2 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_7_crossed",
+         "label":"Brand 2 cross",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"brand_2_comp_7",
+         "label":"Brand 2 content",
+         "default":"Content 7"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_7_checked",
+         "label":"Brand 3 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_7_crossed",
+         "label":"Brand 3 cross",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"brand_3_comp_7",
+         "label":"Brand 3 content",
+         "default":"Content 7"
+      },
+      {
+         "type":"header",
+         "content":"Row 8"
+      },
+      {
+         "type":"checkbox",
+         "id":"row_8",
+         "label":"Enable row",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"title_8",
+         "label":"Title",
+         "default":"MACHINE WASHABLE"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_8_checked",
+         "label":"Brand 1 tick mark",
+         "default":true
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_8_crossed",
+         "label":"Brand 1 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_1_comp_8",
+         "label":"Brand 1 content",
+         "default":"Content 8"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_8_checked",
+         "label":"Brand 2 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_8_crossed",
+         "label":"Brand 2 cross",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"brand_2_comp_8",
+         "label":"Brand 2 content",
+         "default":"Content 8"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_8_checked",
+         "label":"Brand 3 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_8_crossed",
+         "label":"Brand 3 cross",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"brand_3_comp_8",
+         "label":"Brand 3 content",
+         "default":"Content 8"
+      },
+      {
+         "type":"header",
+         "content":"Row 9"
+      },
+      {
+         "type":"checkbox",
+         "id":"row_9",
+         "label":"Enable row",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"title_9",
+         "label":"Title",
+         "default":"FULLY REMOVABLE COVERS"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_9_checked",
+         "label":"Brand 1 tick mark",
+         "default":true
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_9_crossed",
+         "label":"Brand 1 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_1_comp_9",
+         "label":"Brand 1 content",
+         "default":"Content 9"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_9_checked",
+         "label":"Brand 2 tick mark",
+         "default":true
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_9_crossed",
+         "label":"Brand 2 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_2_comp_9",
+         "label":"Brand 2 content",
+         "default":"Content 9"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_9_checked",
+         "label":"Brand 3 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_9_crossed",
+         "label":"Brand 3 cross",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"brand_3_comp_9",
+         "label":"Brand 3 content",
+         "default":"Content 9"
+      },
+      {
+         "type":"header",
+         "content":"Row 10"
+      },
+      {
+         "type":"checkbox",
+         "id":"row_10",
+         "label":"Enable row",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"title_10",
+         "label":"Title",
+         "default":"ADJUSTABLE BACK FIRMNESS"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_10_checked",
+         "label":"Brand 1 tick mark",
+         "default":true
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_10_crossed",
+         "label":"Brand 1 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_1_comp_10",
+         "label":"Brand 1 content",
+         "default":"Content 10"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_10_checked",
+         "label":"Brand 2 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_10_crossed",
+         "label":"Brand 2 cross",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"brand_2_comp_10",
+         "label":"Brand 2 content",
+         "default":"Content 10"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_10_checked",
+         "label":"Brand 3 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_10_crossed",
+         "label":"Brand 3 cross",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"brand_3_comp_10",
+         "label":"Brand 3 content",
+         "default":"Content 10"
+      },
+      {
+         "type":"header",
+         "content":"Row 11"
+      },
+      {
+         "type":"checkbox",
+         "id":"row_11",
+         "label":"Enable row",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"title_11",
+         "label":"Title",
+         "default":"Solid wood"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_11_checked",
+         "label":"Brand 1 tick mark",
+         "default":true
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_11_crossed",
+         "label":"Brand 1 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_1_comp_11",
+         "label":"Brand 1 content",
+         "default":"Content 11"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_11_checked",
+         "label":"Brand 2 tick mark",
+         "default":true
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_11_crossed",
+         "label":"Brand 2 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_2_comp_11",
+         "label":"Brand 2 content",
+         "default":"Content 11"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_11_checked",
+         "label":"Brand 3 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_11_crossed",
+         "label":"Brand 3 cross",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"brand_3_comp_11",
+         "label":"Brand 3 content",
+         "default":"Content 11"
+      },
+      {
+         "type":"header",
+         "content":"Row 12"
+      },
+      {
+         "type":"checkbox",
+         "id":"row_12",
+         "label":"Enable row",
+         "default":true
+      },
+      {
+         "type":"textarea",
+         "id":"title_12",
+         "label":"Title",
+         "default":"CERTIFICATIONS"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_12_checked",
+         "label":"Brand 1 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_1_comp_12_crossed",
+         "label":"Brand 1 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_1_comp_12",
+         "label":"Brand 1 content",
+         "default":"OEKO-TEX fabrics, FSC wood, B-Corp"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_12_checked",
+         "label":"Brand 2 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_2_comp_12_crossed",
+         "label":"Brand 2 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_2_comp_12",
+         "label":"Brand 2 content",
+         "default":"Unknown"
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_12_checked",
+         "label":"Brand 3 tick mark",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"brand_3_comp_12_crossed",
+         "label":"Brand 3 cross",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"brand_3_comp_12",
+         "label":"Brand 3 content",
+         "default":"FSC wood only"
+      }
+   ],
+   "presets":[
+      {
+         "name":"Comparison chart"
+      }
+   ]
+}
+{% endschema %}
+

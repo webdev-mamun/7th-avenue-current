@@ -1,0 +1,156 @@
+{% case section.settings.per_row %}
+{% when 2 %}
+	{% assign grid_column = 'desktop-6' %}
+{% when 3 %}
+	{% assign grid_column = 'desktop-4' %}
+{% when 4 %}
+	{% assign grid_column = 'desktop-3' %}
+{% when 5 %}
+	{% assign grid_column = 'all-fifth' %}
+{% when 6 %}
+	{% assign grid_column = 'desktop-2' %}
+{% endcase %}
+
+<script id="instagram-template" type="text/template">
+  {% raw %}
+    <div class="{% endraw %}{{ grid_column }}{% raw %} tablet-1 mobile-1 contained">
+      <a style="background: url({{image}}); background-size: cover;" class="instagram-image-container" target="_blank" href="{{link}}" rel="ig" title="{{caption}}">
+        <img style="opacity: 0! important;" class="instagram-image" src="{{image}}" />
+      </a>
+    </div>
+  {% endraw %}
+</script>
+<section class="homepage-instagram" data-section-id="{{ section.id }}" data-section-type="instagram">
+  {% assign igimage = '{{image}}'%}
+  {% assign url = '{{link}}' %}
+  {% assign caption = '{{caption}}' %}
+  {% assign limit = section.settings.item_limit %}
+
+  <article>
+    {% if section.settings.heading != blank %}
+      <div class="section-title row">
+        <h2>
+					<a href="//instagram.com/{{ settings.instagram-id }}">
+						{{ section.settings.heading | escape }}
+					</a>
+				</h2>
+      </div>
+    {% endif %}
+    <div class="gridlock-fluid">
+      <div class="row">
+        <div class="row">
+          {% assign token = section.settings.instagram_access_token %}
+          {% capture userid %}
+          {{- token | truncate: 9, "" -}}
+          {% endcapture %}
+          <div class="clear"></div>
+          <div id="instagram-feed">
+            {% if section.settings.instagram_access_token != blank %}
+            	<div id="instafeed-{{ section.id }}" data-item-limit="{{ limit }}" data-access-token="{{ token }}"></div>
+            {% else %}
+            {% include 'onboard-instagram' %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+<style>
+  /* INSTAGRAM */
+  .homepage-instagram {
+    background: {{ section.settings.instagram_background_color }};
+    z-index: 3;
+    padding-bottom: 0;
+  }
+  .homepage-instagram h2,
+  .homepage-instagram h2 a {
+    color: {{ section.settings.instagram_heading_color }} !important;
+  }
+  .instagram-image-container {
+    display: block;
+    height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
+    margin-bottom: 0px;
+  }
+  {% if section.settings.instagram_overlay %}
+		a.instagram-image-container {
+		  filter: url(data:image/svg+xml;utf8,<svg xmlns=‘http://www.w3.org/2000/svg'><filter%2… 0.3333 0.3333 0 0 0 0 0 1 0’/></filter></svg>#grayscale);
+		   filter: grayscale(100%);
+		   -webkit-filter: grayscale(100%);
+		   -moz-filter: grayscale(100%);
+		   -ms-filter: grayscale(100%);
+		   -o-filter: grayscale(100%);
+		   filter: gray;
+		   -webkit-transition: all .5s ease-in-out;
+		   opacity: 0.6;
+		}
+
+		a.instagram-image-container:hover {
+		   filter: initial;
+		   opacity: 1;
+		  }
+  {% endif %}
+</style>
+{% schema %}
+{
+    "name": "Instagram feed",
+		"class": "index-section",
+    "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Follow us on Instagram"
+    },
+    {
+      "type": "textarea",
+      "id": "instagram_access_token",
+      "label": "Instagram access token",
+      "info": "Required for permission to show your Instagram content [instructions here](https://support.weareunderground.com/article/29-home-page-instagram-feed) for setup."
+    },
+    {
+      "type":      "range",
+      "id":        "item_limit",
+      "min":       3,
+      "max":        12,
+      "step":       1,
+      "label":     "Images to show",
+      "default":   6
+    },
+    {
+      "type":      "range",
+      "id":        "per_row",
+      "min":       2,
+      "max":        6,
+      "step":       1,
+      "label":     "Images per row",
+      "default":   6
+    },
+    {
+      "type": "checkbox",
+      "id": "instagram_overlay",
+      "label": "Show B&W Overlay",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "instagram_heading_color",
+      "label": "Heading color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "instagram_background_color",
+      "label": "Background",
+      "default": "#fff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram feed"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,218 @@
+
+{%- liquid  
+  assign current_variant = product.selected_or_first_available_variant
+  assign all_color = product.variants | map: 'option1'
+   for value in product.options_by_name['color'].values
+     if value contains active_color or value == active_color
+       assign actual_value = value
+     endif
+   endfor
+   assign active_variant = product.variants | where: 'option1', actual_value | first
+   
+   unless all_color contains actual_value
+     assign actual_value = current_variant | map: 'option1'
+     assign active_variant = current_variant
+   endunless
+   
+  assign spec = product.metafields.specification
+  if current_variant.title contains 'Extra-Deep'
+    if spec.title_for_extra_deep != blank
+      assign title = spec.title_for_extra_deep
+    else
+      assign title = product.title
+    endif
+    assign dimensions = spec.dimensions-extra-deep
+  elsif current_variant.title contains 'Classic'
+    assign dimensions = spec.dimensions
+    assign title = product.title
+  else
+    assign dimensions = spec.dimensions
+    assign title = product.title
+  endif
+  assign ordered_value = settings.color_option_order | split: ', '
+-%}
+<style>
+  .color__swatch li[data-option-name] {
+    --order: {{ ordered_value.size }};
+  }
+  
+  {% for value in ordered_value %}
+    {% unless forloop.last %}
+      .color__swatch li[data-option-name*="{{ value | handle }}"] {
+        --order: {{ forloop.index }};
+      }
+    {% endunless %}
+  {% endfor %}
+</style>
+<div class="ci sofa-product-grid new-card">
+   {% if product.available %}
+   {% for col in product.collections %}
+     {% if col.handle == 'new' %}
+       <div class="new icn">{{ 'products.general.new' | t }}</div>
+     {% endif %}
+   {% endfor %}
+     {% if product.price < product.compare_at_price %}
+       <div class="sale-item icn">{{ 'products.general.sale' | t }}</div>
+     {% endif %}
+   {% else %}
+     <div class="so icn">{{ 'products.general.sold' | t }}</div>
+   {% endif %}
+   <a href="{{ product.url | within: collection }}" title="{{ product.title | escape }}">
+      <div class="reveal">
+         {% if product.variants.size > 1 and product.variants[0].title != 'Default Title' %}
+           {% for variant in product.variants %}
+             {% liquid
+               assign variant_compare_price = false
+               assign variant_price_off = false
+               if variant.compare_at_price > 0
+                 assign variant_compare_price = true
+               endif
+               if variant.compare_at_price > variant.price and variant.available
+                 assign variant_price_off = true
+               endif
+               
+             %}
+             <div class="variant__image{% if variant.id == active_variant.id %} open{% endif %}" 
+               data-option1="{{ variant.option1 | handleize }}" 
+               data-option2="{{ variant.option2 | handleize }}" 
+               data-option3="{{ variant.option3 | handleize }}" 
+               data-variant-price="{{ variant.price | money  }}"
+               {% if variant_compare_price %}
+               data-variant-compare-price="{{ variant.compare_at_price | money }}"
+               {% endif %}
+               {% if variant_price_off %}
+               data-price-off="({{ variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | money_without_currency | times: 100 | remove: '.0'}}% OFF)"
+               {% endif %}
+               data-monthly-price="{{ c_monthly_price | money_without_currency | round }}" 
+               data-variant-url="{{ product.url | within: collection }}" 
+               data-variant-id="{{ variant.id }}">
+               {% if variant.id == active_variant.id and section.settings.selected_color == '' %}
+                 <div class="product-featured-image">
+                  {% render  "basic-responsive-image", product: product, type: product.featured_image %}
+                  </div>
+                  <div class="variant-featured-image hidden">
+                    {% render "basic-responsive-image", product: product, type: variant.featured_image %}
+                  </div>
+               {% else %}
+               {% if variant.featured_image %}
+                 {% render "basic-responsive-image", product: product, type: variant.featured_image %}
+                {% else %}
+                   {% render  "basic-responsive-image", product: product, type: product.featured_image %}
+                {% endif %}
+                {% endif %}
+             </div>
+           {% endfor %}
+           
+           {% if settings.image_flip and product.images.size > 1 %}
+             <div class="hidden">
+                {% render "basic-responsive-image", product: product, type: product.images[1] %}
+             </div>
+           {% endif %}
+         {% else %}
+           {% render "basic-responsive-image", product: product, type: product.featured_image %}
+           {% if settings.image_flip and product.images.size > 1 %}
+             <div class="hidden">
+                {% render "basic-responsive-image", product: product, type: product.images[1] %}
+             </div>
+           {% endif %}
+         {% endif %}
+      </div>
+   </a>
+</div>
+
+{% if product.variants.size > 1 and product.variants[0].title != 'Default Title' %}
+  {% for option in product.options_with_values %}
+    {% assign option_name = option.name | downcase %}
+    {% if option_name contains 'color' or option_name contains 'colour' %}
+      <div class="color__swatch--container">
+        <ul class="color__swatch">
+         {% for value in option.values %}
+           {% liquid
+             
+             assign fabric_options = shop.metaobjects.fabric_options.values
+             assign option_image = ''
+             for fabric_option in fabric_options
+               assign fabric_option_title = fabric_option.title.value
+               if value contains fabric_option_title or value == fabric_option_title
+                 if fabric_option.thumbnail != blank
+                   assign option_image = fabric_option.thumbnail | image_url: width: 60
+                 else
+                   assign option_image = fabric_option.image | image_url: width: 60
+                 endif
+               endif
+             endfor
+             assign actual_value_handle = actual_value | handle
+             assign value_handle = value | handle
+           %}
+           {% if actual_value != "" %}
+           {% unless value_handle contains 'custom-fabric' %}
+           <li data-value="{{ value_handle }}" class="{% if value_handle == actual_value_handle %}open{% if section.settings.selected_color == '' %} deselect{% endif %}{% endif %}" data-option-name="{{ value | handleize }}" data-position="{{ option.position }}">
+             <div class="color__swatch--bg {{ value | handleize }}" style="background-color: {{ value | handleize }};{% if option_image != '' %} background-image: url({{ option_image }});{% endif %}"></div>
+           </li>
+          {% endunless %}
+           {% else %}
+             <li data-render class="{% if forloop.first %}open{% if section.settings.selected_color == '' %} deselect{% endif %}{% endif %}" data-option-name="{{ value | handleize }}" data-position="{{ option.position }}">
+               <div class="color__swatch--bg {{ value | handleize }}" style="background-color: {{ value | handleize }};{% if option_image != '' %} background-image: url({{ option_image }});{% endif %}"></div>
+             </li>
+           {% endif %}
+         {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+
+<div class="product-details data-dimentions-{{ dimensions }}">
+   <a href="{{ product.url | within: collection }}">
+      <h3>{{ title }}</h3>
+      {% if dimensions != blank %}
+        <p class="product_specification">{{ dimensions }}</p>
+      {% endif %}
+      <div class="price__container">
+          {% liquid
+            
+            assign onsale = false
+            if product.variants.size > 1
+              if active_variant.compare_at_price > active_variant.price and active_variant.available
+                assign onsale = true
+              endif
+            else
+              if product.compare_at_price > product.price and product.available
+                assign onsale = true
+              endif
+            endif
+          %}
+         <div class="collection__price">
+           {% if product.variants.size > 1 %}
+            {% if onsale %}
+              <span class="product-price was">
+                  <span class="collection_money">{{ active_variant.compare_at_price | money }}</span>
+              </span>
+            {% endif %}
+            <span class="product-price current{% if onsale %} sale{% endif %}" itemprop="price">
+              <span class="collection_money">{% if active_variant.available %}{{ active_variant.price | money }}{% else %}Sold Out{% endif %}</span>
+            </span>
+            {% if onsale %}
+              <span class="money_save money_save_pdp">({{ active_variant.compare_at_price | minus: active_variant.price | times: 100.0 | divided_by: active_variant.compare_at_price | money_without_currency | times: 100 | remove: '.0'}}% OFF)</span>
+            {% endif %}
+           {% else %}
+            {% if onsale %}
+              <span class="product-price was">
+                <span class="collection_money">{{ product.compare_at_price | money }}</span>
+              </span>
+            {% endif %}
+             <span class="product-price current{% if onsale %} sale{% endif %}" itemprop="price">
+              <span class="collection_money">{% if product.available %}{{ product.price | money }}{% else %}Sold Out{% endif %}</span>
+             </span>
+             {% if onsale %}
+              <span class="money_save money_save_pdp">({{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | money_without_currency | times: 100 | remove: '.0'}}% OFF)</span>
+            {% endif %}
+           {% endif %}
+         </div>
+         {% if current_variant.inventory_quantity > 10 %}
+           <p class="inventory__massage" style="display: none;"><span class="inventory__signal in-stock"></span>In Stock</p>
+         {% endif %}
+      </div>
+   </a>
+</div>

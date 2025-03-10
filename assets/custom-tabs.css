@@ -1,0 +1,50 @@
+custom-tabs {
+  margin: 20px auto;
+  display: block;
+}
+
+.custom-tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 5px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.custom-tab-button {
+  padding: 0 50px;
+  outline: none;
+  width: auto;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.custom-tab-button:last-child {
+  margin-right: 0;
+}
+
+.custom-tab-button.active {
+background-color: #032e6a;
+}
+
+.custom-tab-content {
+  padding: 20px;
+  display: none;
+  background: transparent;
+}
+
+.custom-tab-content.active {
+  display: block;
+}
+
+.custom-tab-contents .okeReviews-reviewsWidget-header,
+.custom-tab-contents .okeReviews .okeReviews-reviewsWidget-reviewsAggregate {
+  margin: 0 !important;
+}
+
+.custom-tab-contents .okeReviews-reviews-controls-filterToggle {
+  height: 0 !important;
+}
+

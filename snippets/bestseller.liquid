@@ -1,0 +1,71 @@
+<div class="cbi">
+  {% if product.available %}
+    {% for col in product.collections %}
+      {% if col.handle == 'new' %}
+        <div class="new icn">{{ 'products.general.new' | t }}</div>
+      {% endif %}
+    {% endfor %}
+
+    {% if product.price < product.compare_at_price %}
+      <div class="sale-item icn">{{ 'products.general.sale' | t }}</div>
+    {% endif %}
+
+  {% else %}
+    <div class="so icn">{{ 'products.general.sold' | t }}</div>
+  {% endif %}
+
+    {% if product.featured_image %}
+      <a href="{{ product.url | within: collection }}" title="{{ product.title | escape }}">
+        <div class="reveal">
+          {% render "basic-responsive-image", product: product, type: product.featured_image %}
+          {% if settings.image_flip and product.images.size > 1 %}
+            <div class="hidden">
+              {% render "basic-responsive-image", product: product, type: product.images[1] %}
+            </div>
+          {% endif %}
+        </div>
+      </a>
+    {%- else -%}
+      {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+      {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+    {% if settings.quickview and settings.product_info != 'add_to_cart' %}
+      <div class="product-info">
+        <a data-fancybox="quick-view" data-type="ajax" class="fancybox.ajax product-modal" rel="nofollow" href="{{ product.url | within: collection }}?view=quick">
+          {{ 'products.general.quick_view' | t }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+
+<div class="product-details">
+  <a href="{{ product.url | within: collection }}">
+    {% if settings.vendor %}
+      <h4>{{ product.vendor }}</h4>
+    {% endif %}
+    <h3>{{ product.title }}</h3>
+  </a>
+
+  {% unless product.template_suffix == 'not-for-sale' %}
+  <div class="price">
+    {% if product.price < product.compare_at_price %}
+      <div class="onsale">
+        <span class="money">{{ product.price | money }}</span>
+      </div>
+      <div class="was-listing">
+        <span class="money">{{ product.compare_at_price | money }}</span>
+      </div>
+    {% else %}
+      <div class="prod-price">
+        {% if product.price_varies %}
+          <span class="money">{{ product.price_min | money }}</span> - <span class="money">{{ product.price_max | money }}</span>
+        {% else %}
+          <span class="money">{{ product.price | money }}</span>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+    {% endunless %}
+
+</div>

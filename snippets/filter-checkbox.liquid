@@ -1,0 +1,44 @@
+<li class="filter-item" data-filter-value="{{ displayValue }}">
+  <label for="{{ input_id }}" class="{{ label_class }}">
+  <input
+    type="checkbox"
+    name="{{ value.param_name }}"
+    value="{{ value.value }}"
+    id="{{ input_id }}"
+    data-device-id="{{ device_id }}"
+    {% if value.active %}
+      checked
+    {% endif %}
+    {% if is_disabled %}
+      disabled
+    {% endif %}
+  >
+    <svg
+      width="16px"
+      height="16px"
+      viewBox="0 0 16 16"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+    </svg>
+
+    <svg
+      aria-hidden="true"
+      class="icon icon-checkmark"
+      width="11px"
+      height="7px"
+      viewBox="0 0 11 7"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1"
+        stroke="currentColor"
+        stroke-width="1.75"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+
+  {{ displayValue }}
+</label>
+</li>

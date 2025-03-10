@@ -1,0 +1,13 @@
+{% section 'collection-benner-template' %}
+<div id="content" class="row">
+  <div id="main-content" class="collection_grid_wrapper">
+    {% render 'breadcrumb' %}
+    <div class="sidebar_col">        
+      {% section 'collection-page-sidebar-template' %}
+    </div>
+    <div class="content_col">
+      {% section 'collection-page-template' %}    
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>

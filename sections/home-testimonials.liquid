@@ -1,0 +1,52 @@
+{% if section.blocks.size > 0 %}
+<section class="home homepage-section customer_testimonials_slider_section" data-section-id="{{ section.id }}" data-section-type="slideshow-section">  
+  <div class="mw">
+    <div class="customer_testimonials_slider_wrapper">
+      <div class="customer_testimonials_slider">
+        {% for block in section.blocks %}
+        <div>
+          <h3>{{block.settings.testimonial}}</h3>
+          <p>— {{block.settings.author}}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<div class="clear"></div>
+{% endif %}
+{% schema %}
+{
+  "name": "Testimonials",
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Image slide",
+      "settings": [
+		{
+		  "type": "textarea",
+		  "id": "testimonial",
+		  "label": "Testimonial"
+		},
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author"
+        }
+      ]
+    }
+  ],
+  "settings": [
+      
+  ],
+  "presets": [{
+    "name": "Testimonials",
+    "blocks": [
+      {
+        "type": "testimonial"
+      }
+    ]
+  }]
+}
+{% endschema %}

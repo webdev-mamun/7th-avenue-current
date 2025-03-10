@@ -1,0 +1,377 @@
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --background: {{ section.settings.background }};
+  }
+</style>
+<script src="{{ 'temporary-image.js' | asset_url }}" defer></script>
+{%- liquid
+  assign autoplaySpeed = section.settings.autoplaySpeed | default: 7500   
+-%}
+<section class="home homepage-section slideshow-section" data-section-id="{{ section.id }}" data-section-type="slideshow-section" data-start-date="{{ section.settings.start_date | default: '02/11/2030 12:23am' }}" data-end-date="{{ section.settings.end_date | default: '02/11/2030 12:30am' }}">
+  {% if section.blocks.size > 0 %}
+  <div class="image_slider_wrapper">
+    <div class="image_slider home_image_slider" data-autoplay-speed="{{ autoplaySpeed }}">
+      {% for block in section.blocks %}
+      <div class="slide_item">
+        <figure class="desktop_hero_section">
+          <div class="hero-image-permanent show">{% render 'basic-responsive-image', type:  block.settings.image %}</div>
+          <div class="hero-image-temporary">{% render 'basic-responsive-image', type: section.settings.temporary_image_desktop %}</div>
+          {% if block.settings.slide_text != blank or block.settings.slide_title != blank %}
+          <figcaption style="{% unless block.settings.sip_x == 'center' %}{{block.settings.sip_x}}:{{block.settings.sip_x_v}}%;{% endunless %}{{block.settings.sip_y}}:{{block.settings.sip_y_v }}%;{%-if block.settings.si_bg != blank-%}background:{{block.settings.si_bg}};{%-endif-%}width: {{block.settings.sip_width}};height: {{block.settings.sip_height}}" {% if block.settings.sip_x == 'center' %}class="shideshow-caption-horizontal-center"{% endif %}>
+            <div class="slide_info"
+            	style="{%- if block.settings.si_padding != blank -%}padding: {{block.settings.si_padding}};{%-endif-%}
+                       {%- if block.settings.si_margin != blank -%}padding: {{block.settings.si_margin}};{%-endif-%} --alignment: {{ block.settings.alignment }}">
+              {% if block.settings.slide_title %}
+              <h2 class="big_title" style="{%if block.settings.s_title_color != blank %}--color: {{ block.settings.s_title_color }};{%endif%}{%-if block.settings.si_title_margin != blank -%}margin: {{block.settings.si_text_margin}};{%-endif-%}">{{block.settings.slide_title}}</h2>
+              {% endif %}
+              {% if block.settings.showCaptionDesktop == true and block.settings.slide_text != blank %}
+            	<p style="{%- if block.settings.s_text_color != blank -%}--color: {{block.settings.s_text_color}};{%-endif-%}
+                          {%-if block.settings.si_text_margin != blank -%}margin: {{block.settings.si_text_margin}};{%-endif-%}">{{block.settings.slide_text}}</p>
+              {% endif %}
+			  {% if block.settings.btn_url != blank %}
+			  <a href="{{ block.settings.btn_url }}" class="sildeshow__btn">{{ block.settings.btn_text }}</a>
+			  {% endif %}
+            </div>
+          </figcaption>
+          {% endif %}
+        </figure>
+        <figure class="mobile_hero_section">
+          <div class="mobile_hero_image hero-image-permanent show">
+           {% render 'basic-responsive-image', type: block.settings.mobile_hero_image %}
+          </div>
+          <div class="mobile_hero_image hero-image-temporary">
+           {% render 'basic-responsive-image', type: block.settings.temporary_image_mobile %}
+          </div>
+          {% if block.settings.slide_title != blank or block.settings.slide_text != blank %}
+          <figcaption class="mobile_hero_contents">
+            {% if block.settings.btn_url != blank %}
+      		<a href="{{ block.settings.btn_url }}" class="sildeshow__btn">{{ block.settings.btn_text }}</a>
+            {% endif %}
+            {% if section.settings.review_text != blank %}
+            <a href="#{{ section.settings.review_url }}" class="mobile_hero_review">
+              <span class="mobile_hero_review-icon"></span><span class="mobile_hero_review-text">{{ section.settings.review_text }}</span>
+            </a>
+            {% endif %}
+            {% if block.settings.slide_title %}<h1 style="--color: {{ section.settings.color }}">{{ block.settings.slide_title }}</h1>{% endif %}
+            {% if block.settings.slide_text != blank %}<p style="--color: {{ section.settings.color }}">{{ block.settings.slide_text }}</p>{% endif %}
+          </figcaption>
+          {% endif %}
+        </figure>
+      </div>      
+      {% endfor %}
+    </div>  
+  </div>
+  {% endif %} 
+</section>
+<div class="clear"></div>
+{% comment %}
+{% if section.settings.mobile_hero_image != blank %}
+<div class="desktophide mobile_hero_section_wrapper" data-section-type="hero-section">
+  <figure class="mobile_hero_section">
+    <div class="mobile_hero_image hero-image-permanent show">
+     {% render 'basic-responsive-image', type: section.settings.mobile_hero_image %}
+    </div>
+    <div class="mobile_hero_image hero-image-temporary">
+     {% render 'basic-responsive-image', type: section.settings.temporary_image_mobile %}
+    </div>
+    {% if section.settings.mobile_hero_text%}
+    <figcaption class="mobile_hero_contents">
+      {% if section.settings.btn_url != blank %}
+		<a href="{{ section.settings.btn_url }}" class="sildeshow__btn">{{ section.settings.btn_text }}</a>
+      {% endif %}
+      {% if section.settings.review_text != blank %}
+      <a href="#{{ section.settings.review_url }}" class="mobile_hero_review">
+        <span class="mobile_hero_review-icon"></span><span class="mobile_hero_review-text">{{ section.settings.review_text }}</span>
+      </a>
+      {% endif %}
+      {% if section.settings.mobile_hero_text %}<h1>{{section.settings.mobile_hero_text}}</h1>{% endif %}
+      {% if section.settings.mobile_hero_p != blank %}<p>{{ section.settings.mobile_hero_p }}</p>{% endif %}
+    </figcaption>
+    {% endif %}
+  </figure>
+</div>
+<div class="clear"></div>
+{% endif %}
+                         {% endcomment %}
+
+{% schema %}
+{
+  "name": "Slideshow",
+  "class": "index-section",
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Desktop Image(Permanent)"
+        },
+        {
+          "type": "image_picker",
+          "id": "temporary_image_desktop",
+          "label": "Desktop Image(Temporary)"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_hero_image",
+          "label": "Mobile Image (Permanent)"
+        },
+        {
+          "type": "image_picker",
+          "id": "temporary_image_mobile",
+          "label": "Mobile Image (Temporary)"
+        },
+		{
+		  "type": "header",
+		  "content": "Slide Info"
+		},
+		{
+		  "type": "textarea",
+		  "id": "slide_title",
+		  "label": "Slide Title"
+		},
+        {
+		  "type": "textarea",
+		  "id": "slide_text",
+		  "label": "Slide Caption"
+		},
+        {
+          "type": "checkbox",
+          "id": "showCaptionDesktop",
+          "label": "Show caption on desktop",
+          "default": false
+        },
+		{
+			"type": "text",
+			"id": "btn_text",
+			"label": "Button text",
+			"default": "SHOP SEATING"
+		},
+		{
+			"type": "url",
+			"id": "btn_url",
+			"label": "Button url"
+		},
+		{
+		  "type": "header",
+		  "content": "Slide Styles"
+		},
+        {
+          "type": "text_alignment",
+          "id": "alignment",
+          "label": "Slide Info Alignment",
+          "default": "center"
+        },
+		{
+		  "type": "header",
+		  "content": "Slide Info color"
+		},
+		{
+		  "type": "color",
+		  "id": "si_bg",
+		  "label": "Slide Info Background Color"
+		},
+		{
+		  "type": "color",
+		  "id": "s_title_color",
+		  "label": "Title"
+		},
+		{
+		  "type": "color",
+		  "id": "s_text_color",
+		  "label": "Text"
+		},
+		{
+		  "type": "header",
+		  "content": "Slide Position"
+		},
+        {
+          "type": "select",
+          "id": "sip_x",
+          "label": "Slide Info Position X",
+		  "options": [
+			{
+			  "value": "left",
+			  "label": "Left"
+			},
+			{
+			  "value": "center",
+			  "label": "Center"
+			},
+			{
+			  "value": "right",
+			  "label": "Right"
+			}
+          ],
+		  "default": "left"
+        },
+		{
+		  "type": "range",
+		  "id": "sip_x_v",
+		  "label": "Value(In percent)",
+		  "min": 0,
+		  "max": 100,
+		  "step": 1,
+		  "default": 0
+		},
+        {
+          "type": "select",
+          "id": "sip_y",
+          "label": "Slide Info Position Y",
+		  "options": [
+			{
+			  "value": "top",
+			  "label": "Top"
+			},
+			{
+			  "value": "bottom",
+			  "label": "Bottom"
+			}
+          ],
+		  "default": "top"
+        },
+		{
+		  "type": "range",
+		  "id": "sip_y_v",
+		  "label": "Value(In percent)",
+		  "min": 0,
+		  "max": 100,
+		  "step": 1,
+		  "default": 0
+		},
+		{
+		  "type": "header",
+		  "content": "Width & Height",
+		  "info": "Only noticeable if the backgorund color is set"
+		},
+        {
+          "type": "select",
+          "id": "sip_width",
+          "label": "Slide Info Position X",
+		  "options": [
+			{
+			  "value": "max-content",
+			  "label": "Max Content"
+			},
+			{
+			  "value": "100%",
+			  "label": "Full width"
+			}
+          ],
+		  "default": "max-content"
+        },
+        {
+          "type": "select",
+          "id": "sip_height",
+          "label": "Slide Info Position X",
+		  "options": [
+			{
+			  "value": "max-content",
+			  "label": "Max Content"
+			},
+			{
+			  "value": "100%",
+			  "label": "Full Height"
+			}
+          ],
+		  "default": "max-content"
+        },
+		{
+		  "type": "header",
+		  "content": "Slide info Padding & Margin"
+		},
+		{
+		  "type": "text",
+		  "id": "si_padding",
+		  "label": "Slide Info Container Padding",
+		  "info": "Example: 20px 10px 20px 10px"
+		},
+		{
+		  "type": "text",
+		  "id": "si_margin",
+		  "label": "Slide Info Container Margin",
+		  "info": "Example: 20px 10px 20px 10px"
+		},
+		{
+		  "type": "text",
+		  "id": "si_text_margin",
+		  "label": "Text Margin",
+		  "info": "Example: 20px 10px 20px 10px"
+		},
+		{
+		  "type": "text",
+		  "id": "si_title_margin",
+		  "label": "Title Margin",
+		  "info": "Example: 20px 10px 20px 10px"
+		}
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "autoplaySpeed",
+      "label": "Autoplay speed",
+      "info": "Time in millisecond"
+    },
+    {
+	  "type": "header",
+	  "content": "Mobile Only"
+	},
+    {
+      "type": "textarea",
+      "id": "review_text",
+      "label": "Review text",
+      "default": "4.9/5.0 | 120 Reviews"
+    },
+    {
+      "type": "text",
+      "id": "review_url",
+      "label": "Associated section id without #"
+    },
+    {
+      "type": "header",
+      "content": "Temporary image"
+    },
+    {
+      "type": "text",
+      "id": "start_date",
+      "label": "Start date"
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "End date"
+    },
+    {
+      "type": "header",
+      "content": "Color(Mobile)"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Color",
+      "default": "#000"
+    },
+    {
+      "type": "color_background",
+      "id": "background",
+      "label": "Background",
+      "default": "#f3f3f3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slideshow",
+      "blocks": [
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

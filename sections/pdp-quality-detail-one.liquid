@@ -1,0 +1,39 @@
+{% schema %}
+  {
+    "name": "PDP Qaulity Detail #1",
+    "settings": [
+	  {
+		"type": "image_picker",
+		"id": "bg_image",
+		"label": "Background Image"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "bg_image_mobile",
+		"label": "Background Image (Mobile)"
+	  },
+      {
+		"type": "textarea",
+		"id": "title",
+		"label": "Heading"
+	  },
+      {
+		"type": "textarea",
+		"id": "text",
+		"label": "Text"
+	  }
+	]
+  }
+{% endschema %}
+
+<div class="pdp_quality_detail">
+  <div class="mw pdp_quality_detail_wrapper lazyload lazyload-fade" data-bgset="{% render 'bgset', image: section.settings.bg_image %}">
+    <div class="pdpqd_content_wrapper">      
+      <div class="pdpqd_content">
+        <div class="section-title"><h2 class="big_title">{{section.settings.title}}</h2></div>
+        <div class="pdpqd_points"><div><p>{{section.settings.text}}</p></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>@media screen and ( max-width: 767px ) {.pdp_quality_detail_wrapper{background-image: url({{section.settings.bg_image_mobile | img_url: '375x470'}}) !important;}}</style>

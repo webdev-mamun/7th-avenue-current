@@ -1,0 +1,15 @@
+<a class="overlay_link" href="{{ collection.url }}" title="{{ collection_title }}"></a>
+<div class="collection-image ci">
+  
+    {% if collection.image %}
+      {% render "basic-responsive-image", type: collection.image %}
+      <noscript>
+        <img src="{{ collection.image | img_url: '1024x1024' }}" alt="{{ collection__image.alt | escape }}" class="collection__image" width="100%" height="100%" loading="lazy">
+      </noscript>
+    {% else %}
+      {% render "basic-responsive-image", type: collection.products.first.featured_image %}
+    {% endif %}
+</div>
+<div class="product-details">
+  <h3><a href="{{ collection.url }}" title="{{ collection_title }}">{{ collection.title }}</a></h3>
+</div>

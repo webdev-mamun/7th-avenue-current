@@ -1,0 +1,669 @@
+<script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+   assign active_depth_title = ''
+   assign disabled_options = ''
+   assign selected_color = 'empty'
+   for filter in collection.filters
+     if filter.type == 'boolean' or 'list'
+       if filter.values.size > 1
+         if filter.label == 'Seating Depth'
+           for filter_value in filter.values
+             if filter_value.active and filter_value.label == 'Extra-Deep'
+               assign active_depth_title = filter_value.label
+             else 
+               assign active_depth_title = ''
+             endif
+           endfor
+         endif
+
+         assign label = filter.label | downcase
+         if label == 'color'
+           for filter_value in filter.values
+             if filter_value.active
+               assign solid_color_value = filter_value.label | split: '_' | last
+               assign selected_color = solid_color_value | handle
+             endif
+           endfor
+         endif
+         if label == 'color' or label == 'fabric'
+           for filter_value in filter.values
+             if filter_value.count == 0 and filter_value.active == false
+               assign solid_disabled_value = filter_value.label | split: '_' | last
+               assign downcase_disabled_value = solid_disabled_value | handle
+               if disabled_options == ''
+                 assign disabled_options = downcase_disabled_value
+               else
+                 assign disabled_options = disabled_options | append: '~~' | append: downcase_disabled_value
+               endif
+             endif
+           endfor
+         endif
+   
+       endif
+     endif
+   endfor
+   assign disabled_options = disabled_options | split: '~~'
+   
+-%}     
+<div id="content" class="row sofa-collection total-filter-size">
+  <div id="main-content" class="collection_grid_wrapper">
+<div class="collection-page-sofa-collection-page-template collection-page-{{ section.id }}" id="collection-products" data-section-id="{{ section.id }}" data-section-type="collection-section">
+  <div class="collection-header" id="collection-header">
+    <div class="collection-header__row">
+      <div class="collection-header__col">
+		<h1 class="title">Shop{% if active_depth_title != blank %} <span class="active_depth_title">{{ active_depth_title }}</span>{% endif %} {{ collection.title }}</h1>
+      </div>
+      {% if collection.description != blank %}
+      <div class="collection-header__col">
+        <div class="description">{{ collection.description }}</div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  
+  {% # theme-check-disable %}
+  {%- capture content_for_querystring -%}{{ content_for_header }}{%- endcapture -%}
+  {%- assign pageUrl = content_for_querystring | split:'"pageurl":"' | last | split:'"' | first | split:'.myshopify.com' | last |
+    replace:'\/','/' | 
+    replace:'%20',' ' | 
+    replace:'\u0026','&'
+  -%}
+  {% # theme-check-enable %}
+
+  {% assign segments = pageUrl | split: '/' %}
+  {% if segments[2] contains 'vendors?q=' and segments[2] contains '&grid_item' %}
+  {% assign params = segments[2] | split: '&grid_item=' | last %}
+  {% assign grid_item = params | split: '&' | first | times: 1 %}
+  {% assign prod_limit = params | split: '&' | last | split: '=' | last | times: 1 %}
+  {% else %} 
+  {% assign grid_item = section.settings.grid %}
+  {% endif %}
+
+  {% if prod_limit != blank %}
+  {% assign number =  prod_limit %}
+  {% else %} 
+  {% assign number = section.settings.products_per_page %}
+  {% endif %}
+  
+  {% paginate collection.products by number %}
+
+  {% case grid_item %}
+  {% when 2 %}
+  {%- assign grid_item_width = 'desktop-6 tablet-3 mobile-full span-6' -%}
+  {% when 3 %}
+  {%- assign grid_item_width = 'desktop-4 tablet-2 mobile-half span-4' -%}
+  {% when 4 %}
+  {%- assign grid_item_width = 'desktop-3 tablet-2 mobile-full span-6' -%}
+  {% when 5 %}
+  {%- assign grid_item_width = 'desktop-fifth tablet-2 mobile-half span-one-fifth' -%}
+  <style>
+    @media screen and ( min-width: 981px ) {
+      @supports (display: grid) {
+        .collection-page-{{ section.id }} .product-loop.grid_wrapper {
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
+    }
+    @media screen and ( min-width: 741px ) and ( max-width: 980px ) {
+      @supports (display: grid) {
+        .collection-page-{{ section.id }} .product-loop.grid_wrapper {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+    @media screen and ( max-width: 740px ) {
+      @supports (display: grid) {
+        .collection-page-{{ section.id }} .product-loop.grid_wrapper {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    }
+  </style>
+  {% when 6 %}
+  {%- assign grid_item_width = 'desktop-2 tablet-2 mobile-half span-2' -%}
+  {% endcase %}
+  {% render 'facets', results: collection %}
+  <div class="grid_wrapper product-loop{% if section.settings.infinite_scroll %} is_infinite{% endif %}" id="sofa-collection">   
+    
+    {% for product in collection.products %}
+      {%- liquid
+        assign index = forloop.index
+        assign last_index = forloop.length
+      -%}
+     
+      <div class="{{ grid_item_width }} product-index" id="prod-{{ product.id }}" data-alpha="{{ product.title }}" data-price="{{ product.price }}" data-aos="{{ settings.scroll_animation }}">
+        {% render 'sofa-product-listing', collection_filters: collection.filters, product: product, disabled_options: disabled_options, selected_color: selected_color %}
+      </div>
+    	
+        {% for block in section.blocks %}
+    	  {% case block.type %}
+            {% when 'video_or_image' %}
+              {% liquid 
+                assign coll = collections[block.settings.collection]
+              %}
+              {% if coll.handle == collection.handle %}
+                {%- liquid
+                  assign video_media = block.settings.video
+                  assign mobile_video_media  = block.settings.mobileVideo
+                  if mobile_video_media  == blank
+                    assign mobile_video_media  = block.settings.video
+                  endif
+                  assign image_media  = block.settings.image
+                  assign full_image = block.settings.fullImage
+                  assign video_media_ratio = block.settings.videoRatio
+                -%}
+                   {% if video_media != blank %}
+                     {% assign has_video = true %}
+                     {% capture video_special %}
+                     <div class="video__wrapper desktop-video" style="aspect-ratio: {{ video_media_ratio }};">
+                        {{ video_media | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false }}
+                      </div>
+                      <div class="video__wrapper mobile-video" style="aspect-ratio: 1;">
+                        {{ mobile_video_media  | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false }}
+                      </div>
+                      {% endcapture %}
+                   {% elsif image_media  != blank %}
+                     {% assign has_video = false %}
+                     {% capture image_special %}
+                     {% render "basic-responsive-image", product: product, type: image_media  %}
+                     {% endcapture %}
+                   {% endif %}
+              {% endif %}
+    		{% when 'video' %}
+            {%- liquid
+              assign position = block.settings.video_position | plus: 0
+              if last_index < position
+    			assign position = last_index
+    		  endif
+              assign video = block.settings.video
+              assign mobile_video = block.settings.mobileVideo
+              if mobile_video == blank
+                assign mobile_video = block.settings.video
+              endif
+              assign image = block.settings.image
+              assign video_ratio = block.settings.videoRatio
+            -%}
+            {% if index == position %}
+                 {% if video != blank and video_special == blank and image_special == blank %}
+                   {% assign has_video = true %}
+                   {% capture default_video %}
+                   <div class="video__wrapper desktop-video" style="aspect-ratio: {{ video_ratio }};">
+                      {{ video | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false }}
+                    </div>
+                    <div class="video__wrapper mobile-video" style="aspect-ratio: 1;">
+                      {{ mobile_video | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false }}
+                    </div>
+                    {% endcapture %}
+                 {% elsif image != blank and video_special == blank and image_special == blank %}
+                   {% assign has_video = false %}
+                   {% capture default_image %}
+                   {% render "basic-responsive-image", product: product, type: image %}
+                   {% endcapture %}
+                 {% endif %}
+              <div class="desktop-12 tablet-6 mobile-3 span-12">
+                  <div class="collection__video collection-page-video{% if has_video or full_image %} full-media{% endif %}">
+                    <div class="collection__video--row">
+                      <div class="text__container">
+                        {% if block.settings.title != blank %}
+                        <h2 class="title">{{ block.settings.title }}</h2>
+                        {% endif %}
+                        <div class="icon__container">
+                          {% for i in (1..6) %}
+                          {% assign icon = 'icon_' | append: i %}
+                          {% assign icon_svg = 'icon_svg_' | append: i %}
+                          {% assign text = 'text_' | append: i %}
+                          {% if block.settings[icon_svg] != blank or block.settings[icon] != blank or block.settings[text] != blank %}
+                          <div class="icon">
+                            <div class="icon__image">
+                              {% if block.settings[icon_svg] != blank %}
+                                {% # theme-check-disable %}
+                              <img src="{{ block.settings[icon_svg] }}" alt="Icon" width="100%"
+                                height="100%"
+                                loading="lazy">
+                                {% # theme-check-enable %}
+                              {% else %}
+                                <img src="{{ block.settings[icon] | image_url: 'master' }}" alt="Icon" width="100%"
+                                  height="100%" loading="lazy">
+                              {% endif %}
+                            </div>
+                            <p class="icon__text">{{ block.settings[text] | downcase }}</p>
+                          </div>
+                          {% endif %}
+                          {% endfor %}
+                        </div>
+                      </div>
+                      <div class="media__container">
+                        {%- if video_special != blank -%}
+                          {{ video_special }}
+                        {%- elsif image_special != blank -%}
+                          {{ image_special }}
+                        {%- elsif default_video != blank -%}
+                          {{ default_video }}
+                        {% elsif default_image != blank %}
+                          {{ default_image }}
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            {% endif %}
+    	  {% endcase %}
+        {% endfor %}
+    {% endfor %}
+  </div>
+  <style type="text/css" media="screen">
+    {% if section.settings.grid == 2 %}
+    .collection-page-{{ section.id }} .product-index:nth-child(2n + 1) {
+      clear:left;
+    }
+    {% elsif section.settings.grid == 3 %}
+    .collection-page-{{ section.id }} .product-index:nth-child(3n + 1) {
+      clear:left;
+    }
+    {% elsif section.settings.grid == 4 %}
+    .collection-page-{{ section.id }} .product-index:nth-child(4n + 1) {
+      clear:left;
+    }
+    {% elsif section.settings.grid == 5 %}
+    .collection-page-{{ section.id }} .product-index:nth-child(5n + 1) {
+      clear:left;
+    }
+    {% elsif section.settings.grid == 6 %}
+    .collection-page-{{ section.id }} .product-index:nth-child(6n + 1) {
+      clear:left;
+    }
+    {% endif %}
+  </style>
+
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      $('#collection-filters').offcanvas({
+        modifiers: 'right, overlay', // default options
+        triggerButton: '#filtersButton' // btn to open offcanvas
+      });
+    })
+  </script>
+
+  <style type="text/css" media="screen">
+    #full-width-filter .filter,
+    #collection-page-template .show-filter,
+    #sidebar .filter {
+      color: {{ section.settings.filter_text_color }};
+      border: 1px solid {{ section.settings.filter_border_color }};
+      background-color: {{ section.settings.filter_bg_color }};
+    }
+    ul.filter-list {
+      color: {{ section.settings.filter_text_color }};
+      background-color: {{ section.settings.filter_bg_color }};
+    }
+    #full-width-filter button.filter-menu:after, #sidebar .filter h4:after {
+      background-color: transparent;
+      color: {{ section.settings.filter_text_color }};
+    }
+    ul.filter-list li a {
+      color: {{ section.settings.filter_text_color }};
+    }
+    #sidebar .filter h4, .filter-menu h4 {
+      border-color: {{ section.settings.filter_border_color }};
+      color: {{ section.settings.filter_text_color }};
+    }
+    #collection-filters {
+      background: {{ section.settings.filter_bg_color }};
+      color: {{ section.settings.filter_text_color }};
+      padding: 20px;
+      margin: 0;
+    }
+    #collection-filters h2 {
+      color: {{ section.settings.filter_text_color }};
+    }
+  </style>
+  {% render 'pagination', paginate: paginate %}
+  {%- if section.settings.infinite_scroll -%}
+  {% if paginate.next %}
+  <div class="page-load-status">
+    <div class="infinite-scroll-request">
+      {{ 'spinner-loader.svg' | inline_asset_content }}
+    </div>
+  </div>
+  {% endif %}
+{%- endif -%}
+  {% endpaginate %}
+</div>
+  <div class="clear"></div>
+  </div>
+  
+</div>
+
+
+{% schema %}
+{
+   "name":"Collection Page",
+   "max_blocks":12,
+   "settings":[
+      {
+        "type": "checkbox",
+        "id": "seriallyVariant",
+        "label": "Show variant serially active",
+        "default": false
+      },
+      {
+         "type":"range",
+         "id":"grid",
+         "min":2,
+         "max":6,
+         "step":1,
+         "label":"Products per row",
+         "default":4
+      },
+      {
+         "type":"range",
+         "id":"products_per_page",
+         "min":12,
+         "max":48,
+         "step":1,
+         "label":"Products per page",
+         "default":30
+      },
+      {
+         "type":"checkbox",
+         "id":"infinite_scroll",
+         "label":"Infinite scroll products",
+         "info":"Pagination will not show, products will continuously load as you scroll down the page"
+      },
+      {
+         "type":"select",
+         "id":"description_position",
+         "options":[
+            {
+               "value":"top_description",
+               "label":"Top of Page"
+            },
+            {
+               "value":"bottom_description",
+               "label":"Bottom of Page"
+            }
+         ],
+         "label":"Description position",
+         "default":"bottom_description"
+      },
+      {
+         "type":"select",
+         "id":"filter_position",
+         "options":[
+            {
+               "value":"left_sidebar",
+               "label":"Left Sidebar"
+            },
+            {
+               "value":"top_filters",
+               "label":"Top of Page"
+            }
+         ],
+         "label":"Filters position",
+         "default":"top_filters"
+      },
+      {
+         "type":"checkbox",
+         "id":"is_sticky",
+         "label":"Make sidebar sticky",
+         "default":false
+      },
+      {
+         "type":"header",
+         "content":"Filter Styles"
+      },
+      {
+         "type":"color",
+         "id":"filter_bg_color",
+         "label":"Background color",
+         "default":"#ffffff"
+      },
+      {
+         "type":"color",
+         "id":"filter_border_color",
+         "label":"Border color",
+         "default":"#333333"
+      },
+      {
+         "type":"color",
+         "id":"filter_text_color",
+         "label":"Text color",
+         "default":"#333333"
+      }
+   ],
+   "blocks":[
+       {
+         "type": "video_or_image",
+         "name": "Feature Video or Image",
+         "settings": [
+           {
+              "type": "collection",
+              "id": "collection",
+              "label": "Collection"
+            },
+            {
+              "type": "video",
+              "id": "video",
+              "label": "A Shopify-hosted video"
+            },
+            {
+              "type": "select",
+              "id": "videoRatio",
+              "label": "Video ratio",
+              "options": [
+                {
+                  "value": "16/6",
+                  "label": "16:9"
+                },
+                {
+                  "value": "4/3",
+                  "label": "4:3"
+                },
+                {
+                  "value": "3/2",
+                  "label": "3:2"
+                }
+              ],
+              "default": "4/3"
+            },
+            {
+              "type": "video",
+              "id": "mobileVideo",
+              "label": "A Shopify-hosted video(Mobile)"
+            },
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image"
+            },
+            {
+              "type": "checkbox",
+              "id": "fullImage",
+              "label": "Full image",
+              "default": true
+            }
+         ]
+     },
+      {
+		"type":"video",
+		"name":"Video",
+		"settings": [
+            {
+              "type": "video",
+              "id": "video",
+              "label": "A Shopify-hosted video"
+            },
+            {
+              "type": "select",
+              "id": "videoRatio",
+              "label": "Video ratio",
+              "options": [
+                {
+                  "value": "16/6",
+                  "label": "16:9"
+                },
+                {
+                  "value": "4/3",
+                  "label": "4:3"
+                },
+                {
+                  "value": "3/2",
+                  "label": "3:2"
+                }
+              ],
+              "default": "4/3"
+            },
+            {
+              "type": "video",
+              "id": "mobileVideo",
+              "label": "A Shopify-hosted video(Mobile)"
+            },
+			{
+				"type":"text",
+				"id":"video_position",
+				"label":"Position",
+				"default": "6"
+			},
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image"
+            },
+            {
+              "type": "checkbox",
+              "id": "fullImage",
+              "label": "Full image",
+              "default": true
+            },
+			{
+				"id":"title",
+				"type":"textarea",
+				"label":"Title",
+				"default":"The world’s greatest sofa has found it’s new home: yours."
+			},
+			{
+				"type":"header",
+				"content":"Icon 1"
+			},
+			{
+				"type":"url",
+				"id":"icon_svg_1",
+				"label":"Svg URL"
+			},
+			{
+				"id":"icon_1",
+				"type":"image_picker",
+				"label":"Icon"
+			},
+			{
+				"id":"text_1",
+				"type":"textarea",
+				"label":"Text",
+				"default":"ENDLESSLY CONFIGURABLE"
+			},
+			{
+				"type":"header",
+				"content":"Icon 2"
+			},
+			{
+				"type":"url",
+				"id":"icon_svg_2",
+				"label":"Svg URL"
+			},
+			{
+				"id":"icon_2",
+				"type":"image_picker",
+				"label":"Icon"
+			},
+			{
+				"id":"text_2",
+				"type":"textarea",
+				"label":"Text",
+				"default":"CLOUD-LIKE COMFORT"
+			},
+			{
+				"type":"header",
+				"content":"Icon 3"
+			},
+			{
+				"type":"url",
+				"id":"icon_svg_3",
+				"label":"Svg URL"
+			},
+			{
+				"id":"icon_3",
+				"type":"image_picker",
+				"label":"Icon"
+			},
+			{
+				"id":"text_3",
+				"type":"textarea",
+				"label":"Text",
+				"default":"RIDICULOUSLY DURABLE"
+			},
+			{
+				"type":"header",
+				"content":"Icon 4"
+			},
+			{
+				"type":"url",
+				"id":"icon_svg_4",
+				"label":"Svg URL"
+			},
+			{
+				"id":"icon_4",
+				"type":"image_picker",
+				"label":"Icon"
+			},
+			{
+				"id":"text_4",
+				"type":"textarea",
+				"label":"Text",
+				"default":"REMOVABLE, WASHABLE COVERS"
+			},
+			{
+				"type":"header",
+				"content":"Icon 5"
+			},
+			{
+				"type":"url",
+				"id":"icon_svg_5",
+				"label":"Svg URL"
+			},
+			{
+				"id":"icon_5",
+				"type":"image_picker",
+				"label":"Icon"
+			},
+			{
+				"id":"text_5",
+				"type":"textarea",
+				"label":"Text",
+				"default":"STAIN And LIQUID RESISTANT FABRICS"
+			},
+			{
+				"type":"header",
+				"content":"Icon 6"
+			},
+			{
+				"type":"url",
+				"id":"icon_svg_6",
+				"label":"Svg URL"
+			},
+			{
+				"id":"icon_6",
+				"type":"image_picker",
+				"label":"Icon"
+			},
+			{
+				"id":"text_6",
+				"type":"textarea",
+				"label":"Text",
+				"default":"BUILT-IN WIRELESS CHARGER"
+			}
+		]
+	  }
+   ]
+}
+{% endschema %}

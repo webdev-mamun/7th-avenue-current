@@ -1,0 +1,60 @@
+{% if section.settings.lower_description == 'large' %}
+    {%- assign lower = 'desktop-12 tablet-6 span-12' -%}
+{% elsif section.settings.lower_description == 'medium' %}
+    {%- assign lower = 'desktop-8 desktop-push-2 tablet-6 span-8 push-2' -%}
+{% elsif section.settings.lower_description == 'small' %}
+    {%- assign lower = 'desktop-6 desktop-push-3 tablet-4 tablet-push-1 span-6 push-3' -%}
+{% endif %}
+
+<div id="product-reviews" class="{{ lower }} mobile-3">
+  <div class="section-title okeReviews-margin">
+    <h2 class="big_title_reviews">{{ section.settings.reviews_heading }}</h2>
+  </div>
+  {%- for block in section.blocks -%}
+    {% render block %}
+  {%- endfor -%}
+</div>
+
+<div class="clear"></div>
+{% schema %}
+{
+  "name": "Reviews widget",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "reviews_heading",
+      "label": "Reviews widget heading"
+    },
+    {
+      "type": "select",
+      "id": "lower_description",
+      "label": "Lower description size",
+      "default": "small",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews widget"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,63 @@
+<div class="bfa_items_grid">
+  <div class="bfa_section_title"><h4>From People We Like</h4></div>
+  <div class="bfa_row">
+    {% for block in section.blocks %}
+    {% capture article_cycle %}{% cycle '', 'rev' %}{% endcapture %}
+    <div class="bfa_item {{ article_cycle }}">
+      {% capture article_image %}
+      <div class="article_image">
+        {% if block.settings.image != blank %}
+        <a href="{{ article.url }}">
+          {% render "basic-responsive-image", type: block.settings.image %}
+        </a>
+        {% endif %}
+      </div>
+      {% endcapture %}
+      {{ article_image }}
+      <div class="bfa_info">
+        <h3>{{block.settings.title}}</h3>
+        <p>          
+          {{ block.settings.text}}
+        </p>
+        <a href="{{ block.settings.link }}">CTA HERE ></a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Article",
+    "max_blocks": 10,
+    "settings": [
+    ],
+    "blocks": [
+      {
+        "type":"external_blog",
+        "name":"External Blog",
+        "settings":[
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "id": "title",
+            "type": "textarea",
+            "label": "Title"
+          },
+          {
+            "id": "text",
+            "type": "textarea",
+            "label": "Text"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

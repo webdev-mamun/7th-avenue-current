@@ -1,0 +1,256 @@
+{% paginate search.results by 24 %}
+   <div class="search_page_wrapper mw">
+     <div class="grid_wrapper">
+       <div class="desktop-12 span-12 text_center">
+         <div class="search-field">
+           <form action="{{ routes.search_url }}" method="get" role="search" class="search">
+             <input
+               class="search__input field__input"
+               id="Search-In-Template"
+               type="search"
+               name="q"
+               value="{{ search.terms | escape }}"
+               placeholder="Search for products, configurations, and more"
+             >
+             <input type="hidden" name="type" value="product">
+             <input name="options[prefix]" type="hidden" value="last">
+             <input
+               value="{{ 'general.search.submit' | t }}"
+               name="submit"
+               id="search_button"
+               class="button"
+               type="submit"
+             >
+           </form>
+         </div>
+         {% if search.performed %}
+           {% if search.results_count == 0 %}
+             <h1 class="big_title">
+               No Results Found for:<br>
+               <span>"{{ search.terms }}"</span>
+             </h1>
+           {% else %}
+             <h1 class="big_title">
+               Search Results for:<br>
+               <span>"{{ search.terms }}"</span>
+             </h1>
+           {% endif %}
+         {% endif %}
+       </div>
+     </div>
+     <div id="content" class="row">
+       <div id="main-content" class="collection_grid_wrapper">
+         <div class="content_col">
+           <div class="clear"></div>
+           {% if search.performed %}
+             <div class="grid_wrapper product-loop search_grid">
+               {% for item in search.results %}
+                 {% if item.price > 0 %}
+                   <div
+                     class="product-index desktop-4 tablet-2 mobile-half span-4 {{ item.object_type }}"
+                     id="prod-{{ item.id }}"
+                     data-alpha="{{ item.title }}"
+                   >
+                     {% if item.object_type != 'product' %}
+                       <div class="collection-image ci">
+                         {% if item.object_type == 'article' %}
+                           {% if item.image %}
+                             <a href="{{ item.url }}" title="{{ item.title | escape }}">
+                               {%- render 'basic-responsive-image', type: item.image -%}
+                             </a>
+                           {% else %}
+                             <div class="search-content prod-image">
+                               {{ item.content | strip_html | truncate: 200 }}
+                             </div>
+                           {% endif %}
+                         {% elsif item.object_type == 'page' %}
+                           {% if item.content contains 'img' %}
+                             {% assign feat_image = item.content | split: 'src="' %}
+                             {% assign feat_image = feat_image[1]
+                               | split: '"'
+                               | first
+                               | replace: '//cdn', 'http://cdn'
+                               | replace: 'http:http://', 'http://'
+                               | remove: 'https:'
+                             %}
+                             <a href="{{ item.url }}" title="{{ item.title | escape }}">
+                               <img
+                                 src="{{ feat_image }}"
+                                 alt="{{ item.title }}"
+                                 width="100"
+                                 height="100"
+                                 loading="lazy"
+                               >
+                             </a>
+                           {% else %}
+                             <div class="search-content prod-image">
+                               {{ item.content | strip_html | truncate: 200 }}
+                             </div>
+                           {% endif %}
+                         {% else %}
+                           {% if item.featured_image %}
+                             <a href="{{ item.url }}" title="{{ item.title | escape }}">
+                               <div class="reveal">
+                                 {% if item.variants.size > 1 and item.variants[0].title != 'Default Title' %}
+                                   {% for option in item.options_with_values %}
+                                     {% assign option_name = option.name | downcase %}
+ 
+                                     {% if option_name contains 'color' or option_name contains 'colour' %}
+                                       {% assign op_name = 'option' | append: option.position %}
+ 
+                                       {% for value in option.values %}
+                                         {% assign c_variant = item.variants | where: op_name, value %}
+                                         {% assign c_variant_price = c_variant.first.price %}
+                                         {% assign c_monthly_price = c_variant_price | divided_by: 36 %}
+                                         {% if item.url contains '?' %}
+                                           {% assign c_variant_url = item.url
+                                             | split: '?'
+                                             | first
+                                             | append: '?variant='
+                                             | append: c_variant.first.id
+                                           %}
+                                         {% else %}
+                                           {% assign c_variant_url = item.url append: '?variant=' | append: c_variant.first.id %}
+                                         {% endif %}
+                                         <div
+                                           class="variant__image {% if forloop.index == 1 %}open{% endif %}"
+                                           data-image="{{ value | handleize }}"
+                                           data-variant-price="{{ c_variant_price | money  }}"
+                                           data-monthly-price="{{ c_monthly_price | money_without_currency | round }}"
+                                           data-variant-url="{{c_variant_url}}"
+                                         >
+                                           {% if c_variant.first.featured_image != blank %}
+                                             {% render 'basic-responsive-image',
+                                               product: product,
+                                               type: c_variant.first.featured_image
+                                             %}
+                                           {% else %}
+                                             {% render 'basic-responsive-image',
+                                               product: product,
+                                               type: item.featured_image
+                                             %}
+                                           {% endif %}
+                                         </div>
+                                       {% endfor %}
+                                     {% endif %}
+                                   {% endfor %}
+                                   {% if settings.image_flip and product.images.size > 1 %}
+                                     <div class="hidden">
+                                       {% render 'basic-responsive-image', product: product, type: item.images[1] %}
+                                     </div>
+                                   {% endif %}
+                                 {% else %}
+                                   {% render 'basic-responsive-image', product: product, type: item.featured_image %}
+                                   {% if settings.image_flip and product.images.size > 1 %}
+                                     <div class="hidden">
+                                       {% render 'basic-responsive-image', product: product, type: product.images[1] %}
+                                     </div>
+                                   {% endif %}
+                                 {% endif %}
+                               </div>
+                             </a>
+                           {%- else -%}
+                             <a href="{{ item.url }}" title="{{ item.title | escape }}" style="line-height: 0;">
+                               {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                               {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                             </a>
+                           {%- endif -%}
+                         {% endif %}
+                       </div>
+                       {% if item.variants.size > 1 and item.variants[0].title != 'Default Title' %}
+                         {% for option in item.options_with_values %}
+                           {% assign option_name = option.name | downcase %}
+                           {% if option_name contains 'color' or option_name contains 'colour' %}
+                             <div class="color__swatch--container">
+                               <ul class="color__swatch">
+                                 {% for value in option.values %}
+                                   {% assign value_image = value | handleize | append: '.png' | file_url %}
+                                   <li
+                                     {% if forloop.index == 1 %}
+                                       class="open"
+                                     {% endif %}
+                                     data-option-name="{{ value | handleize }}"
+                                   >
+                                     <div
+                                       class="color__swatch--bg"
+                                       style="background-color: {{ value | handleize }}; background-image: url({{ value_image}});"
+                                     ></div>
+                                   </li>
+                                 {% endfor %}
+                               </ul>
+                             </div>
+                           {% endif %}
+                         {% endfor %}
+                       {% endif %}
+                       <div class="product-details">
+                         <a href="{{ item.url }}">
+                           <h3>{{ item.title }}</h3>
+                           {% if item.object_type == 'product' %}
+                             {% liquid
+                               assign current_variant = item.selected_or_first_available_variant
+                               assign spec = item.metafields.specification
+                               if current_variant.title contains 'Extra-Deep'
+                                 assign dimensions = spec['dimensions-extra-deep']
+                               elsif current_variant.title contains 'Classic'
+                                 assign dimensions = spec.dimensions
+                               endif
+                             %}
+                             {% if dimensions != blank %}
+                               <p class="product_specification">{{ dimensions }}</p>
+                             {% endif %}
+                             <div class="price__container">
+                               {%- if item.compare_at_price > item.price -%}
+                                 {% assign onsale = true %}
+                               {%- endif -%}
+                               <div class="collection__price">
+                                 {% if onsale %}
+                                   <span class="product-price was">
+                                     <span class="collection_money">{{ item.compare_at_price | money }}</span>
+                                   </span>
+                                 {% endif %}
+                                 <span class="product-price current{% if onsale %} sale{%endif%}" itemprop="price">
+                                   <span class="collection_money">
+                                     {%- if item.available %}From {{ item.price | money }}{% else %}Sold Out{% endif -%}
+                                   </span>
+                                 </span>
+                                 {% if item.compare_at_price > item.price and item.available %}
+                                   <span class="money_save money_save_pdp"
+                                     >(
+                                     {{-
+                                       item.compare_at_price
+                                       | minus: item.price
+                                       | times: 100.0
+                                       | divided_by: item.compare_at_price
+                                       | money_without_currency
+                                       | times: 100
+                                       | remove: '.0'
+                                     -}}
+                                     % OFF)</span
+                                   >
+                                 {% endif %}
+                               </div>
+                               {% if current_variant.inventory_quantity > 10 %}
+                                 <p class="inventory__massage" style="display: none;">
+                                   <span class="inventory__signal in-stock"></span>In Stock
+                                 </p>
+                               {% endif %}
+                             </div>
+                           {% endif %}
+                         </a>
+                       </div>
+                     {% else %}
+                       {% render 'sofa-product-listing', collectionFilters: collection.filters, product: item %}
+                     {% endif %}
+                   </div>
+                {% endif %}
+               {% endfor %}
+             </div>
+             {% render 'pagination' %}
+           {% endif %}
+           <div class="clear"></div>
+         </div>
+       </div>
+     </div>
+   </div>
+ {% endpaginate %}
+ 

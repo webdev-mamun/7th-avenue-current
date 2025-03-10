@@ -1,0 +1,68 @@
+.custom-accordion-title {
+  font-size: 12px;
+  position: relative;
+  color: #000;
+  background-color: transparent;
+  height: auto;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  padding-block: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.custom-accordion-title:hover {
+  color: #000000;
+  background-color: transparent;
+}
+
+.custom-accordion-item:last-child .custom-accordion-title:not([aria-expanded="true"]) {
+  border-bottom: 1px solid transparent;
+}
+
+.custom-accordion-item__icon {
+  display: block;
+  width: 14px;
+  height: 13px;
+  background-image: url("https://cdn.shopify.com/s/files/1/0602/7195/2115/files/down-arrow.png?v=1733375269");
+  background-position: center;
+  background-size: contain;
+  transform: rotateX(0deg);
+  transition: transform 200ms ease;
+}
+
+.custom-accordion-item
+  button[aria-expanded="true"]
+  .custom-accordion-item__icon {
+  transform: rotateX(180deg);
+}
+
+.custom-accordion-content {
+  overflow: hidden;
+  transition: transform 200ms ease;
+}
+
+
+.custom-accordion-content[aria-hidden="true"] {
+  transform: translateY(-10px);
+  max-height: 0
+}
+
+.custom-accordion-content[aria-hidden="false"] {
+  transform: translateY(0);
+  max-height: auto;
+}
+
+.custom-accordion-content-inner {
+  display: grid;
+  gap: 16px;
+  padding: 16px 10px;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.custom-accordion-item:last-child .custom-accordion-content-inner {
+  border-bottom: none;
+}

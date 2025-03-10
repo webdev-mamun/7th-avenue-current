@@ -1,0 +1,29 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "blog-banner",
+      "settings": {
+        "image": "shopify://shop_images/Sectional_Banner_476161ab-7182-47e8-8d12-eb41480d1b30.jpg",
+        "image_mobile": "shopify://shop_images/Sectional_Banner_Mobile_55cdc255-b2f4-4303-b5d8-21e0e77a9475.jpg"
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "main"
+  ]
+}

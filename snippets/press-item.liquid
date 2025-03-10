@@ -1,0 +1,33 @@
+<div class="press-item">
+  {% if image != blank %}
+    {% if btn_url != blank %}
+      <a href="{{ btn_url }}" target="_blank" class="press-item--image">
+    {{ image | image_url: width: 600, height: 337.5, crop: 'center' | image_tag: widths: '400, 500, 600' }}
+    </a>
+    {% else %}
+      <div class="press-item--image">
+      {{ image | image_url: width: 600, height: 337.5, crop: 'center' | image_tag: widths: '400, 500, 600' }}
+      </div>
+    {% endif %}
+  {% endif %}
+  <div class="press-item--content">
+    <div class="press-item--content-inner">
+     {% if title != blank %}
+      <h2 class="press-item--title">{{ title }}</h2>
+    {% endif %}
+    {% if publisher != blank %}
+      <p class="press-item--publisher">{{ publisher }}</p>
+    {% endif %}
+    {% if description != blank %}
+      <div class="press-item--description">
+        {{ description }}
+      </div>
+    {% endif %}
+    </div>
+    {% if btn_url != blank %}
+      <div class="press-link-wrapper">
+        <a href="{{ btn_url }}" target="_blank" class="press-item-link">Read More</a>
+      </div>
+    {% endif %}
+  </div>
+</div>

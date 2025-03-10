@@ -1,0 +1,39 @@
+{%- liquid
+  assign image = section.settings.image | image_url: width: section.settings.image.width
+  assign image_mobile = section.settings.image_mobile | image_url: width: 1024
+  if image_mobile == blank
+    assign image_mobile = image | image_url: width: 1024
+  endif
+-%}
+{%- if image != blank or image_mobile != blank -%}
+<div class="collection--banner__container">
+  <div class="collection--banner">
+  {%- if image != blank -%}
+    <div class="collection-banner__desktop" style="background-image: url({{ image }})">
+    </div>
+    {%- endif -%}
+    {%- if image_mobile != blank -%}
+    <div class="collection-banner__mobile" style="background-image: url({{ image_mobile }})">
+    </div>
+      {%- endif -%}
+  </div>
+</div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Blog banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image (Mobile)"
+      }
+    ]
+  }
+{% endschema %}

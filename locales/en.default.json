@@ -1,0 +1,470 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "accessibility": {
+    "close": "Close",
+    "unit_price_separator": "per",
+    "loading": "Loading...",
+  },
+  "onboarding": {
+    "product_title": "Example product title",
+    "collection_title": "Your collection's name"
+  },
+  "sections": {
+    "cart": {
+      "title": "Cart",
+      "caption": "Cart items",
+      "remove_title": "Remove {{ title }}",
+      "estimated_total": "Estimated total",
+      "new_estimated_total": "New estimated total",
+      "note": "Order special instructions",
+      "checkout": "Check out",
+      "empty": "Your cart is empty",
+      "cart_error": "There was an error while updating your cart. Please try again.",
+      "cart_quantity_error_html": "You can only add {{ quantity }} of this item to your cart.",
+      "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Duties and taxes included. Discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
+      "duties_and_taxes_included_shipping_at_checkout_without_policy": "Duties and taxes included. Discounts and shipping calculated at checkout.",
+      "taxes_included_shipping_at_checkout_with_policy_html": "Taxes included. Discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
+      "taxes_included_shipping_at_checkout_without_policy": "Taxes included. Discounts and shipping calculated at checkout.",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Duties included. Taxes, discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Duties included. Taxes, discounts and shipping calculated at checkout.",
+      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Taxes, discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
+      "taxes_at_checkout_shipping_at_checkout_without_policy": "Taxes, discounts and shipping calculated at checkout.",
+      "headings": {
+        "product": "Product",
+        "price": "Price",
+        "total": "Total",
+        "quantity": "Quantity",
+        "image": "Product image"
+      },
+      "login": {
+        "title": "Have an account?",
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Log in</a> to check out faster."
+      }
+    },
+  },
+  "password": {
+    "general": {
+      "thanks": "THANKS FOR SIGNING UP!",
+      "enter_store": "Enter Store using Password:",
+      "password": "Password",
+      "enter": "Enter",
+      "email_address": "Email Address",
+      "submit": "Submit",
+      "powered": " Password"
+    }
+  },
+  "general": {
+    "404": {
+      "title": "Oops - We couldn't find that one",
+      "subtext": "This page does not exist. Try searching for what you would like to find:"
+    },
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
+    "pagination": {
+      "showing_items": "Showing items",
+      "of": "of"
+    },
+    "forms": {
+      "post_error": "Sorry, looks like something went wrong. Please correct the following and submit again:"
+    },
+    "breadcrumbs": {
+      "home": "Home"
+    },
+    "continue_shopping": "Continue shopping",
+    "newsletter_form": {
+      "newsletter_email": "Your email",
+      "thanks": "THANKS FOR SIGNING UP!",
+      "popup_thanks": "Thanks for signing up! here is your coupon code:",
+      "email_placeholder": "Email address",
+      "confirmation": "THANKS FOR SIGNING UP!",
+      "submit": "Sign up"
+    },
+    "search": {
+      "no_results_html": "Your search for \"{{ terms }}\" did not yield any results.",
+      "results_for_html": "Your search for \"{{ terms }}\" revealed the following:",
+      "title": "Search",
+      "placeholder": "Search",
+      "submit": "Search"
+    }
+  },
+  "blogs": {
+    "article": {
+      "posted_on_date_html": "Posted on <time datetime=\"{{ date }}\">{{ date }}</time>",
+      "tags": "Tags",
+      "tagged": "Tagged",
+      "comments": "Comments",
+      "read_more": "Read More"
+    },
+    "comments": {
+      "title": "Leave a comment",
+      "name": "Name",
+      "email": "Email",
+      "message": "Comment",
+      "moderated": "All blog comments are checked prior to publishing",
+      "post": "Post comment",
+      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
+      "success": "Your comment was posted successfully! Thank you!",
+      "comments_with_count": {
+        "one": "{{ count }} comment",
+        "other": "{{ count }} comments"
+      }
+    },
+    "sidebar": {
+      "social_title": "Connect with us",
+      "twitter_title": "On Twitter",
+      "facebook_title": "Like us on Facebook",
+      "recent_posts": "Recent Posts",
+      "tags": "Filter Article Tags"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Cart",
+      "summary": "Cart Summary",
+      "close_cart": "Close",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "at_checkout": "Calculated at checkout",
+      "empty": "Your cart is currently empty.",
+      "product": "Product",
+      "price": "Price",
+      "qty": "Qty",
+      "remove": "Remove",
+      "total": "Total",
+      "subtotal": "Subtotal",
+      "continue": "Continue Shopping",
+      "update": "Update Cart",
+      "checkout": "Check Out",
+      "note": "Order Special Instructions",
+      "recently_viewed": "You also Viewed",
+      "cart_discount": "Discount Code (Applied at Checkout)",
+      "free_shipping_before": "You are only",
+      "free_shipping_after": "away from Free Domestic Shipping!",
+      "free_shipping_qualified": "Your order qualifies for Free Domestic Shipping!",
+      "free_shipping_exclusions": "(Excludes International)",
+      "discounts": "Discounts",
+      "savings": "Total Savings",
+      "discount_applied": "Discount Applied!",
+      "items": "Item(s)"
+    }
+  },
+  "collections": {
+    "general": {
+      "all_collections": "Collections",
+      "all_products": "All",
+      "no_matches": "There are no items in this collection",
+      "shop_by_designer": "Shop by Designer"
+    },
+    "sorting": {
+      "title": "Sort by",
+      "featured": "Featured",
+      "best_selling": "Best Selling",
+      "az": "Alphabetically, A-Z",
+      "za": "Alphabetically, Z-A",
+      "price_ascending": "Price, low to high",
+      "price_descending": "Price, high to low",
+      "date_descending": "Date, new to old",
+      "date_ascending": "Date, old to new"
+    },
+    "filter": {
+      "filtering_by": "Filtering By:",
+      "refine": "Refine"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Name",
+      "firstname": "First Name",
+      "lastname": "Last Name",
+      "subject": "Subject",
+      "companyname": "Company",
+      "address": "Address",
+      "email": "Email",
+      "phone": "Phone Number",
+      "message": "Message",
+      "websiteurl": "Website URL",
+      "acceptsmarketing": "Subscribe to stay updated with new products and offers!",
+      "send": "Send",
+      "post_success": "Thanks for contacting us. We'll get back to you as soon as possible."
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Account",
+      "logout": "logout",
+      "signup": "Login or create an account",
+      "details": "Account Details",
+      "view_addresses": "View Addresses",
+      "return": "Return to Account Details"
+    },
+    "activate_account": {
+      "title": "Activate Account",
+      "subtext": "Create your password to activate your account.",
+      "password": "Password",
+      "password_confirm": "Confirm Password",
+      "submit": "Activate Account",
+      "cancel": "Decline Invitation"
+    },
+    "addresses": {
+      "title": "Your Addresses",
+      "default": "Default",
+      "add_new": "Add a New Address",
+      "edit_address": "Edit address",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "company": "Company",
+      "address1": "Address1",
+      "address2": "Address2",
+      "city": "City",
+      "country": "Country",
+      "province": "Province",
+      "zip": "Postal/Zip Code",
+      "phone": "Phone",
+      "set_default": "Set as default address",
+      "add": "Add Address",
+      "update": "Update Address",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "forgot_password": "Forgot your password?",
+      "sign_in": "Sign In",
+      "cancel": "Return to Store",
+      "guest_title": "Continue as a guest",
+      "guest_continue": "Continue"
+    },
+    "orders": {
+      "title": "Order History",
+      "order_number": "Order",
+      "date": "Date",
+      "payment_status": "Payment Status",
+      "fulfillment_status": "Fulfillment Status",
+      "total": "Total",
+      "none": "You haven't placed any orders yet."
+    },
+    "order": {
+      "title": "Order",
+      "date": "Placed on",
+      "cancelled": "Order Cancelled on",
+      "cancelled_reason": "Reason: {{ reason }}",
+      "billing_address": "Billing Address",
+      "payment_status": "Payment Status",
+      "shipping_address": "Shipping Address",
+      "fulfillment_status": "Fulfillment Status",
+      "discount": "Discount",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "details": {
+        "product": "Product",
+        "sku": "SKU",
+        "price": "Price",
+        "quantity": "Quantity",
+        "total": "Total",
+        "fulfilled_at": "Fulfilled {{ date }}",
+        "subtotal": "Subtotal"
+      }
+    },
+    "recover_password": {
+      "title": "Reset your password",
+      "email": "Email",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "subtext": "We will send you an email to reset your password.",
+      "success": "We've sent you an email with a link to update your password."
+    },
+    "reset_password": {
+      "title": "Reset account password",
+      "subtext": "Enter a new password for {{ email }}",
+      "password": "Password",
+      "password_confirm": "Confirm Password",
+      "submit": "Reset Password"
+    },
+    "register": {
+      "title": "Create Account",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create"
+    }
+  },
+  "layout": {
+    "footer": {
+      "copyright": "Copyright",
+      "theme_title": "by"
+    },
+    "homepage": {
+      "mailing_list_join": "Hello You!",
+      "mailing_list_text": "Join our mailing list",
+      "onboarding": {
+        "no_content": "This section doesn’t currently include any content. Add content to this section using the sidebar."
+      }
+    }
+  },
+  "products": {
+    "general": {
+      "new": "NEW",
+      "sale": "SALE",
+      "sold": "SOLD OUT",
+      "quick_view": "Quick View",
+      "from": "From",
+      "view_full": "View Full Details",
+      "related": "More in this Collection",
+      "sale_price": "Sale",
+      "regular_price": "Regular"
+    },
+    "product": {
+      "designer": "Designer",
+      "sold_out": "Sold Out",
+      "unavailable": "Unavailable",
+      "compare_at": "Compare at",
+      "add_to_cart": "+ Add to Cart",
+      "select_options": "View options",
+      "details": "Details",
+      "sizing": "Sizing",
+      "video": "Video",
+      "model": "Product Care",
+      "back_to": "Back To",
+      "adding": "Adding...",
+      "thank_you": "Thank You!",
+      "added": "Added to Cart",
+      "view_cart": "View Cart",
+      "or": "or",
+      "continue": "Continue Shopping",
+      "qty_error_first": "Only",
+      "qty_error_last": "of this item is available",
+      "qty_sold_out": "This item is soldout",
+      "back_in_stock": "Please send me an email when this is available",
+      "back_in_stock_confirm": "Thanks, we will contact you when this is available",
+      "readmore": "Read More",
+      "quantity": {
+        "label": "Quantity",
+        "input_label": "Quantity for {{ product }}",
+        "increase": "Increase quantity for {{ product }}",
+        "decrease": "Decrease quantity for {{ product }}",
+        "minimum_of": "Minimum of {{ quantity }}",
+        "maximum_of": "Maximum of {{ quantity }}",
+        "multiples_of": "Increments of {{ quantity }}",
+        "min_of": "Min {{ quantity }}",
+        "max_of": "Max {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> in cart",
+        "note": "View quantity rules"
+      },
+      "volume_pricing": {
+        "title": "Volume Pricing",
+        "note": "Volume pricing available",
+        "minimum": "{{ quantity }}+",
+        "price_at_each": "at {{ price }}/ea",
+        "price_range": "{{ minimum }} - {{ maximum }}"
+      },
+      "price": {
+        "from_price_html": "From {{ price }}",
+        "regular_price": "Regular price",
+        "sale_price": "Sale price",
+        "unit_price": "Unit price"
+      },
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Here's your {{ value }} gift card for {{ shop }}!",
+      "subtext": "Here's your gift card!",
+      "disabled": "Disabled",
+      "expired": "Expired on {{ expiry }}",
+      "active": "Expires on {{ expiry }}",
+      "redeem": "Use this code at checkout to redeem your gift card",
+      "shop_link": "Start shopping",
+      "print": "Print",
+      "email": "Email"
+    }
+  },
+  "social": {
+    "icons": {
+      "facebook": "Share on Facebook",
+      "twitter": "Share on Twitter",
+      "pinterest": "Share on Pinterest"
+    },
+    "product_share": {
+      "share": "Share"
+    }
+  },
+  "pagefly": {
+    "products": {
+      "product": {
+        "regular_price": "Regular price",
+        "sold_out": "Sold out",
+        "unavailable": "Unavailable",
+        "on_sale": "Sale",
+        "quantity": "Quantity",
+        "add_to_cart": "+ Add to cart",
+        "back_to_collection": "Back to {{ title }}",
+        "view_details": "View details"
+      }
+    },
+    "article": {
+      "tags": "Tags:",
+      "all_topics": "All topics",
+      "by_author": "by {{ author }}",
+      "posted_in": "Posted in",
+      "read_more": "Read more",
+      "back_to_blog": "Back to {{ title }}"
+    },
+    "comments": {
+      "title": "Leave a comment",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "post": "Post comment",
+      "moderated": "Please note, comments must be approved before they are published",
+      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
+      "success": "Your comment was posted successfully! Thank you!",
+      "comments_with_count": {
+        "one": "{{ count }} comment",
+        "other": "{{ count }} comments"
+      }
+    },
+    "password_page": {
+      "login_form_message": "Enter store using password:",
+      "login_form_password_label": "Password",
+      "login_form_password_placeholder": "Your password",
+      "login_form_submit": "Enter",
+      "signup_form_email_label": "Email",
+      "signup_form_success": "We will send you an email right before we open!",
+      "password_link": "Enter using password"
+    }
+  },
+  "shopify": {
+    "links": {
+      "powered_by_shopify": " "
+    },
+    "checkout": {
+      "remember_me": {
+        "modal": {
+          "footer": " "
+        },
+        "description_html": "Next time you check out here, you’ll receive a code by text message to securely pay and finish transaction"
+      },
+      "contact": {
+        "phone_label": "Phone - Receive texts from our team",
+        "optional_phone_label": "Phone - Receive texts from our team"
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Keep me up to date on news and exclusive offers via email and text messages*"
+      }
+    }
+  }
+}

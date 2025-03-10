@@ -1,0 +1,60 @@
+<div class="ci">
+  {% if product.available %}
+    {% for col in product.collections %}
+      {% if col.handle == 'new' %}
+        <div class="new icn">{{ 'products.general.new' | t }}</div>
+      {% endif %}
+    {% endfor %}
+
+    {% if product.price < product.compare_at_price %}
+      <div class="sale-item icn">{{ 'products.general.sale' | t }}</div>
+    {% endif %}
+  
+  {% else %}
+    <div class="so icn">{{ 'products.general.sold' | t }}</div>
+  {% endif %}
+
+    {% if product.featured_image %}
+      <a href="{{ product.url | within: collection }}" title="{{ product.title | escape }}">
+        <div class="reveal">
+          {% render "basic-responsive-image", product: product, type: product.featured_image %}
+          {% if settings.image_flip and product.images.size > 1 %}
+            <div class="hidden">
+              {% render "basic-responsive-image", product: product, type: product.images[1] %}
+            </div>
+          {% endif %}
+        </div>
+      </a>
+    {%- else -%}
+      {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+      {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+  </div>
+
+
+<div class="product-details">
+  <a href="{{ product.url | within: collection }}">
+    <h3>{{ product.title }}</h3>
+    {% if settings.vendor %}
+      <p>by {{ product.vendor }}</p>
+    {% endif %}
+  </a>
+
+  
+  {% unless product.template_suffix == 'not-for-sale' %}
+  <div class="product_listing_options">
+  {% if product.variants.size > 1 %}
+     {% if settings.product_info == 'sizes' and product.available %}
+       {% include 'show-sizes' %}
+     {% elsif settings.product_info == 'colors' and product.available %}
+       {% include 'show-colors' %}
+     {% endif %}
+   {% endif %}
+
+  {% if settings.product_info == 'add_to_cart' and settings.quickview == false %}
+    {% include 'product-grid-add' %}
+  {% endif %}
+
+  </div>
+  {% endunless %}
+</div>

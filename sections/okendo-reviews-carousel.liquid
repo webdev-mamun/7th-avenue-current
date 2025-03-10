@@ -1,0 +1,103 @@
+{% if shop.metafields.okendo.settings.isWidgetPlusEnabled == true %}
+    {% assign renderWidgetPlusContent = true %}
+{% elsif shop.metafields.okendo.settings.isWidgetPlusAdminEnabled == true and theme.role == "unpublished" %}
+    {% assign renderWidgetPlusContent = true %}
+{% endif %}
+
+{% if section.settings.product != blank %}
+    {% capture product_data_attribute %}data-oke-reviews-product-id="shopify-{{ section.settings.product.id }}"{% endcapture %}
+{% endif %}
+
+{% if section.settings.show_heading %}
+    {% if renderWidgetPlusContent == true %}
+        {% if section.settings.heading != blank %}
+            {% capture heading_data_attribute %}data-oke-header-text="{{ section.settings.heading }}"{% endcapture %}
+        {% endif %}
+        {% if section.settings.badge_link != blank %}
+                {% capture carousel_link_data_attribute %}data-oke-header-badge-url="{{ section.settings.badge_link }}"{% endcapture %}
+        {% endif %}
+    {% else %}
+        {% if section.settings.heading != blank %}
+            {% capture heading_data_attribute %}data-oke-reviews-carousel-heading="{{ section.settings.heading }}"{% endcapture %}
+        {% endif %}
+        {% if section.settings.badge_link != blank %}
+            {% capture carousel_link_data_attribute %}data-oke-reviews-carousel-link="{{ section.settings.badge_link }}"{% endcapture %}
+        {% endif %}
+    {% endif %}
+{% elsif renderWidgetPlusContent != true %}
+    {% capture hide_header_attribute %}data-oke-reviews-carousel-hide-header="true"{% endcapture %}
+{% else %}
+    {% capture hide_header_attribute %}data-oke-hide-header="true"{% endcapture %}
+{% endif %}
+{% if renderWidgetPlusContent == true %}
+<div id="product-reviews" class=" pdb-sofa-review row"> 
+  <div class="section-title okeReviews-margin"> 
+    <h2 class="big_title_reviews">Reviews Carousel</h2>
+  </div> 
+    <div
+        data-oke-carousel
+        {{ product_data_attribute }}
+        {{ heading_data_attribute }}
+        {{ carousel_link_data_attribute }}
+        {{ hide_header_attribute }}
+    ></div>
+</div>
+    {% else %}
+    <div
+        data-oke-reviews-carousel
+        {{ product_data_attribute }}
+        {{ heading_data_attribute }}
+        {{ carousel_link_data_attribute }}
+        {{ hide_header_attribute }}
+    ></div>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Reviews Carousel",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Carousel Settings"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_heading",
+            "label": "Show heading",
+            "default": false
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading Text"
+        },
+        {
+            "type": "header",
+            "content": "Review Count Link"
+        },
+        {
+            "type": "paragraph",
+            "content": "If the heading is visible above the carousel, a review count will also be visible."
+        },
+        {
+            "type": "url",
+            "id": "badge_link",
+            "label": "Review Count Link"
+        },
+        {
+            "type": "header",
+            "content": "Filter Reviews"
+        },
+        {
+            "type": "product",
+            "id": "product",
+            "label": "By Product"
+        }
+    ],
+  "presets": [
+    {
+      "name": "Okendo Reviews Carousel"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,25 @@
+{%if collection.handle == 'all'%} 
+{% assign img_url = section.settings.image | img_url: 'master' %}
+{%else%}  
+{% assign img_url = collection.image | img_url:'master' %}
+{%endif%}
+<div class="collection-banner" style="background: #ddd;background-image: url('{{img_url}}'); background-size:cover;background-position: center">      
+  <div class="collection_inner">  
+    <div class="collection_info">
+      <h1>{% if collection.handle == 'all' %}Shop {{ 'collections.general.all_products' | t }}{% else %}{{- collection.title -}}{% endif %}</h1>
+      {% if collection.description != blank %}<h2 class="banner_dsc">{{collection.description}}</h2>{% endif %}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Collection banner",
+    "settings": [
+	  {
+         "type":"image_picker",
+         "id":"image",
+         "label":"Banner image for Sholl All"
+      }
+	]
+  }
+{% endschema %}

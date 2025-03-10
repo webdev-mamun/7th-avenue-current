@@ -1,0 +1,141 @@
+<section class="homepage-image-column-{{ section.id }}"
+data-section-id="{{ section.id }}"
+data-aos="{{ settings.scroll_animation }}">
+  <h1 class="section_h"> {{ section.settings.section_h }} </h1>
+  {% if section.settings.full_width %}<div class="gridlock-fluid"><div class="row">{% endif %}
+  <article id="image-columns" class="row">
+    {% for block in section.blocks %}
+      {% case block.settings.image_width %}
+      {% when '25%' %}
+        {%- assign image_width = 'desktop-3 tablet-fourth' -%}
+      {% when '33%' %}
+        {%- assign image_width = 'desktop-4 tablet-2' -%}
+      {% when '50%' %}
+        {%- assign image_width = 'desktop-6 tablet-3' -%}
+      {% when '66%' %}
+        {%- assign image_width = 'desktop-8 tablet-4' -%}
+      {% when '75%' %}
+        {%- assign image_width = 'desktop-9 tablet-three-fourths' -%}
+      {% when '100%' %}
+        {%- assign image_width = 'desktop-12 tablet-6' -%}
+      {% endcase %}
+
+      <div class="image-column {{ image_width }} mobile-3 image-column-{{ block.id }}" {{ block.shopify_attributes }}>
+        <div class="image-container">
+            {% if block.settings.image != blank %}
+            <a href="{{ block.settings.link }}">
+              {% render 'basic-responsive-image', type: block.settings.image %}
+            </a>
+            {% else %}
+              <div class="onboard">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            {% endif %}
+            <div class="text-container">
+              {% if block.settings.rich_text != blank %}
+              <div class="text-content">
+                  {{ block.settings.rich_text }}
+               </div>
+              {% endif %}
+            </div>
+        </div>
+      </div>
+
+      <style>
+        /* IMAGE BLOCKS */
+        .homepage-image-column-{{ section.id }} {
+          background-color: {{ section.settings.promo_background_color }};
+        }
+        .image-column-{{ block.id }} {
+          text-align: {{ block.settings.text_align }};
+        }
+        .image-column-{{ block.id }} .text-content h3 {
+          font-size: {{ section.settings.heading_size }}px;
+          font-weight: {{ section.settings.heading_weight }};
+          color: {{ block.settings.text_color }};
+          margin-top: 10px;
+        }
+        .image-column-{{ block.id }} .text-content p {
+          color: {{ block.settings.text_color }};
+          margin-top: 10px;
+        }
+        .image-column-{{ block.id }} .text-content .cta {
+          margin-top: 10px;
+        }
+
+      </style>
+    {% endfor %}
+    {% if section.blocks.size == 0 %}
+      {% include 'no-blocks' %}
+    {% endif %}
+  </article>
+  {% if section.settings.full_width %}</div></div>{% endif %}
+</section>
+
+
+
+{% schema %}
+{
+  "name": "Image column with text",
+  "max_blocks": 3,
+  "class": "index-section",
+  "settings": [
+      {
+        "type": "text",
+        "id": "section_h",
+        "label": "Section heading"
+      }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "image_width",
+          "label": "Container width",
+          "default": "33%",
+          "options": [
+			      {
+               "value":"25%",
+               "label":"25%"
+            },
+            {
+               "value":"33%",
+               "label":"33%"
+            },
+            {
+               "value":"50%",
+               "label":"50%"
+            },
+            {
+               "value":"66%",
+               "label":"66%"
+            },
+            {
+               "value":"75%",
+               "label":"75%"
+            },
+            {
+               "value":"100%",
+               "label":"100%"
+            }
+          ]
+        },
+       {
+        "type": "richtext",
+        "id": "rich_text",
+        "label": "Text",
+        "default": "<p>Enter text to accompany your image.</p>"
+       }
+      ]
+    }
+  ]
+}
+{% endschema %}

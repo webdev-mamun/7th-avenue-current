@@ -1,0 +1,186 @@
+{%- liquid
+  case section.settings.slider_speed
+  when 2
+    assign slider_speed = 2000
+  when 3
+    assign slider_speed = 3000
+  when 4
+    assign slider_speed = 4000
+  when 5
+    assign slider_speed = 5000
+  when 6
+    assign slider_speed = 6000
+  when 7
+    assign slider_speed = 7000
+  when 8
+    assign slider_speed = 8000
+  when 9
+    assign slider_speed = 9000
+  when 10
+    assign slider_speed = 10000
+  endcase
+  -%}
+
+{% if section.blocks.size != 0 %}
+  {% unless template == 'index' and section.settings.hidden_on_homepage %}
+    <section data-section-id="{{ section.id }}" class="info-bar" data-section-type="scrolling-announcements">
+      <div class="gridlock-fluid">
+        <div class="row">
+          <div class="info-bar-wrapper row">
+            <div class="info-bar-content desktop-12 tablet-6 mobile-3" data-speed="{{ slider_speed }}" data-shown="{{ section.settings.desktop_slides_shown }}"{% if section.settings.arrows %} data-arrows="true"{% else %} data-arrows="false"{% endif %}{% if section.settings.autoplay %} data-autoplay="true"{% else %} data-autoplay="false"{% endif %}>
+              {%- for block in section.blocks -%}
+                <div class="info-bar-item" {{ block.shopify_attributes }}>
+                  {{ block.settings.text }}
+                </div>
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+      </div>
+      <style>
+        .info-bar-wrapper {
+          background: {{ section.settings.info_background }};
+          {% if section.settings.border_top %}border-top: 1px solid {{ settings.dotted_color }};{% endif %}
+          {% if section.settings.border_bottom %}border-bottom: 1px solid {{ settings.dotted_color }};{% endif %}
+        }
+
+        .info-bar-item, .info-bar-item p, .info-bar-item a {
+          color: {{ section.settings.info_text }};
+          font-size: {{ section.settings.text_size }}px;
+          margin-bottom: 0! important;
+        }
+        .info-bar-content a.slick-arrow {
+          color: {{ section.settings.info_text }};
+        }
+        .info-bar-content .slick-slide {
+          max-height: calc({{ section.settings.height }}px + 30px) !important;
+        }
+        .info-bar-content, .info-bar-content .slick-track {
+            min-height: {{ section.settings.height }}px;
+            padding: 10px;
+        }
+        {% if section.settings.hidden_on_homepage %}
+          body.index .info-bar-wrapper {
+            display: none;
+          }
+        {% endif %}
+          .info-bar-content {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease;
+            -webkit-transition: opacity 1s ease;
+          }
+          .info-bar-content.slick-initialized {
+            visibility: visible;
+            opacity: 1;
+          }
+      </style>
+    </section>
+  {% endunless %}
+{% endif %}
+
+{% schema %}
+{
+    "name": "Scrolling Announcements",
+	  "max_blocks": 5,
+    "settings": [
+    {
+     "type": "paragraph",
+     "content": "This section will not be shown beneath the header on the homepage if you have selected the float header over slideshow in the header section"
+    },
+    {
+      "type": "header",
+      "content": "Scrolling Announcements"
+    },
+    {
+      "type": "checkbox",
+      "id": "hidden_on_homepage",
+      "label": "Hide on home page"
+    },
+    {
+      "type": "checkbox",
+      "id": "arrows",
+      "label": "Show control arrows"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay"
+    },
+    {
+      "type": "range",
+      "id": "desktop_slides_shown",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Items to show on desktop",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "slider_speed",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "label": "Slide speed (seconds)",
+      "default": 5
+    },
+    {
+      "type": "color",
+      "id": "info_text",
+      "label": "Info bar text",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "info_background",
+      "label": "Info bar background",
+      "default": "#ccc"
+    },
+    {
+      "type":"checkbox",
+      "id":"border_top",
+      "label":"Border top"
+    },
+    {
+      "type":"checkbox",
+      "id":"border_bottom",
+      "label":"Border bottom"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "min": 30,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Minimum height",
+      "default": 60
+    }
+  ],
+ "blocks":[
+  {
+    "type": "text",
+    "name": "Text",
+    "settings":[
+    {
+        "id": "text",
+        "type": "richtext",
+        "label": "Text",
+        "default": "<p>Add content to a sliding text message bar</p>"
+     }
+    ]
+   }
+   ]
+  }
+{% endschema %}

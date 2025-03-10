@@ -1,0 +1,23 @@
+<script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  
+    window.theme = window.theme || {};
+    theme.strings = {
+      qtyErrorFirst: {{ 'products.product.qty_error_first' | t | json }},
+      qtyErrorLast: {{ 'products.product.qty_error_last' | t | json }},
+      qtySoldOut: {{ 'products.product.qty_sold_out' | t | json }}
+  
+    }
+
+    theme.settings = {
+      ajaxCartMethod: {{ settings.ajax_cart_method | json }},
+      showMultipleCurrencies: {{ settings.show_multiple_currencies | json }}
+    }
+
+    theme.routes = {
+      url: {{ request.path | prepend: shop.url | json }}
+    }
+  
+    var template = {{ template | json }};
+  </script>
+  

@@ -1,0 +1,283 @@
+<nav class="shifter-navigation no-fouc" data-section-id="{{ section.id }}" data-section-type="mobile-navigation">
+  <div class="mobile_nav_inner">
+    <div class="mobile_nav_top">
+      {% if section.settings.search %}
+      <div class="search">
+        <form role="search" action="/search" method="get">
+          <input type="hidden" name="type" value="product">
+          <input type="text" name="q" id="q" placeholder="{{ 'general.search.placeholder' | t }}" />
+        </form>
+      </div>
+      {% endif %}
+      <ul id="accordion"{% if section.settings.nav_secondary != blank %} class="has-secondary"{% endif %}role="navigation">
+        {% for link in linklists[section.settings.main_nav].links %}
+        {% assign hasMegaChild = false %}
+        {% for block in section.blocks %}
+        {% if block.type == 'child_menu' %}
+        {% if block.settings.menu_item == link.handle %}
+        {% capture megaChild %}
+        <li class="accordion-toggle" aria-haspopup="true" aria-expanded="false">
+          <a href="{{ link.url }}">
+            {{ link.title | escape }}
+          </a>
+        </li>
+        <div class="menu__child--leayer">
+          <p class="menu__child--back">back</p>
+          <ul class="menu__child--leayer-menu__primary">
+            {% for link in linklists[block.settings.child_menu].links %}
+            <li>
+              <a href="{{ link.url }}">
+                {{ link.title | escape }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+          <ul class="menu__child--leayer-menu__secondary">
+            {% for link in linklists[block.settings.child_menu_2].links %}
+            <li>
+              <a href="{{ link.url }}">
+                {{ link.title | escape }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endcapture %}
+        {% assign hasMegaChild = true %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    
+        {% if hasMegaChild %}
+        {{ megaChild }}
+        {% elsif link.links != blank %}
+          <mobile-menu-dropdown class="mobile-menu-item-has-dropdown" style="--size: {{ link.links.size }};">
+            <a class="has-submenu" href="{{ link.url }}">
+              <span>{{ link.title | escape }}</span><span class="arr"></span>
+            </a>
+            <div class="mobile-menu-item-dropdown">
+              <ul>
+                {% for sub_link in link.links %}
+                  <li>
+                    <a href="{{ sub_link.url }}">
+                      {{ sub_link.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </mobile-menu-dropdown>
+        {% else %}
+        <li>
+          <a href="{{ link.url }}">
+            {{ link.title | escape }}
+          </a>
+        </li>
+        {% endif %}
+        {% endfor %}    
+        {% if shop.customer_accounts_enabled %}
+        {% if customer  %}
+        <!--
+    <li>
+    <a href="/account">Account</a>
+    </li> -->
+        <li>
+          <a href="/account/logout" class="logout-link">
+            {{ 'customer.account.logout' | t }}
+          </a>
+        </li>
+        {% else %}
+        <!--
+    <li>
+    <a href="/account/login">Account</a>
+    </li> -->
+        {% endif %}
+        {% endif %}
+        <li class="cust">
+          <a href="/pages/contact-us">
+            Contact Us
+          </a>
+        </li>
+      </ul>
+      <ul class="mobile_nav_secondary">
+        {% for link in linklists[section.settings.nav_secondary].links%}
+        <li>{{ link.title | link_to: link.url }}</li>
+        {% endfor %}
+      </ul>
+      {% if section.settingssocial_icons %}
+      {% include 'social-icons' %}
+      {% endif %}
+    </div>
+    <ul class="mobile_nav_bottom">
+      {% for link in linklists[section.settings.footer-bottom-menu].links%}
+      <li>{{ link.title | link_to: link.url }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .shifter-enabled nav.shifter-navigation {
+    background: {{ section.settings.background }};
+    color: {{ section.settings.color }};
+  }
+  nav.shifter-navigation ul li a,
+  nav.shifter-navigation .accordion-toggle,
+  nav.shifter-navigation .accordion-toggle2,
+  nav.shifter-navigation .accordion-toggle2 a {
+    color: {{ section.settings.color }};
+    font-family: Ortica-Light;
+  }
+  ul#accordion li,
+  .accordion-toggle2 {
+    border-top: none;
+    font-family: Ortica-Light;
+  }
+/*   ul#accordion > li:first-child{
+    border-top: 1px solid {{ section.settings.border_color }};
+  } */
+  {% if section.settings.social_icons %}
+  nav.shifter-navigation ul#social-icons li {
+    background: {{ section.settings.icon_background }};
+  }
+  nav.shifter-navigation ul#social-icons li a {
+    color: {{ section.settings.icon_color }};
+  }
+  {% endif %}
+  nav.shifter-navigation ul.sub {
+    margin-top: 0 !important;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  ul#accordion ul.sub li{padding-left: 25px;}
+</style>
+
+<script>
+  function debounce(fn, wait) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn.apply(this, args), wait);
+    };
+  }
+
+  class MobileMenuDropdown extends HTMLElement {
+    constructor() {
+      super();
+      this.debouncedOnClick = debounce((event) => {
+        this.onClickHandler(event);
+      }, 10);
+      this.querySelector('.has-submenu').addEventListener('click', this.debouncedOnClick.bind(this))
+    }
+
+    onClickHandler(event) {
+      event.preventDefault();
+      this.classList.toggle('open');      
+    }
+  }
+
+  customElements.define('mobile-menu-dropdown', MobileMenuDropdown);
+</script>
+
+{% schema %}
+  {
+    "name": "Mobile navigation",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      {
+        "type": "link_list",
+        "id": "main_nav",
+        "label": "Choose main menu",
+        "default":"main-menu"
+      },
+      {
+        "type": "link_list",
+        "id": "nav_secondary",
+        "label": "Choose secondary menu"
+      },
+	  {
+        "type": "link_list",
+        "id": "footer-bottom-menu",
+        "label": "Choose bottom menu"
+      },
+      {
+        "type":"checkbox",
+        "id":"search",
+        "label": "Show search",
+        "default": true
+      },
+      {
+         "type": "header",
+         "content": "Style"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Text color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "#1e1e1e"
+      },
+      {
+        "type": "color",
+        "id": "border_color",
+        "label": "Borders",
+        "default": "#3e3e3e"
+      },
+      {
+        "type":"header",
+        "content":"Social icons"
+      },
+      {
+        "type":"checkbox",
+        "id":"social_icons",
+        "label": "Show social icons",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "icon_color",
+        "label": "Icon color",
+        "default": "#1e1e1e"
+      },
+      {
+        "type": "color",
+        "id": "icon_background",
+        "label": "Icon background",
+        "default": "#f8f8f8"
+      }
+	  ], 
+"blocks": [
+	{
+		"type":"child_menu",
+		"name":"Child menu",
+		"settings": [
+		{
+          "type":"text",
+          "id":"menu_item",
+          "label":"Menu item",
+          "info":"Enter menu item handle to apply a child menu"
+        },
+		{
+        "type": "link_list",
+        "id": "child_menu",
+        "label": "Choose child menu"
+		},
+		{
+        "type": "link_list",
+        "id": "child_menu_2",
+        "label": "Choose child menu"
+		}
+	]
+	}
+	]
+  }
+{% endschema %}

@@ -1,0 +1,195 @@
+<button type="button" class="button hideondesktop sidebarToggle">Refine</button>
+{% if section.settings.featured_display %}
+<div class="sidebar_items_featured_collections">
+  <div class="sidebar_item_header">
+    <h4>{{section.settings.featured_title}}</h4>
+  </div>
+  <div class="sidebar_item_body">    
+    <ul class="featured_slider" id="featured_slider">
+      {% for block in section.blocks %}
+      {% if block.settings.section_name == 'featured' %}
+      {% assign coll = collections[block.settings.collection] %}
+      <li><a {% if coll.handle == collection.handle %}class="active" {% endif%}href="{{ coll.url }}">{{coll.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>	
+</div>
+{% endif %}
+<div class="collection_sidebar_wrapper">
+  
+  <div class="sidebar_items">    
+    <div class="sidebar_close sidebarToggle"><i class="la la-remove"></i></div>
+    {% if section.settings.category_display %}
+    <div class="sidebar_item first open">
+      <div class="sidebar_item_header open">
+        <h4>{{ section.settings.category_title}}</h4>
+      </div>
+      <div class="sidebar_item_body">
+        {% for block in section.blocks %}
+        {% if block.settings.section_name == 'category' %}
+        {% assign coll = collections[block.settings.collection] %}
+        <a {% if coll.handle == collection.handle %}class="active" {% endif%}href="{{ coll.url }}">{{coll.title}}</a>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    {% if section.settings.subject_display %}
+    <div class="sidebar_item mid open">
+      <div class="sidebar_item_header open">
+        <h4>{{section.settings.subject_title}}</h4>
+      </div>
+      <div class="sidebar_item_body">      	
+        {% for block in section.blocks %}
+        {% if block.settings.section_name == 'subject' %}
+        {% assign coll = collections[block.settings.collection] %}
+        <a {% if coll.handle == collection.handle %}class="active" {% endif%}href="{{ coll.url }}">{{coll.title}}</a>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    {% if section.settings.color_display %}
+    <div class="sidebar_item last open">
+      <div class="sidebar_item_header open">
+        <h4>{{section.settings.color_title}}</h4>
+      </div>
+      <div class="sidebar_item_body">
+        {% for block in section.blocks %}
+        {% if block.settings.section_name == 'color' %}
+        {% assign coll = collections[block.settings.collection] %}
+        <a {% if coll.handle == collection.handle %}class="active" {% endif%}href="{{ coll.url }}">{{coll.title}}</a>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  <div class="static_links" id="shop-all-button">
+    <a class="button coll_link" href="/collections/all" 
+       style="font-family: Ortica-Light !important;letter-spacing:0">
+      Shop All
+    </a>      
+  </div> 
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    (function(){
+      $('.sidebar_item .sidebar_item_header').on('click', function() {
+        $this = $(this);
+        $this.toggleClass('open');      
+        $this.next().slideToggle('fast').toggleClass('open');
+      });
+      $('.sidebarToggle').on('click', function() {    
+        $('.collection_sidebar_wrapper').toggleClass('open');
+      });
+    })();
+  });
+  document.addEventListener('DOMContentLoaded', function(){    
+    var siteHeader = $('header.scrollheader'),
+        siteFooter = $('#shopify-section-footer'),
+        sidebar = $('#shopify-section-collection-page-sidebar-template'),
+        headerHeight,sidebarWidth,targetPosition, secondTargetPosition;
+    $(window).on('load resize', function() {     
+
+      if($(this).width() < 741) {
+        $('#featured_slider').not('.slick-initialized').slick({
+          autoplay: false,
+          centerMode: false,
+          speed: 1000,
+          slidesToShow: 1,
+          infinite: false,
+          arrows: false,
+          variableWidth: true
+        });
+      } else {
+        if($('#featured_slider').hasClass('slick-initialized')){
+          $('#featured_slider').slick('unslick');
+        }
+      }
+    });
+  });
+</script>
+
+
+{% schema %}
+  {
+    "name": "Collection sidebar",
+    "settings": [
+	  {
+		"type": "checkbox",
+		"id": "featured_display",
+		"label": "Show/Hide featured",
+		"default": true
+	  },
+	  {
+		"type": "text",
+		"id": "featured_title",
+		"label": "Featured label",
+		"default": "Featured"
+	  },
+	  {
+		"type": "checkbox",
+		"id": "category_display",
+		"label": "Show/Hide category",
+		"default": true
+	  },
+	  {
+		"type": "text",
+		"id": "category_title",
+		"label": "Category label",
+		"default": "Shop by Category"
+	  },
+	  {
+		"type": "checkbox",
+		"id": "subject_display",
+		"label": "Show/Hide subject",
+		"default": true
+	  },
+	  {
+		"type": "text",
+		"id": "subject_title",
+		"label": "Subject label",
+		"default": "Shop by Subject"
+	  },
+	  {
+		"type": "checkbox",
+		"id": "color_display",
+		"label": "Show/Hide color",
+		"default": true
+	  },
+	  {
+		"type": "text",
+		"id": "color_title",
+		"label": "Color label",
+		"default": "Shop by Color"
+	  }
+	],
+	"blocks": [
+	  {
+		"type": "collection_filter",
+		"name": "Collection filter",
+		"settings": [
+		  {
+			"type": "collection",
+			"id": "collection",
+			"label": "Select a collection"
+		  },
+		  {
+			"type": "select",
+			"id": "section_name",
+			"label": "Select filter section",
+			"options": [
+			  {"label": "Featured", "value": "featured"},
+			  {"label": "Category", "value": "category"},
+			  {"label": "Subject", "value": "subject"},
+			  {"label": "Color", "value": "color"}
+			],
+			"default": "category"
+		  }
+		]
+	  }
+	]
+  }
+{% endschema %}

@@ -1,0 +1,185 @@
+{% if section.blocks.size > 0 %}
+<div class="product-details-wrapper {{ section.id }}">
+    <div class="product__details">
+      <div class="product__details--row">
+        <div class="product-details__image">
+          <h2 class="title mobile">{{ section.settings.title }}</h2>
+          {% for block in section.blocks %}
+          {%- liquid
+                assign current_variant_title = product.selected_or_first_available_variant.title | downcase
+                assign matched_img = false
+                assign is_active_img = false  
+
+                assign aimage_title = block.settings.primary_image_title_optional | downcase
+                assign aimage_second_title = block.settings.secondary_image_title_optional | downcase
+                assign title_id = block.settings.primary_tab_title | split: ' - ' | last | downcase             
+               
+                if title_id != blank and current_variant_title contains title_id
+                    assign matched_img = true
+                endif   
+
+                if title_id != blank and current_variant_title contains title_id
+                    assign is_active_img = true
+                elsif  matched_img == false and forloop.first 
+                    assign is_active_img = true
+                else
+                    assign is_active_img = false
+                endif
+
+                assign image_show = false
+                assign image_second_show = false
+                if aimage_title != blank and current_variant_title contains aimage_title
+                    if block.settings.primary_image != blank
+                        assign image_show = true
+                        assign image_second_show = false
+                    endif
+                elsif aimage_second_title != blank  and current_variant_title contains aimage_second_title
+                    if block.settings.secondary_image_optional != blank
+                        assign image_show = false
+                        assign image_second_show = true
+                    endif
+                else
+                    if block.settings.primary_image != blank
+                        assign image_show = true
+                    endif
+                    if block.settings.secondary_image_optional != blank
+                        assign image_second_show = true
+                    endif
+                endif
+          -%}
+          <div class="product-details__image--inner {% if is_active_img %}active{% endif %}" style="height: 100%;" data-index="{{ forloop.index }}" {{ block.shopify_attributes }}>
+            {% if block.settings.primary_image != blank or block.settings.secondary_image_optional != blank %}
+              {% if block.settings.primary_image != blank  %}
+              <div class="product-details__image--single{% if image_show %} active{% endif %}"{% if aimage_title != blank %} data-image-title="{{ aimage_title }}"{% endif %}>
+              {% render "basic-responsive-image", product: product, type: block.settings.primary_image %}
+              <noscript>
+                <img src="{{ block.settings.primary_image | image_url: width: 350 }}" alt="{{ block.settings.primary_image.alt | escape }}" width="100%" height="100%" loading="lazy">
+              </noscript>
+              </div>
+              {% endif %}
+              {% if block.settings.secondary_image_optional != blank  %}
+               <div class="product-details__image--single{% if image_second_show %} active{% endif %}"{% if aimage_second_title != blank %} data-image-title="{{ aimage_second_title }}"{% endif %}>
+                {% render "basic-responsive-image", product: product, type: block.settings.secondary_image_optional %}
+                <noscript>
+                  <img src="{{ block.settings.secondary_image_optional | image_url: width: 350 }}" alt="{{ block.settings.secondary_image_optional.alt | escape }}" width="100%" height="100%" loading="lazy">
+                </noscript>
+              </div>
+              {% endif %}
+            {% else %}
+               {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+         {% endfor %}
+        </div>
+        <div class="product-details__accordian">
+          <h2 class="title desktop">{{ section.settings.title }}</h2>
+              <div class="product-details__accordian--container">
+                {% for block in section.blocks %}
+                  {%- liquid
+                    assign  current_variant_title = product.selected_or_first_available_variant.title | downcase
+                    assign is_active = false
+                    assign title_id = block.settings.primary_tab_title | split: ' - ' | last | downcase             
+                    
+                    if title_id != blank and current_variant_title contains title_id
+                      assign is_active = true
+                    elsif forloop.first 
+                        assign is_active = true
+                    else
+                      assign is_active = false
+                    endif
+                    
+                  -%}
+                  
+                    {% if block.settings.primary_tab_title != blank %}
+                    <div class="product-details__accordian--item ">
+                      <h4 class="product-details__accordian--title {% if is_active %}open{% endif %}" data-id="{{ title_id }}" data-index="{{ forloop.index }}">
+                          <span>{{ block.settings.primary_tab_title }}</span><span class="arrow-down"></span>
+                      </h4>
+                      <div class="product-details__accordian--content {% if is_active %}opens{% endif %}" {% if is_active %}style="display: block"{% endif %}>
+                        <div class="product-details__accordian--content--inner">{{ block.settings.primary_tab_description }}</div>
+                      </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "Product details",
+  "class": "product-details",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Let's get into the details."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "details",
+      "name": "Product Details",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Data linking",
+          "info": "Link relative metaobject list from product metafields called 'Product details'"
+        },
+        {
+          "type": "header",
+          "content": "Tab"
+        },
+        {
+          "type": "text",
+          "id": "primary_tab_title",
+          "label": "Primary tab title",
+          "default": "Tab title"
+        },
+        {
+          "type": "richtext",
+          "id": "primary_tab_description",
+          "label": "Primary tab description",
+          "default": "<p>Tab content</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "primary_image",
+          "label": "Primary image"
+        },
+        {
+          "type": "text",
+          "id": "primary_image_title_optional",
+          "label": "Primary image title (optional)"
+        },
+        {
+          "type": "image_picker",
+          "id": "secondary_image_optional",
+          "label": "Secondary image (optional)"
+        },
+        {
+          "type": "text",
+          "id": "secondary_image_title_optional",
+          "label": "Secondary image title (optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product details",
+      "blocks": [
+        {
+          "type": "details"
+        }
+      ]
+    }
+  ],
+  "enabled_on": {
+    "templates": ["product"]
+  }
+}
+{% endschema %}

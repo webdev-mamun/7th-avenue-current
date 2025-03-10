@@ -1,0 +1,43 @@
+{% schema %}
+  {
+    "name": "Collection Sptlight",
+    "settings": [
+	  {
+		"type": "textarea",
+		"id": "title",
+		"label": "Title"
+	  },
+	  {
+		"type": "textarea",
+		"id": "text",
+		"label": "Text"
+	  },
+	  {
+		"type": "text",
+		"id": "link_text",
+		"label": "Link Text"
+	  },
+	  {
+		"type": "url",
+		"id": "link",
+		"label": "Link"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "image",
+		"label": "Image"
+	  }
+    ]
+  }
+{% endschema %}
+
+<div class="collection_spotlight">
+  <div class="spotlight_info">
+    {% if section.settings.title != blank %}<h3>{{section.settings.title}}</h3>{% endif %}
+    {% if section.settings.text != blank %}<p>{{section.settings.text}}</p>{% endif %}
+    {% if section.settings.link_text != blank %}<a href="{{ section.settings.link}}">{{section.settings.link_text}}</a>{% endif %}
+  </div>
+  <div class="spotlight_image">
+    {% render 'image-lazyload', image: section.settings.image %}
+  </div>
+</div>

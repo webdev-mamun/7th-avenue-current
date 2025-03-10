@@ -1,0 +1,86 @@
+{% if section.blocks.size > 0 %}
+{% for block in section.blocks %}
+<div class="c_section">
+  {% if block.settings.section_text != blank %}
+  <div class="grid_wrapper">
+    <div class="desktop-12 tablet-12 mobile-12 span-12">
+      <h2 class="big_title text-center">{{ block.settings.section_text }}</h2>
+      {% if block.settings.link_text != blank %}
+      <p class="shop_all_link"><a href="{{block.settings.link}}">{{block.settings.link_text}}</a></p>
+      {% endif %}
+    </div>
+    <div class="clear"></div>
+  </div>  
+  {% endif %}
+  <div class="grid_wrapper product-loop" id="collection__{{forloop.index}}">
+    {%- assign collection = collections[block.settings.collection] -%}
+    {%- assign prod_limit = block.settings.limit_p -%}
+    {% for product in collection.products limit: prod_limit   %}
+    <div class="desktop-4 tablet-4 mobile-half span-4{%if forloop.index > block.settings.limit_m %} mobilehide{%endif%}">
+      {% render 'product-listing', product: product %}
+    </div>
+    {% endfor %}
+    <div class="desktop-4 tablet-4 mobile-half span-4">
+      <div class="coll_all_product_view_box">
+        <p class="shop_all_link"><a href="/collections/{{collection.handle}}/">Shop All {{collection.title}}</a></p>
+      </div>
+    </div>
+  </div>  
+  <div class="clear"></div> 
+</div>
+  {% endfor %} 
+{% endif %}
+{% schema %}
+{
+  "name": "Products block",
+  "settings": [
+    
+  ],
+  "blocks": [
+	{
+	  "type": "collection",
+	  "name": "Collection",
+	  "settings": [
+		{
+          "type":"text",
+          "id":"section_text",
+          "label":"Section Heading"
+        },
+        {
+          "type":"text",
+          "id":"link_text",
+          "label":"Link Text"
+        },
+        {
+          "type":"url",
+          "id":"link",
+          "label":"Link"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label":"Collection"
+        },
+        {
+          "type": "range",
+          "id": "limit_p",
+          "min": 2,
+          "max": 20,
+          "step": 1,
+          "label": "Limit",
+          "default": 6
+        },
+        {
+          "type": "range",
+          "id": "limit_m",
+          "min": 3,
+          "max": 20,
+          "step": 1,
+          "label": "Limit for mobile",
+          "default": 6
+        }
+	  ]
+	}
+  ]
+}
+{% endschema %}

@@ -1,0 +1,53 @@
+{% schema %}
+  {
+    "name": "Text and Button",
+    "settings": [
+	  {
+		"type": "textarea",
+		"id": "text",
+		"label": "Text"
+	  },
+	  {
+		"type": "textarea",
+		"id": "text_mobile",
+		"label": "Text For Mobile"
+	  },
+	  {
+		"type": "text",
+		"id": "btn",
+		"label": "Button Text"
+	  },
+	  {
+		"type": "url",
+		"id": "btn_link",
+		"label": "Button Link"
+	  }
+	
+	],
+	"presets": [{
+      "name": "Text and Button"
+  	}]
+  }
+{% endschema %}
+
+<section
+         class="home homepage-section"
+         data-section-id="{{ section.id }}"
+         data-section-type="text-section">
+  
+  <div class="grid_wrapper">
+    <div class="desktop-12 span-12">
+    	<div class="home_text_section">
+          <div class="mobilehide">
+            {{- section.settings.text -}}
+          </div>
+          <div class="desktophide">
+          	{{- section.settings.text_mobile -}}
+          </div>
+          <div class="home_text_section_btn">
+            <a href="{{section.settings.btn_link}}">{{- section.settings.btn -}}</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>

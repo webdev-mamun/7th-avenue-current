@@ -1,0 +1,138 @@
+{% if section.blocks.size > 0 %}
+
+<div class="collection__review collection__review--{{ section.id }}">
+  <div class="row">
+    <h2 class="collection__review--title">{{ section.settings.title }}</h2>
+  </div>
+  <div class="collection__review--slider-wrapper">
+    <button class="slider__controller slider__controller--prev"></button>
+    <button class="slider__controller slider__controller--next"></button>
+    <div class="row">
+      <div class="collection__review--slider">
+        {% for block in section.blocks %}
+        <div class="collection__review--item">
+          <div class="collection__review--item_star">
+            <img src="{{ 'review-star.svg' | asset_url }}" alt="5 star" width="100%" height="100%" loading="lazy"/>
+          </div>
+          <p class="collection__review--item_text">“{{ block.settings.text }}”</p>
+          <p class="collection__review--item_title">-{{ block.settings.title }}</p>
+          <div class="collection__review--item_buyer">
+            <span><img src="https://cdn.shopify.com/s/files/1/0602/7195/2115/files/tick-mark.svg?v=1731908522" width="100%" height="100%" loading="lazy" /></span><span>Verified Buyer</span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <a href="{{ section.settings.btn_url }}" class="collection__review--btn">{{ section.settings.btn_text }}</a>
+  </div>
+</div>
+
+<style>
+  .collection__review--{{ section.id }} {
+    color: {{ section.settings.color }};
+    background-color: {{ section.settings.bg_color }};
+  }
+</style>
+
+<script>
+  var slider = document.querySelector(".collection__review--slider");
+  var autoPlaySpeed = {{ section.settings.speed }};
+  $(slider).slick({
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: autoPlaySpeed,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    prevArrow: $(".slider__controller--prev"),
+    nextArrow: $(".slider__controller--next"),
+    responsive: [
+      {
+        breakpoint: 740,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+</script>
+{% endif %}
+
+
+
+{% schema %}
+  {
+    "name": "Review",
+    "settings": [
+		{
+			"type":"textarea",
+			"id":"title",
+			"label":"Title",
+			"default":"Here’s what hundreds of satisfied customers have to say about their dream sofa"
+		},
+		{
+			"type":"url",
+			"id":"btn_url",
+			"label":"Button url"
+		},
+		{
+			"type":"text",
+			"id":"btn_text",
+			"label":"Button text",
+			"default":"SEE ALL REVIEWs"
+		},
+		{
+			"type":"text",
+			"id":"speed",
+			"label":"Auto play speed",
+			"default":"5000",
+			"info":"Millisecond"
+		},
+		{
+			"type":"header",
+			"content":"Color"
+		},
+		{
+			"type":"color",
+			"id":"color",
+			"label":"Color",
+			"default":"#000000"
+		},
+		{
+			"type":"color",
+			"id":"bg_color",
+			"label":"Background color",
+			"default":"#F3F3F3"
+		}
+	],
+	"blocks": [
+		{
+			"type":"review",
+			"name":"Review",
+			"settings": [
+				{
+					"type":"textarea",
+					"id":"text",
+					"label":"Text",
+					"default":"The best online shopping experience for furniture. Innovative experiential showroom concept"
+				},
+				{
+					"type":"textarea",
+					"id":"title",
+					"label":"Title",
+					"default":"SUSAN B (SAN FRANCISCO, CA)"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}

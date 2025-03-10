@@ -1,0 +1,14 @@
+<!-- Shown on Mobile Only -->
+<ul id="mobile-cart" class="mobile-3 span-1 mobile-only">
+{% if settings.show_multiple_currencies %}
+  <li>
+    {% render 'currencies-switcher' %}
+  </li>
+{% endif %}
+  <li>
+    <a href="/cart" class="site-header__cart-toggle" aria-controls="CartDrawer" aria-expanded="false" id="cart-icon-bubble">
+      {{- 'icon-shopping-bag.svg' | inline_asset_content -}}
+      <span class="cart_count{% if cart.item_count == 0 %} hidden{% endif %}">{{ cart.item_count }}</span>
+    </a>
+  </li>
+</ul>

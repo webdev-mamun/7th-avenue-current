@@ -1,0 +1,47 @@
+  <div class="blog_page_newsletter_form">
+    <form id="newsletter_form_blog" 
+          class="klaviyo_gdpr_embed_TstdpE" 
+          action="//manage.kmail-lists.com/subscriptions/subscribe" 
+          data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+      <div class="bpnf_info">
+        <h2>Don't miss a page.<br>Join our newsletter.</h2>        
+      </div>
+      
+      <div class="bpnf_inputs">
+        <div class="blog_newsletter_form_data">          
+          <div> 
+            <input type="hidden" name="g" value="TstdpE">
+            <label for="email">{{ 'general.newsletter_form.newsletter_email' | t }}</label>
+            <input type="email" name="email" id="email">
+          </div>
+          <div>
+            <button type="submit">Sign up</button>
+          </div>
+        </div>
+        <div class="klaviyo_messages">
+          <div class="clear"></div>
+          <div class="success_message" style="display:none;">
+            <h3 class="success">{{ 'password.general.thanks' | t }}</h3>
+          </div>
+          <div class="error_message" style="display:none;"></div>
+        </div>
+      </div> 
+    </form> 
+  </div> 
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    KlaviyoSubscribe.attachToForms('#newsletter_form_blog', {
+      hide_form_on_success: true,
+      custom_success_message: true,
+      extra_properties: {
+        $source: 'Grafiti Home',
+        $method_type: "Grafiti newsletter form",
+        source: 'Blog newsletter'
+      },
+      success: function($form) {
+        $('.blog_newsletter_form_data').hide();
+      }
+    });
+  })
+</script>

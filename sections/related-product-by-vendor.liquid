@@ -1,0 +1,55 @@
+<div class="related_product_wrapper mw" id="related">
+  <div class="grid_wrapper">
+    <div class="span-12 related_product_header">
+      <h3 class="small_title">{{ section.settings.product_recommendations_heading }}</h3>
+      <h2 class="big_title">{{ product.vendor }}</h2>
+      <a class="boder_bottom_link" href="/search?type=product&q={{product.vendor}}&submit=Search">See All</a>
+    </div>
+  </div>
+  <div class="grid_wrapper product-loop" id="related_products_slider">
+    <div class="related_products"></div>
+  </div>
+</div>
+
+<script> 
+  
+  var loadProductRecommendationsIntoSection = function() {
+    // Look for an element with class 'product-recommendations'
+    var productRecommendationsSection = document.querySelector(".related_products");
+    if (productRecommendationsSection === null) { return; }
+
+    var requestUrl = "/collections/vendors/?q={{product.vendor}}&sort_by=best-selling&grid_item=4&limit=4";
+    // Create request and submit it using Ajax
+    var request = new XMLHttpRequest();
+    request.open("GET", requestUrl);
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 300) {
+        var container = document.createElement("div");
+        container.innerHTML = request.response;
+        productRecommendationsSection.parentElement.innerHTML = container.querySelector('.grid_wrapper.product-loop').innerHTML;
+      }
+    };
+    request.send();
+  };
+  document.addEventListener("shopify:section:load", function(event) {
+    loadProductRecommendationsIntoSection();
+    //slider('#related_products_slider');
+  });
+  // Fetching the recommendations on page load
+  document.addEventListener("DOMContentLoaded", loadProductRecommendationsIntoSection);   
+
+</script>
+
+{% schema %}
+{
+  "name": "Related products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_recommendations_heading",
+      "label": "Heading",
+      "default": "More works by"
+    }
+  ]
+}
+{% endschema %}

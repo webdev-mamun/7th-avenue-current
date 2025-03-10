@@ -1,0 +1,20 @@
+<div id="thumbnail-gallery" class="product-thumbnails thumbnail-gallery-{{ axis }}">
+  <div class="thumbnail-slider">
+    {% for image in product.images %}
+    {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}  
+    <div class="product-thumbnail {% if image.id == current_variant.image.id %}selected{% endif %}" data-image-id="{{ image.id }}">     
+      <img class="lazyload lazyload-fade"
+           data-src="{{ img_url }}"
+           data-sizes="auto"
+           data-zoom-src="{{ img_url }}"
+           alt="{{ image.alt | escape }}"
+           width="100%"
+           height="100%"
+           loading="lazy"
+          {%- if forloop.index > 10 %}
+            src="{{ image | img_url: '90x' }}"
+          {% endif -%}>     
+    </div>
+    {% endfor %}
+  </div>
+</div>

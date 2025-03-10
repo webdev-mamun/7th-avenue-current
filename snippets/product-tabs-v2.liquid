@@ -1,0 +1,156 @@
+<product-info-slider>
+  <div class="product-info-titles-container">
+    <ul class="product-info-titles">
+      {%- if section.settings.product_description != blank and section.settings.product_description_title != blank -%}
+      <li role="presentation" id="product-tab-{{ section.settings.product_description_title | handle }}-{{ id }}">
+        {{ section.settings.product_description_title }}
+      </li>
+      {%- endif -%}
+      {%- if product.metafields.specification.config != blank -%}
+      <li role="presentation" id="product-tab-configuration-{{ id }}">
+        Configuration
+      </li>
+      {%- endif -%}
+      {%- if section.settings.product_return != blnak and section.settings.product_return_title != blank -%}
+      <li role="presentation" id="product-tab-{{ section.settings.product_return_title | handle }}-{{ id }}">
+        {{ section.settings.product_return_title }}
+      </li>
+      {%- endif -%}
+      {%- if section.settings.product_tab_5_content != blnak and section.settings.product_tab_5_title != blank -%}
+      <li role="presentation" id="product-tab-{{ section.settings.product_tab_5_title | handle }}-{{ id }}">
+        {{ section.settings.product_tab_5_title }}
+      </li>
+      {%- endif -%}
+    </ul>
+    <span class="product-tab-indicator"></span>
+  </div>
+  <div class="product-info-contents">
+    {%- if section.settings.product_description != blank and section.settings.product_description_title != blank -%}
+    <div data-id="product-tab-{{ section.settings.product_description_title | handle }}-{{ id }}" class="product-info-content">
+        <div class="product-info-content-inner">
+          {{ section.settings.product_description }}
+        </div>
+    </div>
+    {%- endif -%}
+    {%- if product.metafields.specification.config != blank -%}
+    <div data-id="product-tab-configuration-{{ id }}" class="product-info-content">
+      <div class="product-info-content-inner">
+       {{ product.metafields.specification.config | metafield_tag }}
+      </div>
+    </div>
+    {%- endif -%}
+    {%- if section.settings.product_return != blnak and section.settings.product_return_title != blank -%}
+    <div data-id="product-tab-{{ section.settings.product_return_title | handle }}-{{ id }}" class="product-info-content">
+      <div class="product-info-content-inner">
+       {{ section.settings.product_return }}
+      </div>
+    </div>
+    {%- endif -%}
+    {%- if section.settings.product_tab_5_content != blnak and section.settings.product_tab_5_title != blank -%}
+    <div data-id="product-tab-{{ section.settings.product_tab_5_title | handle }}-{{ id }}" class="product-info-content">
+      <div class="product-info-content-inner">
+       {{ section.settings.product_tab_5_content }}
+      </div>
+    </div>
+    {%- endif -%}
+  </div>
+</product-info-slider>
+
+<style>
+  product-info-slider {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid #d6d6d6;
+    margin-bottom: 12.5px;
+  }
+
+  .product-info-titles-container {
+    position: relative;
+    overflow: auto;
+    white-space: nowrap;
+    user-select: none;
+    border-bottom: 1px solid #d6d6d6;
+  }
+
+  /* .product-info-titles-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #d6d6d6;
+  } */
+
+  .product-info-titles-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-info-titles-container {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+  }
+  
+  .product-info-titles li {
+    font-family: SuisseIntl-Regular;
+    font-size: 8pt;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    margin-right: 24px;
+    cursor: pointer;
+  }
+  
+  .product-info-titles {
+    list-style: none;
+    display: flex;
+    margin: 0;
+  }
+  
+  .product-info-contents {
+    margin: 12.5px 0;
+  }
+
+  .product-info-content-inner {
+    max-height: 318px;
+    overflow: auto;
+  }
+
+  .product-info-content-inner *:last-child {
+    margin: 0;
+    padding: 0;
+  }
+
+  .product-info-content-inner::-webkit-scrollbar-track {
+  	border-radius: 7px;
+  	background-color: #f1f1f1;
+  }
+  
+  .product-info-content-inner::-webkit-scrollbar {
+  	width: 7px;
+    border-radius: 7px;
+  	background-color: #f1f1f1;
+  }
+  
+  .product-info-content-inner::-webkit-scrollbar-thumb {
+  	border-radius: 7px;
+  	background-color: #d6d6d6;
+  }
+
+  @media screen and (min-width: 741px) {
+    .product-info-contents {
+      border-bottom: none;
+    }
+  }
+
+  @media screen and (min-width: 980px){
+    product-info-slider {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    
+    .product-info-content-inner {
+      max-height: 295px;
+      overflow: auto;
+    }
+  }
+</style>

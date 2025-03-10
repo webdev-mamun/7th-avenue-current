@@ -1,0 +1,513 @@
+<script src="{{ 'cart-page-note.js' | asset_url }}" defer="defer"></script>
+<section class="page-header" style="--color: #ffffff; --bg-color: #000000;">
+  <div class="section-boxed" column="1">
+    <div class="section-boxed-row">
+      <div class="section-boxed-column">
+        <div class="page-header__inner">
+          <h1 class="page-header__title">My Cart</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="shopping-cart" class="desktop-12 tablet-6 mobile-3">
+  {% if cart.item_count == 0 %}
+    <div class="empty-cart-wrapper row">
+      <div class="desktop-8 desktop-push-2 tablet-6 mobile-3">
+        <p class="empty-cart-text">{{ 'cart.general.empty' | t }}</p>
+        <a class="outline-button" href="/collections">{{ 'cart.general.continue' | t }}</a>
+        <div class="clear"></div>
+      </div>
+    </div>
+  {% else %}
+    <form action="{{ routes.cart_url }}" method="post" id="cartform" class="row">
+      <div class="desktop-8 tablet-6 mobile-3">
+        <h1 class="page-title">
+          {{ 'cart.general.title' | t }}
+          <span class="cart-count-wrapper"
+            ><span class="CartCount">{{ cart.item_count }}</span> {{ 'cart.general.items' | t -}}
+          </span>
+        </h1>
+
+        {% assign addon_product_ids = '' %}
+        {% for item in cart.items %}
+          {%- liquid
+            assign quick_configured = item.product.metafields.custom.quick_configured.value | default: false
+            assign bundle_true = false
+            if item.product.metafields.custom.variant_addon.value
+              for product_item in item.product.metafields.custom.variant_addon.value
+                assign addon_product_ids = addon_product_ids | append: product_item.variant.value.id | append: ','
+              endfor
+            endif
+
+            assign addon_product_ids_loop = addon_product_ids | split: ','
+            for a_p_id in addon_product_ids_loop
+              assign temp_a_p_id = a_p_id | plus: 0
+              if temp_a_p_id == item.variant.id 
+                assign bundle_true = true
+              endif
+            endfor
+          -%}
+
+          {%- capture addon_products -%}
+            {%- for product_item in item.product.metafields.custom.variant_addon.value -%}
+              {%- if forloop.first -%},{%- endif -%}{{ product_item.variant.value.id }}{%- unless forloop.last -%},{%- endunless -%}
+            {%- endfor -%}
+          {%- endcapture -%}
+          
+          {%- capture on_click -%}
+            {%- if quick_configured -%}
+              {%- for mainvariant in item.product.variants -%}
+                {%- assign odd = forloop.index | modulo: 2 -%}
+                {%- if item.variant.id == mainvariant.id -%}
+                  {%- assign item_offered = item.product.variants[odd].metafields.variant.linked_product.value -%}
+                  {%- if item_offered -%}
+                    {%- if settings.Offered_free_products -%}{%- assign bundle_true = true -%}{%- endif -%}
+                    {{ item.variant.id }},
+                    {%- for free_item in item_offered -%}
+                      {{ free_item.product.value.id }}{%- unless forloop.last -%},{%- endunless -%}
+                    {%- endfor -%}
+                  {%- else -%}
+                    {{ item.variant.id }}
+                  {%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- else -%}
+              {%- for mainvariant in item.product.variants -%}
+                {%- if item.variant.id == mainvariant.id -%}
+                  {%- assign item_offered = mainvariant.metafields.variant.linked_product.value -%}
+                  {%- if item_offered -%}
+                    {%- if settings.Offered_free_products -%}{%- assign bundle_true = true -%}{%- endif -%}
+                    {{ item.variant.id }},
+                    {%- for free_item in item_offered -%}
+                      {{ free_item.product.value.id }}{%- unless forloop.last -%},{%- endunless -%}
+                    {%- endfor -%}
+                  {%- else -%}
+                    {{ item.variant.id }}
+                  {%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+          {%- endcapture -%}
+          
+          <div class="cart-item">
+            <a
+              class="remove"
+              href="#"
+              onclick="removeFromCart({% if settings.Offered_free_products %}{{ on_click }}{% endif %}{{ addon_products }}); return false;"
+              ><span>+</span></a
+            >
+            <div class="cart-image">
+              {%- if item.final_price < 1 -%}
+                <div title="{{ item.product.title | escape }}">
+              {% else -%}
+                <a href="{{ item.url }}" title="{{ item.product.title | escape }}">
+              {% endif %}
+              {% render 'basic-responsive-image', type: item.image %}
+              {%- if item.final_price < 1 -%}
+                </div>
+              {% else -%}
+                </a>
+              {% endif %}
+            </div>
+            <div class="cart-title">
+              <h4>{{ item.product.title }}</h4>
+              {%- unless item.variant.title contains 'Default' -%}
+                <p>
+                  {% for option in item.product.options %}
+                    {{ option }}: {{ item.variant.options[forloop.index0] -}}
+                    <br>
+                  {% endfor %}
+                  {% assign property_size = item.properties | size %}
+                  {% if property_size > 0 %}
+                    {% for p in item.properties %}
+                      {% unless p.last == blank %}
+                        {{ p.first | capitalize }}:
+                        {% if p.last contains '/uploads/' %}
+                          <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                        {% else %}
+                          {{ p.last }}
+                        {% endif %}
+                      {% endunless %}
+                    {% endfor %}
+                  {% endif %}
+                </p>
+              {%- endunless -%}
+            </div>
+            <div class="cart-price">
+              <div class="item-pricing">
+                <p>
+                  <b>{{ 'cart.general.price' | t }}</b>
+                </p>
+                <p>
+                  <span
+                    class="cart-item-price money {% if item.original_price > item.final_price or item.variant.compare_at_price > item.final_price %}onsale{% endif %}"
+                    data-key="{{item.key}}"
+                  >
+                    {{- item.final_price | money -}}
+                  </span>
+                  <span class="money"
+                    ><del>
+                      {%- if item.original_price > item.final_price -%}
+                        {{- item.original_price | money -}}
+                      {%- elsif item.variant.compare_at_price > item.final_price -%}
+                        {{- item.variant.compare_at_price | money -}}
+                      {%- endif -%}
+                    </del></span
+                  >
+                </p>
+              </div>
+
+              {% if item.final_price > 0 and bundle_true %}
+                <div class="qty">
+                  <label for="quantity">{{ 'products.product.quantity.label' | t }}</label>
+                  <div class="qty_box">
+                    <span>{{ item.quantity }}</span>
+                  </div>
+                </div>
+              {% elsif item.final_price > 0 and bundle_true != true %}
+                <div class="qty">
+                  <label for="quantity">{{ 'products.product.quantity.label' | t }}</label>
+                  <div class="qty_box" data-id="{{ item.id }}">
+                    <button class="quantity_controller quantity_decrement" type="button" data-id="{{ item.id }}">
+                      <span>−</span>
+                    </button>
+                    <input
+                      min="1"
+                      type="text"
+                      name="updates[]"
+                      pattern="[0-9]*"
+                      id="updates_{{ item.id }}"
+                      value="{{ item.quantity }}"
+                      {% unless item.variant.inventory_management == blank
+                        or item.variant.inventory_policy == 'continue'
+                      %}
+                        max="{{ item.variant.inventory_quantity }}"
+                      {% endunless %}
+                    >
+                    <button class="quantity_controller quantity_increment" type="button" data-id="{{ item.id }}">
+                      <span>+</span>
+                    </button>
+                  </div>
+                </div>
+              {% else %}
+                <div class="qty">
+                  <label for="quantity">{{ 'products.product.quantity.label' | t }}</label>
+                  <div class="qty_box">
+                    <span>{{ item.quantity }}</span>
+                  </div>
+                </div>
+              {% endif %}
+
+              <div class="line-pricing">
+                <p>
+                  <b>{{ 'cart.general.total' | t }}</b>
+                </p>
+                <h5>
+                  <p>
+                    <span
+                      class="cart-item-price money {% if item.original_price > item.final_price or item.variant.compare_at_price > item.final_price %}onsale{% endif %}"
+                      data-key="{{item.key}}"
+                    >
+                      {{- item.final_line_price | money -}}
+                    </span>
+                    {% if item.original_line_price > item.final_line_price -%}
+                      <span class="money"
+                        ><del>{{ item.original_line_price | money }}</del></span
+                      >
+                    {%- endif %}
+                  </p>
+                </h5>
+              </div>
+              {% if item.line_level_discount_allocations.size > 0 %}
+                {% for discount_allocation in item.line_level_discount_allocations %}
+                  <p class="onsale">
+                    <i class="la la-tag"></i>
+                    {{ discount_allocation.discount_application.title }} (-<span class="money">
+                      {{- discount_allocation.amount | money -}}</span
+                    >)
+                  </p>
+                {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div id="basket-right" class="desktop-4 tablet-6 mobile-3">
+        <h2>{{ 'cart.general.summary' | t }}</h2>
+        <div class="cart-final-details">
+          <div class="subtotal">
+            <p class="title">{{ 'cart.general.subtotal' | t }}</p>
+            <p class="subtotal-price">
+              <span class="cart-original-total money">{{ cart.items_subtotal_price | money }}</span>
+            </p>
+          </div>
+          {%- if settings.show_tax_note -%}
+            <div class="tax">
+              <p class="title">{{ 'cart.general.tax' | t }}</p>
+              <p>{{ 'cart.general.at_checkout' | t }}</p>
+            </div>
+          {%- endif -%}
+          {%- if settings.show_shipping_note -%}
+            <div class="shipping">
+              <p class="title">{{ 'cart.general.shipping' | t }}</p>
+              <p>Free U.S. shipping & returns</p>
+            </div>
+          {%- endif -%}
+          <div class="discounts">
+            {%- if cart.cart_level_discount_applications != blank -%}
+              <p>{{ 'cart.general.discounts' | t }}</p>
+              <ul>
+                {%- for discount_application in cart.cart_level_discount_applications -%}
+                  <li>
+                    <i class="la la-tag"></i> {{ discount_application.title }} (-<span class="money">
+                      {{- discount_application.total_allocated_amount | money -}}</span
+                    >)
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- else -%}
+              {% if cart.total_discounts > 0 %}
+                <div class="cart_savings onsale">
+                  <p>
+                    <em>{{ 'cart.general.savings' | t }}</em>
+                  </p>
+                  <p class="cart-savings-amount">
+                    <em
+                      ><span class="money">{{ cart.total_discounts | money }}</span></em
+                    >
+                  </p>
+                </div>
+              {% endif %}
+            {%- endif -%}
+          </div>
+          <div class="total">
+            <h3 class="title">{{ 'cart.general.total' | t }}</h3>
+            <h3 class="total-price">
+              <span class="cart-original-total money">{{ cart.total_price | money }}</span>
+              <span class="cart-total"></span>
+            </h3>
+          </div>
+        </div>
+        <div class="cart-extras rte-accordion row">
+          {% if settings.show_shipping_countdown %}
+            {% render 'cart-free-shipping' %}
+          {% endif %}
+          <div id="cart-notes" class="item">
+            {%- liquid
+              assign notes = ''
+              for item in cart.items
+                unless item.final_price == 0
+                  assign note = ''
+                  assign product = item.product
+                  assign title = product.title
+                  assign variant = item.variant
+                  assign position = product.options_by_name['Seating Depth'].position
+                  assign option = 'option' | append: position
+                  assign depth = variant[option]
+                  assign variant_title = variant.title | split: '/'
+                  assign variant_title_first = variant_title[0] | strip
+                  assign variant_title_last = variant_title[1] | strip
+                  assign stock_message = ''
+
+                  for stock_info in shop.metaobjects.stock_messages_lead_times.values
+                    assign name = stock_info.name
+                    assign message = stock_info.message
+                    if message != blank
+                      if name contains '&'
+                        assign fname = name | split: '&'
+                        assign name_first = fname[0] | strip
+                        assign name_last = fname[1] | strip
+
+                        if variant_title_first == name_first and variant_title_last == name_last and stock_message == ''
+                          assign stock_message = message
+                        elsif variant_title_first contains name_first and variant_title_last contains name_last and stock_message == ''
+                          assign stock_message = message
+                        elsif variant_title_first contains name_last and variant_title_last contains name_first and stock_message == ''
+                          assign stock_message = message
+                        endif
+                      else
+                        if variant_title_first contains name or variant_title_first == name or variant_title_last contains name or variant_title_last == name
+                          assign stock_message = message
+                        endif
+                      endif
+                    endif
+                  endfor
+
+                  if title != blank and depth != blank and stock_message != blank
+                    assign note = title | append: ' | ' | append: depth | append: ' | ' | append: stock_message
+                  elsif title != blank and depth != blank
+                    assign note = title | append: ' | ' | append: depth
+                  elsif title != blank and stock_message != blank
+                    assign note = title | append: ' | ' | append: stock_message
+                  endif
+
+                  if notes == ''
+                    assign notes = note
+                  else
+                    assign notes = notes | append: '###' | append: note
+                  endif
+                endunless
+              endfor
+            -%}
+            <input class="trigger" id="item-one" type="checkbox" name="items">
+            <label class="accordion-label" for="item-one"
+              ><span class="item-heading">{{ 'cart.general.note' | t }}</span></label
+            >
+            <cart-page-note class="item-content" style="display: block;">
+              <textarea name="note" id="note" rows="5" cols="60">{{ notes }}</textarea>
+            </cart-page-note>
+          </div>
+          {% if settings.show_shipping_calculator %}
+            {% render 'shipping-calculator' %}
+          {% endif %}
+        </div>
+        <div class="cart-buttons">
+          <button
+            type="button"
+            id="shadowCheckout"
+            class="button"
+            {% if cart.item == 0 or cart.items_subtotal_price <= 0 %}
+              disabled
+            {% endif %}
+          >
+            {{ 'cart.general.checkout' | t }} &rarr;
+          </button>
+          <h5 class="or-divider text-center"><span>Or</span></h5>
+          <div class="clear"></div>
+          {% if additional_checkout_buttons and cart.items_subtotal_price > 0 %}
+            <div class="additional-checkout-buttons">
+              {{ content_for_additional_checkout_buttons }}
+            </div>
+          {% endif %}
+          <div class="clear"></div>
+          <div class="clear"></div>
+          <input
+            type="submit"
+            name="update"
+            id="update-cart"
+            value="{{ 'cart.general.update' | t }}"
+            class="outline-button"
+          >
+        </div>
+      </div>
+    </form>
+  {% endif %}
+</div>
+
+<script type="text/javascript">
+  function removeFromCart(...items) {
+    fetch('/cart.js')
+      .then((response) => response.json())
+      .then((cart) => {
+        const cartItemIds = cart.items.map((item) => item.id);
+        const validItemIds = items.flat().filter((id) => cartItemIds.includes(Number(id)));
+  
+        if (validItemIds.length === 0) return;
+  
+        const updates = validItemIds.reduce((acc, itemId) => {
+          acc[itemId] = 0;
+          return acc;
+        }, {});
+  
+        return fetch(window.Shopify.routes.root + 'cart/update.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ updates }),
+        });
+      })
+      .then(() => window.location.reload())
+      .catch((error) => console.error('Error removing items from cart:', error));
+  }
+  
+  
+  document.querySelectorAll('.quantity_controller').forEach((controller) => {
+    controller.addEventListener('click', function () {
+      let id = this.dataset.id;
+      let input = document.getElementById('updates_' + id);
+      let value = parseInt(input.value, 10) || 0;
+      let updateButton = document.getElementById('update-cart');
+  
+      value += this.classList.contains('quantity_increment') ? 1 : -1;
+      input.value = value;
+      updateButton.click();
+    });
+  });
+  
+  document.querySelectorAll('[max]').forEach((input) => {
+    input.addEventListener('change', function () {
+      let max = parseInt(this.getAttribute('max'), 10) || 10000;
+      let value = parseInt(this.value, 10) || 0;
+  
+      if (value > max) {
+        let msg = `${"{{ 'products.product.qty_error_first' | t }}"} \xa0${max}\xa0${"{{ 'products.product.qty_error_last' | t }}"}`;
+        let errorMsg = `<h2 class="errors qty-error">${msg}</h2>`;
+  
+        if (window.jQuery && window.jQuery.fancybox) {
+          jQuery.fancybox.open(errorMsg);
+        } else {
+          alert(msg.replace(/\xa0/g, ' '));
+        }
+  
+        this.value = max;
+      }
+    });
+  });
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    fetch('/cart.js')
+      .then((response) => response.json())
+      .then((cart) => {
+        if (cart.total_price === 0) {
+          fetch('/cart/clear.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log('Cart cleared:', data);
+            })
+            .catch((error) => console.error('Error clearing cart:', error));
+        } else {
+          console.log('Cart total is not zero:', cart.total_price);
+        }
+      })
+      .catch((error) => console.error('Error fetching cart:', error));
+  });  
+</script>
+
+<script id="cartform-submit">
+  const cartItemsString = {{ cart.items | json }};
+  document.addEventListener('DOMContentLoaded', function () {
+    const button = document.querySelector('#shadowCheckout');
+    const cartform = document.querySelector('#cartform');
+    button.addEventListener('click', async function (event) {
+      try {
+        event.preventDefault();
+        const cartItems = cartItemsString ? JSON.parse(cartItemsString) : [];
+        const notes = [];
+        for await (const item of cartItems) {
+          let productMetaInfo = await fetch(
+            '/products/' + item.handle + '?variant=' + item.variant_id + '&view=meta_info'
+          )
+            .then((res) => res.json())
+            .catch((e) => console.log('productMetaInfo', e.message));
+          const note = `${productMetaInfo?.product_title} | ${productMetaInfo?.depth} | ${productMetaInfo?.availablity}\n`;
+          notes.push(note);
+        }
+        const noteEl = document.querySelector('textarea[name="note"]');
+        if (notes.length && noteEl) {
+          noteEl.value = notes.join('\n\n');
+        }
+        button.click();
+      } catch (e) {
+        alert(`Error: ${e.message}`);
+      }
+    });
+  });
+</script>

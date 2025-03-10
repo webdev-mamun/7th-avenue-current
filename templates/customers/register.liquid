@@ -1,0 +1,193 @@
+<div class="customer__wrapper">
+  <div class="customer_login_wrapper mw">
+    <div class="welcome_text animated animatedFadeInUp fadeInUp">
+      <h2>Welcome<br> Home.</h2>      
+    </div>
+    <div class="rectangle_image_left">
+      <img src="https://cdn.shopify.com/s/files/1/0264/8218/0174/files/Rectangle_10_copy.jpg?2707" class="left_img1" width="100%" height="100%" loading="lazy">
+      <img src="https://cdn.shopify.com/s/files/1/0264/8218/0174/files/Rectangle_10_copy_2.jpg?2707" class="left_img2 hide_m" width="100%" height="100%" loading="lazy">
+      <img src="https://cdn.shopify.com/s/files/1/0264/8218/0174/files/dad-only_vertical.jpg?v=1586847186" class="mobile_show left_img2" width="100%" height="100%" loading="lazy">
+    </div>
+    <div class="login_form">
+      <!-- Create Customer -->
+      {% if shop.customer_accounts_enabled %}
+      {% if customer %}
+      <script>window.location.href="/account";</script>
+      {% else %}
+      <div id="customer_form_wrapper" class="desktop-push-2 desktop-5 mobile-3">
+        <div class="template_header">
+          <h2 class="title">{{ 'customer.register.title' | t }}</h2>
+<!--           <div id="form_success_msg"></div> -->
+        </div>
+        {% form 'create_customer' %}
+        {% if form.posted_successfully?%}
+        <p>Account successfully created!!</p>
+        {% endif %}
+        {{ form.errors | default_errors }}
+        <input type="hidden" name="return_url" value="/account">
+        <div id="first_name" class="clearfix large_form input_border">
+          <label for="first_name" class="login">{{ 'customer.register.first_name' | t }}</label>
+          <input type="text" value="" name="customer[first_name]" id="first_name" class="large" size="30" />
+        </div>
+        <div id="last_name" class="clearfix large_form input_border">
+          <label for="last_name" class="login">{{ 'customer.register.last_name' | t }}</label>
+          <input type="text" value="" name="customer[last_name]" id="last_name" class="large" size="30" />
+        </div>
+        <div class="clear_both"></div>
+        <div id="email" class="clearfix large_form input_border">
+          <label for="email" class="login">{{ 'customer.register.email' | t }}</label>
+          <input type="email" value="" name="customer[email]" id="email" class="large" size="30" />
+        </div>       
+        <div class="clear_both"></div>
+        <div id="password" class="clearfix large_form input_border">
+          <label for="password" class="login">{{ 'customer.register.password' | t }}</label>
+          <input type="password" value="" name="customer[password]" id="password" class="large password" size="30" />
+        </div>
+        <div class="action_bottom">
+          <input class="secondary button" type="submit" value="{{ 'customer.register.submit' | t }}"/>
+        </div>
+        {% endform %}
+      </div>
+      {% endif %}
+      {% endif %}
+      <!-- End Create Account -->
+      <div class="customer_links">
+        <a id="register-link-button" href="/account/login">Login</a>        
+      </div>
+      <div class="rectangle_image_right">
+        <img src="https://cdn.shopify.com/s/files/1/0264/8218/0174/files/dad-only_vertical.jpg?v=1586847186" width="100%" height="100%" loading="lazy">
+      </div>
+    </div>
+  </div>  
+</div>
+
+<!-- <script>
+
+  jQuery(function() {
+    jQuery('#create_customer').submit(function(event) {
+      event.preventDefault();
+      var data = jQuery(this).serialize();
+
+      //create new account
+      jQuery.post('/account', data)
+      .done(function(data){
+        var logErrors = jQuery(data).find('.errors').text();
+
+        //if there are errors show them in the html form
+        if (logErrors != "" && logErrors != 'undefined'){
+          jQuery('#create_customer .errors').html(logErrors);
+          jQuery('#create_customer .errors').show();
+
+          //if account creation is successful show checkout page
+        }else{
+          $('#form_success_msg').html("");
+          $('#form_success_msg').html("Account successfully created!!<br>Redirecting to login page...");
+          setTimeout(function() {
+            document.location.href = '/account/login';
+          }, 1500);
+        }
+      }).fail(function(){console.log('error');});
+      return false;
+    }); 
+  });
+</script> -->
+
+<style>
+  div#contents { 
+    margin: 0 auto;
+  }
+  #form_success_msg{color: green;}
+
+  div#date_of_birth .grid__item.medium--one-third.large--one-third {
+    width: 33%;
+    float: left;
+  }
+  div#customer_form_wrapper select {
+    color: #000;
+    background: transparent;
+    border: none;
+    /*border-bottom: 1px solid #fff;*/
+    margin: auto;
+    box-shadow: 0 0 0;
+    text-indent: 0;
+    font-family: SuisseIntl-Regular;
+    padding: 10px 0;
+  }
+  div#customer_form_wrapper select#dob-day {
+
+  }
+  div#customer_form_wrapper label.login {
+    display: table;
+    width: 100%;
+  }
+  div#customer_form_wrapper div#password {
+    width: 100%;
+    display: table;
+  }
+  div#customer_form_wrapper div#first_name {
+    width: 49%;
+    float: left;
+    margin-right:1%;
+  }
+  div#customer_form_wrapper div#last_name {
+    width: 49%;
+    float: left;
+    margin-left:1%;
+  }
+  div#customer_form_wrapper div#email {
+    display: table;
+    width: 100%;
+
+  }
+  div#date_of_birth label {
+    display: none;
+  }
+  .grid__item.medium--one-third.large--one-third.grid__item_mm {
+    padding: 0 10px;
+  }
+  #customer_form_wrapper input.button {
+    text-align: center;
+    background: #eef7b3;
+    background: linear-gradient(to left, #eef7b3 50%, #3066B0 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 1s ease;
+    border: none;
+    color: #000;
+    border-radius: 0 !important;
+  }
+  #customer_form_wrapper input.button:hover {
+    background-position: left bottom;
+    color: #fff;
+  }
+  .clear_both {
+    display: table;
+    width: 100%;
+  }
+  .login_form #customer_form_wrapper .input_border, #customer_form_wrapper .login_btn {
+    margin-top: 30px;
+  }
+  #customer_form_wrapper input#email:focus {
+    background: none !important;
+  }
+
+
+
+
+  @media only screen and (max-width:600px) {
+    div#customer_form_wrapperr div#first_name, div#customer_form_wrapper div#last_name {
+      width: 100%;
+      float: none;
+      margin-right: 0;
+    } 
+  }
+  @media only screen and (max-width:480px) {
+    div#date_of_birth .grid__item.medium--one-third.large--one-third {
+      width: 100%;
+      float: left;
+    }
+    .grid__item.medium--one-third.large--one-third.grid__item_mm {
+      padding: 0;
+    }
+  }
+</style>

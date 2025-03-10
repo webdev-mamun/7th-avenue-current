@@ -1,0 +1,42 @@
+{% layout none %}
+
+{% liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign v_title = current_variant.title
+  if v_title contains 'Extra-Deep'
+    assign depth = 'Extra-Deep'
+  elsif v_title contains 'Classic'
+    assign depth = 'Classic'
+  endif
+  assign stock_infos = shop.metaobjects.stock_messages_lead_times.values
+  for stock_info in stock_infos
+      assign name = stock_info.name
+      assign current_stock_message = ''
+      if stock_info.message != blank
+          if name contains '&'
+              assign name_first = name | split: '&' | first | strip
+              assign name_last = name | split: '&' | last | strip
+              if v_title contains name_first and v_title contains name_last
+                assign current_stock_message = stock_info.message
+                break
+              else
+                assign current_stock_message = ''
+              endif
+          else
+              if v_title contains name
+                assign current_stock_message = stock_info.message
+                break
+              else
+                assign current_stock_message = ''
+              endif
+          endif
+      endif
+  endfor
+%}
+
+{
+  "availability": "{{ current_stock_message }}",
+  "product_title": "{{ product.title }}",
+  "depth": "{{ depth }}",
+  "compareAtPrice": "{{ current_variant.compare_at_price }}"
+}

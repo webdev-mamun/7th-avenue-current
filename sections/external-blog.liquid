@@ -1,0 +1,70 @@
+<div class="bfa_items_grid">
+  <div class="bfa_section_title"><h4>{{section.settings.section_title}}</h4></div>
+  <div class="bfa_row">
+    {% for block in section.blocks %}
+    {% capture articleCycle %}{% cycle '', 'rev' %}{% endcapture %}
+    <div class="bfa_item {{articleCycle}}">
+      {% capture articleImage %}
+      <div class="article_image">
+        {% if block.settings.image != blank %}
+        <a href="{{ block.settings.link }}">
+          <img src="{{ block.settings.image | img_url: '325x325', crop: 'center' }}" alt="{{block.settings.title}}" width="100%" height="100%" loading="lazy">
+        </a>
+        {% endif %}
+      </div>
+      {% endcapture %}
+      {{articleImage}}
+      <div class="bfa_info">
+        <h3><a href="{{ block.settings.link }}">{{block.settings.title}}</a></h3>
+        <p>          
+          {{ block.settings.text}}
+        </p>
+        <a class="blog_link" href="{{ block.settings.link }}">Read More</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Article",
+    "max_blocks": 10,
+    "settings": [
+      {
+      	"id": "section_title",
+      	"type": "textarea",
+      	"label": "Title",
+		"default": "From People We Like"
+      }
+    ],
+    "blocks": [
+      {
+        "type":"external_blog",
+        "name":"External Blog",
+        "settings":[
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "id": "title",
+            "type": "textarea",
+            "label": "Title"
+          },
+          {
+            "id": "text",
+            "type": "textarea",
+            "label": "Text"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

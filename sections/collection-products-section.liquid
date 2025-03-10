@@ -1,0 +1,78 @@
+<div class="c_section">
+  <div class="grid_wrapper">
+    <div class="desktop-12 tablet-12 mobile-12 span-12">
+      <h2 class="big_title">{{ section.settings.section_text }}</h2>
+    </div>
+    <div class="clear"></div>
+  </div>  
+  {%- assign product_limit = section.settings.limit_p -%}
+  {%- assign collection = collections[section.settings.collection_b] -%}
+  {% paginate collection.products by product_limit %}
+  <div class="grid_wrapper product-loop" id="featured_seller">        
+    {% for product in collection.products %}
+    <div class="desktop-4 tablet-4 mobile-half span-4{%if forloop.index > section.settings.limit_m %} mobilehide{%endif%}" id="product-{{ forloop.index | plus:paginate.current_offset }}">
+      {% render 'product-listing', product: product %}
+    </div>    
+    {% endfor %}
+  </div>  
+  <div id="loadmore">
+    {% if paginate.next %}
+    <a href="{{ paginate.next.url }}"><div class="spinner"></div></a>
+    {% endif %}  
+  </div>  
+  {% endpaginate %}
+  <div class="clear"></div>
+</div>
+
+
+
+<script src="https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937" defer></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var endlessScroll = new Ajaxinate({
+      container: '#featured_seller',
+      pagination: '#loadmore',
+      loadingText: '<div class="spinner"></div>',
+      method: 'scroll',
+      offset: 1500
+    });
+  });
+</script>
+
+
+{% schema %}
+{
+"name": "Infinity products",
+"settings": [
+{
+"type":"text",
+"id":"section_text",
+"label":"Section Heading"
+},
+{
+"type": "collection",
+"id": "collection_b",
+"label":"Collection"
+},
+{
+"type": "range",
+"id": "limit_p",
+"min": 3,
+"max": 20,
+"step": 1,
+"label": "Limit",
+"default": 6
+},
+{
+"type": "range",
+"id": "limit_m",
+"min": 3,
+"max": 20,
+"step": 1,
+"label": "Limit for mobile",
+"default": 6
+}
+]
+}
+{% endschema %}

@@ -1,0 +1,200 @@
+<div class="customer__wrapper">
+  <div class="customer_login_wrapper mw">
+    <div class="welcome_text animated animatedFadeInUp fadeInUp">
+      <h2>Welcome<br> Home.</h2>      
+    </div>
+    <div class="rectangle_image_left">
+      <img src="https://cdn.shopify.com/s/files/1/0264/8218/0174/files/Rectangle_10_copy.jpg?2707" class="left_img1" width="100%" height="100%" loading="lazy">
+      <img src="https://cdn.shopify.com/s/files/1/0264/8218/0174/files/Rectangle_10_copy_2.jpg?2707" class="left_img2 hide_m" width="100%" height="100%" loading="lazy">
+      <img src="https://cdn.shopify.com/s/files/1/0264/8218/0174/files/dad-only_vertical.jpg?v=1586847186" class="mobile_show left_img2" width="100%" height="100%" loading="lazy">
+    </div>
+    <div class="login_form">
+      <div id="customer" class="login-form-mail">
+        {% form 'customer_login' %}
+        {{ form.errors | default_errors }}
+        <div class="input_border">
+          <label for="customer_email" class="login">{{ 'customer.login.email' | t }}</label>
+          <input type="email" value="" name="customer[email]" id="customer_email" class="large" size="30" />
+        </div>
+        {% if form.password_needed %}
+        <div class="input_border">
+          <label for="customer_password" class="login">{{ 'customer.login.password' | t }}</label>
+          <input type="password" value="" name="customer[password]" id="customer_password" class="large password" size="16" />          
+        </div>
+        {% endif %} 
+        <div class="login_btn">
+          <input class="secondary button" type="submit" value="{{ 'customer.login.sign_in' | t }}" />
+        </div>
+        {% endform %}
+      </div>
+
+      <!-- Password Recovery -->
+
+      <div id="recover-password" class="desktop-12 mobile-3" style='display:none'>
+        <div class="login-form">
+          <div class="template_header">
+            <h2>{{ 'customer.recover_password.title' | t }}</h2>
+            <p class="note">{{ 'customer.recover_password.subtext' | t }}</p>
+          </div>
+
+          {% form 'recover_customer_password' %}
+
+          {{ form.errors | default_errors }}
+
+          <div id="recover_email" class="clearfix large_form input_border">
+            <label for="email" class="large">{{ 'customer.recover_password.email' | t }}</label>
+            <input type="email" value="" size="30" name="email" id="recover-email" class="large" />
+          </div>
+
+          <div class="action_bottom">
+            <input class="secondary button" type="submit" value="{{ 'customer.recover_password.submit' | t }}" />
+            <span class="note"><a href="#" onclick="hideRecoverPasswordForm();return false;">{{ 'customer.recover_password.cancel' | t }}</a></span>
+          </div>
+
+          {% endform %}
+        </div>
+        <!-- End Password Recovery -->
+      </div>
+      <div class="customer_links">
+        <a id="register-link-button" href="/account/register">Create Account</a>
+        <div id="forgot_password">
+          <a href="#" onclick="showRecoverPasswordForm();return false;"><!--{{ 'customer.login.forgot_password'  | t }}--> Forgot password? </a>
+        </div>
+      </div>
+      <div class="rectangle_image_right">
+        <img src="https://cdn.shopify.com/s/files/1/0264/8218/0174/files/dad-only_vertical.jpg?v=1586847186" width="100%" height="100%" loading="lazy">
+      </div>
+    </div>
+  </div>  
+</div>
+<script type="text/javascript">
+  function showRecoverPasswordForm() {
+    document.getElementById('recover-password').style.display = 'block';
+    document.getElementById('customer').style.display='none';
+    document.getElementById('create-customer').style.display = 'none';
+    document.getElementById('register-link-button').style.display = 'none';
+    document.getElementById('login-link-button').style.display = 'none';
+    document.getElementById('forgot_password').style.display = 'none';
+  }
+
+  function hideRecoverPasswordForm() {
+    document.getElementById('recover-password').style.display = 'none';
+    document.getElementById('customer').style.display = 'block';
+    document.getElementById('create-customer').style.display = 'none';
+    document.getElementById('register-link-button').style.display = 'block';
+    document.getElementById('login-link-button').style.display = 'none';
+    document.getElementById('forgot_password').style.display = 'block';
+  }
+
+  if (window.location.hash == '#recover') { showRecoverPasswordForm() }
+  function showLoginnForm() {
+    document.getElementById('create-customer').style.display = 'none';
+    document.getElementById('customer').style.display='block';
+    document.getElementById('recover-password').style.display = 'none';
+    document.getElementById('login-link-button').style.display = 'none';
+    document.getElementById('register-link-button').style.display = 'block';
+    document.getElementById('forgot_password').style.display = 'block';
+
+  }
+</script>
+
+
+<style>
+  div#contents { 
+    margin: 0 auto;
+  }
+
+
+  div#date_of_birth .grid__item.medium--one-third.large--one-third {
+    width: 33%;
+    float: left;
+  }
+  div#create-customer select {
+    color: #000;
+    background: transparent;
+    border: none;
+    /*border-bottom: 1px solid #fff;*/
+    margin: auto;
+    box-shadow: 0 0 0;
+    text-indent: 0;
+    font-family: SuisseIntl-Regular;
+    padding: 10px 0;
+  }
+  div#create-customer select#dob-day {
+
+  }
+  div#create-customer label.login {
+    display: table;
+    width: 100%;
+  }
+  div#create-customer div#password {
+    width: 100%;
+    display: table;
+  }
+  div#create-customer div#first_name {
+    width: 49%;
+    float: left;
+    margin-right:1%;
+  }
+  div#create-customer div#last_name {
+    width: 49%;
+    float: left;
+    margin-left:1%;
+  }
+  div#create-customer div#email {
+    display: table;
+    width: 100%;
+
+  }
+  div#date_of_birth label {
+    display: none;
+  }
+  .grid__item.medium--one-third.large--one-third.grid__item_mm {
+    padding: 0 10px;
+  }
+  #create-customer input.button {
+    text-align: center;
+    background: #eef7b3;
+    background: linear-gradient(to left, #eef7b3 50%, #3066B0 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 1s ease;
+    border: none;
+    color: #000;
+    border-radius: 0 !important;
+  }
+  #create-customer input.button:hover {
+    background-position: left bottom;
+    color: #fff;
+  }
+  .clear_both {
+    display: table;
+    width: 100%;
+  }
+  .login_form #create-customer .input_border, #create-customer .login_btn {
+    margin-top: 30px;
+  }
+  #create-customer input#email:focus {
+    background: none !important;
+  }
+
+
+
+
+  @media only screen and (max-width:600px) {
+    div#create-customer div#first_name, div#create-customer div#last_name {
+      width: 100%;
+      float: none;
+      margin-right: 0;
+    } 
+  }
+  @media only screen and (max-width:480px) {
+    div#date_of_birth .grid__item.medium--one-third.large--one-third {
+      width: 100%;
+      float: left;
+    }
+    .grid__item.medium--one-third.large--one-third.grid__item_mm {
+      padding: 0;
+    }
+  }
+</style>

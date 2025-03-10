@@ -1,0 +1,224 @@
+{%- liquid
+    assign image = section.settings.image
+    assign title = section.settings.title
+    assign text = section.settings.text 
+    assign btn_text = section.settings.btn_text
+    assign btn_url = section.settings.btn_url
+    assign btn_text_2 = section.settings.btn_text2
+    assign btn_url_2 = section.settings.btn_url2
+    assign top_gutter = section.settings.top_gutter
+	assign bottom_gutter = section.settings.bottom_gutter
+	assign top_gutter_m = section.settings.top_gutter_m
+	assign bottom_gutter_m = section.settings.bottom_gutter_m
+    assign color = section.settings.color 
+    assign bg_color = section.settings.bg_color
+    assign text_left = section.settings.text_left
+    assign box = section.settings.box
+    assign border_top = section.settings.borderTop
+    assign border_bot = section.settings.borderBot
+    
+-%}
+<section class="image-with-text image-with-text__{{ section.id }}"{% if template.name == 'product' %} id="pdp-virtual-appointment"{% endif %}>
+    <div class="image-with-text__container{% if text_left %} text-left{% endif %}{% if box %} container-boxed{% endif %}">
+        {%- if border_top == true -%}
+        <div class="border-top">
+          <div class="section-divider"></div>
+        </div>
+        {%- endif -%}
+        <div class="image-with-text__container--inner">
+          <div class="image-with-text__image">
+              {%- if image != blank -%}
+              {% render "basic-responsive-image" type: image %}
+              {%- else -%}
+              {{ 'collection-1' | placeholder_svg_tag }}
+              {%- endif -%}
+          </div>
+          <div class="image-with-text__content">
+              {%- if title != blank -%}
+              <h2 class="image-with-text__title">{{ title }}</h2>
+              {%- endif -%}
+              {%- if text != blank -%}
+              <p class="image-with-text__text">{{ text }}</p>
+              {%- endif -%}
+              {%- if btn_url != blank or btn_url_2 != blank -%}
+              <div class="image-with-text__btn--group">
+                {%- if btn_url != blank -%}
+                  <a href="{{ btn_url }}" class="image-with-text__btn">{{ btn_text }}</a>
+                {%- endif -%}
+                {%- if btn_url_2 != blank -%}
+                  <a href="{{ btn_url_2 }}" class="image-with-text__btn">{{ btn_text_2 }}</a>
+                {%- endif -%}
+              </div>
+             {%- endif -%}
+          </div>
+        </div>
+      {%- if border_bot == true -%}
+    <div class="border-bot">
+      <div class="section-divider"></div>
+    </div>
+  {%- endif -%}
+    </div>
+  
+</section>
+
+<style>
+	.image-with-text__{{ section.id }} {
+        color: {{ color }};
+        background-color: {{ bg_color }};
+	} 
+  
+    .image-with-text__{{ section.id }} .image-with-text__container--inner {
+      padding-top: {{ top_gutter_m }}px;
+      padding-bottom: {{ bottom_gutter_m }}px;
+    }
+  
+	@media screen and (min-width: 751px){
+      .image-with-text__{{ section.id }} .image-with-text__container--inner {
+          padding-top: {{ top_gutter }}px;
+          padding-bottom: {{ bottom_gutter }}px;
+      }
+	}
+  
+</style>
+{% schema %}
+    {
+   "name":"Image with text",
+   "settings":[
+      {
+         "type":"checkbox",
+         "id":"box",
+         "label":"Enable Box conteiner"
+      },
+      {
+         "type":"image_picker",
+         "id":"image",
+         "label":"Image"
+      },
+      {
+         "type":"checkbox",
+         "id":"text_left",
+         "label":"Image position right",
+         "default":false
+      },
+      {
+         "type":"textarea",
+         "id":"title",
+         "label":"Title",
+         "default":"Making your dream home should be easy."
+      },
+      {
+         "type":"textarea",
+         "id":"text",
+         "label":"Text",
+         "default":"Buying furniture online is hard. From the abundance cheaply-made fast furniture, to inability for customers to touch & feel their most important product."
+      },
+      {
+         "type":"header",
+         "content":"Button"
+      },
+      {
+         "type":"url",
+         "id":"btn_url",
+         "label":"Button url 1"
+      },
+      {
+         "type":"text",
+         "id":"btn_text",
+         "label":"Button text 1",
+         "default":"READ ABOUT US"
+      },
+      {
+         "type":"url",
+         "id":"btn_url2",
+         "label":"Button url 2"
+      },
+      {
+         "type":"text",
+         "id":"btn_text2",
+         "label":"Button text 2",
+         "default":"READ ABOUT US"
+      },
+      {
+         "type":"header",
+         "content":"Border"
+      },
+      {
+         "type":"checkbox",
+         "id":"borderTop",
+         "label":"Border top",
+         "default":false
+      },
+      {
+         "type":"checkbox",
+         "id":"borderBot",
+         "label":"Border Bottom",
+         "default":false
+      },
+      {
+         "type":"header",
+         "content":"Gutter"
+      },
+      {
+         "type":"range",
+         "id":"top_gutter",
+         "min":0,
+         "max":300,
+         "step":5,
+         "unit":"px",
+         "label":"Top gutter",
+         "default":40
+      },
+      {
+         "type":"range",
+         "id":"bottom_gutter",
+         "min":0,
+         "max":300,
+         "step":5,
+         "unit":"px",
+         "label":"Bottom gutter",
+         "default":40
+      },
+      {
+         "type":"range",
+         "id":"top_gutter_m",
+         "min":0,
+         "max":300,
+         "step":5,
+         "unit":"px",
+         "label":"Top gutter (Mobile)",
+         "default":10
+      },
+      {
+         "type":"range",
+         "id":"bottom_gutter_m",
+         "min":0,
+         "max":300,
+         "step":5,
+         "unit":"px",
+         "label":"Bottom gutter (Mobile)",
+         "default":10
+      },
+      {
+         "type":"header",
+         "content":"Color"
+      },
+      {
+         "type":"color",
+         "id":"color",
+         "label":"Color",
+         "default":"#000000"
+      },
+      {
+         "type":"color",
+         "id":"bg_color",
+         "label":"Background color",
+         "default":"#F3F3F3"
+      }
+   ],
+   "presets":[
+      {
+         "name":"Image with text"
+      }
+   ]
+}
+{% endschema %}

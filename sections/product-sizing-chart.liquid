@@ -1,0 +1,71 @@
+{% schema %}
+  {
+    "name": "Sizing Chart",
+    "settings": [
+	  {
+        "type": "text",
+        "id": "size_1",
+        "label": "Small size"
+      },
+      {
+        "type": "text",
+        "id": "size_2",
+        "label": "Medium size"
+      },
+      {
+        "type": "text",
+        "id": "size_3",
+        "label": "Large Size"
+      },
+      {
+        "type": "text",
+        "id": "size_4",
+        "label": "Extra large size"
+      }
+	],
+	"blocks": [
+	  {
+	  	"type": "sizing_hcart",
+		"name": "Size",
+		"settings": [
+		  {
+			"type": "image_picker",
+			"id": "img_horizontal",
+			"label": "Horizontal Image"
+		  },
+		  {
+			"type": "image_picker",
+			"id": "img_vertical",
+			"label": "Vertical Image"
+		  }			  
+		]
+      }
+	]
+  }
+{% endschema %}
+
+{% assign horizontal = false %} 
+
+{% for tag in product.tags %}
+{% assign lowercase_tag = tag | downcase %}
+{% if lowercase_tag == 'horizontal' %}
+{% assign horizontal = true %}
+{% endif %}
+{% endfor %}
+<div class="sizing_chart mw">        
+  <ul class="chart_size_list">	
+    <li><h2 class="sizing_chart_title">Wall Art<span>Size Guide</span></h2></li>
+  </ul>    
+  <div class="sizing_chart_slider">    
+    {% for block in section.blocks %} 
+    <div>          
+      {% if horizontal == true %}
+      <div class="horizontal_size_image">{% render 'image-lazyload', image: block.settings.img_horizontal %}</div>
+      {% else %}
+      <div class="vertical_size_image">{% render 'image-lazyload', image: block.settings.img_vertical %}</div>
+      {% endif %}
+    </div> 
+    {% endfor %}  
+  </div>  
+</div>
+

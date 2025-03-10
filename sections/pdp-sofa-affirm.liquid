@@ -1,0 +1,397 @@
+{%- liquid
+  assign month = section.settings.month | default: 36  
+  assign monthlyPay = product.selected_or_first_available_variant.price | divided_by: month | money | split: '.' | first
+  assign before_price = section.settings.before_price
+  assign after_price = section.settings.after_price
+  assign logos = section.blocks | where: "type", "logo"
+  assign ptm = section.settings.ptm | default: 0
+  assign pbm = section.settings.pbm | default: 0
+  assign pt = section.settings.pt | default: 0
+  assign pb = section.settings.pb | default: 0
+-%}
+
+<style>
+  .pdb-affirm__{{ section.id }} {
+    padding-top: {{ ptm }}px;
+    padding-bottom: {{ pbm }}px;
+  }
+
+  .pdb-affirm__{{ section.id }} .pdb-affirm__text--container {
+     {% if ptm == 0 %}
+     padding-top: 15px;
+     {% else %}
+     padding-top: 0px;
+     {% endif %}
+     {% if pbm == 0 %}
+     padding-bottom: 20px;
+     {% else %}
+     padding-bottom: 0px;
+     {% endif %}
+  }
+
+  @media screen and (min-width: 751px) {
+    .pdb-affirm__{{ section.id }} {
+      padding-top: {{ pt }}px;
+      padding-bottom: {{ pb }}px;
+    }
+
+    .pdb-affirm__{{ section.id }} .pdb-affirm__text--container {
+       {% if pt == 0 %}
+       padding-top: 30px;
+       {% else %}
+       padding-top: 0px;
+       {% endif %}
+       {% if pb == 0 %}
+       padding-bottom: 35px;
+       {% else %}
+       padding-bottom: 0px;
+       {% endif %}
+    }
+  }
+</style>
+
+{%- capture logo -%}
+  <span class="finance-logos">
+    {%- for logo in logos -%}
+      {%- liquid
+        assign logoImage = logo.settings.logo
+        assign logoType = logo.settings.logoType
+        if template.name == 'product'
+          if logoType == 'klarna'
+           assign popupOpener = ' klarna-popup-opener'
+          elsif logoType == 'affirm'
+           assign popupOpener = ' affirm-popup-opener'
+          elsif logoType == 'shoppay'
+           assign popupOpener = ' shoppay-popup-opener'
+          endif
+         elsif template.name != 'product' and logoType == 'affirm'
+           assign popupOpener = ' affirm-site-modal'
+         elsif template.name != 'product' and logoType == 'klarna'
+           assign popupOpener = ' klarna-popup-opener'
+        endif
+       -%}
+      {%- unless forloop.first -%}{%- if logos.size == 2 and forloop.index == 2 -%}&nbsp,{%- endif -%}{%- if logos.size == 3 -%}{%- if forloop.index == 2  -%}&nbsp,&nbsp{%- else -%}&nbsp,{%- endif -%}{%- endif -%}{%- endunless -%}
+      <span class="finance-logo-{{ logoType }}{{ popupOpener }}"{% if template.name != 'product' and logoType == 'affirm' %} data-page-type="banner"{% endif %}>
+        <img src="{{ logoImage | image_url: width: 200 }}" width="{{ 38 | times: logoImage.aspect_ratio }}" width="100%"
+          height="auto"
+          loading="lazy">
+      </span>
+    {%- endfor -%}
+  </span>
+{%- endcapture -%}
+  
+<div class="pdb-affirm pdb-affirm__{{ section.id }}" id="shopify-section-pdp-sofa-affirm">
+   <div class="pdb-affirm__container">
+      <div class="pdb-affirm__row">
+         <div class="pdb-affirm__col">
+            <div class="pdb-affirm__image">
+               {% if section.settings.image != blank %}
+                {{ section.settings.image | image_url: width: 750 | image_tag: loading: 'lazy' }}
+               <noscript>
+                  <img src="{{ section.settings.image | image_url: width: 350 }}" alt="{{ section.settings.image.alt | escape }}"  width="100%"
+                    height="auto"
+                    loading="lazy">
+               </noscript>
+               {% else %}
+               {{ 'collection-1' | placeholder_svg_tag }}
+               {% endif %}
+            </div>
+         </div>
+         <div class="pdb-affirm__col">
+            <div class="pdb-affirm__text--container">
+               <div class="pdb-affirm__text--content">
+                  <p class="affirm-as-low-as-title">
+                     {% if before_price != blank %}{{ before_price }} {% endif %}<span class="pdb-affirm__title--amount">$134</span>/mo {% if after_price != blank %}{{ after_price }}{% endif %} 
+                     {{ logo }}* 
+                  </p>
+                  <ul class="pdb-affirm__options">
+                     {% for block in section.blocks %}
+                      {% if block.type == 'option' %}
+                       <li class="pdb-affirm__option--single {% if section.blocks.size > 1 and forloop.index == 2 %}border_left{% endif %} {% if section.blocks.size > 2 and forloop.index == 2 %}border_right{% endif %}">
+                          {% if block.settings.top != blank %}
+                          <span class="pdb-affirm__option--top" id="pdb-affirm__info--{{ forloop.index }}">{{ block.settings.top }}</span>
+                          {% endif %}
+                          {% if block.settings.bottom != blank %}
+                          <span class="pdb-affirm__option--bottom">{{ block.settings.bottom }}</span>
+                          {% endif %}
+                       </li>
+                      {% endif %}
+                     {% endfor %}
+                  </ul>
+                  <div class="affirm__button--container">
+                     {% for block in section.blocks %}
+                       {% if block.type == 'button' %}
+                          {%- liquid
+                            assign btnType = block.settings.btnTyep
+                            assign btnUrl = block.settings.btnUrl
+                            assign btnText = block.settings.btnText
+                            assign popupOpener = ''
+                            if template.name == 'product'
+                              if btnType == 'klarna'
+                               assign popupOpener = ' klarna-popup-opener'
+                              elsif btnType == 'affirm'
+                               assign popupOpener = ' affirm-popup-opener'
+                              elsif btnType == 'shoppay'
+                               assign popupOpener = ' shoppay-popup-opener'
+                              endif
+                             elsif template.name != 'product' and btnType == 'affirm'
+                               assign popupOpener = ' affirm-site-modal'
+                             elsif template.name != 'product' and btnType == 'klarna'
+                               assign popupOpener = ' klarna-popup-opener'
+                            endif
+                          -%}
+                         <a{% if template.name != 'product' and btnUrl != blank %} href="{{ btnUrl }}"{% endif %} class="affirm__button{{ popupOpener }}"{% if template.name != 'product' and btnType == 'affirm' %} data-page-type="banner"{% endif %}>{{ btnText }}</a>
+                         {% if template.name == 'product' %}
+                           {% if btnType == 'affirm' %}
+                            <div class="affirm-osm make-hidden">
+                              <p class="affirm-as-low-as" data-page-type="product"  data-amount="{{product.selected_or_first_available_variant.price}}"></p>
+                            </div>
+                           {% endif %}
+                           {% if btnType == 'klarna' %}
+                           <!-- Placement v2 -->
+                            <div class="klarna-osm make-hidden">
+                              <klarna-placement
+                                data-key="credit-promotion-badge"
+                                data-locale="en-US"
+                                data-purchase-amount="{{product.selected_or_first_available_variant.price}}"
+                              ></klarna-placement>
+                            </div>
+                            <!-- end Placement -->
+                            {% endif %}
+                         {% else %}
+                           {% if btnType == 'klarna' %}
+                           <!-- Placement v2 -->
+                            <div class="klarna-osm make-hidden">
+                              <klarna-placement
+                                data-key="top-strip-promotion-auto-size"
+                                data-locale="en-US"
+                              ></klarna-placement>
+                            </div>
+                            <!-- end Placement -->
+                          {% endif %}
+                         {% endif %}
+                       {% endif %}
+                     {% endfor %}
+                  </div>
+               </div>
+               {% if section.settings.info != blank %}
+               <p class="pdb-affirm__info">{{ section.settings.info }}</p>
+               {% endif %}
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+{% schema %}
+{
+   "name":"Affirm",
+   "settings":[
+      {
+         "type":"image_picker",
+         "id":"image",
+         "label":"Image"
+      },
+      {
+        "type": "text",
+        "id": "before_price",
+        "label": "Before price text",
+        "default": "Buy now, pay later. Starts at"
+      },
+      {
+        "type": "text",
+        "id": "after_price",
+        "label": "After price text",
+        "default": "with"
+      },
+      {
+        "type": "text",
+        "id": "month",
+        "label": "Month",
+        "default": "36"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo1",
+        "label": "Logo 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo2",
+        "label": "Logo 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo3",
+        "label": "Logo 3"
+      },
+      {
+         "type":"textarea",
+         "id":"info",
+         "label":"Bottom info",
+         "default":"*Based on 36-month financing"
+      },
+      {
+        "type": "header",
+        "content": "Gutter"
+      },
+      {
+          "type": "range",
+          "id": "pt",
+          "min": 0,
+          "max": 300,
+          "step": 5,
+          "unit": "px",
+          "label": "Top gutter",
+          "default": 30
+      },
+      {
+          "type": "range",
+          "id": "pb",
+          "min": 0,
+          "max": 300,
+          "step": 5,
+          "unit": "px",
+          "label": "Bottom gutter",
+          "default": 35
+      },
+      {
+          "type": "range",
+          "id": "ptm",
+          "min": 0,
+          "max": 300,
+          "step": 5,
+          "unit": "px",
+          "label": "Top gutter (Mobile)",
+          "default": 15
+      },
+      {
+          "type": "range",
+          "id": "pbm",
+          "min": 0,
+          "max": 300,
+          "step": 5,
+          "unit": "px",
+          "label": "Bottom gutter (Mobile)",
+          "default": 25
+      }
+   ],
+   "blocks":[
+      {
+         "type":"option",
+         "name":"Option",
+        "limit": 3,
+         "settings":[
+            {
+               "type":"text",
+               "id":"top",
+               "label":"Top",
+               "default":"$96"
+            },
+            {
+               "type":"text",
+               "id":"bottom",
+               "label":"Bottom",
+               "default":"PER MONTH FOR THIS PRODUCT"
+            }
+         ]
+      },
+      {
+         "type":"button",
+         "name":"Button",
+         "limit": 3,
+         "settings":[
+            {
+              "type": "select",
+              "id": "btnTyep",
+              "label": "Button type",
+              "options": [
+                {
+                  "value": "klarna",
+                  "label": "Klarna"
+                },
+                {
+                  "value": "affirm",
+                  "label": "Affirm"
+                },
+                {
+                  "value": "shoppay",
+                  "label": "Shoppay"
+                }
+              ]
+            },
+            {
+               "type":"text",
+               "id":"btnText",
+               "label":"Text",
+               "default":"FINANCE WITH shoppay"
+            },
+            {
+               "type":"url",
+               "id":"btnUrl",
+               "label":"URL"
+            }
+         ]
+      },
+      {
+        "type": "logo",
+        "name": "Logo",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "logo"
+          },
+          {
+            "type": "select",
+            "id": "logoType",
+            "label": "Logo type",
+            "options": [
+              {
+                "value": "klarna",
+                "label": "Klarna"
+              },
+              {
+                "value": "affirm",
+                "label": "Affirm"
+              },
+              {
+                "value": "shoppay",
+                "label": "Shoppay"
+              }
+            ]
+          }
+        ]
+      }
+   ],
+   "presets":[
+      {
+         "name":"Affirm",
+         "blocks":[
+            {
+               "type":"option",
+               "settings":{
+                  "top":"$96",
+                  "bottom":"PER MONTH FOR THIS PRODUCT"
+               }
+            },
+            {
+               "type":"option",
+               "settings":{
+                  "top":"$0",
+                  "bottom":"DOWN PAYMENT"
+               }
+            },
+            {
+               "type":"option",
+               "settings":{
+                  "top":"0%",
+                  "bottom":"APR"
+               }
+            }
+         ]
+      }
+   ]
+}
+{% endschema %}

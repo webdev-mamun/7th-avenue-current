@@ -1,0 +1,39 @@
+
+<div data-section-id="{{ section.id }}" data-section-type="page-section">  
+  {% if section.settings.image != blank %}
+  <div class="collection-banner" style="background: #ddd;background-image: url('{{section.settings.image|img_url: 'master'}}'); background-size:cover;background-position: center">      
+    <div class="collection_inner_contact">  
+      <div class="collection_info">
+        <h3>{{page.title}}</h3>
+      </div>
+    </div>
+  </div>  
+  {% endif %}
+
+  <div id="content" class="row contact">   
+    <div id="contact-page" class="desktop-12 tablet-12 mobile-12 contact_form_column" style="border-right: none;">
+      <div class="rte" style="min-height: 1px">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+  <style media="screen">
+    div#contact-page.form-left {
+      float: right;
+    }
+  </style>
+</div>
+
+
+{% schema %}
+{
+    "name": "Contact page",
+    "settings": [			
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Banner image"
+        }
+  ]
+}
+{% endschema %}

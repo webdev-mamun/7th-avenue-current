@@ -1,0 +1,245 @@
+<div class="advance_content_section_wrapper">
+  {% for block in section.blocks %}
+  {% case block.type %}
+  {% when 'image-with-text' %}
+  <div class="advance_content_section"{%if block.settings.section_bg_color != blank%} style="background: #{{section.settings.section_bg_color}}"{%endif%}>
+    <div class="ac_wrapper mw" style="width: {{block.settings.block_width}}%;">
+      <div class="ac_body {{block.settings.image_position}} image_on_mobile_{{block.settings.image_position_on_mobile}}">
+        <div class="ac_body_info">
+          <h2 class="big_title">{{block.settings.title}}</h2>
+          <div class="ac_body_text">{{block.settings.text}}</div>
+        </div>
+        <div class="ac_body_image">
+          {% render 'image-lazyload', image: block.settings.image %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% when 'image-with-icon-and-text' %}
+  <div class="advance_content_section"{%if block.settings.section_bg_color != blank%} style="background: #{{section.settings.section_bg_color}}"{%endif%}>
+    <div class="ac_wrapper mw" style="width: {{block.settings.block_width}}%;">
+      <div class="ac_body {{block.settings.image_position}} image_on_mobile_{{block.settings.image_position_on_mobile}}">
+        <div class="ac_body_info">
+          <h2 class="big_title">{{block.settings.title}}</h2>
+          <div class="ac_body_text">
+            {% for i in (1..3) %}
+            {% assign icon = 'image' | append: i %}
+            {% assign svg = 'svg' | append: i %}
+            {% assign text = 'text' | append: i %}
+            {% if block.settings[svg] != blank %} 
+            {% assign img = block.settings[svg] | asset_url %} 
+            {% else %} 
+            {% assign img = block.settings[icon] | img_url: '80x80' %} 
+            {% endif%}
+            {% if block.settings[icon] != blank or block.settings[text] != blank %}
+            <div class="ac_body_text_inner">
+              <img src="{{img}}" alt="{{block.settings[text]}}" width="100%" height="100%" loading="lazy">
+              <p>{{block.settings[text]}}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="ac_body_image">
+          {% render 'image-lazyload', image: block.settings.image %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endcase %}
+  {% endfor %}
+</div>
+{% schema %}
+  {
+    "name": "Advanced content",
+	"max_blocks": 5,
+    "settings": [
+	  
+    ],
+	"blocks": [
+	  {
+		"type": "image-with-text",
+		"name": "Image with text",
+		"settings": [
+		  {
+			"type": "image_picker",
+			"id": "image",
+			"label": "Image"
+		  },
+		  {
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		  },
+		  {
+			"type": "textarea",
+			"id": "text",
+			"label": "Text"
+		  },
+		  {
+			"type": "header",
+			"content": "Styling"
+		  },
+		  {
+	  		"type": "range",
+	   		"id": "block_width",
+			"label": "Block width",
+			"min": 40,
+			"max": 100,
+			"step": 1,
+			"default": 90,
+			"info": "Width in percentage"
+	  	  },
+		  {
+			"type": "select",
+			"id": "image_position",
+			"label": "Image position",
+			"options": [
+			  {
+				"label": "Left",
+				"value": "left"
+			  },
+			  {
+				"label": "Right",
+				"value": "right"
+			  }
+			],
+			"default": "right"
+		  },
+		  {
+			"type": "select",
+			"id": "image_position_on_mobile",
+			"label": "Image position on mobile",
+			"options": [
+			  {
+				"label": "Top",
+				"value": "top"
+			  },
+			  {
+				"label": "Bottom",
+				"value": "bottom"
+			  }
+			],
+			"default": "top"
+		  }
+        ]
+      },
+	  {
+		"type": "image-with-icon-and-text",
+		"name": "Image with icon & text",
+		"settings": [
+		  {
+			"type": "image_picker",
+			"id": "image",
+			"label": "Image"
+		  },
+		  {
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		  },
+		  {
+			"type": "image_picker",
+			"id": "image1",
+			"label": "Icon #1"
+		  },
+          {
+			"type": "text",
+			"id": "svg1",
+			"label": "svg #1",
+			"default": "fsc-black.svg"
+		  },
+		  {
+			"type": "textarea",
+			"id": "text1",
+			"label": "Text #1"
+		  },
+		  {
+			"type": "image_picker",
+			"id": "image2",
+			"label": "Icon #2"
+		  },
+          {
+			"type": "text",
+			"id": "svg2",
+			"label": "svg #2",
+			"default": "cotton-black.svg"
+		  },
+		  {
+			"type": "textarea",
+			"id": "text2",
+			"label": "Text #2"
+		  },
+		  {
+			"type": "image_picker",
+			"id": "image3",
+			"label": "Icon #3"
+		  },
+          {
+			"type": "text",
+			"id": "svg3",
+			"label": "svg #3",
+			"default": "frame-black.svg"
+		  },
+		  {
+			"type": "textarea",
+			"id": "text3",
+			"label": "Text #3"
+		  },
+		  {
+			"type": "header",
+			"content": "Styling"
+		  },
+		  {
+	  		"type": "range",
+	   		"id": "block_width",
+			"label": "Block width",
+			"min": 40,
+			"max": 100,
+			"step": 1,
+			"default": 90,
+			"info": "Width in percentage"
+	  	  },
+		  {
+			"type": "select",
+			"id": "image_position",
+			"label": "Image position",
+			"options": [
+			  {
+				"label": "Left",
+				"value": "left"
+			  },
+			  {
+				"label": "Right",
+				"value": "right"
+			  }
+			],
+			"default": "right"
+		  },
+		  {
+			"type": "select",
+			"id": "image_position_on_mobile",
+			"label": "Image position on mobile",
+			"options": [
+			  {
+				"label": "Top",
+				"value": "top"
+			  },
+			  {
+				"label": "Bottom",
+				"value": "bottom"
+			  }
+			],
+			"default": "top"
+		  }
+        ]
+      }
+	],
+    "presets": [
+	  {
+		"name": "Advanced content"
+      }
+    ]
+  }
+{% endschema %}
+

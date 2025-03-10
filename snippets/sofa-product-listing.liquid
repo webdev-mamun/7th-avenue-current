@@ -1,0 +1,375 @@
+{% assign total_selected_filter_count = 0 %}
+
+{% for filter in collection_filters %}
+  {% for filter_value in filter.values %}
+    {% if filter_value.active %}
+      {% assign total_selected_filter_count = total_selected_filter_count | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{%- liquid
+  assign custom_selected_option = settings.custom_selected_option
+  assign swatch_item = 'color'
+  assign swatch_item_position = product.options_by_name[swatch_item].position
+  assign position_handle = 'option' | append: swatch_item_position
+  assign custom_selected_variant = product.variants | where: position_handle, custom_selected_option | first
+   
+  assign current_variant = product.selected_or_first_available_variant
+  assign spec = product.metafields.specification
+  if current_variant.title contains 'Extra-Deep'
+    if spec.title_for_extra_deep != blank
+      assign title = spec.title_for_extra_deep
+    else
+      assign title = product.title
+    endif
+    assign dimensions = spec.dimensions-extra-deep
+  elsif current_variant.title contains 'Classic'
+    assign dimensions = spec.dimensions
+    assign title = product.title
+  else
+    assign dimensions = spec.dimensions
+    assign title = product.title
+  endif
+   
+  assign option1 = ''
+  assign option2 = ''
+  assign option3 = ''
+  assign selected_colors = ''
+  assign _variants = product.variants
+  assign _variant_ids = ''
+  assign first_id = ''
+  assign selectable_index = 1
+  assign filter_active_value_size = 0
+  assign is_ordering_active = true
+  assign active_color_size = 0
+  for filter in collection_filters
+    assign label_id = filter.label | handleize
+    for option in product.options
+      assign option_handle = option | handleize
+      if label_id == option_handle
+        if forloop.index == 1
+          assign option1 = filter.label
+        endif
+        if forloop.index == 2
+          assign option2 = filter.label
+        endif
+        if forloop.index == 3
+          assign option3 = filter.label
+        endif
+      endif
+    endfor
+    for value in filter.active_values
+      if label_id == 'color'
+        assign active_color_size = filter.active_values.size
+        assign exact_value = value.value | split: '_' | last
+        if selected_colors == ''
+          assign selected_colors = selected_colors | append: exact_value
+        else
+          assign selected_colors = selected_colors | append: ',' | append: exact_value
+        endif
+      endif
+      if label_id == 'fabric'
+        assign filter_active_value_size = filter_active_value_size | plus: 1
+        assign is_ordering_active = false
+      endif
+      if filter.label == option1
+        assign _variants = _variants | where: 'option1', exact_value
+        for var in product.variants
+          if var.option1 contains exact_value
+            assign _variant_ids = _variant_ids | append: var.id | append: ','
+          endif
+        endfor
+      endif
+      if filter.label == option2
+        assign selectable_index = 2
+        assign _variants = _variants | where: 'option2', exact_value
+        for var in product.variants
+          if var.option2 contains exact_value
+            assign _variant_ids = _variant_ids | append: var.id | append: ','
+          endif
+        endfor
+      endif
+      if filter.label == option3
+        assign selectable_index = 3
+        assign _variants = _variants | where: 'option3', exact_value
+        for var in product.variants
+          if var.option3 contains exact_value
+            assign _variant_ids = _variant_ids | append: var.id | append: ','
+          endif
+        endfor
+      endif
+    endfor
+   
+    assign _variant_ids = _variant_ids | split: ',' | uniq
+    for id in _variant_ids
+      if forloop.index == selectable_index
+         assign first_id = id | times: 1
+         break
+      endif
+    endfor
+  endfor
+   
+  if total_selected_filter_count > 0
+   assign first_variant = product.selected_or_first_available_variant
+  else
+   assign first_variant = custom_selected_variant
+  endif
+  unless first_variant
+    assign first_variant = product.selected_or_first_available_variant
+  endunless
+   
+  assign selected_colors = selected_colors | split: ','
+  assign selected_color_count = selected_colors | size
+  assign ordered_value = settings.color_option_order | split: ', '
+-%}
+
+{%- if is_ordering_active -%}
+<style>
+  .color__swatch li[data-option-name] {
+    --order: {{ ordered_value.size }};
+  }
+  
+  {%- for value in ordered_value -%}
+    {%- unless forloop.last -%}
+      .color__swatch li[data-option-name*="{{ value | handle }}"] {
+        --order: {{ forloop.index }};
+      }
+    {%- endunless -%}
+  {%- endfor -%}
+</style>
+{%- endif -%}
+
+<div class="ci sofa-product-grid">
+   {% if product.available %}
+   {% for col in product.collections %}
+     {% if col.handle == 'new' %}
+       <div class="new icn">{{ 'products.general.new' | t }}</div>
+     {% endif %}
+   {% endfor %}
+     {% if product.price < product.compare_at_price %}
+       <div class="sale-item icn">{{ 'products.general.sale' | t }}</div>
+     {% endif %}
+   {% else %}
+     <div class="so icn">{{ 'products.general.sold' | t }}</div>
+   {% endif %}
+   <a href="{{ product.url | within: collection }}" title="{{ product.title | escape }}">
+      <div class="reveal">
+         {% if product.variants.size > 1 and product.variants[0].title != 'Default Title' %}
+         {% for variant in product.variants %}
+           {% liquid
+             assign variant_compare_price = false
+             assign variant_price_off = false
+             if variant.compare_at_price > 0
+               assign variant_compare_price = true
+             endif
+             if variant.compare_at_price > variant.price and variant.available
+               assign variant_price_off = true
+             endif
+           %}
+           <div data-variant="{{ variant.id }}" class="variant__image {% if variant.id == first_variant.id %}open{% endif %}" 
+             data-option1="{{ variant.option1 | handleize }}" 
+             data-option2="{{ variant.option2 | handleize }}" 
+             data-option3="{{ variant.option3 | handleize }}" 
+             data-variant-price="{{ variant.price | money  }}"
+             {% if variant_compare_price %}
+             data-variant-compare-price="{{ variant.compare_at_price | money }}"
+             {% endif %}
+             {% if variant_price_off %}
+             data-price-off="({{ variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | money_without_currency | times: 100 | remove: '.0'}}% OFF)"
+             {% endif %}
+             data-monthly-price="{{ c_monthly_price | money_without_currency | round }}" 
+             data-variant-url="{{ product.url | within: collection }}" 
+             data-variant-id="{{ variant.id }}">
+              {% if variant.title contains custom_selected_option %}
+                <div class="product-featured-image">
+                {% render  "basic-responsive-image", type: product.featured_image %}
+                </div>
+                <div class="variant-featured-image{% if selected_color == 'empty'%} hidden{% endif %}">
+                  {% render "basic-responsive-image", type: variant.featured_image %}
+                </div>
+              {% else %}
+                {% if variant.featured_image %}
+                  {% render "basic-responsive-image", type: variant.featured_image %}
+                {% else %}
+                  {% render  "basic-responsive-image", type: product.featured_image %}
+                {% endif %}
+              {% endif %}
+           </div>
+         {% endfor %}
+         {% if settings.image_flip and product.images.size > 1 %}
+           <div class="hidden">
+              {% render "basic-responsive-image", type: product.images[1] %}
+           </div>
+           {% endif %}
+         {% else %}
+           {% render "basic-responsive-image", type: product.featured_image %}
+           {% if settings.image_flip and product.images.size > 1 %}
+           <div class="hidden">
+              {% render "basic-responsive-image", type: product.images[1] %}
+           </div>
+           {% endif %}
+         {% endif %}
+      </div>
+   </a>
+</div>
+{% if product.variants.size > 1 and product.variants[0].title != 'Default Title' %}
+  <div class="color__swatch--container">
+     <ul class="color__swatch" data-size="{{ product.options_by_name['color'].values.size }}">
+        {%- liquid
+          assign has_already_selected = false
+          assign has_selected_color = false
+          assign custom_selected_option_found = false
+          if custom_selected_option != ''
+            assign actual_value = custom_selected_option | handle
+            assign custom_selected_option_found = false
+            for value in product.options_by_name['color'].values
+             if value contains custom_selected_option or value == custom_selected_option
+               assign actual_value = value | handle
+               assign custom_selected_option_found = true
+             endif
+            endfor
+          endif
+        -%}
+        {%- for value in product.options_by_name['color'].values %}
+          {%- liquid
+             assign value_handle = value | handle
+             assign is_disable = false
+             assign is_selected = false
+             if value_handle contains selected_color or selected_color == value_handle
+               assign is_selected = true
+             endif
+             
+             for _option in disabled_options
+               if value_handle contains _option or _option == value_handle
+                 assign is_disable = true
+                 assign is_selected = false
+               endif
+             endfor
+             
+             unless template.name == 'collection'
+               assign is_disable = false
+             endunless
+
+            if custom_selected_option_found
+             if value_handle == actual_value and is_disable == false and selected_color == 'empty' and has_selected_color == false
+               assign has_selected_color = true
+               assign is_selected = true
+               assign has_already_selected = true
+              else
+               if filter_active_value_size > 0 and is_disable == false and has_already_selected == false and selected_color == 'empty' and has_selected_color == false
+                 assign has_selected_color = true
+                 assign is_selected = true
+                 assign has_already_selected = true
+               endif
+             endif
+            else
+              if selected_color == 'empty' and has_selected_color == false and is_disable == false
+                assign has_selected_color = true
+                assign is_selected = true
+              endif
+            endif
+
+             
+             if selected_color_count > 1
+               assign is_hidden_color = true
+               for color in selected_colors
+                 assign handlize_color = color | handle
+                 if value_handle contains handlize_color
+                   assign is_hidden_color = false
+                 endif
+               endfor
+             endif
+
+             assign fabric_options = shop.metaobjects.fabric_options.values
+             assign option_image = ''
+             for fabric_option in fabric_options
+               assign fabric_option_title = fabric_option.title.value
+               if value contains fabric_option_title or value == fabric_option_title
+                 if fabric_option.thumbnail != blank
+                   assign option_image = fabric_option.thumbnail | image_url: width: 60
+                 else
+                   assign option_image = fabric_option.image | image_url: width: 60
+                 endif
+               endif
+             endfor
+          -%}
+          {% if template.name == 'collection' %}
+          {% unless is_hidden_color or is_disable %}
+            {% unless value contains 'Custom Fabric' %}
+            <li class="{% if is_selected %}open{% endif %}{% if active_color_size <= 0 and is_selected %} deselect{% endif %}" data-option-name="{{ value | handleize }}" data-position="{{ product.options_by_name['color'].position }}" data-disable="{{ is_disable }}">
+                <div class="color__swatch--bg {{ value | handleize }}" style="background-color: {{ value | handleize }};{% if option_image != '' %} background-image: url({{ option_image }});{% endif %}"></div>
+            </li>
+            {% endunless %}
+            {% endunless %}
+          {% else %}
+          <li class="{% if is_selected %}open{% endif %}" data-option-name="{{ value | handleize }}" data-position="{{ product.options_by_name['color'].position }}">
+              <div class="color__swatch--bg {{ value | handleize }}" style="background-color: {{ value | handleize }};{% if option_image != '' %} background-image: url({{ option_image }});{% endif %}"></div>
+          </li>
+          {% endif %}
+        {%- endfor %}
+     </ul>
+  </div>
+{% endif %}
+<div class="product-details">
+   <a href="{{ product.url | within: collection }}">
+      <h3>{{ title }}</h3>
+      {% if dimensions != blank %}
+      <p class="product_specification">{{ dimensions }}</p>
+      {% endif %}
+      <div class="price__container">
+        {% liquid
+          assign onsale = false
+          if product.price_varies
+            if first_variant.compare_at_price > first_variant.price and first_variant.available
+              assign onsale = true
+            endif
+          else
+            if product.compare_at_price > product.price and product.available
+              assign onsale = true
+            endif
+          endif
+        %}
+        
+        <div class="collection__price">
+          {% if product.variants.size > 1 %}
+            {% assign price = first_variant.price %}
+            {% assign compare_price = first_variant.compare_at_price %}
+            {% assign available = first_variant.available %}
+          {% else %}
+            {% assign price = product.price %}
+            {% assign compare_price = product.compare_at_price %}
+            {% assign available = product.available %}
+          {% endif %}
+          
+          {% if onsale %}
+            <span class="product-price was">
+              <span class="collection_money">{{ compare_price | money }}</span>
+            </span>
+          {% endif %}
+          
+          <span class="product-price current{% if onsale %} sale{% endif %}" itemprop="price">
+            <span class="collection_money">
+              {% if available %}
+                {{ price | money }}
+              {% else %}
+                Sold Out
+              {% endif %}
+            </span>
+          </span>
+          
+          {% if onsale %}
+            <span class="money_save money_save_pdp">
+              ({{ compare_price | minus: price | times: 100.0 | divided_by: compare_price | money_without_currency | times: 100 | remove: '.0' }}% OFF)
+            </span>
+          {% endif %}
+        </div>
+        
+        {% if current_variant.inventory_quantity > 10 %}
+          <p class="inventory__massage" style="display: none;">
+            <span class="inventory__signal in-stock"></span>In Stock
+          </p>
+        {% endif %}
+      </div>
+   </a>
+</div>

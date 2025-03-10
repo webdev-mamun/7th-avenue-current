@@ -1,0 +1,198 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_banner": {
+      "type": "page-header",
+      "settings": {
+        "title": "",
+        "text": "",
+        "color": "#ffffff",
+        "bgColor": "#000000"
+      }
+    },
+    "feature_in": {
+      "type": "feature-in",
+      "blocks": {
+        "10e76fdb-12b8-4fee-bcc5-99abcc4baa5c": {
+          "type": "feature_in",
+          "settings": {
+            "text": "\"Stylish, modular, non-toxic, affordable, stain-resistant and machine-washable, the 7th Avenue sofa has it all.\"",
+            "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/forbes_7thavenue.svg?v=1672946484",
+            "url": "https://www.forbes.com/sites/amandalauren/2022/12/23/7th-avenue-is-a-furniture-company-with-one-job-and-theyre-doing-it-better-than-anyone-else/?sh=1bad3d367bde",
+            "new_window": true
+          }
+        },
+        "ae0ccc8d-ac2d-4fc9-83a5-d8f1e6ea197f": {
+          "type": "feature_in",
+          "settings": {
+            "text": "\"I really love our 7th Avenue sofa, so much so that I would & have recommended it to others.\"",
+            "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/living_cozy_7thavenue.svg?v=1672946485",
+            "url": "https://www.livingcozy.com/reviews/7th-avenue-modular-sofa",
+            "new_window": true
+          }
+        },
+        "270a14e3-6601-4480-9cec-3bab4760b26e": {
+          "type": "feature_in",
+          "settings": {
+            "text": "\"As a pet parent, never thought I'd be able to have a white sofa before 7th Avenue...the fabric is a game changer.\"",
+            "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/image_19.png?v=1714316814",
+            "url": "https://www.housebeautiful.com/shopping/furniture/a46807841/7th-avenue-sectional-review/",
+            "new_window": true
+          }
+        }
+      },
+      "block_order": [
+        "10e76fdb-12b8-4fee-bcc5-99abcc4baa5c",
+        "ae0ccc8d-ac2d-4fc9-83a5-d8f1e6ea197f",
+        "270a14e3-6601-4480-9cec-3bab4760b26e"
+      ],
+      "settings": {
+        "border_top": true,
+        "border_bottom": true,
+        "color": "#000000",
+        "bg_color": "#ffffff"
+      }
+    },
+    "feature_in_in6crT": {
+      "type": "feature-in",
+      "blocks": {
+        "feature_in_LwLE9q": {
+          "type": "feature_in",
+          "settings": {
+            "text": "\"This washable couch's covers are easy to clean, leaving it looking as good as new after a wash.\"",
+            "image_svg": "",
+            "image": "shopify://shop_images/usa-today.svg",
+            "url": "https://www.google.com/search?sca_esv=94e45fce1d51b060&sca_upv=1&sxsrf=ADLYWILdrCE5Mt5-ZJr5k5RSf5bmVEwqQQ:1719354309733&q=usa+today+7th+avenue+sofa&tbm=nws&source=lnms&sa=X&ved=2ahUKEwjoqv_25feGAxXTkO4BHepYDzEQ0pQJegQIEBAB&biw=1497&bih=747&dpr=2",
+            "new_window": true
+          }
+        },
+        "feature_in_nkGi8C": {
+          "type": "feature_in",
+          "settings": {
+            "text": "\"It has removable, washable covers that are both water-repellent and stain-resistant to withstand spills like soda, juice, wine, all the things.\"",
+            "image_svg": "",
+            "image": "shopify://shop_images/cosmopolitan_7thavenue.svg",
+            "url": "https://www.cosmopolitan.com/lifestyle/g60022569/best-sofas-with-washable-covers/",
+            "new_window": true
+          }
+        },
+        "feature_in_tahFMR": {
+          "type": "feature_in",
+          "settings": {
+            "text": "\"..a high-quality couch that is modular based on your space, boasts luxury fabrics, and is constructed to last\"",
+            "image_svg": "",
+            "image": "shopify://shop_images/popsugar_7thavenue.svg",
+            "url": "https://www.popsugar.com/home/7th-avenue-2-seat-modular-loveseat-review-49306407",
+            "new_window": true
+          }
+        }
+      },
+      "block_order": [
+        "feature_in_LwLE9q",
+        "feature_in_nkGi8C",
+        "feature_in_tahFMR"
+      ],
+      "settings": {
+        "border_top": false,
+        "border_bottom": true,
+        "color": "#000000",
+        "bg_color": "#ffffff"
+      }
+    },
+    "feature_in_GEtDCR": {
+      "type": "feature-in",
+      "blocks": {
+        "feature_in_J6NNHB": {
+          "type": "feature_in",
+          "settings": {
+            "text": "“The best online shopping experience for furniture. Innovative experiential showroom concept”",
+            "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/forbes_7thavenue.svg?v=1672946484",
+            "url": "",
+            "new_window": false
+          }
+        },
+        "feature_in_q4YhBj": {
+          "type": "feature_in",
+          "settings": {
+            "text": "“This is truly one of the greatest sofas we’ve ever see in the market. Comfortable, yet stylish.”",
+            "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/living_cozy_7thavenue.svg?v=1672946485",
+            "url": "",
+            "new_window": false
+          }
+        },
+        "feature_in_kGpcpB": {
+          "type": "feature_in",
+          "settings": {
+            "text": "“GRAFITI is taking the furniture world by the storm. Their modular sofas are a fan-favorite”",
+            "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/image_19.png?v=1714316814",
+            "url": "",
+            "new_window": false
+          }
+        }
+      },
+      "block_order": [
+        "feature_in_J6NNHB",
+        "feature_in_q4YhBj",
+        "feature_in_kGpcpB"
+      ],
+      "disabled": true,
+      "settings": {
+        "border_top": false,
+        "border_bottom": true,
+        "color": "#000000",
+        "bg_color": "#ffffff"
+      }
+    },
+    "okendo_review": {
+      "type": "page-okendo-reviews",
+      "blocks": {
+        "review_tab_bT6FFa": {
+          "type": "reviewTab",
+          "settings": {
+            "title": "All",
+            "reviewGroupId": "cf5a55fc-7a28-4a37-b900-dad1a15549c2"
+          }
+        },
+        "review_tab_TfwgLN": {
+          "type": "reviewTab",
+          "settings": {
+            "title": "Indoor only",
+            "reviewGroupId": "5bffac86-77cf-4f8d-ab88-ada6c31a682c"
+          }
+        },
+        "review_tab_9PrcfX": {
+          "type": "reviewTab",
+          "settings": {
+            "title": "Outdoor Only",
+            "reviewGroupId": "b48006a9-a611-4a37-ac99-bcee37d41861"
+          }
+        }
+      },
+      "block_order": [
+        "review_tab_bT6FFa",
+        "review_tab_TfwgLN",
+        "review_tab_9PrcfX"
+      ],
+      "settings": {
+        "title_bg": "#000000",
+        "title_color": "#ffffff",
+        "title_border_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "page_banner",
+    "feature_in",
+    "feature_in_in6crT",
+    "feature_in_GEtDCR",
+    "okendo_review"
+  ]
+}

@@ -1,0 +1,90 @@
+{%- style -%}
+  :root {
+    --headingFontFamily: "Ortica";
+    --headingFontFamilyLight: "Ortica-Light";
+    --headingFontSWeight: {{ settings.heading_font.weight }};
+    --mainFontFamily: "SuisseIntl-Regular";
+    --mainFontSWeight: {{ settings.main_font.weight }};
+    --navFontFamily: "SuisseIntl-Light";
+    --navFontSWeight: {{ settings.nav_font.weight }};
+
+
+    --borderWidth: {{ settings.border-width }}px;
+    --fontSize: {{ settings.font-size }}px;
+    --gridSpace: {{ settings.grid_space }}px;
+    --h1Size: {{ settings.h1-size }}px;
+    --h2Size: {{ settings.h2-size }}px;
+    --h3Size: {{ settings.h3-size }}px;
+    --h4Size: {{ settings.h4-size }}px;
+    --h5Size: {{ settings.h5-size }}px;
+    --navSize: {{ settings.nav_size }}px;
+    --sectionTitleBorder: {{ settings.section_title_border }}px;
+
+    --detailsAlign: {{ settings.details_align }};
+    --sectionTitleAlign: {{ settings.section_title_align }};
+
+    --headerTransitionTime: 0.3s;
+
+    --accentColor: {{ settings.accent_color }};
+    --accordionContentText: {{ settings.accordion_content_text }};
+    --accordionHeaderText: {{ settings.accordion_header_text }};
+    --announcementBarBackground: {{ settings.announcement_bar_background }};
+    --announcementBarTextColor: {{ settings.announcement_bar_text_color }};
+    --background: {{ settings.background }};
+    --buttonColor: {{ settings.button_color }};
+    --buttonHover: {{ settings.button_hover }};
+    --buttonText: {{ settings.button_text }};
+    --directionBackground: {{ settings.direction_background }};
+    --directionColor: {{ settings.direction_color }};
+    --directionHover: {{ settings.direction_hover }};
+    --dottedColor: {{ settings.dotted_color }};
+    --dropdownBackground: {{ settings.dropdown_background }};
+    --fbShare: {{ settings.fb_share }};
+    --footerBackground: {{ settings.footer_background }};
+    --footerBorder: {{ settings.footer_border }};
+    --footerButton: {{ settings.footer_button }};
+    --footerButtonHover: {{ settings.footer_button_hover }};
+    --footerButtonText: {{ settings.footer_button_text }};
+    --footerButtonTextHover: {{ settings.footer_button_text_hover }};
+    --footerIconsColor: {{ settings.footer_icons_color }};
+    --footerIconsHover: {{ settings.footer_icons_hover }};
+    --footerInput: {{ settings.footer_input }};
+    --footerInputText: {{ settings.footer_input_text }};
+    --footerLinkColor: {{ settings.footer_link_color }};
+    --footerText: {{ settings.footer_text }};
+    --freeShippingBg: {{ settings.free_shipping_bg }};
+    --freeShippingText: {{ settings.free_shipping_text }};
+    --headerColor: {{ settings.header_color }};
+    --homepagePreScrollBackground: {{ settings.homepage_pre_scroll_background }};
+    --homepagePreScrollColor: {{ settings.homepage_pre_scroll_color }};
+    --homepageScrollBackground: {{ settings.homepage_scroll_background }};
+    --homepageScrollColor: {{ settings.homepage_scroll_color }};
+    --linkColor: {{ settings.link_color }};
+    --newBackground: {{ settings.new_background }};
+    --newColor: {{ settings.new_color }};
+    --newsletterColor: {{ settings.newsletter-color }};
+    --pinShare: {{ settings.pin_share }};
+    --preScrollBackground: {{ settings.pre_scroll_background }};
+    --preScrollColor: {{ settings.pre_scroll_color }};
+    --scrollBackground: {{ settings.scroll_background }};
+    --scrollColor: {{ settings.scroll_color }};
+    --secondaryButtonColor: {{ settings.secondary_button_color }};
+    --secondaryButtonHover: {{ settings.secondary_button_hover }};
+    --secondaryButtonText: {{ settings.secondary_button_text }};
+    --secondaryColor: {{ settings.secondary_color }};
+    --soBackground: {{ settings.so_background }};
+    --soColor: {{ settings.so_color }};
+    --submenuColor: {{ settings.submenu_color }};
+    --swatchBackground: {{ settings.swatch_background }};
+    --swatchBborder: {{ settings.swatch_border }};
+    --swatchColor: {{ settings.swatch_color }};
+    --swatchSelectedBackground: {{ settings.swatch_selected_background }};
+    --swatchSelectedBorder: {{ settings.swatch_selected_border }};
+    --swatchSelectedColor: {{ settings.swatch_selected_color }};
+    --textColor: {{ settings.text_color }};
+    --twShare: {{ settings.tw_share }};
+  }
+{%- endstyle -%}
+{%- style -%}
+  div#page_loader{top:0;left:0;position:fixed;z-index:999;width:100vw;height:100vh;background:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.spinner{margin:0 auto 30px auto;-webkit-animation:sk-rotateplane 1.2s infinite ease-in-out;animation:sk-rotateplane 1.2s infinite ease-in-out;-webkit-transform-style:preserve-3d;-ms-transform-style:preserve-3d;-o-transform-style:preserve-3d;transform-style:preserve-3d}.loader_site_logo{max-width:60px;width:100%}.loader_site_logo img{width:100%}@-webkit-keyframes sk-rotateplane{0%{-webkit-transform:perspective(120px)}50%{-webkit-transform:perspective(120px) rotateY(180deg)}100%{-webkit-transform:perspective(120px) rotateY(180deg) rotateX(180deg)}}@keyframes sk-rotateplane{0%{transform:perspective(120px) rotateX(0) rotateY(0);-webkit-transform:perspective(120px) rotateX(0) rotateY(0)}50%{transform:perspective(120px) rotateX(-180.1deg) rotateY(0);-webkit-transform:perspective(120px) rotateX(-180.1deg) rotateY(0)}100%{transform:perspective(120px) rotateX(-180deg) rotateY(-179.9deg);-webkit-transform:perspective(120px) rotateX(-180deg) rotateY(-179.9deg)}}body.loading{max-height:100vh;overflow:hidden}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0)}100%{-webkit-transform:rotate(360deg)}}@keyframes spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fadeInUp{from{-webkit-transform:translate3d(0,60px,0);transform:translate3d(0,60px,0)}to{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}}@-webkit-keyframes fadeInUp{from{-webkit-transform:translate3d(0,60px,0);transform:translate3d(0,60px,0)}to{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}}.animated{animation-duration:1.5s;animation-fill-mode:both;-webkit-animation-duration:1.5s;-webkit-animation-fill-mode:both}.animatedFadeInUp{opacity:0}.fadeInUp{opacity:0;animation-name:fadeInUp;-webkit-animation-name:fadeInUp}@-webkit-keyframes flip-horizontal-bottom{0%{-webkit-transform:rotateX(0);transform:rotateX(0)}100%{-webkit-transform:rotateX(-180deg);transform:rotateX(-180deg)}}@keyframes flip-horizontal-bottom{0%{-webkit-transform:rotateX(0);transform:rotateX(0)}100%{-webkit-transform:rotateX(-180deg);transform:rotateX(-180deg)}}.flip-horizontal-bottom{-webkit-animation:flip-horizontal-bottom .7s linear infinite both;animation:flip-horizontal-bottom .7s linear infinite both}
+{%- endstyle -%}

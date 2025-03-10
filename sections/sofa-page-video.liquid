@@ -1,0 +1,323 @@
+{%- liquid
+  assign marginTop = section.settings.marginTop
+  assign marginBottom = section.settings.marginBottom
+  assign marginTopMobile = section.settings.marginTopMobile
+  assign marginBottomMobile = section.settings.marginBottomMobile
+  assign background = section.settings.background
+  assign video = section.settings.video
+  assign mobileVideo = section.settings.mobileVideo
+  if mobileVideo == blank
+    assign mobileVideo = section.settings.video
+  endif
+  assign videoRatio = section.settings.videoRatio
+  assign image = section.settings.image
+  assign fullImage = section.settings.fullImage
+-%}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    --marginTop: {{ marginTop }}px;
+    --marginBottom: {{ marginBottom }}px;
+    --marginTopMobile: {{ marginTopMobile }}px;
+    --marginBottomMobile: {{ marginBottomMobile }}px;
+    --background: {{ background }};
+  }
+{% endstyle %}
+
+{% capture media %}
+  {% if video != blank %}
+    <div class="video__wrapper desktop-video" style="aspect-ratio: {{ videoRatio }};">
+      {{ video | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false }}
+    </div>
+    <div class="video__wrapper mobile-video">
+      {{ mobileVideo | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false }}
+    </div>
+  {% else %}
+     {% render "basic-responsive-image", type: image %}
+  {% endif %}
+{% endcapture %}
+<div class="sofa-page-video{% if section.settings.video != blank or fullImage %} full-media{% endif %}">
+  <div class="collection__video">
+    <div class="collection__video--row">
+      <div class="text__container">
+        {% if section.settings.title != blank %}
+        <h2 class="title">{{ section.settings.title }}</h2>
+        {% endif %}
+        <div class="icon__container">
+          {% for i in (1..6) %}
+          {% assign icon = 'icon_' | append: i %}
+          {% assign icon_svg = 'icon_svg_' | append: i %}
+          {% assign text = 'text_' | append: i %}
+          {% if section.settings[icon_svg] != blank or section.settings[icon] != blank or section.settings[text] != blank %}
+          <div class="icon">
+            <div class="icon__image">
+              {% if section.settings[icon_svg] != blank %}
+              <img src="{{ section.settings[icon_svg] }}" alt="Icon" width="100%"
+                height="100%"
+                loading="lazy">
+              {% else %}
+              <img src="{{ section.settings[icon] | img_url: 'master' }}" alt="Icon" width="100%"
+                height="100%"
+                loading="lazy">
+              {% endif %}
+            </div>
+            <p class="icon__text">{{ section.settings[text] | downcase }}</p>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+        {%- if section.settings.btn_url != blank -%}
+        <div class="collection__video-button-container">
+          <a href="{{ section.settings.btn_url }}" class="collection__video-button">{{ section.settings.btn_text }}</a>
+        </div>
+        {%- endif -%}
+      </div>
+      <div class="media__container">
+        {%- if media != blank -%}
+          {{ media }}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+   "name":"Video",
+   "settings":[
+      {
+        "type": "video",
+        "id": "video",
+        "label": "A Shopify-hosted video"
+      },
+      {
+        "type": "select",
+        "id": "videoRatio",
+        "label": "Video ratio",
+        "options": [
+          {
+            "value": "16/6",
+            "label": "16:9"
+          },
+          {
+            "value": "4/3",
+            "label": "4:3"
+          },
+          {
+            "value": "3/2",
+            "label": "3:2"
+          }
+        ],
+        "default": "4/3"
+      },
+      {
+        "type": "video",
+        "id": "mobileVideo",
+        "label": "A Shopify-hosted video(Mobile)"
+      },
+      {
+         "type": "image_picker",
+         "id": "image",
+         "label": "Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "fullImage",
+        "label": "Full image",
+        "default": true
+      },
+      {
+         "id":"title",
+         "type":"textarea",
+         "label":"Title",
+         "default":"The world’s greatest sofa has found it’s new home: yours."
+      },
+      {
+         "type":"header",
+         "content":"Icon 1"
+      },
+      {
+         "type":"url",
+         "id":"icon_svg_1",
+         "label":"Svg URL"
+      },
+      {
+         "id":"icon_1",
+         "type":"image_picker",
+         "label":"Icon"
+      },
+      {
+         "id":"text_1",
+         "type":"textarea",
+         "label":"Text",
+         "default":"ENDLESSLY CONFIGURABLE"
+      },
+      {
+         "type":"header",
+         "content":"Icon 2"
+      },
+      {
+         "type":"url",
+         "id":"icon_svg_2",
+         "label":"Svg URL"
+      },
+      {
+         "id":"icon_2",
+         "type":"image_picker",
+         "label":"Icon"
+      },
+      {
+         "id":"text_2",
+         "type":"textarea",
+         "label":"Text",
+         "default":"CLOUD-LIKE COMFORT"
+      },
+      {
+         "type":"header",
+         "content":"Icon 3"
+      },
+      {
+         "type":"url",
+         "id":"icon_svg_3",
+         "label":"Svg URL"
+      },
+      {
+         "id":"icon_3",
+         "type":"image_picker",
+         "label":"Icon"
+      },
+      {
+         "id":"text_3",
+         "type":"textarea",
+         "label":"Text",
+         "default":"RIDICULOUSLY DURABLE"
+      },
+      {
+         "type":"header",
+         "content":"Icon 4"
+      },
+      {
+         "type":"url",
+         "id":"icon_svg_4",
+         "label":"Svg URL"
+      },
+      {
+         "id":"icon_4",
+         "type":"image_picker",
+         "label":"Icon"
+      },
+      {
+         "id":"text_4",
+         "type":"textarea",
+         "label":"Text",
+         "default":"REMOVABLE, WASHABLE COVERS"
+      },
+      {
+         "type":"header",
+         "content":"Icon 5"
+      },
+      {
+         "type":"url",
+         "id":"icon_svg_5",
+         "label":"Svg URL"
+      },
+      {
+         "id":"icon_5",
+         "type":"image_picker",
+         "label":"Icon"
+      },
+      {
+         "id":"text_5",
+         "type":"textarea",
+         "label":"Text",
+         "default":"STAIN And LIQUID RESISTANT FABRICS"
+      },
+      {
+         "type":"header",
+         "content":"Icon 6"
+      },
+      {
+         "type":"url",
+         "id":"icon_svg_6",
+         "label":"Svg URL"
+      },
+      {
+         "id":"icon_6",
+         "type":"image_picker",
+         "label":"Icon"
+      },
+      {
+         "id":"text_6",
+         "type":"textarea",
+         "label":"Text",
+         "default":"BUILT-IN WIRELESS CHARGER"
+      },
+      {
+        "type": "range",
+        "id": "marginTop",
+        "max": 50,
+        "min": 0,
+        "step": 1,
+        "label": "Top margin",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "marginBottom",
+        "max": 50,
+        "min": 0,
+        "step": 1,
+        "label": "Bottom margin",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "marginTopMobile",
+        "max": 50,
+        "min": 0,
+        "step": 1,
+        "label": "Top margin(Mobile)",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "marginBottomMobile",
+        "max": 50,
+        "min": 0,
+        "step": 1,
+        "label": "Bottom margin(Mobile)",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type": "url",
+        "id": "btn_url",
+        "label": "Button url"
+      },
+      {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button text",
+        "default": "SHOP BEST SELLERS"
+      },
+      {
+        "type": "header",
+        "content": "Color"
+      },
+      {
+        "type": "color_background",
+        "id": "background",
+        "label": "Background",
+        "default": "#F3F3F3"
+      }
+   ],
+   "presets": [
+      {
+         "name": "Video with icon"
+      }
+   ]
+}
+{% endschema %}
+

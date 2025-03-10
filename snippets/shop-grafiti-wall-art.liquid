@@ -1,0 +1,58 @@
+  <div class="bfa_items_grid">
+    <div class="best-seller-g c_section">
+      {% if settings.shop_wall_art_title != blank %}
+      <div class="grid_wrapper bst">
+        <div class="desktop-12 tablet-12 mobile-12 span-12">
+          <h2 class="big_title text-center">{{settings.shop_wall_art_title}}</h2>
+        </div>
+        <div class="clear"></div>
+      </div>  
+      {% endif %}
+      <div class="grid_wrapper product-loop tap_product_slider" id="shop_wall_art">
+        {%- assign collection = collections[settings.collection_b] -%}
+        {%- assign prod_limit_P = settings.shop_wall_art_product_limit -%}
+        {% for product in collection.products limit: prod_limit_P   %}
+        <div class="desktop-3 tablet-2 mobile-half span-3">
+          {% render 'product-listing', product: product %}
+        </div>
+        {% endfor %}        
+      </div>
+      <div class="grid_wrapper">
+        <div class="desktop-12 span-12">
+          <a class="button coll_link blog_coll_link" href="/collections">Shop Grafiti Home</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        (function(){    
+          $(window).on('load resize', function() {
+            if($(this).width() > 740) {
+              $('#shop_wall_art').not('.slick-initialized').slick({
+                autoplay: true,
+                autoplaySpeed: 5000,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                infinite: true,
+                nextArrow: '<i class="la la-angle-right" aria-hidden="true"></i>',
+                prevArrow: '<i class="la la-angle-left" aria-hidden="true"></i>',
+                responsive: [
+                  {
+                    breakpoint: 740,
+                    settings: {
+                      slidesToShow: 2,
+                      slidesToScroll: 2
+                    }
+                  }
+                ]
+              });
+            } else {
+              if($('#shop_wall_art').hasClass('slick-initialized')){
+                $('#shop_wall_art').slick('unslick');
+              }
+            }
+          });
+        })();
+      })
+    </script>
+  </div>

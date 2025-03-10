@@ -1,0 +1,3661 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "announcement_bar_background": "#ededed",
+    "announcement_bar_text_color": "#000000",
+    "homepage_pre_scroll_color": "#000000",
+    "homepage_pre_scroll_background": "#ffffff",
+    "homepage_scroll_color": "#000000",
+    "homepage_scroll_background": "#fff",
+    "pre_scroll_color": "#000000",
+    "pre_scroll_background": "#ffffff",
+    "scroll_color": "#000000",
+    "scroll_background": "#ffffff",
+    "submenu_color": "#000000",
+    "dropdown_background": "#fff",
+    "nav_border_color": "#dbdbdb",
+    "secondary_color": "rgba(0,0,0,0)",
+    "background": "#ffffff",
+    "header_color": "#000000",
+    "text_color": "#000000",
+    "link_color": "#000000",
+    "sale_color": "#458736",
+    "dotted_color": "#dbdbdb",
+    "accent_color": "#e1c0a6",
+    "button_color": "#000000",
+    "button_hover": "#032e6a",
+    "button_text": "#ffffff",
+    "secondary_button_color": "#000000",
+    "secondary_button_hover": "#ffffff",
+    "secondary_button_text": "#000000",
+    "new_background": "#ededed",
+    "new_color": "#535353",
+    "sale_icon_background": "#9d0000",
+    "sale_icon_color": "#ffffff",
+    "so_background": "#000000",
+    "so_color": "#ffffff",
+    "fb_share": "#000000",
+    "tw_share": "#000000",
+    "pin_share": "#000000",
+    "direction_color": "#000000",
+    "direction_background": "#ffffff",
+    "direction_hover": "#ffbf87",
+    "accordion_header_bg": "#edebe6",
+    "accordion_header_text": "#000000",
+    "accordion_content_text": "#000000",
+    "swatch_color": "#000000",
+    "swatch_background": "#ffffff",
+    "swatch_border": "#000000",
+    "swatch_selected_color": "#ffffff",
+    "swatch_selected_background": "#000000",
+    "swatch_selected_border": "#000000",
+    "footer_border": "#000000",
+    "footer_background": "#000000",
+    "footer_text": "#ffffff",
+    "footer_link_color": "#e1c0a6",
+    "footer_icons_color": "#000000",
+    "footer_icons_hover": "#000000",
+    "footer_input": "#ffffff",
+    "footer_input_text": "#000000",
+    "footer_button": "#000000",
+    "footer_button_text": "#ffffff",
+    "main_font": "karla_n4",
+    "nav_font": "karla_n4",
+    "heading_font": "karla_n7",
+    "font-size": 14,
+    "h1-size": 31,
+    "h2-size": 22,
+    "h3-size": 20,
+    "h4-size": 16,
+    "h5-size": 12,
+    "nav_size": 15,
+    "section_title_border": 1,
+    "section_title_align": "center",
+    "section_titles": "short_below",
+    "border-width": 100,
+    "scroll_animation": "none",
+    "rounded_buttons": false,
+    "breadcrumb": false,
+    "scrolling_bar_position": "none",
+    "Offered_free_products": true,
+    "grid_space": 30,
+    "details_align": "left",
+    "image_flip": false,
+    "vendor": true,
+    "show_reviews": true,
+    "product_info": "none",
+    "color_swatch_options": "custom-image",
+    "icon_shape": "rectangle",
+    "icon_position": "top_right",
+    "new_icon": true,
+    "sale_icon": false,
+    "sold_out_icon": true,
+    "collections_banner_image": "shopify://shop_images/shop-wall-art_1ac0d815-159f-497e-8c26-d264f4864e9e.jpg",
+    "shop_filter_item_0": "Featured",
+    "item_content_0": "Best Sellers| Together at Home 40% Off Sale",
+    "shop_filter_item_1": "Shop by Category",
+    "item_content_1": "abstract|contemporary|digital|illustration|minimalist|photography",
+    "shop_filter_item_2": "Shop by Subject",
+    "item_content_2": "nature-landscapes|urban|figurative|geometric|flowers-plants",
+    "shop_filter_item_3": "Shop by Color",
+    "item_content_3": "black-white|blue|red|pink|purple|yellow|beige|green|black|gold",
+    "shop_wall_art_title": "Shop Wall Art",
+    "collection_b": "best-sellers",
+    "shop_wall_art_product_limit": 6,
+    "article_image_border_color": "#ffbf87",
+    "article_newslater_bg": "",
+    "ajax_cart_method": "drawer",
+    "show_tax_note": false,
+    "show_shipping_note": false,
+    "show_cart_notes": true,
+    "u_product": "ottoman-add-on",
+    "show_shipping_calculator": false,
+    "shipping_calculator_heading": "Get shipping estimates",
+    "shipping_calculator_default_country": "United States",
+    "shipping_calculator_submit_button_label": "Calculate shipping",
+    "shipping_calculator_submit_button_label_disabled": "Calculating...",
+    "show_shipping_countdown": false,
+    "free_shipping_threshold": "0",
+    "free_shipping_bg": "#eef7b3",
+    "free_shipping_text": "#000000",
+    "social_image": "shopify://shop_images/friends1-rose_186c9d8e-7c98-40d3-8a6a-b87fc49e0b3e.jpg",
+    "facebook_url": "https://www.facebook.com/7thavenuehome",
+    "tiktok_url": "https://www.tiktok.com/@7thavenueco",
+    "instagram-id": "7thavenueco",
+    "twittername": "",
+    "pinterest_url": "7thavenueco",
+    "tumblr_url": "",
+    "youtube_url": "",
+    "googleplus_url": "",
+    "snapchat-id": "",
+    "weibo-id": "",
+    "popup": false,
+    "test_mode": false,
+    "popup_duration": "7500",
+    "show_discount_code": true,
+    "generic_coupon_code": "BestSofaEver",
+    "mail_popup_title": "Your mother called, she said you needed a new sofa.",
+    "popup_h3_size": 24,
+    "mail_popup_text": "Sign up to gain access to our pre-sale and save 20% on all seating. Free U.S shipping for all orders. Product delivery starts on 11/29.",
+    "popup_subheading_size": 14,
+    "mail_gdpr_text": "",
+    "mail_button_text": "Sign Up",
+    "popup_text_color": "#ffffff",
+    "popup_image": "content",
+    "popup_background_color": "#000000",
+    "email_image": "shopify://shop_images/Mobile_Pop_Up_01a1187d-327c-422b-bb16-386a297bdd2a.jpg",
+    "favicon": "shopify://shop_images/Favicon_-_Borders.png",
+    "custom_selected_option": "Natural White",
+    "color_option_order": "Pure White, Natural White, Grey Beige (Greige), Charcoal Black, Oatmeal Beige, Heather Grey, Graphite Grey, Ivory White, Sand Beige, Camel Beige, Olive Green, Navy Blue, Onyx Black",
+    "fabric_option_order": "Performance Classic Textured, Performance Textured Weave, Performance Woven Chenille, Premium Performance Velvet, Performance Classic Weave, Performance Classic Crossweave",
+    "classic-depth": "(39”)",
+    "extra-deep-depth": "(47\")",
+    "show_multiple_currencies": false,
+    "currency_format": "money_with_currency_format",
+    "supported_currencies": "INR GBP CAD AUD EUR JPY",
+    "default_currency": "USD",
+    "enable_product_reviews": false,
+    "reviews_heading": "Customer Reviews",
+    "name_1": "Heather Grey & Classic",
+    "color_1": "#458736",
+    "message_1": "Product ships in 4-6 weeks.",
+    "name_2": "Natural White & Classic",
+    "color_2": "#458736",
+    "message_2": "Product ships in 4-6 weeks.",
+    "name_3": "Charcoal Black & Classic",
+    "color_3": "#458736",
+    "message_3": "Product ships in 4-6 weeks.",
+    "name_4": "Pure White & Classic",
+    "color_4": "#458736",
+    "message_4": "Product ships in 4-6 weeks.",
+    "name_5": "Oatmeal Beige & Classic",
+    "color_5": "#458736",
+    "message_5": "Product ships in 4-6 weeks.",
+    "name_6": "Heather Grey & Extra-Deep",
+    "color_6": "#458736",
+    "message_6": "Product ships in 4-6 weeks.",
+    "name_7": "Natural White & Extra-Deep",
+    "color_7": "#458736",
+    "message_7": "Product ships in 4-6 weeks.",
+    "name_8": "Charcoal Black & Extra-Deep",
+    "color_8": "#458736",
+    "message_8": "Product ships in 4-6 weeks.",
+    "name_9": "Pure White & Extra-Deep",
+    "color_9": "#458736",
+    "message_9": "Product ships in 4-6 weeks.",
+    "name_10": "Oatmeal Beige & Extra-Deep",
+    "color_10": "#458736",
+    "message_10": "Product ships in 4-6 weeks.",
+    "name_11": "Graphite Grey & Classic",
+    "color_11": "#458736",
+    "message_11": "Product ships in 4-6 weeks.",
+    "name_12": "Graphite Grey & Extra-Deep",
+    "color_12": "#458736",
+    "message_12": "Product ships in 4-6 weeks.",
+    "name_13": "Olive Green & Classic",
+    "color_13": "#458736",
+    "message_13": "Product ships in 4-6 weeks.",
+    "name_14": "Olive Green & Extra-Deep",
+    "color_14": "#458736",
+    "message_14": "Product ships in 4-6 weeks.",
+    "name_15": "Emerald Green & Classic",
+    "color_15": "#458736",
+    "message_15": "Product ships in 4-6 Weeks.",
+    "name_16": "Emerald Green & Extra-Deep",
+    "color_16": "#458736",
+    "message_16": "Product ships in 4-6 weeks.",
+    "name_17": "Cobalt Blue & Classic",
+    "color_17": "#458736",
+    "message_17": "Product ships in 4-6 Weeks.",
+    "name_18": "Cobalt Blue & Extra-Deep",
+    "color_18": "#458736",
+    "message_18": "Product ships in 4-6 weeks.",
+    "name_19": "Snow White",
+    "message_19": "Product ships in 4-6 weeks.",
+    "name_20": "Dove Grey",
+    "message_20": "Product ships in 4-6 weeks.",
+    "name_21": "Onyx Black & Classic",
+    "message_21": "Product ships in 4-6 weeks.",
+    "name_22": "Onyx Black & Extra-Deep",
+    "message_22": "Product ships in 4-6 weeks.",
+    "name_23": "Grey Beige & Classic",
+    "message_23": "Product ships in 6-8 weeks.",
+    "name_24": "Grey Beige & Extra-Deep",
+    "message_24": "Product ships in 6-8 weeks.",
+    "name_50": "",
+    "message_50": "Product ships in 1-6 weeks.",
+    "upsell_title": "",
+    "u_product_meta": "Modular Seat",
+    "pure_white_color": "#032e6a",
+    "pure_white_message": "Product ships in 4-6 weeks.",
+    "natural_white_color": "#032e6a",
+    "natural_white_message": "Product ships in 4-6 weeks.",
+    "charcoal_black_color": "#032e6a",
+    "charcoal_black_message": "Product ships in 4-6 weeks.",
+    "mist_grey_color": "#032e6a",
+    "mist_grey_message": "Product ships in 4-6 weeks.",
+    "option_name_1": "Pure White",
+    "option_name_2": "Natural White",
+    "option_name_3": "Charcoal Black",
+    "option_name_4": "Heather Grey",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify://shop_images/Favicon_32x32_1feb693d-a30d-4993-81df-af92b557e8bc.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "small",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#ffffff",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#3066b0",
+    "checkout_button_color": "#3066b0",
+    "checkout_error_color": "#ff5c30",
+    "in_stock": "Product ships in 6-8 weeks.",
+    "low_stock": "Product ships in 6-8 weeks.",
+    "out_of_stock": "Product ships in 6-8 weeks.",
+    "pre_scroll_navigation": "#000000",
+    "scroll_navigation_color": "#000000",
+    "ht-size": 15,
+    "section-titles": "short_below",
+    "grid-column-gap": 15,
+    "quickview": true,
+    "show_payment_button": true,
+    "show_display_discount_code": true,
+    "popup_text_alignment": "left",
+    "cart_notes_enable": false,
+    "product_note_color": "#000000",
+    "product_note_background": "#f8f8f8",
+    "pre_scroll_navigation_hover": "#000000",
+    "scroll_navigation_hover": "#000000",
+    "max-height": false,
+    "desktop_image_height": "",
+    "tablet_image_height": "",
+    "mobile_image_height": "",
+    "heading-transform": "none",
+    "link-decoration": "underline",
+    "navigation-transform": "none",
+    "email_popup_image": false,
+    "main_nav": "main-menu",
+    "megadropdown_link": "",
+    "nav_promo_image": false,
+    "nav_promo": "",
+    "nav_promo_link": "/collections/all",
+    "mega_1_links": "",
+    "mega_2_links": "",
+    "mega_3_links": "",
+    "mega_4_links": "",
+    "mega_1_show": false,
+    "mega_2_show": false,
+    "mega_3_show": false,
+    "mega_4_show": false,
+    "pagelist": "",
+    "page-sidebar-title": "Sidebar title",
+    "show-map": false,
+    "map": "",
+    "password_bg": "yes",
+    "show_twitter": true,
+    "show_facebook": true,
+    "show_pinterest": true,
+    "show_tumblr": false,
+    "show_youtube": false,
+    "show_googleplus": false,
+    "show_instagram": true,
+    "show_snapchat": true,
+    "show_weibo": false,
+    "show_rss": true,
+    "bg": "no_bg",
+    "background-position": "left top",
+    "background-repeat": "no-repeat",
+    "logo-color": "#000000",
+    "homepage-header-pre_scroll_background": "rgba(0,0,0,0)",
+    "homepage-header-background": "#ffffff",
+    "homepage-pre_scroll_navigation-color": "#000000",
+    "homepage-pre_scroll_navigation-color-hover": "#000000",
+    "homepage-navigation-color": "#000000",
+    "homepage-navigation-color-hover": "#000000",
+    "homepage-header-pre_scroll_background-ros": "#ffffff",
+    "homepage-header-background-ros": "#ffffff",
+    "homepage-pre_scroll_navigation-color-ros": "#000000",
+    "homepage-pre_scroll_navigation-color-hover-ros": "#000000",
+    "homepage-pre_scroll_navigation-active-ros": "#000000",
+    "homepage-navigation-color-ros": "#000000",
+    "homepage-navigation-color-hover-ros": "#000000",
+    "link_hover_color": "#000000",
+    "read-more-background": "#000000",
+    "read-more-hover-background": "#000000",
+    "read-more-link-color": "#ffffff",
+    "read-more-link-hover-color": "#ffffff",
+    "icons": "#000000",
+    "icons-hover": "#000000",
+    "prod-qv-background": "#000000",
+    "prod-qv-text": "#ffffff",
+    "prod-qv-background-hover": "#000000",
+    "prod-qv-text-hover": "#ffffff",
+    "footer_title_color": "#000000",
+    "footer_link_hover": "#000000",
+    "footer_icons_hover_color": "#000000",
+    "footer_button_hover": "#000000",
+    "footer_button_text_hover": "#ffffff",
+    "icon-font-size": "12px",
+    "footer_text_align": "left",
+    "footer_title_transform": "uppercase",
+    "footer_title_size": "14px",
+    "promo_text_weight": "normal",
+    "promo_text_size": 18,
+    "announcement_text_size": 12,
+    "logo_size": 20,
+    "logo_transform": "uppercase",
+    "logo_weight": "700",
+    "dropdown-transform": "uppercase",
+    "dropdown-size": "13px",
+    "slide-title-size": 22,
+    "slide-title-weight": "700",
+    "caption-size": 14,
+    "cta_size": 13,
+    "cta_weight": "400",
+    "topbar_font": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+    "logo-font": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+    "icon-font": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+    "slide-title-font": "'Roboto', sans-serif;",
+    "caption-font": "'Roboto', sans-serif;",
+    "parallax-font": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+    "promo-font": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+    "mailchimp": "",
+    "show-facebook-like": true,
+    "show_product_sidebar": false,
+    "enable-zoom": true,
+    "thumbnails": "right",
+    "product-vendor": false,
+    "show-sku": true,
+    "product-note": "",
+    "checkout_use_header_image": false,
+    "checkout_logo": "",
+    "checkout_use_body_background_image": false,
+    "checkout_use_sidebar_background_image": false,
+    "all-collections": "",
+    "products_per_row": "4",
+    "products_per_page": "24",
+    "show_collection_sidebar": false,
+    "sticky-sidebar": false,
+    "collection_links_1": false,
+    "collection_side_1": "main-menu",
+    "collection_links_2": false,
+    "collection_side_2": "",
+    "collection_links_3": false,
+    "collection_side_3": "",
+    "collection_links_4": false,
+    "collection_side_4": "",
+    "shop_by_designer": false,
+    "shop_by_designer_title": "Shop by Designer",
+    "show-twitter-feed": "1",
+    "twitter-widget": "",
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "1561573654669": {
+            "type": "mega_menu",
+            "disabled": true,
+            "settings": {
+              "menu_item": "indoor",
+              "c_1": true,
+              "c_image_1": "shopify://shop_images/SECTIONALS.png",
+              "c_url_1": "",
+              "c_title_1": "SECTIONALS",
+              "c_2": true,
+              "c_image_2": "shopify://shop_images/SOFAS_LOVESEATS.png",
+              "c_url_2": "#",
+              "c_title_2": "SOFAS & LOVESEATS",
+              "c_3": true,
+              "c_image_3": "shopify://shop_images/ARMCHAIRS.png",
+              "c_url_3": "#",
+              "c_title_3": "ARMCHAIRS",
+              "c_4": true,
+              "c_image_4": "shopify://shop_images/DAYBEDS_8f95cb1e-61a0-449c-85f2-a1180ec13627.png",
+              "c_url_4": "",
+              "c_title_4": "DAYBEDS",
+              "c_5": true,
+              "c_image_5": "shopify://shop_images/DAYBEDS.png",
+              "c_url_5": "",
+              "c_title_5": "LIVING ROOM SETS",
+              "ex_title": "Explore",
+              "ex_image": "shopify://shop_images/Explore.png",
+              "explore_menu": "explore",
+              "ca_url_1": "#",
+              "ca_image_1": "shopify://shop_images/video-call.png",
+              "ca_image_url_1": "",
+              "ca_title_1": "BOOK VIRTUAL<br>DESIGN CONSULT",
+              "ca_url_2": "#",
+              "ca_image_2": "shopify://shop_images/swatches.png",
+              "ca_image_url_2": "",
+              "ca_title_2": "ORDER FREE SWATCHES"
+            }
+          },
+          "image_with_nav_item_4bh7jF": {
+            "type": "imageWithNavItem",
+            "settings": {
+              "menu_item": "indoor-seating",
+              "c_1": true,
+              "c_url_1": "shopify://collections/best-sellers",
+              "c_title_1": "BEST SELLERS",
+              "c_2": true,
+              "c_url_2": "shopify://collections/sectionals",
+              "c_title_2": "SECTIONALS",
+              "c_3": true,
+              "c_url_3": "shopify://collections/sofas-and-loveseats",
+              "c_title_3": "SOFAS & LOVESEATS",
+              "c_4": true,
+              "c_url_4": "shopify://collections/daybeds-and-pits",
+              "c_title_4": "DAYBEDS & PITS",
+              "c_5": true,
+              "c_url_5": "shopify://collections/armchairs",
+              "c_title_5": "ARMCHAIRS",
+              "c_6": true,
+              "c_url_6": "shopify://collections/living-room-sets",
+              "c_title_6": "LIVING ROOM SETS",
+              "c_7": true,
+              "c_url_7": "shopify://collections/cover-sets",
+              "c_title_7": "COVER SETS",
+              "c_8": true,
+              "c_url_8": "shopify://collections/indoor-seating",
+              "c_title_8": "SHOP ALL INDOOR",
+              "c_9": true,
+              "c_url_9": "",
+              "c_title_9": "",
+              "c_10": true,
+              "c_url_10": "",
+              "c_title_10": "",
+              "btnUrl": "",
+              "btnText": ""
+            }
+          },
+          "image_with_nav_item_pPcdkb": {
+            "type": "imageWithNavItem",
+            "settings": {
+              "menu_item": "outdoor-seating",
+              "c_1": true,
+              "c_url_1": "shopify://collections/best-sellers-outdoor",
+              "c_title_1": "BEST SELLERS",
+              "c_2": true,
+              "c_url_2": "shopify://collections/outdoor-sectionals",
+              "c_title_2": "SECTIONALS",
+              "c_3": true,
+              "c_url_3": "shopify://collections/outdoor-sofas-loveseats",
+              "c_title_3": "SOFAS & LOVESEATS",
+              "c_4": true,
+              "c_url_4": "shopify://collections/outdoor-daybeds",
+              "c_title_4": "DAYBEDS & PITS",
+              "c_5": true,
+              "c_url_5": "shopify://collections/outdoor-armchairs",
+              "c_title_5": "ARMCHAIRS",
+              "c_6": true,
+              "c_url_6": "shopify://collections/outdoor-sets",
+              "c_title_6": "OUTDOOR SETS",
+              "c_7": true,
+              "c_url_7": "shopify://collections/outdoor-seating",
+              "c_title_7": "SHOP ALL OUTDOOR",
+              "c_8": true,
+              "c_url_8": "",
+              "c_title_8": "",
+              "c_9": true,
+              "c_url_9": "",
+              "c_title_9": "",
+              "c_10": true,
+              "c_url_10": "",
+              "c_title_10": "",
+              "btnUrl": "",
+              "btnText": ""
+            }
+          }
+        },
+        "block_order": [
+          "1561573654669",
+          "image_with_nav_item_4bh7jF",
+          "image_with_nav_item_pPcdkb"
+        ],
+        "settings": {
+          "full_width_header": true,
+          "enable_sticky_header": false,
+          "hide_header_on_pdp": true,
+          "make_small_mobile": false,
+          "header_cover": false,
+          "header_border": false,
+          "header_animation_time": "200",
+          "show_timer": false,
+          "countdown_text": "<div class=\"countdown\">Black Friday Cyber Monday Sale. Get 10% Off + Free Throw Pillows with code: BFCM. Sale ends in <span class=\"clock\" data-final-date=\"11/28/2023\">5 hours</span>.</div>\n\nNew: \n\n<div class=\"countdown\">Memorial Day Sale ends in <span class=\"clock\" data-final-date=\"05/28/2024\">5 hours</span>.</div>",
+          "countdown_final": "11/25/2022",
+          "countdown_color": "#ffffff",
+          "countdown_bg": "#032e6b",
+          "show_announcement": true,
+          "hide_announceemnt_mobile": false,
+          "announceemnt_animation_time": "100",
+          "autoplayspeed": "6000",
+          "announcement_text_1": "<p>Presidents Day Sale Extended. Get 10% Off Sitewide + Free Throw Pillows With Code: PRESDAY.</p>",
+          "announcement_text_2": "<div class=\"countdown\">Presidents Day Extended Sale ends in <span class=\"clock\" data-final-date=\"02/24/2025\" data-expired-message=\"Our Presidents Day Extended Sale is EXPIRED\">5 hours</span>.</div>",
+          "announcement_text_3": "<p>Visit our showrooms in NYC, LA, OC, SF, San Jose, Boston, Dallas, Houston, & Vegas. Book an appointment <a href=\"https://7thavenue.co/pages/find-a-showroom\" target=\"_blank\" style=\"text-decoration: underline;\">here</a>.</p>",
+          "announcement_text_4": "<p>Can't visit a showroom? Book a virtual appointment with one of our Design Consultants <a href=\"https://calendly.com/7thavenue/virtual-design-consult\" target=\"_blank\" style=\"text-decoration: underline;\">here</a>.</p>",
+          "announcement_text_5": "",
+          "announcement_text_m_1": "<p>Presidents Day Sale Extended. Get 10% Off Sitewide + Free Throw Pillows With Code: PRESDAY.</p>",
+          "announcement_text_m_2": "<div class=\"countdown\">Presidents Day Extended Sale ends in <span class=\"clock\" data-final-date=\"02/24/2025\" data-expired-message=\"Our Presidents Day Extended Sale is EXPIRED\">5 hours</span>.</div>",
+          "announcement_text_m_3": "<p>Visit our showrooms in NYC, LA, OC, SF, San Jose, Boston, Dallas, Houston, & Vegas. Book an appointment <a href=\"https://7thavenue.co/pages/find-a-showroom\" target=\"_blank\" style=\"text-decoration: underline;\">here</a>.</p>",
+          "announcement_text_m_4": "<p>Can't visit a showroom? Book a virtual appointment with one of our Design Consultants <a href=\"https://calendly.com/7thavenue/virtual-design-consult\" target=\"_blank\" style=\"text-decoration: underline;\">here</a>.</p>",
+          "announcement_text_m_5": "",
+          "announcement_text_size": 12,
+          "top_nav": "header-learn-new-outdoor",
+          "cart_position": "header",
+          "logo": "shopify://shop_images/White_Logo_-_Black_White_Borders_4e7f6d50-bf49-408c-8a84-159bf365d55d.jpg",
+          "logo_url": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/White_Logo_-_Black_White_Borders.svg?v=1641757343",
+          "mobile_logo": "shopify://shop_images/White_Logo_-_Black_White_Borders_4e7f6d50-bf49-408c-8a84-159bf365d55d.jpg",
+          "logo_max_width": 180,
+          "logo_position": "inline",
+          "logo_align": "left",
+          "main_nav": "main-menu-mobilenew",
+          "product_menu": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "1479499878046": {
+            "type": "newsletter",
+            "settings": {
+              "title": "Stay in touch.",
+              "mailing_subheading": "<p>Sign up to subscribe to our newsletter with product updates, promotions and highlights</p>"
+            }
+          },
+          "1561574551095": {
+            "type": "menu",
+            "settings": {
+              "footer_nav": "footer-shop-new",
+              "title": "Shop"
+            }
+          },
+          "8d42afa6-30f9-4d0c-a816-9de078882654": {
+            "type": "menu",
+            "settings": {
+              "footer_nav": "footer-learn-new-outdoor",
+              "title": "Learn"
+            }
+          },
+          "12199b15-f8f2-4680-9367-4e916b4d5ad7": {
+            "type": "text",
+            "settings": {
+              "title": "Contact",
+              "footer_text": "<div class=\"footer-contact-items\" role=\"list\">\n<p>For sales inquiries:<br>\n</p>\n<li><a href=\"mailto:sales@7thavenue.co\" target=\"_blank\" title=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a></li>\n<li><a href=\"tel:+18776424574\">+1 (877) 642 - 4574</a></li>\n<br>\n<p>For existing orders:<br>\n</p>\n<li>\n<a href=\"mailto:support@7thavenue.co\" target=\"_blank\" title=\"mailto:support@7thavenue.co\">support@7thavenue.co</a><br>\n</li>\n<li><a href=\"tel:+18776441506\">+1 (877) 644 - 1506</a></li>\n\n<br>\n<p>For press inquiries:<br>\n</p>\n<li>\n<a href=\"mailto:press@7thavenue.co\" target=\"_blank\" title=\"mailto:press@7thavenue.co\">press@7thavenue.co</a><br>\n</li>\n</div>"
+            }
+          }
+        },
+        "block_order": [
+          "1479499878046",
+          "1561574551095",
+          "8d42afa6-30f9-4d0c-a816-9de078882654",
+          "12199b15-f8f2-4680-9367-4e916b4d5ad7"
+        ],
+        "settings": {
+          "footer_text_align": "left",
+          "show_credit_cards": false,
+          "footer_bottom_nav": "policy-footer-mobile",
+          "footer_bottom_nav_desktop": "policies-footer-desktop",
+          "footer_bottom_logo": ""
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "full_width": true,
+          "show_banner": false,
+          "enable_zoom": true,
+          "click_to_enlarge": true,
+          "image_section_size": "ultra",
+          "image_options": "static",
+          "make_gallery_sticky": true,
+          "make_atc_sticky": true,
+          "atc_animation_time": "0",
+          "atc_position": "top_gallery",
+          "thumbnails": "below",
+          "thumbs_to_show": 5,
+          "thumbs_to_show_mobile": 4,
+          "slide_controls": "arrows",
+          "product_description_title": "Details",
+          "product_description": "<ul>\n<li>Water-repellent & stain-resistant covers using PFAS-free DWR coating technology. Withstands & temporarily repels everyday household spills such as water, coffee, sodas, juices, soy sauce, energy drinks, pet urine, and even wine.</li>\n<li>Endlessly modular & re-arrangeable into any configuration. If your household grows, simply add a modular seat instead of buying a new sofa.</li>\n<li>Removable & washable covers allowing for covers to be cleaned when they get dirty. Dry clean or machine-wash at home in cold & delicate setting. Air dry or tumble dry no heat. No bleach.</li>\n<li>Removable covers also means that sofa color can be changed anytime you get bored or need a home makeover.</li>\n<li>Adjustable back cushion firmness. Choose between Medium-Soft or Medium Firm, or use our complimentary fill packets to customize your own back cushion firmness.</li>\n<li>Our cushions use premium Down Alternative which makes it hypoallergenic, vegan, and cruelty-free. Unlike down feather sofas, our cushions maintain its shape well and don't need to be constantly fluffed after you sit down.\n</li>\n<li>Memory foam blend cushions for extra comfort and that feeling of sinking into the seat.</li>\n<li>OEKO-TEX certified cover fabrics, meaning that they passed rigorous testings to be free from harmful chemicals that pollute skin and the environment.</li>\n<li>Free from \"forever chemicals\" or microplastics such as PFAS/PFOA/PFOS. They are also free from any toxic flame-retardant chemicals, formaldehyde, and others.</li>\n<li>Strong solid, hardwood frame that is sustainably-sourced and certified by the Forest Stewardship Council (FSC).</li>\n<li>Steel-reinforced legs & corner-joint blockings that give extra lifespan & durability.</li>\n<li>Lifetime durability of 10 years or more.</li>\n<li>\nQuick & easy assembly in 15-30 minutes per seat.\n</li>\n</ul>",
+          "product_return_title": "Shipping & Assembly",
+          "product_return": "<ul>\n<li>We currently ship all orders from our warehouse in Los Angeles, CA. We charge a flat shipping rate shown at checkout. </li>\n<li>We want to make you sure you love your sofa. We will cover all damages that occur in shipping or sofa parts that are missing.</li>\n<li>We will ship all modular pieces via FedEx. For safety, signature is required upon FedEx delivery unless requested otherwise.</li>\n<li>If you are located within 40 miles of Los Angeles, orders are delivered via our own Local Delivery team who will deliver, unbox, and assemble your sofa.</li>\n<li>For a small fee, you may also choose to include assembly with your order. Assembly will be conducted by a verified 3rd party assembler from TaskRabbit or other platforms.</li>\n<li>For shipping outside of the contiguous U.S or internationally, please contact our team at <u><a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a></u>\n</li>\n</ul>",
+          "product_tab_5_title": "Returns & Exchanges",
+          "product_tab_5_content": "<ul>\n<li>We offer 10-day free returns or refunds for any purchase. Shipping charges would apply and must return in original packaging.</li>\n<li>If you are unhappy with your fabric color selection, we offer 30-day free exchanges if you’d like to change your fabrics color. Fabric exchanges are limited to one-time per order.</li>\n<li>If you would like to add assembly to your fabric exchange, contact <u><a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> for additional information. Additional assembly fee will apply.</u>\n</li>\n<li>Love your sofa but need to return a single seat/ back/ arm? Contact <u><a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> for additional information.</u>\n</li>\n</ul>",
+          "description_background": "rgba(0,0,0,0)",
+          "show_vendor": false,
+          "show_sku": false,
+          "show_quantity_selector": false,
+          "product_variants": "swatches",
+          "color_swatch_options": "custom-image",
+          "back_in_stock": false,
+          "back_in_stock_text": "<p>Email me when this is available</p>",
+          "show_payment_button": false,
+          "show_social_share": false,
+          "product_description_position": "below",
+          "lower_description": "small",
+          "lower_description_background": "rgba(0,0,0,0)",
+          "show_product_size_chart": false,
+          "show_product_video": false,
+          "show_product_model": false,
+          "popup_text": "All of our back cushions are adjustable in firmness, even after delivery. If you’d like to increase your back cushion firmness, we can send you complimentary down alternative fill packets for you to firm up your back cushions",
+          "before_price": "Starting at",
+          "after_price": "with",
+          "month": "36",
+          "section_to_go": "#shopify-section-pdp-sofa-affirm",
+          "logo1": "shopify://shop_images/Shop_Pay_logo_-_Brandlogos.net_de4cd06b-8780-4a71-8c97-0aae2543abe5.svg",
+          "logo2": "shopify://shop_images/Affirm_logo_-_Brandlogos.net_4db516ad-e3bc-40e6-972f-6f6f8816a214.svg"
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "title": "The Curated Home",
+          "text": "Your source guide for interior design & home decor.",
+          "featured_article": "the-curated-home/introducing-grafiti-home",
+          "text_align": "center",
+          "post_tags": false,
+          "show_author": false,
+          "excerpt_bg_color": "#764122",
+          "excerpt_text_color": "#000000"
+        }
+      },
+      "password-template": {
+        "type": "password-template",
+        "settings": {
+          "newsletter_details": "<p>Coming Soon</p><p>Signup for our newsletter and get updated when we launch our site <a href=\"https://example.com/\">see our newsletter policy.</a></p>",
+          "text_size": 18,
+          "text_color": "#000000",
+          "logo": "",
+          "logo_max_width": "600",
+          "background_color": "#f5f5f5",
+          "background_image": "",
+          "show_overlay_color": false,
+          "background_overlay_color": "#f5f5f5",
+          "overlay_color_opacity": 80,
+          "border_color": "#000000",
+          "button_color": "#000000",
+          "button_text_color": "#ffffff"
+        }
+      },
+      "mobile-navigation": {
+        "type": "mobile-navigation",
+        "blocks": {
+          "ad125f93-920c-4c9e-99d0-b5f89350fc83": {
+            "type": "child_menu",
+            "settings": {
+              "menu_item": "",
+              "child_menu": "main-menu",
+              "child_menu_2": ""
+            }
+          }
+        },
+        "block_order": [
+          "ad125f93-920c-4c9e-99d0-b5f89350fc83"
+        ],
+        "settings": {
+          "main_nav": "main-menu-mobilenew",
+          "nav_secondary": "header-learn-new-outdoor",
+          "footer-bottom-menu": "policies",
+          "search": true,
+          "color": "#000000",
+          "background": "#ffffff",
+          "border_color": "#000000",
+          "social_icons": false,
+          "icon_color": "#ffffff",
+          "icon_background": "#000000"
+        }
+      },
+      "collections-list-template": {
+        "type": "collections-list-template",
+        "blocks": {
+          "1546649812383": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "1559155793897": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "1559155798789": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "1559155803866": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "1559155811054": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "1559155816329": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "1559155821353": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "1559155825061": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "1559155831579": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "1559155835767": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "1559155840859": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "1559155848957": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": ""
+            }
+          }
+        },
+        "block_order": [
+          "1546649812383",
+          "1559155793897",
+          "1559155798789",
+          "1559155803866",
+          "1559155811054",
+          "1559155816329",
+          "1559155821353",
+          "1559155825061",
+          "1559155831579",
+          "1559155835767",
+          "1559155840859",
+          "1559155848957"
+        ],
+        "settings": {
+          "full_width": false,
+          "image": "",
+          "text": "<p>Our unique collections&nbsp;</p>",
+          "text_align": "center",
+          "collection-display": "collections",
+          "grid": 3
+        }
+      },
+      "page-template": {
+        "type": "page-template",
+        "settings": {
+          "title_bg": "#000000",
+          "title_color": "#ffffff",
+          "title_border_color": "#fff"
+        }
+      },
+      "scrolling-announcements": {
+        "type": "scrolling-announcements",
+        "blocks": {
+          "1547506397969": {
+            "type": "text",
+            "settings": {
+              "text": "<p><strong>Scrolling Text Heading #1</strong></p>\n<p><a href=\"/blogs/news\" title=\"News\"><em>learn more</em></a></p>\n<p></p>"
+            }
+          },
+          "1547672285639": {
+            "type": "text",
+            "settings": {
+              "text": "<p><strong>Scrolling Text Heading #2</strong></p>\n<p><a href=\"/blogs/news\" title=\"News\"><em>learn&nbsp;more</em></a></p>"
+            }
+          },
+          "1559082592813": {
+            "type": "text",
+            "settings": {
+              "text": "<p><strong>Scrolling Text Heading #3</strong></p>\n<p><a href=\"/blogs/news\" title=\"News\"><em>learn&nbsp;more</em></a></p>"
+            }
+          },
+          "1559082662159": {
+            "type": "text",
+            "settings": {
+              "text": "<p><strong>Scrolling Text Heading #4</strong></p>\n<p><a href=\"/blogs/news\" title=\"News\"><em>learn&nbsp;more</em></a></p>"
+            }
+          }
+        },
+        "block_order": [
+          "1547506397969",
+          "1547672285639",
+          "1559082592813",
+          "1559082662159"
+        ],
+        "settings": {
+          "hidden_on_homepage": true,
+          "arrows": true,
+          "autoplay": true,
+          "desktop_slides_shown": 1,
+          "slider_speed": 8,
+          "info_text": "#8d6544",
+          "info_background": "#faf8f7",
+          "border_top": false,
+          "border_bottom": false,
+          "text_size": 14,
+          "height": 40
+        }
+      },
+      "featured-content": {
+        "type": "featured-content",
+        "blocks": {
+          "1573638978990": {
+            "type": "image_with_text",
+            "settings": {
+              "iwt_full_width": false,
+              "iwt_image": "shopify://shop_images/right-bg.jpg",
+              "iwt_layout": "right",
+              "iwt_image_width": "66%",
+              "iwt_text_align": "left",
+              "iwt_title": "Spotlight: Gesture Drawings",
+              "iwt_text": "<p>Grafiti is a home brand that is starting out with art and knows you&rsquo;re cool and we&rsquo;re cool and that&rsquo;s really cool when you think about it so you should buy cool stuff from us because we&rsquo;re cool.</p>",
+              "iwt_link": "",
+              "iwt_button": ""
+            }
+          }
+        },
+        "block_order": [
+          "1573638978990"
+        ],
+        "settings": {
+          "heading": "",
+          "color": "#1e1e1e",
+          "background": "#f9f9f9",
+          "border_top": false,
+          "border_bottom": false,
+          "no_margin": true
+        }
+      },
+      "page-custom-one": {
+        "type": "page-custom-one",
+        "blocks": {
+          "1559155132772": {
+            "type": "image_blocks",
+            "settings": {
+              "image_1": "",
+              "link_1": "",
+              "heading_1": "",
+              "button_1": "",
+              "heading_color_1": "#ffffff",
+              "button_color_1": "#ffffff",
+              "button_background_1": "#000",
+              "size_1": 24,
+              "text_options_1": "on_image",
+              "vertical_position_1": 12,
+              "horizontal_position_1": 14,
+              "align_text_1": "left",
+              "image_2": "",
+              "link_2": "",
+              "heading_2": "",
+              "button_2": "",
+              "heading_color_2": "#ffffff",
+              "button_color_2": "#ffffff",
+              "button_background_2": "#000",
+              "size_2": 24,
+              "text_options_2": "on_image",
+              "vertical_position_2": 12,
+              "horizontal_position_2": 14,
+              "align_text_2": "left",
+              "image_3": "",
+              "link_3": "",
+              "heading_3": "",
+              "button_3": "",
+              "heading_color_3": "#ffffff",
+              "button_color_3": "#ffffff",
+              "button_background_3": "#000",
+              "size_3": 24,
+              "text_options_3": "on_image",
+              "vertical_position_3": 12,
+              "horizontal_position_3": 14,
+              "align_text_3": "left"
+            }
+          },
+          "1559152904168": {
+            "type": "accordion",
+            "settings": {
+              "ac_section_heading": "Using Accordion for FAQ's",
+              "ac_heading_1": "Question #1",
+              "ac_content_1": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+              "ac_heading_2": "Question #2",
+              "ac_content_2": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+              "ac_heading_3": "Question #3",
+              "ac_content_3": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+              "ac_heading_4": "",
+              "ac_content_4": "",
+              "ac_heading_5": "",
+              "ac_content_5": "",
+              "ac_heading_6": "",
+              "ac_content_6": "",
+              "ac_heading_7": "",
+              "ac_content_7": "",
+              "ac_heading_8": "",
+              "ac_content_8": "",
+              "ac_heading_9": "",
+              "ac_content_9": "",
+              "ac_heading_10": "",
+              "ac_content_10": ""
+            }
+          },
+          "1559153532894": {
+            "type": "page_contact_form",
+            "settings": {
+              "cf_heading": "Custom Contact Form",
+              "cf_max_width": 800,
+              "cf_show_first_name": true,
+              "cf_show_last_name": true,
+              "cf_show_company_name": false,
+              "cf_show_address": false,
+              "cf_show_website_url": false,
+              "cf_show_phone": false,
+              "cf_show_subject": false,
+              "cf_show_custom_field_one": true,
+              "cf_custom_field_one": "",
+              "cf_custom_field_one_type": "input",
+              "cf_show_custom_field_two": true,
+              "cf_custom_field_two": "Order #",
+              "cf_custom_field_two_type": "input"
+            }
+          }
+        },
+        "block_order": [
+          "1559155132772",
+          "1559152904168",
+          "1559153532894"
+        ],
+        "settings": {
+          "heading": "Featured collection",
+          "color": "#000",
+          "background": "#f7f7f7",
+          "border_top": false,
+          "border_bottom": false
+        }
+      },
+      "contact-page-template": {
+        "type": "contact-page-template",
+        "settings": {
+          "form_position": "center",
+          "form_title": "How can we help?",
+          "form_text": "Have a question about our products, your order, or just want to say hi?<br>\nFill in the form below and our team will get back in touch with you!",
+          "cf_show_first_name": true,
+          "cf_show_last_name": false,
+          "cf_show_company_name": false,
+          "cf_show_address": false,
+          "cf_show_website_url": false,
+          "cf_show_phone": false,
+          "cf_show_subject": true,
+          "cf_show_custom_field_one": false,
+          "cf_custom_field_one": "Custom Field One",
+          "cf_custom_field_one_type": "input",
+          "cf_show_custom_field_two": false,
+          "cf_custom_field_two": "Custom Field Two",
+          "cf_custom_field_two_type": "input",
+          "contact_bottom_title": "",
+          "contact_bottom_text": ""
+        }
+      },
+      "product-sizing-chart": {
+        "type": "product-sizing-chart",
+        "blocks": {
+          "1574983876863": {
+            "type": "sizing_hcart",
+            "settings": {}
+          },
+          "1574983827135": {
+            "type": "sizing_hcart",
+            "settings": {}
+          },
+          "1574983786881": {
+            "type": "sizing_hcart",
+            "settings": {}
+          },
+          "1574983708168": {
+            "type": "sizing_hcart",
+            "settings": {}
+          }
+        },
+        "block_order": [
+          "1574983876863",
+          "1574983827135",
+          "1574983786881",
+          "1574983708168"
+        ],
+        "settings": {
+          "size_1": "18\"x24\"",
+          "size_2": "20\"x26\"",
+          "size_3": "22\"x28\"",
+          "size_4": "24\"x30\""
+        }
+      },
+      "best-seller-section": {
+        "type": "best-seller-section",
+        "settings": {
+          "section_text": "Best Sellers",
+          "link_text": "",
+          "link": "shopify://collections",
+          "collection_b": "best-sellers",
+          "limit_p": 6,
+          "limit_m": 6
+        }
+      },
+      "recently-add": {
+        "type": "recently-add",
+        "settings": {
+          "section_r": "Recently Added",
+          "link_text": "",
+          "link": "",
+          "limit_p": 6
+        }
+      },
+      "popular-cat": {
+        "type": "popular-cat",
+        "blocks": {
+          "1573654953277": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "photography"
+            }
+          },
+          "1573654968374": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "abstract"
+            }
+          },
+          "1573655141843": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "digital"
+            }
+          },
+          "1573654960534": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "minimalist"
+            }
+          }
+        },
+        "block_order": [
+          "1573654953277",
+          "1573654968374",
+          "1573655141843",
+          "1573654960534"
+        ],
+        "settings": {
+          "heading": "Popular Collections",
+          "grid": 4
+        }
+      },
+      "collection-page-template": {
+        "type": "collection-page-template",
+        "settings": {
+          "grid": 2,
+          "products_per_page": 12,
+          "infinite_scroll": true,
+          "description_position": "bottom_description",
+          "filter_position": "left_sidebar",
+          "is_sticky": false,
+          "filter_bg_color": "#ffffff",
+          "filter_border_color": "#333333",
+          "filter_text_color": "#333333"
+        }
+      },
+      "quality-page-section": {
+        "type": "quality-page-section",
+        "settings": {
+          "section_text": "Our Quality",
+          "image_q": "shopify://shop_images/Rectangle_10_copy.jpg",
+          "text": "<p>We obsess over the details like its an art from to bring you museum- quality art for the home.e</p>"
+        }
+      },
+      "second-quality-section": {
+        "type": "second-quality-section",
+        "blocks": {
+          "1573712440300": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/beach-sunset-thailand.jpg",
+              "image_width": "33%",
+              "rich_text": "<p>Enter text to accompany your image.wgfdg</p>"
+            }
+          },
+          "1573712474051": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/Grafiti_Logomark_092419.png",
+              "image_width": "33%",
+              "rich_text": "<p>Enter text to accompany your image.fd</p>"
+            }
+          },
+          "1573712490748": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/Artboard_4.png",
+              "image_width": "33%",
+              "rich_text": "<p>Enter text to accompany your image.dfvv</p>"
+            }
+          }
+        },
+        "block_order": [
+          "1573712440300",
+          "1573712474051",
+          "1573712490748"
+        ],
+        "settings": {
+          "section_h": "Premium & sustainable materials"
+        }
+      },
+      "left-image-quality": {
+        "type": "left-image-quality",
+        "settings": {
+          "title": "Museum- Quality Production",
+          "text": "<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen</p>",
+          "image_l": "shopify://shop_images/Rectangle_10_copy_2.jpg"
+        }
+      },
+      "right-image-quality": {
+        "type": "right-image-quality",
+        "settings": {
+          "title": "Made for collectors",
+          "text": "<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen</p>",
+          "image_r": "shopify://shop_images/Rectangle_10_copy_2.jpg"
+        }
+      },
+      "our-quality": {
+        "type": "our-quality",
+        "settings": {
+          "page_title": "Our <span>Quality</span>",
+          "page_text": "At Grafiti, we obsess over the details like it’s an art form to bring you  museum-quality wall art.",
+          "hero_img": "shopify://shop_images/quality-1-_2x_6f43f4c3-f8d0-4b01-b247-76191ab976ea.jpg",
+          "section_title_1": "Premium & <br>Sustainable Materials",
+          "section_text_1": "<ol>\n  <li>Most wall art frames are made of styrofoam. Not ours. We use <b>FSC-certified & handcrafted mahogany wood</b> sourced to create elegant, durable frames.</li>\n<br>\n  <li>Our <b>fine art canvases are 100% pure cotton</b> and come from a manufacturer in France with over 150 years \nof crafting history.</li>\n<br>\n  <li>Great art deserves great craftsmanship. Our canvases are mounted on <b>premium quality, solid-wood stretcher bars</b>, which ensures that your artwork is displayed and preserved for years to come.</li>\n</ol>",
+          "section_img_1": "shopify://shop_images/quality-4-_2x_e5ae5c58-5932-468a-9014-ace39fbf71c8.jpg",
+          "section_title_2": "Museum-Quality <span>Production</span>",
+          "section_text_2": "We use <b>professional-grade fine art materials and Giclée production techniques</b> to protect and preserve the integrity of the artwork.\n<br><br>\nOur <b>pigment-based archival inks and acid-free 100% cotton canvases</b> ensure maximum longevity. We then coat each piece with a <b>fine art glaze</b> that enriches colors, creates a water-resistant barrier, and prevents cracking. \n<br><br>\nBy the time it’s framed, the only thing it needs is a place to call home.",
+          "section_img_2": "shopify://shop_images/quality-2-_2x_4e7d7993-2eaa-4123-834b-e0315080c932.jpg",
+          "section_title_3": "Collection-Worthy",
+          "section_text_3": "Art doesn’t just hang on the wall, it becomes a part of your home. \n<br><br>\nLearning the background of your favorite piece allows you to deepen your personal connection with it even further, which is why <b>each Grafiti piece comes with an art plate that features the artist’s name, artwork title and a description of their art.</b>",
+          "section_img_3": "shopify://shop_images/quality-3-_2x_e6500c44-0b76-4054-8a4a-9fe21118c00c.jpg"
+        }
+      },
+      "collection-spotlight": {
+        "type": "collection-spotlight",
+        "settings": {
+          "title": "Artist Spotlight:<br>Samir Belhamra",
+          "text": "Samir Belhamra is a France-based photographer & visual artist. His style is atypical, situated between reality and imagination. With each piece, he hopes that his artwork will help people to dream, travel, and change their perspective.\n<br>",
+          "link_text": "Shop the Collection",
+          "link": "shopify://collections/featured-artist-samir-belhamra",
+          "image": "shopify://shop_images/Samir_Belhamra_Gate_Keeper_to_the_stars_Template.jpg"
+        }
+      },
+      "page-story-template": {
+        "type": "page-story-template",
+        "settings": {
+          "page_title": "Our\nStory",
+          "img1": "shopify://shop_images/ourstory-1-_2x_d44f540f-146d-4eae-b9a0-d23872816a18.jpg",
+          "img2": "shopify://shop_images/ourstory-3-_2x_ecc09ab7-e1de-45e9-af28-ed0879a9fda7.jpg",
+          "img3": "shopify://shop_images/ourstory-2-_2x_43dabcdb-07af-47fc-a0c1-28f2b946363d.jpg",
+          "hero_title": "We’re the fun part of decor, here for fresh starts, unpacked boxes, evolving styles, and finishing touches.",
+          "hero_text": "",
+          "bv_image": "shopify://shop_images/ourstory-box-short-_2x_61caa745-2a44-4b60-b8d9-ca6ccff57e70.jpg",
+          "bv_title": "Brand Values",
+          "bv_text": "<ol>\n<li>Self-Expression<br>\n<p>We believe that the home is the most intimate space in your life, and you deserve to have it reflect you: your style, your taste, your personality. We want to make it simple to find furnishings that fit. </p>\n</li>\n<li>Inclusivity<br><p>\nWe believe that making yourself at home shouldn't cost as much as your home. A middleman-free approach allows us to offer premium & sustainable products with much lower prices than those of many high-end home decor retailers. \n </p>\n</li>\n<li>Seamlessness<br>\n<p>We believe that the modern shopping experience should be easy and efficient. We offer free shipping and free returns within 90 days of purchase. We’re obsessed with customer service and are always here to answer any questions you may have.</p>\n</li>\n</ol>",
+          "c_image": "shopify://shop_images/ourstory-welcomehome-_2x_197b5dd3-f9c8-4f39-96c2-15d44ec71421.jpg",
+          "c_title": "Our Commitment",
+          "c_text": "<p>We’re <b>a certified B Corporation</b> committed to ethical business practices. How we treat the environment, this planet and the people living on it is just as important as our company’s bottom line. </p>\n<ol>\n<li>We Source Responsibly:<br>\n<p>We work exclusively with log suppliers who are <a href=\"%E2%80%9Chttps://fsc.org/en%E2%80%9D\"><b>Forest Stewardship Council-certified</b></a>. The FSC suppliers replant one new tree for every tree cut down to make our products. </p>\n</li>\n<li>We Reduce Waste and Plastic<br>\n<p>We make the maximum effort to avoid plastic whenever possible. Our frames are made from long-lasting <b>FSC-certified mahogany wood instead of industry-standard styrofoam (polystyrene) and plastic</b>, and we use <b>paper alternatives to plastic wraps for our packaging.</b></p>\n</li>\n<li>We Pledge 1%<br>\n<p>Before anything else, we want Grafiti to be a company that gives back. That’s why we’re grateful to join industry leaders in a global movement to <b>donate 1% of our revenue and staff time to non-profits.</b> </p>\n<p>We are currently partnering with <a href=\"https://www.a21.org/index.php\"><b>A21.org</b></a>, a non-profit that reaches, rescues, and restores human and sex trafficking victims worldwide. 1% of your purchase will go to A21 and support their operations.</p>\n</li>\n</ol>"
+        }
+      },
+      "page-featured-template": {
+        "type": "page-featured-template",
+        "settings": {
+          "page_title": "Featured <span>on Grafiti</span>",
+          "h_title": "Artist:<br>Ross Cunningham",
+          "h_text": "After studying architecture, Ross has worked in the creative industry for the past twenty years, with a primary focus on identity design and architectural photography. The influences of a rigorous approach to composition, along with the use of strong graphical elements are evident in much of the painting work. Pre-production workflow is often carried out on the computer, using skills learnt over in commercial design practice. Specific artistic influences cited are Richard Diebenkorn, Raimonds Staprans and Milton Avery.",
+          "h_link_text": "SHOP NOW",
+          "h_link": "https://grafitihome.com/search?type=product&q=Ross+Cunningham&submit=Search",
+          "h_product_left": "study-for-portnoo-donegal",
+          "h_product_left_image": "shopify://shop_images/Natural_Transparant_540x_018aae10-a29f-4490-a94d-18cce17f8ee8.png",
+          "h_product_right": "composition-in-black-pink",
+          "h_product_right_image": "shopify://shop_images/Ross-Cunningham.png",
+          "fm_title": "Category: Contemporary",
+          "fm_link_text": "Shop Contemporary",
+          "fm_link": "/colletions/contemporary",
+          "f_featured_collection": ""
+        }
+      },
+      "invite-friend": {
+        "type": "invite-friend",
+        "settings": {
+          "title": "Invite a friend<br>and get 15% off.",
+          "text": "Send a friend 15% off their first purchase<br>\nand earn $15% off your next Grafiti purchase!"
+        }
+      },
+      "pdp-quality-detail-one": {
+        "type": "pdp-quality-detail-one",
+        "settings": {
+          "title": "Contemporary Art<span>\nfrom Gallery Artists</span>",
+          "text": "Every Grafiti piece is hand-selected from artists across the world. We set out to curate art that stand out in any room; they are bold, creative, and expressive - created by gallery artists whose work you won’t find in other home decor stores."
+        }
+      },
+      "pdp-quality-detail-two": {
+        "type": "pdp-quality-detail-two",
+        "settings": {
+          "image1": "shopify://shop_images/plaque_fef26c10-6162-4b0f-9414-ccac82b89c77.png",
+          "title1": "Museum-Quality <br>Production",
+          "text1": "We use professional-grade materials and Giclée production techniques to protect and preserve the integrity of the artwork.<br><br>\nWe then coat each piece with a fine art glaze that enriches colors, creates a water-resistant barrier, and prevents cracking.",
+          "image2": "shopify://shop_images/Screen_Shot_2020-01-06_at_12.41.01_PM.png",
+          "title2": "Collection-Worthy",
+          "text2": "Each Grafiti piece comes with an lucite art plate that features the artist’s name, artwork title, and a description of their art. Mount the art plate with the Grafiti wall art just like at a gallery or museum, or keep it somewhere meaningful."
+        }
+      },
+      "article-quote": {
+        "type": "article-quote",
+        "blocks": {
+          "1581008758753": {
+            "type": "quote",
+            "settings": {
+              "article": "",
+              "image": "shopify://shop_images/josh-desk.png",
+              "quote": "Insert a pull quote here for SEO and also people who don’t want to read."
+            }
+          },
+          "1581008778703": {
+            "type": "quote",
+            "settings": {
+              "article": "",
+              "image": "shopify://shop_images/desk-vignette_5a5832ff-8954-4707-95cb-6eb6a46ba855.png",
+              "quote": "Insert a pull quote here for SEO and also people who don’t want to read. 2"
+            }
+          }
+        },
+        "block_order": [
+          "1581008758753",
+          "1581008778703"
+        ],
+        "settings": {}
+      },
+      "article-related-products": {
+        "type": "article-related-products",
+        "blocks": {
+          "1581879720988": {
+            "type": "collection",
+            "settings": {
+              "text": "Shop for Living Room",
+              "article": "",
+              "collection": "illustration",
+              "limit": 6
+            }
+          },
+          "1584240984866": {
+            "type": "collection",
+            "settings": {
+              "text": "Shop Best Sellers",
+              "article": "the-curated-home/introducing-grafiti-home",
+              "collection": "best-sellers",
+              "limit": 6
+            }
+          }
+        },
+        "block_order": [
+          "1581879720988",
+          "1584240984866"
+        ],
+        "settings": {}
+      },
+      "external-blog": {
+        "type": "external-blog",
+        "blocks": {
+          "1581012588728": {
+            "type": "external_blog",
+            "settings": {
+              "image": "shopify://shop_images/Screen_Shot_2020-02-17_at_6.30.58_PM.png",
+              "title": "Amazing Gifts for Mom or Dad",
+              "text": "by The Style Wright (thestylewright.com)",
+              "link": "https://thestylewright.com/2019/12/14/holiday-gift-guide-for-mom-dad-2019/"
+            }
+          }
+        },
+        "block_order": [
+          "1581012588728"
+        ],
+        "settings": {
+          "section_title": "From Sites We Love"
+        }
+      },
+      "faqs-page-template": {
+        "type": "faqs-page-template",
+        "blocks": {
+          "1582154841134": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "general",
+              "title": "What are your Customer Experience hours?",
+              "answer": "Monday - Friday 8am - 6pm (PST). You can also email us anytime at support@grafitihome.com"
+            }
+          },
+          "1582154874782": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "general",
+              "title": "Who do I contact for Press Inquiries?",
+              "answer": "You can contact our Press team at press@grafitihome.com"
+            }
+          },
+          "1582154896997": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "general",
+              "title": "How can I contact you if I have other questions?",
+              "answer": "You can send us an email at support@grafitihome.com"
+            }
+          },
+          "1582154908477": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "order-and-shipping",
+              "title": "How long is the turnaround time? How long until I receive my product?",
+              "answer": "We aim to ship every order out within 3 business days. We send every order via standard shipping."
+            }
+          },
+          "1582154952317": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "order-and-shipping",
+              "title": "I need my order by a certain date, can I expedite an order?",
+              "answer": "We do not have an expedited process as of yet, but feel free to contact us at support@grafitihome.com and we will do everything we can to help you!"
+            }
+          },
+          "1582155038632": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "order-and-shipping",
+              "title": "Will my order ship in one big box or in multiple pieces?",
+              "answer": "Each wall art is shipped in its own box to ensure that they are not damaged during the shipping process."
+            }
+          },
+          "1582155078615": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "order-and-shipping",
+              "title": "What shipping providers do you use?",
+              "answer": "We use USPS, FedEx, and UPS."
+            }
+          },
+          "1582155092948": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "order-and-shipping",
+              "title": "How much does shipping cost?",
+              "answer": "Shipping is free to the contiguous 48 States in the US. International shipping rates may apply."
+            }
+          },
+          "1582155122503": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "order-and-shipping",
+              "title": "Can I use more than one coupon code on my order?",
+              "answer": "Only one coupon code at a time can be applied to an order."
+            }
+          },
+          "1582155159319": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "order-and-shipping",
+              "title": "Will I be charged sales tax on my order?",
+              "answer": "Yes."
+            }
+          },
+          "1582155183803": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "order-and-shipping",
+              "title": "Do you ship to APO / FPO or P.O. Box addresses?",
+              "answer": "Unfortunately we cannot ship to APO/FPO or PO Boxes due to the size of the packages."
+            }
+          },
+          "1582155305837": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "order-and-shipping",
+              "title": "Do you require a signature for delivery?",
+              "answer": "We do not require a signature, however, the delivery provider may request a signature at their discretion"
+            }
+          },
+          "1582155330454": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "order-and-shipping",
+              "title": "What should I do if my shipment is damaged or there is a defect with my wall art?",
+              "answer": "Please contact support@grafitihome.com if there is any damage due to the shipping process. We always make sure that you are fully satisfied with the product that you order!"
+            }
+          },
+          "1582155348575": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "order-and-shipping",
+              "title": "Which methods of payment do you accept?",
+              "answer": "We accept all major forms of payment (Visa, Mastercard, Discover, Apple Pay, Google Pay, American Express, Paypal etc.)"
+            }
+          },
+          "1582155371110": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "order-and-shipping",
+              "title": "Can I update my order at any point?",
+              "answer": "Orders cannot be updated after they have been shipped. If you need to make a change to your order, contact support@grafitihome.com and we will do our best to accommodate you."
+            }
+          },
+          "1582155393011": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "order-and-shipping",
+              "title": "Do you charge extra to ship to Alaska, Hawaii, or U.S. territories such as Puerto Rico and Guam?",
+              "answer": "Yes, there is a shipping fee to Alaska, Hawaii, or U.S. territories such as Puerto Rico and Guam. Upon checkout, our shipping system will automatically calculate your fee."
+            }
+          },
+          "1582155415420": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "returns-and-exchanges",
+              "title": "What is your return policy?",
+              "answer": "We offer 30-day free exchanges for any wall art purchase. We are convinced that our products are at the utmost quality, however we will always make sure you are satisfied with your purchase. Each wall art is printed and framed by hand. Therefore, we charge a 20% restocking fee for returns. If damage occurs to your order while in transit, we will cover all damages that occur in shipping."
+            }
+          },
+          "1582155448091": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "returns-and-exchanges",
+              "title": "Can I return my artwork without the box?",
+              "answer": "If you wish to return your piece, we ask that you return it in the original box, with the appropriate padding. We cannot accept returns if they have been damaged during the return process."
+            }
+          },
+          "1582155479981": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "returns-and-exchanges",
+              "title": "Can I cancel my order?",
+              "answer": "Yes, as long as the item has not been shipped. Please contact support@grafitihome.com or log into your account if you need to cancel your order."
+            }
+          },
+          "1582155562611": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "products",
+              "title": "How is your canvas stretched?",
+              "answer": "Our canvas is hand-stretched in Los Angeles over wooden stretcher bars. See Our Quality page for more info."
+            }
+          },
+          "1582155608134": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "products",
+              "title": "Do you include hanging hardware?",
+              "answer": "Yes, each order is shipped with the necessary, durable hardware to hang your wall art."
+            }
+          },
+          "1582155639236": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "products",
+              "title": "Can I hang my Grafiti wall art outside?",
+              "answer": "We don’t suggest it as our artwork is not weatherproof. We recommend that you hang your artwork inside where it is protected by the elements."
+            }
+          },
+          "1582155673416": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "products",
+              "title": "Will the colors shown on my monitor be exactly how the image prints?",
+              "answer": "As will any printing, there will be some slight variations in the printing process, but we do our best to make sure every artwork that leaves our facility is something that we are proud of and that you will enjoy!"
+            }
+          },
+          "1582155697371": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "general",
+              "title": "Do you use polystyrene/ styrofoam in your frame? What are the materials",
+              "answer": "We do not use any form of polystyrene or soft wood in our frames. All of our frames are 100% FSC-certified mahogany wood. See Our Quality page for more info."
+            }
+          },
+          "1582155741981": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "products",
+              "title": "Are your canvases considered Giclee quality?",
+              "answer": "Yes. Only the best fine art reproduction techniques are used. See Our Quality page for more info."
+            }
+          },
+          "1582155769810": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "general",
+              "title": "Can I order a custom size?",
+              "answer": "We don’t typically make custom sizes for our artwork, but contact support@grafitihome.com and we’ll do our best to accommodate you."
+            }
+          },
+          "1582155797626": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "products",
+              "title": "Do you offer artwork only with the frame? Can I buy the digital image?",
+              "answer": "We only offer our artwork with the frame."
+            }
+          },
+          "1582155815690": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "products",
+              "title": "Can I hang a canvas in a bathroom?",
+              "answer": "Yes. Our artwork are coated with fine art varnishing that makes it water-resistant and protects it from humidity. Please don't throw water directly onto a Grafiti piece, we'd appreciate it."
+            }
+          },
+          "1582155843674": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "products",
+              "title": "How do I take care of my wall art? Do I need to clean it?",
+              "answer": "Taking care of your Grafiti wall art is easy and low maintenance. Wiping the artwork down for dust is suggested from time to time, please make sure to use a duster or gentle damp cloth. However, please do not use any chemical based products when cleaning your artwork."
+            }
+          },
+          "1582155862963": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "products",
+              "title": "Where is the wall art manufactured and assembled?",
+              "answer": "All Grafiti artwork is manufactured and assembled in Los Angeles, California."
+            }
+          },
+          "1582155910071": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "products",
+              "title": "Is there any assembly required?",
+              "answer": "No assembly is required other than hanging your artwork if you so choose."
+            }
+          },
+          "1582155926706": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "artist",
+              "title": "How do I sign up to sell my art on Grafiti Home?",
+              "answer": "You may apply to be a Grafiti Artist here."
+            }
+          },
+          "1582155972084": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "artist",
+              "title": "Am I keeping the rights to my artwork?",
+              "answer": "It’s your artwork, you fully own the rights."
+            }
+          },
+          "1582155991044": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "artist",
+              "title": "How do I upload my artwork?",
+              "answer": "You may apply to be a Grafiti artist here. If selected, a Grafiti team member will reach out about the next steps, including uploading your artwork for Grafiti."
+            }
+          },
+          "1582156007953": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "artist",
+              "title": "Who sets the pricing for the artwork?",
+              "answer": "We use standard pricing that is set for each artwork size."
+            }
+          },
+          "1582156032002": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "artist",
+              "title": "What are the upload requirements?",
+              "answer": "We ask all artists to upload their artwork via our form following the below requirements:<br>\n\nPSD or TIF file<br>\nQuality: 300DPI at 36 x 48 inches<br>\nCMYK color matching"
+            }
+          },
+          "1582156054339": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "artist",
+              "title": "Can anyone sell/upload on Grafiti?",
+              "answer": "Yes, anyone can apply to the Grafiti Artist Program. However, we review each artist to make sure that we deliver the best possible art and quality to our customers."
+            }
+          },
+          "1582156173028": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "artist",
+              "title": "Can I share my Grafiti Artwork with my followers?",
+              "answer": "Yes!"
+            }
+          },
+          "1582156184245": {
+            "type": "faqs",
+            "settings": {
+              "question_cat": "artist",
+              "title": "How do I get paid / when do I get paid?",
+              "answer": "We use Paypal and Venmo to deliver all artist commissions. We send out payments on the 1st and 15th of every month."
+            }
+          }
+        },
+        "block_order": [
+          "1582154841134",
+          "1582154874782",
+          "1582154896997",
+          "1582154908477",
+          "1582154952317",
+          "1582155038632",
+          "1582155078615",
+          "1582155092948",
+          "1582155122503",
+          "1582155159319",
+          "1582155183803",
+          "1582155305837",
+          "1582155330454",
+          "1582155348575",
+          "1582155371110",
+          "1582155393011",
+          "1582155415420",
+          "1582155448091",
+          "1582155479981",
+          "1582155562611",
+          "1582155608134",
+          "1582155639236",
+          "1582155673416",
+          "1582155697371",
+          "1582155741981",
+          "1582155769810",
+          "1582155797626",
+          "1582155815690",
+          "1582155843674",
+          "1582155862963",
+          "1582155910071",
+          "1582155926706",
+          "1582155972084",
+          "1582155991044",
+          "1582156007953",
+          "1582156032002",
+          "1582156054339",
+          "1582156173028",
+          "1582156184245"
+        ],
+        "settings": {
+          "title": "Frequently Asked Questions",
+          "hero_img": "shopify://shop_images/ezgif.com-webp-to-jpg.jpg",
+          "text": "Cannot find the answers you need? <br> Contact us at support@grafitihome.com. Anytime."
+        }
+      },
+      "trade-program-page-template": {
+        "type": "trade-program-page-template",
+        "blocks": {
+          "55367cd8-4cab-461c-8aaa-8d8c905da532": {
+            "type": "banner",
+            "settings": {
+              "image": "shopify://shop_images/Artboard_c9df60a0-ba48-4a28-8249-ba23eeef7f90.jpg",
+              "title": "",
+              "text": "",
+              "button": "Apply Now",
+              "link": "shopify://pages/apply-for-trade-program"
+            }
+          },
+          "1582236442347": {
+            "type": "image_and_text",
+            "settings": {
+              "bg_color": "#b2c2e0",
+              "image_position": "image_right",
+              "title": "Why Grafiti",
+              "image": "shopify://shop_images/vignette_1_5ba8a774-138e-4227-a69f-35320ed0ce86.jpg",
+              "col_title": "Dedicated Discount for<br>Trade Professionals",
+              "col_text": "Industry leading trade discounts on all products for accepted trade professionals. Program is available to eligible interior designers, architects, home builders, home stagers, and more.\n\nNo minimum orders"
+            }
+          },
+          "1582237881335": {
+            "type": "image_and_text",
+            "settings": {
+              "bg_color": "#ffbf87",
+              "image_position": "image_left",
+              "title": "",
+              "image": "shopify://shop_images/kaycie.jpg",
+              "col_title": "Dedicated Trade<br>Account Specialist",
+              "col_text": "Each trade professional is paired with a dedicated trade account specialist who will be assisting throughout the selection, purchasing, and delivery process."
+            }
+          },
+          "1582239912127": {
+            "type": "image_and_text",
+            "settings": {
+              "bg_color": "#eef7b3",
+              "image_position": "image_right",
+              "title": "",
+              "image": "shopify://shop_images/sveta.jpg",
+              "col_title": "Wall Art for Every<br>Room & Home",
+              "col_text": "<p><b>6 categories of artwork</b></p>\n<ul>\n<li>Abstract</li>\n<li>Photography</li>\n<li>Pop & Street</li>\n<li>Minimalist</li>\n<li>Digital</li>\n<li>Drawings & Illustratioons</li>\n</ul>\n<p>Further sortings based on subjects, colors, and room recommendations</p>\n<p><b>Comes in 4 wall art sizes</b></p>\n<ul>\n<li>Small (18” x 24”)</li>\n<li>Medium (24” x 32”)</li>\n<li>Large (30” x 40”)</li>\n<li>X-Large (36” x 48”)</li>\n</ul>\n<p><b>Comes in 5 frames</b></p>\n<ul>\n<li>Black</li>\n<li>Dark Wood</li>\n<li>Natural Wood</li>\n<li>Brass Gold</li>\n<li>Nickel Silver</li>\n</ul>"
+            }
+          },
+          "1582240597396": {
+            "type": "three-columns",
+            "settings": {
+              "bg_color": "#ffffff",
+              "title": "Our Quality",
+              "col1_title": "Premium & Sustainable:",
+              "col1_text": "<p>Most wall art frames are made of styrofoam. Not ours. We use FSC-certified [link] mahogany wood to create elegant, durable frames.</p>\n<p>Our canvas comes from a family-owned mill in Oregon that has been making cotton canvases for 75 years.</p>",
+              "col2_title": "Thorough:",
+              "col2_text": "Each piece of art is accompanied by a plaque that features the artwork’s title, the artist’s name, and a description of the artist’s work.",
+              "col3_title": "Museum-Grade:",
+              "col3_text": "We employ museum-grade production techniques, like giclee art reproduction, which uses archival pigment-based aqueous inks on the finest acid-free fine art canvases to ensure maximum longevity for your art pieces."
+            }
+          },
+          "1582241570633": {
+            "type": "banner",
+            "settings": {
+              "image": "shopify://shop_images/ezgif.com-webp-to-jpg_4.jpg",
+              "title": "",
+              "text": "",
+              "button": "Apply Now",
+              "link": "https://grafitihome.typeform.com/to/iBzeFa"
+            }
+          }
+        },
+        "block_order": [
+          "55367cd8-4cab-461c-8aaa-8d8c905da532",
+          "1582236442347",
+          "1582237881335",
+          "1582239912127",
+          "1582240597396",
+          "1582241570633"
+        ],
+        "settings": {
+          "title": "Trade Program",
+          "hero_img": "shopify://shop_images/ezgif.com-webp-to-jpg.jpg",
+          "text": "Grafiti Home is a modern decor brand offering premium & sustainably-produced goods from the world's best artists & designers.",
+          "button": "Apply Now",
+          "link": "https://grafitihome.com/pages/apply-for-trade-program"
+        }
+      },
+      "advanced-content": {
+        "type": "advanced-content",
+        "blocks": {
+          "1584040414909": {
+            "type": "image-with-icon-and-text",
+            "settings": {
+              "title": "Premium Mahogany <span>Wood Frames</span>",
+              "svg1": "fsc-black.svg",
+              "text1": "Most wall art frames are made of styrofoam. Not ours. We use FSC-certified & handcrafted mahogany wood frames.",
+              "svg2": "cotton-black.svg",
+              "text2": "Our fine art canvases are 100% cotton and comes from a mill in France with over 150 years of crafting history.",
+              "svg3": "frame-black.svg",
+              "text3": "Our canvases are hand mounted on premium quality, solid-wood stretcher bars.",
+              "block_width": 85,
+              "image_position": "right",
+              "image_position_on_mobile": "top"
+            }
+          },
+          "1584040333393": {
+            "type": "image-with-text",
+            "settings": {
+              "title": "Handcrafted in <span>Los Angeles</span>",
+              "text": "<p>Each piece is produced and framed by hand by our team of experts with decades of combined craftsmanship experience.</p>\n\n<p>We use professional-grade fine art materials and Giclée printing techniques to protect and preserve the integrity of the artwork. Each piece is then coated with a fine art glaze that enriches colors, creates a water-resistant barrier, and prevents cracking.</p>",
+              "block_width": 85,
+              "image_position": "left",
+              "image_position_on_mobile": "top"
+            }
+          }
+        },
+        "block_order": [
+          "1584040414909",
+          "1584040333393"
+        ],
+        "settings": {}
+      },
+      "collection-benner-template": {
+        "type": "collection-benner-template",
+        "settings": {}
+      },
+      "collection-page-sidebar-template": {
+        "type": "collection-page-sidebar-template",
+        "blocks": {
+          "1586371114922": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "best-selling",
+              "section_name": "featured"
+            }
+          },
+          "1594594775243": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "gallery-sets",
+              "section_name": "featured"
+            }
+          },
+          "1587927011179": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "new-arrivals",
+              "section_name": "featured"
+            }
+          },
+          "1586371273803": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "abstract",
+              "section_name": "category"
+            }
+          },
+          "1586371551995": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "photography",
+              "section_name": "category"
+            }
+          },
+          "1587973983826": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "pop-art-1",
+              "section_name": "category"
+            }
+          },
+          "1586371534673": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "minimalist",
+              "section_name": "category"
+            }
+          },
+          "1586371373193": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "digital",
+              "section_name": "category"
+            }
+          },
+          "1586371508771": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "illustration",
+              "section_name": "category"
+            }
+          },
+          "1586371568961": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "nature-landscapes",
+              "section_name": "subject"
+            }
+          },
+          "1586371610650": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "figurative",
+              "section_name": "subject"
+            }
+          },
+          "1586371601260": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "urban",
+              "section_name": "subject"
+            }
+          },
+          "1586371631556": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "geometric",
+              "section_name": "subject"
+            }
+          },
+          "1599188453735": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "characters-culture",
+              "section_name": "subject"
+            }
+          },
+          "1587973418611": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "animals",
+              "section_name": "subject"
+            }
+          },
+          "1586371649950": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "flowers-plants",
+              "section_name": "subject"
+            }
+          },
+          "1586371684872": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "bright-bold",
+              "section_name": "color"
+            }
+          },
+          "1586371705227": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "light-airy",
+              "section_name": "color"
+            }
+          },
+          "1586371714106": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "neutral-pastel",
+              "section_name": "color"
+            }
+          },
+          "1586371661401": {
+            "type": "collection_filter",
+            "settings": {
+              "collection": "black-white",
+              "section_name": "color"
+            }
+          }
+        },
+        "block_order": [
+          "1586371114922",
+          "1594594775243",
+          "1587927011179",
+          "1586371273803",
+          "1586371551995",
+          "1587973983826",
+          "1586371534673",
+          "1586371373193",
+          "1586371508771",
+          "1586371568961",
+          "1586371610650",
+          "1586371601260",
+          "1586371631556",
+          "1599188453735",
+          "1587973418611",
+          "1586371649950",
+          "1586371684872",
+          "1586371705227",
+          "1586371714106",
+          "1586371661401"
+        ],
+        "settings": {
+          "featured_display": true,
+          "featured_title": "Featured Collections",
+          "category_display": true,
+          "category_title": "Shop by Category",
+          "subject_display": true,
+          "subject_title": "Shop by Subject",
+          "color_display": true,
+          "color_title": "Shop by Color"
+        }
+      },
+      "featured-collection-list": {
+        "type": "featured-collection-list",
+        "settings": {
+          "section_text": "Featured Collection: Abstract",
+          "collection_b": "abstract",
+          "limit_p": 6,
+          "limit_m": 12
+        }
+      },
+      "collection-products-section": {
+        "type": "collection-products-section",
+        "settings": {
+          "section_text": "New Arrivals",
+          "collection_b": "new-arrivals",
+          "limit_p": 6,
+          "limit_m": 6
+        }
+      },
+      "collection-new-arrivals-section": {
+        "type": "collection-new-arrivals-section",
+        "settings": {
+          "section_text": "New Arrivals",
+          "link_text": "",
+          "link": "",
+          "collection_b": "",
+          "limit_p": 6,
+          "limit_m": 6
+        }
+      },
+      "products-block-by-collection": {
+        "type": "products-block-by-collection",
+        "blocks": {
+          "1587917299864": {
+            "type": "collection",
+            "settings": {
+              "section_text": "Best Selling",
+              "link_text": "",
+              "collection": "best-selling",
+              "limit_p": 5,
+              "limit_m": 6
+            }
+          },
+          "1594425353984": {
+            "type": "collection",
+            "settings": {
+              "section_text": "Gallery Sets",
+              "link_text": "",
+              "collection": "gallery-sets",
+              "limit_p": 5,
+              "limit_m": 6
+            }
+          },
+          "1587918364472": {
+            "type": "collection",
+            "settings": {
+              "section_text": "Abstract",
+              "link_text": "",
+              "collection": "abstract",
+              "limit_p": 5,
+              "limit_m": 5
+            }
+          },
+          "1587972886993": {
+            "type": "collection",
+            "settings": {
+              "section_text": "Minimalist",
+              "link_text": "",
+              "collection": "minimalist",
+              "limit_p": 5,
+              "limit_m": 5
+            }
+          },
+          "1587973145697": {
+            "type": "collection",
+            "settings": {
+              "section_text": "Pop & Street",
+              "link_text": "",
+              "collection": "pop-art-1",
+              "limit_p": 5,
+              "limit_m": 5
+            }
+          },
+          "1587932622738": {
+            "type": "collection",
+            "settings": {
+              "section_text": "Photography",
+              "link_text": "",
+              "collection": "photography",
+              "limit_p": 5,
+              "limit_m": 5
+            }
+          },
+          "1587932638042": {
+            "type": "collection",
+            "settings": {
+              "section_text": "Digital",
+              "link_text": "",
+              "collection": "digital",
+              "limit_p": 5,
+              "limit_m": 5
+            }
+          },
+          "1587932793904": {
+            "type": "collection",
+            "settings": {
+              "section_text": "Drawings & Illustrations",
+              "link_text": "",
+              "collection": "illustration",
+              "limit_p": 5,
+              "limit_m": 5
+            }
+          },
+          "1587932813781": {
+            "type": "collection",
+            "settings": {
+              "section_text": "Nature & Landscapes",
+              "link_text": "",
+              "collection": "nature-landscapes",
+              "limit_p": 5,
+              "limit_m": 5
+            }
+          },
+          "1599188964849": {
+            "type": "collection",
+            "settings": {
+              "section_text": "Characters & Culture",
+              "link_text": "",
+              "collection": "characters-culture",
+              "limit_p": 5,
+              "limit_m": 5
+            }
+          },
+          "1587972947942": {
+            "type": "collection",
+            "settings": {
+              "section_text": "Urban & Architecture",
+              "link_text": "",
+              "collection": "urban",
+              "limit_p": 5,
+              "limit_m": 5
+            }
+          },
+          "1587972976191": {
+            "type": "collection",
+            "settings": {
+              "section_text": "Figurative",
+              "link_text": "",
+              "collection": "figurative",
+              "limit_p": 5,
+              "limit_m": 5
+            }
+          },
+          "1587973251227": {
+            "type": "collection",
+            "settings": {
+              "section_text": "Animals",
+              "link_text": "",
+              "collection": "animals",
+              "limit_p": 5,
+              "limit_m": 5
+            }
+          },
+          "1587973353464": {
+            "type": "collection",
+            "settings": {
+              "section_text": "Geometric",
+              "link_text": "",
+              "collection": "geometric",
+              "limit_p": 5,
+              "limit_m": 5
+            }
+          },
+          "1587973373378": {
+            "type": "collection",
+            "settings": {
+              "section_text": "Flowers & Plants",
+              "link_text": "",
+              "collection": "flowers-plants",
+              "limit_p": 5,
+              "limit_m": 5
+            }
+          }
+        },
+        "block_order": [
+          "1587917299864",
+          "1594425353984",
+          "1587918364472",
+          "1587972886993",
+          "1587973145697",
+          "1587932622738",
+          "1587932638042",
+          "1587932793904",
+          "1587932813781",
+          "1599188964849",
+          "1587972947942",
+          "1587972976191",
+          "1587973251227",
+          "1587973353464",
+          "1587973373378"
+        ],
+        "settings": {}
+      },
+      "artist-highlight": {
+        "type": "artist-highlight",
+        "blocks": {
+          "1591486519227": {
+            "type": "artist",
+            "settings": {
+              "name": "Alexis Adam",
+              "city": "Los Angeles, California",
+              "description": "At a young age Alexis found photography as her creative outlet to express the way she saw the world. Her work lies in her fascination with light, color, and notions of beauty. She blends portraits, still life, and landscapes that feel timeless. Her mentors throughout the years have been renowned celebrity and beauty photographers, Ben Watts and Ben Hassett. Alexis’ passion is in travel, capturing  all the experiences and beauty the world has to offer through her lens",
+              "quote": "“To enter a creative space you must leave the city of your comfort and go into the wilderness of your intuition. Open your heart and soul to new and exciting wonders of the world.“"
+            }
+          },
+          "1591485104381": {
+            "type": "artist",
+            "settings": {
+              "name": "Chris Murray",
+              "city": "Syracuse, New York",
+              "description": "Chris is a photographer working primarily in the landscape of my home, the woods, lakes, mountains, and streams of New York State. His interest in photographing landscapes is derived mainly from his love of the natural world and in the opportunity to create art in an environment that ceaselessly inspires and invigorates him.  Chris’ photography style tends towards the quiet and intimate, scenes within a scene with a creative focus on simplicity, detail, and strong graphic content.",
+              "quote": "\"Ultimately, I wish for my work to reflect what it is to me, a celebration of the creative experience in nature.\""
+            }
+          },
+          "1591475021767": {
+            "type": "artist",
+            "settings": {
+              "name": "David Keenan",
+              "city": "Ballston Lake, New York",
+              "description": "David is a contemporary artist & military illustrator who draws inspiration from multiple styles such as impressionism, abstract, and pop art as well as artists like Van Gogh and Franz Kline. David has never been afraid to color outside of the lines, and firmly believes that artists should learn the rules of art and bend them.",
+              "quote": "\"I always try to step outside my visual boundaries with my art. l want to leave enough undone so the viewer can add their own detail and imagination to the painting\""
+            }
+          },
+          "1591475663122": {
+            "type": "artist",
+            "settings": {
+              "name": "Elena Kulikova",
+              "city": "Los Angeles, California",
+              "description": "Elena Kulikova is a Los Angeles-based artist and photographer with a passion for capturing nature, including human nature. Her feminine sensibility and innovative processing push her photography work to new levels with her unique multi-layered mixed-media process which expands and deepens her work of art.",
+              "quote": "\"If so many men, so many minds, certainly so many hearts, so many kinds of love.\" - Leo Tolstoy"
+            }
+          },
+          "1591496320032": {
+            "type": "artist",
+            "settings": {
+              "name": "JB Jakubek",
+              "city": "Huntington Beach, California",
+              "description": "JB Jakubek is a Southern California based commercial photographer. He found his calling in photography after following the traditional path of many career professionals. But with a desire to share his creative passion with the world, he embarked on the journey of becoming a professional photographer.\n\n\nWith every image he looks to intrigue the eye through the capture of a scene’s perfect composition, energy, light and line. With every closure of the shutter, he hopes to evoke emotion and take the viewer on a visual journey. His clients, to name a few, include Inc. Magazine, Rolling Stone Magazine, Hurley, Kevin Barry Fine Arts, HPA Design Group and Sotheby’s International Realty.",
+              "quote": "“Let’s make this world something great to look at!”"
+            }
+          },
+          "1591476016416": {
+            "type": "artist",
+            "settings": {
+              "name": "Liam Roberts",
+              "city": "Cheltenham, United Kingdom",
+              "description": "Liam is an artist from Cheltenham, UK, dedicated to creating harmonious geometric forms. His background in design helps him to create visually pleasing, carefully constructed and balanced abstract works that appeal to a sense of order and structure, while maintaining a sense of playfulness.",
+              "quote": "\"My aim is to simplify the complexity of nature, mathematics, and architecture into bold and harmonious pieces for the world to enjoy.\""
+            }
+          },
+          "1591482852151": {
+            "type": "artist",
+            "settings": {
+              "name": "Natalie Obradovich",
+              "city": "New York, New York",
+              "description": "Natalie Obradovich is a New York and Los Angeles-based travel photographer inspired by work in interior design, travel, and love of all things coastal. A graduate of University of Southern California, Natalie worked for the iconic Kelly Wearstler in Los Angeles followed by tenures in New York under other prestigious interior designers including Thad Hayes and Neal Beckstedt before continuing on with her own interior design firm. Her work has be featured in Architectural Digest, People, New York Magazine, as well as several other publications.",
+              "quote": "\"Born and raised in Manhattan Beach, California, my childhood set the stage for a lifelong love of documenting seaside living.\""
+            }
+          },
+          "1591480818911": {
+            "type": "artist",
+            "settings": {
+              "name": "Nishiko",
+              "city": "Tokyo, Japan",
+              "description": "Nishiko is an contemporary pop artist hailing from Japan. As an artist she utilizes many traditional tools and techniques and blends them with modern technology. Nishiko's muse is the woman's spirit, an embodiment of her boldness, her power and grace, and her pain. Her paintings are a promise and at the same time a prayer to mankind that we may be  true to ourselves to claim a true life.",
+              "quote": "“Creators who don't want to change the world should quit.” - Jan Švankmajer"
+            }
+          },
+          "1591476529076": {
+            "type": "artist",
+            "settings": {
+              "name": "Ross Cunningham",
+              "city": "Belfast, United Kingdom",
+              "description": "After studying architecture, Ross has worked in the creative industry for the past twenty years, with a primary focus on identity design and architectural photography. The influences of a rigorous approach to composition, along with the use of strong graphical elements are evident in much of his painting work. Pre-production workflow is often carried out on the computer, using skills developed in commercial design practice. Specific artistic influences cited are Richard Diebenkorn and Milton Avery.",
+              "quote": "\"Why talk when you can paint?\" - Milton Avery"
+            }
+          },
+          "1591026062124": {
+            "type": "artist",
+            "settings": {
+              "name": "Samir Belhamra",
+              "city": "Paris, France",
+              "description": "Samir Belhamra is a France-based photographer & visual artist. Born to a modest family in a small neighborhood, he became fascinated with digital art as he discovered the internet, photography, and digital tools such as Photoshop that gave him an endless horizon to graphic universes. He then began to create art that was the culmination of technology and imagination. \n\nToday, his style of art is atypical, situated between reality and imagination.",
+              "quote": "\"With each piece, I hope that my artwork will help people to dream, travel, and change their perspective much the same way drawing and graffiti did for me growing up.\""
+            }
+          },
+          "1591494126133": {
+            "type": "artist",
+            "settings": {
+              "name": "Sebastien Lory",
+              "city": "Paris, France",
+              "description": "Sebastien is an art photographer who lives in the ‘city of lights’, Paris. His passion for photography is driven by living in the most romantic city in the world. In Paris, the city invites you to indulge in the beauty of everyday life, cherishing the little moments, paying close attention to the little things in life. Sebastien’s art focuses on capturing cityscapes, landscapes, and architecture with a subtle touch of post-processing to make his art pop out without losing the beauty of the original.",
+              "quote": "“In photography, we can create our reality, a mix of the true reality and a creative process that unveils our emotions from that particular moment we shot.”"
+            }
+          },
+          "1591480360727": {
+            "type": "artist",
+            "settings": {
+              "name": "Selvon Ramsawak",
+              "city": "New York, New York",
+              "description": "Selvon Ramsawak is a digital artist and photographer whose style focuses on capturing iconic spots throughout New York City, blending in the heart of the city while still telling the story of its surroundings.",
+              "quote": ""
+            }
+          },
+          "1591482418570": {
+            "type": "artist",
+            "settings": {
+              "name": "Sophie Mazarro",
+              "city": "Los Angeles, California",
+              "description": "Born and raised, Sophie moved to Los Angeles at 16 and started her journey as an artist. Since then, Sophie has become a world-renowned visual artist, custom sneakerhead, and muralist. She specializes in one-of-a-kind street & pop art, imbued with political social commentary. Her client list and collaborations include the likes of Steve Aoki, Halle Berry, RedFoo, Dj Skee, The Bob Marley Estate, and the Simpsons to name a few. Her creations have been featured in exhibits with Obey Giant and in the world-famous Miami’s Art Basel.",
+              "quote": "\"I started painting when I was 6 years old and I did it wherever I could: whether it was on the walls of my nursery or doodling on my notebooks. I even got kicked out of classes for drawing on my desk.\""
+            }
+          },
+          "1591476867946": {
+            "type": "artist",
+            "settings": {
+              "name": "Steely Cao",
+              "city": "Vancouver, Canada",
+              "description": "Steely Cao is a Vancouver-based photographer & digital artist originally hailing from China. She has a committed relationship to light and color in nature, and seeks to capture the sunset nightly from different angles in the world. Steely uses photography as a means to communicate with nature to the same extent as to her inner-self.",
+              "quote": "\"I hope that my artwork will inspire viewers to see the strength in the soft, the light in the dark, and to rediscover the deep connection with nature and within themselves.\""
+            }
+          },
+          "1591478930784": {
+            "type": "artist",
+            "settings": {
+              "name": "Yasemen Asad",
+              "city": "Los Angeles, California",
+              "description": "Yasemen Asad is a Los Angeles based contemporary pop artist who originally hails from Azerbaijan. Working as an artist and a mother has led her to think more about everyone's place in the world, how we are all connected, and about the legacy she will leave for her children. This has played a significant role in her development as an artist and as a constant reminder of the importance of striking a balance between creativity and passion.",
+              "quote": "\"It's important for me to find a way to be constantly creating and expressing myself because I want my daughters to be empowered to do that as well.\""
+            }
+          },
+          "1591483537433": {
+            "type": "artist",
+            "settings": {
+              "name": "Maria Vamvakidi",
+              "city": "Creete, Greece",
+              "description": "Born and currently residing in Heraklion, Maria became passionate about art at a young age. As a child she explored her creativity by attending drawing courses where she realized her passion for art. These classes led her to later attended university where she studied Graphic Arts, while dabbling in Painting and Hagiography. Today her work has participated in exhibitions at galleries in Athens, Lamia, and Crete, where she currently paints.",
+              "quote": "\"The way you see life is the the way you make art. How great is it that my whisper can become a voice and touch your soul!\""
+            }
+          },
+          "1591484047824": {
+            "type": "artist",
+            "settings": {
+              "name": "Kenny Eicher",
+              "city": "Hudson Valley, New York",
+              "description": "Kenny Eicher is an impressionist ink artist and illustrator, residing in New York’s rural Hudson Valley. Holding a Bachelor of Fine Arts from the Pratt Institute, Kenny has built a successful 20-year career as an illustrator and graphic designer. Eicher’s art mostly centers around nature and wildlife, with the Hudson River School being a major early influence. Finding beauty in the imperfect, his sketched ink strokes bring an excitement to the work that energizes and surprises.",
+              "quote": "“There’s nothing more fulfilling in life than just sitting down and creating - deciding to make something that simply did not exist before.”"
+            }
+          },
+          "1591484639680": {
+            "type": "artist",
+            "settings": {
+              "name": "Cintia Garcia",
+              "city": "Barcelona, Spain",
+              "description": "Cintia's artworks arise from the confrontation between she wants and she gets; a leap into uncertainty between the desire to do and the impotence of doing it. The body “oscillating” is in the middle. Each line is the trace of a movement. The work is constructed by accumulation, color on color and line upon line. The strokes are like a bridge between two shores, a web that links fragments.",
+              "quote": "\"Intensity is an essential component of my work and forms part of a vital dynamic of the art.\""
+            }
+          },
+          "1594620070473": {
+            "type": "artist",
+            "settings": {
+              "name": "Jonathan Schute",
+              "city": "Los Angeles, California",
+              "description": "Jonathan Schute is a Los Angeles-based graphic designer and photographer. He is drawn to simplifying the world around him, especially in Los Angeles with its dynamic landscapes and abundant typography. Each composition begins with a photograph and is then reduced to flat artwork capturing its minimal essence. Jonathan is a graduate of the Rhode Island School of Design where he was taken with design and typography.",
+              "quote": "“Less is more.”<br>\n– Ludwig Mies van der Rohe"
+            }
+          },
+          "1594787902260": {
+            "type": "artist",
+            "settings": {
+              "name": "Michael Hugue",
+              "city": "Miami, Florida",
+              "description": "Michael is a Miami-based artist who leverages various painting techniques for his craft: from dry brush, freestyle, and blending just to name a few, using a unique style of monochromatic. He identifies as both a painter and as a visual artist, creating pieces with the ultimate goal of capturing the attention of the viewer, asking them to momentarily halt the world around them; using art to divert the noise of the world to the inner reflection of the self.",
+              "quote": "\"I believe in the idea that form doesn't necessarily need function, but function has to work with form.\""
+            }
+          },
+          "1598582956734": {
+            "type": "artist",
+            "settings": {
+              "name": "Mr. Oizif",
+              "city": "Champagne, France",
+              "description": "",
+              "quote": "\"Puisque je suis dessinateur et non pas écrivain, je laisse mes tableaux parler...\" - Mr. Oizif"
+            }
+          },
+          "1598583187957": {
+            "type": "artist",
+            "settings": {
+              "name": "Pratiksha Muir",
+              "city": "Austin, Texas",
+              "description": "Pratiksha is an Austin based abstract and pop artist who specializes in creating modern and contemporary artwork. She is best known for her elegant yet edgy large-scale paintings. Since losing her father to ALS, Pratiksha’s ultimate goal is to replace white walls with life and color. Pratiksha has since left her corporate job and opened her art studio in Austin. A portion of her original artwork sales go to the ALS Association.",
+              "quote": "“Art is the best way I can live a life that outlives me”"
+            }
+          },
+          "1598583369438": {
+            "type": "artist",
+            "settings": {
+              "name": "Phoebe Joynt",
+              "city": "Austin, Texas",
+              "description": "FeeBee is an Austin based artist, designer, and muralist.  She is known for incorporating modern, urban, and street art elements into her ever-developing pop art style. Her background of street art and illustration was greatly influenced during her time in Brooklyn, NY. FeeBee was born in upstate NY and received her Bachelor's degree in Communications Design from the Pratt Institute in New York City. She continues to explore what is possible with her creative style in the studio and on the streets. \nFeebee currently resides in Austin, TX.",
+              "quote": "\"My singular goal is to create something beautiful, eye-catching, and exciting for the viewer.\""
+            }
+          },
+          "1598584574854": {
+            "type": "artist",
+            "settings": {
+              "name": "Quinn Saine",
+              "city": "Napa, California",
+              "description": "Originally from rural Indiana, Quinn Saine has always been drawn to the lifestyle and natural beauty of the west coast, where his passion for abstract photography began. The primary artistic aspiration of Saine’s work is to transform the dynamic characteristics of the California coast into abstract color fields. Ultimately, he creates art that exemplifies the pure aesthetics and calming characteristics of the Pacific.",
+              "quote": "\"For me, the ocean creates a bond to humankind and presents the opportunity to pursue creative passions close to my heart.  Through photography, I hope to evoke reverence for the sun, land, and sea.\""
+            }
+          },
+          "1598584759167": {
+            "type": "artist",
+            "settings": {
+              "name": "Madelyn Bass",
+              "city": "San Diego, California",
+              "description": "Hailing from San Diego, California, Madelyn has found that art is one of the best forms of sharing stories and perspectives. Over the past year, she has found an interest and passion for one-line design, inspired by different art eras of cubism and minimalism. She hopes to continue learning, growing, and being inspired by the simple things throughout this life-long creative journey.",
+              "quote": "\"How many pages have I produced? I don't care. Are they any good? I don't even think about it. All that matters is I've put in my time and hit it with all I've got.\" - Steven Pressfield, The War of Art"
+            }
+          },
+          "1598586608593": {
+            "type": "artist",
+            "settings": {
+              "name": "Morgan Smalley",
+              "city": "Seattle, Washington",
+              "description": "Morgan Smalley is an abstract visual artist who incorporates vibrant colors, dramatic lines, and organic movement to portray a scene imaginable only in your most whimsical dreams. Without formal training, her experience stems from years of trial and error, experimentation, and a vivid imagination. Morgan has created a wide variety of collections that were inspired by her profound love and deep-rooted connection with nature - the mountains and waterways of her home in the Pacific Northwest.",
+              "quote": "“My skin has been lived in and the freckles and scars are my proof, my trophies fo battles lost and won and of my good fortune or lack thereof”"
+            }
+          },
+          "f9da9d66-a67f-4689-a7c7-52dda624e2f5": {
+            "type": "artist",
+            "settings": {
+              "name": "Novi Lim",
+              "city": "Raleigh, North Carolina",
+              "description": "Ethereal and calming, Novi Lim's painting transports the audience to a land that is both dreamlike, yet familiar. Lim finds inspiration in the natural world and seeks to capture the essence through an organic and sensory creative process. Guided by instinctive feeling, Lim lets the movements of her paintbrush flow as she experiments with atmospheric lighting, transparency, and color. The result is an ambiguous landscape that treads between the subconscious and waking world.",
+              "quote": "“I love a good mystery and something that flows out of me will always be somewhat equivocal and cryptic. A flower might not be a flower, but it can be a flower. There’s also a dramatic allure to it -- which is just how I like things to be in real life.”"
+            }
+          },
+          "801b9407-c0fc-49d0-909a-03bd1a451958": {
+            "type": "artist",
+            "settings": {
+              "name": "Grace Strode",
+              "city": "Phoenix, Arizona",
+              "description": "Grace Strode is an American Photographer and Travel Designer based in Phoenix, Arizona. Her work captures the natural beauty of the under-captured and raw American landscape and the primal energy of nature itself. A world traveler and lover of nature, Grace finds peace in capturing the most natural of environments.",
+              "quote": "\"Art has the ability to transport you and to take you on the trip of a lifetime.\""
+            }
+          },
+          "b200ec5f-0603-46b7-8e1f-87deb6febc68": {
+            "type": "artist",
+            "settings": {
+              "name": "Adam Zaff",
+              "city": "Los Angeles, CA",
+              "description": "Adam Zaff is a Los Angeles-based photographer specializing in travel, nature, and landscape photography. He began shooting film photography 17 years ago while in secondary school, an experience that has proved vital to his understanding of light and exposure. Whether shooting in his native city of Los Angeles, or traveling the world, he almost always has a camera at his side.",
+              "quote": "\"With a unique perspective, coupled with a passion for the medium I create striking and emotionally charged images which transport the viewer, whatever their background.\""
+            }
+          },
+          "86e863c7-cfaf-4071-9fd2-8c9a46aa1979": {
+            "type": "artist",
+            "settings": {
+              "name": "Hope Bainbridge",
+              "city": "California, USA",
+              "description": "Hope is an artist and textile designer based in Northern California. Having grown up in the foothills of the Sierra Nevada mountains, Hope continues to draw her inspiration from nature. After graduating, she began working for Leftbank Art under the artist name, Emma McCartney, where her pieces were selected by companies such as Crate & Barrel, Neiman Marcus, and Anthropologie.\nShe works with a variety of mediums including oils, acrylics, watercolors and digital design.",
+              "quote": ""
+            }
+          },
+          "6dae0a28-add0-4306-8577-4cc1351e8bd6": {
+            "type": "artist",
+            "settings": {
+              "name": "Jeff Poe",
+              "city": "Manhattan Beach, CA",
+              "description": "Jeff is a photographer based out of Manhattan Beach, CA.  Jeff has been traveling with his camera since before college and has been printing his work for over 15 years.  He enjoys the challenge of shooting everything from landscape photography, surreal night portraits, and events.  \n <br><br>\nHis love for photography started at an early age and as he began to travel more, it was a way for him to document his adventures.  Still constantly traveling, he has since been to over 18 countries and 40 states.  In his free time, you will find him playing beach volleyball, surfing, hiking, and checking out local museums and galleries.",
+              "quote": "“I’m inspired by the beauty and serenity of nature, and my goal is to bring that beauty to everyone”"
+            }
+          },
+          "bfa1a646-f4ea-4f7a-ba7a-e785b75060ce": {
+            "type": "artist",
+            "settings": {
+              "name": "Kyle Sherry",
+              "city": "Santa Barbara, CA",
+              "description": "Born and raised in the midwest and a recent Santa Barbara transplant, my time in Southern California has been nothing short of a creative wonderland. Through photography and travel, I’ve fostered my love and creative eye for the natural world in the Pacific North West, the Santa Ynez Mountains, and the Sierras. Nature offers the opportunity to the world as it once was and as it is in its most raw form. Capturing that through my photography allows me to share how I see the world in its most natural state.",
+              "quote": "“My art consists of landscapes from all over the West Coast. I look for bright and unique colored sunsets, bold mountains, and views from within the forest. I want to help others feel the moods of nature and inspire them to explore.”"
+            }
+          }
+        },
+        "block_order": [
+          "1591486519227",
+          "1591485104381",
+          "1591475021767",
+          "1591475663122",
+          "1591496320032",
+          "1591476016416",
+          "1591482852151",
+          "1591480818911",
+          "1591476529076",
+          "1591026062124",
+          "1591494126133",
+          "1591480360727",
+          "1591482418570",
+          "1591476867946",
+          "1591478930784",
+          "1591483537433",
+          "1591484047824",
+          "1591484639680",
+          "1594620070473",
+          "1594787902260",
+          "1598582956734",
+          "1598583187957",
+          "1598583369438",
+          "1598584574854",
+          "1598584759167",
+          "1598586608593",
+          "f9da9d66-a67f-4689-a7c7-52dda624e2f5",
+          "801b9407-c0fc-49d0-909a-03bd1a451958",
+          "b200ec5f-0603-46b7-8e1f-87deb6febc68",
+          "86e863c7-cfaf-4071-9fd2-8c9a46aa1979",
+          "6dae0a28-add0-4306-8577-4cc1351e8bd6",
+          "bfa1a646-f4ea-4f7a-ba7a-e785b75060ce"
+        ],
+        "settings": {}
+      },
+      "related-product-by-vendor": {
+        "type": "related-product-by-vendor",
+        "settings": {
+          "product_recommendations_heading": "More works by"
+        }
+      },
+      "instagram-gallery": {
+        "type": "instagram-gallery",
+        "settings": {}
+      },
+      "sofa-collection-page-template": {
+        "type": "sofa-collection-page-template",
+        "blocks": {
+          "f481746e-c8d6-441b-94df-ffd2d6bbd774": {
+            "type": "video",
+            "settings": {
+              "video_position": "6",
+              "title": "Functional design meets contemporary luxury.",
+              "icon_svg_1": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/modular_6.svg?v=1635316203",
+              "text_1": "ENDLESSLY MODULAR",
+              "icon_svg_2": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/waterproof-fabric_1.svg?v=1635315926",
+              "text_2": "WATER-REPELLENT & STAIN-RESISTANT",
+              "icon_svg_3": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/cloud_2.svg?v=1635316369",
+              "text_3": "CLASSIC OR EXTRA-DEEP SEATING",
+              "icon_svg_4": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/pillows_2.svg?v=1635316488",
+              "text_4": "REMOVABLE, WASHABLE COVERS",
+              "icon_svg_5": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/muscle_2.svg?v=1635316686",
+              "text_5": "RIDICULOUSLY DURABLE",
+              "icon_svg_6": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/ecology_1.svg?v=1635218930",
+              "text_6": "SUSTAINABLY-BUILT & NON-TOXIC"
+            }
+          }
+        },
+        "block_order": [
+          "f481746e-c8d6-441b-94df-ffd2d6bbd774"
+        ],
+        "settings": {
+          "grid": 3,
+          "products_per_page": 30,
+          "infinite_scroll": false,
+          "description_position": "top_description",
+          "filter_position": "left_sidebar",
+          "is_sticky": false,
+          "filter_bg_color": "#ffffff",
+          "filter_border_color": "#333333",
+          "filter_text_color": "#333333"
+        }
+      },
+      "badge": {
+        "type": "badge",
+        "blocks": {
+          "c975c23e-b7be-4d9d-b8a5-53a287b65299": {
+            "type": "badge",
+            "settings": {
+              "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/shipped_acbf6ef3-3676-46e8-a5cd-a1916a17b1e7.svg?v=1635203974",
+              "title": "NATIONWIDE DELIVERY & ASSEMBLY",
+              "text": "We offer delivery & assembly services nationwide throughout continguous U.S."
+            }
+          },
+          "5714001e-a901-4838-93d9-b133474f8c7e": {
+            "type": "badge",
+            "settings": {
+              "svg": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/truck.svg?v=1627515570",
+              "title": "RISK-FREE HOME TRIALS",
+              "text": "Don't like your sofa? We offer free returns<br>within 10 days of delivery."
+            }
+          },
+          "f277a2a6-907d-436d-ad4c-11e6be9d6b3d": {
+            "type": "badge",
+            "settings": {
+              "svg": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/return.svg?v=1627514925",
+              "title": "BEST-IN-CLASS WARRANTY",
+              "text": "We want you to love your sofa. Let us know about any damages, and we'll make it right!"
+            }
+          }
+        },
+        "block_order": [
+          "c975c23e-b7be-4d9d-b8a5-53a287b65299",
+          "5714001e-a901-4838-93d9-b133474f8c7e",
+          "f277a2a6-907d-436d-ad4c-11e6be9d6b3d"
+        ],
+        "settings": {
+          "color": "#ffffff",
+          "bg_color": "#032e6a"
+        }
+      },
+      "feature-in": {
+        "type": "feature-in",
+        "blocks": {
+          "feature-in-0": {
+            "type": "feature_in",
+            "settings": {
+              "text": "“The best online shopping experience for furniture. Innovative experiential showroom concept”",
+              "image_svg": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/image_1.svg?v=1628118220",
+              "url": "",
+              "new_window": false
+            }
+          },
+          "feature-in-1": {
+            "type": "feature_in",
+            "settings": {
+              "text": "“This is truly one of the greatest sofas we’ve ever see in the market. Comfortable, yet stylish.”",
+              "image_svg": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/image_10.svg?v=1628118220",
+              "url": "",
+              "new_window": false
+            }
+          },
+          "feature-in-2": {
+            "type": "feature_in",
+            "settings": {
+              "text": "“GRAFITI is taking the furniture world by the storm. Their modular sofas are a fan-favorite”",
+              "image_svg": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/image_3.svg?v=1628118220",
+              "url": "",
+              "new_window": false
+            }
+          }
+        },
+        "block_order": [
+          "feature-in-0",
+          "feature-in-1",
+          "feature-in-2"
+        ],
+        "settings": {
+          "border_top": true,
+          "border_bottom": true,
+          "color": "#000000",
+          "bg_color": "#ffffff"
+        }
+      },
+      "logo-list": {
+        "type": "logo-list",
+        "blocks": {
+          "72338055-6482-454e-bbb6-2c8cbb954519": {
+            "type": "logo",
+            "settings": {
+              "logo_svg": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/new_yorker.svg?v=1628120325"
+            }
+          },
+          "64439a40-78d9-4380-87c7-4f7cf07bd6b9": {
+            "type": "logo",
+            "settings": {
+              "logo_svg": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/business_insider.svg?v=1628120325"
+            }
+          },
+          "d4978d52-825f-405d-94b6-e05b5c7bdb52": {
+            "type": "logo",
+            "settings": {
+              "logo_svg": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/housebeautiful.svg?v=1628120325"
+            }
+          },
+          "8e5127ce-e1db-4faf-b795-ac19e6109fb2": {
+            "type": "logo",
+            "settings": {
+              "logo_svg": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/elle_decor.svg?v=1628120325"
+            }
+          }
+        },
+        "block_order": [
+          "72338055-6482-454e-bbb6-2c8cbb954519",
+          "64439a40-78d9-4380-87c7-4f7cf07bd6b9",
+          "d4978d52-825f-405d-94b6-e05b5c7bdb52",
+          "8e5127ce-e1db-4faf-b795-ac19e6109fb2"
+        ],
+        "settings": {
+          "border_top": false,
+          "border_bottom": true
+        }
+      },
+      "pdp-sofa-advanced-content": {
+        "type": "pdp-sofa-advanced-content",
+        "blocks": {
+          "0bcfda42-18ba-4ce1-858e-249e7bdf1cf0": {
+            "type": "advanced_content",
+            "settings": {
+              "image_right": true,
+              "title": "Feels like sitting on a cloud.",
+              "text": "A truly comfortable sitting experience, you might as well feel like you’re floating on a cloud. We use the same technology and construction as high-end mattresses, including memory foam blend cushions."
+            }
+          },
+          "59cae265-02d6-46f8-bcdd-7ca11872c1e4": {
+            "type": "advanced_content",
+            "disabled": true,
+            "settings": {
+              "image_right": false,
+              "title": "Sustainably-built<br>to last a lifetime.",
+              "text": "Anti-stain, anti-liquid, anti-scratch, anti-kids, anti-pets fabrics allows you to live your life freely. Now, you can just let the tiny two-legged and four-legged run free."
+            }
+          }
+        },
+        "block_order": [
+          "0bcfda42-18ba-4ce1-858e-249e7bdf1cf0",
+          "59cae265-02d6-46f8-bcdd-7ca11872c1e4"
+        ],
+        "settings": {}
+      },
+      "collection-sofa-banner": {
+        "type": "collection-sofa-banner",
+        "blocks": {
+          "cbc96f87-96e9-44a7-82b8-812bd88fcbcc": {
+            "type": "banner",
+            "settings": {
+              "collection": "sectionals",
+              "image": "shopify://shop_images/Sectional_Banner_5ade2a61-c69e-4527-a9d9-7ebd3603ea67.jpg",
+              "image_mobile": "shopify://shop_images/Sectional_Banner_Mobile_55cdc255-b2f4-4303-b5d8-21e0e77a9475.jpg"
+            }
+          },
+          "d1842540-f1e3-4121-bd12-56441f4fc903": {
+            "type": "banner",
+            "settings": {
+              "collection": "sofas-and-loveseats",
+              "image": "shopify://shop_images/Sofa_Banner_bce954bf-238c-44e8-b861-44d99925516c.jpg",
+              "image_mobile": "shopify://shop_images/Sofa_Banner_Mobile_3384913e-e08e-48b1-ac92-929437270d1a.jpg"
+            }
+          },
+          "8ea04a87-2216-40aa-9e67-a5af1008eecf": {
+            "type": "banner",
+            "settings": {
+              "collection": "best-sellers",
+              "image": "shopify://shop_images/Best_Sellers_Banner_94d6e8e9-10d7-4333-91b2-5fe0c57a8176.jpg",
+              "image_mobile": "shopify://shop_images/Best_Sellers_Mobile_c07c999f-b94c-4ac4-b506-b43bbdb263e4.jpg"
+            }
+          },
+          "29baa098-6e55-45b0-947f-62f0751fa1f5": {
+            "type": "banner",
+            "settings": {
+              "collection": "daybeds-and-pits",
+              "image": "shopify://shop_images/Daybed_Pits_Banner_a7a57df9-ce03-4507-8098-5533ab82b539.jpg",
+              "image_mobile": "shopify://shop_images/Daybeds_Pits_Banner_Mobile_375d8f2d-37a8-42bd-91d6-2a973e144023.jpg"
+            }
+          },
+          "2a8a0543-b992-4754-a13d-4f75a232444e": {
+            "type": "banner",
+            "settings": {
+              "collection": "armchairs",
+              "image": "shopify://shop_images/Armchairs_d3cc5cae-8529-47ce-b7a4-ab67fb015ba8.jpg",
+              "image_mobile": "shopify://shop_images/Armchairs_Mobile_da26ca6b-b22e-4011-afdd-922b946ad7c7.jpg"
+            }
+          },
+          "a4fa8880-391c-48fa-a898-9ac2017922d3": {
+            "type": "banner",
+            "settings": {
+              "collection": "all-products",
+              "image": "shopify://shop_images/All_Products.jpg",
+              "image_mobile": "shopify://shop_images/All_Products_-_Mobile.jpg"
+            }
+          },
+          "2e25e7b9-18d5-49c7-8f9f-e4384ee49a0f": {
+            "type": "banner",
+            "settings": {
+              "collection": "best-selling",
+              "image": "shopify://shop_images/Best_Sellers_Banner_b856da2b-764e-41d2-a2c2-e907a37ff85d.jpg",
+              "image_mobile": "shopify://shop_images/Best_Sellers_Mobile_e4f93897-be09-4c7b-b89b-b36897d66c4d.jpg"
+            }
+          },
+          "5c532b87-9726-4c91-9f33-e2f7a041e67a": {
+            "type": "banner",
+            "settings": {
+              "collection": "living-room-sets",
+              "image": "shopify://shop_images/Living_Room_Set_Banner.jpg",
+              "image_mobile": "shopify://shop_images/Living_Room_Set_Mobile.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "cbc96f87-96e9-44a7-82b8-812bd88fcbcc",
+          "d1842540-f1e3-4121-bd12-56441f4fc903",
+          "8ea04a87-2216-40aa-9e67-a5af1008eecf",
+          "29baa098-6e55-45b0-947f-62f0751fa1f5",
+          "2a8a0543-b992-4754-a13d-4f75a232444e",
+          "a4fa8880-391c-48fa-a898-9ac2017922d3",
+          "2e25e7b9-18d5-49c7-8f9f-e4384ee49a0f",
+          "5c532b87-9726-4c91-9f33-e2f7a041e67a"
+        ],
+        "settings": {}
+      },
+      "collection-review": {
+        "type": "collection-review",
+        "blocks": {
+          "0ca94447-34ec-4b36-8005-cb076fd42e13": {
+            "type": "review",
+            "settings": {
+              "text": "The best online shopping experience for furniture. Innovative experiential showroom concept",
+              "title": "SUSAN B (SAN FRANCISCO, CA)"
+            }
+          },
+          "9d99b79c-5795-459b-a2b6-480ee65e0b3f": {
+            "type": "review",
+            "settings": {
+              "text": "The best online shopping experience for furniture. Innovative experiential showroom concept",
+              "title": "SUSAN B (SAN FRANCISCO, CA)"
+            }
+          },
+          "0339f879-632c-4474-b216-84c7db5007e0": {
+            "type": "review",
+            "settings": {
+              "text": "The best online shopping experience for furniture. Innovative experiential showroom concept",
+              "title": "SUSAN B (SAN FRANCISCO, CA)"
+            }
+          },
+          "ed6c426e-dff7-4ccf-9b4f-edb375c74e8a": {
+            "type": "review",
+            "settings": {
+              "text": "The best online shopping experience for furniture. Innovative experiential showroom concept",
+              "title": "SUSAN B (SAN FRANCISCO, CA)"
+            }
+          }
+        },
+        "block_order": [
+          "0ca94447-34ec-4b36-8005-cb076fd42e13",
+          "9d99b79c-5795-459b-a2b6-480ee65e0b3f",
+          "0339f879-632c-4474-b216-84c7db5007e0",
+          "ed6c426e-dff7-4ccf-9b4f-edb375c74e8a"
+        ],
+        "settings": {
+          "title": "Here’s what hundreds of satisfied customers have to say about their dream sofa.",
+          "btn_url": "shopify://pages/reviews",
+          "btn_text": "SEE ALL REVIEWs",
+          "speed": "3000"
+        }
+      },
+      "sofa-hero": {
+        "type": "sofa-hero",
+        "settings": {
+          "title": "The World’s<br>Greatest Sofa.",
+          "text": "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.",
+          "star": "★★★★★ 5.0/50",
+          "btn_url": "#",
+          "btn_text": "SHOP NOW"
+        }
+      },
+      "sofa-page-feature-product": {
+        "type": "sofa-page-feature-product",
+        "settings": {
+          "title": "Shop Modular Seating",
+          "text": "Our best selling modular sofa configurations.<br>Find the perfect fit for every home size & style.",
+          "collection": "modular-sectionals",
+          "product_limit": 8,
+          "selected_color": "",
+          "speed": "5000",
+          "btn_url": "",
+          "btn_text": "SHOP ALL SEATING",
+          "info": "Want to try the sofa in-person? Find a showroom here <br> & save $200 off your purchase upon visit.",
+          "paddingTop": 0,
+          "paddingBottom": 25,
+          "paddingTopMobile": 10,
+          "paddingBottomMobile": 10,
+          "background": "#F3F3F3"
+        }
+      },
+      "sofa-page-collection-list": {
+        "type": "sofa-page-collection-list",
+        "blocks": {
+          "51e64265-5342-4a21-91ef-1f02c2c9b14e": {
+            "type": "collection",
+            "settings": {
+              "collection": "best-sellers",
+              "title": "",
+              "show_desktop": false,
+              "show_mobile": false
+            }
+          },
+          "ca8ab433-9140-4c9c-900d-b84244223844": {
+            "type": "collection",
+            "settings": {
+              "collection": "sectionals",
+              "title": "",
+              "show_desktop": false,
+              "show_mobile": false
+            }
+          },
+          "6fffd3bd-f304-42d0-86c0-9a568821a850": {
+            "type": "collection",
+            "settings": {
+              "collection": "sofas-and-loveseats",
+              "title": "",
+              "show_desktop": false,
+              "show_mobile": false
+            }
+          },
+          "4084779c-ce2c-43e7-820e-f80c7f48cbdd": {
+            "type": "collection",
+            "settings": {
+              "collection": "daybeds-and-pits",
+              "title": "",
+              "show_desktop": false,
+              "show_mobile": false
+            }
+          },
+          "cea70675-c591-48bf-b1eb-0594053e6730": {
+            "type": "collection",
+            "settings": {
+              "collection": "armchairs",
+              "title": "",
+              "show_desktop": false,
+              "show_mobile": false
+            }
+          },
+          "bc8a2a6a-1b6e-409c-b801-aac84a546665": {
+            "type": "collection",
+            "settings": {
+              "collection": "living-room-sets",
+              "title": "",
+              "show_desktop": false,
+              "show_mobile": false
+            }
+          }
+        },
+        "block_order": [
+          "51e64265-5342-4a21-91ef-1f02c2c9b14e",
+          "ca8ab433-9140-4c9c-900d-b84244223844",
+          "6fffd3bd-f304-42d0-86c0-9a568821a850",
+          "4084779c-ce2c-43e7-820e-f80c7f48cbdd",
+          "cea70675-c591-48bf-b1eb-0594053e6730",
+          "bc8a2a6a-1b6e-409c-b801-aac84a546665"
+        ],
+        "settings": {
+          "title": "",
+          "text": "",
+          "url": "shopify://collections/all-products",
+          "btn_text": "SHOP ALL SEATING",
+          "topDivider": false,
+          "bottomDivider": false,
+          "top_gutter": 40,
+          "bottom_gutter": 50,
+          "top_gutter_m": 20,
+          "bottom_gutter_m": 25
+        }
+      },
+      "sofa-page-video": {
+        "type": "sofa-page-video",
+        "settings": {
+          "videoRatio": "4/3",
+          "fullImage": true,
+          "title": "The world’s greatest sofa has found it’s new home: yours.",
+          "icon_svg_1": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/modular.svg?v=1628117505",
+          "text_1": "ENDLESSLY CONFIGURABLE",
+          "icon_svg_2": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/cloud.svg?v=1628117539",
+          "text_2": "CLOUD-LIKE COMFORT",
+          "icon_svg_3": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/muscular-gymnast-arm-muscles-show.svg?v=1628117539",
+          "text_3": "RIDICULOUSLY DURABLE",
+          "icon_svg_4": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/pillows.svg?v=1628117539",
+          "text_4": "REMOVABLE, WASHABLE COVERS",
+          "icon_svg_5": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/pillows.svg?v=1628117539",
+          "text_5": "STAIN And LIQUID RESISTANT FABRICS",
+          "icon_svg_6": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/ecology_1.svg?v=1628117941",
+          "text_6": "BUILT-IN WIRELESS CHARGER",
+          "marginTop": 0,
+          "marginBottom": 0,
+          "marginTopMobile": 0,
+          "marginBottomMobile": 0,
+          "btn_url": "",
+          "btn_text": "SHOP BEST SELLERS",
+          "background": "#F3F3F3"
+        }
+      },
+      "sofa-page-feature-in": {
+        "type": "sofa-page-feature-in",
+        "blocks": {
+          "sofa-page-feature-in-0": {
+            "type": "feature_in",
+            "settings": {
+              "text": "“The best online shopping experience for furniture. Innovative experiential showroom concept”",
+              "image_svg": ""
+            }
+          },
+          "sofa-page-feature-in-1": {
+            "type": "feature_in",
+            "settings": {
+              "text": "“This is truly one of the greatest sofas we’ve ever see in the market. Comfortable, yet stylish.”",
+              "image_svg": ""
+            }
+          },
+          "sofa-page-feature-in-2": {
+            "type": "feature_in",
+            "settings": {
+              "text": "“GRAFITI is taking the furniture world by the storm. Their modular sofas are a fan-favorite”",
+              "image_svg": ""
+            }
+          }
+        },
+        "block_order": [
+          "sofa-page-feature-in-0",
+          "sofa-page-feature-in-1",
+          "sofa-page-feature-in-2"
+        ],
+        "settings": {
+          "border_top": false,
+          "border_bottom": false,
+          "color": "#000000",
+          "bg_color": "#f3f3f3"
+        }
+      },
+      "sofa-page-special-feature": {
+        "type": "sofa-page-special-feature",
+        "blocks": {
+          "6b5270e8-d7d7-43e8-ad5d-946b18ef7189": {
+            "type": "feature",
+            "settings": {
+              "title": "Feels like floating on a cloud.",
+              "text": "A truly comfortable sitting experience, you might as well feel like you’re floating. We use the same technology and construction as high-end mattresses, because you equally deserve the best: while sleeping and while living life."
+            }
+          },
+          "d34dbe7b-bbd0-4796-a59d-64eb15907dd9": {
+            "type": "feature",
+            "settings": {
+              "title": "Feels like floating on a cloud.",
+              "text": "A truly comfortable sitting experience, you might as well feel like you’re floating. We use the same technology and construction as high-end mattresses, because you equally deserve the best: while sleeping and while living life."
+            }
+          }
+        },
+        "block_order": [
+          "6b5270e8-d7d7-43e8-ad5d-946b18ef7189",
+          "d34dbe7b-bbd0-4796-a59d-64eb15907dd9"
+        ],
+        "settings": {}
+      },
+      "sofa-page-badge": {
+        "type": "sofa-page-badge",
+        "blocks": {
+          "sofa-page-badge-0": {
+            "type": "badge",
+            "settings": {
+              "svg": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/no-fee.svg?v=1627515280",
+              "title": "0% APR FINANCING VIA AFTERPAY",
+              "text": "We partner with Affirm to  offer 0% APR flexible financing option from 12, 24, or 36 months."
+            }
+          },
+          "sofa-page-badge-1": {
+            "type": "badge",
+            "settings": {
+              "svg": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/truck.svg?v=1627515570",
+              "title": "FREE And CONTACTLESS DELIVERY",
+              "text": "We offer free delivery to all contiguous U.S (except Alaska, Hawaii, and Puerto Rico)."
+            }
+          },
+          "sofa-page-badge-3": {
+            "type": "badge",
+            "settings": {
+              "svg": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/return.svg?v=1627514925",
+              "title": "FREE RETURNS And EXCHANGES",
+              "text": "We partner with Affirm to  offer 0% APR flexible financing option from 12, 24, or 36 months."
+            }
+          }
+        },
+        "block_order": [
+          "sofa-page-badge-0",
+          "sofa-page-badge-1",
+          "sofa-page-badge-3"
+        ],
+        "settings": {
+          "color": "#ffffff",
+          "bg_color": "#3066b0"
+        }
+      },
+      "sofa-page-review": {
+        "type": "sofa-page-review",
+        "blocks": {
+          "634aa461-0c0a-49ce-bf77-1ff394fab236": {
+            "type": "review",
+            "settings": {
+              "text": "The best online shopping experience for furniture. Innovative experiential showroom concept",
+              "title": "SUSAN B (SAN FRANCISCO, CA)"
+            }
+          },
+          "6b8d537b-34db-40a3-98f0-d71cd0b0f6aa": {
+            "type": "review",
+            "settings": {
+              "text": "The best online shopping experience for furniture. Innovative experiential showroom concept",
+              "title": "SUSAN B (SAN FRANCISCO, CA)"
+            }
+          },
+          "e725c2a8-47aa-4a17-a9c7-7d56f80fa489": {
+            "type": "review",
+            "settings": {
+              "text": "The best online shopping experience for furniture. Innovative experiential showroom concept",
+              "title": "SUSAN B (SAN FRANCISCO, CA)"
+            }
+          },
+          "175efe72-9d22-4a89-a5b1-3dd924cd7cbc": {
+            "type": "review",
+            "settings": {
+              "text": "The best online shopping experience for furniture. Innovative experiential showroom concept",
+              "title": "SUSAN B (SAN FRANCISCO, CA)"
+            }
+          },
+          "388d4cf4-8edc-4b1e-9775-c8bb764cace9": {
+            "type": "review",
+            "settings": {
+              "text": "The best online shopping experience for furniture. Innovative experiential showroom concept",
+              "title": "SUSAN B (SAN FRANCISCO, CA)"
+            }
+          },
+          "a280c0e9-1af3-48ff-b7ee-1dd0345c76ac": {
+            "type": "review",
+            "settings": {
+              "text": "The best online shopping experience for furniture. Innovative experiential showroom concept",
+              "title": "SUSAN B (SAN FRANCISCO, CA)"
+            }
+          }
+        },
+        "block_order": [
+          "634aa461-0c0a-49ce-bf77-1ff394fab236",
+          "6b8d537b-34db-40a3-98f0-d71cd0b0f6aa",
+          "e725c2a8-47aa-4a17-a9c7-7d56f80fa489",
+          "175efe72-9d22-4a89-a5b1-3dd924cd7cbc",
+          "388d4cf4-8edc-4b1e-9775-c8bb764cace9",
+          "a280c0e9-1af3-48ff-b7ee-1dd0345c76ac"
+        ],
+        "settings": {
+          "title": "Here’s what hundreds of satisfied customers have to say about their dream sofa",
+          "btn_url": "",
+          "btn_text": "SEE ALL REVIEWs",
+          "speed": "5000",
+          "color": "#000000",
+          "bg_color": "#ffffff"
+        }
+      },
+      "sofa-page-logo-list": {
+        "type": "sofa-page-logo-list",
+        "blocks": {
+          "e116d839-583a-441b-8acd-b4cefcc71b80": {
+            "type": "logo",
+            "settings": {
+              "logo_svg": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/new_yorker.svg?v=1628120325"
+            }
+          },
+          "6d5be2de-2891-4d41-8d65-2cbf5ac3fbd7": {
+            "type": "logo",
+            "settings": {
+              "logo_svg": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/business_insider.svg?v=1628120325"
+            }
+          },
+          "53fc5321-4727-415d-b5aa-0a41837e91bb": {
+            "type": "logo",
+            "settings": {
+              "logo_svg": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/housebeautiful.svg?v=1628120325"
+            }
+          },
+          "fac6abed-b2b0-4eed-a64f-c936e34d0ba2": {
+            "type": "logo",
+            "settings": {
+              "logo_svg": "https://cdn.shopify.com/s/files/1/0264/8218/0174/files/elle_decor.svg?v=1628120325"
+            }
+          }
+        },
+        "block_order": [
+          "e116d839-583a-441b-8acd-b4cefcc71b80",
+          "6d5be2de-2891-4d41-8d65-2cbf5ac3fbd7",
+          "53fc5321-4727-415d-b5aa-0a41837e91bb",
+          "fac6abed-b2b0-4eed-a64f-c936e34d0ba2"
+        ],
+        "settings": {
+          "border_top": true,
+          "border_bottom": true
+        }
+      },
+      "sofa-compare": {
+        "type": "sofa-compare",
+        "settings": {
+          "subtitle": "Our modular sofas are best in-market. <br>Get designer quality product at half the price.",
+          "brand_1_logo_svg": "",
+          "brand_1": "Grafiti",
+          "brand_2_logo_svg": "",
+          "brand_2": "Restoration Hardware (RH)",
+          "brand_3_logo_svg": "",
+          "brand_3": "LoveSac",
+          "product_details_title": "COMPARABLE Product",
+          "product_details_1": "3-Seat Modular Sofa (130”) <br> with Performance Fabrics",
+          "product_details_2": "RH Cloud Classic Sofa with <br> Performance Fabrics",
+          "product_details_3": "3 Seats + 5 Sides <br> Sactionals in Polylinen",
+          "row_1": true,
+          "title_1": "Price",
+          "brand_1_comp_1_checked": false,
+          "brand_1_comp_1": "$2400",
+          "brand_2_comp_1_checked": false,
+          "brand_2_comp_1": "$9985",
+          "brand_3_comp_1_checked": false,
+          "brand_3_comp_1": "$3600",
+          "row_2": true,
+          "title_2": "Total Width",
+          "brand_1_comp_2_checked": false,
+          "brand_1_comp_2": "130”",
+          "brand_2_comp_2_checked": false,
+          "brand_2_comp_2": "120”",
+          "brand_3_comp_2_checked": false,
+          "brand_3_comp_2": "119”",
+          "row_3": true,
+          "title_3": "Seat Depth",
+          "brand_1_comp_3_checked": false,
+          "brand_1_comp_3": "38”",
+          "brand_2_comp_3_checked": false,
+          "brand_2_comp_3": "40”",
+          "brand_3_comp_3_checked": false,
+          "brand_3_comp_3": "35”",
+          "row_4": true,
+          "title_4": "Cushion Fill",
+          "brand_1_comp_4_checked": false,
+          "brand_1_comp_4": "Down Alternative",
+          "brand_2_comp_4_checked": false,
+          "brand_2_comp_4": "Feather",
+          "brand_3_comp_4_checked": false,
+          "brand_3_comp_4": "No fills",
+          "row_5": true,
+          "title_5": "Cushion FIRMNESS",
+          "brand_1_comp_5_checked": false,
+          "brand_1_comp_5": "Medium-soft",
+          "brand_2_comp_5_checked": false,
+          "brand_2_comp_5": "Soft",
+          "brand_3_comp_5_checked": false,
+          "brand_3_comp_5": "Medium-firm",
+          "row_6": true,
+          "title_6": "Endlessly Modular",
+          "brand_1_comp_6_checked": true,
+          "brand_1_comp_6": "Content 6",
+          "brand_2_comp_6_checked": false,
+          "brand_2_comp_6": "No, corner & armless chairs<br> need to be bought separately.",
+          "brand_3_comp_6_checked": true,
+          "brand_3_comp_6": "Content 6",
+          "row_7": true,
+          "title_7": "Stain-Resistant &<br> Waterproof Covers?",
+          "brand_1_comp_7_checked": true,
+          "brand_1_comp_7": "Content 7",
+          "brand_2_comp_7_checked": true,
+          "brand_2_comp_7": "Content 7",
+          "brand_3_comp_7_checked": false,
+          "brand_3_comp_7": "No, fabrics will <br> absorb spills & liquids.",
+          "row_8": true,
+          "title_8": "Removable & Machine <br> Washable Covers",
+          "brand_1_comp_8_checked": true,
+          "brand_1_comp_8": "Content 8",
+          "brand_2_comp_8_checked": true,
+          "brand_2_comp_8": "Content 8",
+          "brand_3_comp_8_checked": true,
+          "brand_3_comp_8": "Content 8",
+          "row_9": true,
+          "title_9": "Sustainably-Built <br> (FSC-Certified, Certi-PUR, etc)",
+          "brand_1_comp_9_checked": true,
+          "brand_1_comp_9": "Content 9",
+          "brand_2_comp_9_checked": true,
+          "brand_2_comp_9": "Content 9",
+          "brand_3_comp_9_checked": false,
+          "brand_3_comp_9": "No",
+          "row_10": true,
+          "title_10": "Comes with <br>USB/ Wireless Chargers",
+          "brand_1_comp_10_checked": true,
+          "brand_1_comp_10": "Content 10",
+          "brand_2_comp_10_checked": false,
+          "brand_2_comp_10": "No",
+          "brand_3_comp_10_checked": false,
+          "brand_3_comp_10": "No"
+        }
+      },
+      "contact-2-page-template": {
+        "type": "contact-2-page-template",
+        "settings": {
+          "image": "shopify://shop_images/Homepage_-_Mobile_444c56c1-15a1-4384-8696-edfffe44d183.jpg"
+        }
+      },
+      "custom-gallery": {
+        "type": "custom-gallery",
+        "blocks": {
+          "b8e8500e-cc08-4140-b123-279c783ec248": {
+            "type": "image",
+            "settings": {
+              "big_image": true
+            }
+          },
+          "2387ecda-2333-42b4-aa63-32d2a7db4f2e": {
+            "type": "image",
+            "settings": {
+              "big_image": false
+            }
+          },
+          "2020ac42-af64-4f1a-8f6e-773a3775d945": {
+            "type": "image",
+            "settings": {
+              "big_image": false
+            }
+          },
+          "1023d636-9514-4732-9c3e-a151663b0378": {
+            "type": "image",
+            "settings": {
+              "big_image": false
+            }
+          },
+          "2a9943c7-7b18-4d1f-b412-784cd1ebbdf9": {
+            "type": "image",
+            "settings": {
+              "big_image": false
+            }
+          },
+          "d0022bfc-0a63-48ae-88e3-8d559550eb57": {
+            "type": "image",
+            "settings": {
+              "big_image": false
+            }
+          },
+          "558cc375-af4e-4f40-854e-5580fdbbf526": {
+            "type": "image",
+            "settings": {
+              "big_image": false
+            }
+          },
+          "6b1cf660-191f-436f-96de-5d221a2c5e36": {
+            "type": "image",
+            "settings": {
+              "big_image": false
+            }
+          },
+          "18fd5acf-1ea9-4559-8ff0-83bbef217204": {
+            "type": "image",
+            "settings": {
+              "big_image": false
+            }
+          }
+        },
+        "block_order": [
+          "b8e8500e-cc08-4140-b123-279c783ec248",
+          "2387ecda-2333-42b4-aa63-32d2a7db4f2e",
+          "2020ac42-af64-4f1a-8f6e-773a3775d945",
+          "1023d636-9514-4732-9c3e-a151663b0378",
+          "2a9943c7-7b18-4d1f-b412-784cd1ebbdf9",
+          "d0022bfc-0a63-48ae-88e3-8d559550eb57",
+          "558cc375-af4e-4f40-854e-5580fdbbf526",
+          "6b1cf660-191f-436f-96de-5d221a2c5e36",
+          "18fd5acf-1ea9-4559-8ff0-83bbef217204"
+        ],
+        "settings": {
+          "title": "Custom gallery",
+          "subtitle": "Custom gallery subtitle",
+          "border_top": true,
+          "border_bottom": false
+        }
+      },
+      "help-desk": {
+        "type": "help-desk",
+        "blocks": {
+          "f3acc44a-cf74-475c-96d8-9fd7bacb49c9": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/Website_1_df7532bf-864b-4114-b646-869e442bcecb.jpg"
+            }
+          },
+          "ff4e8c7e-ecac-414f-b8e7-7e21381f3899": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/Website_5_d6f5dfad-dc20-4406-a7fa-c2debecbc5b4.jpg"
+            }
+          },
+          "92b2e9a4-46aa-4106-8023-6e31512202fc": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/Website_3_1b619019-1ada-4f36-9e50-4d4314c68a77.jpg"
+            }
+          },
+          "4dd7bb4a-de6d-469e-9400-9d625e31c2ec": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/Website_6_b75819b6-bbc9-4a42-9260-f777a7f02f0a.jpg"
+            }
+          },
+          "ef948ced-37a3-419b-aadf-2fe4751a95d7": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/Website_4_378f9b15-9b0c-4c20-8a65-585494960640.jpg"
+            }
+          },
+          "b95d1691-6396-46d4-b0fa-8592fda6677a": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/Website_2_4ef85618-19fb-44eb-87d3-856838712ad4.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "f3acc44a-cf74-475c-96d8-9fd7bacb49c9",
+          "ff4e8c7e-ecac-414f-b8e7-7e21381f3899",
+          "92b2e9a4-46aa-4106-8023-6e31512202fc",
+          "4dd7bb4a-de6d-469e-9400-9d625e31c2ec",
+          "ef948ced-37a3-419b-aadf-2fe4751a95d7",
+          "b95d1691-6396-46d4-b0fa-8592fda6677a"
+        ],
+        "settings": {
+          "covet_pic": "<covet-pics-widget gallery-embed-id=\"219147\"></covet-pics-widget>",
+          "title": "Need a Custom Configuration?",
+          "text": "Contact one of our Design Consultants to make the modular configuration that fits in your space, exactly how you dream it to be.",
+          "btn_1_url": "",
+          "btn_1_reamaze": true,
+          "btn_1_text": "Chat with us",
+          "btn_2_url": "",
+          "btn_2_reamaze": false,
+          "btn_2_text": "Shop now"
+        }
+      },
+      "collection-banner": {
+        "type": "collection-banner",
+        "settings": {
+          "title": "Shop Modular Seating",
+          "content": "Our best selling modular sofa configurations. <br>Find the perfect fit for every home size & style.",
+          "title_bg": "#000000",
+          "title_color": "#ffffff",
+          "title_border_color": "#ffffff"
+        }
+      },
+      "page-header": {
+        "type": "page-header",
+        "settings": {
+          "title": "",
+          "text": "",
+          "color": "#ffffff",
+          "bgColor": "#000000"
+        }
+      },
+      "faq-side-bar": {
+        "type": "faq-side-bar",
+        "blocks": {
+          "b712c965-6b9f-4790-8d49-72810f214d3a": {
+            "type": "title",
+            "settings": {
+              "title": "Fabrics & Fabric Care"
+            }
+          },
+          "title_wVFDPn": {
+            "type": "title",
+            "settings": {
+              "title": "Velvet Fabrics & Fabric Care"
+            }
+          },
+          "1f686258-57dd-4926-a4c5-beebfc5b90b0": {
+            "type": "title",
+            "settings": {
+              "title": "Showrooms & Appointments"
+            }
+          },
+          "f9922d03-e5e0-4d89-92cb-28cc28a2a46a": {
+            "type": "title",
+            "settings": {
+              "title": "Placing An Order"
+            }
+          },
+          "bb1b62d6-707c-4959-af62-461301f32da1": {
+            "type": "title",
+            "settings": {
+              "title": "Financing"
+            }
+          },
+          "278e3cb0-1811-4704-8545-d00f99bff1c4": {
+            "type": "title",
+            "settings": {
+              "title": "Swatches"
+            }
+          },
+          "785b3ffc-95eb-4ca9-a92a-488197376f0a": {
+            "type": "title",
+            "settings": {
+              "title": "Lead Times"
+            }
+          },
+          "963a1c39-bcf3-477d-8f02-3f2fa6ace5a0": {
+            "type": "title",
+            "settings": {
+              "title": "Shipping & Delivery"
+            }
+          },
+          "c793652d-0ad9-485f-8a26-0c956b1161e4": {
+            "type": "title",
+            "settings": {
+              "title": "Local Delivery"
+            }
+          },
+          "5a9bffe5-0ddb-4740-b998-43045e120a41": {
+            "type": "title",
+            "settings": {
+              "title": "Assembly Service"
+            }
+          },
+          "e1a247f5-76a6-43a6-a041-fa112ac0dec3": {
+            "type": "title",
+            "settings": {
+              "title": "Assembly Instructions"
+            }
+          },
+          "168fd48a-300c-470f-b311-c5e3d0d48c79": {
+            "type": "title",
+            "settings": {
+              "title": "For Pet Parents"
+            }
+          },
+          "66ade600-ae63-4944-8797-8a7bab6f7493": {
+            "type": "title",
+            "settings": {
+              "title": "For Human Parents"
+            }
+          },
+          "cb732643-1203-4ff9-8506-a6fdcbedeac4": {
+            "type": "title",
+            "settings": {
+              "title": "Water-Repellent & Stain-Resistant"
+            }
+          },
+          "bc9ccb45-49a3-4120-b095-e9ac7713b585": {
+            "type": "title",
+            "settings": {
+              "title": "Non-Toxic & PFAS-Free"
+            }
+          },
+          "8fd5a57b-0799-4c01-ad59-8b46f55f90d6": {
+            "type": "title",
+            "settings": {
+              "title": "Modularity & Cushions"
+            }
+          },
+          "title_TDhknJ": {
+            "type": "title",
+            "settings": {
+              "title": "Outdoor - Solid Teak"
+            }
+          },
+          "aafa74a6-00af-408b-9d72-ec6e6cb453a1": {
+            "type": "title",
+            "settings": {
+              "title": "Returns, Exchanges, & Warranty"
+            }
+          }
+        },
+        "block_order": [
+          "b712c965-6b9f-4790-8d49-72810f214d3a",
+          "title_wVFDPn",
+          "1f686258-57dd-4926-a4c5-beebfc5b90b0",
+          "f9922d03-e5e0-4d89-92cb-28cc28a2a46a",
+          "bb1b62d6-707c-4959-af62-461301f32da1",
+          "278e3cb0-1811-4704-8545-d00f99bff1c4",
+          "785b3ffc-95eb-4ca9-a92a-488197376f0a",
+          "963a1c39-bcf3-477d-8f02-3f2fa6ace5a0",
+          "c793652d-0ad9-485f-8a26-0c956b1161e4",
+          "5a9bffe5-0ddb-4740-b998-43045e120a41",
+          "e1a247f5-76a6-43a6-a041-fa112ac0dec3",
+          "168fd48a-300c-470f-b311-c5e3d0d48c79",
+          "66ade600-ae63-4944-8797-8a7bab6f7493",
+          "cb732643-1203-4ff9-8506-a6fdcbedeac4",
+          "bc9ccb45-49a3-4120-b095-e9ac7713b585",
+          "8fd5a57b-0799-4c01-ad59-8b46f55f90d6",
+          "title_TDhknJ",
+          "aafa74a6-00af-408b-9d72-ec6e6cb453a1"
+        ],
+        "settings": {
+          "sidebarContent": ""
+        }
+      },
+      "faq-side-bar-right": {
+        "type": "faq-side-bar-right",
+        "settings": {
+          "sidebarContent": "<h4>Contact</h4>\n<p>For sales inquiries:<br>\n</p>\n<li><a href=\"mailto:sales@7thavenue.co\" target=\"_blank\" title=\"mailto:sales@7thavenue.co\">sales@7thavenue.co</a></li>\n<li><a href=\"tel:+18776424574\">+1 (877) 642 - 4574</a></li>\n<br>\n<p>For existing orders:<br>\n</p>\n<li>\n<a href=\"mailto:support@7thavenue.co\" target=\"_blank\" title=\"mailto:support@7thavenue.co\">support@7thavenue.co</a><br>\n</li>\n<li><a href=\"tel:+18776441506\">+1 (877) 644 - 1506</a></li>"
+        }
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      },
+      "733389323033596483": {
+        "type": "shopify://apps/okendo/blocks/theme-settings/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+        "disabled": false,
+        "settings": {
+          "show_preview_data": true
+        }
+      },
+      "14971748854670876780": {
+        "type": "shopify://apps/tinyseo/blocks/product-json-ld-embed/0605268f-f7c4-4e95-b560-e43df7d59ae4",
+        "disabled": false,
+        "settings": {}
+      },
+      "1360768219604461044": {
+        "type": "shopify://apps/tinyseo/blocks/store-json-ld-embed/0605268f-f7c4-4e95-b560-e43df7d59ae4",
+        "disabled": false,
+        "settings": {}
+      },
+      "11089864892113081655": {
+        "type": "shopify://apps/tinyseo/blocks/website-json-ld-embed/0605268f-f7c4-4e95-b560-e43df7d59ae4",
+        "disabled": false,
+        "settings": {}
+      },
+      "1369284949797581044": {
+        "type": "shopify://apps/tinyseo/blocks/collection-json-ld-embed/0605268f-f7c4-4e95-b560-e43df7d59ae4",
+        "disabled": false,
+        "settings": {}
+      },
+      "11104565113590962351": {
+        "type": "shopify://apps/tinyseo/blocks/article-json-ld-embed/0605268f-f7c4-4e95-b560-e43df7d59ae4",
+        "disabled": false,
+        "settings": {}
+      },
+      "15154131639906026026": {
+        "type": "shopify://apps/tinyseo/blocks/broken-link-embed/0605268f-f7c4-4e95-b560-e43df7d59ae4",
+        "disabled": false,
+        "settings": {}
+      },
+      "2353461558643755616": {
+        "type": "shopify://apps/tinyseo/blocks/breadcrumbs-json-ld-embed/0605268f-f7c4-4e95-b560-e43df7d59ae4",
+        "disabled": true,
+        "settings": {}
+      }
+    }
+  }
+}

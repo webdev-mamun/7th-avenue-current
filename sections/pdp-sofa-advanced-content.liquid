@@ -1,0 +1,88 @@
+{% if section.blocks.size > 0 %}
+<div class="pdp-advanced-content__wrapper">
+  {% for block in section.blocks %}
+  <div class="pdp-advanced-content">
+    <div class="pdp-advanced-content__row {% if block.settings.image_right %}image__right{% endif %}">
+      <div class="pdp-advanced-content__image">
+        {% if block.settings.image != blank %}
+        {% render "basic-responsive-image", type: block.settings.image %}
+        {% else %}
+			{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+      </div>
+      <div class="pdp-advanced-content__content">
+        {% if block.settings.title != blank %}
+        <h2 class="title">{{ block.settings.title }}</h2>
+        {% endif %}
+        {% if block.settings.text != blank %}
+        <div class="text">{{ block.settings.text }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<script>
+  $(window).on('scroll resize', function() {
+    if($(window).width() > 980) {
+      var ac = $('.pdp-advanced-content__row');
+      $.each(ac, function() {
+        var target = $(this).closest('.pdp-advanced-content__row');
+        var offset = $(this).position().top;
+        var sectionHeight = $(this).height();
+        var scrolled = $(window).scrollTop() + sectionHeight;
+        if(scrolled > offset) {
+          target.addClass('focused');
+          if(scrolled > ( offset + sectionHeight)) {
+            target.removeClass('focused');
+          }
+        } else {
+          target.removeClass('focused');
+        }
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+   "name":"Advanced content",
+   "settings":[
+      
+   ],
+   "blocks":[
+      {
+         "type":"advanced_content",
+         "name":"Advanced content",
+         "settings":[
+            {
+               "type":"image_picker",
+               "id":"image",
+               "label":"Image"
+            },
+            {
+               "type":"checkbox",
+               "id":"image_right",
+               "label":"Image position right",
+               "default":false
+            },
+            {
+               "type":"text",
+               "id":"title",
+               "label":"Title",
+               "default":"Fabrics that can handle life."
+            },
+            {
+               "type":"textarea",
+               "id":"text",
+               "label":"content",
+               "default":"Anti-stain, anti-liquid, anti-scratch, anti-kids, anti-pets fabrics allows you to live your life freely. Now, you can just let the tiny two-legged and four-legged run free."
+            }
+         ]
+      }
+   ]
+}
+{% endschema %}

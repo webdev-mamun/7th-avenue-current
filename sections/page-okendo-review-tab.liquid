@@ -1,0 +1,287 @@
+<style type="text/css">
+.reviews-page-wrapper {
+  padding-top: 2em;
+}
+
+.orc-allReviewsCollections .orc-collectionControlsLabel {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px
+}
+
+.orc-allReviewsCollections .orc-collectionControls {
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: -3px -9px
+}
+
+.orc-allReviewsCollections .orc-collectionControls .orc-collectionControls-item-label {
+    -ms-flex-align: center;
+    align-items: center;
+    border: 1px solid #c2c2c2;
+    border-radius: 4px;
+    cursor: pointer;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 0;
+    padding: 8px 16px;
+    text-align: center
+}
+
+.orc-allReviewsCollections .orc-collectionControls-item-input--checked+.orc-collectionControls-item-label,.orc-allReviewsCollections .orc-collectionControls-item-input:checked+.orc-collectionControls-item-label {
+    border: 1px solid #535565;
+    box-shadow: 0 0 0 1px #535565
+}
+
+.orc-allReviewsCollections .orc-collectionControls-item {
+    box-sizing: border-box;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    padding: 3px 9px
+}
+
+.orc-allReviewsCollections .orc-collectionControls-item-label-heading {
+    display: block;
+    -ms-flex-preferred-size: 66.66%;
+    flex-basis: 66.66%;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: left
+}
+
+.orc-allReviewsCollections .orc-collectionControls-item-input {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px
+}
+
+.orc-allReviewsCollections .orc-collectionControls-item-label-background {
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    -ms-flex-preferred-size: 33.33%;
+    flex-basis: 33.33%;
+    height: 50px;
+    margin: 0
+}
+
+@media only screen and (min-width: 800px) {
+    .orc-allReviewsCollections .orc-collectionControls {
+        margin:-9px
+    }
+
+    .orc-allReviewsCollections .orc-collectionControls-item {
+        -ms-flex: 1 1 50%;
+        flex: 1 1 50%;
+        padding: 9px
+    }
+
+    .orc-allReviewsCollections .orc-collectionControls .orc-collectionControls-item-label {
+        -ms-flex-align: stretch;
+        align-items: stretch;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        height: auto;
+        padding: 16px
+    }
+
+    .orc-allReviewsCollections .orc-collectionControls-item-label-heading {
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+        margin-bottom: 16px;
+        text-align: center
+    }
+
+    .orc-allReviewsCollections .orc-collectionControls-item-label-background {
+        background-position: 50%;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+        height: 150px;
+        margin-top: auto;
+        width: auto
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .orc-allReviewsCollections .orc-collectionControls-item {
+        -ms-flex:1 1 25%;
+        flex: 1 1 25%
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .orc-allReviewsCollections .orc-collectionControls-item {
+        -ms-flex: 1 1 25%;
+        flex: 1 1 15%;
+    }
+
+    .orc-allReviewsCollections .orc-collectionControls-item-label-heading {
+        font-size: 16px;
+    }
+}
+
+.orc-allReviewsCollections .orc-collectionControls .orc-collectionControls-item-label {
+    border: 0;
+}
+
+#orc-collection-control {
+  margin-bottom: 4em;
+}
+</style>
+
+<div class="reviews-page-wrapper">
+  <div class="orc-allReviewsCollections">
+      <div id="orc-collection-control" style="display: none">
+          <div class="orc-collectionControls" role="radiogroup" aria-labelledby="orc-collection-controls-label">
+            {%- for block in section.blocks -%}
+             {%- if block.type == 'reviewTab' -%}
+               <div class="orc-collectionControls-item">
+                  <input
+                      id="orc-reviews-control-{{ forloop.index }}"
+                      class="orc-collectionControls-item-input orc-collectionControls-item-input--checked js-orc-collectionRadio"
+                      type="radio"
+                      {% if forloop.first %}
+                      checked
+                      {% endif %}
+                      value="{{ block.settings.reviewGroupId }}"
+                      name="orc-reviews-collection-control"
+                  />
+                  <label for="orc-reviews-control-{{ forloop.index }}" class="orc-collectionControls-item-label">
+                      <span class="orc-collectionControls-item-label-heading">{{ block.settings.title }}</span>						                      
+                  </label>
+              </div>
+             {%- endif -%}
+            {%- endfor -%}
+              
+          </div>
+      </div>
+      <!-- SET THE data-oke-reviews-product-id attribute to shopify-<YOUR PRODUCT ID> OR data-oke-reivews-group-id to the GUID you wish to default the widget to when the page loads (usually the first radio value in the list above -->
+    {%- for block in section.blocks -%}
+             {%- if block.type == 'reviewTab' and forloop.first -%}
+      <div id="orc-widget-snippet" class="drp-okendo-reviews" data-oke-widget data-oke-reviews-group-id="{{ block.settings.reviewGroupId }}" data-oke-reviews-write-review-product-id="shopify-7347140067571"></div>
+    {%- endif -%}
+            {%- endfor -%}
+  </div>
+</div>
+  <script type="text/javascript">
+  ((document, window) => {
+    const okeRenderedHandler = function(e) {
+        if (e.detail.widget === 'reviews-widget') {
+         setupCollectionControls();
+       }
+    }
+  
+    document.addEventListener('oke-rendered', okeRenderedHandler);
+  
+    if (!String.prototype.startsWith) {
+        Object.defineProperty(String.prototype, 'startsWith', {
+            value: function(search, rawPos) {
+                var pos = rawPos > 0 ? rawPos|0 : 0;
+                return this.substring(pos, pos + search.length) === search;
+            }
+        });
+    }
+  
+    function setupCollectionControls() {
+        const snippetEl = document.querySelector('#orc-widget-snippet');
+        const controlEl = document.querySelector('#orc-collection-control');
+        const collectionRadioElements = Array.prototype.slice.call(document.querySelectorAll('.js-orc-collectionRadio'));
+        controlEl.style.display = 'block';
+        collectionRadioElements.forEach(function (radioElement) {
+            radioElement.addEventListener('change', function () {
+            if (radioElement.value) {
+              if(radioElement.value.toLowerCase().startsWith('shopify-')) {
+                snippetEl.removeAttribute('data-oke-reviews-group-id');
+                window.okeWidgetApi.setProduct(snippetEl, radioElement.value);
+              }
+              else {
+                snippetEl.removeAttribute('data-oke-reviews-product-id');
+                window.okeWidgetApi.setGroup(snippetEl, radioElement.value);
+              }
+            } else {
+              snippetEl.removeAttribute('data-oke-reviews-group-id');
+              snippetEl.removeAttribute('data-oke-reviews-product-id');
+              snippetEl.innerHTML = '';
+              window.okeWidgetApi.initWidget(snippetEl, true);
+            }
+
+            collectionRadioElements.forEach(function (element) {
+                element.classList.remove('orc-collectionControls-item-input--checked');
+            });
+            radioElement.classList.add('orc-collectionControls-item-input--checked');
+          });
+        });
+  
+      document.removeEventListener('oke-rendered', okeRenderedHandler);
+    }
+  })(document, window);
+  </script>
+
+  {% schema %}
+{
+    "name": "Okendo reviews (Switcher)",
+    "settings": [			
+        {
+          "type": "color",
+          "id": "title_bg",
+          "label": "Banner Backgroung",
+		  "default": "#000"
+        },
+		{
+          "type": "color",
+          "id": "title_color",
+          "label": "Banner Color",
+		  "default": "#fff"
+        },
+		{
+          "type": "color",
+          "id": "title_border_color",
+          "label": "Banner Border Color",
+		  "default": "#fff"
+        }
+  ],
+  "blocks": [
+    {
+      "name": "Review Tab",
+      "type": "reviewTab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Review tab"
+        },
+        {
+          "type": "textarea",
+          "id": "reviewGroupId",
+          "label": "Review group id"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Okendo reviews (Switcher)"
+    }
+  ]
+}
+{% endschema %}

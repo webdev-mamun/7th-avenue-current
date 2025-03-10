@@ -1,0 +1,20 @@
+{% assign cart_total = cart.total_price | money_without_currency | times: 1 %}
+{% assign free_shipping_threshold = settings.free_shipping_threshold | times: 1 %}
+
+<div class="cart-free-shipping">
+  {% if cart_total < free_shipping_threshold %}
+    {% assign amount_remaining = free_shipping_threshold | minus: cart_total %}
+    {% assign cents = amount_remaining | split: "." | last %}
+
+    {% if cents.size == 1 %}
+      {% assign amount_remaining = amount_remaining | append: "0" %}
+    {% endif %}
+
+    {% assign amount_remaining = amount_remaining | replace: ".","" | money %}
+    {{ 'cart.general.free_shipping_before' | t }} <span class="money">{{ amount_remaining }}</span> {{ 'cart.general.free_shipping_after' | t }}
+  {% else %}
+    {{ 'cart.general.free_shipping_qualified' | t }}
+  {% endif %}
+  <br />
+  <small>{{ 'cart.general.free_shipping_exclusions' | t }}</small>
+</div>

@@ -1,0 +1,189 @@
+<section class="homepage-image-row-{{ section.id }}"
+data-section-id="{{ section.id }}"
+data-aos="{{ settings.scroll_animation }}">
+  {% if section.settings.full_width %}<div class="gridlock-fluid"><div class="row">{% endif %}
+    <article id="image-rows" class="row">
+
+        {% case section.settings.image_width %}
+        {% when '33%' %}
+          {%- assign image_width = 'desktop-4 tablet-2 span-4' -%}
+          {%- assign image_offset = 'desktop-8 tablet-4 span-8' -%}
+        {% when '50%' %}
+          {%- assign image_width = 'desktop-6 tablet-3 span-6' -%}
+          {%- assign image_offset = 'desktop-6 tablet-3 span-6' -%}
+        {% when '66%' %}
+          {%- assign image_width = 'desktop-8 tablet-4 span-8' -%}
+          {%- assign image_offset = 'desktop-4 tablet-2 span-4' -%}
+        {% endcase %}
+
+        {% capture image_layout %}
+          <div class="{{ image_width }} mobile-3 text-with-image contained {% if section.settings.layout == 'right' %}image-right{% endif %}">
+            {% if section.settings.image != blank %}
+              {% render 'basic-responsive-image', type: section.settings.image %}
+            {% else %}
+              <div class="onboard">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            {% endif %}
+          </div>
+        {% endcapture %}
+
+        <div class="image-with-text-wrapper grid_wrapper">
+          {% if section.settings.layout == 'left' %}
+            {{ image_layout }}
+          {% else %}
+          <div class="mobile-image span-3">
+            {{ image_layout }}
+          </div>
+          {% endif %}
+
+          <div class="{{ image_offset }} mobile-3 contained text-with-image text_section{% if section.settings.text_align == 'center' %} text-centered{% endif %}"
+          data-aos="{{ settings.scroll_animation }}" data-aos-delay="300" data-aos-duration="1000">
+            {% if section.settings.title != blank %}
+              <h3 class="text-title">
+                {{ section.settings.title | escape }}
+              </h3>
+            {% endif %}
+            {% if section.settings.text != blank %}
+              <div class="rte">
+                {{ section.settings.text }}
+              </div>
+            {% endif %}
+            {% if section.settings.button != blank and section.settings.link != blank %}
+              <div class="cta">
+                <a href="{{ section.settings.link }}">
+                  {{ section.settings.button | escape }}
+                </a>
+              </div>
+            {% endif %}
+          </div>
+
+          {% if section.settings.layout == 'right' %}
+            {{ image_layout }}
+          {% endif %}
+        </div>
+
+    </article>
+  {% if section.settings.full_width %}</div></div>{% endif %}
+</section>
+
+<style>
+
+  {% if section.settings.remove_top_padding %}
+  .homepage-image-row-{{ section.id }}.index-section { padding-top: 0; }
+  {% endif %}
+  {% if section.settings.remove_bottom_padding %}
+  .homepage-image-row-{{ section.id }}.index-section { padding-bottom: 0; }
+  {% endif %}
+  .homepage-image-row-{{ section.id }} .text-with-image.text_section {
+    width: calc({{ section.settings.image_width }}% - 100);
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Image row with text",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Full width"
+      },
+      {
+        "type": "checkbox",
+        "id": "remove_top_padding",
+        "label": "Remove top padding"
+      },
+      {
+        "type": "checkbox",
+        "id": "remove_bottom_padding",
+        "label": "Remove bottom padding"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Position",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Image on left"
+          },
+          {
+            "value": "right",
+            "label": "Image on right"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "image_width",
+        "label": "Width",
+        "default": "50%",
+        "options": [
+          {
+            "value":"33%",
+            "label":"33%"
+          },
+          {
+            "value":"50%",
+            "label":"50%"
+          },
+          {
+            "value":"66%",
+            "label":"66%"
+          }
+        ]
+      },
+     {
+        "type": "select",
+        "id": "text_align",
+        "label": "Text alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Link"
+      },
+      {
+        "type": "text",
+        "id": "button",
+        "label": "Button text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image row with text"
+      }
+    ]
+  }
+{% endschema %}
