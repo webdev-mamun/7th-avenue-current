@@ -36,7 +36,6 @@
         "show_vendor": false,
         "show_sku": false,
         "show_quantity_selector": false,
-        "show_storage_option": true,
         "product_variants": "swatches",
         "color_swatch_options": "custom-image",
         "back_in_stock": false,

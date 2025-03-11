@@ -1,0 +1,78 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "header": {
+      "type": "page-header",
+      "settings": {
+        "title": "",
+        "text": "",
+        "color": "#ffffff",
+        "bgColor": "#000000"
+      }
+    },
+    "main": {
+      "type": "calendly-form-inline",
+      "settings": {
+        "calendly_url": "https://calendly.com/7thavenue/virtual-design-consult"
+      }
+    },
+    "8a8b9320-791a-4291-81ec-6005224faac4": {
+      "type": "sofa-page-advanced-content",
+      "blocks": {
+        "9db18472-3870-477c-bf3c-496c2a801182": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/Showroom_4_32e072f0-03ea-4c52-b208-657f116227d8.jpg",
+            "video": "",
+            "image_right": true,
+            "title": "Get a product demo, even a live spill-test.",
+            "text": "See it to believe it. Get a full explanation on all of our sofa's functional features, and see the live-demo of our water-repellent spill test."
+          }
+        },
+        "c1ee6f83-39b9-4139-bd3d-3dbf601c6999": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/Showroom_2_826bc612-f3a5-4554-8ce7-ebaa58e39d68.jpg",
+            "video": "",
+            "image_right": false,
+            "title": "Explore fabric options & swatches.",
+            "text": "Explore all the our fabrics and find the best color that will match your home style. Our dedicated Design Consultant can give you the best style recommendations for you,."
+          }
+        },
+        "0ce3c956-6a9a-415b-aaff-e860c590a49d": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/Showroom_3.jpg",
+            "video": "",
+            "image_right": true,
+            "title": "A private, dedicated appointment time.",
+            "text": "All of our appointments are Appointment-Only, meaning that you get the full attention from one of our Design Consultants to answer any questions you might have."
+          }
+        }
+      },
+      "block_order": [
+        "9db18472-3870-477c-bf3c-496c2a801182",
+        "c1ee6f83-39b9-4139-bd3d-3dbf601c6999",
+        "0ce3c956-6a9a-415b-aaff-e860c590a49d"
+      ],
+      "custom_css": [
+        ".pdp-advanced-content__wrapper {margin: 0 0 40px;}"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "header",
+    "main",
+    "8a8b9320-791a-4291-81ec-6005224faac4"
+  ]
+}

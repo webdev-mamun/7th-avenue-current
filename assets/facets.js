@@ -218,19 +218,25 @@ class FacetFiltersForm extends HTMLElement {
     return params.toString();
 }
 
-  static renderPage(searchParams, event, updateURLHash = true) {
+static renderPage(searchParams, event, updateURLHash = true) {
 
-    document.querySelectorAll('.active-filter-item').forEach(FacetFiltersForm.removeButtonClickListener);
-    
-    FacetFiltersForm.searchParamsPrev = searchParams;
-    const sections = FacetFiltersForm.getSections();
-    sections.forEach((section) => {
-      const url = `${window.location.pathname}?section_id=${section.section}&${searchParams}`;
-      const filterDataUrl = (element) => element.url === url;
-      FacetFiltersForm.filterData.some(filterDataUrl) ? FacetFiltersForm.renderSectionFromCache(filterDataUrl, event) : FacetFiltersForm.renderSectionFromFetch(url, event);
-    });
-    if (updateURLHash) FacetFiltersForm.updateURLHash(searchParams);
-  }
+  document.querySelectorAll('.active-filter-item').forEach(FacetFiltersForm.removeButtonClickListener);
+  
+  FacetFiltersForm.searchParamsPrev = searchParams;
+  const sections = FacetFiltersForm.getSections();
+  sections.forEach((section) => {
+    console.log(section.section, 'section.section')
+    const url = `${window.location.pathname}?section_id=${section.section}&${searchParams}`;
+    const filterDataUrl = (element) => element.url === url;
+    FacetFiltersForm.filterData.some(filterDataUrl) ? FacetFiltersForm.renderSectionFromCache(filterDataUrl, event) : FacetFiltersForm.renderSectionFromFetch(url, event);
+  });
+  if (updateURLHash) FacetFiltersForm.updateURLHash(searchParams);
+  console.log('facet form changes')
+  publish(PUB_SUB_EVENTS.facetFormChange, {
+    data: searchParams,
+  });
+}
+
 
   static showLoader() {
     document.querySelector('.product-loop-loader').classList.add('show');
@@ -249,6 +255,7 @@ class FacetFiltersForm extends HTMLElement {
         FacetFiltersForm.renderFilters(html, event);
         FacetFiltersForm.renderProductGridContainer(html);
         FacetFiltersForm.renderHerder(html);
+        FacetFiltersForm.renderPagination(html);
         const filterFormSubmit = new Event("filterFormSubmit");
         window.dispatchEvent(filterFormSubmit);
       });
@@ -270,6 +277,7 @@ class FacetFiltersForm extends HTMLElement {
     FacetFiltersForm.renderFilters(html, event);
     FacetFiltersForm.renderProductGridContainer(html);
     FacetFiltersForm.renderHerder(html);
+    FacetFiltersForm.renderPagination(html);
     const filterFormSubmit = new Event("filterFormSubmit");
     window.dispatchEvent(filterFormSubmit);
   }
@@ -392,6 +400,12 @@ class FacetFiltersForm extends HTMLElement {
   static renderHerder(html) {
     const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
     document.querySelector('#collection-header').innerHTML = parsedHTML.querySelector('#collection-header').innerHTML;
+  }
+
+  static renderPagination(html) {
+    const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
+    console.log(parsedHTML.querySelector('#pagination').innerHTML);
+    document.querySelector('#pagination').innerHTML = parsedHTML.querySelector('#pagination').innerHTML;
   }
 }
   

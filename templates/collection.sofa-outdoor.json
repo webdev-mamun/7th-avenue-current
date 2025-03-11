@@ -78,8 +78,7 @@
         "a8ddd12b-bb26-4017-abb2-635a403b20d5",
         "banner_fq4GDy"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "main": {
       "type": "sofa-collection-page-template",
@@ -184,7 +183,7 @@
         "seriallyVariant": false,
         "grid": 3,
         "products_per_page": 30,
-        "infinite_scroll": false,
+        "infinite_scroll": true,
         "description_position": "bottom_description",
         "filter_position": "top_filters",
         "is_sticky": false,
@@ -234,8 +233,7 @@
     "pdp-sofa-help": {
       "type": "pdp-sofa-help",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "showroom": {
       "type": "showroom",

@@ -44,7 +44,7 @@
             assign addon_product_ids_loop = addon_product_ids | split: ','
             for a_p_id in addon_product_ids_loop
               assign temp_a_p_id = a_p_id | plus: 0
-              if temp_a_p_id == item.variant.id 
+              if temp_a_p_id == item.variant.id
                 assign bundle_true = true
               endif
             endfor
@@ -55,7 +55,7 @@
               {%- if forloop.first -%},{%- endif -%}{{ product_item.variant.value.id }}{%- unless forloop.last -%},{%- endunless -%}
             {%- endfor -%}
           {%- endcapture -%}
-          
+
           {%- capture on_click -%}
             {%- if quick_configured -%}
               {%- for mainvariant in item.product.variants -%}
@@ -90,7 +90,7 @@
               {%- endfor -%}
             {%- endif -%}
           {%- endcapture -%}
-          
+
           <div class="cart-item">
             <a
               class="remove"
@@ -396,7 +396,9 @@
   {% endif %}
 </div>
 
-<script type="text/javascript">
+<script
+  type="text/javascript"
+>
   function removeFromCart(...items) {
     fetch('/cart.js')
       .then((response) => response.json())
@@ -478,10 +480,12 @@
         }
       })
       .catch((error) => console.error('Error fetching cart:', error));
-  });  
+  });
 </script>
 
-<script id="cartform-submit">
+<script
+  id="cartform-submit"
+>
   const cartItemsString = {{ cart.items | json }};
   document.addEventListener('DOMContentLoaded', function () {
     const button = document.querySelector('#shadowCheckout');

@@ -8,6 +8,8 @@
   <li>
     <a href="/cart" class="site-header__cart-toggle" aria-controls="CartDrawer" aria-expanded="false" id="cart-icon-bubble">
       {{- 'icon-shopping-bag.svg' | inline_asset_content -}}
+      <!-- <img {% if template == 'index' %}class="black_bag"{% endif %} src="https://cdn.shopify.com/s/files/1/0602/7195/2115/files/shopping-bag.png?width=24" width="24" height="24" alt="Shopping black bag">
+      {% if template == 'index' %}<img class="desktophide white_bag" src="https://cdn.shopify.com/s/files/1/0602/7195/2115/files/circle-iconsbag-white.png?width=24" width="24" height="24" alt="Shopping white bag">{% endif %} -->
       <span class="cart_count{% if cart.item_count == 0 %} hidden{% endif %}">{{ cart.item_count }}</span>
     </a>
   </li>

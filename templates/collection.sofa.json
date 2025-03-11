@@ -171,7 +171,7 @@
       "settings": {
         "seriallyVariant": false,
         "grid": 3,
-        "products_per_page": 30,
+        "products_per_page": 18,
         "infinite_scroll": true,
         "description_position": "bottom_description",
         "filter_position": "top_filters",
