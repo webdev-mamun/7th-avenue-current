@@ -44,7 +44,8 @@
   endfor
   assign disabled_options = disabled_options | split: '~~'
 -%}
-<div id="content" class="row sofa-collection total-filter-size{{ total_selected_filter_count }}">
+
+<div id="content" class="row sofa-collection total-filter-size">
   <div id="main-content" class="collection_grid_wrapper">
     <div
       class="collection-page-sofa-collection-page-template collection-page-{{ section.id }}"
@@ -71,38 +72,9 @@
         </div>
       </div>
 
-      {% # theme-check-disable %}
-      {%- capture content_for_querystring -%}{{ content_for_header }}{%- endcapture -%}
-      {%- assign pageUrl = content_for_querystring
-        | split: '"pageurl":"'
-        | last
-        | split: '"'
-        | first
-        | split: '.myshopify.com'
-        | last
-        | replace: '\/', '/'
-        | replace: '%20', ' '
-        | replace: '\u0026', '&'
-      -%}
-      {% # theme-check-enable %}
-
-      {% assign segments = pageUrl | split: '/' %}
-      {% if segments[2] contains 'vendors?q=' and segments[2] contains '&grid_item' %}
-        {% assign params = segments[2] | split: '&grid_item=' | last %}
-        {% assign grid_item = params | split: '&' | first | times: 1 %}
-        {% assign prod_limit = params | split: '&' | last | split: '=' | last | times: 1 %}
-      {% else %}
-        {% assign grid_item = section.settings.grid %}
-      {% endif %}
-
-      {% if prod_limit != blank %}
-        {% assign number = prod_limit %}
-      {% else %}
-        {% assign number = section.settings.products_per_page %}
-      {% endif %}
+      {% assign grid_item = section.settings.grid %}
+      {% assign number = section.settings.products_per_page %}
       {% paginate collection.products by number %}
-        {% assign sidebar = false %}
-
         {% case grid_item %}
           {% when 2 %}
             {%- assign grid_item_width = 'desktop-6 tablet-3 mobile-full span-6' -%}
@@ -139,20 +111,14 @@
             {%- assign grid_item_width = 'desktop-2 tablet-2 mobile-half span-2' -%}
         {% endcase %}
         {% render 'facets', results: collection %}
+        {{ collection.all_products_count }}
         <div
           class="grid_wrapper product-loop{% if section.settings.infinite_scroll %} is_infinite{% endif %}"
           id="sofa-collection"
         >
-          {% assign new_arrivals = false %}
-          {% if collection.handle == 'new-arrivalsss' %}
-            {% assign new_arrivals = true %}
-          {% endif %}
 
           {% for product in collection.products %}
             {%- liquid
-              assign date_published = product.published_at | date: '%s'
-              assign date_now = 'now' | date: '%s'
-              assign date_difference = date_now | minus: date_published | divided_by: 3600 | divided_by: 24
               assign index = forloop.index
               assign last_index = forloop.length
             -%}
@@ -180,29 +146,29 @@
                   %}
                   {% if coll.handle == collection.handle %}
                     {%- liquid
-                      assign videoMedia = block.settings.video
-                      assign mobileVideoMedia = block.settings.mobileVideo
-                      if mobileVideoMedia == blank
-                        assign mobileVideoMedia = block.settings.video
+                      assign video_media = block.settings.video
+                      assign mobile_video_media = block.settings.mobileVideo
+                      if mobile_video_media == blank
+                        assign mobile_video_media = block.settings.video
                       endif
-                      assign imageMedia = block.settings.image
-                      assign fullImage = block.settings.fullImage
-                      assign videoMediaRatio = block.settings.videoRatio
+                      assign image_media = block.settings.image
+                      assign full_image = block.settings.fullImage
+                      assign video_media_ratio = block.settings.videoRatio
                     -%}
-                    {% if videoMedia != blank %}
-                      {% assign hasVideo = true %}
-                      {% capture videoSpecial %}
-                     <div class="video__wrapper desktop-video" style="aspect-ratio: {{ videoMediaRatio }};">
-                        {{ videoMedia | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false }}
+                    {% if video_media != blank %}
+                      {% assign has_video = true %}
+                      {% capture video_special %}
+                     <div class="video__wrapper desktop-video" style="aspect-ratio: {{ video_media_ratio }};">
+                        {{ video_media | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false }}
                       </div>
                       <div class="video__wrapper mobile-video" style="aspect-ratio: 1;">
-                        {{ mobileVideoMedia | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false }}
+                        {{ mobile_video_media | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false }}
                       </div>
                       {% endcapture %}
-                    {% elsif imageMedia != blank %}
-                      {% assign hasVideo = false %}
-                      {% capture imageSpecial %}
-                     {% render "basic-responsive-image", product: product, type: imageMedia %}
+                    {% elsif image_media != blank %}
+                      {% assign has_video = false %}
+                      {% capture image_special %}
+                     {% render "basic-responsive-image", product: product, type: image_media %}
                      {% endcapture %}
                     {% endif %}
                   {% endif %}
@@ -213,32 +179,32 @@
                       assign position = last_index
                     endif
                     assign video = block.settings.video
-                    assign mobileVideo = block.settings.mobileVideo
-                    if mobileVideo == blank
-                      assign mobileVideo = block.settings.video
+                    assign mobile_video = block.settings.mobileVideo
+                    if mobile_video == blank
+                      assign mobile_video = block.settings.video
                     endif
                     assign image = block.settings.image
-                    assign videoRatio = block.settings.videoRatio
+                    assign video_ratio = block.settings.videoRatio
                   -%}
                   {% if index == position %}
-                    {% if video != blank and videoSpecial == blank and imageSpecial == blank %}
-                      {% assign hasVideo = true %}
-                      {% capture defaultVideo %}
-                   <div class="video__wrapper desktop-video" style="aspect-ratio: {{ videoRatio }};">
+                    {% if video != blank and video_special == blank and image_special == blank %}
+                      {% assign has_video = true %}
+                      {% capture default_video %}
+                   <div class="video__wrapper desktop-video" style="aspect-ratio: {{ video_ratio }};">
                       {{ video | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false }}
                     </div>
                     <div class="video__wrapper mobile-video" style="aspect-ratio: 1;">
-                      {{ mobileVideo | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false }}
+                      {{ mobile_video | video_tag: image_size: '800x', autoplay: true, loop: true, muted: true, controls: false }}
                     </div>
                     {% endcapture %}
-                    {% elsif image != blank and videoSpecial == blank and imageSpecial == blank %}
-                      {% assign hasVideo = false %}
-                      {% capture defaultImage %}
+                    {% elsif image != blank and video_special == blank and image_special == blank %}
+                      {% assign has_video = false %}
+                      {% capture default_image %}
                    {% render "basic-responsive-image", product: product, type: image %}
                    {% endcapture %}
                     {% endif %}
                     <div class="desktop-12 tablet-6 mobile-3 span-12">
-                      <div class="collection__video collection-page-video{% if hasVideo or fullImage %} full-media{% endif %}">
+                      <div class="collection__video collection-page-video{% if has_video or full_image %} full-media{% endif %}">
                         <div class="collection__video--row">
                           <div class="text__container">
                             {% if block.settings.title != blank %}
@@ -280,14 +246,14 @@
                             </div>
                           </div>
                           <div class="media__container">
-                            {%- if videoSpecial != blank -%}
-                              {{ videoSpecial }}
-                            {%- elsif imageSpecial != blank -%}
-                              {{ imageSpecial }}
-                            {%- elsif defaultVideo != blank -%}
-                              {{ defaultVideo }}
-                            {% elsif defaultImage != blank %}
-                              {{ defaultImage }}
+                            {%- if video_special != blank -%}
+                              {{ video_special }}
+                            {%- elsif image_special != blank -%}
+                              {{ image_special }}
+                            {%- elsif default_video != blank -%}
+                              {{ default_video }}
+                            {% elsif default_image != blank %}
+                              {{ default_image }}
                             {%- endif -%}
                           </div>
                         </div>

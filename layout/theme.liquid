@@ -144,10 +144,10 @@
       ></script>
       <script src="{{ "customer_area.js"  | shopify_asset_url }}" crossorigin="anonymous" defer></script>
     {%- endif -%}
-
+    {% # theme-check-disable %}
     <link rel="next" href="/next">
     <link rel="prev" href="/prev">
-
+    {% # theme-check-enable %}
     <script>
       !function(){window.semaphore=window.semaphore||[],window.ketch=function(){window.semaphore.push(arguments)};var e=document.createElement("script");e.type="text/javascript",e.src="https://global.ketchcdn.com/web/v3/config/7_avenue/ave7th/boot.js",e.defer=e.async=!0,document.getElementsByTagName("head")[0].appendChild(e)}();
     </script>
@@ -229,7 +229,9 @@
     <div class="clear"></div>
 
     {% if template contains 'product' %}
+      {% # theme-check-disable %}
       <script src="{{ '//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js' }}" defer></script>
+      {% # theme-check-enable %}
       <script src="{{ 'jquery.products.min.js' | asset_url }}" defer></script>
     {% endif %}
 
@@ -247,7 +249,9 @@
     <script>
       window.ALBSS = {event_key: 'a1909e85-5426-4b25-8117-953038d0fe05'};
     </script>
+    {% # theme-check-disable %}
     <script src="https://c.albss.com/p/l/loader.iife.js" async></script>
+    {% # theme-check-enable %}
 
     <!-- sh-ssp-added -->
     {% render 'sh-ssp-theme-snippet' %}

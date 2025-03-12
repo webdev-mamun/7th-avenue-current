@@ -14,13 +14,6 @@ function setCookie(name, value, days) {
 function clearCookie(name) {
   document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
 }
-function debounce(fn, wait) {
-  let t;
-  return (...args) => {
-    clearTimeout(t);
-    t = setTimeout(() => fn.apply(this, args), wait);
-  };
-}
 
 class FacetFiltersForm extends HTMLElement {
   constructor() {
@@ -59,6 +52,7 @@ class FacetFiltersForm extends HTMLElement {
         const swatch = el.querySelector(`[data-option-name*="${firstValue}"]`);
         if(swatch) swatch.click();
       });
+
       FacetFiltersForm.setColorOrder(swatchesEl);
     }
   }
@@ -138,6 +132,7 @@ class FacetFiltersForm extends HTMLElement {
   }
 
   static updateURLHash(searchParams) {
+    console.log(searchParams, 'searchParams')
     history.pushState({ searchParams }, '', `${window.location.pathname}${searchParams && '?'.concat(searchParams)}`);
   }
 
@@ -219,22 +214,17 @@ class FacetFiltersForm extends HTMLElement {
 }
 
 static renderPage(searchParams, event, updateURLHash = true) {
-
   document.querySelectorAll('.active-filter-item').forEach(FacetFiltersForm.removeButtonClickListener);
   
   FacetFiltersForm.searchParamsPrev = searchParams;
   const sections = FacetFiltersForm.getSections();
   sections.forEach((section) => {
-    console.log(section.section, 'section.section')
     const url = `${window.location.pathname}?section_id=${section.section}&${searchParams}`;
     const filterDataUrl = (element) => element.url === url;
     FacetFiltersForm.filterData.some(filterDataUrl) ? FacetFiltersForm.renderSectionFromCache(filterDataUrl, event) : FacetFiltersForm.renderSectionFromFetch(url, event);
   });
+
   if (updateURLHash) FacetFiltersForm.updateURLHash(searchParams);
-  console.log('facet form changes')
-  publish(PUB_SUB_EVENTS.facetFormChange, {
-    data: searchParams,
-  });
 }
 
 
@@ -247,6 +237,7 @@ static renderPage(searchParams, event, updateURLHash = true) {
   }
   
   static renderSectionFromFetch(url, event) {
+    
     fetch(url)
       .then((response) => response.text())
       .then((responseText) => {
@@ -406,6 +397,7 @@ static renderPage(searchParams, event, updateURLHash = true) {
     const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
     console.log(parsedHTML.querySelector('#pagination').innerHTML);
     document.querySelector('#pagination').innerHTML = parsedHTML.querySelector('#pagination').innerHTML;
+    publish(PUB_SUB_EVENTS.facetFormChange, {});
   }
 }
   

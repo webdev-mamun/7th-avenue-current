@@ -139,7 +139,7 @@
   {%- endfor -%}
 </style>
 {%- endif -%}
-
+Size: {{ total_selected_filter_count }}<br>
 <div class="ci sofa-product-grid">
    {% if product.available %}
    {% for col in product.collections %}
@@ -297,7 +297,7 @@
           {% if template.name == 'collection' %}
           {% unless is_hidden_color or is_disable %}
             {% unless value contains 'Custom Fabric' %}
-            <li class="{% if is_selected %}open{% endif %}{% if active_color_size <= 0 and is_selected %} deselect{% endif %}" data-option-name="{{ value | handleize }}" data-position="{{ product.options_by_name['color'].position }}" data-disable="{{ is_disable }}">
+            <li class="{% if is_selected %}open{% endif %}{% if total_selected_filter_count == 0 and is_selected %} deselect{% endif %}" data-option-name="{{ value | handleize }}" data-position="{{ product.options_by_name['color'].position }}" data-disable="{{ is_disable }}">
                 <div class="color__swatch--bg {{ value | handleize }}" style="background-color: {{ value | handleize }};{% if option_image != '' %} background-image: url({{ option_image }});{% endif %}"></div>
             </li>
             {% endunless %}
