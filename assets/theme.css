@@ -21726,6 +21726,7 @@ li.open.deselect .color__swatch--bg.snow-white {
   text-align: left;
   margin-bottom: 10px;
   padding: 0 16px;
+  max-width: 25ch;
 }
 
 .collection__video .text__container .icon__container {
