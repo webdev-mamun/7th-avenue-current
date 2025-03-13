@@ -3526,8 +3526,7 @@ document.addEventListener("themeJSFastLoaded", function () {
 (function () {
   function collectionColorSwatch() {
     document.querySelectorAll(".product-index").forEach((el) => {
-
-      const swatchItems = [...el.querySelectorAll(".color__swatch li")];
+      const swatchItems = Array.from(el.querySelectorAll(".color__swatch li"));
       const firstImage = el.querySelector(".reveal .variant__image.open");
       const swatchSlider = el.querySelector(".color__swatch--container ul");
       const priceContainer = el.querySelector(".price__container");
@@ -3536,19 +3535,19 @@ document.addEventListener("themeJSFastLoaded", function () {
 
       let activeVariant = el.querySelector(".color__swatch li.open");
 
-      
       const defaultOptions = {
         option1: firstImage.dataset.option1 || "",
         option2: firstImage.dataset.option2 || "",
         option3: firstImage.dataset.option3 || "",
       };
 
-      
       function setupSwatchSlider() {
         if (!swatchSlider || !window.jQuery) return;
 
         const availableWidth = swatchSlider.offsetWidth;
-        const contentWidth = swatchItems.length * (swatchItems[0]?.offsetWidth || 0) + swatchItems.length * 6;
+        const contentWidth =
+          swatchItems.length * (swatchItems[0]?.offsetWidth || 0) +
+          swatchItems.length * 6;
 
         if (contentWidth > availableWidth) {
           if (!$(swatchSlider).hasClass("slick-initialized")) {
@@ -3571,7 +3570,6 @@ document.addEventListener("themeJSFastLoaded", function () {
         }
       }
 
-      
       function findMatchingVariant(position, value) {
         const selector = {
           1: `[data-option1="${value}"]`,
@@ -3580,35 +3578,47 @@ document.addEventListener("themeJSFastLoaded", function () {
         }[position];
 
         return (
-          el.querySelector(`.variant__image${selector}[data-option2="${defaultOptions.option2}"][data-option3="${defaultOptions.option3}"]`) ||
-          el.querySelector(`.variant__image${selector}[data-option2="${defaultOptions.option2}"]`) ||
-          el.querySelector(`.variant__image${selector}[data-option3="${defaultOptions.option3}"]`) ||
+          el.querySelector(
+            `.variant__image${selector}[data-option2="${defaultOptions.option2}"][data-option3="${defaultOptions.option3}"]`
+          ) ||
+          el.querySelector(
+            `.variant__image${selector}[data-option2="${defaultOptions.option2}"]`
+          ) ||
+          el.querySelector(
+            `.variant__image${selector}[data-option3="${defaultOptions.option3}"]`
+          ) ||
           el.querySelector(`.variant__image${selector}`)
         );
       }
 
-      
-      function updateVariantOption(selectedOption) {
-        if (!selectedOption) return;
-
+      function updateVariantOption(selectedOption, hasSelectedVariant) {
         
-
+        if (!selectedOption) return;
         const position = parseInt(selectedOption.dataset.position, 10);
         const selectedValue = selectedOption.dataset.optionName;
         const activeImage = el.querySelector(".variant__image.open");
-
         const newVariant = findMatchingVariant(position, selectedValue);
-        if (!newVariant || newVariant === activeImage) return;
 
-        
         activeImage?.classList.remove("open");
         newVariant.classList.add("open");
 
-        
+        if(hasSelectedVariant) {
+          const variantImage = newVariant.querySelector('.variant-featured-image');
+          const productImage = newVariant.querySelector('.product-featured-image');
+
+          if(variantImage && variantImage.classList.contains('hidden')) {
+            variantImage.classList.remove('hidden')
+          }
+
+          if(variantImage && productImage) {
+            productImage.classList.add('hidden')
+          }
+        }
+
         const { variantId, variantUrl, variantPrice } = newVariant.dataset;
 
         el.querySelectorAll("a").forEach((link) => {
-          let url = new URL(variantUrl, window.location.origin);
+          const url = new URL(variantUrl, window.location.origin);
           url.searchParams.set("variant", variantId);
           link.href = url.toString();
         });
@@ -3623,41 +3633,72 @@ document.addEventListener("themeJSFastLoaded", function () {
           `;
         }
 
+        el.querySelectorAll(`li.open[data-option-name="${activeVariant.dataset.optionName}"]`).forEach((v) => {
+          if (!v.isSameNode(selectedOption)) {
+            v.classList.remove("open");
+          }
+        });
+
         
-        if (activeVariant && activeVariant.classList.contains("open")) {
-          activeVariant.classList.remove("open");
+
+
+        const duplicateSelectedOption = el.querySelectorAll(
+          `li[data-option-name="${selectedOption.dataset.optionName}"]`
+        );
+
+        if (duplicateSelectedOption.length > 1) {
+          duplicateSelectedOption.forEach((v) => {
+            if (hasSelectedVariant && v.classList.contains('deselect')) {
+              v.classList.remove('deselect')
+            }
+            let parentNode = v.closest(".slick-slide");
+            if (!parentNode.classList.contains("slick-cloned")) {
+              v.classList.add("open");
+              if(hasSelectedVariant) {
+                const index = parseInt(parentNode.dataset.slickIndex, 10);
+                if (!isNaN(index)) {
+                  $(swatchSlider).slick("slickGoTo", index);
+                }
+              } else {
+                $(swatchSlider).slick("slickGoTo", 0);
+              }
+              
+            }
+          });
+        } else {
+          selectedOption.classList.add("open");
+          if (hasSelectedVariant && selectedOption.classList.contains('deselect')) {
+            selectedOption.classList.remove('deselect')
+          }
         }
 
-        if (selectedOption && selectedOption.classList.contains("deselect")) {
-          selectedOption.classList.remove("deselect");
-        }
-
-        selectedOption.classList.add("open");
-          
         activeVariant = selectedOption;
       }
 
-      
-      updateVariantOption(activeVariant);
+      updateVariantOption(activeVariant, hasSelectedVariant = false);
 
-      
       el.addEventListener("click", (e) => {
         const target = e.target.closest(".color__swatch li");
-        if (target) updateVariantOption(target);
+        if (target) updateVariantOption(target, hasSelectedVariant = true);
       });
 
-      window.addEventListener("resize", setupSwatchSlider);
+      let resizeTimeout;
+      window.addEventListener("resize", () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(setupSwatchSlider, 200);
+      });
+
       setupSwatchSlider();
     });
   }
 
   collectionColorSwatch();
   window.addEventListener("filterFormSubmit", collectionColorSwatch);
-  
+
   const unsubscribe = subscribe(PUB_SUB_EVENTS.infiniteScrollHappen, collectionColorSwatch);
-  
   window.addEventListener("beforeunload", () => unsubscribe());
 })();
+
 
 (function updateCollectionSwatch() {
 
