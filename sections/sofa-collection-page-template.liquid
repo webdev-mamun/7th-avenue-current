@@ -111,7 +111,6 @@
             {%- assign grid_item_width = 'desktop-2 tablet-2 mobile-half span-2' -%}
         {% endcase %}
         {% render 'facets', results: collection %}
-        {{ collection.all_products_count }}
         <div
           class="grid_wrapper product-loop{% if section.settings.infinite_scroll %} is_infinite{% endif %}"
           id="sofa-collection"

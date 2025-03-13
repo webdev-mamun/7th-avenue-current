@@ -4,7 +4,8 @@ window.Shopify = window.Shopify || {};
 const PUB_SUB_EVENTS = {
   cartNoteChange: "cart-note-change",
   infiniteScrollHappen: "infinite-scroll-happen",
-  facetFormChange: "facet-form-change",
+  collectionPaginationChange: "collection-pagination-change",
+  collectionProductChange: "collection-product-change"
 };
 
 let subscribers = {};
@@ -31,13 +32,6 @@ function publish(eventName, data) {
   }
 }
 
-function debounce(fn, wait) {
-  let t;
-  return (...args) => {
-    clearTimeout(t);
-    t = setTimeout(() => fn.apply(this, args), wait);
-  };
-}
 
 window.theme = window.theme || {};
 window.Shopify = window.Shopify || {};
@@ -2836,108 +2830,64 @@ theme.Collection = (function () {
 
     (function infiniteScroll() {
       let nextURL;
-    
       function updateNextURL(doc) {
-        nextURL = $(doc).find(".paginate_next").attr("href") || nextURL;
+          nextURL = $(doc).find(".paginate_next").attr("href") || nextURL;
       }
-
-      function processString(str) {
-        if(!str) return ""
-        const regex = /^(\d+_)(.*)/;
-        const match = str.match(regex);
-        if (match) {
-          return match[2];
-        } else {
-          return str;
-        }
-      }
-
-      function updateSwatch() {
-        const storedColors = getCookie('selected_color') ? JSON.parse(getCookie('selected_color')) : [];
-        if(storedColors.length === 0) return;
-        const firstValue = processString(storedColors[0]).replace(' ', '-').toLowerCase();
-        
-        const swatchContainers = document.querySelectorAll('.color__swatch');
-        swatchContainers.forEach(el => {
-          const swatch = el.querySelector(`:not(.open)[data-option-name="${firstValue}"]`)
-          if(swatch) swatch.click();
-        })
-        setColorOrder(swatchContainers);
-      }
-
-      function setColorOrder(elements) {
-        const storedColors = getCookie('selected_color') ? JSON.parse(getCookie('selected_color')) : [];
-        if(storedColors.length > 1) {
-          storedColors.forEach((optionName, i) => {
-            let nameValue = processString(optionName).replace(' ', '-').toLowerCase()
-            console.log(nameValue, 'nameValue')
-            elements.forEach(el => {
-              const swatches = el.querySelectorAll('li')
-              swatches.forEach((_) => {
-                const name = _.dataset.optionName
-                if(name.includes(nameValue)) {
-                  _.style.setProperty('--order', i+1)
-                }
-              })
-            })
-          })
-        }
-      }
-    
+  
+      
+  
       function reinitializeInfiniteScroll() {
-        const $container = $(".is_infinite");
-    
-        // Destroy existing Infinite Scroll instance if initialized
-        if ($container.data("infiniteScroll")) {
-          $container.infiniteScroll("destroy");
-          console.log("Infinite Scroll destroyed");
-        }
-    
-        // Get initial nextURL
-        updateNextURL(document);
-        console.log(nextURL, "before init");
-    
-        // Initialize Infinite Scroll
-        $container.infiniteScroll({
-          path: function () {
-            return nextURL;
-          },
-          checkLastPage: ".paginate_next",
-          append: ".is_infinite .product-index",
-          hideNav: "#pagination",
-          history: false,
-          status: ".page-load-status",
-        });
-    
-        // Update nextURL on new page load & publish event
-        $container.on("load.infiniteScroll", function (_event, body, _path, _response) {
-          updateNextURL(body);
-        });
-
-        $container.on( 'append.infiniteScroll', function( _event, _body, _path, _items, _response ) {
-          // Publish event when a new page loads
-          publish(PUB_SUB_EVENTS.infiniteScrollHappen, {});
-          updateSwatch();
-        });
-        
+          const $container = $(".is_infinite");
+  
+          if ($container.data("infiniteScroll")) {
+              $container.infiniteScroll("destroy");
+          }
+  
+          updateNextURL(document);
+  
+          $container.infiniteScroll({
+            path: () => nextURL,
+            checkLastPage: ".paginate_next",
+            append: ".is_infinite .product-index",
+            hideNav: "#pagination",
+            history: false,
+            status: ".page-load-status",
+          });
+  
+          $container.on("load.infiniteScroll", (_event, _body) => {
+            updateNextURL(_body);
+          });
+  
+          $container.on("append.infiniteScroll", (_event, _body, _path, _items) => {
+            publish(PUB_SUB_EVENTS.infiniteScrollHappen, {});
+            if (_items.length ) {
+              publish(PUB_SUB_EVENTS.collectionProductChange, {data: _items});
+            }
+          });
       }
-    
-      // Initial setup
+  
       reinitializeInfiniteScroll();
-    
-      // Subscribe to facetFormChange event with debounce
-      const unsubscribeFacetFormChange = subscribe(
-        PUB_SUB_EVENTS.facetFormChange,
-        debounce(({ data }) => {
-          reinitializeInfiniteScroll();
-        }, 300)
+  
+      const unsubscribeCollectionPaginationChange = subscribe(
+          PUB_SUB_EVENTS.collectionPaginationChange,
+          debounce(() => {
+            reinitializeInfiniteScroll();
+          }, 300)
       );
-    
-      // Unsubscribe on page unload
-      window.addEventListener("beforeunload", function () {
-        unsubscribeFacetFormChange();
+  
+      window.addEventListener("beforeunload", () => {
+        unsubscribeCollectionPaginationChange();
       });
-    })();
+  
+      function debounce(fn, wait) {
+          let timeout;
+          return (...args) => {
+              clearTimeout(timeout);
+              timeout = setTimeout(() => fn.apply(this, args), wait);
+          };
+      }
+  })();
+  
     
   }
   Collection.prototype = _.assignIn({}, Collection.prototype, {});
@@ -3586,14 +3536,14 @@ document.addEventListener("themeJSFastLoaded", function () {
 
       let activeVariant = el.querySelector(".color__swatch li.open");
 
-      // Store default variant options
+      
       const defaultOptions = {
         option1: firstImage.dataset.option1 || "",
         option2: firstImage.dataset.option2 || "",
         option3: firstImage.dataset.option3 || "",
       };
 
-      // Initialize Slick Slider for swatches
+      
       function setupSwatchSlider() {
         if (!swatchSlider || !window.jQuery) return;
 
@@ -3621,7 +3571,7 @@ document.addEventListener("themeJSFastLoaded", function () {
         }
       }
 
-      // Find the correct variant image based on selected option
+      
       function findMatchingVariant(position, value) {
         const selector = {
           1: `[data-option1="${value}"]`,
@@ -3637,7 +3587,7 @@ document.addEventListener("themeJSFastLoaded", function () {
         );
       }
 
-      // Update the displayed variant, price, and links
+      
       function updateVariantOption(selectedOption) {
         if (!selectedOption) return;
 
@@ -3650,11 +3600,11 @@ document.addEventListener("themeJSFastLoaded", function () {
         const newVariant = findMatchingVariant(position, selectedValue);
         if (!newVariant || newVariant === activeImage) return;
 
-        // Swap active variant image
+        
         activeImage?.classList.remove("open");
         newVariant.classList.add("open");
 
-        // Update links and price
+        
         const { variantId, variantUrl, variantPrice } = newVariant.dataset;
 
         el.querySelectorAll("a").forEach((link) => {
@@ -3673,7 +3623,7 @@ document.addEventListener("themeJSFastLoaded", function () {
           `;
         }
 
-        // Update active swatch
+        
         if (activeVariant && activeVariant.classList.contains("open")) {
           activeVariant.classList.remove("open");
         }
@@ -3687,29 +3637,77 @@ document.addEventListener("themeJSFastLoaded", function () {
         activeVariant = selectedOption;
       }
 
-      // Initialize variant selection
+      
       updateVariantOption(activeVariant);
 
-      // Event listener for swatch clicks (Event Delegation for better performance)
+      
       el.addEventListener("click", (e) => {
         const target = e.target.closest(".color__swatch li");
         if (target) updateVariantOption(target);
       });
 
-      // Handle resize for Slick slider
       window.addEventListener("resize", setupSwatchSlider);
       setupSwatchSlider();
     });
   }
 
-  // Run on page load and filter changes
   collectionColorSwatch();
   window.addEventListener("filterFormSubmit", collectionColorSwatch);
-
-  // Subscribe to Infinite Scroll updates
+  
   const unsubscribe = subscribe(PUB_SUB_EVENTS.infiniteScrollHappen, collectionColorSwatch);
+  
+  window.addEventListener("beforeunload", () => unsubscribe());
+})();
 
-  // Cleanup on page unload
+(function updateCollectionSwatch() {
+
+  const unsubscribe = subscribe(PUB_SUB_EVENTS.collectionProductChange,
+    debounce(({ data }) => { 
+      updateCurrentSwatch(data); 
+  }, 150)
+  );
+  
+  function updateCurrentSwatch(items) {
+    const storedColors = getCookie('selected_color') ? JSON.parse(getCookie('selected_color')) : [];
+    if (storedColors.length === 0) return;
+    const firstValue = processString(storedColors[0]);
+    items.forEach((item) => {
+        if (storedColors.length > 1) {
+          setColorOrder(item, storedColors);
+        }
+
+        const selectedSwatch = item.querySelector(`.color__swatch [data-option-name="${firstValue}"]`);
+        if (selectedSwatch && !selectedSwatch.classList.contains('open')) {
+          selectedSwatch.click();
+        }
+    });
+  }
+
+  function processString(str) {
+    if (!str) return "";
+    
+    const regex = /^\d+_(.*)/;
+    const match = str.match(regex);
+    let cleanStr = match ? match[1] : str;
+
+    cleanStr = cleanStr.replace(/\(([^)]+)\)/g, " $1");
+
+    return cleanStr.replace(/\s+/g, '-').toLowerCase();
+}
+
+
+function setColorOrder(element, storedColors) {
+    storedColors.forEach((optionName, i) => {
+      let nameValue = processString(optionName);
+      const swatches = element.querySelectorAll('li');
+      swatches.forEach((swatch) => {
+          if (swatch.dataset.optionName.includes(nameValue)) {
+            swatch.style.setProperty('--order', i + 1);
+          }
+      });
+    });
+}
+
   window.addEventListener("beforeunload", () => unsubscribe());
 })();
 

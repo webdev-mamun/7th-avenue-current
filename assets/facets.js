@@ -41,9 +41,7 @@ class FacetFiltersForm extends HTMLElement {
     document.querySelector('.mobile-filter-header button').addEventListener('click', FacetFiltersForm.closeFilterDrawer);
 
     const storedColors = getCookie('selected_color') ? JSON.parse(getCookie('selected_color')) : [];
-    // if(storedColors.length === 0){
-    //   console.log('need to check really 0 or not set yet');
-    // }
+    
     const firstValue = FacetFiltersForm.processString(storedColors[0]).replace(' ', '-').toLowerCase();
     if(storedColors.length > 1){
       const swatchesEl = document.querySelectorAll('.color__swatch')
@@ -79,14 +77,14 @@ class FacetFiltersForm extends HTMLElement {
       FacetFiltersForm.closeFilterItem(event);
     };
 
-    elm._handleClick = handleClick;  // Store the handler function on the element
+    elm._handleClick = handleClick;
     elm.addEventListener('click', handleClick);
   }
 
   static removeButtonClickListener(elm) {
     if (elm._handleClick) {
       elm.removeEventListener('click', elm._handleClick);
-      delete elm._handleClick;  // Clean up the reference
+      delete elm._handleClick; 
     }
   }
 
@@ -102,7 +100,6 @@ class FacetFiltersForm extends HTMLElement {
 
   static toggleFilterItem(element) {
     element.classList.toggle('open');
-    //FacetFiltersForm.showLoader();
   }
 
   static closeFilterItem(event) {
@@ -132,7 +129,6 @@ class FacetFiltersForm extends HTMLElement {
   }
 
   static updateURLHash(searchParams) {
-    console.log(searchParams, 'searchParams')
     history.pushState({ searchParams }, '', `${window.location.pathname}${searchParams && '?'.concat(searchParams)}`);
   }
 
@@ -196,14 +192,11 @@ class FacetFiltersForm extends HTMLElement {
     const formData = new FormData(form);
     const params = new URLSearchParams();
 
-    // Use a Map to keep track of unique parameters by their key
     const uniqueParams = new Map();
 
-    // Iterate over the form data entries
     for (const [key, value] of formData.entries()) {
         const paramKey = `${key}=${value}`;
 
-        // Add the parameter to the Map if it's not already present
         if (!uniqueParams.has(paramKey)) {
             uniqueParams.set(paramKey, value);
             params.append(key, value);
@@ -253,14 +246,15 @@ static renderPage(searchParams, event, updateURLHash = true) {
   }
 
   static processString(str) {
-    if(!str) return ""
-    const regex = /^(\d+_)(.*)/;
+    if (!str) return "";
+    
+    const regex = /^\d+_(.*)/;
     const match = str.match(regex);
-    if (match) {
-      return match[2];
-    } else {
-      return str;
-    }
+    let cleanStr = match ? match[1] : str;
+
+    cleanStr = cleanStr.replace(/\(([^)]+)\)/g, " $1");
+
+    return cleanStr.replace(/\s+/g, '-').toLowerCase();
   }
 
   static renderSectionFromCache(filterDataUrl, event) {
@@ -277,7 +271,7 @@ static renderPage(searchParams, event, updateURLHash = true) {
     const doc = new DOMParser().parseFromString(html, 'text/html')
     
     const storedColors = getCookie('selected_color') ? JSON.parse(getCookie('selected_color')) : [];
-    const firstValue = FacetFiltersForm.processString(storedColors[0]).replace(' ', '-').toLowerCase();
+    const firstValue = FacetFiltersForm.processString(storedColors[0]);
 
     if(storedColors.length > 1){
       const currentlySelectedSwatchs = doc.querySelectorAll('.color__swatch li.open')
@@ -306,7 +300,7 @@ static renderPage(searchParams, event, updateURLHash = true) {
     const storedColors = getCookie('selected_color') ? JSON.parse(getCookie('selected_color')) : [];
     if(storedColors.length > 1) {
       storedColors.forEach((optionName, i) => {
-        let nameValue = FacetFiltersForm.processString(optionName).replace(' ', '-').toLowerCase()
+        let nameValue = FacetFiltersForm.processString(optionName);
         swatchesEl.forEach(el => {
           const swatches = el.querySelectorAll('li')
           swatches.forEach((_) => {
@@ -395,9 +389,8 @@ static renderPage(searchParams, event, updateURLHash = true) {
 
   static renderPagination(html) {
     const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
-    console.log(parsedHTML.querySelector('#pagination').innerHTML);
     document.querySelector('#pagination').innerHTML = parsedHTML.querySelector('#pagination').innerHTML;
-    publish(PUB_SUB_EVENTS.facetFormChange, {});
+    publish(PUB_SUB_EVENTS.collectionPaginationChange, {});
   }
 }
   

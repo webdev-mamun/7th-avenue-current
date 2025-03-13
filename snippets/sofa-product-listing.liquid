@@ -139,7 +139,6 @@
   {%- endfor -%}
 </style>
 {%- endif -%}
-Size: {{ total_selected_filter_count }}<br>
 <div class="ci sofa-product-grid">
    {% if product.available %}
    {% for col in product.collections %}
@@ -283,15 +282,28 @@ Size: {{ total_selected_filter_count }}<br>
 
              assign fabric_options = shop.metaobjects.fabric_options.values
              assign option_image = ''
+             assign fabric_found = false
              for fabric_option in fabric_options
-               assign fabric_option_title = fabric_option.title.value
-               if value contains fabric_option_title or value == fabric_option_title
-                 if fabric_option.thumbnail != blank
-                   assign option_image = fabric_option.thumbnail | image_url: width: 60
-                 else
-                   assign option_image = fabric_option.image | image_url: width: 60
-                 endif
+               assign fabric_option_title = fabric_option.title.value | handle
+
+               if value_handle == fabric_option_title
+                if fabric_option.thumbnail != blank
+                  assign option_image = fabric_option.thumbnail | image_url: width: 60
+                else
+                  assign option_image = fabric_option.image | image_url: width: 60
+                endif
+                assign fabric_found = true
                endif
+
+              unless fabric_found
+               if value_handle contains fabric_option_title or fabric_option_title contains value_handle
+                if fabric_option.thumbnail != blank
+                  assign option_image = fabric_option.thumbnail | image_url: width: 60
+                else
+                  assign option_image = fabric_option.image | image_url: width: 60
+                endif
+               endif
+              endunless
              endfor
           -%}
           {% if template.name == 'collection' %}

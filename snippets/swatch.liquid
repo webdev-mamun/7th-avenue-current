@@ -220,6 +220,7 @@
                     <div class="swatch-color-groups">
                       {% for value in option.values %}
                         {% liquid
+                          assign value_handle = value | handle
                           assign available = false
                           assign option_value = value
                           assign css_color = value | split: ' ' | last | handle
@@ -231,84 +232,82 @@
                           assign fabric_type = ''
                           assign fabric_features = ''
                           assign fabric_description = ''
-
+                        
+                          
                           for fabric_option in fabric_options
-                            if value == fabric_option.title.value
+                            assign fabric_title_handle = fabric_option.title.value | handle
+                            
+                            if value_handle == fabric_title_handle
                               assign fabric_title = fabric_option.title.value
                               assign fabric_image = fabric_option.image
                               assign fabric_type = fabric_option.type
                               assign fabric_features = fabric_option.features
                               assign fabric_description = fabric_option.description
-
-                              if fabric_title != '' or fabric_image != '' or fabric_type != '' or fabric_features != '' or fabric_description != ''
-                                assign fabric_info_found = true
-                              endif
-
+                              assign fabric_info_found = true
+                        
                               assign swatch_thumbnail = fabric_option.thumbnail | image_url: width: 150
                               if swatch_thumbnail == blank
                                 assign swatch_thumbnail = fabric_option.image | image_url: width: 150
                               endif
+                        
                               if value contains '(Limited Edition)'
                                 assign fabric_title = fabric_title | append: ' (Limited Edition)'
                               endif
-                              break
+                        
+                              break  
                             endif
-                          endfor
-
-                          if fabric_info_found == false
-                            for fabric_option in fabric_options
-                              if value contains fabric_option.title.value or fabric_option.title.value contains value
+                        
+                            if fabric_info_found == false
+                              if value_handle contains fabric_title_handle or fabric_title_handle contains value_handle
                                 assign fabric_title = fabric_option.title.value
                                 assign fabric_image = fabric_option.image
                                 assign fabric_type = fabric_option.type
                                 assign fabric_features = fabric_option.features
                                 assign fabric_description = fabric_option.description
-
-                                if fabric_title != '' or fabric_image != '' or fabric_type != '' or fabric_features != '' or fabric_description != ''
-                                  assign fabric_info_found = true
-                                endif
-
+                                assign fabric_info_found = true
+                        
                                 assign swatch_thumbnail = fabric_option.thumbnail | image_url: width: 150
                                 if swatch_thumbnail == blank
                                   assign swatch_thumbnail = fabric_option.image | image_url: width: 150
                                 endif
-
+                        
                                 if value contains '(Limited Edition)'
                                   assign fabric_title = fabric_title | append: ' (Limited Edition)'
                                 endif
-
-                                break
+                        
+                                break  
                               endif
-                            endfor
-                          endif
-
+                            endif
+                          endfor
+                        
                           assign value_found = false
                           for variant in product.variants
                             unless variant.available
                               continue
                             endunless
-
+                        
                             unless variant[current_option] == value
                               continue
                             endunless
-
+                        
                             unless variant[other_options[0]] == current_variant[other_options[0]]
                               continue
                             endunless
-
+                        
                             unless variant[other_options[1]] == current_variant[other_options[1]]
                               continue
                             endunless
-
+                        
                             assign available = true
                           endfor
-
+                        
                           for variant in product.variants
                             if variant.option1 == value and variant.metafields.custom.fabric == fabric
                               assign value_found = true
                             endif
                           endfor
                         %}
+                        
 
                         {% capture id %}fabric-swatch-{{ option.position }}-{{ value | handle }}{% endcapture %}
 
@@ -449,7 +448,7 @@
                         {% liquid
                           assign option_value = value
                           assign css_color = value | split: ' ' | last | handle
-
+                      
                           assign fabric_options = shop.metaobjects.fabric_options.values
                           assign fabric_info_found = false
                           assign swatch_thumbnail = ''
@@ -458,74 +457,74 @@
                           assign fabric_type = ''
                           assign fabric_features = ''
                           assign fabric_description = ''
+                      
+                          # **Single Loop for Both Exact and Partial Matches**
                           for fabric_option in fabric_options
-                            if value == fabric_option.title.value
-                              assign fabric_title = fabric_option.title.value
+                            assign fabric_option_title = fabric_option.title.value
+                      
+                            # **Exact Match First**
+                            if value == fabric_option_title
+                              assign fabric_title = fabric_option_title
                               assign fabric_image = fabric_option.image
                               assign fabric_type = fabric_option.type
                               assign fabric_features = fabric_option.features
                               assign fabric_description = fabric_option.description
-
-                              if fabric_title != '' or fabric_image != '' or fabric_type != '' or fabric_features != '' or fabric_description != ''
-                                assign fabric_info_found = true
-                              endif
-
+                              assign fabric_info_found = true
+                      
                               assign swatch_thumbnail = fabric_option.thumbnail | image_url: width: 150
                               if swatch_thumbnail == blank
                                 assign swatch_thumbnail = fabric_option.image | image_url: width: 150
                               endif
+                      
                               if value contains '(Limited Edition)'
                                 assign fabric_title = fabric_title | append: ' (Limited Edition)'
                               endif
-                              break
+                      
+                              break 
+                            endif
+                      
+                            if fabric_info_found == false
+                              if value contains fabric_option_title or fabric_option_title contains value
+                              assign fabric_title = fabric_option_title
+                              assign fabric_image = fabric_option.image
+                              assign fabric_type = fabric_option.type
+                              assign fabric_features = fabric_option.features
+                              assign fabric_description = fabric_option.description
+                              assign fabric_info_found = true
+                      
+                              assign swatch_thumbnail = fabric_option.thumbnail | image_url: width: 150
+                              if swatch_thumbnail == blank
+                                assign swatch_thumbnail = fabric_option.image | image_url: width: 150
+                              endif
+                      
+                              if value contains '(Limited Edition)'
+                                assign fabric_title = fabric_title | append: ' (Limited Edition)'
+                              endif
+                              endif
                             endif
                           endfor
-
-                          if fabric_info_found == false
-                            for fabric_option in fabric_options
-                              if value contains fabric_option.title.value or value == fabric_option.title.value or fabric_option.title.value contains value
-                                assign fabric_title = fabric_option.title.value
-                                assign fabric_image = fabric_option.image
-                                assign fabric_type = fabric_option.type
-                                assign fabric_features = fabric_option.features
-                                assign fabric_description = fabric_option.description
-                                if fabric_title != '' or fabric_image != '' or fabric_type != '' or fabric_features != '' or fabric_description != ''
-                                  assign fabric_info_found = true
-                                endif
-                                if fabric_option.thumbnail != blank
-                                  assign swatch_thumbnail = fabric_option.thumbnail | image_url: width: 150
-                                else
-                                  assign swatch_thumbnail = fabric_option.image | image_url: width: 150
-                                endif
-                                if value contains '(Limited Edition)'
-                                  assign fabric_title = fabric_title | append: ' (Limited Edition)'
-                                endif
-                                break
-                              endif
-                            endfor
-                          endif
-
+                      
                           assign value_found = false
                           for variant in product.variants
                             unless variant.available
                               continue
                             endunless
-
+                      
                             unless variant[current_option] == value
                               continue
                             endunless
-
+                      
                             unless variant[other_options[0]] == current_variant[other_options[0]]
                               continue
                             endunless
-
+                      
                             unless variant[other_options[1]] == current_variant[other_options[1]]
                               continue
                             endunless
-
+                      
                             assign available = true
                           endfor
-
+                      
                           assign value_found = false
                           for variant in product.variants
                             if variant.option1 == value and variant.metafields.custom.color_group == color_group
