@@ -21650,12 +21650,6 @@ ul.mobile_nav_bottom {
   cursor: pointer;
 }
 
-li:not(.open) .color__swatch--bg.snow-white,
-li.open.deselect .color__swatch--bg.snow-white {
-  outline: 1px solid;
-  outline-offset: -1px;
-}
-
 .color__swatch:not(.slick-initialized) .color__swatch--bg {
   margin: 3px;
 }
