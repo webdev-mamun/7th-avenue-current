@@ -447,6 +447,7 @@
                       {% for value in option.values %}
                         {% liquid
                           assign option_value = value
+                          
                           assign css_color = value | split: ' ' | last | handle
                       
                           assign fabric_options = shop.metaobjects.fabric_options.values
@@ -543,7 +544,7 @@
                       <input type="radio" id="{{ id }}" name="{{ option_name }}" value="{{ value | escape }}" data-group-value="{{ color_group }}" data-position="{{ option.position }}" {{ checked }} />
                     {% endcapture %}
 
-                        {% capture sold_out_image %}
+                    {% capture sold_out_image %}
                       <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" height="auto" width="auto">
                     {% endcapture %}
                         {% unless value == 'Custom Color'
