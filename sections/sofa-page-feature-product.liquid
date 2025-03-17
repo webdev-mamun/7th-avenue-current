@@ -2,19 +2,20 @@
   assign selected_color = section.settings.selected_color | split: ", "
   assign color_count = selected_color.size
   assign active_color = ''
-  assign paddingTop = section.settings.paddingTop
-  assign paddingBottom = section.settings.paddingBottom
-  assign paddingTopMobile = section.settings.paddingTopMobile
-  assign paddingBottomMobile = section.settings.paddingBottomMobile
+  assign padding_top = section.settings.paddingTop
+  assign padding_bottom = section.settings.paddingBottom
+  assign padding_top_mobile = section.settings.paddingTopMobile
+  assign padding_bottom_mobile = section.settings.paddingBottomMobile
   assign background = section.settings.background
+  assign collection = collections[section.settings.collection]
 -%}
 
 <style>
   #shopify-section-{{ section.id }} {
-    --padding-top: {{ paddingTop }}px;
-    --padding-bottom: {{ paddingBottom }}px;
-    --padding-top-mobile: {{ paddingTopMobile }}px;
-    --padding-bottom-mobile: {{ paddingBottomMobile }}px;
+    --padding-top: {{ padding_top }}px;
+    --padding-bottom: {{ padding_bottom }}px;
+    --padding-top-mobile: {{ padding_top_mobile }}px;
+    --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
     --background: {{ background }};
   }
 </style>
@@ -26,14 +27,12 @@
       <p class="text">{{ section.settings.text }}</p>
     </div>
   </div>
+  {%- if collection != blank -%}
   <div class="sofa-page-feature-product-slider-wrapper">
     <button class="slider__controller slider__controller--prev"></button>
     <button class="slider__controller slider__controller--next"></button>
     <div class="row">
       <div class="sofa-page-feature-product-slider">
-        {% liquid 
-         assign collection = collections[section.settings.collection]
-        %}
         {% for product in collection.products limit: section.settings.product_limit %}
         {% liquid
           assign active_color_index = forloop.index0 | modulo: color_count
@@ -46,6 +45,7 @@
       </div>
     </div>
   </div>
+  {%- endif -%}
   <div class="row">
       <a href="{{ section.settings.btn_url }}" class="sofa-page-feature-product__btn">{{ section.settings.btn_text }}</a>
       <p class="sofa-page-feature-product__info">{{ section.settings.info }}</p>

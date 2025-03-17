@@ -21646,6 +21646,12 @@ ul.mobile_nav_bottom {
   margin: 0 3px;
 }
 
+li:not(.open) .color__swatch--bg.snow-white,
+li.open.deselect .color__swatch--bg.snow-white {
+  outline: 1px solid;
+  outline-offset: -1px;
+}
+
 .color__swatch .color__swatch--bg {
   width: 12px;
   height: 12px;
