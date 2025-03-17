@@ -19720,6 +19720,12 @@ div#sticky-container .product-add button#AddToCart,
   background: #032e6a !important;
   margin: 0 !important;
   padding: 0 !important;
+  cursor: pointer;
+}
+
+div#sticky-container .product-add button#AddToCart:disabled {
+  opacity: .5;
+  pointer-events: none;
 }
 
 .custom-checkout-button {
@@ -21619,7 +21625,7 @@ ul.mobile_nav_bottom {
 }
 
 .color__swatch li.open:not(.deselect) {
-  border: 1px solid #000000;
+  border: 1px solid #979797;
 }
 
 .color__swatch li {
@@ -21646,7 +21652,6 @@ ul.mobile_nav_bottom {
   background-size: cover;
   background-color: #000;
   border-radius: 1px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
@@ -24970,7 +24975,8 @@ figcaption.shideshow-caption-horizontal-center {
   width: 100%;
   height: 100%;
   border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
 .swatch.clearfix h5,

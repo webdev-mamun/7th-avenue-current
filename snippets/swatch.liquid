@@ -317,10 +317,10 @@
                       <input type="radio" id="{{ id }}" name="{{ option_name }}" value="{{ value | escape }}" data-group-value="{{ fabric }}" data-position="{{ option.position }}" {{ checked }} />
                     {% endcapture %}
 
-                        {% capture sold_out_image %}
-                      <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" height="auto" width="auto">
-                    {% endcapture %}
-                        {% unless value == 'Custom Color'
+                            {% capture sold_out_image %}
+                          <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" height="auto" width="auto">
+                        {% endcapture %}
+                            {% unless value == 'Custom Color'
                           or value contains 'Custom Color'
                           or value == 'Custom Fabric'
                           or value contains 'Custom Fabric'
@@ -345,10 +345,11 @@
                                   <div
                                     class="custom-image css-color"
                                     style="background-color: {{ color_hex_value }};{% if swatch_thumbnail != '' %} background-image: url({{ swatch_thumbnail }});{% endif %}"
-                                  ></div>
+                                  >{{ sold_out_image }}</div>
                                 {% else %}
                                   <div class="css-color" style="background-color: {{ css_color }};"></div>
                                 {% endif %}
+                                
                               </label>
                               {% if fabric_info_found %}
                                 <div class="option-info" style="display: none;">
