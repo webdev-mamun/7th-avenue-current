@@ -227,6 +227,7 @@
                           assign fabric_info_found = false
                           assign fabric_title = ''
                           assign fabric_image = ''
+                          assign color_hex_value = ''
                           assign fabric_type = ''
                           assign fabric_features = ''
                           assign fabric_description = ''
@@ -244,7 +245,7 @@
                               if swatch_thumbnail == blank
                                 assign swatch_thumbnail = fabric_option.image | image_url: width: 150
                               endif
-                              assign css_color = fabric_option.thumbnail_color
+                              assign color_hex_value = fabric_option.thumbnail_color
                               assign fabric_type = fabric_option.type
                               assign fabric_features = fabric_option.features
                               assign fabric_description = fabric_option.description
@@ -266,7 +267,7 @@
                                 if swatch_thumbnail == blank
                                   assign swatch_thumbnail = fabric_option.image | image_url: width: 150
                                 endif
-                                assign css_color = fabric_option.thumbnail_color
+                                assign color_hex_value = fabric_option.thumbnail_color
                                 assign fabric_type = fabric_option.type
                                 assign fabric_features = fabric_option.features
                                 assign fabric_description = fabric_option.description
@@ -343,7 +344,7 @@
                                 {% elsif section.settings.color_swatch_options == 'custom-image' %}
                                   <div
                                     class="custom-image css-color"
-                                    style="background-color: {{ css_color }};{% if swatch_thumbnail != '' %} background-image: url({{ swatch_thumbnail }});{% endif %}"
+                                    style="background-color: {{ color_hex_value }};{% if swatch_thumbnail != '' %} background-image: url({{ swatch_thumbnail }});{% endif %}"
                                   ></div>
                                 {% else %}
                                   <div class="css-color" style="background-color: {{ css_color }};"></div>
@@ -450,7 +451,7 @@
                           assign fabric_title = ''
                           assign fabric_image = ''
                           assign swatch_thumbnail = ''
-                          assign css_color = ''
+                          assign color_hex_value = ''
                           assign fabric_type = ''
                           assign fabric_features = ''
                           assign fabric_description = ''
@@ -468,7 +469,7 @@
                               if swatch_thumbnail == blank
                                 assign swatch_thumbnail = fabric_option.image | image_url: width: 150
                               endif
-                              assign css_color = fabric_option.thumbnail_color
+                              assign color_hex_value = fabric_option.thumbnail_color
                               assign fabric_type = fabric_option.type
                               assign fabric_features = fabric_option.features
                               assign fabric_description = fabric_option.description
@@ -490,7 +491,7 @@
                                 if swatch_thumbnail == blank
                                   assign swatch_thumbnail = fabric_option.image | image_url: width: 150
                                 endif
-                                assign css_color = fabric_option.thumbnail_color
+                                assign color_hex_value = fabric_option.thumbnail_color
                                 assign fabric_type = fabric_option.type
                                 assign fabric_features = fabric_option.features
                                 assign fabric_description = fabric_option.description
@@ -566,7 +567,7 @@
                                 {% elsif section.settings.color_swatch_options == 'custom-image' %}
                                   <div
                                     class="custom-image css-color"
-                                    style="background-color: {{ css_color }};{% if swatch_thumbnail != '' %} background-image: url({{ swatch_thumbnail }});{% endif %}"
+                                    style="background-color: {{ color_hex_value }};{% if swatch_thumbnail != '' %} background-image: url({{ swatch_thumbnail }});{% endif %}"
                                   ></div>
                                 {% else %}
                                   <div class="css-color" style="background-color: {{ css_color }};"></div>
