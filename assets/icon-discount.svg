@@ -1,8 +1,5 @@
-<svg width="14" height="14" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M28 14H46" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-<path d="M9 32L27 14" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-<path d="M46 32L46 14" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-<path d="M9 33L26 50" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-<path d="M27 51L45 33" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-<circle cx="34" cy="26" r="5" fill="currentColor"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false" aria-hidden="true" width="14" height="14" class="discount-icon">
+   <path stroke-linecap="round" d="M7.284 1.402h4.964a.35.35 0 0 1 .35.35v4.964a.7.7 0 0 1-.205.495L7.49 12.115a.7.7 0 0 1-.99 0L1.885 7.5a.7.7 0 0 1 0-.99L6.79 1.607a.7.7 0 0 1 .495-.205Z"></path>
+   <circle cx="9.1" cy="4.9" r="0.7"></circle>
+   <path stroke-linecap="round" stroke-linejoin="round" d="M9.102 4.897h-.005v.005h.005z"></path>
 </svg>

@@ -1,16 +1,17 @@
 {% assign quick_configured = product.metafields.custom.quick_configured.value | default: false %}
-{% form 'product', product, data-product-form: product_form_config %}
-  {%- if settings.show_multiple_currencies -%}
-    {% assign price = current_variant.price | money_with_currency %}
-    {% assign compare_price = current_variant.compare_at_price | money_with_currency %}
-  {%- else -%}
-    {% assign price = current_variant.price | money %}
-    {% assign compare_price = current_variant.compare_at_price | money %}
-  {%- endif -%}
-  {%- if current_variant.compare_at_price > current_variant.price -%}
-    {% assign onsale = true %}
-  {%- endif -%}
-  {%- capture price -%}
+{% form 'product', product, data-product-form:product_form_config %}
+
+{%- if settings.show_multiple_currencies -%}
+{% assign price = current_variant.price | money_with_currency %}
+{% assign compare_price = current_variant.compare_at_price | money_with_currency %}
+{%- else -%}
+{% assign price = current_variant.price | money %}
+{% assign compare_price = current_variant.compare_at_price | money %}
+{%- endif -%}
+{%- if current_variant.compare_at_price > current_variant.price -%}
+{% assign onsale = true %}
+{%- endif -%}
+{%- capture price -%}
 <div id="product-price">      
   <h5>Pricing</h5> 
   {% if onsale and current_variant.available %}
@@ -64,329 +65,261 @@
 </div>
 {%- endcapture -%}
 
-  {% if section.settings.show_vendor %}
-    <h3 class="product_designed_by">
-      by <a href="/search?type=product&q={{product.vendor}}&submit=Search">{{ product.vendor }}</a>
-    </h3>
+{% if section.settings.show_vendor %}
+<h3 class="product_designed_by">by <a href="/search?type=product&q={{product.vendor}}&submit=Search">{{ product.vendor }}</a></h3>
 
-    <div class="clear"></div>
+<div class="clear"></div>
+{% endif %}
+
+<div class="clear"></div>	
+
+{% if product.options.size > 1 %}
+
+<div class="select" {% if product.variants.size == 1 or section.settings.product_variants == 'swatches' %}style="display: none;"{% endif %}>
+  <select id="product-select-{{ product.id }}" name='id'>
+    {% if quick_configured %}
+      {% assign item_offered_odd = product.variants[0].metafields.variant.linked_product.value %}
+      {% assign item_offered_even = product.variants[1].metafields.variant.linked_product.value %}
+      {% for variant in product.variants %}
+        {% assign even = forloop.index | modulo: 2 %}
+        {%- capture option_detail -%}
+          {% if item_offered_even != blank and even == 0 %}
+            value="{{ variant.id }}"
+            data-offered-product-id="[
+            {%- for free_item in item_offered_even -%}
+              {{ free_item.product.value.id }}{%- unless forloop.last -%}, {%- endunless -%}
+            {%- endfor -%}]"
+            data-offered-quantity="[
+            {%- for free_item in item_offered_even -%}
+              {{ free_item.quantity }}{%- unless forloop.last -%}, {%- endunless -%}
+            {%- endfor -%}]"
+          {% elsif item_offered_odd != blank and even != 0 %}
+            value="{{ variant.id }}"
+            data-offered-product-id="[
+            {%- for free_item in item_offered_odd -%}
+              {{ free_item.product.value.id }}{%- unless forloop.last -%}, {%- endunless -%}
+            {%- endfor -%}]"
+            data-offered-quantity="[
+            {%- for free_item in item_offered_odd -%}
+              {{ free_item.quantity }}{%- unless forloop.last -%}, {%- endunless -%}
+            {%- endfor -%}]"
+          {% else %}
+            value="{{ variant.id }}"
+          {% endif %}
+        {%- endcapture -%}
+    
+        <option {% if settings.Offered_free_products %}{{ option_detail }}{% endif %} {% if variant == current_variant %}selected="selected"{% endif %}>
+          {{ variant.title }} - {{ variant.price | money }}
+        </option>
+        {% endfor %}
+    {% else %}
+      {% for variant in product.variants %}
+        {% assign item_offered = variant.metafields.variant.linked_product.value %}
+        {%- capture option_detail -%}
+          {% if item_offered %}
+            value="{{ variant.id }}"
+            data-offered-product-id="[
+            {%- for free_item in item_offered -%}
+              {{ free_item.product.value.id }}{%- unless forloop.last -%}, {%- endunless -%}
+            {%- endfor -%}]"
+            data-offered-quantity="[
+            {%- for free_item in item_offered -%}
+              {{ free_item.quantity }}{%- unless forloop.last -%}, {%- endunless -%}
+            {%- endfor -%}]"
+          {% else %}
+            value="{{ variant.id }}"
+          {% endif %}
+        {%- endcapture -%}
+    
+        <option {% if settings.Offered_free_products %}{{ option_detail }}{% endif %} {% if variant == current_variant %}selected="selected"{% endif %}>
+          {{ variant.title }} - {{ variant.price | money }}
+        </option>
+        {% endfor %}
+    {% endif %}
+  </select>
+</div>
+
+  {% if section.settings.product_variants == 'swatches' %}
+    {% for product_option in product.options_with_values %}
+      {%- if product_option.name == 'Back Firmness' -%}
+        {% capture back_firmness %} {% render "swatch", section: section, product: product, current_variant: current_variant, option: product_option %} {% endcapture %}
+      {%- elsif product_option.name == 'Orientation' -%}
+        {% capture orientation %} {% render "swatch", section: section, product: product, current_variant: current_variant, option: product_option %} {% endcapture %}
+      {%- else -%}
+        {% render "swatch", section: section, product: product, current_variant: current_variant, option: product_option %}
+      {%- endif -%}
+    {% endfor %}
   {% endif %}
 
-  <div class="clear"></div>
-
-  {% if product.options.size > 1 %}
-    <div
-      class="select"
-      {% if product.variants.size == 1 or section.settings.product_variants == 'swatches' %}
-        style="display: none;"
-      {% endif %}
-    >
-      <select id="product-select-{{ product.id }}" name="id">
-        {% if quick_configured %}
-          {% assign item_offered_odd = product.variants[0].metafields.variant.linked_product.value %}
-          {% assign item_offered_even = product.variants[1].metafields.variant.linked_product.value %}
-          {% for variant in product.variants %}
-            {% assign even = forloop.index | modulo: 2 %}
-            {%- capture option_detail -%}
-              {% if item_offered_even != blank and even == 0 %}
-                value="{{ variant.id }}"
-                data-offered-product-id="[
-                {%- for free_item in item_offered_even -%}
-                  {{ free_item.product.value.id }}{%- unless forloop.last -%}, {%- endunless -%}
-                {%- endfor -%}]"
-                data-offered-quantity="[
-                {%- for free_item in item_offered_even -%}
-                  {{ free_item.quantity }}{%- unless forloop.last -%}, {%- endunless -%}
-                {%- endfor -%}]"
-              {% elsif item_offered_odd != blank and even != 0 %}
-                value="{{ variant.id }}"
-                data-offered-product-id="[
-                {%- for free_item in item_offered_odd -%}
-                  {{ free_item.product.value.id }}{%- unless forloop.last -%}, {%- endunless -%}
-                {%- endfor -%}]"
-                data-offered-quantity="[
-                {%- for free_item in item_offered_odd -%}
-                  {{ free_item.quantity }}{%- unless forloop.last -%}, {%- endunless -%}
-                {%- endfor -%}]"
-              {% else %}
-                value="{{ variant.id }}"
-              {% endif %}
-            {%- endcapture -%}
-            <option
-              {% if settings.Offered_free_products %}
-                {{- option_detail -}}
-              {% endif %}
-              {% if variant == current_variant %}
-                selected="selected"
-              {% endif %}
-            >
-              {{ variant.title }} - {{ variant.price | money }}
-            </option>
-          {% endfor %}
-        {% else %}
-          {% for variant in product.variants %}
-            {% assign item_offered = variant.metafields.variant.linked_product.value %}
-            {%- capture option_detail -%}
-              {% if item_offered %}
-                value="{{ variant.id }}"
-                data-offered-product-id="[
-                {%- for free_item in item_offered -%}
-                  {{ free_item.product.value.id }}{%- unless forloop.last -%}, {%- endunless -%}
-                {%- endfor -%}]"
-                data-offered-quantity="[
-                {%- for free_item in item_offered -%}
-                  {{ free_item.quantity }}{%- unless forloop.last -%}, {%- endunless -%}
-                {%- endfor -%}]"
-              {% else %}
-                value="{{ variant.id }}"
-              {% endif %}
-            {%- endcapture -%}
-
-            <option
-              {% if settings.Offered_free_products %}
-                {{- option_detail -}}
-              {% endif %}
-              {% if variant == current_variant %}
-                selected="selected"
-              {% endif %}
-            >
-              {{ variant.title }} - {{ variant.price | money }}
-            </option>
-          {% endfor %}
-        {% endif %}
-      </select>
-    </div>
-    {% if section.settings.product_variants == 'swatches' %}
-      {% assign opt_size = 0 %}
-      {% for product_option in product.options_with_values %}
-        {% assign opt_size = opt_size | plus: 1 %}
-        {%- if product_option.name == 'Back Firmness' -%}
-          {% capture back_firmness %} {% render "swatch", section: section, product: product, current_variant: current_variant, option: product_option %} {% endcapture %}
-        {%- elsif product_option.name == 'Orientation' -%}
-          {% capture orientation %} {% render "swatch", section: section, product: product, current_variant: current_variant, option: product_option %} {% endcapture %}
-        {%- else -%}
-          {% render 'swatch',
-            section: section,
-            product: product,
-            current_variant: current_variant,
-            option: product_option
-          %}
-        {%- endif -%}
+{% elsif product.options.size == 1 and product.variants.size > 1 %}
+  <div class="select" {% if product.variants.size == 1 or section.settings.product_variants == 'swatches' %}style="display: none;"{% endif %}>
+    <label>{{ product.options[0] }}</label>
+    <select id="product-select-{{ product.id }}" name='id'>
+      {% for variant in product.variants %}
+      <option data-sku="{{ variant.sku }}" value="{{ variant.id }}" {% if variant == current_variant %}selected="selected"{% endif %}>
+        {{ variant.title }} - {{ variant.price | money }}
+      </option>
       {% endfor %}
-    {% endif %}
-
-  {% elsif product.options.size == 1 and product.variants.size > 1 %}
-    <div
-      class="select"
-      {% if product.variants.size == 1 or section.settings.product_variants == 'swatches' %}
-        style="display: none;"
-      {% endif %}
-    >
-      <label>{{ product.options[0] }}</label>
-      <select id="product-select-{{ product.id }}" name="id">
-        {% for variant in product.variants %}
-          <option
-            data-sku="{{ variant.sku }}"
-            value="{{ variant.id }}"
-            {% if variant == current_variant %}
-              selected="selected"
-            {% endif %}
-          >
-            {{ variant.title }} - {{ variant.price | money }}
-          </option>
-        {% endfor %}
-      </select>
-    </div>
+    </select>
+  </div>
 
     {% if section.settings.product_variants == 'swatches' %}
       {% for product_option in product.options_with_values %}
         {%- if product_option.name == 'Back Firmness' -%}
           {% capture back_firmness %} {% render "swatch", section: section, product: product, current_variant: current_variant, option: product_option %} {% endcapture %}
         {%- else -%}
-          {% render 'swatch',
-            section: section,
-            product: product,
-            current_variant: current_variant,
-            option: product_option
-          %}
+            {% render "swatch", section: section, product: product, current_variant: current_variant, option: product_option %}
         {%- endif -%}
       {% endfor %}
     {% endif %}
   {% else %}
     <div class="what-is-it">
       {% if product.options.first != 'Title' %}
-        <label>{{ product.options.first }}:</label>
-        {% for variant in product.variants %}
-          <span class="it-is">{{ variant.option1 | escape }}</span>
-        {% endfor %}
+      <label>{{ product.options.first }}:</label>
+      {% for variant in product.variants %}
+      <span class="it-is">{{ variant.option1 | escape }}</span>
+      {% endfor %}
       {% endif %}
     </div>
     <div class="product-variants"></div>
-    <input
-      type="hidden"
-      id="{{ variant.id }}"
-      name="id"
-      data-sku="{{ variant.sku }}"
-      value="{{ product.variants[0].id }}"
-    >
+    <input  type="hidden" id="{{ variant.id }}" name="id" data-sku="{{ variant.sku }}" value="{{ product.variants[0].id }}" />
   {% endif %}
 
-  {% if section.settings.show_sku %}
-    <div class="sku">
-      <label style="display: inline-block; line-height: 1.6em;">{{ 'customer.order.details.sku' | t }}:</label>
-      <span class="variant_sku">{{ current_variant.sku }}</span>
-    </div>
-    <div class="clear"></div>
-  {% endif %}
+{% if section.settings.show_sku %}
+<div class="sku">
+  <label style="display: inline-block; line-height: 1.6em;">{{ 'customer.order.details.sku' | t }}:</label> <span class="variant_sku">{{ current_variant.sku }}</span>
+</div><div class="clear"></div>
+{% endif %}
 
-  {% if current_variant.inventory_quantity > 1 and section.settings.show_quantity_selector %}
-    <div class="product-qty selector-wrapper">
-      <h5>{{ 'products.product.quantity' | t }}</h5>
-      <a class="downer quantity-control-down">-</a>
-      <input
-        min="1"
-        type="text"
-        name="quantity"
-        class="product-quantity"
-        value="1"
-        {% unless current_variant.inventory_management == blank or current_variant.inventory_policy == 'continue' %}
-          max="{{ current_variant.inventory_quantity }}"
-        {% endunless %}
-      >
-      <a class="up quantity-control-up">+</a>
-    </div>
-    <div class="clear"></div>
-  {% endif %}
+{% if current_variant.inventory_quantity > 1 and section.settings.show_quantity_selector %}
+<div class="product-qty selector-wrapper">
+  <h5>{{ 'products.product.quantity' | t }}</h5>
+  <a class="downer quantity-control-down">-</a>
+  <input min="1" type="text" name="quantity" class="product-quantity" value="1" {% unless current_variant.inventory_management == blank or current_variant.inventory_policy == 'continue' %} max="{{ current_variant.inventory_quantity }}" {% endunless %} />
+  <a class="up quantity-control-up">+</a>
+</div>
+<div class="clear"></div>
+{% endif %}
 
-  {%- if back_firmness != blank -%}
-    {{ back_firmness }}
-    <div class="clear"></div>
-  {%- endif -%}
+{%- if back_firmness != blank -%}
+  {{ back_firmness }}
+<div class="clear"></div>
+{%- endif -%}
 
-  {%- if orientation != blank -%}
-    {{ orientation }}
-    <div class="clear"></div>
-  {%- endif -%}
-
-  {%- if section.settings.show_storage_option -%}
-    {% render 'add-ons-products', product: product, option_size: opt_size %}
-  {%- endif -%}
-
+{%- if orientation != blank -%}
+  {{ orientation }}
   <div class="clear"></div>
-  <div class="price-container">{{ price }}</div>
+{%- endif -%}
+
+<div class="clear"></div>	
+<div class="price-container">{{ price }}</div>
+<div class="clear"></div>	
+
+{% if template.suffix == 'sofa' or template.suffix == 'sofa-outdoor-teak' %}
   <div class="clear"></div>
-
-  {% if template.suffix == 'sofa' or template.suffix == 'sofa-outdoor-teak' %}
-    <div class="clear"></div>
-    {% unless product.type == 'Product Add-Ons' %}
-      {%- liquid
-        assign v_title = current_variant.title
-        assign v_title_first = v_title | split: '/' | first | strip
-        assign v_title_last = v_title | split: '/' | last | strip
-        assign stock_infos = shop.metaobjects.stock_messages_lead_times.values
-        assign stock_message_found = false
-        assign values = ''
-
-        for stock_info in stock_infos
-          assign name = stock_info.name
-          assign color = stock_info.color | default: '#458736'
-          assign message = stock_info.message
-
-          if message != blank
+{% unless product.type == 'addons' %}
+{%- liquid
+    assign v_title = current_variant.title
+    assign v_title_first = v_title | split: '/' | first | strip
+    assign v_title_last = v_title | split: '/' | last | strip
+    assign stock_infos = shop.metaobjects.stock_messages_lead_times.values
+    assign stock_message_found = false
+    assign values = ''
+    
+    for stock_info in stock_infos
+        assign name = stock_info.name
+        assign color = stock_info.color | default: '#458736'
+        assign message = stock_info.message
+        
+        if message != blank
             if name contains '&'
-              assign name_first = name | split: '&' | first | strip
-              assign name_last = name | split: '&' | last | strip
-
-              if v_title_first contains name_first or v_title_first == name_first or v_title_last contains name_first or v_title_last == name_first and v_title_first contains name_last or v_title_first == name_last or v_title_last contains name_last or v_title_last == name_last
-                assign stock_message_found = true
-                assign current_stock_message = message
-                assign current_color = color
-              endif
-              assign key_value = '"' | append: name_first | append: ' & ' | append: name_last | append: '": {"color": "' | append: color | append: '", "message": "' | append: message | append: '"}'
+                assign name_first = name | split: '&' | first | strip
+                assign name_last = name | split: '&' | last | strip
+                
+                if v_title_first contains name_first or v_title_first == name_first or v_title_last contains name_first or v_title_last == name_first and v_title_first contains name_last or v_title_first == name_last or v_title_last contains name_last or v_title_last == name_last
+                    assign stock_message_found = true
+                    assign current_stock_message = message
+                    assign current_color = color
+                endif
+                assign key_value = '"' | append: name_first | append: ' & ' | append: name_last | append: '": {"color": "' | append: color | append: '", "message": "' | append: message | append: '"}'
             else
-              if v_title_first contains name or v_title_first == name or v_title_last contains name or v_title_last == name
-                assign stock_message_found = true
-                assign current_stock_message = message
-                assign current_color = color
-              endif
-              assign key_value = '"' | append: name | append: '": {"color": "' | append: color | append: '", "message": "' | append: message | append: '"}'
+                if v_title_first contains name or v_title_first == name or v_title_last contains name or v_title_last == name
+                    assign stock_message_found = true
+                    assign current_stock_message = message
+                    assign current_color = color
+                endif
+                assign key_value = '"' | append: name | append: '": {"color": "' | append: color | append: '", "message": "' | append: message | append: '"}'
             endif
-
+            
             if values != ''
-              assign values = values | append: ', '
+                assign values = values | append: ', '
             endif
-
+            
             assign values = values | append: key_value
-          endif
-        endfor
+        endif
+    endfor
+    
+    assign values = '{' | append: values | append: '}'
+-%}
 
-        assign values = '{' | append: values | append: '}'
-      -%}
+<script>
+  // Replace HTML entities with proper characters and parse JSON
+  window.leadTime = JSON.parse('{{ values | escape | replace: '&quot;', '"' | replace: '&amp;', '&' | replace: '\n', '' }}');
+</script>
 
-      <script>
-        window.leadTime = JSON.parse('{{ values | escape | replace: '&quot;', '"' | replace: '&amp;', '&' | replace: '\n', '' }}');
-      </script>
 
-      <div
-        class="inventory fucking_new_way"
-        {% unless stock_message_found %}
-          style="display: none;"
-        {% endunless %}
-      >
-        <h5>AVAILABILITY</h5>
-        <p class="inventory__message">
-          <span class="inventory__signal" style="background-color: {{ current_color }};"></span>
-          {{- current_stock_message }}
-        </p>
-      </div>
-    {% endunless %}
-    <div class="clear"></div>
-  {% endif %}
 
-  {%- liquid
-    assign spec = product.metafields.specification
-    if current_variant.title contains 'Extra-Deep' and spec.description_for_extra_deep != blank
-      assign prod_desc = spec.description_for_extra_deep
-    else
-      assign prod_desc = product.description
-    endif
-  -%}
-  <script>
-    window.productDescription = {
-      description: `{{ product.description }}`,
-      description_extra_deep: `{% if spec.description_for_extra_deep != blank %}{{ spec.description_for_extra_deep }}{% else %}{{ product.description }}{% endif %}`,
-    };
-  </script>
-  {% if template != 'product.quick' %}
-    <div class="clear"></div>
-    <div class="pdp-content-desktop gutter-0 width-full">
-      <div class="divider-lol"></div>
-      {% if prod_desc != blank %}
-        <div class="accordian_item product__description">
-          <div class="accordian_body">
-            <div class="expandable_container">
-              <div class="expandable_text">
-                {{ prod_desc }}
-              </div>
-              <span class="expand">... <span class="read-more">Read more</span></span>
-            </div>
-          </div>
+
+  <div class="inventory fucking_new_way"{% unless stock_message_found %} style="display: none;"{% endunless %}>
+    <h5>AVAILABILITY</h5>
+    <p class="inventory__message"><span class="inventory__signal" style="background-color: {{ current_color }};"></span>{{ current_stock_message }}</p>
+  </div>
+  {% endunless %}
+<div class="clear"></div>
+{% endif %}
+
+{%- liquid
+   assign spec = product.metafields.specification
+   if current_variant.title contains 'Extra-Deep' and spec.description_for_extra_deep != blank
+    assign prod_desc = spec.description_for_extra_deep
+   else
+    assign prod_desc = product.description
+   endif
+-%}
+<script>
+  window.productDescription = {
+    description: `{{ product.description }}`,
+    description_extra_deep: `{% if spec.description_for_extra_deep != blank %}{{ spec.description_for_extra_deep }}{% else %}{{ product.description }}{% endif %}`
+  };
+</script>
+{% if template != 'product.quick' %}
+<div class="clear"></div>
+<div class="pdp-content-desktop gutter-0 width-full">
+  <div class="divider-lol"></div>
+  {% if prod_desc != blank %}
+  <div class="accordian_item product__description">
+    <div class="accordian_body">
+      <div class="expandable_container">
+        <div class="expandable_text">
+          {{ prod_desc }}
         </div>
-      {% endif %}
-      {{ icon_with_text }}
-      {% render 'product-tabs-v2', product: product, prod_desc: prod_desc, id: 'desktop' %}
+        <span class="expand">... <span class="read-more">Read more</span></span>
+      </div>
     </div>
+  </div>
+{% endif %}
+  {{ icon_with_text }}
+  {% render 'product-tabs-v2', product: product, prod_desc: prod_desc, id: 'desktop' %}
+</div>
 
-    <div class="clear"></div>
-  {% endif %}
-  <div class="clear"></div>
-  {% if template == 'product.quick' %}
-    <div class="details_link"><a href="{{ product.url }}">More Details</a></div>
-  {% endif %}
-  <div class="product-add-placeholder"></div>
-  <div class="product__form--button-wrapper">
-    <div class="product-add dynamic__checkout--enable">
-      {% capture act_button %}
+<div class="clear"></div>
+{% endif %}
+<div class="clear"></div>
+{% if template == 'product.quick' %}<div class="details_link"><a href="{{ product.url }}">More Details</a></div>{% endif %}
+<div class="product-add-placeholder"></div>
+<div class="product__form--button-wrapper">
+  <div class="product-add dynamic__checkout--enable">
+    {% capture act_button %}
     <div class="add__to--cart">
       {% if current_variant.available %}
       <button id="AddToCart" type="submit" class="add{% if section.settings.show_payment_button %} secondary-button{% endif %}" >{{ 'products.product.add_to_cart' | t }}</button>
@@ -395,48 +328,35 @@
       {% endif %}
     </div>
     {% endcapture %}
-      {{ act_button }}
+    {{ act_button }}
 
-      {% if section.settings.show_payment_button %}
-        {{ form | payment_button }}
-      {% else %}
-        <div class="custom-checkout-button__wrapper">
-          <a
-            class="custom-checkout-button checkout-buy-now-btn"
-            href="/cart/{{ current_variant.id }}:1"
-            data-handle="{{ product.handle }}"
-            data-variant-id="{{ current_variant.id }}"
-            >Buy now</a
-          >
-        </div>
-      {% endif %}
-    </div>
-    <div id="button-sticky-indicator"></div>
-    {% if template.suffix == 'sofa-outdoor-teak' %}
-      <p class="product_page_free_shipping_text">
-        Limited time offer: Get free waterproof outdoor protective covers when you buy a matching indoor sofa
-        configuration.
-      </p>
+    {% if section.settings.show_payment_button %}
+      {{ form | payment_button }}
     {% else %}
-      <p class="product_page_free_shipping_text">
-        Black Friday Offer: Get free throw lumbar pillows with every sofa order.
-      </p>
+      <div class="custom-checkout-button__wrapper">
+        <a class="custom-checkout-button checkout-buy-now-btn" href="/cart/{{ current_variant.id }}:1" data-handle="{{ product.handle }}" data-variant-id="{{ current_variant.id }}">Buy now</a>
+      </div>
     {% endif %}
-    <div id="gallery-sticky-terminate-indicator"></div>
   </div>
-
-  {% if section.settings.back_in_stock %}
-    <div
-      class="back_in_stock"
-      {% if current_variant.available %}
-        style="display: none"
-      {% endif %}
-    >
-      {{ section.settings.back_in_stock_text }}
-    </div>
+  <div id="button-sticky-indicator"></div>
+  {% if template.suffix == 'sofa-outdoor-teak' %}
+    <p class="product_page_free_shipping_text">Limited time offer: Get free waterproof outdoor protective covers when you buy a matching indoor sofa configuration.</p>
+  {% else %}
+    <p class="product_page_free_shipping_text">Limited Time Offer: Get free throw pillows with every sofa order.</p>
   {% endif %}
+  <div id="gallery-sticky-terminate-indicator"></div>
+</div>
+
+
+{% if section.settings.back_in_stock %}
+<div class="back_in_stock"{% if current_variant.available %} style="display: none"{% endif %}>
+  {{ section.settings.back_in_stock_text }}
+</div>
+{% endif %}
+
 {% endform %}
 
 {% if section.settings.back_in_stock %}
-  {% render 'back-in-stock-form', product: product %}
+  {% render 'back-in-stock-form', product: product%}
 {% endif %}
+ 

@@ -11,11 +11,11 @@
       {% endif %}
       <ul id="accordion"{% if section.settings.nav_secondary != blank %} class="has-secondary"{% endif %}role="navigation">
         {% for link in linklists[section.settings.main_nav].links %}
-        {% assign hasMegaChild = false %}
+        {% assign has_mega_child = false %}
         {% for block in section.blocks %}
         {% if block.type == 'child_menu' %}
         {% if block.settings.menu_item == link.handle %}
-        {% capture megaChild %}
+        {% capture mega_child %}
         <li class="accordion-toggle" aria-haspopup="true" aria-expanded="false">
           <a href="{{ link.url }}">
             {{ link.title | escape }}
@@ -43,15 +43,15 @@
           </ul>
         </div>
         {% endcapture %}
-        {% assign hasMegaChild = true %}
+        {% assign has_mega_child = true %}
         {% endif %}
         {% endif %}
         {% endfor %}
     
-        {% if hasMegaChild %}
-        {{ megaChild }}
+        {% if has_mega_child %}
+        {{ mega_child }}
         {% elsif link.links != blank %}
-          <mobile-menu-dropdown class="mobile-menu-item-has-dropdown" style="--size: {{ link.links.size }};">
+          <mobile-menu-dropdown class="mobile-menu-item-has-dropdown{% if forloop.first %} open{% endif %}" style="--size: {{ link.links.size }};">
             <a class="has-submenu" href="{{ link.url }}">
               <span>{{ link.title | escape }}</span><span class="arr"></span>
             </a>
@@ -104,7 +104,7 @@
         <li>{{ link.title | link_to: link.url }}</li>
         {% endfor %}
       </ul>
-      {% if section.settingssocial_icons %}
+      {% if section.settings.social_icons %}
       {% include 'social-icons' %}
       {% endif %}
     </div>

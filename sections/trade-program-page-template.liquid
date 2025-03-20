@@ -61,7 +61,7 @@
     </div>
     {% when 'banner' %}
     <div class="trade_banner_wrapper">
-      <div class="trade_banner{% if block.settings.image == blnak %} banner_no_image{%endif%}">
+      <div class="trade_banner{% if block.settings.image == blank %} banner_no_image{%endif%}">
       	{% render 'basic-responsive-image', type: block.settings.image %}
         <div class="trade_banner_info_wrap">
           <div class="trade_banner_info">

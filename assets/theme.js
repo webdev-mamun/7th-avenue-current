@@ -3,6 +3,9 @@ window.Shopify = window.Shopify || {};
 
 const PUB_SUB_EVENTS = {
   cartNoteChange: "cart-note-change",
+  infiniteScrollHappen: "infinite-scroll-happen",
+  collectionPaginationChange: "collection-pagination-change",
+  collectionProductChange: "collection-product-change"
 };
 
 let subscribers = {};
@@ -28,6 +31,7 @@ function publish(eventName, data) {
     });
   }
 }
+
 
 window.theme = window.theme || {};
 window.Shopify = window.Shopify || {};
@@ -149,7 +153,7 @@ theme.Sections.prototype = _.assignIn({}, theme.Sections.prototype, {
     this.constructors[type] = constructor;
 
     $("[data-section-type=" + type + "]").each(
-      function (index, container) {
+      function (_index, container) {
         this._createInstance(container, constructor);
       }.bind(this)
     );
@@ -166,7 +170,7 @@ var desktop = window.matchMedia("(min-width: 980px)");
 $(document).ready(function () {
   (function animationAOS() {
     /* Initiate AOS Scrolling after Lazysizes loads */
-    document.addEventListener("lazybeforeunveil", function (e) {
+    document.addEventListener("lazybeforeunveil", function (_e) {
       AOS.init({ disable: "mobile" });
     });
 
@@ -642,7 +646,7 @@ theme.ProductForm = function (context, events, Product) {
 
   new Shopify.OptionSelectors("product-select-" + Product.id, {
     product: Product,
-    onVariantSelected: function (variant, selector) {
+    onVariantSelected: function (variant, _selector) {
       if (!variant) {
         events.trigger("variantunavailable");
         return;
@@ -1028,7 +1032,7 @@ theme.ProductForm = function (context, events, Product) {
         element.innerHTML = price;
       });
 
-      events.on("variantunavailable", function (variant) {
+      events.on("variantunavailable", function (_variant) {
         element.innerHTML = config.unavailable;
         const productPrice = priceContainer.querySelector(
           ".product-price.current"
@@ -1075,7 +1079,7 @@ theme.ProductForm = function (context, events, Product) {
         element.innerHTML = '<span class="money">' + price + "</span>";
       });
 
-      events.on("variantunavailable", function (variant) {
+      events.on("variantunavailable", function (_variant) {
         if (!element) {
           var priceElement = priceContainer.querySelector(
             ".product-price.current"
@@ -1125,7 +1129,7 @@ theme.ProductForm = function (context, events, Product) {
         }
         element.innerHTML = `(${removeTrailingZeros(price_save)}% OFF)`;
       });
-      events.on("variantunavailable", function (variant) {
+      events.on("variantunavailable", function (_variant) {
         if (!element) {
           var priceElement = priceContainer.querySelector(
             ".product-price.current"
@@ -1152,7 +1156,7 @@ theme.ProductForm = function (context, events, Product) {
       var variant_sku = variant.sku;
       element.innerHTML = variant_sku;
     });
-    events.on("variantunavailable", function (variant) {
+    events.on("variantunavailable", function (_variant) {
       var variant_sku = config.unavailable;
       element.innerHTML = variant_sku;
     });
@@ -1343,7 +1347,7 @@ theme.ProductForm = function (context, events, Product) {
   })();
 };
 
-theme.StaticGallery = function (context, events, Product) {
+theme.StaticGallery = function (context, events, _Product) {
   events.trigger = events.emit;
   var $context = $(context);
 
@@ -1397,7 +1401,7 @@ theme.StaticGallery = function (context, events, Product) {
       animationDuration: 500,
       animationEffect: "fade",
       buttons: ["close"],
-      caption: function (instance, item) {
+      caption: function (_instance, _item) {
         // Get the alt text of the current image
         var altText = $(this).find("img").attr("alt");
         return altText || ""; // Return the alt text as caption
@@ -1574,7 +1578,7 @@ theme.StaticGallery = function (context, events, Product) {
 
     $(".product-image-container").on(
       "swipe",
-      function (event, slick, direction) {
+      function (_event, _slick, _direction) {
         var id = $(".slick-current .product-main-image").data("image-id");
         var thumSlide = $(
           "#thumbnail-gallery .slick-slide:not(.slick-cloned) [data-image-id=" +
@@ -1971,7 +1975,7 @@ theme.Product = (function () {
 })();
 
 if (theme.settings.showMultipleCurrencies) {
-  Events.on("quickview:load", function (container) {
+  Events.on("quickview:load", function (_container) {
     Currency.convertAll(defaultCurrency, Currency.currentCurrency);
   });
 }
@@ -1980,7 +1984,7 @@ if (theme.settings.showMultipleCurrencies) {
 Header
 ==============================================================================*/
 theme.Header = (function () {
-  function Header(container) {
+  function Header(_container) {
     (function searchPopup() {
       $("a#search_trigger").click(function (event) {
         event.stopPropagation();
@@ -2000,7 +2004,7 @@ theme.Header = (function () {
 
     (function menuEdge() {
       /* Ensure that sub nav menus open to the left if any chance of offscreen overflow */
-      $("ul.submenu li").on("mouseenter mouseleave", function (e) {
+      $("ul.submenu li").on("mouseenter mouseleave", function (_e) {
         if ($("ul", this).length) {
           var elm = $("ul:first", this);
           var off = elm.offset();
@@ -2036,7 +2040,7 @@ theme.Header = (function () {
     })();
 
     $(".has_sub_menu").hover(function () {
-      $(this).attr("aria-expanded", function (index, attr) {
+      $(this).attr("aria-expanded", function (_index, attr) {
         return attr == "false" ? true : "false";
       });
     });
@@ -2103,7 +2107,7 @@ theme.FeaturedCollection = (function () {
     }
     initCarousel();
 
-    $(document).on("shopify:section:load", function (event) {
+    $(document).on("shopify:section:load", function (_event) {
       initCarousel();
     });
 
@@ -2162,7 +2166,7 @@ theme.Slideshow.prototype = _.assignIn({}, theme.Slideshow.prototype, {
 New Slideshow Section
 ==============================================================================*/
 theme.newSlideshow = (function () {
-  function Slideshow(container) {
+  function Slideshow(_container) {
     var slideWrapper = $(".main-slider"),
       iframes = slideWrapper.find(".embed-player"),
       lazyImages = slideWrapper.find(".slide-image"),
@@ -2295,17 +2299,17 @@ theme.newSlideshow = (function () {
         }, 1000);
         resizePlayer(iframes, 16 / 9);
       });
-      slideWrapper.on("beforeChange", function (event, slick) {
+      slideWrapper.on("beforeChange", function (_event, slick) {
         slick = $(slick.$slider);
         playPauseVideo(slick, "pause");
       });
-      slideWrapper.on("afterChange", function (event, slick) {
+      slideWrapper.on("afterChange", function (_event, slick) {
         slick = $(slick.$slider);
         playPauseVideo(slick, "play");
       });
       slideWrapper.on(
         "lazyLoaded",
-        function (event, slick, image, imageSource) {
+        function (_event, _slick, _image, _imageSource) {
           lazyCounter++;
           if (lazyCounter === lazyImages.length) {
             lazyImages.addClass("show");
@@ -2631,14 +2635,14 @@ theme.Parallax = (function () {
 Info slider
 ==============================================================================*/
 theme.InfoSlider = (function () {
-  function InfoSlider(container) {
+  function InfoSlider(_container) {
     var speed = $(".info-bar-content").data("speed"),
       arrows = $(".info-bar-content").data("arrows"),
       autoplay = $(".info-bar-content").data("autoplay"),
       slidesshown = $(".info-bar-content").data("shown");
 
     var $textSlide = $(".info-bar-content");
-    var initInfoSlider = function (Slideshow) {
+    var initInfoSlider = function (_Slideshow) {
       $textSlide.not(".slick-initialized").slick({
         mobileFirst: true,
         slidesToShow: 1,
@@ -2670,14 +2674,14 @@ theme.InfoSlider = (function () {
     var trackHeight = $(".info-bar-content .slick-track").height();
     $(".info-bar-content .slick-slide").css("height", trackHeight + "px");
 
-    $(document).on("shopify:section:unload", function (event) {
+    $(document).on("shopify:section:unload", function (_event) {
       if ($textSlide.hasClass("slick-initialized")) {
         $textSlide.slick("unslick");
         $(document).off(".info-bar-content");
       }
     });
 
-    $(document).on("shopify:section:load", function (event) {
+    $(document).on("shopify:section:load", function (_event) {
       initInfoSlider($(".info-bar-content"));
     });
   }
@@ -2690,7 +2694,7 @@ theme.InfoSlider = (function () {
 Accordion toggle on mobile navigation
 ==============================================================================*/
 theme.mobileNav = (function () {
-  function mobileNav(container) {
+  function mobileNav(_container) {
     $.shifter({
       maxWidth: Infinity,
     });
@@ -2703,7 +2707,7 @@ theme.mobileNav = (function () {
 
         $(this).addClass("open");
 
-        $(this).attr("aria-expanded", function (index, attr) {
+        $(this).attr("aria-expanded", function (_index, attr) {
           return attr == "false" ? true : "false";
         });
 
@@ -2719,7 +2723,7 @@ theme.mobileNav = (function () {
         $(this)
           .closest(".menu__child--leayer")
           .prev()
-          .attr("aria-expanded", function (index, attr) {
+          .attr("aria-expanded", function (_index, attr) {
             return attr == "false" ? true : "false";
           });
       });
@@ -2730,7 +2734,7 @@ theme.mobileNav = (function () {
         //Expand or collapse this panel
         $(this).toggleClass("open");
         $(this).next().slideToggle("fast");
-        $(this).attr("aria-expanded", function (index, attr) {
+        $(this).attr("aria-expanded", function (_index, attr) {
           return attr == "false" ? true : "false";
         });
         //Hide the other panels
@@ -2747,7 +2751,7 @@ theme.mobileNav.prototype = _.assignIn({}, theme.mobileNav.prototype, {
       $.shifter("open");
     }
   },
-  onDeselect: function (event) {
+  onDeselect: function (_event) {
     $.shifter("close");
   },
 });
@@ -2825,28 +2829,66 @@ theme.Collection = (function () {
     })();
 
     (function infiniteScroll() {
+      let nextURL;
       function updateNextURL(doc) {
-        nextURL = $(doc).find(".paginate_next").attr("href");
+          nextURL = $(doc).find(".paginate_next").attr("href") || nextURL;
       }
-      // get initial nextURL
-      updateNextURL(document);
-      var $container = $(".is_infinite").infiniteScroll({
-        path: function () {
-          return nextURL;
-        },
-        // options
-        checkLastPage: ".paginate_next",
-        append: ".is_infinite .product-index",
-        hideNav: "#pagination",
-        history: false,
-        status: ".page-load-status",
+  
+      
+  
+      function reinitializeInfiniteScroll() {
+          const $container = $(".is_infinite");
+  
+          if ($container.data("infiniteScroll")) {
+              $container.infiniteScroll("destroy");
+          }
+  
+          updateNextURL(document);
+  
+          $container.infiniteScroll({
+            path: () => nextURL,
+            checkLastPage: ".paginate_next",
+            append: ".is_infinite .product-index",
+            hideNav: "#pagination",
+            history: false,
+            status: ".page-load-status",
+          });
+  
+          $container.on("load.infiniteScroll", (_event, _body) => {
+            updateNextURL(_body);
+          });
+  
+          $container.on("append.infiniteScroll", (_event, _body, _path, _items) => {
+            publish(PUB_SUB_EVENTS.infiniteScrollHappen, {});
+            if (_items.length ) {
+              publish(PUB_SUB_EVENTS.collectionProductChange, {data: _items});
+            }
+          });
+      }
+  
+      reinitializeInfiniteScroll();
+  
+      const unsubscribeCollectionPaginationChange = subscribe(
+          PUB_SUB_EVENTS.collectionPaginationChange,
+          debounce(() => {
+            reinitializeInfiniteScroll();
+          }, 300)
+      );
+  
+      window.addEventListener("beforeunload", () => {
+        unsubscribeCollectionPaginationChange();
       });
-
-      // update nextURL on page load
-      $container.on("load.infiniteScroll", function (event, response) {
-        updateNextURL(response);
-      });
-    })();
+  
+      function debounce(fn, wait) {
+          let timeout;
+          return (...args) => {
+              clearTimeout(timeout);
+              timeout = setTimeout(() => fn.apply(this, args), wait);
+          };
+      }
+  })();
+  
+    
   }
   Collection.prototype = _.assignIn({}, Collection.prototype, {});
 
@@ -2911,7 +2953,7 @@ function debounce(fn, wait, immediate) {
 
 //Read more
 $(document).ready(function () {
-  $(".read_more_btn a").on("click", function (e) {
+  $(".read_more_btn a").on("click", function (_e) {
     var btn = $(this).parent();
     var product_excerpt = $(".product_excerpt_less_part");
     btn.toggleClass("expanded");
@@ -2954,7 +2996,7 @@ $(document).ready(function () {
   }
   //makeResponcive();
   var width = $(window).width();
-  $(window).on("resize", function (e) {
+  $(window).on("resize", function (_e) {
     if ($(window).width() === width) return;
     width = $(window).width();
     //makeResponcive();
@@ -3414,7 +3456,7 @@ KlaviyoSubscribe.attachToForms("#newsletter_popup", {
     $method_type: "7th Avenue form",
     source: "Popup newsletter",
   },
-  success: function ($form) {
+  success: function (_$form) {
     $(".form_data").hide();
   },
 });
@@ -3428,7 +3470,7 @@ KlaviyoSubscribe.attachToForms("#newsletter_popup_footer", {
     $method_type: "7th Avenue newsletter form",
     source: "Footer newsletter",
   },
-  success: function ($form) {
+  success: function (_$form) {
     $(".footer_form_data").hide();
   },
 });
@@ -3483,278 +3525,233 @@ document.addEventListener("themeJSFastLoaded", function () {
 
 (function () {
   function collectionColorSwatch() {
-    var container = document.querySelectorAll(".product-index");
-    container.forEach(function (el) {
-      var variants = [...el.querySelectorAll(".color__swatch li")];
-      var images = el.querySelectorAll(".reveal .variant__image");
-      let colorOption = `option${el.querySelector(".color__swatch li").dataset.position
-        }`;
-      var activeImageData = el.querySelector(".reveal .variant__image.open")
-        .dataset.option1;
-      let activeSwatchItem = el.querySelector(
-        `.color__swatch li[data-option-name="${activeImageData}"]`
-      );
-      var links = el.querySelectorAll("a");
-      var price = el.querySelector(".price__container .variant__price");
-      var monthlyPriceContainer = el.querySelector(
-        ".price__container .monthly__price"
-      );
-      var activeVariant = el.querySelector(".color__swatch li.open");
-      var swatchSlider = el.querySelector(".color__swatch--container ul");
+    document.querySelectorAll(".product-index").forEach((el) => {
+      const swatchItems = Array.from(el.querySelectorAll(".color__swatch li"));
+      const firstImage = el.querySelector(".reveal .variant__image.open");
+      const swatchSlider = el.querySelector(".color__swatch--container ul");
+      const priceContainer = el.querySelector(".price__container");
 
-      const fristImage = el.querySelector(".reveal .variant__image.open");
+      if (!swatchItems.length || !firstImage) return;
+
+      let activeVariant = el.querySelector(".color__swatch li.open");
+
       const defaultOptions = {
-        option1: fristImage.dataset.option1
-          ? `${fristImage.dataset.option1}`
-          : "",
-        option2: fristImage.dataset.option2
-          ? `${fristImage.dataset.option2}`
-          : "",
-        option3: fristImage.dataset.option3
-          ? `${fristImage.dataset.option3}`
-          : "",
+        option1: firstImage.dataset.option1 || "",
+        option2: firstImage.dataset.option2 || "",
+        option3: firstImage.dataset.option3 || "",
       };
 
-      $(document).ready(function () {
-        let availableWidth = swatchSlider.offsetWidth;
-        let contentWidth =
-          variants.length * variants[0].offsetWidth + variants.length * 6;
-        function getIndexOfElementWithClass(element) {
-          const elements = el.querySelectorAll(".color__swatch li");
-          for (let i = 0; i < elements.length; i++) {
-            if (elements[i] === element) {
-              return i;
-            }
+      function setupSwatchSlider() {
+        if (!swatchSlider || !window.jQuery) return;
+
+        const availableWidth = swatchSlider.offsetWidth;
+        const contentWidth =
+          swatchItems.length * (swatchItems[0]?.offsetWidth || 0) +
+          swatchItems.length * 6;
+
+        if (contentWidth > availableWidth) {
+          if (!$(swatchSlider).hasClass("slick-initialized")) {
+            $(swatchSlider).slick({
+              infinite: true,
+              arrows: false,
+              dots: false,
+              slidesToShow: 6,
+              slidesToScroll: 1,
+              initialSlide: 0,
+              focusOnSelect: true,
+              mobileFirst: true,
+              variableWidth: true,
+            });
           }
-          return -1; // If the element is not found
-        }
-
-        let initialSlideIndex = 0;
-
-        function getCookie(name) {
-          const value = `; ${document.cookie}`;
-          const parts = value.split(`; ${name}=`);
-          if (parts.length === 2) return parts.pop().split(";").shift();
-        }
-
-        function processString(str) {
-          if (!str) return "";
-          const regex = /^(\d+_)(.*)/;
-          const match = str.match(regex);
-          if (match) {
-            return match[2];
-          } else {
-            return str;
-          }
-        }
-
-        const storedColors = getCookie("selected_color")
-          ? JSON.parse(getCookie("selected_color"))
-          : [];
-        if (storedColors.length > 0) {
-          // Call the reorderSlides function before initializing the slick slider
-          initialSlideIndex = getIndexOfElementWithClass(activeVariant);
-        }
-
-        function enableSwatchSlider() {
-          $(swatchSlider).not(".slick-initialized").slick({
-            infinite: true,
-            arrows: false,
-            dots: false,
-            slidesToShow: 6,
-            slidesToScroll: 1,
-            initialSlide: initialSlideIndex,
-            focusOnSelect: true,
-            mobileFirst: true,
-            variableWidth: true,
-          });
-        }
-
-        function disableSwatchSlider() {
+        } else {
           if ($(swatchSlider).hasClass("slick-initialized")) {
             $(swatchSlider).slick("unslick");
           }
         }
-
-        if (contentWidth < availableWidth) {
-          disableSwatchSlider();
-        } else {
-          enableSwatchSlider();
-        }
-
-        window.addEventListener("resize", () => {
-          availableWidth = swatchSlider.offsetWidth;
-          contentWidth =
-            variants.length * variants[0].offsetWidth + variants.length * 6;
-          if (contentWidth < availableWidth) {
-            disableSwatchSlider();
-          } else {
-            enableSwatchSlider();
-          }
-        });
-      });
-
-      function updateVariantOption(currentOption) {
-        var activeImage = el.querySelector(".variant__image.open");
-        var option1 = activeImage.dataset.option1;
-        var option2 = activeImage.dataset.option2;
-        var option3 = activeImage.dataset.option3;
-        if (currentOption) {
-          var position = parseInt(currentOption.dataset.position);
-          var _activeVariant;
-
-          if (position == 1) {
-            _activeVariant = el.querySelector(
-              `.variant__image[data-option1="${currentOption.dataset.optionName}"][data-option2="${defaultOptions.option2}"][data-option3="${defaultOptions.option3}"]`
-            );
-            if (_activeVariant === null) {
-              _activeVariant = el.querySelector(
-                `.variant__image[data-option1="${currentOption.dataset.optionName}"][data-option2="${defaultOptions.option2}"]`
-              );
-            }
-            if (_activeVariant === null) {
-              _activeVariant = el.querySelector(
-                `.variant__image[data-option1="${currentOption.dataset.optionName}"][data-option3="${defaultOptions.option3}"]`
-              );
-            }
-
-            if (_activeVariant === null) {
-              _activeVariant = el.querySelector(
-                `.variant__image[data-option1="${currentOption.dataset.optionName}"]`
-              );
-            }
-          }
-
-          if (position == 2) {
-            _activeVariant = el.querySelector(
-              `.variant__image[data-option2="${currentOption.dataset.optionName}"][data-option1="${defaultOptions.option2}"][data-option3="${defaultOptions.option3}"]`
-            );
-            if (_activeVariant === null) {
-              _activeVariant = el.querySelector(
-                `.variant__image[data-option2="${currentOption.dataset.optionName}"][data-option1="${defaultOptions.option2}"]`
-              );
-            }
-            if (_activeVariant === null) {
-              _activeVariant = el.querySelector(
-                `.variant__image[data-option2="${currentOption.dataset.optionName}"][data-option3="${defaultOptions.option3}"]`
-              );
-            }
-
-            if (_activeVariant === null) {
-              _activeVariant = el.querySelector(
-                `.variant__image[data-option2="${currentOption.dataset.optionName}"]`
-              );
-            }
-          }
-
-          if (position == 3) {
-            _activeVariant = el.querySelector(
-              `.variant__image[data-option3="${currentOption.dataset.optionName}"][data-option1="${defaultOptions.option2}"][data-option1="${defaultOptions.option3}"]`
-            );
-            if (_activeVariant === null) {
-              _activeVariant = el.querySelector(
-                `.variant__image[data-option3="${currentOption.dataset.optionName}"][data-option1="${defaultOptions.option2}"]`
-              );
-            }
-            if (_activeVariant === null) {
-              _activeVariant = el.querySelector(
-                `.variant__image[data-option3="${currentOption.dataset.optionName}"][data-option2="${defaultOptions.option3}"]`
-              );
-            }
-
-            if (_activeVariant === null) {
-              _activeVariant = el.querySelector(
-                `.variant__image[data-option3="${currentOption.dataset.optionName}"]`
-              );
-            }
-          }
-
-          if (activeImage !== _activeVariant) {
-            if (!_activeVariant.classList.contains("open")) {
-              _activeVariant.classList.add("open");
-            }
-            if (_activeVariant.classList.contains("open"))
-              activeImage.classList.remove("open");
-          }
-
-          var variantId, variantUrl, variantPrice, monthlyPrice;
-          variantId = _activeVariant.dataset.variantId;
-          variantUrl = _activeVariant.dataset.variantUrl;
-          variantPrice = _activeVariant.dataset.variantPrice;
-          monthlyPrice = _activeVariant.dataset.monthlyPrice;
-          var searchString = variantUrl.split("?")[1];
-          const searchParams = new URLSearchParams(searchString);
-          searchParams.set("variant", variantId);
-          var newUrl = variantUrl.split("?")[0] + "?" + searchParams.toString();
-          links.forEach(function (link) {
-            link.href = newUrl;
-          });
-          if (variantPrice != null && price != null) {
-            price.innerText = variantPrice;
-          }
-          if (monthlyPrice != null && monthlyPriceContainer != null) {
-            monthlyPriceContainer.innerText = monthlyPrice;
-          }
-
-          if (activeVariant && activeVariant.classList.contains("open")) {
-            activeVariant.classList.remove("open");
-          }
-          currentOption.classList.add("open");
-          activeVariant = currentOption;
-        }
       }
-      updateVariantOption(activeVariant);
-      variants.forEach(function (variant, variantIndex) {
-        variant.addEventListener("click", function (e) {
-          updateVariantOption(e.currentTarget);
-          let currentImage = el.querySelector(
-            `.variant__image[data-${colorOption}="${e.currentTarget.dataset.optionName}"]`
-          );
-          let price = currentImage.dataset.variantPrice;
-          let CompairPrice = currentImage.dataset.variantComparePrice;
-          let priceOff = currentImage.dataset.priceOff;
-          let priceContainer = el.querySelector(".price__container");
-          if (e.currentTarget.classList.contains("deselect")) {
-            if (currentImage) {
-              let currentVariantImgae = currentImage.querySelector(
-                ".variant-featured-image"
-              );
-              if (
-                currentVariantImgae &&
-                currentVariantImgae.classList.contains("hidden")
-              )
-                currentVariantImgae.classList.remove("hidden");
-            }
-            e.currentTarget.classList.remove("deselect");
+
+      function findMatchingVariant(position, value) {
+        const selector = {
+          1: `[data-option1="${value}"]`,
+          2: `[data-option2="${value}"]`,
+          3: `[data-option3="${value}"]`,
+        }[position];
+
+        return (
+          el.querySelector(
+            `.variant__image${selector}[data-option2="${defaultOptions.option2}"][data-option3="${defaultOptions.option3}"]`
+          ) ||
+          el.querySelector(
+            `.variant__image${selector}[data-option2="${defaultOptions.option2}"]`
+          ) ||
+          el.querySelector(
+            `.variant__image${selector}[data-option3="${defaultOptions.option3}"]`
+          ) ||
+          el.querySelector(`.variant__image${selector}`)
+        );
+      }
+
+      function updateVariantOption(selectedOption, hasSelectedVariant) {
+        
+        if (!selectedOption) return;
+        const position = parseInt(selectedOption.dataset.position, 10);
+        const selectedValue = selectedOption.dataset.optionName;
+        const activeImage = el.querySelector(".variant__image.open");
+        const newVariant = findMatchingVariant(position, selectedValue);
+
+        activeImage?.classList.remove("open");
+        newVariant.classList.add("open");
+
+        if(hasSelectedVariant) {
+          const variantImage = newVariant.querySelector('.variant-featured-image');
+          const productImage = newVariant.querySelector('.product-featured-image');
+
+          if(variantImage && variantImage.classList.contains('hidden')) {
+            variantImage.classList.remove('hidden')
           }
-          if (price && CompairPrice && priceOff && priceContainer) {
-            priceContainer.innerHTML = `
-                        <div class="collection__price"> 
-                           <span class="product-price was"> 
-                           <span class="collection_money">${CompairPrice}</span>
-                           </span>
-                           <span class="product-price current sale" itemprop="price"> 
-                           <span class="collection_money">${price}</span>
-                           </span>
-                           <span class="money_save money_save_pdp">${priceOff}</span>
-                        </div>
-                      `;
-          } else {
-            priceContainer.innerHTML = `
-                        <div class="collection__price">      
-                         <span class="product-price current" itemprop="price">
-                           <span class="collection_money">${price}</span>
-                         </span>
-                      </div>
-                      `;
+
+          if(variantImage && productImage) {
+            productImage.classList.add('hidden')
+          }
+        }
+
+        const { variantId, variantUrl, variantPrice } = newVariant.dataset;
+
+        el.querySelectorAll("a").forEach((link) => {
+          const url = new URL(variantUrl, window.location.origin);
+          url.searchParams.set("variant", variantId);
+          link.href = url.toString();
+        });
+
+        if (priceContainer) {
+          priceContainer.innerHTML = `
+            <div class="collection__price">
+              <span class="product-price current">
+                <span class="collection_money">${variantPrice}</span>
+              </span>
+            </div>
+          `;
+        }
+
+        el.querySelectorAll(`li.open[data-option-name="${activeVariant.dataset.optionName}"]`).forEach((v) => {
+          if (!v.isSameNode(selectedOption)) {
+            v.classList.remove("open");
           }
         });
+
+        
+
+
+        const duplicateSelectedOption = el.querySelectorAll(
+          `li[data-option-name="${selectedOption.dataset.optionName}"]`
+        );
+
+        if (duplicateSelectedOption.length > 1) {
+          duplicateSelectedOption.forEach((v) => {
+            if (hasSelectedVariant && v.classList.contains('deselect')) {
+              v.classList.remove('deselect')
+            }
+            let parentNode = v.closest(".slick-slide");
+            if (!parentNode.classList.contains("slick-cloned")) {
+              v.classList.add("open");
+              if(hasSelectedVariant) {
+                const index = parseInt(parentNode.dataset.slickIndex, 10);
+                if (!isNaN(index)) {
+                  $(swatchSlider).slick("slickGoTo", index);
+                }
+              } else {
+                $(swatchSlider).slick("slickGoTo", 0);
+              }
+              
+            }
+          });
+        } else {
+          selectedOption.classList.add("open");
+          if (hasSelectedVariant && selectedOption.classList.contains('deselect')) {
+            selectedOption.classList.remove('deselect')
+          }
+        }
+
+        activeVariant = selectedOption;
+      }
+
+      updateVariantOption(activeVariant, hasSelectedVariant = false);
+
+      el.addEventListener("click", (e) => {
+        const target = e.target.closest(".color__swatch li");
+        if (target) updateVariantOption(target, hasSelectedVariant = true);
       });
+
+      let resizeTimeout;
+      window.addEventListener("resize", () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(setupSwatchSlider, 200);
+      });
+
+      setupSwatchSlider();
     });
   }
+
   collectionColorSwatch();
   window.addEventListener("filterFormSubmit", collectionColorSwatch);
+
+  const unsubscribe = subscribe(PUB_SUB_EVENTS.infiniteScrollHappen, collectionColorSwatch);
+  window.addEventListener("beforeunload", () => unsubscribe());
 })();
+
+
+(function updateCollectionSwatch() {
+
+  const unsubscribe = subscribe(PUB_SUB_EVENTS.collectionProductChange,
+    debounce(({ data }) => { 
+      updateCurrentSwatch(data); 
+  }, 150)
+  );
+  
+  function updateCurrentSwatch(items) {
+    const storedColors = getCookie('selected_color') ? JSON.parse(getCookie('selected_color')) : [];
+    if (storedColors.length === 0) return;
+    const firstValue = processString(storedColors[0]);
+    items.forEach((item) => {
+        if (storedColors.length > 1) {
+          setColorOrder(item, storedColors);
+        }
+
+        const selectedSwatch = item.querySelector(`.color__swatch [data-option-name="${firstValue}"]`);
+        if (selectedSwatch && !selectedSwatch.classList.contains('open')) {
+          selectedSwatch.click();
+        }
+    });
+  }
+
+  function processString(str) {
+    if (!str) return "";
+    
+    const regex = /^\d+_(.*)/;
+    const match = str.match(regex);
+    let cleanStr = match ? match[1] : str;
+
+    cleanStr = cleanStr.replace(/\(([^)]+)\)/g, " $1");
+
+    return cleanStr.replace(/\s+/g, '-').toLowerCase();
+}
+
+
+function setColorOrder(element, storedColors) {
+    storedColors.forEach((optionName, i) => {
+      let nameValue = processString(optionName);
+      const swatches = element.querySelectorAll('li');
+      swatches.forEach((swatch) => {
+          if (swatch.dataset.optionName.includes(nameValue)) {
+            swatch.style.setProperty('--order', i + 1);
+          }
+      });
+    });
+}
+
+  window.addEventListener("beforeunload", () => unsubscribe());
+})();
+
 
 (function () {
   window.addEventListener("DOMContentLoaded", function () {
@@ -4486,7 +4483,7 @@ allShowRoom.forEach(function (showroom) {
   );
 
   const distData = function () {
-    return new Promise(async (res, rej) => {
+    return new Promise(async (res, _rej) => {
       if (allShowroom.length <= 0) return;
       let i = 0;
       const distances = [];
@@ -4556,7 +4553,7 @@ allShowRoom.forEach(function (showroom) {
           setCookie("geo", geoArr);
           res(dist);
         })
-        .catch((e) => {
+        .catch((_e) => {
           res({});
         });
     });
@@ -4931,7 +4928,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ".price__container .monthly__price"
       );
 
-      variants.forEach(function (variant, variantIndex) {
+      variants.forEach(function (variant, _variantIndex) {
         variant.addEventListener("click", function (e) {
           var activeImage = el.querySelector(".variant__image.open");
 
@@ -5349,7 +5346,7 @@ class productInfoSlider extends HTMLElement {
     ).querySelector(".product-info-content").dataset.id;
     this.updateCurrentTitle(activeTitle);
 
-    $(content).on("afterChange", function (event, slick, current) {
+    $(content).on("afterChange", function (_event, slick, current) {
       let id = slick.$slides[current].querySelector(".product-info-content")
         .dataset.id;
       let activeTitle = self_this.querySelector(`.product-info-titles #${id}`);
@@ -5513,7 +5510,7 @@ customElements.define("product-info-slider", productInfoSlider);
       isFrozen = true;
     };
 
-    const unfreezeScrolling = (element, rect) => {
+    const unfreezeScrolling = (element, _rect) => {
       element.style.cssText = `margin-top: ${window.scrollY}px!important`;
       isFrozen = false;
     };
@@ -5620,7 +5617,7 @@ customElements.define("product-info-slider", productInfoSlider);
       let mutationTimeout;
       let isProcessing = false;
 
-      const mutationCallback = (mutationsList, observer) => {
+      const mutationCallback = (_mutationsList, observer) => {
         if (isProcessing) {
           clearTimeout(mutationTimeout);
         }
@@ -6042,7 +6039,7 @@ $(document).ready(function () {
     Events.trigger("editor:block:deselect", event);
   });
 
-  document.addEventListener("lazyloaded", function (e) {
+  document.addEventListener("lazyloaded", function (_e) {
     Events.trigger("lazyLoad:complete");
   });
 });

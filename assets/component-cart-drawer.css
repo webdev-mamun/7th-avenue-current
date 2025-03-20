@@ -1,3 +1,11 @@
+.list-unstyled {
+  list-style: none;
+}
+.discounts__discount {
+  display: flex;
+  align-items: center;
+}
+
 .drawer {
   transform: translateZ(0);
   will-change: transform;
@@ -614,8 +622,6 @@ cart-remove-button .button {
   align-items: center;
   gap: 5px;
 }
-
-
 
 .discounts__discount .discount-icon {
   fill: none;

@@ -14,13 +14,6 @@ function setCookie(name, value, days) {
 function clearCookie(name) {
   document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
 }
-function debounce(fn, wait) {
-  let t;
-  return (...args) => {
-    clearTimeout(t);
-    t = setTimeout(() => fn.apply(this, args), wait);
-  };
-}
 
 class FacetFiltersForm extends HTMLElement {
   constructor() {
@@ -48,9 +41,7 @@ class FacetFiltersForm extends HTMLElement {
     document.querySelector('.mobile-filter-header button').addEventListener('click', FacetFiltersForm.closeFilterDrawer);
 
     const storedColors = getCookie('selected_color') ? JSON.parse(getCookie('selected_color')) : [];
-    // if(storedColors.length === 0){
-    //   console.log('need to check really 0 or not set yet');
-    // }
+    
     const firstValue = FacetFiltersForm.processString(storedColors[0]).replace(' ', '-').toLowerCase();
     if(storedColors.length > 1){
       const swatchesEl = document.querySelectorAll('.color__swatch')
@@ -59,6 +50,7 @@ class FacetFiltersForm extends HTMLElement {
         const swatch = el.querySelector(`[data-option-name*="${firstValue}"]`);
         if(swatch) swatch.click();
       });
+
       FacetFiltersForm.setColorOrder(swatchesEl);
     }
   }
@@ -85,14 +77,14 @@ class FacetFiltersForm extends HTMLElement {
       FacetFiltersForm.closeFilterItem(event);
     };
 
-    elm._handleClick = handleClick;  // Store the handler function on the element
+    elm._handleClick = handleClick;
     elm.addEventListener('click', handleClick);
   }
 
   static removeButtonClickListener(elm) {
     if (elm._handleClick) {
       elm.removeEventListener('click', elm._handleClick);
-      delete elm._handleClick;  // Clean up the reference
+      delete elm._handleClick; 
     }
   }
 
@@ -108,7 +100,6 @@ class FacetFiltersForm extends HTMLElement {
 
   static toggleFilterItem(element) {
     element.classList.toggle('open');
-    //FacetFiltersForm.showLoader();
   }
 
   static closeFilterItem(event) {
@@ -201,14 +192,11 @@ class FacetFiltersForm extends HTMLElement {
     const formData = new FormData(form);
     const params = new URLSearchParams();
 
-    // Use a Map to keep track of unique parameters by their key
     const uniqueParams = new Map();
 
-    // Iterate over the form data entries
     for (const [key, value] of formData.entries()) {
         const paramKey = `${key}=${value}`;
 
-        // Add the parameter to the Map if it's not already present
         if (!uniqueParams.has(paramKey)) {
             uniqueParams.set(paramKey, value);
             params.append(key, value);
@@ -218,19 +206,20 @@ class FacetFiltersForm extends HTMLElement {
     return params.toString();
 }
 
-  static renderPage(searchParams, event, updateURLHash = true) {
+static renderPage(searchParams, event, updateURLHash = true) {
+  document.querySelectorAll('.active-filter-item').forEach(FacetFiltersForm.removeButtonClickListener);
+  
+  FacetFiltersForm.searchParamsPrev = searchParams;
+  const sections = FacetFiltersForm.getSections();
+  sections.forEach((section) => {
+    const url = `${window.location.pathname}?section_id=${section.section}&${searchParams}`;
+    const filterDataUrl = (element) => element.url === url;
+    FacetFiltersForm.filterData.some(filterDataUrl) ? FacetFiltersForm.renderSectionFromCache(filterDataUrl, event) : FacetFiltersForm.renderSectionFromFetch(url, event);
+  });
 
-    document.querySelectorAll('.active-filter-item').forEach(FacetFiltersForm.removeButtonClickListener);
-    
-    FacetFiltersForm.searchParamsPrev = searchParams;
-    const sections = FacetFiltersForm.getSections();
-    sections.forEach((section) => {
-      const url = `${window.location.pathname}?section_id=${section.section}&${searchParams}`;
-      const filterDataUrl = (element) => element.url === url;
-      FacetFiltersForm.filterData.some(filterDataUrl) ? FacetFiltersForm.renderSectionFromCache(filterDataUrl, event) : FacetFiltersForm.renderSectionFromFetch(url, event);
-    });
-    if (updateURLHash) FacetFiltersForm.updateURLHash(searchParams);
-  }
+  if (updateURLHash) FacetFiltersForm.updateURLHash(searchParams);
+}
+
 
   static showLoader() {
     document.querySelector('.product-loop-loader').classList.add('show');
@@ -241,6 +230,7 @@ class FacetFiltersForm extends HTMLElement {
   }
   
   static renderSectionFromFetch(url, event) {
+    
     fetch(url)
       .then((response) => response.text())
       .then((responseText) => {
@@ -249,20 +239,22 @@ class FacetFiltersForm extends HTMLElement {
         FacetFiltersForm.renderFilters(html, event);
         FacetFiltersForm.renderProductGridContainer(html);
         FacetFiltersForm.renderHerder(html);
+        FacetFiltersForm.renderPagination(html);
         const filterFormSubmit = new Event("filterFormSubmit");
         window.dispatchEvent(filterFormSubmit);
       });
   }
 
   static processString(str) {
-    if(!str) return ""
-    const regex = /^(\d+_)(.*)/;
+    if (!str) return "";
+    
+    const regex = /^\d+_(.*)/;
     const match = str.match(regex);
-    if (match) {
-      return match[2];
-    } else {
-      return str;
-    }
+    let cleanStr = match ? match[1] : str;
+
+    cleanStr = cleanStr.replace(/\(([^)]+)\)/g, " $1");
+
+    return cleanStr.replace(/\s+/g, '-').toLowerCase();
   }
 
   static renderSectionFromCache(filterDataUrl, event) {
@@ -270,6 +262,7 @@ class FacetFiltersForm extends HTMLElement {
     FacetFiltersForm.renderFilters(html, event);
     FacetFiltersForm.renderProductGridContainer(html);
     FacetFiltersForm.renderHerder(html);
+    FacetFiltersForm.renderPagination(html);
     const filterFormSubmit = new Event("filterFormSubmit");
     window.dispatchEvent(filterFormSubmit);
   }
@@ -278,7 +271,7 @@ class FacetFiltersForm extends HTMLElement {
     const doc = new DOMParser().parseFromString(html, 'text/html')
     
     const storedColors = getCookie('selected_color') ? JSON.parse(getCookie('selected_color')) : [];
-    const firstValue = FacetFiltersForm.processString(storedColors[0]).replace(' ', '-').toLowerCase();
+    const firstValue = FacetFiltersForm.processString(storedColors[0]);
 
     if(storedColors.length > 1){
       const currentlySelectedSwatchs = doc.querySelectorAll('.color__swatch li.open')
@@ -307,7 +300,7 @@ class FacetFiltersForm extends HTMLElement {
     const storedColors = getCookie('selected_color') ? JSON.parse(getCookie('selected_color')) : [];
     if(storedColors.length > 1) {
       storedColors.forEach((optionName, i) => {
-        let nameValue = FacetFiltersForm.processString(optionName).replace(' ', '-').toLowerCase()
+        let nameValue = FacetFiltersForm.processString(optionName);
         swatchesEl.forEach(el => {
           const swatches = el.querySelectorAll('li')
           swatches.forEach((_) => {
@@ -392,6 +385,12 @@ class FacetFiltersForm extends HTMLElement {
   static renderHerder(html) {
     const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
     document.querySelector('#collection-header').innerHTML = parsedHTML.querySelector('#collection-header').innerHTML;
+  }
+
+  static renderPagination(html) {
+    const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
+    document.querySelector('#pagination').innerHTML = parsedHTML.querySelector('#pagination').innerHTML;
+    publish(PUB_SUB_EVENTS.collectionPaginationChange, {});
   }
 }
   
