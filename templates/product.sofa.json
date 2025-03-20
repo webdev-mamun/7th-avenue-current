@@ -209,7 +209,7 @@
         "subtitle_mob": "",
         "get_data_from_metaobject": true,
         "box_per_row": 3,
-        "active_geo": false,
+        "active_geo": true,
         "border_top": false,
         "border_bot": false,
         "color": "#000000",
