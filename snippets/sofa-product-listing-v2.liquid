@@ -66,9 +66,6 @@
                assign variant_price_off = false
                if variant.compare_at_price > variant.price and variant.available
                  assign variant_compare_price = true
-               endif
-
-               if variant.compare_at_price > variant.price and variant.available
                  assign variant_price_off = true
                endif
              %}
