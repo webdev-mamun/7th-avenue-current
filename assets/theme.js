@@ -3615,7 +3615,7 @@ document.addEventListener("themeJSFastLoaded", function () {
           }
         }
 
-        const { variantId, variantUrl, variantPrice } = newVariant.dataset;
+        const { variantId, variantUrl, variantPrice, variantComparePrice, priceOff } = newVariant.dataset;
 
         el.querySelectorAll("a").forEach((link) => {
           const url = new URL(variantUrl, window.location.origin);
@@ -3626,9 +3626,15 @@ document.addEventListener("themeJSFastLoaded", function () {
         if (priceContainer) {
           priceContainer.innerHTML = `
             <div class="collection__price">
-              <span class="product-price current">
+              ${variantComparePrice ? `
+                <span class="product-price was">
+                  <span class="collection_money">${variantComparePrice}</span>
+                </span>
+              ` : ''}
+              <span class="product-price current${variantComparePrice ? ` sale` : ``}" itemprop="price">
                 <span class="collection_money">${variantPrice}</span>
               </span>
+              ${priceOff ? `<span class="money_save money_save_pdp">${priceOff}</span>` : ''}
             </div>
           `;
         }

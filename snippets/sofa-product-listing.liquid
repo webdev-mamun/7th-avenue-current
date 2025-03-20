@@ -156,16 +156,17 @@
       <div class="reveal">
          {% if product.variants.size > 1 and product.variants[0].title != 'Default Title' %}
          {% for variant in product.variants %}
-           {% liquid
-             assign variant_compare_price = false
-             assign variant_price_off = false
-             if variant.compare_at_price > 0
-               assign variant_compare_price = true
-             endif
-             if variant.compare_at_price > variant.price and variant.available
-               assign variant_price_off = true
-             endif
-           %}
+          {% liquid
+            assign variant_compare_price = false
+            assign variant_price_off = false
+            if variant.compare_at_price > variant.price and variant.available
+              assign variant_compare_price = true
+            endif
+
+            if variant.compare_at_price > variant.price and variant.available
+              assign variant_price_off = true
+            endif
+          %}
            <div data-variant="{{ variant.id }}" class="variant__image {% if variant.id == first_variant.id %}open{% endif %}" 
              data-option1="{{ variant.option1 | handleize }}" 
              data-option2="{{ variant.option2 | handleize }}" 
