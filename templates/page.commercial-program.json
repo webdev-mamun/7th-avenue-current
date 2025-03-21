@@ -7,361 +7,360 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
-    "sections": {
-      "hero": {
-        "type": "slideshow",
-        "blocks": {
-          "c1066701-5779-4944-aeae-a5972d494459": {
-            "type": "image",
-            "settings": {
-              "image": "shopify://shop_images/Homepage_Hero_-_Desktop_b9466cb7-e4fe-40e4-b2db-4ad769181d3a.jpg",
-              "mobile_hero_image": "shopify://shop_images/Original_Homepage_Hero.png",
-              "slide_title": "The World’s <span class=\"typewrite\" data-period=\"1000\" data-type='[\"Greatest\", \"Deepest\"]'><span class=\"wrap\">Greatest</span></span><br>Modular Sofa.",
-              "slide_text": "Explore our collections of functional, beautiful modular sofas - all paired with our water-repellent, removable, & machine-washable covers.",
-              "showCaptionDesktop": false,
-              "btn_text": "SHOP MODULAR INDOOR",
-              "btn_url": "shopify://collections/best-sellers",
-              "alignment": "center",
-              "si_bg": "",
-              "s_title_color": "",
-              "s_text_color": "",
-              "sip_x": "center",
-              "sip_x_v": 31,
-              "sip_y": "top",
-              "sip_y_v": 8,
-              "sip_width": "max-content",
-              "sip_height": "max-content",
-              "si_padding": "",
-              "si_margin": "",
-              "si_text_margin": "",
-              "si_title_margin": ""
-            }
-          },
-          "image_9fYAHE": {
-            "type": "image",
-            "settings": {
-              "image": "shopify://shop_images/Homepage_Hero_-_Desktop_-_Extra-Deep.jpg",
-              "mobile_hero_image": "shopify://shop_images/1_1.jpg",
-              "slide_title": "Lounge Perfectly<br>\nin Extra-Deep.",
-              "slide_text": "The deepest modular sofa in the market. Perfect for people who really like to lounge - whether for movie nights, family hangouts, or being a couch potato.",
-              "showCaptionDesktop": false,
-              "btn_text": "SHOP EXTRA-DEEP",
-              "btn_url": "shopify://collections/best-sellers",
-              "alignment": "right",
-              "si_bg": "",
-              "s_title_color": "",
-              "s_text_color": "",
-              "sip_x": "right",
-              "sip_x_v": 6,
-              "sip_y": "bottom",
-              "sip_y_v": 10,
-              "sip_width": "max-content",
-              "sip_height": "max-content",
-              "si_padding": "",
-              "si_margin": "",
-              "si_text_margin": "",
-              "si_title_margin": ""
-            }
-          },
-          "image_FmAEJf": {
-            "type": "image",
-            "settings": {
-              "image": "shopify://shop_images/Homepage_Hero_-_Desktop_-_Olive_Josh_8204b84b-2dde-4fc6-bbd5-8970b59067ce.jpg",
-              "mobile_hero_image": "shopify://shop_images/1.jpg",
-              "slide_title": "Plush & Premium<br>\nPerformance Velvets.",
-              "slide_text": "Plush, luxury velvets in the richest and most vibrant colors. Designed to withstand life’s toughest demands, from your fur-babies to actual babies.",
-              "showCaptionDesktop": false,
-              "btn_text": "SHOP PREMIUM VELVETS",
-              "btn_url": "shopify://collections/best-sellers",
-              "alignment": "left",
-              "si_bg": "",
-              "s_title_color": "",
-              "s_text_color": "",
-              "sip_x": "left",
-              "sip_x_v": 6,
-              "sip_y": "bottom",
-              "sip_y_v": 24,
-              "sip_width": "max-content",
-              "sip_height": "max-content",
-              "si_padding": "",
-              "si_margin": "",
-              "si_text_margin": "",
-              "si_title_margin": ""
-            }
+{
+  "sections": {
+    "hero": {
+      "type": "slideshow",
+      "blocks": {
+        "c1066701-5779-4944-aeae-a5972d494459": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Homepage_Hero_-_Desktop_b9466cb7-e4fe-40e4-b2db-4ad769181d3a.jpg",
+            "mobile_hero_image": "shopify://shop_images/Original_Homepage_Hero.png",
+            "slide_title": "The World’s <span class=\"typewrite\" data-period=\"1000\" data-type='[\"Greatest\", \"Deepest\"]'><span class=\"wrap\">Greatest</span></span><br>Modular Sofa.",
+            "slide_text": "Explore our collections of functional, beautiful modular sofas - all paired with our water-repellent, removable, & machine-washable covers.",
+            "showCaptionDesktop": false,
+            "btn_text": "SHOP MODULAR INDOOR",
+            "btn_url": "shopify://collections/best-sellers",
+            "alignment": "center",
+            "si_bg": "",
+            "s_title_color": "",
+            "s_text_color": "",
+            "sip_x": "center",
+            "sip_x_v": 31,
+            "sip_y": "top",
+            "sip_y_v": 8,
+            "sip_width": "max-content",
+            "sip_height": "max-content",
+            "si_padding": "",
+            "si_margin": "",
+            "si_text_margin": "",
+            "si_title_margin": ""
           }
         },
-        "block_order": [
-          "c1066701-5779-4944-aeae-a5972d494459",
-          "image_9fYAHE",
-          "image_FmAEJf"
-        ],
-        "settings": {
-          "autoplaySpeed": "5000",
-          "review_text": "4.8/5.0",
-          "review_url": "",
-          "start_date": "",
-          "end_date": "",
-          "color": "#000000",
-          "background": "#fff"
-        }
-      },
-      "b078c71e-2483-4dd2-bf7f-870a8a815824": {
-        "type": "feature-in",
-        "blocks": {
-          "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-0": {
-            "type": "feature_in",
-            "settings": {
-              "text": "\"Stylish, modular, non-toxic, affordable, stain-resistant and machine-washable, the 7th Avenue sofa has it all.\"",
-              "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/forbes_7thavenue.svg?v=1672946484",
-              "url": "shopify://pages/reviews",
-              "new_window": true
-            }
-          },
-          "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-1": {
-            "type": "feature_in",
-            "settings": {
-              "text": "“I really love our 7th Avenue sofa, so much so that I would & have recommended it to others.”",
-              "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/living_cozy_7thavenue.svg?v=1672946485",
-              "url": "shopify://pages/reviews",
-              "new_window": true
-            }
-          },
-          "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-2": {
-            "type": "feature_in",
-            "settings": {
-              "text": "\"As a pet parent, never thought I'd be able to have a white sofa before 7th Avenue...the fabric is a game changer.\"",
-              "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/image_19.png?v=1714316814",
-              "url": "shopify://pages/reviews",
-              "new_window": true
-            }
+        "image_9fYAHE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Homepage_Hero_-_Desktop_-_Extra-Deep.jpg",
+            "mobile_hero_image": "shopify://shop_images/1_1.jpg",
+            "slide_title": "Lounge Perfectly<br>\nin Extra-Deep.",
+            "slide_text": "The deepest modular sofa in the market. Perfect for people who really like to lounge - whether for movie nights, family hangouts, or being a couch potato.",
+            "showCaptionDesktop": false,
+            "btn_text": "SHOP EXTRA-DEEP",
+            "btn_url": "shopify://collections/best-sellers",
+            "alignment": "right",
+            "si_bg": "",
+            "s_title_color": "",
+            "s_text_color": "",
+            "sip_x": "right",
+            "sip_x_v": 6,
+            "sip_y": "bottom",
+            "sip_y_v": 10,
+            "sip_width": "max-content",
+            "sip_height": "max-content",
+            "si_padding": "",
+            "si_margin": "",
+            "si_text_margin": "",
+            "si_title_margin": ""
           }
         },
-        "block_order": [
-          "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-0",
-          "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-1",
-          "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-2"
-        ],
-        "settings": {
-          "border_top": false,
-          "border_bottom": false,
-          "color": "#000000",
-          "bg_color": "#f3f3f3"
-        }
-      },
-      "bestSeller": {
-        "type": "sofa-page-feature-product",
-        "settings": {
-          "title": "Trade & Commercial Program",
-          "text": "Exclusive Discounts & Priority Access<br>\nfor The World’s Greatest Modular Sofa",
-          "collection": "best-sellers",
-          "product_limit": 10,
-          "selected_color": "",
-          "speed": "5000",
-          "btn_url": "shopify://pages/trade-program",
-          "btn_text": "APPLY NOW",
-          "info": "",
-          "paddingTop": 20,
-          "paddingBottom": 20,
-          "paddingTopMobile": 10,
-          "paddingBottomMobile": 10,
-          "background": "#fff"
-        }
-      },
-      "video": {
-        "type": "sofa-page-video",
-        "settings": {
-          "videoRatio": "4/3",
-          "image": "shopify://shop_images/Website_Photo_-_4_fbe34f52-b6e5-4cb7-840a-05cd7d046a39.jpg",
-          "fullImage": true,
-          "title": "Members-Only Benefits for\nValued Trade Partners",
-          "icon_svg_1": "",
-          "icon_1": "shopify://shop_images/dollar.svg",
-          "text_1": "Exclusive Discounts",
-          "icon_svg_2": "",
-          "icon_2": "shopify://shop_images/stopwatch.svg",
-          "text_2": "Early Access",
-          "icon_svg_3": "",
-          "icon_3": "shopify://shop_images/check.svg",
-          "text_3": "No Minimum Order",
-          "icon_svg_4": "",
-          "icon_4": "shopify://shop_images/calendar_bb712976-a23b-4182-8cff-50105867dbf1.svg",
-          "text_4": "Priority Appointments",
-          "icon_svg_5": "",
-          "icon_5": "shopify://shop_images/lightbulb.svg",
-          "text_5": "Spotlight Opportunities",
-          "icon_svg_6": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/ecology_1.svg?v=1635218930",
-          "text_6": "Dedicated Concierge Support",
-          "marginTop": 0,
-          "marginBottom": 20,
-          "marginTopMobile": 0,
-          "marginBottomMobile": 10,
-          "btn_url": "",
-          "btn_text": "SHOP BEST SELLERS",
-          "background": "#f3f3f3"
-        }
-      },
-      "specialFeature": {
-        "type": "product-special-feature",
-        "blocks": {
-          "a9216570-1148-40bb-8a47-ba0ea398518f": {
-            "type": "feature",
-            "settings": {
-              "extra_deep": false,
-              "videotype": "shopify://files/videos/1 Spill Compressed.mp4",
-              "title": "Water repellent & stain resistant.",
-              "text": "Our fabrics have the ability to withstand & temporarily repel everyday household spills such as water, coffee, sodas, juices, soy sauce, energy drinks, pet urine, and even wine. Perfect for households with kids, pets, or drunk people."
-            }
-          },
-          "1dccdf53-c719-432f-b147-2f259120c0c4": {
-            "type": "feature",
-            "settings": {
-              "extra_deep": false,
-              "videotype": "shopify://files/videos/2 Modular Compressed V2.mp4",
-              "title": "Endlessly modular for any configuration.",
-              "text": "Our simple modular system features 4 core components - a Corner Left seat, a Corner Right seat, an Armless Seat, and an Ottoman - all of which can be arranged into any configuration to perfectly fit your home."
-            }
-          },
-          "9d8af6a7-276c-4dc0-996b-eeed2c0545e6": {
-            "type": "feature",
-            "settings": {
-              "extra_deep": false,
-              "videotype": "shopify://files/videos/3 Covers Compressed.mp4",
-              "title": "Removable, washable, & replaceable covers.",
-              "text": "All of our covers, including the base, arms, & backs, are removable & machine washable. Ready for a new look? Now you can extend the life of your existing sofa by swapping out the covers to a new color instead of buying an entirely new piece of furniture."
-            }
-          },
-          "6c18ffaa-08e9-497b-a719-af9316e2f6cc": {
-            "type": "feature",
-            "settings": {
-              "extra_deep": false,
-              "videotype": "shopify://files/videos/4 Fill Compressed.mp4",
-              "title": "Adjustable back cushion firmness.",
-              "text": "Our back cushions are adjustable to your liking. Choose between Medium-Firm (recommended) and Medium-Soft, or use our complimentary fill packets to customize your own back cushion firmness."
-            }
+        "image_FmAEJf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Homepage_Hero_-_Desktop_-_Olive_Josh_8204b84b-2dde-4fc6-bbd5-8970b59067ce.jpg",
+            "mobile_hero_image": "shopify://shop_images/1.jpg",
+            "slide_title": "Plush & Premium<br>\nPerformance Velvets.",
+            "slide_text": "Plush, luxury velvets in the richest and most vibrant colors. Designed to withstand life’s toughest demands, from your fur-babies to actual babies.",
+            "showCaptionDesktop": false,
+            "btn_text": "SHOP PREMIUM VELVETS",
+            "btn_url": "shopify://collections/best-sellers",
+            "alignment": "left",
+            "si_bg": "",
+            "s_title_color": "",
+            "s_text_color": "",
+            "sip_x": "left",
+            "sip_x_v": 6,
+            "sip_y": "bottom",
+            "sip_y_v": 24,
+            "sip_width": "max-content",
+            "sip_height": "max-content",
+            "si_padding": "",
+            "si_margin": "",
+            "si_text_margin": "",
+            "si_title_margin": ""
           }
-        },
-        "block_order": [
-          "a9216570-1148-40bb-8a47-ba0ea398518f",
-          "1dccdf53-c719-432f-b147-2f259120c0c4",
-          "9d8af6a7-276c-4dc0-996b-eeed2c0545e6",
-          "6c18ffaa-08e9-497b-a719-af9316e2f6cc"
-        ],
-        "settings": {}
-      },
-      "advancedContent": {
-        "type": "sofa-page-advanced-content",
-        "blocks": {
-          "c54416f5-f914-469a-a9d6-0834a4a7d76f": {
-            "type": "advanced_content",
-            "settings": {
-              "image": "shopify://shop_images/1x1_Olive_1.png",
-              "video": "",
-              "image_right": true,
-              "title": "Exclusive Discounts",
-              "text": "Enjoy special discounts on all 7th Avenue \nproducts for you and your clients"
-            }
-          },
-          "40618786-dc98-47d2-8e75-d4d70c98d545": {
-            "type": "advanced_content",
-            "settings": {
-              "image": "shopify://shop_images/Copy_of_IMG_1170_V2_1.png",
-              "video": "",
-              "image_right": false,
-              "title": "No Minimum Order",
-              "text": "Apply your Trade Partner benefits to \norders of any size and value"
-            }
-          },
-          "d8240561-3ec4-434f-af71-28536857ee5e": {
-            "type": "advanced_content",
-            "settings": {
-              "image": "shopify://shop_images/Copy_of_Ivory_white_0322_copy_V1_1.jpg",
-              "video": "",
-              "image_right": true,
-              "title": "Volume Savings",
-              "text": "Tiered discounts for large-scale commercial\npartners. The more you buy, the more you save!"
-            }
-          },
-          "advanced_content_bRAmt9": {
-            "type": "advanced_content",
-            "settings": {
-              "image": "shopify://shop_images/Navy_Blue_4.png",
-              "video": "",
-              "image_right": false,
-              "title": "Early Access",
-              "text": "Get first dibs on new product launches, \nfabric releases, and events"
-            }
-          },
-          "advanced_content_VdwyPz": {
-            "type": "advanced_content",
-            "settings": {
-              "image": "shopify://shop_images/Navy_Blue_13.png",
-              "video": "",
-              "image_right": true,
-              "title": "Priority Appointments",
-              "text": "Collaborate with a 7th Avenue Design Consultant in our showrooms or via virtual appointment"
-            }
-          },
-          "advanced_content_KhYFwW": {
-            "type": "advanced_content",
-            "settings": {
-              "image": "shopify://shop_images/OnyxBlack-LIfestyle-1.jpg",
-              "video": "",
-              "image_right": false,
-              "title": "Spotlight Opportunities",
-              "text": "Have your work featured on our social media\nchannels, website, and newsletter"
-            }
-          },
-          "advanced_content_FD8zWM": {
-            "type": "advanced_content",
-            "settings": {
-              "image": "shopify://shop_images/Sand_Beige_-_Lifestyle_5.png",
-              "video": "",
-              "image_right": true,
-              "title": "Dedicated Concierge Support",
-              "text": "We’re with you every step of the way"
-            }
-          }
-        },
-        "block_order": [
-          "c54416f5-f914-469a-a9d6-0834a4a7d76f",
-          "40618786-dc98-47d2-8e75-d4d70c98d545",
-          "d8240561-3ec4-434f-af71-28536857ee5e",
-          "advanced_content_bRAmt9",
-          "advanced_content_VdwyPz",
-          "advanced_content_KhYFwW",
-          "advanced_content_FD8zWM"
-        ],
-        "settings": {}
-      },
-      "sofa_page_feature_product_TNV3kg": {
-        "type": "sofa-page-feature-product",
-        "settings": {
-          "title": "Apply Today",
-          "text": "Welcoming Interior Designers, Hotels, <br>\nApartments, Restaurants, and More!",
-          "collection": "",
-          "product_limit": 5,
-          "selected_color": "",
-          "speed": "5000",
-          "btn_url": "shopify://pages/trade-program",
-          "btn_text": "APPLY NOW",
-          "info": "",
-          "paddingTop": 20,
-          "paddingBottom": 20,
-          "paddingTopMobile": 10,
-          "paddingBottomMobile": 10,
-          "background": "#fff"
         }
+      },
+      "block_order": [
+        "c1066701-5779-4944-aeae-a5972d494459",
+        "image_9fYAHE",
+        "image_FmAEJf"
+      ],
+      "settings": {
+        "autoplaySpeed": "5000",
+        "review_text": "4.8/5.0",
+        "review_url": "",
+        "start_date": "",
+        "end_date": "",
+        "color": "#000000",
+        "background": "#fff"
       }
     },
-    "order": [
-      "hero",
-      "b078c71e-2483-4dd2-bf7f-870a8a815824",
-      "bestSeller",
-      "video",
-      "specialFeature",
-      "advancedContent",
-      "sofa_page_feature_product_TNV3kg"
-    ]
-  }
-  
+    "b078c71e-2483-4dd2-bf7f-870a8a815824": {
+      "type": "feature-in",
+      "blocks": {
+        "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-0": {
+          "type": "feature_in",
+          "settings": {
+            "text": "\"Stylish, modular, non-toxic, affordable, stain-resistant and machine-washable, the 7th Avenue sofa has it all.\"",
+            "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/forbes_7thavenue.svg?v=1672946484",
+            "url": "shopify://pages/reviews",
+            "new_window": true
+          }
+        },
+        "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-1": {
+          "type": "feature_in",
+          "settings": {
+            "text": "“I really love our 7th Avenue sofa, so much so that I would & have recommended it to others.”",
+            "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/living_cozy_7thavenue.svg?v=1672946485",
+            "url": "shopify://pages/reviews",
+            "new_window": true
+          }
+        },
+        "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-2": {
+          "type": "feature_in",
+          "settings": {
+            "text": "\"As a pet parent, never thought I'd be able to have a white sofa before 7th Avenue...the fabric is a game changer.\"",
+            "image_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/image_19.png?v=1714316814",
+            "url": "shopify://pages/reviews",
+            "new_window": true
+          }
+        }
+      },
+      "block_order": [
+        "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-0",
+        "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-1",
+        "template--16714432053491__b078c71e-2483-4dd2-bf7f-870a8a815824-16723163525b646da4-2"
+      ],
+      "settings": {
+        "border_top": false,
+        "border_bottom": false,
+        "color": "#000000",
+        "bg_color": "#f3f3f3"
+      }
+    },
+    "bestSeller": {
+      "type": "sofa-page-feature-product",
+      "settings": {
+        "title": "Trade & Commercial Program",
+        "text": "Exclusive Discounts & Priority Access<br>\nfor The World’s Greatest Modular Sofa",
+        "collection": "best-sellers",
+        "product_limit": 10,
+        "selected_color": "",
+        "speed": "5000",
+        "btn_url": "shopify://pages/trade-program",
+        "btn_text": "APPLY NOW",
+        "info": "",
+        "paddingTop": 20,
+        "paddingBottom": 20,
+        "paddingTopMobile": 10,
+        "paddingBottomMobile": 10,
+        "background": "#fff"
+      }
+    },
+    "video": {
+      "type": "sofa-page-video",
+      "settings": {
+        "videoRatio": "4/3",
+        "image": "shopify://shop_images/Website_Photo_-_4_fbe34f52-b6e5-4cb7-840a-05cd7d046a39.jpg",
+        "fullImage": true,
+        "title": "Members-Only Benefits for\nValued Trade Partners",
+        "icon_svg_1": "",
+        "icon_1": "shopify://shop_images/dollar.svg",
+        "text_1": "Exclusive Discounts",
+        "icon_svg_2": "",
+        "icon_2": "shopify://shop_images/stopwatch.svg",
+        "text_2": "Early Access",
+        "icon_svg_3": "",
+        "icon_3": "shopify://shop_images/check.svg",
+        "text_3": "No Minimum Order",
+        "icon_svg_4": "",
+        "icon_4": "shopify://shop_images/calendar_bb712976-a23b-4182-8cff-50105867dbf1.svg",
+        "text_4": "Priority Appointments",
+        "icon_svg_5": "",
+        "icon_5": "shopify://shop_images/lightbulb.svg",
+        "text_5": "Spotlight Opportunities",
+        "icon_svg_6": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/ecology_1.svg?v=1635218930",
+        "text_6": "Dedicated Concierge Support",
+        "marginTop": 0,
+        "marginBottom": 20,
+        "marginTopMobile": 0,
+        "marginBottomMobile": 10,
+        "btn_url": "",
+        "btn_text": "SHOP BEST SELLERS",
+        "background": "#f3f3f3"
+      }
+    },
+    "specialFeature": {
+      "type": "product-special-feature",
+      "blocks": {
+        "a9216570-1148-40bb-8a47-ba0ea398518f": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/1 Spill Compressed.mp4",
+            "title": "Water repellent & stain resistant.",
+            "text": "Our fabrics have the ability to withstand & temporarily repel everyday household spills such as water, coffee, sodas, juices, soy sauce, energy drinks, pet urine, and even wine. Perfect for households with kids, pets, or drunk people."
+          }
+        },
+        "1dccdf53-c719-432f-b147-2f259120c0c4": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/2 Modular Compressed V2.mp4",
+            "title": "Endlessly modular for any configuration.",
+            "text": "Our simple modular system features 4 core components - a Corner Left seat, a Corner Right seat, an Armless Seat, and an Ottoman - all of which can be arranged into any configuration to perfectly fit your home."
+          }
+        },
+        "9d8af6a7-276c-4dc0-996b-eeed2c0545e6": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/3 Covers Compressed.mp4",
+            "title": "Removable, washable, & replaceable covers.",
+            "text": "All of our covers, including the base, arms, & backs, are removable & machine washable. Ready for a new look? Now you can extend the life of your existing sofa by swapping out the covers to a new color instead of buying an entirely new piece of furniture."
+          }
+        },
+        "6c18ffaa-08e9-497b-a719-af9316e2f6cc": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/4 Fill Compressed.mp4",
+            "title": "Adjustable back cushion firmness.",
+            "text": "Our back cushions are adjustable to your liking. Choose between Medium-Firm (recommended) and Medium-Soft, or use our complimentary fill packets to customize your own back cushion firmness."
+          }
+        }
+      },
+      "block_order": [
+        "a9216570-1148-40bb-8a47-ba0ea398518f",
+        "1dccdf53-c719-432f-b147-2f259120c0c4",
+        "9d8af6a7-276c-4dc0-996b-eeed2c0545e6",
+        "6c18ffaa-08e9-497b-a719-af9316e2f6cc"
+      ],
+      "settings": {}
+    },
+    "advancedContent": {
+      "type": "sofa-page-advanced-content",
+      "blocks": {
+        "c54416f5-f914-469a-a9d6-0834a4a7d76f": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/Houston_Exterior_1.jpg",
+            "video": "",
+            "image_right": true,
+            "title": "Exclusive Discounts",
+            "text": "Enjoy special discounts on all 7th Avenue \nproducts for you and your clients"
+          }
+        },
+        "40618786-dc98-47d2-8e75-d4d70c98d545": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/7thavenue_Las_Vegas_Showroom.jpg",
+            "video": "",
+            "image_right": false,
+            "title": "No Minimum Order",
+            "text": "Apply your Trade Partner benefits to \norders of any size and value"
+          }
+        },
+        "d8240561-3ec4-434f-af71-28536857ee5e": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/OC_-_15.jpg",
+            "video": "",
+            "image_right": true,
+            "title": "Volume Savings",
+            "text": "Tiered discounts for large-scale commercial\npartners. The more you buy, the more you save!"
+          }
+        },
+        "advanced_content_bRAmt9": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/OC_Crossweave_Oatmeal_Beige_-_2.jpg",
+            "video": "",
+            "image_right": false,
+            "title": "Early Access",
+            "text": "Get first dibs on new product launches, \nfabric releases, and events"
+          }
+        },
+        "advanced_content_VdwyPz": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/San_Jose_Greige_2.jpg",
+            "video": "",
+            "image_right": true,
+            "title": "Priority Appointments",
+            "text": "Collaborate with a 7th Avenue Design Consultant in our showrooms or via virtual appointment"
+          }
+        },
+        "advanced_content_KhYFwW": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/Santana_Row_Olive_Green_2_Aug_24.jpg",
+            "video": "",
+            "image_right": false,
+            "title": "Spotlight Opportunities",
+            "text": "Have your work featured on our social media\nchannels, website, and newsletter"
+          }
+        },
+        "advanced_content_FD8zWM": {
+          "type": "advanced_content",
+          "settings": {
+            "image": "shopify://shop_images/WeHo_5-Seat_Modular_Corner_Lounger_Extra-Deep_Armless_Pure_White_1x1_8b29fef7-e948-4e37-a12c-d07a96aa4c53.jpg",
+            "video": "",
+            "image_right": true,
+            "title": "Dedicated Concierge Support",
+            "text": "We’re with you every step of the way"
+          }
+        }
+      },
+      "block_order": [
+        "c54416f5-f914-469a-a9d6-0834a4a7d76f",
+        "40618786-dc98-47d2-8e75-d4d70c98d545",
+        "d8240561-3ec4-434f-af71-28536857ee5e",
+        "advanced_content_bRAmt9",
+        "advanced_content_VdwyPz",
+        "advanced_content_KhYFwW",
+        "advanced_content_FD8zWM"
+      ],
+      "settings": {}
+    },
+    "sofa_page_feature_product_TNV3kg": {
+      "type": "sofa-page-feature-product",
+      "settings": {
+        "title": "Apply Today",
+        "text": "Welcoming Interior Designers, Hotels, <br>\nApartments, Restaurants, and More!",
+        "collection": "",
+        "product_limit": 5,
+        "selected_color": "",
+        "speed": "5000",
+        "btn_url": "shopify://pages/trade-program",
+        "btn_text": "APPLY NOW",
+        "info": "",
+        "paddingTop": 20,
+        "paddingBottom": 20,
+        "paddingTopMobile": 10,
+        "paddingBottomMobile": 10,
+        "background": "#fff"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "b078c71e-2483-4dd2-bf7f-870a8a815824",
+    "bestSeller",
+    "video",
+    "specialFeature",
+    "advancedContent",
+    "sofa_page_feature_product_TNV3kg"
+  ]
+}
