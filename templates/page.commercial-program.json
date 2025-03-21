@@ -175,15 +175,20 @@
           "image": "shopify://shop_images/Website_Photo_-_4_fbe34f52-b6e5-4cb7-840a-05cd7d046a39.jpg",
           "fullImage": true,
           "title": "Members-Only Benefits for\nValued Trade Partners",
-          "icon_svg_1": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/modular_6.svg?v=1635316203",
+          "icon_svg_1": "",
+          "icon_1": "shopify://shop_images/dollar.svg",
           "text_1": "Exclusive Discounts",
-          "icon_svg_2": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/waterproof-fabric_1.svg?v=1635315926",
+          "icon_svg_2": "",
+          "icon_2": "shopify://shop_images/stopwatch.svg",
           "text_2": "Early Access",
-          "icon_svg_3": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/cloud_2.svg?v=1635316369",
+          "icon_svg_3": "",
+          "icon_3": "shopify://shop_images/check.svg",
           "text_3": "No Minimum Order",
-          "icon_svg_4": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/pillows_2.svg?v=1635316488",
+          "icon_svg_4": "",
+          "icon_4": "shopify://shop_images/calendar_bb712976-a23b-4182-8cff-50105867dbf1.svg",
           "text_4": "Priority Appointments",
-          "icon_svg_5": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/muscle_2.svg?v=1635316686",
+          "icon_svg_5": "",
+          "icon_5": "shopify://shop_images/lightbulb.svg",
           "text_5": "Spotlight Opportunities",
           "icon_svg_6": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/ecology_1.svg?v=1635218930",
           "text_6": "Dedicated Concierge Support",
@@ -250,7 +255,7 @@
           "c54416f5-f914-469a-a9d6-0834a4a7d76f": {
             "type": "advanced_content",
             "settings": {
-              "image": "shopify://shop_images/Non_toxic_sustainably_built_702ee8b5-af4c-43c0-ae19-080c2f5fe131.jpg",
+              "image": "shopify://shop_images/1x1_Olive_1.png",
               "video": "",
               "image_right": true,
               "title": "Exclusive Discounts",
@@ -260,7 +265,7 @@
           "40618786-dc98-47d2-8e75-d4d70c98d545": {
             "type": "advanced_content",
             "settings": {
-              "image": "shopify://shop_images/Solid_Wood.jpg",
+              "image": "shopify://shop_images/Copy_of_IMG_1170_V2_1.png",
               "video": "",
               "image_right": false,
               "title": "No Minimum Order",
@@ -270,7 +275,7 @@
           "d8240561-3ec4-434f-af71-28536857ee5e": {
             "type": "advanced_content",
             "settings": {
-              "image": "shopify://shop_images/Feather-free_afcc99d3-2485-4b5b-ba53-8fccbebfd5fa.jpg",
+              "image": "shopify://shop_images/Copy_of_Ivory_white_0322_copy_V1_1.jpg",
               "video": "",
               "image_right": true,
               "title": "Volume Savings",
@@ -280,7 +285,7 @@
           "advanced_content_bRAmt9": {
             "type": "advanced_content",
             "settings": {
-              "image": "shopify://shop_images/Non_toxic_sustainably_built_702ee8b5-af4c-43c0-ae19-080c2f5fe131.jpg",
+              "image": "shopify://shop_images/Navy_Blue_4.png",
               "video": "",
               "image_right": false,
               "title": "Early Access",
@@ -290,7 +295,7 @@
           "advanced_content_VdwyPz": {
             "type": "advanced_content",
             "settings": {
-              "image": "shopify://shop_images/Non_toxic_sustainably_built_702ee8b5-af4c-43c0-ae19-080c2f5fe131.jpg",
+              "image": "shopify://shop_images/Navy_Blue_13.png",
               "video": "",
               "image_right": true,
               "title": "Priority Appointments",
@@ -300,7 +305,7 @@
           "advanced_content_KhYFwW": {
             "type": "advanced_content",
             "settings": {
-              "image": "shopify://shop_images/Non_toxic_sustainably_built_702ee8b5-af4c-43c0-ae19-080c2f5fe131.jpg",
+              "image": "shopify://shop_images/OnyxBlack-LIfestyle-1.jpg",
               "video": "",
               "image_right": false,
               "title": "Spotlight Opportunities",
@@ -310,7 +315,7 @@
           "advanced_content_FD8zWM": {
             "type": "advanced_content",
             "settings": {
-              "image": "shopify://shop_images/Non_toxic_sustainably_built_702ee8b5-af4c-43c0-ae19-080c2f5fe131.jpg",
+              "image": "shopify://shop_images/Sand_Beige_-_Lifestyle_5.png",
               "video": "",
               "image_right": true,
               "title": "Dedicated Concierge Support",
@@ -347,7 +352,7 @@
           "paddingBottomMobile": 10,
           "background": "#fff"
         }
-      },
+      }
     },
     "order": [
       "hero",
