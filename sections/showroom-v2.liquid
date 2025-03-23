@@ -1,5 +1,5 @@
 {%- liquid
-    assign color = section.settings.color
+  assign color = section.settings.color
   assign bg_color = section.settings.bg_color
   assign bt_color = section.settings.bt_color
   assign bt_bg = section.settings.bt_bg
@@ -50,48 +50,116 @@
   }
 </style>
 
+<script src="{{ 'component-showroom.js' | asset_url }}" defer="defer"></script>
+
 <section class="showroom showroom-{{ section.id }}"{% if template.name == 'product' %} id="pdp-showroom-section"{% endif %}>
 {%- if border_top == true -%}
   <div class="border-top">
     <div class="section-divider"></div>
   </div>
 {%- endif -%}
-<div class="section-boxed" column="1" column-lg="{{ box_per_row }}">
-  {%- if title != blank or subtitle != blank or title_mob != blank or subtitle_mob != blank -%}
-    <div class="section-header">
-      {%- if title -%}
-          <h2 class="section-title show-desktop">{{ title }}</h2>
+{%- liquid
+    assign sort_option_blocks = section.blocks | where: 'type', 'sort_option'
+  assign default_sort_option = sort_option_blocks[0].settings.sort_by
+-%}
+<showroom-items class="section-boxed" column="1" column-lg="{{ box_per_row }}" data-default-sort-option="{{ default_sort_option }}">
+  <div class="showroom-section-header">
+    {%- if title != blank or subtitle != blank -%}
+        <div class="section-header">
+          {%- if title -%}
+              <h2 class="section-title">{{ title }}</h2>
+          {%- endif -%}
+          {%- if subtitle != blank -%}
+              <p class="section-subtitle">{{ subtitle }}</p>
+          {%- endif -%}
+        </div>
       {%- endif -%}
-      {%- if title_mob != blank -%}
-          <h2 class="section-title show-mobile">{{ title_mob }}</h2>
-      {%- endif -%}
-      {%- if subtitle != blank -%}
-          <p class="section-subtitle show-desktop">{{ subtitle }}</p>
-      {%- endif -%}
-      {%- if subtitle_mob != blank -%}
-          <p class="section-subtitle show-mobile">{{ subtitle_mob }}</p>
-      {%- endif -%}
-    </div>
-  {%- endif -%}
+      {%- if sort_option_blocks.size > 1 -%}
+      <div class="showroom-sort-option-wrapper">
+        {%- for block in sort_option_blocks -%}
+            <button class="showroom-sort-option{% if forloop.first %} active{% endif %}" data-sort-option="{{ block.settings.sort_by }}">{{ block.settings.title }}</button>
+        {% endfor %}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <style>
+    showroom-items {
+        display: block;
+    }
+
+    .showroom-section-header {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .showroom-sort-option-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-end;
+    }
+    .showroom-sort-option {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: 1px solid black;
+        background-color: transparent;
+        color: black;
+        height: unset;
+        line-height: unset;
+        width: max-content;
+        margin: 0;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+      
+      .showroom-sort-option.active {
+        background-color: black;
+        color: white;
+      }
+
+      @media screen and (min-width: 750px) {
+        .showroom-section-header {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+  </style>
+  
+
   <div class="section-boxed-row{% if active_geo %} active_geo{% endif %}">
     {%- if section.settings.get_data_from_metaobject -%}
       {% assign showrooms = shop.metaobjects.showroom.values %}
+      {% assign showroom_data_string = '' %}
       {% for showroom in showrooms %}
         {%- liquid
             assign title = showroom.title
             assign appointment_text = showroom.appointment_status
             assign showroom_address = showroom.address
+            assign state = showroom.state
             assign button_text = showroom.button_label
             assign button_url = showroom.button_url
             assign text = showroom.description
             assign longitude = showroom.longitude
             assign latitude = showroom.latitude
             assign image = showroom.image
-            if longitude != blank and latitude != blank
-            assign id = longitude | remove: '.' | append: latitude | remove: '.' | abs
-            endif
+
+            assign title_handle = title | strip_html | handle
+            assign clean_title = title | replace: '<br>', ' '
+            assign object = '{' | append: '"handle":"' | append: title_handle | append: '",' | append: '"title":"' | append: clean_title | append: '",' | append: '"state":"' | append: showroom.state | append: '",' | append: '"longitude":"' | append: showroom.longitude | append: '",' | append: '"latitude":"' | append: showroom.latitude | append: '"}'
+              
+              if forloop.first
+                assign showroom_data_string = object
+              else
+                assign showroom_data_string = showroom_data_string | append: ',' | append: object
+              endif
+            
           -%}
-        <div class="section-boxed-column" data-showroom-order {% if id != blank %} data-id="{{ id }}"{% endif %}{% if latitude != blank %} data-latitude="{{ latitude }}"{% endif %}{% if longitude != blank %} data-longitude="{{ longitude }}"{% endif %} style="--order:{{forloop.index0}}">
+        
+        <div class="section-boxed-column" data-showroom-order data-handle="{{ title_handle }}" style="--order:{{forloop.index0}}">
           <div class="showroom-card">
             <div class="showroom-card__header">
               {%- if title != blank -%}
@@ -132,9 +200,14 @@
           </div>
         </div>
       {% endfor %}
+
+      <script type="application/json" data-showroom-info>
+        [{{ showroom_data_string }}]
+      </script>
+
     {%- endif -%}
   </div>
-</div>
+</showroom-items>
 {%- if border_bot == true -%}
   <div class="border-bot">
     <div class="section-divider"></div>
@@ -149,6 +222,39 @@
     {
        "name":"Showroom V2"
     }
+ ],
+ "blocks": [
+    {
+    "type": "sort_option",
+    "name": "Sort option",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Option label"
+        },
+        {
+        "type": "select",
+        "id": "sort_by",
+        "label": "Sort by",
+        "options": [
+            {
+            "label": "Near Me",
+            "value": "near_me"
+            },
+            {
+                "label": "All Showrooms",
+                "value": "all_showrooms"
+            },
+            {
+            "label": "By State",
+            "value": "by_state"
+            }
+        ],
+        "default": "near_me"
+        }
+    ]
+}
  ],
  "settings":[
     {
