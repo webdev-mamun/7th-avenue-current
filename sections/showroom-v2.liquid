@@ -4,18 +4,29 @@
   assign bt_color = section.settings.bt_color
   assign bt_bg = section.settings.bt_bg
   assign card_bg = section.settings.card_bg
+
   assign title = section.settings.title
-  assign title_mob = section.settings.title_mob
   assign subtitle = section.settings.subtitle
-  assign subtitle_mob = section.settings.subtitle_mob
   assign box_per_row = section.settings.box_per_row
+
+  assign sort_by_alphabetical = section.settings.sort_by_alphabetical
+  assign sort_by_location = section.settings.sort_by_location
+  assign sort_by_state = section.settings.sort_by_state
+
+  assign default_sort_option = section.settings.default_sort_option
+
+  assign limit = section.settings.limit
+
+  assign button = section.settings.button
+  assign button_link = section.settings.button_url
+
   assign padding_top = section.settings.padding_top
   assign padding_bot = section.settings.padding_bot
   assign padding_top_mob = section.settings.padding_top_mob
   assign padding_bot_mob = section.settings.padding_bot_mob
+
   assign border_top = section.settings.border_top
   assign border_bot = section.settings.border_bot
-  assign active_geo = section.settings.active_geo
 -%}
 
 <style>
@@ -29,25 +40,13 @@
   --bt-color: {{ bt_color }};
   --bt-bg: {{ bt_bg }};
   --card-bg: {{ card_bg }};
+  --buttonColor: #032e6a;
+  --buttonHover: #000000;
   --padding-top: {{ padding_top }}px;
   --padding-bot: {{ padding_bot }}px;
   --padding-top-mob: {{ padding_top_mob }}px;
   --padding-bot-mob: {{ padding_bot_mob }}px;
-  }
-.active_geo .section-boxed-column.hide:not(.mobile-hide) {
-  display: block;
 }
-.section-boxed-column.mobile-hide {
-  display: none;
-}
-  @media screen and (min-width: 991px) {
-    .active_geo .section-boxed-column.hide {
-      display: none;
-    }
-    .section-boxed-column.mobile-hide:not(.hide) {
-      display: block;
-    }
-  }
 </style>
 
 <script src="{{ 'component-showroom.js' | asset_url }}" defer="defer"></script>
@@ -59,11 +58,32 @@
   </div>
 {%- endif -%}
 {%- liquid
-    assign sort_option_blocks = section.blocks | where: 'type', 'sort_option'
-  assign default_sort_option = sort_option_blocks[0].settings.sort_by
+    if section.settings.get_data_from_metaobject
+        assign showrooms = shop.metaobjects.showroom.values
+        assign showroom_count = showrooms.count
+        if sort_by_state
+            assign state_list = ''
+            assign state_list_uniq = ''
+            
+            for showroom in showrooms
+                assign state = showroom.state
+                if forloop.first
+                    assign state_list = state
+                else
+                    assign state_list = state_list | append: ',' | append: state
+                endif
+            endfor
+            
+            if state_list != blank
+                assign state_list = state_list | split: ','
+                assign state_list_uniq = state_list | uniq | sort
+            endif
+        endif
+    endif
 -%}
-<showroom-items class="section-boxed" column="1" column-lg="{{ box_per_row }}" data-default-sort-option="{{ default_sort_option }}">
-  <div class="showroom-section-header">
+
+<showroom-items class="section-boxed" column="1" column-lg="{{ box_per_row }}"{% if limit != blank %} data-limit="{{ limit }}"{% endif %}{% if default_sort_option != blank %} data-default-sort-by="{{ default_sort_option }}"{% endif %}>
+  <div class="showroom-section-header{% if sort_by_alphabetical or sort_by_state %} has-filter-option{% endif %}">
     {%- if title != blank or subtitle != blank -%}
         <div class="section-header">
           {%- if title -%}
@@ -74,63 +94,33 @@
           {%- endif -%}
         </div>
       {%- endif -%}
-      {%- if sort_option_blocks.size > 1 -%}
+
+      {%- if sort_by_alphabetical or sort_by_state -%}
       <div class="showroom-sort-option-wrapper">
-        {%- for block in sort_option_blocks -%}
-            <button class="showroom-sort-option{% if forloop.first %} active{% endif %}" data-sort-option="{{ block.settings.sort_by }}">{{ block.settings.title }}</button>
-        {% endfor %}
+        {% if sort_by_location %}
+            <button class="showroom-sort-option{% if default_sort_option == 'sort_by_location' %} active{% endif %}" data-sort-by="by_location">Near Me</button>
+        {% endif %}
+        {% if sort_by_alphabetical %}
+            <button class="showroom-sort-option{% if default_sort_option == 'sort_by_alphabetical' %} active{% endif %}" data-sort-by="by_alphabetical">All Showrooms{% if showroom_count > 1 %} ({{ showroom_count }}){% endif %}</button>
+        {% endif %}
+        {%- if sort_by_state -%}
+            {%- for state_uniq in state_list_uniq -%}
+                {%- liquid
+                    assign count = 0
+                    for state in state_list
+                        if state_uniq == state
+                            assign count = count | plus: 1
+                        endif
+                    endfor
+                -%}
+                <button class="showroom-sort-option" data-sort-by="by_state" data-sort-option="{{ state_uniq }}">{{ state_uniq }}{% if count > 1 %} ({{ count }}){% endif %}</button>
+            {%- endfor -%}
+        {%- endif -%}
       </div>
     {%- endif -%}
   </div>
-
-  <style>
-    showroom-items {
-        display: block;
-    }
-
-    .showroom-section-header {
-        display: grid;
-        grid-template-columns: 1fr;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .showroom-sort-option-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: flex-end;
-    }
-    .showroom-sort-option {
-        padding: 0.5rem 1rem;
-        font-size: 0.75rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        border: 1px solid black;
-        background-color: transparent;
-        color: black;
-        height: unset;
-        line-height: unset;
-        width: max-content;
-        margin: 0;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-      }
-      
-      .showroom-sort-option.active {
-        background-color: black;
-        color: white;
-      }
-
-      @media screen and (min-width: 750px) {
-        .showroom-section-header {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-  </style>
   
-
-  <div class="section-boxed-row{% if active_geo %} active_geo{% endif %}">
+  <div class="section-boxed-row">
     {%- if section.settings.get_data_from_metaobject -%}
       {% assign showrooms = shop.metaobjects.showroom.values %}
       {% assign showroom_data_string = '' %}
@@ -149,14 +139,13 @@
 
             assign title_handle = title | strip_html | handle
             assign clean_title = title | replace: '<br>', ' '
-            assign object = '{' | append: '"handle":"' | append: title_handle | append: '",' | append: '"title":"' | append: clean_title | append: '",' | append: '"state":"' | append: showroom.state | append: '",' | append: '"longitude":"' | append: showroom.longitude | append: '",' | append: '"latitude":"' | append: showroom.latitude | append: '"}'
+            assign object = '{' | append: '"handle":"' | append: title_handle | append: '",' | append: '"title":"' | append: clean_title | append: '",' | append: '"state":"' | append: state | append: '",' | append: '"longitude":"' | append: longitude | append: '",' | append: '"latitude":"' | append: latitude | append: '"}'
               
               if forloop.first
                 assign showroom_data_string = object
               else
                 assign showroom_data_string = showroom_data_string | append: ',' | append: object
               endif
-            
           -%}
         
         <div class="section-boxed-column" data-showroom-order data-handle="{{ title_handle }}" style="--order:{{forloop.index0}}">
@@ -177,7 +166,7 @@
               {%- endif -%}
             </div>
             {%- if button_text != blank -%}
-                <a href="{{ button_url }}" traget="_blank" rel="nofollow noopener noreferrer" class="showroom-card__button">{{ button_text }}</a>
+                <a href="{{ button_url }}" traget="_blank" rel="nofollow noopener noreferrer" class="showroom-card__button" data-calendly-opener>{{ button_text }}</a>
             {%- endif -%}
             {%- if text != blank or image != blank -%}
             <div class="showroom-card__footer gallery-inline">
@@ -204,9 +193,13 @@
       <script type="application/json" data-showroom-info>
         [{{ showroom_data_string }}]
       </script>
-
     {%- endif -%}
   </div>
+  {%- if button != blank and button_link != blank -%}
+    <div class="showroom-button-wrapper">
+        <a href="{{ button_link }}" class="button">{{ button }}</a>
+    </div>
+  {%- endif -%}
 </showroom-items>
 {%- if border_bot == true -%}
   <div class="border-bot">
@@ -223,39 +216,6 @@
        "name":"Showroom V2"
     }
  ],
- "blocks": [
-    {
-    "type": "sort_option",
-    "name": "Sort option",
-    "settings": [
-        {
-            "type": "text",
-            "id": "title",
-            "label": "Option label"
-        },
-        {
-        "type": "select",
-        "id": "sort_by",
-        "label": "Sort by",
-        "options": [
-            {
-            "label": "Near Me",
-            "value": "near_me"
-            },
-            {
-                "label": "All Showrooms",
-                "value": "all_showrooms"
-            },
-            {
-            "label": "By State",
-            "value": "by_state"
-            }
-        ],
-        "default": "near_me"
-        }
-    ]
-}
- ],
  "settings":[
     {
        "type":"text",
@@ -265,20 +225,8 @@
     },
     {
        "type":"text",
-       "id":"title_mob",
-       "label":"Title (Mobile)",
-       "default":"Find a Showroom"
-    },
-    {
-       "type":"text",
        "id":"subtitle",
        "label":"Subtitle",
-       "default": "EXPERIENCE “THE WORLDS GREATEST MODULAR SOFA” IN PERSON."
-    },
-    {
-       "type":"text",
-       "id":"subtitle_mob",
-       "label":"Subtitle (Mobile)",
        "default": "EXPERIENCE “THE WORLDS GREATEST MODULAR SOFA” IN PERSON."
     },
     {
@@ -297,10 +245,63 @@
        "default":3
     },
     {
-      "type": "checkbox",
-      "id": "active_geo",
-      "label": "show nearby locations first",
-      "default": false
+        "type": "text",
+        "id": "button",
+        "label": "Button label",
+        "default": "See all showroom"
+    },
+    {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button URL"
+    },
+    {
+        "type": "header",
+        "content": "Sort Options"
+    },
+    {
+        "type": "checkbox",
+        "id": "sort_by_alphabetical",
+        "label": "Sort by Alphabetical",
+        "default": false,
+        "info": "Display all showrooms sorted A–Z by title."
+    },
+    {
+        "type": "checkbox",
+        "id": "sort_by_location",
+        "label": "Sort by Location",
+        "default": true,
+        "info": "Use the customer's location to show nearby showrooms first."
+    },
+    {
+        "type": "checkbox",
+        "id": "sort_by_state",
+        "label": "Sort by State",
+        "default": false,
+        "info": "When a state is selected, only showrooms from that state will be shown."
+    },
+    {
+        "type": "select",
+        "id": "default_sort_option",
+        "label": "Default sort option",
+        "options": [
+            {
+                "value": "sort_by_location",
+                "label": "Sort by Location"
+            },
+            {
+                "value": "sort_by_alphabetical",
+                "label": "Sort by Alphabetical"
+            }
+        ],
+        "default": "sort_by_location"
+    },
+    {
+        "type": "number",
+        "id": "limit",
+        "label": "Limit Nearby Showrooms",
+        "default": 9,
+        "info": "Maximum number of showrooms to display when sorting by location."
     },
     {
       "type": "header",

@@ -4426,26 +4426,6 @@ $(function () {
   document.body.addEventListener("touchstart", hanldeVideoPlay);
 })();
 
-window.addEventListener("load", function () {
-  var buttons = document.querySelectorAll(".showroom-card__button");
-  buttons.forEach(function (button) {
-    button.addEventListener(
-      "click",
-      function (event) {
-        fbq("track", "Schedule", {
-          book_appointment_page_url: theme.routes.url,
-          event_type_url: event.target.href,
-          event_type_name:
-            event.target.parentElement.children[0].children[0].innerHTML.replace(
-              /<br\s*\/?>/gi,
-              " "
-            ),
-        });
-      },
-      false
-    );
-  });
-});
 
 function setCookie(cname, cvalue) {
   document.cookie = `${cname}=${JSON.stringify(cvalue)};domain=;path=/`;
@@ -4467,121 +4447,6 @@ function getCookie(cname) {
   return "";
 }
 
-const allShowRoom = document.querySelectorAll(".showroom");
-allShowRoom.forEach(function (showroom) {
-  //Calendly
-  let buttons = showroom.querySelectorAll(".showroom-card__button");
-  buttons.forEach(function (button) {
-    let ButtonUrl = button.href;
-    if (ButtonUrl) {
-      button.addEventListener("click", initCalendly);
-    }
-    function initCalendly(e) {
-      e.preventDefault();
-      Calendly.initPopupWidget({
-        url: ButtonUrl,
-      });
-    }
-  });
-
-  const allShowroom = showroom.querySelectorAll(
-    ".active_geo [data-showroom-order]"
-  );
-
-  const distData = function () {
-    return new Promise(async (res, _rej) => {
-      if (allShowroom.length <= 0) return;
-      let i = 0;
-      const distances = [];
-      let currentItem = null;
-      for (const address of allShowroom) {
-        currentItem = await getDistance(address, i);
-        if (!distances.find((item) => item.id == currentItem.id))
-          distances.push(currentItem);
-        if (i == allShowroom.length - 1) res(distances);
-        i++;
-      }
-    });
-  };
-
-  function getDistance(address, i) {
-    return new Promise((res) => {
-      let geoArr = getCookie("geo") ? JSON.parse(getCookie("geo")) : [];
-      const itemCached = geoArr?.find((item) => item.id == address.dataset.id);
-      if (itemCached) {
-        return res(itemCached);
-      }
-      fetch(
-        "https://api.ipgeolocation.io/ipgeo?apiKey=2c6a7373a74548c798abd31f823fa892"
-      )
-        .then((data) => {
-          return data.json();
-        })
-        .then((data) => {
-          let shoroomLatitude = address.dataset.latitude,
-            shoroomLongitude = address.dataset.longitude,
-            clientLatitude = data.latitude,
-            clientLongitude = data.longitude,
-            showRoomId = address.dataset.id;
-            
-          function calcCrow(lat1, lon1, lat2, lon2) {
-            let R = 6371; // km
-            let dLat = toRad(lat2 - lat1);
-            let dLon = toRad(lon2 - lon1);
-            lat1 = toRad(lat1);
-            lat2 = toRad(lat2);
-
-            let a =
-              Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-              Math.sin(dLon / 2) *
-              Math.sin(dLon / 2) *
-              Math.cos(lat1) *
-              Math.cos(lat2);
-            let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            let d = R * c;
-            return d * 0.621371;
-          }
-
-          // Converts numeric degrees to radians
-          function toRad(Value) {
-            return (Value * Math.PI) / 180;
-          }
-
-          let distance = Math.round(
-            calcCrow(
-              shoroomLatitude,
-              shoroomLongitude,
-              clientLatitude,
-              clientLongitude
-            )
-          );
-          const dist = { distance: distance, index: i, id: showRoomId };
-          geoArr.push(dist);
-          setCookie("geo", geoArr);
-          res(dist);
-        })
-        .catch((_e) => {
-          res({});
-        });
-    });
-  }
-
-  const activeGeo = showroom.querySelector(".active_geo");
-  if (activeGeo) {
-    distData().then((distArr) => {
-      distArr.sort(function (a, b) {
-        return a.distance - b.distance;
-      });
-      distArr.forEach(function (dist, index) {
-        let showroom = document.querySelector(
-          `.showroom .section-boxed-column[data-id="${dist.id}"]`
-        );
-        showroom.setAttribute("data-dis", dist.distance);
-        showroom.style = `--order:${index}`;
-      });
-    });
-  }
-});
 
 (function () {
   const variantInfo = document.querySelectorAll(".variant--info");
@@ -6049,4 +5914,12 @@ $(document).ready(function () {
   document.addEventListener("lazyloaded", function (_e) {
     Events.trigger("lazyLoad:complete");
   });
+});
+
+
+window.addEventListener('message', function(event) {
+  if (event.data?.type !== 'form-submitted' || event.data?.form?.slug != 'trade-program') {
+      return;
+  }
+  console.log('message get')
 });
