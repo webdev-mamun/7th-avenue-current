@@ -303,22 +303,12 @@
             "title": "Removable, washable, & replaceable covers.",
             "text": "All of our covers, including the base, arms, & backs, are removable & machine washable. Ready for a new look? Now you can extend the life of your existing sofa by swapping out the covers to a new color instead of buying an entirely new piece of furniture."
           }
-        },
-        "6c18ffaa-08e9-497b-a719-af9316e2f6cc": {
-          "type": "feature",
-          "settings": {
-            "extra_deep": false,
-            "videotype": "shopify://files/videos/4 Fill Compressed.mp4",
-            "title": "Adjustable back cushion firmness.",
-            "text": "Our back cushions are adjustable to your liking. Choose between Medium-Firm (recommended) and Medium-Soft, or use our complimentary fill packets to customize your own back cushion firmness."
-          }
         }
       },
       "block_order": [
         "a9216570-1148-40bb-8a47-ba0ea398518f",
         "1dccdf53-c719-432f-b147-2f259120c0c4",
-        "9d8af6a7-276c-4dc0-996b-eeed2c0545e6",
-        "6c18ffaa-08e9-497b-a719-af9316e2f6cc"
+        "9d8af6a7-276c-4dc0-996b-eeed2c0545e6"
       ],
       "settings": {}
     },
