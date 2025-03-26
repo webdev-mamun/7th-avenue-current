@@ -13,7 +13,25 @@
   assign sort_by_location = section.settings.sort_by_location
   assign sort_by_state = section.settings.sort_by_state
 
-  assign default_sort_option = section.settings.default_sort_option
+  assign default_sort_option = ''
+  if sort_by_alphabetical and sort_by_location
+    assign default_sort_option = section.settings.default_sort_option
+  elsif sort_by_alphabetical == false and sort_by_location == false
+    assign default_sort_option = section.settings.default_sort_option
+  elsif sort_by_alphabetical and sort_by_location == false
+    assign default_sort_option = 'sort_by_alphabetical'
+  elsif sort_by_alphabetical == false and sort_by_location
+    assign default_sort_option = 'sort_by_location'
+  endif
+
+  assign show_filter = false
+  if sort_by_alphabetical and sort_by_location
+    assign show_filter = true
+  elsif sort_by_alphabetical and sort_by_state
+    assign show_filter = true
+  elsif sort_by_location and sort_by_state
+    assign show_filter = true
+  endif
 
   assign limit = section.settings.limit
 
@@ -80,29 +98,40 @@
             endif
         endif
     endif
+
 -%}
 
 <showroom-items class="section-boxed" column="1" column-lg="{{ box_per_row }}"{% if limit != blank %} data-limit="{{ limit }}"{% endif %}{% if default_sort_option != blank %} data-default-sort-by="{{ default_sort_option }}"{% endif %}>
-  <div class="showroom-section-header{% if sort_by_alphabetical or sort_by_state %} has-filter-option{% endif %}">
+  <div class="showroom-section-header{% if show_filter %} has-filter-option{% endif %}">
     {%- if title != blank or subtitle != blank -%}
-        <div class="section-header">
-          {%- if title -%}
-              <h2 class="section-title">{{ title }}</h2>
-          {%- endif -%}
-          {%- if subtitle != blank -%}
-              <p class="section-subtitle">{{ subtitle }}</p>
-          {%- endif -%}
-        </div>
-      {%- endif -%}
+      <div class="section-header">
+        {%- if title -%}
+            <h2 class="section-title">{{ title }}</h2>
+        {%- endif -%}
+        {%- if subtitle != blank -%}
+            <p class="section-subtitle">{{ subtitle }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
 
-      {%- if sort_by_alphabetical or sort_by_state -%}
+      {%- if show_filter -%}
       <div class="showroom-sort-option-wrapper">
-        {% if sort_by_location %}
-            <button class="showroom-sort-option{% if default_sort_option == 'sort_by_location' %} active{% endif %}" data-sort-by="by_location">Near Me</button>
+        {% if sort_by_location and default_sort_option == 'sort_by_location' %}
+          <button class="showroom-sort-option active" data-sort-by="sort_by_location">Near Me</button>
         {% endif %}
-        {% if sort_by_alphabetical %}
-            <button class="showroom-sort-option{% if default_sort_option == 'sort_by_alphabetical' %} active{% endif %}" data-sort-by="by_alphabetical">All Showrooms{% if showroom_count > 1 %} ({{ showroom_count }}){% endif %}</button>
+
+        {% if sort_by_alphabetical and default_sort_option == 'sort_by_alphabetical' %}
+          <button class="showroom-sort-option active" data-sort-by="sort_by_alphabetical">All Showrooms{% if showroom_count > 1 %} ({{ showroom_count }}){% endif %}</button>
         {% endif %}
+
+        {% if sort_by_location and default_sort_option == 'sort_by_alphabetical' %}
+          <button class="showroom-sort-option" data-sort-by="sort_by_location">Near Me</button>
+        {% endif %}
+
+        {% if sort_by_alphabetical and default_sort_option == 'sort_by_location' %}
+          <button class="showroom-sort-option" data-sort-by="sort_by_alphabetical">All Showrooms{% if showroom_count > 1 %} ({{ showroom_count }}){% endif %}</button>
+        {% endif %}
+
         {%- if sort_by_state -%}
             {%- for state_uniq in state_list_uniq -%}
                 {%- liquid
@@ -113,7 +142,7 @@
                         endif
                     endfor
                 -%}
-                <button class="showroom-sort-option" data-sort-by="by_state" data-sort-option="{{ state_uniq }}">{{ state_uniq }}{% if count > 1 %} ({{ count }}){% endif %}</button>
+                <button class="showroom-sort-option" data-sort-by="sort_by_state" data-sort-option="{{ state_uniq }}">{{ state_uniq }}{% if count > 1 %} ({{ count }}){% endif %}</button>
             {%- endfor -%}
         {%- endif -%}
       </div>
@@ -260,6 +289,10 @@
         "content": "Sort Options"
     },
     {
+      "type": "paragraph",
+      "content": "Sort options will only appear on the storefront if more than one sorting method is enabled below. If only one option is active, it will be applied automatically without showing a sort selector to customers."
+    },  
+    {
         "type": "checkbox",
         "id": "sort_by_alphabetical",
         "label": "Sort by Alphabetical",
@@ -281,27 +314,28 @@
         "info": "When a state is selected, only showrooms from that state will be shown."
     },
     {
-        "type": "select",
-        "id": "default_sort_option",
-        "label": "Default sort option",
-        "options": [
-            {
-                "value": "sort_by_location",
-                "label": "Sort by Location"
-            },
-            {
-                "value": "sort_by_alphabetical",
-                "label": "Sort by Alphabetical"
-            }
-        ],
-        "default": "sort_by_location"
+      "type": "select",
+      "id": "default_sort_option",
+      "label": "Default sort option",
+      "options": [
+          {
+              "value": "sort_by_location",
+              "label": "Sort by Location"
+          },
+          {
+              "value": "sort_by_alphabetical",
+              "label": "Sort by Alphabetical"
+          }
+      ],
+      "default": "sort_by_location",
+      "info": "This setting is used only when both 'Sort by Location' and 'Sort by Alphabetical' are enabled, or when both are disabled. It determines which sorting method to prioritize by default."
     },
     {
-        "type": "number",
-        "id": "limit",
-        "label": "Limit Nearby Showrooms",
-        "default": 9,
-        "info": "Maximum number of showrooms to display when sorting by location."
+      "type": "number",
+      "id": "limit",
+      "label": "Limit Nearby Showrooms",
+      "default": 9,
+      "info": "Maximum number of showrooms to display when sorting by location. Set to 0 to show all nearby showrooms without any limit."
     },
     {
       "type": "header",

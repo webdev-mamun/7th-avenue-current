@@ -6,12 +6,13 @@ if (!customElements.get('showroom-items')) {
           this.handleButtonClick = this.handleButtonClick.bind(this);
           this.handleCalendly = this.handleCalendly.bind(this);
   
+          this.allShowroom = [...this.querySelectorAll('[data-showroom-order]')];
+          this.buttons = [...this.querySelectorAll('[data-sort-by]')];
+          this.calendlyOpenerButtons = [...this.querySelectorAll('[data-calendly-opener]')];
           this.allDistance = this.getCookie('showroomGeoDistances_v1') || [];
-          console.log(this.allDistance, 'from cache');
   
           this.activeButton = this.querySelector('[data-sort-by].active') || this.buttons[0];
-          this.activeSortOption = this.activeButton?.dataset.sortBy || this.dataset.defaultSortBy || 'by_location';
-          console.log(this.activeSortOption, 'default');
+          this.activeSortOption = this.activeButton?.dataset.sortBy || this.dataset.defaultSortBy || 'sort_by_location';
   
           try {
             this.allShowroomData = JSON.parse(
@@ -22,14 +23,10 @@ if (!customElements.get('showroom-items')) {
             this.allShowroomData = [];
           }
   
-          this.allShowroom = [...this.querySelectorAll('[data-showroom-order]')];
-          this.buttons = [...this.querySelectorAll('[data-sort-by]')];
-          this.calendlyOpenerButtons = [...this.querySelectorAll('[data-calendly-opener]')];
-  
           this.sortHandlers = {
-            by_alphabetical: this.handleByAlphabetical.bind(this),
-            by_location: this.handleByLocation.bind(this),
-            by_state: this.handleByState.bind(this)
+            sort_by_alphabetical: this.handleByAlphabetical.bind(this),
+            sort_by_location: this.handleByLocation.bind(this),
+            sort_by_state: this.handleByState.bind(this)
           };
   
           this.buttons.forEach(button =>
@@ -42,6 +39,7 @@ if (!customElements.get('showroom-items')) {
         }
   
         connectedCallback() {
+          console.log(this.activeSortOption)
           this.sortHandlers[this.activeSortOption]?.();
         }
   
@@ -154,49 +152,89 @@ if (!customElements.get('showroom-items')) {
   
         async handleByLocation() {
           const missingHandles = [];
-  
-          for (const el of this.allShowroom) {
-            const handle = el.dataset.handle;
-            const cached = this.allDistance.find(d => d.handle === handle);
-            const data = this.allShowroomData.find(d => d.handle === handle);
-  
-            if (!cached || !data) {
-              missingHandles.push(handle);
+
+          for (const data of this.allShowroomData) {
+            const cached = this.allDistance.find(d => d.handle === data.handle);
+        
+            if (!cached) {
+              missingHandles.push(data.handle);
               continue;
             }
-  
+        
             const latChanged = parseFloat(data.latitude) !== cached.lat;
             const lonChanged = parseFloat(data.longitude) !== cached.lon;
-  
+        
             if (latChanged || lonChanged) {
-              missingHandles.push(handle);
+              missingHandles.push(data.handle);
             }
           }
-  
+
+          const filteredDistances = this.allDistance.filter(distance => {
+            return this.allShowroomData.some(data => data.handle === distance.handle);
+          });
+          
+          if (filteredDistances.length !== this.allDistance.length) {
+            this.allDistance = filteredDistances;
+            this.setCookie('showroomGeoDistances_v1', this.allDistance, 30);
+          }
+        
           if (missingHandles.length === 0 && this.allDistance.length > 0) {
+            console.log('from cache v2');
             this.sortByDistance(this.allDistance);
           } else {
+            console.log('need fetch');
             const newDistances = await this.fetchMissingDistances(missingHandles);
-  
-            const merged = [
-              ...new Map(
-                [...this.allDistance, ...newDistances].map(item => [item.handle, item])
-              ).values()
-            ];
-  
-            const sortedMerged = [...merged].sort((a, b) => a.distance - b.distance);
-  
-            this.allDistance = sortedMerged;
-            this.setCookie('showroomGeoDistances_v1', sortedMerged, 30);
-  
-            if (sortedMerged.length > 0) {
+        
+            if (newDistances.length > 0) {
+              const merged = [
+                ...new Map(
+                  [...this.allDistance, ...newDistances].map(item => [item.handle, item])
+                ).values()
+              ];
+        
+              const sortedMerged = merged.sort((a, b) => a.distance - b.distance);
+        
+              this.allDistance = sortedMerged;
+              this.setCookie('showroomGeoDistances_v1', sortedMerged, 30);
+        
               this.sortByDistance(sortedMerged);
             } else {
               this.handleByAlphabetical();
             }
           }
         }
-  
+        
+        async fetchMissingDistances(missingHandles) {
+          if (missingHandles.length === 0) return [];
+        
+          try {
+            const ipGeo = await fetch("https://api.ipgeolocation.io/ipgeo?apiKey=2c6a7373a74548c798abd31f823fa892")
+              .then(res => res.json());
+        
+            const clientLat = parseFloat(ipGeo.latitude);
+            const clientLon = parseFloat(ipGeo.longitude);
+        
+            return this.allShowroomData
+              .filter(data => missingHandles.includes(data.handle))
+              .map(data => {
+                const showroomLat = parseFloat(data.latitude);
+                const showroomLon = parseFloat(data.longitude);
+                const distance = Math.round(this.calculateDistance(clientLat, clientLon, showroomLat, showroomLon));
+        
+                return {
+                  handle: data.handle,
+                  distance,
+                  lat: showroomLat,
+                  lon: showroomLon
+                };
+              });
+          } catch (err) {
+            console.warn('Geolocation API failed:', err);
+            return [];
+          }
+        }
+        
+
         sortByDistance(distances) {
           const limit = this.dataset.limit > 0 ? this.dataset.limit : this.allShowroom.length;
           distances.forEach((item, index) => {
@@ -211,42 +249,6 @@ if (!customElements.get('showroom-items')) {
               }
             }
           });
-        }
-  
-        async fetchMissingDistances(missingHandles) {
-          if (missingHandles.length === 0) return [];
-  
-          try {
-            const ipGeo = await fetch("https://api.ipgeolocation.io/ipgeo?apiKey=2c6a7373a74548c798abd31f823fa892")
-              .then(res => res.json());
-  
-            const clientLat = parseFloat(ipGeo.latitude);
-            const clientLon = parseFloat(ipGeo.longitude);
-  
-            return this.allShowroom
-              .map(el => {
-                const handle = el.dataset.handle;
-                if (!missingHandles.includes(handle)) return null;
-  
-                const data = this.allShowroomData.find(d => d.handle === handle);
-                if (!data) return null;
-  
-                const showroomLat = parseFloat(data.latitude);
-                const showroomLon = parseFloat(data.longitude);
-                const distance = Math.round(this.calculateDistance(clientLat, clientLon, showroomLat, showroomLon));
-  
-                return {
-                  handle,
-                  distance,
-                  lat: showroomLat,
-                  lon: showroomLon
-                };
-              })
-              .filter(Boolean);
-          } catch (err) {
-            console.warn('Geolocation API failed:', err);
-            return [];
-          }
         }
   
         handleByState(state) {
