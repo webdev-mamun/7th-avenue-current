@@ -106,6 +106,131 @@
         "background": "#fff"
       }
     },
+    "bestSeller": {
+      "type": "sofa-page-feature-product",
+      "settings": {
+        "title": "Join 7th Avenue’s Commercial Program",
+        "text": "Exclusive Discounts & Priority Access<br>\nfor The World’s Greatest Modular Sofa",
+        "collection": "best-sellers",
+        "product_limit": 10,
+        "selected_color": "",
+        "speed": "5000",
+        "btn_url": "shopify://pages/commercial-program",
+        "btn_text": "APPLY NOW",
+        "info": "",
+        "paddingTop": 20,
+        "paddingBottom": 40,
+        "paddingTopMobile": 10,
+        "paddingBottomMobile": 10,
+        "background": "#fff"
+      }
+    },
+    "image-with-points": {
+      "type": "image-with-points",
+      "blocks": {
+        "point_wHb4RC": {
+          "type": "point",
+          "settings": {
+            "heading": "Exclusive Discounts - Enjoy special discounts on all 7th Avenue products for you and your clients"
+          }
+        },
+        "point_AgAi74": {
+          "type": "point",
+          "settings": {
+            "heading": "No Minimum Order - Apply your Trade Partner benefits to orders of any size and value"
+          }
+        },
+        "point_zidY8w": {
+          "type": "point",
+          "settings": {
+            "heading": "Volume Savings - Tiered discounts for large-scale commercial partners. The more you buy, the more you save!"
+          }
+        },
+        "point_abCWQi": {
+          "type": "point",
+          "settings": {
+            "heading": "Early Access - Get first dibs on new product launches, fabric releases, and events"
+          }
+        },
+        "point_UkwyD9": {
+          "type": "point",
+          "settings": {
+            "heading": "Priority Appointments - Collaborate with a 7th Avenue Design Consultant in our showrooms or via virtual appointment"
+          }
+        },
+        "point_hwEb6y": {
+          "type": "point",
+          "settings": {
+            "heading": "Spotlight Opportunities - Have your work featured on our social media channels, website, and newsletter"
+          }
+        },
+        "point_Kh3CDr": {
+          "type": "point",
+          "settings": {
+            "heading": "Dedicated Concierge Support - We’re with you every step of the way"
+          }
+        }
+      },
+      "block_order": [
+        "point_wHb4RC",
+        "point_AgAi74",
+        "point_zidY8w",
+        "point_abCWQi",
+        "point_UkwyD9",
+        "point_hwEb6y",
+        "point_Kh3CDr"
+      ],
+      "settings": {
+        "box": true,
+        "image": "shopify://shop_images/Chocolate_Brown_Vertical_7.jpg",
+        "text_left": false,
+        "title": "Join 7th Avenue’s Commercial Program",
+        "btn_url": "shopify://pages/commercial-program",
+        "btn_text": "Apply Now",
+        "borderTop": true,
+        "borderBot": false,
+        "top_gutter": 40,
+        "bottom_gutter": 40,
+        "top_gutter_m": 10,
+        "bottom_gutter_m": 10,
+        "color": "#000000",
+        "bg_color": "#f3f3f3"
+      }
+    },
+    "video": {
+      "type": "sofa-page-video",
+      "settings": {
+        "videoRatio": "4/3",
+        "image": "shopify://shop_images/Website_Photo_-_4_fbe34f52-b6e5-4cb7-840a-05cd7d046a39.jpg",
+        "fullImage": true,
+        "title": "Members-Only Benefits for\nValued Trade Partners",
+        "icon_svg_1": "",
+        "icon_1": "shopify://shop_images/dollar.svg",
+        "text_1": "Exclusive Discounts",
+        "icon_svg_2": "",
+        "icon_2": "shopify://shop_images/stopwatch.svg",
+        "text_2": "Early Access",
+        "icon_svg_3": "",
+        "icon_3": "shopify://shop_images/check.svg",
+        "text_3": "No Minimum Order",
+        "icon_svg_4": "",
+        "icon_4": "shopify://shop_images/calendar_bb712976-a23b-4182-8cff-50105867dbf1.svg",
+        "text_4": "Priority Appointments",
+        "icon_svg_5": "",
+        "icon_5": "shopify://shop_images/lightbulb.svg",
+        "text_5": "Spotlight Opportunities",
+        "icon_svg_6": "",
+        "icon_6": "shopify://shop_images/Conceirge_Support.svg",
+        "text_6": "Dedicated Concierge Support",
+        "marginTop": 0,
+        "marginBottom": 20,
+        "marginTopMobile": 0,
+        "marginBottomMobile": 10,
+        "btn_url": "",
+        "btn_text": "SHOP BEST SELLERS",
+        "background": "#f3f3f3"
+      }
+    },
     "b078c71e-2483-4dd2-bf7f-870a8a815824": {
       "type": "feature-in",
       "blocks": {
@@ -147,59 +272,6 @@
         "border_bottom": false,
         "color": "#000000",
         "bg_color": "#f3f3f3"
-      }
-    },
-    "bestSeller": {
-      "type": "sofa-page-feature-product",
-      "settings": {
-        "title": "Join 7th Avenue’s Commercial Program",
-        "text": "Exclusive Discounts & Priority Access<br>\nfor The World’s Greatest Modular Sofa",
-        "collection": "best-sellers",
-        "product_limit": 10,
-        "selected_color": "",
-        "speed": "5000",
-        "btn_url": "shopify://pages/commercial-program",
-        "btn_text": "APPLY NOW",
-        "info": "",
-        "paddingTop": 20,
-        "paddingBottom": 20,
-        "paddingTopMobile": 10,
-        "paddingBottomMobile": 10,
-        "background": "#fff"
-      }
-    },
-    "video": {
-      "type": "sofa-page-video",
-      "settings": {
-        "videoRatio": "4/3",
-        "image": "shopify://shop_images/Website_Photo_-_4_fbe34f52-b6e5-4cb7-840a-05cd7d046a39.jpg",
-        "fullImage": true,
-        "title": "Members-Only Benefits for\nValued Trade Partners",
-        "icon_svg_1": "",
-        "icon_1": "shopify://shop_images/dollar.svg",
-        "text_1": "Exclusive Discounts",
-        "icon_svg_2": "",
-        "icon_2": "shopify://shop_images/stopwatch.svg",
-        "text_2": "Early Access",
-        "icon_svg_3": "",
-        "icon_3": "shopify://shop_images/check.svg",
-        "text_3": "No Minimum Order",
-        "icon_svg_4": "",
-        "icon_4": "shopify://shop_images/calendar_bb712976-a23b-4182-8cff-50105867dbf1.svg",
-        "text_4": "Priority Appointments",
-        "icon_svg_5": "",
-        "icon_5": "shopify://shop_images/lightbulb.svg",
-        "text_5": "Spotlight Opportunities",
-        "icon_svg_6": "",
-        "icon_6": "shopify://shop_images/Conceirge_Support.svg",
-        "text_6": "Dedicated Concierge Support",
-        "marginTop": 0,
-        "marginBottom": 20,
-        "marginTopMobile": 0,
-        "marginBottomMobile": 10,
-        "btn_url": "",
-        "btn_text": "SHOP BEST SELLERS",
-        "background": "#f3f3f3"
       }
     },
     "specialFeature": {
@@ -250,91 +322,6 @@
       ],
       "settings": {}
     },
-    "advancedContent": {
-      "type": "sofa-page-advanced-content",
-      "blocks": {
-        "c54416f5-f914-469a-a9d6-0834a4a7d76f": {
-          "type": "advanced_content",
-          "settings": {
-            "image": "shopify://shop_images/Exclusive_Discounts_Commercial.jpg",
-            "video": "",
-            "image_right": true,
-            "title": "Exclusive Discounts",
-            "text": "Enjoy special discounts on all 7th Avenue \nproducts for you and your clients"
-          }
-        },
-        "40618786-dc98-47d2-8e75-d4d70c98d545": {
-          "type": "advanced_content",
-          "settings": {
-            "image": "shopify://shop_images/No_Minimum_Order_Commercial.jpg",
-            "video": "",
-            "image_right": false,
-            "title": "No Minimum Order",
-            "text": "Apply your Trade Partner benefits to \norders of any size and value"
-          }
-        },
-        "d8240561-3ec4-434f-af71-28536857ee5e": {
-          "type": "advanced_content",
-          "settings": {
-            "image": "shopify://shop_images/Volume_Savings_Commercial.jpg",
-            "video": "",
-            "image_right": true,
-            "title": "Volume Savings",
-            "text": "Tiered discounts for large-scale commercial\npartners. The more you buy, the more you save!"
-          }
-        },
-        "advanced_content_bRAmt9": {
-          "type": "advanced_content",
-          "settings": {
-            "image": "shopify://shop_images/Early_Access_Commercial.jpg",
-            "video": "",
-            "image_right": false,
-            "title": "Early Access",
-            "text": "Get first dibs on new product launches, \nfabric releases, and events"
-          }
-        },
-        "advanced_content_VdwyPz": {
-          "type": "advanced_content",
-          "settings": {
-            "image": "shopify://shop_images/Priority_Appointments_Commercial.jpg",
-            "video": "",
-            "image_right": true,
-            "title": "Priority Appointments",
-            "text": "Collaborate with a 7th Avenue Design Consultant in our showrooms or via virtual appointment"
-          }
-        },
-        "advanced_content_KhYFwW": {
-          "type": "advanced_content",
-          "settings": {
-            "image": "shopify://shop_images/Spotlight_Opportunities_Commercial.jpg",
-            "video": "",
-            "image_right": false,
-            "title": "Spotlight Opportunities",
-            "text": "Have your work featured on our social media\nchannels, website, and newsletter"
-          }
-        },
-        "advanced_content_FD8zWM": {
-          "type": "advanced_content",
-          "settings": {
-            "image": "shopify://shop_images/Dedicated_Concierge_Support_commercial.jpg",
-            "video": "",
-            "image_right": true,
-            "title": "Dedicated Concierge Support",
-            "text": "We’re with you every step of the way"
-          }
-        }
-      },
-      "block_order": [
-        "c54416f5-f914-469a-a9d6-0834a4a7d76f",
-        "40618786-dc98-47d2-8e75-d4d70c98d545",
-        "d8240561-3ec4-434f-af71-28536857ee5e",
-        "advanced_content_bRAmt9",
-        "advanced_content_VdwyPz",
-        "advanced_content_KhYFwW",
-        "advanced_content_FD8zWM"
-      ],
-      "settings": {}
-    },
     "sofa_page_feature_product_TNV3kg": {
       "type": "sofa-page-feature-product",
       "settings": {
@@ -357,11 +344,11 @@
   },
   "order": [
     "hero",
-    "b078c71e-2483-4dd2-bf7f-870a8a815824",
     "bestSeller",
+    "image-with-points",
     "video",
+    "b078c71e-2483-4dd2-bf7f-870a8a815824",
     "specialFeature",
-    "advancedContent",
     "sofa_page_feature_product_TNV3kg"
   ]
 }

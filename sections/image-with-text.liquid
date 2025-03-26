@@ -1,21 +1,21 @@
 {%- liquid
-    assign image = section.settings.image
-    assign title = section.settings.title
-    assign text = section.settings.text 
-    assign btn_text = section.settings.btn_text
-    assign btn_url = section.settings.btn_url
-    assign btn_text_2 = section.settings.btn_text2
-    assign btn_url_2 = section.settings.btn_url2
-    assign top_gutter = section.settings.top_gutter
+   assign image = section.settings.image
+   assign title = section.settings.title
+   assign text = section.settings.text 
+   assign btn_text = section.settings.btn_text
+   assign btn_url = section.settings.btn_url
+   assign btn_text_2 = section.settings.btn_text2
+   assign btn_url_2 = section.settings.btn_url2
+   assign top_gutter = section.settings.top_gutter
 	assign bottom_gutter = section.settings.bottom_gutter
 	assign top_gutter_m = section.settings.top_gutter_m
 	assign bottom_gutter_m = section.settings.bottom_gutter_m
-    assign color = section.settings.color 
-    assign bg_color = section.settings.bg_color
-    assign text_left = section.settings.text_left
-    assign box = section.settings.box
-    assign border_top = section.settings.borderTop
-    assign border_bot = section.settings.borderBot
+   assign color = section.settings.color 
+   assign bg_color = section.settings.bg_color
+   assign text_left = section.settings.text_left
+   assign box = section.settings.box
+   assign border_top = section.settings.borderTop
+   assign border_bot = section.settings.borderBot
     
 -%}
 <section class="image-with-text image-with-text__{{ section.id }}"{% if template.name == 'product' %} id="pdp-virtual-appointment"{% endif %}>
