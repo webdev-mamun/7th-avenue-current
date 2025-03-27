@@ -627,30 +627,6 @@
         "speed": "5000"
       }
     },
-    "1650919648ecbeb0e5": {
-      "type": "showroom",
-      "disabled": true,
-      "settings": {
-        "title": "Find a Showroom Near You",
-        "title_mob": "Find a Showroom Near You",
-        "subtitle": "Experience “The Worlds Greatest Modular Sofa” in person.",
-        "subtitle_mob": "",
-        "get_data_from_metaobject": true,
-        "box_per_row": 3,
-        "active_geo": true,
-        "border_top": false,
-        "border_bot": false,
-        "color": "#000000",
-        "bg_color": "#ffffff",
-        "card_bg": "#f3f3f3",
-        "bt_color": "#ffffff",
-        "bt_bg": "#032e6b",
-        "padding_top": 20,
-        "padding_bot": 40,
-        "padding_top_mob": 20,
-        "padding_bot_mob": 0
-      }
-    },
     "f47b81bf-45ff-494e-8bc2-664c4fca2a80": {
       "type": "image-with-text",
       "disabled": true,
@@ -943,7 +919,6 @@
     "1662924910155a782c",
     "badge",
     "review",
-    "1650919648ecbeb0e5",
     "f47b81bf-45ff-494e-8bc2-664c4fca2a80",
     "collectionList",
     "sofa_page_badge_tyJrRM",
