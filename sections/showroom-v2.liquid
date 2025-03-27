@@ -1,10 +1,12 @@
 {%- liquid
   assign color = section.settings.color
   assign bg_color = section.settings.bg_color
+  assign button_color = section.settings.button_color
+  assign button_bg = section.settings.button_bg
+  assign button_bg_hover = section.settings.button_bg_hover
 
   assign bt_color = section.settings.bt_color
   assign bt_bg = section.settings.bt_bg
-
   assign card_bg = section.settings.card_bg
 
   assign title = section.settings.title
@@ -60,8 +62,11 @@
   --bt-color: {{ bt_color }};
   --bt-bg: {{ bt_bg }};
   --card-bg: {{ card_bg }};
-  --buttonColor: #032e6a;
-  --buttonHover: #000000;
+
+  --buttonText: {{ button_color }};
+  --buttonColor: {{ button_bg }};
+  --buttonHover: {{ button_bg_hover }};
+
   --padding-top: {{ padding_top }}px;
   --padding-bot: {{ padding_bot }}px;
   --padding-top-mob: {{ padding_top_mob }}px;
@@ -81,10 +86,23 @@
     if section.settings.get_data_from_metaobject
         assign showrooms = shop.metaobjects.showroom.values
         assign showroom_count = showrooms.count
+
+        if showroom_count > limit
+          if template.name == 'page' and page.handle == 'find-a-showroom'
+            assign limit = showroom_count
+          endif
+        elsif showroom_count <= limit
+          assign limit = showroom_count
+        endif
+
         assign show_button = false
         if showroom_count > limit and limit != 0
           assign show_button = true
+          if template.name == 'page' and page.url == button_link
+            assign show_button = false
+          endif
         endif
+
         if sort_by_state
             assign state_list = ''
             assign state_list_uniq = ''
@@ -341,7 +359,7 @@
       "id": "limit",
       "label": "Limit Nearby Showrooms",
       "default": 9,
-      "info": "Maximum number of showrooms to display when sorting by location. Set to 0 to show all nearby showrooms without any limit."
+      "info": "Sets the maximum number of showrooms to display when sorting by location. A value of 0 will show all nearby showrooms without any limit. Please note, this limit does not apply to the 'Find a Showroom' page."
     },
     {
       "type": "header",
@@ -361,7 +379,7 @@
     },
     {
        "type":"header",
-       "content":"color"
+       "content":"Section color"
     },
     {
        "type":"color",
@@ -376,9 +394,31 @@
        "default":"#ffffff"
     },
     {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_hover",
+      "label": "Button background (Hover)",
+      "default": "#032e6a"
+    },
+    {
+      "type": "header",
+      "content": "Card color"
+    },
+    {
        "type":"color",
        "id":"card_bg",
-       "label":"Card background color",
+       "label":"Background color",
        "default":"#f3f3f3"
     },
     {
