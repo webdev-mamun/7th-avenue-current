@@ -39,7 +39,6 @@ if (!customElements.get('showroom-items')) {
         }
   
         connectedCallback() {
-          console.log(this.activeSortOption)
           this.sortHandlers[this.activeSortOption]?.();
         }
   
@@ -179,10 +178,8 @@ if (!customElements.get('showroom-items')) {
           }
         
           if (missingHandles.length === 0 && this.allDistance.length > 0) {
-            console.log('from cache v2');
             this.sortByDistance(this.allDistance);
           } else {
-            console.log('need fetch');
             const newDistances = await this.fetchMissingDistances(missingHandles);
         
             if (newDistances.length > 0) {
