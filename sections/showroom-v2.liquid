@@ -1,8 +1,10 @@
 {%- liquid
   assign color = section.settings.color
   assign bg_color = section.settings.bg_color
+
   assign bt_color = section.settings.bt_color
   assign bt_bg = section.settings.bt_bg
+
   assign card_bg = section.settings.card_bg
 
   assign title = section.settings.title
@@ -79,6 +81,10 @@
     if section.settings.get_data_from_metaobject
         assign showrooms = shop.metaobjects.showroom.values
         assign showroom_count = showrooms.count
+        assign show_button = false
+        if showroom_count > limit and limit != 0
+          assign show_button = true
+        endif
         if sort_by_state
             assign state_list = ''
             assign state_list_uniq = ''
@@ -224,7 +230,7 @@
       </script>
     {%- endif -%}
   </div>
-  {%- if button != blank and button_link != blank -%}
+  {%- if button != blank and button_link != blank and show_button -%}
     <div class="showroom-button-wrapper">
         <a href="{{ button_link }}" class="button">{{ button }}</a>
     </div>
