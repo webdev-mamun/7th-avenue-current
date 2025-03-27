@@ -242,8 +242,7 @@
         "9d8af6a7-276c-4dc0-996b-eeed2c0545e6",
         "6c18ffaa-08e9-497b-a719-af9316e2f6cc"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "advancedContent": {
       "type": "sofa-page-advanced-content",
@@ -284,8 +283,7 @@
         "40618786-dc98-47d2-8e75-d4d70c98d545",
         "d8240561-3ec4-434f-af71-28536857ee5e"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "1662924910155a782c": {
       "type": "sofa-compare",
@@ -563,24 +561,28 @@
         "speed": "5000"
       }
     },
-    "1650919648ecbeb0e5": {
-      "type": "showroom",
+    "showroom_v2_LaxmAd": {
+      "type": "showroom-v2",
       "settings": {
-        "title": "Find a Showroom Near You",
-        "title_mob": "Find a Showroom Near You",
-        "subtitle": "Experience “The Worlds Greatest Modular Sofa” in person.",
-        "subtitle_mob": "",
+        "title": "Find a Showroom",
+        "subtitle": "EXPERIENCE “THE WORLDS GREATEST MODULAR SOFA” IN PERSON.",
         "get_data_from_metaobject": true,
         "box_per_row": 3,
-        "active_geo": true,
+        "button": "See all showroom",
+        "button_url": "shopify://pages/find-a-showroom",
+        "sort_by_alphabetical": false,
+        "sort_by_location": false,
+        "sort_by_state": false,
+        "default_sort_option": "sort_by_location",
+        "limit": 9,
         "border_top": false,
         "border_bot": false,
         "color": "#000000",
         "bg_color": "#ffffff",
         "card_bg": "#f3f3f3",
         "bt_color": "#ffffff",
-        "bt_bg": "#032e6b",
-        "padding_top": 18,
+        "bt_bg": "#032e6a",
+        "padding_top": 20,
         "padding_bot": 0,
         "padding_top_mob": 20,
         "padding_bot_mob": 0
@@ -844,8 +846,7 @@
         "7afa87ea-773b-406f-be7c-48901d285cb2"
       ],
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "8a7127b0-c708-4fc6-b034-ea665c556df8": {
       "type": "collection-instagram-gallery",
@@ -858,11 +859,8 @@
     },
     "1bdb2963-08d1-430f-ab42-1498cc8c1e14": {
       "type": "okendo-reviews",
-      "custom_css": [
-
-      ],
-      "settings": {
-      }
+      "custom_css": [],
+      "settings": {}
     }
   },
   "order": [
@@ -875,7 +873,7 @@
     "1662924910155a782c",
     "badge",
     "review",
-    "1650919648ecbeb0e5",
+    "showroom_v2_LaxmAd",
     "f47b81bf-45ff-494e-8bc2-664c4fca2a80",
     "collectionList",
     "sofa_page_badge_mApncb",
