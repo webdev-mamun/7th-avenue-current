@@ -20,7 +20,7 @@
    
 -%}
 <section class="image-with-text image-with-text__{{ section.id }}">
-   <div class="image-with-text__container{% if text_left %} text-left{% endif %}{% if box %} container-boxed{% endif %}">
+   <div class=".image-with-text__container image-with-points__container{% if text_left %} text-left{% endif %}{% if box %} container-boxed{% endif %}">
        {%- if border_top == true -%}
        <div class="border-top">
          <div class="section-divider"></div>
@@ -64,10 +64,13 @@
 </section>
 
 <style>
- .image-with-text__{{ section.id }} {
+ .image-with-text__{{ section.id }} .image-with-text__content{
     color: {{ color }};
     background-color: {{ bg_color }};
+    margin-top: 0;
  } 
+
+
  
   .image-with-text__{{ section.id }} .image-with-text__container--inner {
     padding-top: {{ top_gutter_m }}px;
@@ -80,6 +83,12 @@
       padding-bottom: {{ bottom_gutter }}px;
     }
  }
+
+ @media screen and (min-width: 980px){
+   .image-with-text__{{ section.id }} .image-with-text__content{
+      padding-block: 20px;
+   } 
+}
  
 </style>
 {% schema %}
