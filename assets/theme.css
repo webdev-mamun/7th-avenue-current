@@ -19931,6 +19931,8 @@ span.product-price.was {
 
 span.product-price.sale {
   color: #b85455;
+  font-weight: 600;
+  margin-right: 2px;
 }
 
 span.money_save {
@@ -19938,6 +19940,7 @@ span.money_save {
   color: #b85455;
   letter-spacing: 1.5px;
   margin-left: 2.5px;
+  font-weight: 600;
 }
 
 span.money_save_pdp {

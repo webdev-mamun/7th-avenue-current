@@ -603,7 +603,8 @@ cart-remove-button .button {
 
 .cart-item__final-price {
   font-family: "SuisseIntl-Regular";
-  font-size: 14px
+  font-size: 14px;
+  color: #b85455;
 }
 
 .list-unstyled {

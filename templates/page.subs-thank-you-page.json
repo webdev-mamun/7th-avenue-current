@@ -566,11 +566,14 @@
         "border_bot": false,
         "color": "#000000",
         "bg_color": "#ffffff",
+        "button_color": "#ffffff",
+        "button_bg": "#000000",
+        "button_bg_hover": "#032e6a",
         "card_bg": "#f3f3f3",
         "bt_color": "#ffffff",
         "bt_bg": "#032e6a",
-        "padding_top": 40,
-        "padding_bot": 60,
+        "padding_top": 20,
+        "padding_bot": 40,
         "padding_top_mob": 20,
         "padding_bot_mob": 20
       }
