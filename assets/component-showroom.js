@@ -76,10 +76,7 @@ if (!customElements.get('showroom-items')) {
                 book_appointment_page_url: theme.routes.url || '',
                 event_type_url: event.target.href || '',
                 event_type_name:
-                event?.target?.closest('.showroom-card')?.querySelector('.showroom-card__title')?.innerHTML.replace(
-                    /<br\s*\/?>/gi,
-                    " "
-                ) || 'Unknown Showroom',
+                event?.target?.closest('.showroom-card')?.querySelector('.showroom-card__title')?.innerHTML.replace(/<br\s*\/?>/gi, " ").replace(/\s*-\s*/g, " - ") || 'Unknown Showroom',
             };
             
             this.initializeFbq();
@@ -129,6 +126,7 @@ if (!customElements.get('showroom-items')) {
         }
   
         sortShowrooms(getSortKey) {
+          const limit = this.dataset.limit > 0 ? this.dataset.limit : this.allShowroom.length;
           this.allShowroom
             .map(el => ({
               key: getSortKey(el),
@@ -138,6 +136,12 @@ if (!customElements.get('showroom-items')) {
             .forEach((item, index) => {
               item.el.style.setProperty('--order', index);
               item.el.hidden = false;
+
+              if (index + 1 <= limit) {
+                item.el.hidden = false;
+              } else {
+                item.el.hidden = true;
+              }
             });
         }
   
@@ -281,7 +285,8 @@ if (!customElements.get('showroom-items')) {
           try {
             const raw = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
             return raw ? JSON.parse(decodeURIComponent(raw[1])) : [];
-          } catch {
+          } catch (err) {
+            console.warn(`Cookie read failed for ${name}:`, err);
             return [];
           }
         }

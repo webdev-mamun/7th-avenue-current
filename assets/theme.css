@@ -19931,7 +19931,6 @@ span.product-price.was {
 
 span.product-price.sale {
   color: #b85455;
-  font-weight: 600;
   margin-right: 2px;
 }
 
@@ -19940,7 +19939,6 @@ span.money_save {
   color: #b85455;
   letter-spacing: 1.5px;
   margin-left: 2.5px;
-  font-weight: 600;
 }
 
 span.money_save_pdp {
@@ -24306,6 +24304,32 @@ li.open.deselect .color__swatch--bg.snow-white {
   max-width: 1440px;
 }
 
+.image-with-text__container.image-with-points__container {
+  width: 100%;
+}
+
+.image-with-text__container.image-with-points__container.container-boxed {
+  width: calc(90% + 60px);
+  max-width: 1410px;
+  margin-inline: auto;
+}
+
+.image-with-text__points {
+  font-family: var(--mainFontFamily) !important;
+  font-size: 13.5pt;
+  line-height: 1.4;
+  display: grid;
+  gap: 15px;
+  list-style: disc outside;
+  margin: 0;
+  padding-right: 5%;
+  padding-left: 20px;
+}
+
+.image-with-text__points li {
+  padding-left: 5px;
+}
+
 .image-with-text .section-divider {
   margin: 0 auto;
   width: 100%;
@@ -24316,26 +24340,26 @@ li.open.deselect .color__swatch--bg.snow-white {
   border-bottom: 1px solid #d3d3d3;
 }
 
-@media screen and (min-width: 741px) {
+@media screen and (min-width:741px) {
   .sofa-page-video {
-    margin: var(--marginTop, 0) auto var(--marginBottom, 0);
+    margin: var(--marginTop, 0) auto var(--marginBottom, 0)
   }
 }
 
-@media screen and (min-width: 991px) {
+@media screen and (min-width:991px) {
   .image-with-text__container.container-boxed {
     width: 85%;
-    padding-inline: 20px;
+    padding-inline: 20px
   }
 }
 
-@media screen and (min-width: 1280px) and (max-width: 1645px) {
+@media screen and (min-width:1280px) and (max-width:1645px) {
   .image-with-text__container.container-boxed .image-with-text__image {
-    grid-column: auto/span 5;
+    grid-column: auto/span 5
   }
 
   .image-with-text__container.container-boxed .image-with-text__content {
-    grid-column: auto/span 7;
+    grid-column: auto/span 7
   }
 }
 
@@ -26139,9 +26163,9 @@ showroom-items {
 }
 
 .showroom-sort-option {
-  padding: 0.2rem 1rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  padding: 0.4rem 1rem;
+  font-size: 10px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   border: 1px solid black;
   background-color: transparent;
