@@ -19932,6 +19932,7 @@ span.product-price.was {
 span.product-price.sale {
   color: #b85455;
   margin-right: 2px;
+  font-weight: 600;
 }
 
 span.money_save {
