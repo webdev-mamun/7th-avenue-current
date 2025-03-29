@@ -25,7 +25,7 @@
         "subtitle": "EXPERIENCE “THE WORLDS GREATEST MODULAR SOFA” IN PERSON.",
         "get_data_from_metaobject": true,
         "box_per_row": 3,
-        "button": "See all showroom",
+        "button": "See all showrooms",
         "button_url": "shopify://pages/find-a-showroom",
         "sort_by_alphabetical": true,
         "sort_by_location": true,

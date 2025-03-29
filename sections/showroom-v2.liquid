@@ -166,7 +166,7 @@
                         endif
                     endfor
                 -%}
-                <button class="showroom-sort-option" data-sort-by="sort_by_state" data-sort-option="{{ state_uniq }}">{{ state_uniq }}{% if count > 1 %} ({{ count }}){% endif %}</button>
+                <button class="showroom-sort-option" data-sort-by="sort_by_state" data-sort-option="{{ state_uniq }}">{{ state_uniq }}{% if count > 0 %} ({{ count }}){% endif %}</button>
             {%- endfor -%}
         {%- endif -%}
       </div>
@@ -301,7 +301,7 @@
         "type": "text",
         "id": "button",
         "label": "Button label",
-        "default": "See all showroom"
+        "default": "See all showrooms"
     },
     {
         "type": "url",

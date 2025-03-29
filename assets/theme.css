@@ -19932,7 +19932,6 @@ span.product-price.was {
 span.product-price.sale {
   color: #b85455;
   margin-right: 2px;
-  font-weight: 600;
 }
 
 span.money_save {
@@ -26164,7 +26163,7 @@ showroom-items {
 }
 
 .showroom-sort-option {
-  padding: 0.4rem 1rem;
+  padding: 6px 16px;
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
