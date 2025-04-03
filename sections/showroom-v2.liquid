@@ -139,7 +139,8 @@
     {%- endif -%}
 
       {%- if show_filter -%}
-      <div class="showroom-sort-option-wrapper">
+      <div class="showroom-sort-option-scroller">
+        <div class="showroom-sort-option-wrapper">
         {% if sort_by_location and default_sort_option == 'sort_by_location' %}
           <button class="showroom-sort-option active" data-sort-by="sort_by_location">Near Me</button>
         {% endif %}
@@ -169,7 +170,8 @@
                 <button class="showroom-sort-option" data-sort-by="sort_by_state" data-sort-option="{{ state_uniq }}">{{ state_uniq }}{% if count > 0 %} ({{ count }}){% endif %}</button>
             {%- endfor -%}
         {%- endif -%}
-      </div>
+        </div>
+      </div>  
     {%- endif -%}
   </div>
   

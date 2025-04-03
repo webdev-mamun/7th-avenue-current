@@ -25808,6 +25808,7 @@ h5 .option-position {
   font-size: 34px;
   text-align: left;
   padding: 0;
+  margin: 0;
 }
 
 @media screen and (min-width: 360px) {
@@ -25828,6 +25829,7 @@ h5 .option-position {
   letter-spacing: 1.73px;
   text-transform: uppercase;
   margin: 6px 0 0;
+  display: none;
 }
 
 .showroom-cta-wrapper {
@@ -26035,7 +26037,7 @@ h5 .option-position {
   }
 
   .showroom .section-title {
-    font-size: 32pt;
+    font-size: 36pt;
   }
 
   .showroom .section-subtitle {
@@ -26156,10 +26158,16 @@ showroom-items {
   padding-bottom: 20px;
 }
 
+.showroom-sort-option-scroller {
+  overflow-x: auto;
+  padding-block: 10px;
+}
+
 .showroom-sort-option-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  width: 620px;
 }
 
 .showroom-sort-option {
@@ -26184,6 +26192,10 @@ showroom-items {
 }
 
 @media screen and (min-width: 980px) {
+  .showroom .section-subtitle {
+    display: block;
+  }
+
   .showroom-section-header.has-filter-option {
       grid-template-columns: 1fr 1fr;
   }
