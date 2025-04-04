@@ -22607,6 +22607,20 @@ li.open.deselect .color__swatch--bg.snow-white {
   font-family: var(--mainFontFamily) !important;
   font-size: 11pt;
   line-height: 1.4;
+
+}
+
+.product__details .product-details__accordian--content--inner > p:not(:last-child),
+.product__details
+  .product-details__accordian--content--inner
+  .metafield-rich_text_field
+  > p:not(:last-child) {
+  margin-block-end: 15px;
+}
+
+.product__details .product-details__accordian--content--inner a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media screen and (min-width: 751px) {
@@ -24604,12 +24618,44 @@ li.open.deselect .color__swatch--bg.snow-white {
 
 .product_specification_pdp {
   display: flex;
+  align-items: center;
+  gap: 5px;
   font-size: 9pt !important;
   font-weight: 500;
   letter-spacing: 1.6px;
   text-transform: uppercase;
-  margin-top: 10px;
+  margin-block: 10px;
   font-family: var(--mainFontFamily);
+}
+
+.product-specification-icon {
+  line-height: 0;
+}
+
+.product-specification-popup {
+  display: none; 
+  position: fixed;
+  position-anchor: --specIcon;
+  inset-block-start: anchor(end);
+  inset-inline-start: anchor(self-end);
+  max-width: 300px;
+  z-index: 10;
+  font-size: 9pt;
+  line-height: 1.6;
+  text-transform: none;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.15);
+}
+
+.product-specification-popup a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+.product-specification-icon:hover + .product-specification-popup {
+  display: block;
 }
 
 a.sildeshow__btn {

@@ -259,5 +259,21 @@
 
     <!-- Google AdWords Dynamic Remarketing -->
     {%- render 'adwords-dynamic-remarketing' -%}
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        if (!('anchorName' in document.documentElement.style)) {
+          window.ANCHOR_POSITIONING_POLYFILL_OPTIONS = {
+            elements: undefined,
+            excludeInlineStyles: false,
+            useAnimationFrame: true // 👈 This ensures tooltips update dynamically
+          };
+          var script = document.createElement('script');
+          script.src = 'https://unpkg.com/@oddbird/css-anchor-positioning/dist/css-anchor-positioning.iife.js';
+          script.async = true;
+          document.head.appendChild(script);
+        }
+      });
+    </script>
+    
   </body>
 </html>
