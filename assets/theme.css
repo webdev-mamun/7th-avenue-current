@@ -24632,14 +24632,25 @@ li.open.deselect .color__swatch--bg.snow-white {
   line-height: 0;
 }
 
-.product-specification-popup {
+.product-specification-info {
+  position: relative;
+  anchor-name: --specIcon;
+  display: inline-block;
+}
+
+.product-specification-popup-wrapper {
   display: none; 
   position: fixed;
   position-anchor: --specIcon;
-  inset-block-start: anchor(end);
-  inset-inline-start: anchor(self-end);
-  max-width: 300px;
+  inset-block-start: anchor(start);
+  inset-inline-start: anchor(self-start);
+  padding: 25px;
   z-index: 10;
+}
+
+.product-specification-popup {
+  max-width: 300px;
+  
   font-size: 9pt;
   line-height: 1.6;
   text-transform: none;
@@ -24654,7 +24665,7 @@ li.open.deselect .color__swatch--bg.snow-white {
 }
 
 
-.product-specification-icon:hover + .product-specification-popup {
+.product-specification-info:hover .product-specification-popup-wrapper {
   display: block;
 }
 
