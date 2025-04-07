@@ -24635,7 +24635,10 @@ custom-tooltip {
 }
 
 .product-specification-icon {
+  position: relative;
   line-height: 0;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .product-specification-info {
@@ -24650,23 +24653,25 @@ custom-tooltip {
   max-width: 325px;
   position-anchor: --specIcon;
   inset-block-start: anchor(start);
-  inset-inline-start: anchor(self-end);
-  padding-inline-start: 5px;
-  padding-block-start: 15px;
+  inset-inline-start: anchor(start);
+  padding-inline-start: 17px;
+  padding-block-start: 17px;
   z-index: 1;
 }
 
 .product-specification-popup {
-  font-size: 9pt;
+  font-family: var(--navFontFamily);
+  font-size: 14px;
   line-height: 1.6;
   text-transform: none;
   background: #fff;
   padding: 15px;
   width: 100%;
-  box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.15);
 }
 
 .product-specification-popup a {
+  font-family: var(--navFontFamily);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
