@@ -32,7 +32,6 @@ function publish(eventName, data) {
   }
 }
 
-
 window.theme = window.theme || {};
 window.Shopify = window.Shopify || {};
 
@@ -153,7 +152,7 @@ theme.Sections.prototype = _.assignIn({}, theme.Sections.prototype, {
     this.constructors[type] = constructor;
 
     $("[data-section-type=" + type + "]").each(
-      function (_index, container) {
+      function (index, container) {
         this._createInstance(container, constructor);
       }.bind(this)
     );
@@ -170,7 +169,7 @@ var desktop = window.matchMedia("(min-width: 980px)");
 $(document).ready(function () {
   (function animationAOS() {
     /* Initiate AOS Scrolling after Lazysizes loads */
-    document.addEventListener("lazybeforeunveil", function (_e) {
+    document.addEventListener("lazybeforeunveil", function (e) {
       AOS.init({ disable: "mobile" });
     });
 
@@ -238,6 +237,8 @@ theme.ProductForm = function (context, events, Product) {
     Offered_product = Offered_product || [],
     Offered_product_qty = Offered_product_qty || [],
     Offered_product_note = Offered_product_note || [],
+    Offered_product_name = '',
+    base_variant_selected = null,
     BaseVariantId = 0;
 
   const addonItems = document.querySelectorAll(".addons-products__item")
@@ -473,8 +474,10 @@ theme.ProductForm = function (context, events, Product) {
 
         inputField.addEventListener("change", () => {
           validateInput(inputField);
+          Offered_product_name = item.querySelector("span")?.innerText.trim();
           previousValues[item.dataset.addonVariantId] = inputField.value;
           updateAddonData(item.dataset.addonVariantId, inputField.value);
+          checkAndUpdateInventoryMessage(base_variant_selected, Offered_product_name);
         });
 
         if (!previousValues[item.dataset.addonVariantId]) {
@@ -483,7 +486,9 @@ theme.ProductForm = function (context, events, Product) {
 
         if (allAddedOnceCheckbox && allAddedOnceCheckbox.checked) {
           inputField.value = qtyLimit;
+          Offered_product_name = item.querySelector("span")?.innerText.trim();
           updateAddonData(item.dataset.addonVariantId, qtyLimit);
+          checkAndUpdateInventoryMessage(base_variant_selected, Offered_product_name);
         } else {
           inputField.value = previousValues[item.dataset.addonVariantId] || 0;
           updateAddonData(item.dataset.addonVariantId, inputField.value);
@@ -504,6 +509,8 @@ theme.ProductForm = function (context, events, Product) {
   }
 
   function handleMinusClick(event, previousValues) {
+    Offered_product_name = '';
+
     const inputField = event.target
       .closest(".addons-products__item")
       .querySelector(".addons-products__item-quantity-input");
@@ -518,10 +525,15 @@ theme.ProductForm = function (context, events, Product) {
       previousValues[newlyAddonVariantId] = inputField.value;
     }
 
+    checkAndUpdateInventoryMessage(base_variant_selected, Offered_product_name);
     updateAddonData(newlyAddonVariantId, newlyAddonQty);
   }
 
   function handlePlusClick(event, previousValues) {
+    Offered_product_name = event.target
+      .closest(".addons-products__item")
+      .querySelector("span")?.innerText.trim();
+
     const inputField = event.target
       .closest(".addons-products__item")
       .querySelector(".addons-products__item-quantity-input");
@@ -537,6 +549,7 @@ theme.ProductForm = function (context, events, Product) {
       previousValues[newlyAddonVariantId] = inputField.value;
     }
 
+    checkAndUpdateInventoryMessage(base_variant_selected, Offered_product_name);
     updateAddonData(newlyAddonVariantId, newlyAddonQty);
   }
 
@@ -554,6 +567,83 @@ theme.ProductForm = function (context, events, Product) {
     if (isNaN(value)) {
       inputField.value = 0;
     }
+  }
+
+  function checkAndUpdateInventoryMessage(variant, addonproduct) {
+    if (!variant || !window.messageVariantFormat) return;
+  
+    let displayMessage = '';
+    let relativeColor = '';
+  
+    const formattedOption1 = variant.option1
+      .toLowerCase()
+      .replace(/ /g, '_')
+      .replace(/\s?\(\s?/g, '(')
+      .replace(/\s?\)\s?/g, ')');
+  
+    const variantFormat = window.messageVariantFormat[formattedOption1];
+  
+    if (variantFormat) {
+      const levelOneMatch = variantFormat.level_one.find(item => item.option_name === variant.option2);
+      if (levelOneMatch) {
+        displayMessage = levelOneMatch.message;
+        relativeColor = levelOneMatch.color;
+      }
+  
+      if (variant.option3 !== null) {
+        const levelTwoMatch = variantFormat.level_two.find(item => item.option_name === variant.option3);
+        if (levelTwoMatch) {
+          displayMessage = levelTwoMatch.message;
+          relativeColor = levelTwoMatch.color;
+        }
+      }
+  
+      if (addonproduct) {
+        const previousMessage = displayMessage;
+        const previousColor = relativeColor;
+  
+        const levelThreeMatch = variantFormat.level_three.find(item => item.option_name === addonproduct);
+        if (levelThreeMatch) {
+          displayMessage = levelThreeMatch.message;
+          relativeColor = levelThreeMatch.color;
+        } else {
+          displayMessage = previousMessage;
+          relativeColor = previousColor;
+        }
+      }
+    }
+  
+    updateInventoryMessage(displayMessage, relativeColor);
+  }
+  
+
+
+  function updateInventoryMessage(displayMessage, relativeColor) {
+    const inventoryMessage = document.querySelector("inventory-message");
+
+    if (!inventoryMessage) return false;
+
+    const messageContainer = inventoryMessage.querySelector(".inventory__message");
+
+    if (messageContainer) {
+      const signal = messageContainer.querySelector(".inventory__signal");
+      if (signal && relativeColor) {
+        signal.style.backgroundColor = relativeColor;
+      }
+
+      const text = messageContainer.querySelector(".inventory__text");
+      if (text && displayMessage) {
+        text.textContent = displayMessage;
+      }
+    }
+
+    if (displayMessage && relativeColor) {
+      inventoryMessage.style.display = "inline";
+    } else {
+      inventoryMessage.style.display = "none";
+    }
+
+    return inventoryMessage;
   }
 
   (function quantity_controls() {
@@ -646,7 +736,7 @@ theme.ProductForm = function (context, events, Product) {
 
   new Shopify.OptionSelectors("product-select-" + Product.id, {
     product: Product,
-    onVariantSelected: function (variant, _selector) {
+    onVariantSelected: function (variant) {
       if (!variant) {
         events.trigger("variantunavailable");
         return;
@@ -690,6 +780,11 @@ theme.ProductForm = function (context, events, Product) {
           );
         });
       }
+
+      base_variant_selected = variant;
+      events.on("variantchange", function (variant) {
+        checkAndUpdateInventoryMessage(variant, Offered_product_name);
+      });
 
       var priceContainers = context.querySelectorAll(".price-container");
       priceContainers.forEach(function (priceContainer) {
@@ -738,39 +833,8 @@ theme.ProductForm = function (context, events, Product) {
         button.setAttribute("data-variant-id", variant.id);
       });
 
-      var messageContainer = document.querySelector(".inventory__message");
-
-      if (messageContainer) {
-        const variantTitle = variant.title.trim();
-
-        let messageFound = false;
-
-        Object.keys(window.leadTime).forEach((name) => {
-          const [nameFirst, nameLast] = name
-            .split("&")
-            .map((part) => part.trim());
-          const isNameMatch = name.includes("&")
-            ? variantTitle.includes(nameFirst) &&
-            variantTitle.includes(nameLast)
-            : variantTitle.includes(name.trim());
-
-          if (isNameMatch && window.leadTime[name].message) {
-            messageContainer.parentNode.style.display = "block";
-            messageContainer.innerHTML = `
-                        <span class="inventory__signal" style="background-color: ${window.leadTime[name].color};"></span>
-                        ${window.leadTime[name].message}
-                    `;
-            messageFound = true;
-          }
-        });
-
-        if (!messageFound) {
-          messageContainer.parentNode.style.display = "none";
-        }
-      }
-
       const specification = document.querySelector(
-        "[data-product-dimension]"
+        ".product_specification_pdp"
       );
       if (specification) {
         let variantTitle = variant.title;
@@ -1032,7 +1096,7 @@ theme.ProductForm = function (context, events, Product) {
         element.innerHTML = price;
       });
 
-      events.on("variantunavailable", function (_variant) {
+      events.on("variantunavailable", function (variant) {
         element.innerHTML = config.unavailable;
         const productPrice = priceContainer.querySelector(
           ".product-price.current"
@@ -1079,7 +1143,7 @@ theme.ProductForm = function (context, events, Product) {
         element.innerHTML = '<span class="money">' + price + "</span>";
       });
 
-      events.on("variantunavailable", function (_variant) {
+      events.on("variantunavailable", function (variant) {
         if (!element) {
           var priceElement = priceContainer.querySelector(
             ".product-price.current"
@@ -1129,7 +1193,7 @@ theme.ProductForm = function (context, events, Product) {
         }
         element.innerHTML = `(${removeTrailingZeros(price_save)}% OFF)`;
       });
-      events.on("variantunavailable", function (_variant) {
+      events.on("variantunavailable", function (variant) {
         if (!element) {
           var priceElement = priceContainer.querySelector(
             ".product-price.current"
@@ -1156,7 +1220,7 @@ theme.ProductForm = function (context, events, Product) {
       var variant_sku = variant.sku;
       element.innerHTML = variant_sku;
     });
-    events.on("variantunavailable", function (_variant) {
+    events.on("variantunavailable", function (variant) {
       var variant_sku = config.unavailable;
       element.innerHTML = variant_sku;
     });
@@ -1185,7 +1249,7 @@ theme.ProductForm = function (context, events, Product) {
 
             Offered_product.push(variantIdNumber);
             Offered_product_qty.push(1);
- 
+
             const success = OfferedProductCarted(
               Offered_product,
               Offered_product_qty,
@@ -1347,7 +1411,7 @@ theme.ProductForm = function (context, events, Product) {
   })();
 };
 
-theme.StaticGallery = function (context, events, _Product) {
+theme.StaticGallery = function (context, events, Product) {
   events.trigger = events.emit;
   var $context = $(context);
 
@@ -1401,7 +1465,7 @@ theme.StaticGallery = function (context, events, _Product) {
       animationDuration: 500,
       animationEffect: "fade",
       buttons: ["close"],
-      caption: function (_instance, _item) {
+      caption: function (instance, item) {
         // Get the alt text of the current image
         var altText = $(this).find("img").attr("alt");
         return altText || ""; // Return the alt text as caption
@@ -1578,7 +1642,7 @@ theme.StaticGallery = function (context, events, _Product) {
 
     $(".product-image-container").on(
       "swipe",
-      function (_event, _slick, _direction) {
+      function (event, slick, direction) {
         var id = $(".slick-current .product-main-image").data("image-id");
         var thumSlide = $(
           "#thumbnail-gallery .slick-slide:not(.slick-cloned) [data-image-id=" +
@@ -1975,7 +2039,7 @@ theme.Product = (function () {
 })();
 
 if (theme.settings.showMultipleCurrencies) {
-  Events.on("quickview:load", function (_container) {
+  Events.on("quickview:load", function (container) {
     Currency.convertAll(defaultCurrency, Currency.currentCurrency);
   });
 }
@@ -1984,7 +2048,7 @@ if (theme.settings.showMultipleCurrencies) {
 Header
 ==============================================================================*/
 theme.Header = (function () {
-  function Header(_container) {
+  function Header(container) {
     (function searchPopup() {
       $("a#search_trigger").click(function (event) {
         event.stopPropagation();
@@ -2004,7 +2068,7 @@ theme.Header = (function () {
 
     (function menuEdge() {
       /* Ensure that sub nav menus open to the left if any chance of offscreen overflow */
-      $("ul.submenu li").on("mouseenter mouseleave", function (_e) {
+      $("ul.submenu li").on("mouseenter mouseleave", function (e) {
         if ($("ul", this).length) {
           var elm = $("ul:first", this);
           var off = elm.offset();
@@ -2040,7 +2104,7 @@ theme.Header = (function () {
     })();
 
     $(".has_sub_menu").hover(function () {
-      $(this).attr("aria-expanded", function (_index, attr) {
+      $(this).attr("aria-expanded", function (index, attr) {
         return attr == "false" ? true : "false";
       });
     });
@@ -2107,7 +2171,7 @@ theme.FeaturedCollection = (function () {
     }
     initCarousel();
 
-    $(document).on("shopify:section:load", function (_event) {
+    $(document).on("shopify:section:load", function (event) {
       initCarousel();
     });
 
@@ -2166,7 +2230,7 @@ theme.Slideshow.prototype = _.assignIn({}, theme.Slideshow.prototype, {
 New Slideshow Section
 ==============================================================================*/
 theme.newSlideshow = (function () {
-  function Slideshow(_container) {
+  function Slideshow(container) {
     var slideWrapper = $(".main-slider"),
       iframes = slideWrapper.find(".embed-player"),
       lazyImages = slideWrapper.find(".slide-image"),
@@ -2299,17 +2363,17 @@ theme.newSlideshow = (function () {
         }, 1000);
         resizePlayer(iframes, 16 / 9);
       });
-      slideWrapper.on("beforeChange", function (_event, slick) {
+      slideWrapper.on("beforeChange", function (event, slick) {
         slick = $(slick.$slider);
         playPauseVideo(slick, "pause");
       });
-      slideWrapper.on("afterChange", function (_event, slick) {
+      slideWrapper.on("afterChange", function (event, slick) {
         slick = $(slick.$slider);
         playPauseVideo(slick, "play");
       });
       slideWrapper.on(
         "lazyLoaded",
-        function (_event, _slick, _image, _imageSource) {
+        function (event, slick, image, imageSource) {
           lazyCounter++;
           if (lazyCounter === lazyImages.length) {
             lazyImages.addClass("show");
@@ -2635,14 +2699,14 @@ theme.Parallax = (function () {
 Info slider
 ==============================================================================*/
 theme.InfoSlider = (function () {
-  function InfoSlider(_container) {
+  function InfoSlider(container) {
     var speed = $(".info-bar-content").data("speed"),
       arrows = $(".info-bar-content").data("arrows"),
       autoplay = $(".info-bar-content").data("autoplay"),
       slidesshown = $(".info-bar-content").data("shown");
 
     var $textSlide = $(".info-bar-content");
-    var initInfoSlider = function (_Slideshow) {
+    var initInfoSlider = function (Slideshow) {
       $textSlide.not(".slick-initialized").slick({
         mobileFirst: true,
         slidesToShow: 1,
@@ -2674,14 +2738,14 @@ theme.InfoSlider = (function () {
     var trackHeight = $(".info-bar-content .slick-track").height();
     $(".info-bar-content .slick-slide").css("height", trackHeight + "px");
 
-    $(document).on("shopify:section:unload", function (_event) {
+    $(document).on("shopify:section:unload", function (event) {
       if ($textSlide.hasClass("slick-initialized")) {
         $textSlide.slick("unslick");
         $(document).off(".info-bar-content");
       }
     });
 
-    $(document).on("shopify:section:load", function (_event) {
+    $(document).on("shopify:section:load", function (event) {
       initInfoSlider($(".info-bar-content"));
     });
   }
@@ -2694,7 +2758,7 @@ theme.InfoSlider = (function () {
 Accordion toggle on mobile navigation
 ==============================================================================*/
 theme.mobileNav = (function () {
-  function mobileNav(_container) {
+  function mobileNav(container) {
     $.shifter({
       maxWidth: Infinity,
     });
@@ -2707,7 +2771,7 @@ theme.mobileNav = (function () {
 
         $(this).addClass("open");
 
-        $(this).attr("aria-expanded", function (_index, attr) {
+        $(this).attr("aria-expanded", function (index, attr) {
           return attr == "false" ? true : "false";
         });
 
@@ -2723,7 +2787,7 @@ theme.mobileNav = (function () {
         $(this)
           .closest(".menu__child--leayer")
           .prev()
-          .attr("aria-expanded", function (_index, attr) {
+          .attr("aria-expanded", function (index, attr) {
             return attr == "false" ? true : "false";
           });
       });
@@ -2734,7 +2798,7 @@ theme.mobileNav = (function () {
         //Expand or collapse this panel
         $(this).toggleClass("open");
         $(this).next().slideToggle("fast");
-        $(this).attr("aria-expanded", function (_index, attr) {
+        $(this).attr("aria-expanded", function (index, attr) {
           return attr == "false" ? true : "false";
         });
         //Hide the other panels
@@ -2751,7 +2815,7 @@ theme.mobileNav.prototype = _.assignIn({}, theme.mobileNav.prototype, {
       $.shifter("open");
     }
   },
-  onDeselect: function (_event) {
+  onDeselect: function (event) {
     $.shifter("close");
   },
 });
@@ -2831,64 +2895,62 @@ theme.Collection = (function () {
     (function infiniteScroll() {
       let nextURL;
       function updateNextURL(doc) {
-          nextURL = $(doc).find(".paginate_next").attr("href") || nextURL;
+        nextURL = $(doc).find(".paginate_next").attr("href") || nextURL;
       }
-  
-      
-  
+
+
+
       function reinitializeInfiniteScroll() {
-          const $container = $(".is_infinite");
-  
-          if ($container.data("infiniteScroll")) {
-              $container.infiniteScroll("destroy");
+        const $container = $(".is_infinite");
+
+        if ($container.data("infiniteScroll")) {
+          $container.infiniteScroll("destroy");
+        }
+
+        updateNextURL(document);
+
+        $container.infiniteScroll({
+          path: () => nextURL,
+          checkLastPage: ".paginate_next",
+          append: ".is_infinite .product-index",
+          hideNav: "#pagination",
+          history: false,
+          status: ".page-load-status",
+        });
+
+        $container.on("load.infiniteScroll", (_event, _body) => {
+          updateNextURL(_body);
+        });
+
+        $container.on("append.infiniteScroll", (_event, _body, _path, _items) => {
+          publish(PUB_SUB_EVENTS.infiniteScrollHappen, {});
+          if (_items.length) {
+            publish(PUB_SUB_EVENTS.collectionProductChange, { data: _items });
           }
-  
-          updateNextURL(document);
-  
-          $container.infiniteScroll({
-            path: () => nextURL,
-            checkLastPage: ".paginate_next",
-            append: ".is_infinite .product-index",
-            hideNav: "#pagination",
-            history: false,
-            status: ".page-load-status",
-          });
-  
-          $container.on("load.infiniteScroll", (_event, _body) => {
-            updateNextURL(_body);
-          });
-  
-          $container.on("append.infiniteScroll", (_event, _body, _path, _items) => {
-            publish(PUB_SUB_EVENTS.infiniteScrollHappen, {});
-            if (_items.length ) {
-              publish(PUB_SUB_EVENTS.collectionProductChange, {data: _items});
-            }
-          });
+        });
       }
-  
+
       reinitializeInfiniteScroll();
-  
+
       const unsubscribeCollectionPaginationChange = subscribe(
-          PUB_SUB_EVENTS.collectionPaginationChange,
-          debounce(() => {
-            reinitializeInfiniteScroll();
-          }, 300)
+        PUB_SUB_EVENTS.collectionPaginationChange,
+        debounce(() => {
+          reinitializeInfiniteScroll();
+        }, 300)
       );
-  
+
       window.addEventListener("beforeunload", () => {
         unsubscribeCollectionPaginationChange();
       });
-  
+
       function debounce(fn, wait) {
-          let timeout;
-          return (...args) => {
-              clearTimeout(timeout);
-              timeout = setTimeout(() => fn.apply(this, args), wait);
-          };
+        let timeout;
+        return (...args) => {
+          clearTimeout(timeout);
+          timeout = setTimeout(() => fn.apply(this, args), wait);
+        };
       }
-  })();
-  
-    
+    })();
   }
   Collection.prototype = _.assignIn({}, Collection.prototype, {});
 
@@ -2953,7 +3015,7 @@ function debounce(fn, wait, immediate) {
 
 //Read more
 $(document).ready(function () {
-  $(".read_more_btn a").on("click", function (_e) {
+  $(".read_more_btn a").on("click", function (e) {
     var btn = $(this).parent();
     var product_excerpt = $(".product_excerpt_less_part");
     btn.toggleClass("expanded");
@@ -2996,7 +3058,7 @@ $(document).ready(function () {
   }
   //makeResponcive();
   var width = $(window).width();
-  $(window).on("resize", function (_e) {
+  $(window).on("resize", function (e) {
     if ($(window).width() === width) return;
     width = $(window).width();
     //makeResponcive();
@@ -3456,7 +3518,7 @@ KlaviyoSubscribe.attachToForms("#newsletter_popup", {
     $method_type: "7th Avenue form",
     source: "Popup newsletter",
   },
-  success: function (_$form) {
+  success: function ($form) {
     $(".form_data").hide();
   },
 });
@@ -3470,7 +3532,7 @@ KlaviyoSubscribe.attachToForms("#newsletter_popup_footer", {
     $method_type: "7th Avenue newsletter form",
     source: "Footer newsletter",
   },
-  success: function (_$form) {
+  success: function ($form) {
     $(".footer_form_data").hide();
   },
 });
@@ -3592,7 +3654,7 @@ document.addEventListener("themeJSFastLoaded", function () {
       }
 
       function updateVariantOption(selectedOption, hasSelectedVariant) {
-        
+
         if (!selectedOption) return;
         const position = parseInt(selectedOption.dataset.position, 10);
         const selectedValue = selectedOption.dataset.optionName;
@@ -3602,15 +3664,15 @@ document.addEventListener("themeJSFastLoaded", function () {
         activeImage?.classList.remove("open");
         newVariant.classList.add("open");
 
-        if(hasSelectedVariant) {
+        if (hasSelectedVariant) {
           const variantImage = newVariant.querySelector('.variant-featured-image');
           const productImage = newVariant.querySelector('.product-featured-image');
 
-          if(variantImage && variantImage.classList.contains('hidden')) {
+          if (variantImage && variantImage.classList.contains('hidden')) {
             variantImage.classList.remove('hidden')
           }
 
-          if(variantImage && productImage) {
+          if (variantImage && productImage) {
             productImage.classList.add('hidden')
           }
         }
@@ -3631,9 +3693,11 @@ document.addEventListener("themeJSFastLoaded", function () {
                   <span class="collection_money">${variantComparePrice}</span>
                 </span>
               ` : ''}
+
               <span class="product-price current${variantComparePrice ? ` sale` : ``}" itemprop="price">
                 <span class="collection_money">${variantPrice}</span>
               </span>
+
               ${priceOff ? `<span class="money_save money_save_pdp">${priceOff}</span>` : ''}
             </div>
           `;
@@ -3645,7 +3709,7 @@ document.addEventListener("themeJSFastLoaded", function () {
           }
         });
 
-        
+
 
 
         const duplicateSelectedOption = el.querySelectorAll(
@@ -3660,7 +3724,7 @@ document.addEventListener("themeJSFastLoaded", function () {
             let parentNode = v.closest(".slick-slide");
             if (!parentNode.classList.contains("slick-cloned")) {
               v.classList.add("open");
-              if(hasSelectedVariant) {
+              if (hasSelectedVariant) {
                 const index = parseInt(parentNode.dataset.slickIndex, 10);
                 if (!isNaN(index)) {
                   $(swatchSlider).slick("slickGoTo", index);
@@ -3668,7 +3732,7 @@ document.addEventListener("themeJSFastLoaded", function () {
               } else {
                 $(swatchSlider).slick("slickGoTo", 0);
               }
-              
+
             }
           });
         } else {
@@ -3705,34 +3769,33 @@ document.addEventListener("themeJSFastLoaded", function () {
   window.addEventListener("beforeunload", () => unsubscribe());
 })();
 
-
 (function updateCollectionSwatch() {
 
   const unsubscribe = subscribe(PUB_SUB_EVENTS.collectionProductChange,
-    debounce(({ data }) => { 
-      updateCurrentSwatch(data); 
-  }, 150)
+    debounce(({ data }) => {
+      updateCurrentSwatch(data);
+    }, 150)
   );
-  
+
   function updateCurrentSwatch(items) {
     const storedColors = getCookie('selected_color') ? JSON.parse(getCookie('selected_color')) : [];
     if (storedColors.length === 0) return;
     const firstValue = processString(storedColors[0]);
     items.forEach((item) => {
-        if (storedColors.length > 1) {
-          setColorOrder(item, storedColors);
-        }
+      if (storedColors.length > 1) {
+        setColorOrder(item, storedColors);
+      }
 
-        const selectedSwatch = item.querySelector(`.color__swatch [data-option-name="${firstValue}"]`);
-        if (selectedSwatch && !selectedSwatch.classList.contains('open')) {
-          selectedSwatch.click();
-        }
+      const selectedSwatch = item.querySelector(`.color__swatch [data-option-name="${firstValue}"]`);
+      if (selectedSwatch && !selectedSwatch.classList.contains('open')) {
+        selectedSwatch.click();
+      }
     });
   }
 
   function processString(str) {
     if (!str) return "";
-    
+
     const regex = /^\d+_(.*)/;
     const match = str.match(regex);
     let cleanStr = match ? match[1] : str;
@@ -3740,24 +3803,23 @@ document.addEventListener("themeJSFastLoaded", function () {
     cleanStr = cleanStr.replace(/\(([^)]+)\)/g, " $1");
 
     return cleanStr.replace(/\s+/g, '-').toLowerCase();
-}
+  }
 
 
-function setColorOrder(element, storedColors) {
+  function setColorOrder(element, storedColors) {
     storedColors.forEach((optionName, i) => {
       let nameValue = processString(optionName);
       const swatches = element.querySelectorAll('li');
       swatches.forEach((swatch) => {
-          if (swatch.dataset.optionName.includes(nameValue)) {
-            swatch.style.setProperty('--order', i + 1);
-          }
+        if (swatch.dataset.optionName.includes(nameValue)) {
+          swatch.style.setProperty('--order', i + 1);
+        }
       });
     });
-}
+  }
 
   window.addEventListener("beforeunload", () => unsubscribe());
 })();
-
 
 (function () {
   window.addEventListener("DOMContentLoaded", function () {
@@ -4426,6 +4488,26 @@ $(function () {
   document.body.addEventListener("touchstart", hanldeVideoPlay);
 })();
 
+window.addEventListener("load", function () {
+  var buttons = document.querySelectorAll(".showroom-card__button");
+  buttons.forEach(function (button) {
+    button.addEventListener(
+      "click",
+      function (event) {
+        fbq("track", "Schedule", {
+          book_appointment_page_url: theme.routes.url,
+          event_type_url: event.target.href,
+          event_type_name:
+            event.target.parentElement.children[0].children[0].innerHTML.replace(
+              /<br\s*\/?>/gi,
+              " "
+            ),
+        });
+      },
+      false
+    );
+  });
+});
 
 function setCookie(cname, cvalue) {
   document.cookie = `${cname}=${JSON.stringify(cvalue)};domain=;path=/`;
@@ -4447,6 +4529,120 @@ function getCookie(cname) {
   return "";
 }
 
+const allShowRoom = document.querySelectorAll(".showroom");
+allShowRoom.forEach(function (showroom) {
+  //Calendly
+  let buttons = showroom.querySelectorAll(".showroom-card__button");
+  buttons.forEach(function (button) {
+    let ButtonUrl = button.href;
+    if (ButtonUrl) {
+      button.addEventListener("click", initCalendly);
+    }
+    function initCalendly(e) {
+      e.preventDefault();
+      Calendly.initPopupWidget({
+        url: ButtonUrl,
+      });
+    }
+  });
+
+  const allShowroom = showroom.querySelectorAll(
+    ".active_geo [data-showroom-order]"
+  );
+
+  const distData = function () {
+    return new Promise(async (res, rej) => {
+      if (allShowroom.length <= 0) return;
+      let i = 0;
+      const distances = [];
+      let currentItem = null;
+      for (const address of allShowroom) {
+        currentItem = await getDistance(address, i);
+        if (!distances.find((item) => item.id == currentItem.id))
+          distances.push(currentItem);
+        if (i == allShowroom.length - 1) res(distances);
+        i++;
+      }
+    });
+  };
+
+  function getDistance(address, i) {
+    return new Promise((res) => {
+      let geoArr = getCookie("geo") ? JSON.parse(getCookie("geo")) : [];
+      const itemCached = geoArr?.find((item) => item.id == address.dataset.id);
+      if (itemCached) {
+        return res(itemCached);
+      }
+      fetch(
+        "https://api.ipgeolocation.io/ipgeo?apiKey=2c6a7373a74548c798abd31f823fa892"
+      )
+        .then((data) => {
+          return data.json();
+        })
+        .then((data) => {
+          let shoroomLatitude = address.dataset.latitude,
+            shoroomLongitude = address.dataset.longitude,
+            clientLatitude = data.latitude,
+            clientLongitude = data.longitude,
+            showRoomId = address.dataset.id;
+          function calcCrow(lat1, lon1, lat2, lon2) {
+            let R = 6371; // km
+            let dLat = toRad(lat2 - lat1);
+            let dLon = toRad(lon2 - lon1);
+            lat1 = toRad(lat1);
+            lat2 = toRad(lat2);
+
+            let a =
+              Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+              Math.sin(dLon / 2) *
+              Math.sin(dLon / 2) *
+              Math.cos(lat1) *
+              Math.cos(lat2);
+            let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            let d = R * c;
+            return d * 0.621371;
+          }
+
+          // Converts numeric degrees to radians
+          function toRad(Value) {
+            return (Value * Math.PI) / 180;
+          }
+
+          let distance = Math.round(
+            calcCrow(
+              shoroomLatitude,
+              shoroomLongitude,
+              clientLatitude,
+              clientLongitude
+            )
+          );
+          const dist = { distance: distance, index: i, id: showRoomId };
+          geoArr.push(dist);
+          setCookie("geo", geoArr);
+          res(dist);
+        })
+        .catch((e) => {
+          res({});
+        });
+    });
+  }
+
+  const activeGeo = showroom.querySelector(".active_geo");
+  if (activeGeo) {
+    distData().then((distArr) => {
+      distArr.sort(function (a, b) {
+        return a.distance - b.distance;
+      });
+      distArr.forEach(function (dist, index) {
+        let showroom = document.querySelector(
+          `.showroom .section-boxed-column[data-id="${dist.id}"]`
+        );
+        showroom.setAttribute("data-dis", dist.distance);
+        showroom.style = `--order:${index}`;
+      });
+    });
+  }
+});
 
 (function () {
   const variantInfo = document.querySelectorAll(".variant--info");
@@ -4800,7 +4996,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ".price__container .monthly__price"
       );
 
-      variants.forEach(function (variant, _variantIndex) {
+      variants.forEach(function (variant, variantIndex) {
         variant.addEventListener("click", function (e) {
           var activeImage = el.querySelector(".variant__image.open");
 
@@ -5218,7 +5414,7 @@ class productInfoSlider extends HTMLElement {
     ).querySelector(".product-info-content").dataset.id;
     this.updateCurrentTitle(activeTitle);
 
-    $(content).on("afterChange", function (_event, slick, current) {
+    $(content).on("afterChange", function (event, slick, current) {
       let id = slick.$slides[current].querySelector(".product-info-content")
         .dataset.id;
       let activeTitle = self_this.querySelector(`.product-info-titles #${id}`);
@@ -5382,7 +5578,7 @@ customElements.define("product-info-slider", productInfoSlider);
       isFrozen = true;
     };
 
-    const unfreezeScrolling = (element, _rect) => {
+    const unfreezeScrolling = (element, rect) => {
       element.style.cssText = `margin-top: ${window.scrollY}px!important`;
       isFrozen = false;
     };
@@ -5489,7 +5685,7 @@ customElements.define("product-info-slider", productInfoSlider);
       let mutationTimeout;
       let isProcessing = false;
 
-      const mutationCallback = (_mutationsList, observer) => {
+      const mutationCallback = (mutationsList, observer) => {
         if (isProcessing) {
           clearTimeout(mutationTimeout);
         }
@@ -5911,15 +6107,7 @@ $(document).ready(function () {
     Events.trigger("editor:block:deselect", event);
   });
 
-  document.addEventListener("lazyloaded", function (_e) {
+  document.addEventListener("lazyloaded", function (e) {
     Events.trigger("lazyLoad:complete");
   });
-});
-
-
-window.addEventListener('message', function(event) {
-  if (event.data?.type !== 'form-submitted' || event.data?.form?.slug != 'trade-program') {
-      return;
-  }
-  console.log('message get')
 });

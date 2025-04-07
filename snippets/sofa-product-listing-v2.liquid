@@ -64,10 +64,13 @@
              {% liquid
                assign variant_compare_price = false
                assign variant_price_off = false
-               if variant.compare_at_price > variant.price and variant.available
+               if variant.compare_at_price > 0
                  assign variant_compare_price = true
+               endif
+               if variant.compare_at_price > variant.price and variant.available
                  assign variant_price_off = true
                endif
+               
              %}
              <div class="variant__image{% if variant.id == active_variant.id %} open{% endif %}" 
                data-option1="{{ variant.option1 | handleize }}" 
