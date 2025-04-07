@@ -770,7 +770,7 @@ theme.ProductForm = function (context, events, Product) {
       }
 
       const specification = document.querySelector(
-        ".product_specification_pdp"
+        "[data-product-dimension]"
       );
       if (specification) {
         let variantTitle = variant.title;
