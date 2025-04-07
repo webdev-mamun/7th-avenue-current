@@ -217,7 +217,19 @@
             {% render 'okendo-reviews-product-rating-summary', product: product %}
             <h1 id="{{ product.title | handle }}" class="product_title">{{ title }}</h1>            
             {% if dimensions != blank %}
-              <p class="product_specification_pdp">{{ dimensions }}</p>
+              <div class="product_specification_pdp">
+                <span data-product-dimension>{{ dimensions }}</span>
+                <div class="product-specification-info">
+                   <div class="product-specification-icon">
+                      {{ 'icon-question-mark.svg' | inline_asset_content }}
+                   </div>
+                   <div class="product-specification-popup-wrapper">
+                      <div class="product-specification-popup">
+                         Looking for a narrower configuration for your space? <a href="https://7thavenue.co/pages/find-a-showroom" target="_blank"><strong>Visit a showroom</strong></a> or reach out to our Sales team at <a href="mailto:sales@7thavenue.co" target="_blank"><strong>sales@7thavenue.co</strong></a> to design custom configurations with widths of 78" / 116" / 154" / 162".
+                      </div>
+                   </div>
+                </div>
+             </div>
             {% endif %}
           </div>
           

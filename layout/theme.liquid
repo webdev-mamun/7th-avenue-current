@@ -259,6 +259,20 @@
   
       <!-- Google AdWords Dynamic Remarketing -->
       {%- render 'adwords-dynamic-remarketing' -%}
+      <script type="module">
+        if (!("anchorName" in document.documentElement.style)) {
+          console.log('polyfill needed');
+          const { default: polyfill } = await import("https://unpkg.com/@oddbird/css-anchor-positioning/dist/css-anchor-positioning-fn.js");
+      
+          polyfill({
+            elements: undefined,
+            excludeInlineStyles: false,
+            useAnimationFrame: false,
+          });
+        } else {
+          console.log('polyfill not needed');
+        }
+      </script>
     </body>
   </html>
   
