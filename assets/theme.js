@@ -584,10 +584,18 @@ theme.ProductForm = function (context, events, Product) {
     const variantFormat = window.messageVariantFormat[formattedOption1];
   
     if (variantFormat) {
-      const levelOneMatch = variantFormat.level_one.find(item => item.option_name === variant.option2);
-      if (levelOneMatch) {
-        displayMessage = levelOneMatch.message;
-        relativeColor = levelOneMatch.color;
+      const levelZeroMatch = variantFormat.level_one.find(item => item.option_name === variant.option1);
+        if (levelZeroMatch) {
+          displayMessage = levelZeroMatch.message;
+          relativeColor = levelZeroMatch.color;
+        }
+
+      if (variant.option2 !== null) {
+        const levelOneMatch = variantFormat.level_one.find(item => item.option_name === variant.option2);
+        if (levelOneMatch) {
+          displayMessage = levelOneMatch.message;
+          relativeColor = levelOneMatch.color;
+        }
       }
   
       if (variant.option3 !== null) {
