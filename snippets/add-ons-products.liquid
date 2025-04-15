@@ -12,18 +12,18 @@
 
   <custom-accordion class="addons-products__accordion-container">
     <div class="custom-accordion-item">
-      <button type="button" aria-expanded="true" aria-controls="accordion-content-1" class="custom-accordion-title">
+      <button type="button" aria-expanded="false" aria-controls="accordion-content-1" class="custom-accordion-title">
         <span>Add Storage Seats</span>
         <span class="custom-accordion-item__icon"></span>
       </button>
-      <div id="accordion-content-1" class="custom-accordion-content" aria-hidden="false">
-        <div class="custom-accordion-content-inner">
-          <div class="addons-products__video">
+      <div id="accordion-content-1" class="custom-accordion-content" aria-hidden="true">
+        <div class="custom-accordion-content-inner addons-content-inner">
+          <div class="addons-products__video addons-content-item">
             <video
               muted="muted"
               preload="metadata"
               poster="//7thavenue.co/cdn/shop/files/preview_images/3302cc9b714c453f9d085eae3d7cbf1f.thumbnail.0000000000_800x.jpg?v=1707245352"
-              autoplay muted loop playsinline
+              autoplay muted loop playsinline controls
             >
               <source
                 src="//7thavenue.co/cdn/shop/videos/c/vp/3302cc9b714c453f9d085eae3d7cbf1f/3302cc9b714c453f9d085eae3d7cbf1f.HD-720p-4.5Mbps-24207102.mp4?v=0"
@@ -37,9 +37,9 @@
               >
             </video>
           </div>
-          <div class="addons-products__container">
+          <div class="addons-products__container addons-content-item">
             <div class="addons-products__label">
-              <span>Add Storage to <u>Some</u> Seats +<span data-addon-variant-per-unit-price>150</span> per Seat</span>
+              <span>Add Storage to <u>Some</u> Seats <br>+<span data-addon-variant-per-unit-price>$150</span> per Seat</span>
             </div>
 
             <ul class="addons-products__list">
@@ -70,7 +70,7 @@
               {%- endfor -%}
             </ul>
           </div>
-          <div class="addons-products__container">
+          <div class="addons-products__container addons-content-item">
             <label class="addons-products__label" for="addons-products-all__for-1">
               <span>
                 Add Storage to <u>All</u> Seats<br>
@@ -88,11 +88,11 @@
                 </div>
               </span>
             </label>
-            <p class="addons-products__container-info">
-              Maximize your home's extra storage capacity by making all the seats in your configuration storage
-              seats—perfect for blankets and more.
-            </p>
           </div>
+          <p class="addons-products__container-info addons-content-item">
+            Maximize your home's extra storage capacity by making all the seats in your configuration storage
+            seats—perfect for blankets and more.
+          </p>
         </div>
       </div>
     </div>

@@ -17,29 +17,37 @@
 .addons-products__accordion-container {
   border: 1px solid #d6d6d6;
   padding-inline: 20px;
-  display: block
+}
+
+.addons-content-inner {
+  padding-block-end: 8px;
+}
+
+.addons-content-item {
+  padding-inline: 10px;
+}
+
+.addons-content-item:not(:last-child) {
+  border-block-end: 1px solid #d6d6d6;
 }
 
 .addons-products__video {
   width: 100%;
-  border-radius: 4px;
   margin-inline: auto;
-  line-height: 0
+  line-height: 0;
+  padding-block: 16px;
 }
 
 .addons-products__video video {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
-  object-fit: cover
+  object-fit: cover;
 }
 
+
 .addons-products__container {
-  border: 1px solid #d6d6d6;
-  border-radius: 4px;
-  padding: 10px 15px;
-  display: grid;
-  gap: 10px
+  padding-block: 10px;
 }
 
 .addons-products__label {
@@ -49,6 +57,7 @@
   gap: 10px;
   font-family: SuisseIntl-Regular;
   font-size: 10pt;
+  margin: 0;
 }
 
 .addons-products__list {
@@ -137,7 +146,7 @@
   left: -.4rem;
   z-index: -1;
   appearance: none;
-  -webkit-appearance: none
+  -webkit-appearance: none;
 }
 
 .addons-products-all .svg-wrapper {
@@ -145,14 +154,15 @@
   position: absolute;
   left: 2px;
   top: 4px;
-  width: 11px
+  width: 11px;
 }
 
 .addons-products-all input[type="checkbox"]:checked~.svg-wrapper {
-  visibility: visible
+  visibility: visible;
 }
 
 .addons-products__container-info {
   line-height: 18px;
-  margin: 0
+  margin: 0;
+  padding-block: 8px;
 }

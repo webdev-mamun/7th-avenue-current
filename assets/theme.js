@@ -500,7 +500,7 @@ theme.ProductForm = function (context, events, Product) {
     });
 
     if (priceElement && firstMatchingPrice) {
-      priceElement.textContent = firstMatchingPrice / 100;
+      priceElement.textContent = `$${firstMatchingPrice / 100}`;
     }
 
     if (totalPriceElement) {

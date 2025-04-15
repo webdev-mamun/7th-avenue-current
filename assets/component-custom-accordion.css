@@ -1,3 +1,7 @@
+custom-accordion {
+  display: block;
+}
+
 .custom-accordion-title {
   font-size: 8pt;
   letter-spacing: 1.6px;
@@ -58,9 +62,6 @@
 }
 
 .custom-accordion-content-inner {
-  display: grid;
-  gap: 16px;
-  padding: 16px 10px;
   border-bottom: 1px solid #d6d6d6;
 }
 
