@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "sections": {
     "banner": {
       "type": "collection-sofa-banner",
@@ -60,8 +60,7 @@
         "a8ddd12b-bb26-4017-abb2-635a403b20d5",
         "33049f19-5e73-46a7-b0ad-5a46b370f624"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "main": {
       "type": "sofa-collection-page-template",
@@ -146,19 +145,22 @@
     "pdp-sofa-help": {
       "type": "pdp-sofa-help",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
-    "showroom": {
-      "type": "showroom",
+    "showroom_v2_JVGENy": {
+      "type": "showroom-v2",
       "settings": {
-        "title": "Find a Showroom Near You",
-        "title_mob": "California",
-        "subtitle": "Experience “The Worlds Greatest Modular Sofa” in person.",
-        "subtitle_mob": "",
-        "get_data_from_metaobject": false,
+        "title": "Find a Showroom",
+        "subtitle": "EXPERIENCE “THE WORLDS GREATEST MODULAR SOFA” IN PERSON.",
+        "get_data_from_metaobject": true,
         "box_per_row": 3,
-        "active_geo": false,
+        "button": "See all showrooms",
+        "button_url": "shopify://pages/find-a-showroom",
+        "sort_by_alphabetical": true,
+        "sort_by_location": true,
+        "sort_by_state": true,
+        "default_sort_option": "sort_by_location",
+        "limit": 9,
         "border_top": false,
         "border_bot": false,
         "color": "#000000",
@@ -214,7 +216,7 @@
     "main",
     "badge",
     "pdp-sofa-help",
-    "showroom",
+    "showroom_v2_JVGENy",
     "image-with-text",
     "help-desk"
   ]

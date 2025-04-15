@@ -155,7 +155,7 @@
             "video": "",
             "image_right": false,
             "title": "Ridiculously durable & made to last.",
-            "text": "Our sofas are designed to last 8-10 years - constructed by using Indonesian solid hardwood (never composite wood or MDF), steel reinforcements, and high-density foam."
+            "text": "Our frames are structurally made out of solid wood (never particle board or MDF) and reinforced by furniture-grade plywood to prevent warping. Steel reinforcements and high-density foam are used for extra structural support."
           }
         },
         "70e6be34-1cb0-4e76-881a-0b8de8b12839": {
@@ -201,20 +201,27 @@
         "subtitle": "A whole lot more features, at an even better pricing."
       }
     },
-    "showroom": {
-      "type": "showroom",
+    "showroom_v2_pXbiWU": {
+      "type": "showroom-v2",
       "settings": {
-        "title": "Find a Showroom Near You",
-        "title_mob": "Find a Showroom Near You",
-        "subtitle": "Experience “The Worlds Greatest Modular Sofa” in person.",
-        "subtitle_mob": "",
+        "title": "Find a Showroom",
+        "subtitle": "EXPERIENCE “THE WORLDS GREATEST MODULAR SOFA” IN PERSON.",
         "get_data_from_metaobject": true,
         "box_per_row": 3,
-        "active_geo": false,
+        "button": "See all showrooms",
+        "button_url": "shopify://pages/find-a-showroom",
+        "sort_by_alphabetical": true,
+        "sort_by_location": true,
+        "sort_by_state": true,
+        "default_sort_option": "sort_by_location",
+        "limit": 9,
         "border_top": false,
         "border_bot": false,
         "color": "#000000",
         "bg_color": "#ffffff",
+        "button_color": "#ffffff",
+        "button_bg": "#000000",
+        "button_bg_hover": "#032e6a",
         "card_bg": "#f3f3f3",
         "bt_color": "#ffffff",
         "bt_bg": "#032e6a",
@@ -400,7 +407,7 @@
     "product-special-feature",
     "sofa-page-advanced-content",
     "product_compare_838Ew6",
-    "showroom",
+    "showroom_v2_pXbiWU",
     "image-with-text",
     "pdp-sofa-affirm",
     "pdp-sofa-help",
