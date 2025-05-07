@@ -26263,7 +26263,7 @@ showroom-items {
   grid-template-columns: 1fr;
   align-items: center;
   gap: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .showroom-sort-option-scroller {
@@ -26327,7 +26327,6 @@ showroom-items {
     grid-template-columns: 1fr 1fr;
   }
 }
-
 
 .page-header {
   display: flex;
