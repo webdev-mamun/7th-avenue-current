@@ -26275,7 +26275,7 @@ showroom-items {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  width: 680px;
+  width: max(630px, 100%);
 }
 
 .showroom-sort-option {
@@ -26315,6 +26315,19 @@ showroom-items {
     padding: 21px 25px;
   }
 }
+
+@media screen and (min-width: 1280px) {
+  .showroom-section-header.has-filter-option {
+    grid-template-columns: 4fr 6fr;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .showroom-section-header.has-filter-option {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 
 .page-header {
   display: flex;
