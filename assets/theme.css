@@ -26316,18 +26316,6 @@ showroom-items {
   }
 }
 
-@media screen and (min-width: 1280px) {
-  .showroom-section-header.has-filter-option {
-    grid-template-columns: 4fr 6fr;
-  }
-}
-
-@media screen and (min-width: 1500px) {
-  .showroom-section-header.has-filter-option {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 .page-header {
   display: flex;
   align-items: center;
