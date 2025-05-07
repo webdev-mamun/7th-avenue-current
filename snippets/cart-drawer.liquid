@@ -322,7 +322,11 @@
                           >
                             {%- for discount in item.line_level_discount_allocations -%}
                               <li class="discounts__discount">
-                                {{- 'icon-discount.svg' | inline_asset_content -}}
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false" aria-hidden="true" width="14" height="14" class="discount-icon">
+                                  <path stroke-linecap="round" d="M7.284 1.402h4.964a.35.35 0 0 1 .35.35v4.964a.7.7 0 0 1-.205.495L7.49 12.115a.7.7 0 0 1-.99 0L1.885 7.5a.7.7 0 0 1 0-.99L6.79 1.607a.7.7 0 0 1 .495-.205Z"></path>
+                                  <circle cx="9.1" cy="4.9" r="0.7"></circle>
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.102 4.897h-.005v.005h.005z"></path>
+                               </svg>
                                 {{ discount.discount_application.title }}
                               </li>
                             {%- endfor -%}
@@ -538,127 +542,24 @@
         </form>
       </cart-drawer-items>
       <div class="drawer__footer">
-        {%- if settings.show_cart_notes -%}
-          <details id="Details-CartDrawer" class="cart-note-wrapper">
-            <summary>
-              <span class="summary__title">
-                {{ 'sections.cart.note' | t }}
-                {{- 'icon-caret.svg' | inline_asset_content -}}
-              </span>
-            </summary>
-            <cart-note class="cart__note field">
-              {%- liquid
-                assign notes = ''
-                for item in cart.items
-                  unless item.final_price == 0 or item.product.type == 'Product Add-Ons'
-                    assign product = item.product
-                    assign title = product.title
-                    assign variant = item.variant
-
-                    assign depth = ''
-                    assign position = product.options_by_name['Seating Depth'].position
-                    if position
-                      assign option = 'option' | append: position
-                      assign depth = variant[option]
-                    endif
-
-                    assign variant_title_parts = variant.title | split: '/'
-                    assign variant_title_first = variant_title_parts[0] | strip
-                    assign variant_title_last = ''
-                    if variant_title_parts.size > 1
-                      assign variant_title_last = variant_title_parts[1] | strip
-                    endif
-
-                    for stock_info in shop.metaobjects.stock_messages_lead_times.values
-                      assign name = stock_info.name
-                      assign name_parts = name | split: '&'
-                      assign name_first = name_parts[0] | strip
-                      assign name_last = ''
-                      if name_parts.size > 1
-                        assign name_last = name_parts[1] | strip
-                      endif
-
-                      assign message = stock_info.message
-
-                      if message != blank
-                        if variant_title_last == '' and name_last == ''
-                          if variant_title_first == name_first
-                            assign stock_message = message
-                            break
-                          elsif variant_title_first contains name_first
-                            assign stock_message = message
-                            break
-                          endif
-                        else
-                          if variant_title_first == name_first and variant_title_last == name_last
-                            assign stock_message = message
-                            break
-                          elsif variant_title_first contains name_first and variant_title_last contains name_last
-                            assign stock_message = message
-                            break
-                          elsif name_first contains variant_title_first and name_last contains variant_title_last
-                            assign stock_message = message
-                            break
-                          elsif variant_title_first contains name_last and variant_title_last contains name_first
-                            assign stock_message = message
-                            break
-                          elsif name_last contains variant_title_first and name_first contains variant_title_last
-                            assign stock_message = message
-                            break
-                          endif
-                        endif
-                      endif
-                    endfor
-
-                    capture note_parts
-                      if title != blank
-                        echo title
-                      endif
-                      if depth != blank
-                        echo ' | ' | append: depth
-                      endif
-                      if stock_message != blank
-                        echo ' | ' | append: stock_message
-                      endif
-                    endcapture
-
-                    if notes == ''
-                      assign notes = note_parts
-                    else
-                      assign notes = notes | append: '###' | append: note_parts
-                    endif
-                  endunless
-                endfor
-              -%}
-
-              <label class="visually-hidden" for="CartDrawer-Note">{{ 'sections.cart.note' | t }}</label>
-              <textarea
-                id="CartDrawer-Note"
-                class="text-area text-area--resize-vertical field__input"
-                name="note"
-                placeholder="{{ 'sections.cart.note' | t }}"
-              >{{ notes }}</textarea>
-            </cart-note>
-          </details>
-        {%- endif -%}
-
-        <!-- Start blocks -->
-        <!-- Subtotals -->
-
         <div class="cart-drawer__footer">
-          <div>
-            {%- if cart.cart_level_discount_applications.size > 0 -%}
+          {%- if cart.cart_level_discount_applications.size > 0 -%}
+            <div>
               <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
                 {%- for discount in cart.cart_level_discount_applications -%}
                   <li class="discounts__discount discounts__discount--end">
-                    {{- 'icon-discount.svg' | inline_asset_content -}}
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false" aria-hidden="true" width="14" height="14" class="discount-icon">
+                      <path stroke-linecap="round" d="M7.284 1.402h4.964a.35.35 0 0 1 .35.35v4.964a.7.7 0 0 1-.205.495L7.49 12.115a.7.7 0 0 1-.99 0L1.885 7.5a.7.7 0 0 1 0-.99L6.79 1.607a.7.7 0 0 1 .495-.205Z"></path>
+                      <circle cx="9.1" cy="4.9" r="0.7"></circle>
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9.102 4.897h-.005v.005h.005z"></path>
+                   </svg>
                     {{ discount.title | escape }}
                     (-{{ discount.total_allocated_amount | money }})
                   </li>
                 {%- endfor -%}
               </ul>
-            {%- endif -%}
-          </div>
+            </div>
+          {%- endif -%}
 
           <div class="totals" role="status">
             <h3 class="totals__total">{{ 'sections.cart.headings.total' | t }}</h3>

@@ -16,15 +16,15 @@
           "type": "banner",
           "settings": {
             "collection": "best-sellers-outdoor",
-            "image": "shopify://shop_images/Best_Sellers_Banner_bcae133b-561a-4052-bbe8-e6490ee1a66d.jpg",
-            "image_mobile": "shopify://shop_images/Best_Sellers_Banner_Mobile_f9ea6a49-2d58-44e4-9cb1-414f4a7bffff.jpg"
+            "image": "shopify://shop_images/Best_Sellers_Banner_b92cebeb-12c5-41d6-b5c7-254bf74e83ef.jpg",
+            "image_mobile": "shopify://shop_images/Best_Sellers_Banner_Mobile_a91f1d08-2804-402d-9f94-3e5826f5e292.jpg"
           }
         },
         "a185f20d-16ba-433a-a196-49612dac793c": {
           "type": "banner",
           "settings": {
             "collection": "outdoor-sectionals",
-            "image": "shopify://shop_images/Sectionals_Banner_4c59e39a-dc43-49bf-8e3b-c30e9dbfe5ff.jpg",
+            "image": "shopify://shop_images/Sectionals_Banner_b6bbc204-cada-4e25-839b-7fb36694ec31.jpg",
             "image_mobile": "shopify://shop_images/Sectionals_Banner_Mobile_90884e39-1b91-415b-ba9b-1c073640cf09.jpg"
           }
         },
@@ -32,8 +32,8 @@
           "type": "banner",
           "settings": {
             "collection": "outdoor-sofas-loveseats",
-            "image": "shopify://shop_images/Sofas_Loveseats_Banner_bc4ea6a9-8a05-4c7f-a6c6-92a916dbc262.jpg",
-            "image_mobile": "shopify://shop_images/Sofas_Loveseats_Mobile_12bb2fdc-77a5-42ee-b23b-8f2b07974e34.jpg"
+            "image": "shopify://shop_images/Sofas_Loveseats_Banner_8340158d-f483-43be-bf33-3397d5c9d71f.jpg",
+            "image_mobile": "shopify://shop_images/Sofas_Loveseats_Mobile_af6a15a1-456e-4bb2-9def-202430be0e40.jpg"
           }
         },
         "b1517d51-a225-4cc0-9df3-172caefd1839": {
@@ -48,24 +48,24 @@
           "type": "banner",
           "settings": {
             "collection": "outdoor-armchairs",
-            "image": "shopify://shop_images/Armchairs_Banner_3990af06-5456-4df8-8100-a11a856a30d9.jpg",
-            "image_mobile": "shopify://shop_images/Armchairs_Banner_Mobile_d8f1296b-8034-443c-a68c-9ac3dae9d1f0.jpg"
+            "image": "shopify://shop_images/Armchairs_Banner_a7e69323-f9af-47ae-97a8-c94884cb2d91.jpg",
+            "image_mobile": "shopify://shop_images/Armchairs_Banner_Mobile_42e0c54a-20e6-43ae-84be-6bb44126fa8e.jpg"
           }
         },
         "a8ddd12b-bb26-4017-abb2-635a403b20d5": {
           "type": "banner",
           "settings": {
             "collection": "outdoor-sets",
-            "image": "shopify://shop_images/Outdoor_Sets_Banner_5be68edd-387a-4901-be84-7a7ee93fe5d5.jpg",
-            "image_mobile": "shopify://shop_images/Outdoor_Sets_Banner_Mobile_57434657-1ad6-47dd-bcdc-81e2caa17222.jpg"
+            "image": "shopify://shop_images/Outdoor_Sets_Banner_a891761e-7d6e-42a9-983b-878b3a0a2576.jpg",
+            "image_mobile": "shopify://shop_images/Outdoor_Sets_Banner_a891761e-7d6e-42a9-983b-878b3a0a2576.jpg"
           }
         },
         "banner_fq4GDy": {
           "type": "banner",
           "settings": {
             "collection": "outdoor-seating",
-            "image": "shopify://shop_images/All_Products_64e31a0b-b8a8-4de5-8f23-bf156023615e.jpg",
-            "image_mobile": "shopify://shop_images/All_Products_-_Mobile_89268aa8-c461-4f03-8fb9-f179948d9653.jpg"
+            "image": "shopify://shop_images/All_Products_75bc036d-f55f-49c2-9f8e-813025379453.jpg",
+            "image_mobile": "shopify://shop_images/All_Products_-_Mobile_24d176ab-eb4f-4176-ae7c-96947f71b238.jpg"
           }
         }
       },
@@ -88,7 +88,7 @@
           "settings": {
             "collection": "best-sellers-outdoor",
             "videoRatio": "4/3",
-            "image": "shopify://shop_images/Best_Sellers_Website_Photo_910ddfb8-899f-460e-87bd-bc7db8847c4f.jpg",
+            "image": "shopify://shop_images/Website_Photo_-_Homepage_ac6b5c86-280f-40de-80d7-dcd7fe289eb9.jpg",
             "fullImage": true
           }
         },
@@ -97,7 +97,7 @@
           "settings": {
             "collection": "outdoor-sectionals",
             "videoRatio": "4/3",
-            "image": "shopify://shop_images/Sectionals_Website_Photo.jpg",
+            "image": "shopify://shop_images/Website_Photo_-_Homepage_a50188e6-0f9a-4570-82ee-85b066932d3e.jpg",
             "fullImage": true
           }
         },
@@ -106,7 +106,7 @@
           "settings": {
             "collection": "outdoor-sofas-loveseats",
             "videoRatio": "4/3",
-            "image": "shopify://shop_images/Sofas_Loveseats_Website_Photo.jpg",
+            "image": "shopify://shop_images/Sofas_Loveseats_Website_Photo_2a09a87e-47b2-4361-8ab0-ea683af4c066.jpg",
             "fullImage": true
           }
         },
@@ -124,7 +124,7 @@
           "settings": {
             "collection": "outdoor-armchairs",
             "videoRatio": "4/3",
-            "image": "shopify://shop_images/Armchairs_Website_Photo_8eb403b4-99eb-4761-b48e-358c2a4e99a5.jpg",
+            "image": "shopify://shop_images/Armchairs_Website_Photo_d9e976c0-cdb4-44fa-8b31-b94f8619a0f9.jpg",
             "fullImage": true
           }
         },
@@ -133,7 +133,7 @@
           "settings": {
             "collection": "outdoor-sets",
             "videoRatio": "4/3",
-            "image": "shopify://shop_images/Outdoor_Sets_Website_Photo_b7b1d751-97b2-4a42-bb28-6d9926f932d3.jpg",
+            "image": "shopify://shop_images/Outdoor_Sets_Website_Photo_77d8566d-983e-46fc-a054-9bcf6ee0da5b.jpg",
             "fullImage": true
           }
         },
@@ -142,7 +142,7 @@
           "settings": {
             "collection": "outdoor-seating",
             "videoRatio": "4/3",
-            "image": "shopify://shop_images/All_Products_Website_Photo_6c8b9bee-fc8f-4b2b-af34-8d767428722a.jpg",
+            "image": "shopify://shop_images/All_Products_Website_Photo_36f5dfa1-b347-4c9b-bc60-0dac63bac3c9.jpg",
             "fullImage": true
           }
         },
@@ -154,8 +154,8 @@
             "image": "shopify://shop_images/Best_Sellers_Website_Photo_910ddfb8-899f-460e-87bd-bc7db8847c4f.jpg",
             "fullImage": true,
             "title": "The best of our indoor,<br>now for the great outdoors.",
-            "icon_svg_1": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/wood_1_0dc94aa1-f914-4977-bd88-c2d1217df218.svg?v=1714361987",
-            "text_1": "GRADE-A, SOLID INDONESIAN TEAK",
+            "icon_svg_1": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/muscle_2.svg?v=1635316686",
+            "text_1": "Premium aluminum or teak frames",
             "icon_svg_2": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/foam_1_5d0f172f-e481-4220-b595-1f82cb459580.svg?v=1714361755",
             "text_2": "MOLD-RESISTANT QUICK-DRY FOAM",
             "icon_svg_3": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/UV.svg?v=1714361603",
@@ -235,23 +235,31 @@
       "disabled": true,
       "settings": {}
     },
-    "showroom": {
-      "type": "showroom",
+    "showroom_v2_H4QLW6": {
+      "type": "showroom-v2",
       "settings": {
-        "title": "Find a Showroom Near You",
-        "title_mob": "Find a Showroom Near You",
-        "subtitle": "Experience “The Worlds Greatest Modular Sofa” in person.",
-        "subtitle_mob": "",
+        "title": "Find a Showroom",
+        "subtitle": "EXPERIENCE “THE WORLDS GREATEST MODULAR SOFA” IN PERSON.",
         "get_data_from_metaobject": true,
         "box_per_row": 3,
-        "active_geo": true,
+        "button": "See all showrooms",
+        "button_url": "shopify://pages/find-a-showroom",
+        "share_enabled": false,
+        "sort_by_alphabetical": true,
+        "sort_by_location": true,
+        "sort_by_state": true,
+        "default_sort_option": "sort_by_location",
+        "limit": 9,
         "border_top": false,
         "border_bot": false,
         "color": "#000000",
         "bg_color": "#ffffff",
+        "button_color": "#ffffff",
+        "button_bg": "#000000",
+        "button_bg_hover": "#032e6a",
         "card_bg": "#f3f3f3",
         "bt_color": "#ffffff",
-        "bt_bg": "#032e6a",
+        "bt_bg": "#000000",
         "padding_top": 30,
         "padding_bot": 20,
         "padding_top_mob": 20,
@@ -351,7 +359,7 @@
     "main",
     "sofa_page_badge_hQMAQT",
     "pdp-sofa-help",
-    "showroom",
+    "showroom_v2_H4QLW6",
     "image-with-text",
     "badge",
     "help-desk"

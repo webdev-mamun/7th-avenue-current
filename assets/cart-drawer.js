@@ -461,25 +461,27 @@ class CartRemoveButton extends HTMLElement {
         addonCartVariantQty,
       } = button.dataset;
 
-      let variantIds = [variantId],
-        addonCartVariantIds = [addonCartVariantId],
-        variantQuantitys = [variantQuantity],
-        addonCartVariantQtys = [addonCartVariantQty];
+      const safeParseArray = (str) => {
+        try {
+          const arr = JSON.parse(str);
+          return Array.isArray(arr) ? arr.filter((v) => v !== null && v !== "" && v !== undefined) : [];
+        } catch {
+          return [];
+        }
+      };
 
-      try {
-        variantIds = JSON.parse(variantIds);
-        addonCartVariantIds = JSON.parse(addonCartVariantIds);
-        variantQuantitys = JSON.parse(variantQuantitys);
-        addonCartVariantQtys = JSON.parse(addonCartVariantQtys);
-      } catch (e) {
-        variantIds = [variantId];
-        addonCartVariantIds = [addonCartVariantId];
-        variantQuantitys = [variantQuantity];
-        addonCartVariantQtys = [addonCartVariantQty];
+      const variantIds = safeParseArray(variantId);
+      const variantQuantitys = safeParseArray(variantQuantity);
+      const addonCartVariantIds = safeParseArray(addonCartVariantId);
+      const addonCartVariantQtys = safeParseArray(addonCartVariantQty);
+
+      const allVariantIds = [...variantIds];
+      const allVariantQtys = [...variantQuantitys];
+      
+      if (addonCartVariantIds.length) {
+        allVariantIds.push(...addonCartVariantIds);
+        allVariantQtys.push(...addonCartVariantQtys);
       }
-
-      const allVariantIds = [...variantIds, ...addonCartVariantIds];
-      const allVariantQtys = [...variantQuantitys, ...addonCartVariantQtys];
 
       if (allVariantIds.length > 1) {
         AjaxremoveFromCart(allVariantIds, allVariantQtys);
@@ -510,51 +512,6 @@ class CartUpsellProduct extends HTMLElement {
 }
 
 customElements.define("cart-upsell-product", CartUpsellProduct);
-
-if (!customElements.get("cart-note")) {
-  customElements.define(
-    "cart-note",
-    class CartNote extends HTMLElement {
-      constructor() {
-        super();
-
-        this.addEventListener(
-          "input",
-          debounce((event) => {
-            const body = JSON.stringify({ note: event.target.value });
-            fetch(window.Shopify.routes.root + "cart/update.js", {
-              ...fetchConfig(),
-              ...{ body },
-            });
-          }, 300)
-        );
-      }
-      connectedCallback() {
-        this.onCartChangeUnsubscriber = subscribe(
-          PUB_SUB_EVENTS.cartNoteChange,
-          this.handleCartNoteChange.bind(this)
-        );
-      }
-
-      disconnectedCallback() {
-        this.onCartChangeUnsubscriber();
-      }
-
-      handleCartNoteChange({ data: { note } }) {
-        fetch(window.Shopify.routes.root + "cart/update.js", {
-          ...fetchConfig(),
-          body: JSON.stringify({ note }),
-        });
-
-        const textarea = this.querySelector(`textarea[name="note"]`);
-        if (textarea && textarea.value !== note) {
-          textarea.value = note;
-          textarea.dispatchEvent(new Event("input", { bubbles: true }));
-        }
-      }
-    }
-  );
-}
 
 class CartDrawer extends HTMLElement {
   constructor() {
@@ -779,22 +736,12 @@ class CartDrawer extends HTMLElement {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, "text/html");
         const newCartContent = doc.getElementById("CartDrawer");
-        const note =
-          newCartContent
-            ?.querySelector(`[name="note"]`)
-            ?.value?.split("###")
-            .join("\n") ?? "";
 
         loaderArea.classList.remove("hidden");
 
         if (newCartContent) {
           const cartDrawer = document.getElementById("CartDrawer");
           cartDrawer.innerHTML = newCartContent.innerHTML;
-          publish(PUB_SUB_EVENTS.cartNoteChange, {
-            data: {
-              note: note ? note : "",
-            },
-          });
         }
 
         setTimeout(() => {
@@ -817,12 +764,13 @@ class CartDrawer extends HTMLElement {
           })
             .then((response) => response.json())
             .catch((error) => console.error("Error clearing cart:", error));
-
+  
           CartDrawer.updateCartCount();
         }
       })
       .catch((error) => console.error("Error fetching cart:", error));
   }
+  
 }
 
 customElements.define("cart-drawer", CartDrawer);

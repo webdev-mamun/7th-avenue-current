@@ -1,0 +1,102 @@
+{%- liquid
+  assign padding_top = section.settings.paddingTop
+  assign padding_bottom = section.settings.paddingBottom
+  assign padding_top_mobile = section.settings.paddingTopMobile
+  assign padding_bottom_mobile = section.settings.paddingBottomMobile
+  assign background = section.settings.background
+-%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+      padding-top: {{ padding_top_mobile }}px;
+      padding-bottom: {{ padding_bottom_mobile }}px;
+      background-color: {{ background }};
+  }
+  @media screen and (min-width:751px) {
+    #shopify-section-{{ section.id }} {
+        padding-top: {{ padding_top }}px;
+        padding-bottom: {{ padding_bottom }}px;
+    }
+  }
+</style>
+<div class="app-section-area" data-section-id="{{ section.id }}">
+  <div class="row">
+    {%- for block in section.blocks -%}
+      {% render block %}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "App section",
+  "tag": "section",
+  "class": "app-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "paddingTop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "label": "Top padding",
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "paddingBottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "label": "Bottom padding",
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "paddingTopMobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "label": "Top padding(Mobile)",
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "paddingBottomMobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "label": "Bottom padding(Mobile)",
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Color"
+    },
+    {
+      "type": "color_background",
+      "id": "background",
+      "label": "Background",
+      "default": "#F3F3F3"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "App section"
+    }
+  ]
+}
+{% endschema %}

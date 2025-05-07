@@ -15,47 +15,21 @@
         "c1066701-5779-4944-aeae-a5972d494459": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Homepage_Hero_-_Desktop_b9466cb7-e4fe-40e4-b2db-4ad769181d3a.jpg",
-            "mobile_hero_image": "shopify://shop_images/Original_Homepage_Hero.png",
-            "slide_title": "The World’s <span class=\"typewrite\" data-period=\"1000\" data-type='[\"Greatest\", \"Deepest\"]'><span class=\"wrap\">Greatest</span></span><br>Modular Sofa.",
-            "slide_text": "Explore our collections of functional, beautiful modular sofas - all paired with our water-repellent, removable, & machine-washable covers.",
+            "image": "shopify://shop_images/Homepage_Hero_-_Desktop_-_Outdoor_Aluminum_498d3448-edab-4034-ab98-f8a9527b39fc.jpg",
+            "mobile_hero_image": "shopify://shop_images/Homepage_Hero_-_Mobile_-_Outdoor_Aluminum_2_f70d7675-4ace-4ef5-8c8d-865e22091eb7.jpg",
+            "slide_title": "Introducing:<br>Aluminum Outdoor",
+            "slide_text": "The best of our indoor, reimagined for the great outdoors. Featuring premium aluminum frames, quick-dry foam, & durable UV-resistant fabrics.",
             "showCaptionDesktop": false,
-            "btn_text": "SHOP MODULAR INDOOR",
-            "btn_url": "shopify://collections/best-sellers",
-            "alignment": "center",
-            "si_bg": "",
-            "s_title_color": "",
-            "s_text_color": "",
-            "sip_x": "center",
-            "sip_x_v": 31,
-            "sip_y": "top",
-            "sip_y_v": 8,
-            "sip_width": "max-content",
-            "sip_height": "max-content",
-            "si_padding": "",
-            "si_margin": "",
-            "si_text_margin": "",
-            "si_title_margin": ""
-          }
-        },
-        "image_9fYAHE": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Homepage_Hero_-_Desktop_-_Extra-Deep.jpg",
-            "mobile_hero_image": "shopify://shop_images/1_1.jpg",
-            "slide_title": "Lounge Perfectly<br>\nin Extra-Deep.",
-            "slide_text": "The deepest modular sofa in the market. Perfect for people who really like to lounge - whether for movie nights, family hangouts, or being a couch potato.",
-            "showCaptionDesktop": false,
-            "btn_text": "SHOP EXTRA-DEEP",
-            "btn_url": "shopify://collections/best-sellers",
+            "btn_text": "SHOP OUTDOOR SOFAS",
+            "btn_url": "shopify://collections/best-sellers-outdoor",
             "alignment": "right",
             "si_bg": "",
             "s_title_color": "",
             "s_text_color": "",
             "sip_x": "right",
-            "sip_x_v": 6,
+            "sip_x_v": 4,
             "sip_y": "bottom",
-            "sip_y_v": 10,
+            "sip_y_v": 6,
             "sip_width": "max-content",
             "sip_height": "max-content",
             "si_padding": "",
@@ -66,14 +40,15 @@
         },
         "image_FmAEJf": {
           "type": "image",
+          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Homepage_Hero_-_Desktop_-_Olive_Josh_8204b84b-2dde-4fc6-bbd5-8970b59067ce.jpg",
-            "mobile_hero_image": "shopify://shop_images/1.jpg",
-            "slide_title": "Plush & Premium<br>\nPerformance Velvets.",
-            "slide_text": "Plush, luxury velvets in the richest and most vibrant colors. Designed to withstand life’s toughest demands, from your fur-babies to actual babies.",
+            "image": "shopify://shop_images/Homepage_Hero_-_Desktop_-_Outdoor_Teak_2_FINAL.jpg",
+            "mobile_hero_image": "shopify://shop_images/Homepage_Hero_-_Mobile_-_Outdoor_Teak_2.jpg",
+            "slide_title": "Grade-A, Solid<br>\nIndonesian Teak.",
+            "slide_text": "We use Grade-A Indonesian solid teak for a sleek & sturdy frame. Incredible durable and dense, our teak produces natural protective oils making them resistant to moisture, warping, rotting, and splitting",
             "showCaptionDesktop": false,
-            "btn_text": "SHOP PREMIUM VELVETS",
-            "btn_url": "shopify://collections/best-sellers",
+            "btn_text": "SHOP SOLID TEAK",
+            "btn_url": "shopify://collections/best-sellers-outdoor",
             "alignment": "left",
             "si_bg": "",
             "s_title_color": "",
@@ -89,17 +64,72 @@
             "si_text_margin": "",
             "si_title_margin": ""
           }
+        },
+        "image_9fYAHE": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Homepage_Hero_-_Desktop_-_Outdoor_Teak_3_FINAL.jpg",
+            "mobile_hero_image": "shopify://shop_images/Homepage_Hero_-_Mobile_-_Outdoor_Teak_3.jpg",
+            "slide_title": "Designed to Withstand<br>\nthe Elements.",
+            "slide_text": "Our fabrics are designed to be fade-resista",
+            "showCaptionDesktop": false,
+            "btn_text": "SHOP OUTDOOR SOFAS",
+            "btn_url": "shopify://collections/best-sellers-outdoor",
+            "alignment": "right",
+            "si_bg": "",
+            "s_title_color": "",
+            "s_text_color": "",
+            "sip_x": "right",
+            "sip_x_v": 6,
+            "sip_y": "top",
+            "sip_y_v": 8,
+            "sip_width": "max-content",
+            "sip_height": "max-content",
+            "si_padding": "",
+            "si_margin": "",
+            "si_text_margin": "",
+            "si_title_margin": ""
+          }
+        },
+        "image_qznTae": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Homepage_Hero_-_Desktop_-_Outdoor_Teak_4_FINAL.jpg",
+            "mobile_hero_image": "shopify://shop_images/Homepage_Hero_-_Mobile_-_Outdoor_Teak_4.jpg",
+            "slide_title": "Functionally-designed<br>\nSustainably-built.",
+            "slide_text": "",
+            "showCaptionDesktop": false,
+            "btn_text": "SHOP OUTDOOR SOFAS",
+            "btn_url": "shopify://collections/best-sellers-outdoor",
+            "alignment": "right",
+            "si_bg": "",
+            "s_title_color": "#000000",
+            "s_text_color": "",
+            "sip_x": "right",
+            "sip_x_v": 6,
+            "sip_y": "top",
+            "sip_y_v": 2,
+            "sip_width": "max-content",
+            "sip_height": "max-content",
+            "si_padding": "",
+            "si_margin": "",
+            "si_text_margin": "",
+            "si_title_margin": ""
+          }
         }
       },
       "block_order": [
         "c1066701-5779-4944-aeae-a5972d494459",
+        "image_FmAEJf",
         "image_9fYAHE",
-        "image_FmAEJf"
+        "image_qznTae"
       ],
       "settings": {
         "autoplaySpeed": "5000",
         "review_text": "4.8/5.0",
-        "review_url": "",
+        "review_url": "product-reviews",
         "start_date": "",
         "end_date": "",
         "color": "#000000",
@@ -152,14 +182,14 @@
     "bestSeller": {
       "type": "sofa-page-feature-product",
       "settings": {
-        "title": "Trade & Commercial Program",
-        "text": "Exclusive Discounts & Priority Access<br>\nfor The World’s Greatest Modular Sofa",
-        "collection": "best-sellers",
+        "title": "Shop Best Sellers: Aluminum Outdoor",
+        "text": "Our best selling modular outdoor configurations.<br>Find the perfect fit for every patio & backyard.",
+        "collection": "aluminum-outdoor-best-sellers",
         "product_limit": 10,
         "selected_color": "",
         "speed": "5000",
-        "btn_url": "shopify://pages/trade-program",
-        "btn_text": "APPLY NOW",
+        "btn_url": "shopify://collections/aluminum-outdoor-best-sellers",
+        "btn_text": "SHOP ALL SEATING",
         "info": "",
         "paddingTop": 20,
         "paddingBottom": 20,
@@ -172,21 +202,21 @@
       "type": "sofa-page-video",
       "settings": {
         "videoRatio": "4/3",
-        "image": "shopify://shop_images/Website_Photo_-_4_fbe34f52-b6e5-4cb7-840a-05cd7d046a39.jpg",
+        "image": "shopify://shop_images/Website_Photo_-_Homepage_060c73c0-62d4-45bc-9a9b-e48e281d2913.jpg",
         "fullImage": true,
-        "title": "Members-Only Benefits for\nValued Trade Partners",
-        "icon_svg_1": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/modular_6.svg?v=1635316203",
-        "text_1": "Exclusive Discounts",
-        "icon_svg_2": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/waterproof-fabric_1.svg?v=1635315926",
-        "text_2": "Early Access",
-        "icon_svg_3": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/cloud_2.svg?v=1635316369",
-        "text_3": "No Minimum Order",
-        "icon_svg_4": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/pillows_2.svg?v=1635316488",
-        "text_4": "Priority Appointments",
-        "icon_svg_5": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/muscle_2.svg?v=1635316686",
-        "text_5": "Spotlight Opportunities",
-        "icon_svg_6": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/ecology_1.svg?v=1635218930",
-        "text_6": "Dedicated Concierge Support",
+        "title": "The best of our indoor,<br>now for the great outdoors.",
+        "icon_svg_1": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/muscle_2.svg?v=1635316686",
+        "text_1": "PREMIUM, HEAVY-DUTY ALUMINUM FRAMES",
+        "icon_svg_2": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/foam_1_5d0f172f-e481-4220-b595-1f82cb459580.svg?v=1714361755",
+        "text_2": "MOLD-RESISTANT QUICK-DRY FOAM",
+        "icon_svg_3": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/UV.svg?v=1714361603",
+        "text_3": "UV & FADING-RESISTANT FABRICS",
+        "icon_svg_4": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/waterproof-fabric_1.svg?v=1635315926",
+        "text_4": "WATER-REPELLENT & STAIN-RESISTANT",
+        "icon_svg_5": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/pillows_2.svg?v=1635316488",
+        "text_5": "REMOVABLE & WASHABLE COVERS",
+        "icon_svg_6": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/modular_6.svg?v=1635316203",
+        "text_6": "ENDLESSLY MODULAR & RE-ARRANGEABLE",
         "marginTop": 0,
         "marginBottom": 20,
         "marginTopMobile": 0,
@@ -203,41 +233,51 @@
           "type": "feature",
           "settings": {
             "extra_deep": false,
-            "videotype": "shopify://files/videos/1 Spill Compressed.mp4",
-            "title": "Water repellent & stain resistant.",
-            "text": "Our fabrics have the ability to withstand & temporarily repel everyday household spills such as water, coffee, sodas, juices, soy sauce, energy drinks, pet urine, and even wine. Perfect for households with kids, pets, or drunk people."
+            "videotype": "shopify://files/videos/May 6 EDIT Aluminum Frame.mp4",
+            "title": "Premium all-weather solid aluminum.",
+            "text": "Our sleek and modern black aluminum frame is welded & double powder-coated to be resistant to rust, corrosion, fading, and warping with minimal upkeep. They are sturdy and extremely durable - perfect for use in your outdoor space."
+          }
+        },
+        "feature_xrtPnV": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/Comfortable V2.mov",
+            "title": "Indoor comfort, outdoor durability.",
+            "text": "Unlike other outdoor sofas that aren't comfortable to sit on, our sofas are built for lounging. We use a proprietary spring system using galvanized steel and plush quick-dry foam to ensure that our outdoor aluminum seats are as comfortable as our legendary indoor seats."
           }
         },
         "1dccdf53-c719-432f-b147-2f259120c0c4": {
           "type": "feature",
           "settings": {
             "extra_deep": false,
-            "videotype": "shopify://files/videos/2 Modular Compressed V2.mp4",
-            "title": "Endlessly modular for any configuration.",
-            "text": "Our simple modular system features 4 core components - a Corner Left seat, a Corner Right seat, an Armless Seat, and an Ottoman - all of which can be arranged into any configuration to perfectly fit your home."
+            "videotype": "shopify://files/videos/Aluminum 2 FINAL 4K (1).mp4",
+            "title": "Water repellent & stain resistant.",
+            "text": "Our fabrics have the ability to withstand & temporarily repel everyday household spills such as water, coffee, sodas, juices, soy sauce, energy drinks, and even wine. Perfect for households with kids, pets, or drunk people."
           }
         },
         "9d8af6a7-276c-4dc0-996b-eeed2c0545e6": {
           "type": "feature",
           "settings": {
             "extra_deep": false,
-            "videotype": "shopify://files/videos/3 Covers Compressed.mp4",
-            "title": "Removable, washable, & replaceable covers.",
-            "text": "All of our covers, including the base, arms, & backs, are removable & machine washable. Ready for a new look? Now you can extend the life of your existing sofa by swapping out the covers to a new color instead of buying an entirely new piece of furniture."
+            "videotype": "shopify://files/videos/Aluminum 3 V2 (Higher Res).mov",
+            "title": "Designed to withstand the elements.",
+            "text": "Our proprietary outdoor fabrics are designed to be resistant to fading and withstand ​intense sun exposure. ​We use premium quick-dry foam cushions - typically used in boats, yachts, and poolside settings - that do not retain water and are resistant to mold & mildew."
           }
         },
         "6c18ffaa-08e9-497b-a719-af9316e2f6cc": {
           "type": "feature",
           "settings": {
             "extra_deep": false,
-            "videotype": "shopify://files/videos/4 Fill Compressed.mp4",
-            "title": "Adjustable back cushion firmness.",
-            "text": "Our back cushions are adjustable to your liking. Choose between Medium-Firm (recommended) and Medium-Soft, or use our complimentary fill packets to customize your own back cushion firmness."
+            "videotype": "shopify://files/videos/Washable V3.mov",
+            "title": "Removable, washable, & replaceable covers.",
+            "text": "All of our outdoor covers are ​removable & machine washable. Ready for a new look? ​Now you can extend the life of your existing fabrics by ​swapping out the covers to a new color instead of buying ​an entirely new piece of furniture."
           }
         }
       },
       "block_order": [
         "a9216570-1148-40bb-8a47-ba0ea398518f",
+        "feature_xrtPnV",
         "1dccdf53-c719-432f-b147-2f259120c0c4",
         "9d8af6a7-276c-4dc0-996b-eeed2c0545e6",
         "6c18ffaa-08e9-497b-a719-af9316e2f6cc"
@@ -250,123 +290,47 @@
         "c54416f5-f914-469a-a9d6-0834a4a7d76f": {
           "type": "advanced_content",
           "settings": {
-            "image": "shopify://shop_images/Non_toxic_sustainably_built_702ee8b5-af4c-43c0-ae19-080c2f5fe131.jpg",
-            "video": "",
+            "video": "https://cdn.shopify.com/videos/c/o/v/f8cff5a005464d1c85476938673c7ed3.mov",
             "image_right": true,
-            "title": "Exclusive Discounts",
-            "text": "Enjoy special discounts on all 7th Avenue \nproducts for you and your clients"
+            "title": "Endlessly modular for any configuration.",
+            "text": "Our simple modular outdoor system features 3 core components - a Corner Seat, an Armless Seat, and an Ottoman - all of which can be arranged into any configuration to perfectly fit your outdoor space."
           }
         },
         "40618786-dc98-47d2-8e75-d4d70c98d545": {
           "type": "advanced_content",
           "settings": {
-            "image": "shopify://shop_images/Solid_Wood.jpg",
-            "video": "",
-            "image_right": false,
-            "title": "No Minimum Order",
-            "text": "Apply your Trade Partner benefits to \norders of any size and value"
-          }
-        },
-        "d8240561-3ec4-434f-af71-28536857ee5e": {
-          "type": "advanced_content",
-          "settings": {
-            "image": "shopify://shop_images/Feather-free_afcc99d3-2485-4b5b-ba53-8fccbebfd5fa.jpg",
-            "video": "",
-            "image_right": true,
-            "title": "Volume Savings",
-            "text": "Tiered discounts for large-scale commercial\npartners. The more you buy, the more you save!"
-          }
-        },
-        "advanced_content_bRAmt9": {
-          "type": "advanced_content",
-          "settings": {
             "image": "shopify://shop_images/Non_toxic_sustainably_built_702ee8b5-af4c-43c0-ae19-080c2f5fe131.jpg",
             "video": "",
             "image_right": false,
-            "title": "Early Access",
-            "text": "Get first dibs on new product launches, \nfabric releases, and events"
-          }
-        },
-        "advanced_content_VdwyPz": {
-          "type": "advanced_content",
-          "settings": {
-            "image": "shopify://shop_images/Non_toxic_sustainably_built_702ee8b5-af4c-43c0-ae19-080c2f5fe131.jpg",
-            "video": "",
-            "image_right": true,
-            "title": "Priority Appointments",
-            "text": "Collaborate with a 7th Avenue Design Consultant in our showrooms or via virtual appointment"
-          }
-        },
-        "advanced_content_KhYFwW": {
-          "type": "advanced_content",
-          "settings": {
-            "image": "shopify://shop_images/Non_toxic_sustainably_built_702ee8b5-af4c-43c0-ae19-080c2f5fe131.jpg",
-            "video": "",
-            "image_right": false,
-            "title": "Spotlight Opportunities",
-            "text": "Have your work featured on our social media\nchannels, website, and newsletter"
-          }
-        },
-        "advanced_content_FD8zWM": {
-          "type": "advanced_content",
-          "settings": {
-            "image": "shopify://shop_images/Non_toxic_sustainably_built_702ee8b5-af4c-43c0-ae19-080c2f5fe131.jpg",
-            "video": "",
-            "image_right": true,
-            "title": "Dedicated Concierge Support",
-            "text": "We’re with you every step of the way"
+            "title": "Non-toxic & safe for the environment.",
+            "text": "Keeping our customers and our planet safe is a top priority. Our fabrics are OEKO-TEX certified & are free from \"forever chemicals\" such as PFAS/PFOA/PFOS. They are also free from any toxic flame-retardant chemicals, formaldehyde, and others."
           }
         }
       },
       "block_order": [
         "c54416f5-f914-469a-a9d6-0834a4a7d76f",
-        "40618786-dc98-47d2-8e75-d4d70c98d545",
-        "d8240561-3ec4-434f-af71-28536857ee5e",
-        "advanced_content_bRAmt9",
-        "advanced_content_VdwyPz",
-        "advanced_content_KhYFwW",
-        "advanced_content_FD8zWM"
+        "40618786-dc98-47d2-8e75-d4d70c98d545"
       ],
       "settings": {}
     },
-    "sofa_page_feature_product_TNV3kg": {
-      "type": "sofa-page-feature-product",
-      "settings": {
-        "title": "Apply Today",
-        "text": "Welcoming Interior Designers, Hotels, <br>\nApartments, Restaurants, and More!",
-        "collection": "",
-        "product_limit": 5,
-        "selected_color": "",
-        "speed": "5000",
-        "btn_url": "shopify://pages/trade-program",
-        "btn_text": "APPLY NOW",
-        "info": "",
-        "paddingTop": 20,
-        "paddingBottom": 20,
-        "paddingTopMobile": 10,
-        "paddingBottomMobile": 10,
-        "background": "#fff"
-      }
-    },
     "1662924910155a782c": {
       "type": "sofa-compare",
-      "disabled": true,
       "settings": {
         "title": "How We Compare",
         "subtitle": "A whole lot more features, at an even better pricing.",
         "brand_1_logo_svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/White_Logo_-_Black_White_Borders.svg?v=1641757343",
         "brand_1": "7thavenue",
         "brand_2_logo_svg": "",
-        "brand_2": "Restoration Hardware (RH)",
+        "brand_2": "Arhaus",
         "brand_3_logo_svg": "",
         "brand_3": "West Elm",
         "product_details_title": "COMPARABLE Product",
-        "product_image_1": "shopify://shop_images/Compare_-_4-Seat_Chaise_Sectional_f24f2c72-3c4d-4804-9556-bcba710dac52.jpg",
-        "product_details_1": "4-Seat Modular<br>Chaise Sectional",
-        "product_image_2": "shopify://shop_images/Compare_-_RH_4-Seat_Chaise_Sectional_-_RH_1.jpg",
-        "product_details_2": "RH Cloud<br>Modular Sectional",
-        "product_image_3": "shopify://shop_images/Compare_-_4-Seat_Chaise_Sectional_-_West_Elm_27be741d-3889-45c8-9110-771077991abe.jpg",
-        "product_details_3": "Harmony Modular<br>Chaise Sectional",
+        "product_image_1": "shopify://shop_images/2-seat-modular-loveseat-aluminum-outdoor-733731.jpg",
+        "product_details_1": "2-Seat Modular Loveseat<br>\nAluminum Outdoor",
+        "product_image_2": "shopify://shop_images/Comparison_Chart_-_Arhaus_-_Bal_Harbour_Outdoor_Aluminum_Sofa_74.jpg",
+        "product_details_2": "Bal Harbour Outdoor<br>\nAluminum Sofa",
+        "product_image_3": "shopify://shop_images/Comparison_Chart_-_West_Elm_-_Telluride_Aluminum_Outdoor_Sofa_83.jpg",
+        "product_details_3": "Telluride Aluminum<br>\nOutdoor Sofa",
         "row_1": true,
         "title_1": "Comparable Fabric",
         "brand_1_comp_1_checked": false,
@@ -374,94 +338,94 @@
         "brand_1_comp_1": "All Performance Fabrics",
         "brand_2_comp_1_checked": false,
         "brand_2_comp_1_crossed": false,
-        "brand_2_comp_1": "Perennials® Performance",
+        "brand_2_comp_1": "All Performance Fabrics",
         "brand_3_comp_1_checked": false,
         "brand_3_comp_1_crossed": false,
-        "brand_3_comp_1": "Performance Basket Slub",
+        "brand_3_comp_1": "Standard Fabrics",
         "row_2": true,
-        "title_2": "PRICE",
+        "title_2": "Price",
         "brand_1_comp_2_checked": false,
         "brand_1_comp_2_crossed": false,
-        "brand_1_comp_2": "$3,850 (Classic)<br>$4,850 (Extra-Deep)",
+        "brand_1_comp_2": "$2,200",
         "brand_2_comp_2_checked": false,
         "brand_2_comp_2_crossed": false,
-        "brand_2_comp_2": "$10,580 (Classic)<br>$11,380 (Luxe)",
+        "brand_2_comp_2": "$4,500",
         "brand_3_comp_2_checked": false,
         "brand_3_comp_2_crossed": false,
-        "brand_3_comp_2": "$4,997",
+        "brand_3_comp_2": "$2,399",
         "row_3": true,
-        "title_3": "TOTAL WIDTH",
+        "title_3": "Total width",
         "brand_1_comp_3_checked": false,
         "brand_1_comp_3_crossed": false,
-        "brand_1_comp_3": "132”",
+        "brand_1_comp_3": "84”",
         "brand_2_comp_3_checked": false,
         "brand_2_comp_3_crossed": false,
-        "brand_2_comp_3": "119”",
+        "brand_2_comp_3": "74”",
         "brand_3_comp_3_checked": false,
         "brand_3_comp_3_crossed": false,
-        "brand_3_comp_3": "121”",
-        "row_4": true,
+        "brand_3_comp_3": "83”",
+        "row_4": false,
         "title_4": "TOTAL DEPTH",
         "brand_1_comp_4_checked": false,
         "brand_1_comp_4_crossed": false,
-        "brand_1_comp_4": "39” (Classic)<br>47\" (Extra-Deep)",
+        "brand_1_comp_4": "33\"",
         "brand_2_comp_4_checked": false,
         "brand_2_comp_4_crossed": false,
-        "brand_2_comp_4": "40” (Classic)<br>45\" (Luxe)",
+        "brand_2_comp_4": "32.75\"",
         "brand_3_comp_4_checked": false,
         "brand_3_comp_4_crossed": false,
-        "brand_3_comp_4": "43”",
+        "brand_3_comp_4": "41.75\"",
         "row_5": true,
-        "title_5": "CUSHION FILL",
+        "title_5": "FRAME TYPE",
         "brand_1_comp_5_checked": false,
         "brand_1_comp_5_crossed": false,
-        "brand_1_comp_5": "Down Alternative",
+        "brand_1_comp_5": "Powder-coated Aluminum",
         "brand_2_comp_5_checked": false,
         "brand_2_comp_5_crossed": false,
-        "brand_2_comp_5": "Down Feather",
+        "brand_2_comp_5": "Powder-coated Aluminum",
         "brand_3_comp_5_checked": false,
         "brand_3_comp_5_crossed": false,
-        "brand_3_comp_5": "Fiber Fills",
+        "brand_3_comp_5": "Powder-coated Aluminum",
         "row_6": true,
-        "title_6": "CUSHION FIRMNESS",
+        "title_6": "CUSHION FILLS",
         "brand_1_comp_6_checked": false,
         "brand_1_comp_6_crossed": false,
-        "brand_1_comp_6": "Medium-Soft or Medium-Firm",
+        "brand_1_comp_6": "Quick-Dry Cushion<br>\n& Down Alternative",
         "brand_2_comp_6_checked": false,
         "brand_2_comp_6_crossed": false,
-        "brand_2_comp_6": "Extra-Soft",
+        "brand_2_comp_6": "Quick-Dry Cushion",
         "brand_3_comp_6_checked": false,
         "brand_3_comp_6_crossed": false,
-        "brand_3_comp_6": "Soft",
+        "brand_3_comp_6": "Standard Polyurethane Foam<br>\n& Fiber Fills",
         "row_7": true,
-        "title_7": "WATER REPELLENT",
-        "brand_1_comp_7_checked": true,
+        "title_7": "UV & Fade-Resistant",
+        "brand_1_comp_7_checked": false,
         "brand_1_comp_7_crossed": false,
-        "brand_1_comp_7": "Content 7",
+        "brand_1_comp_7": "2,000 hours of<br>UV fastness",
         "brand_2_comp_7_checked": false,
-        "brand_2_comp_7_crossed": true,
-        "brand_2_comp_7": "Content 7",
+        "brand_2_comp_7_crossed": false,
+        "brand_2_comp_7": "2,000 hours of<br>UV fastness",
         "brand_3_comp_7_checked": false,
-        "brand_3_comp_7_crossed": true,
-        "brand_3_comp_7": "Content 7",
+        "brand_3_comp_7_crossed": false,
+        "brand_3_comp_7": "Unknown",
         "row_8": true,
-        "title_8": "MACHINE WASHABLE",
-        "brand_1_comp_8_checked": true,
+        "title_8": "WATER-REPELLENT",
+        "brand_1_comp_8_checked": false,
         "brand_1_comp_8_crossed": false,
-        "brand_1_comp_8": "Content 8",
+        "brand_1_comp_8": "Yes & PFAS-free",
         "brand_2_comp_8_checked": false,
-        "brand_2_comp_8_crossed": true,
-        "brand_2_comp_8": "Content 8",
+        "brand_2_comp_8_crossed": false,
+        "brand_2_comp_8": "Yes & PFAS-free",
         "brand_3_comp_8_checked": false,
         "brand_3_comp_8_crossed": true,
-        "brand_3_comp_8": "Content 8",
+        "brand_3_comp_8": "No",
         "row_9": true,
-        "title_9": "FULLY REMOVABLE COVERS",
+        "title_9": "Machine washable",
         "brand_1_comp_9_checked": true,
         "brand_1_comp_9_crossed": false,
         "brand_1_comp_9": "Content 9",
-        "brand_2_comp_9_checked": true,
-        "brand_2_comp_9_crossed": false,
+        "brand_2_comp_9_checked": false,
+        "brand_2_comp_9_crossed": true,
         "brand_2_comp_9": "Content 9",
         "brand_3_comp_9_checked": false,
         "brand_3_comp_9_crossed": true,
@@ -477,80 +441,66 @@
         "brand_3_comp_10_checked": false,
         "brand_3_comp_10_crossed": true,
         "brand_3_comp_10": "Content 10",
-        "row_11": false,
-        "title_11": "Solid wood",
-        "brand_1_comp_11_checked": true,
+        "row_11": true,
+        "title_11": "Non-Toxic Certifications",
+        "brand_1_comp_11_checked": false,
         "brand_1_comp_11_crossed": false,
-        "brand_1_comp_11": "Content 11",
-        "brand_2_comp_11_checked": true,
-        "brand_2_comp_11_crossed": false,
-        "brand_2_comp_11": "Content 11",
+        "brand_1_comp_11": "OEKO-TEX & Greenguard<br>Gold fabrics",
+        "brand_2_comp_11_checked": false,
+        "brand_2_comp_11_crossed": true,
+        "brand_2_comp_11": "Unknown",
         "brand_3_comp_11_checked": false,
         "brand_3_comp_11_crossed": true,
-        "brand_3_comp_11": "Content 11",
-        "row_12": true,
-        "title_12": "CERTIFICATIONS",
+        "brand_3_comp_11": "Unknown",
+        "row_12": false,
+        "title_12": "Sustainability Certifications",
         "brand_1_comp_12_checked": false,
         "brand_1_comp_12_crossed": false,
-        "brand_1_comp_12": "OEKO-TEX fabrics, FSC wood",
+        "brand_1_comp_12": "Indonesian sustainable wood & V-Legal export certifications",
         "brand_2_comp_12_checked": false,
         "brand_2_comp_12_crossed": false,
-        "brand_2_comp_12": "Unknown",
+        "brand_2_comp_12": "Indonesian sustainable wood & V-Legal export certifications",
         "brand_3_comp_12_checked": false,
         "brand_3_comp_12_crossed": false,
         "brand_3_comp_12": "FSC wood only"
       }
     },
-    "badge": {
-      "type": "badge",
+    "sofa_page_badge_TMrabR": {
+      "type": "sofa-page-badge",
       "blocks": {
-        "badge_qYPWmA": {
+        "badge_idUhk7": {
           "type": "badge",
           "settings": {
-            "svg": "",
-            "icon": "shopify://shop_images/exchange_pdp_white.svg",
+            "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/switch-camera.svg?v=1714359567",
             "title": "FREE 30-DAY FABRIC EXCHANGE",
-            "text": "Can’t decide a color? We offer free fabric exchange within 30 days of delivery"
+            "text": "If you're unhappy with your fabric choice or color selection, exchange for free within 30-days."
           }
         },
-        "a4843bc9-d8c3-4556-a89d-a2c3cc66b9d3": {
+        "badge_yWtapN": {
           "type": "badge",
-          "disabled": true,
           "settings": {
-            "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/shipped_acbf6ef3-3676-46e8-a5cd-a1916a17b1e7.svg?v=1635203974",
-            "title": "NATIONWIDE DELIVERY & ASSEMBLY",
-            "text": "We offer delivery & assembly services nationwide throughout contiguous U.S."
+            "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/waterproof-fabric-70.svg?v=1714359834",
+            "title": "FREE OUTDOOR PROTECTIVE COVERS",
+            "text": "Buy matching indoor & outdoor configurations and get free outdoor waterproof covers."
           }
         },
-        "6dd6b6cb-4fce-440f-9f30-f8b8c12681ce": {
+        "badge_bE4EtB": {
           "type": "badge",
           "settings": {
-            "svg": "",
-            "icon": "shopify://shop_images/returns.svg",
-            "title": "RISK-FREE HOME TRIALS",
-            "text": "Don't like your sofa? We offer free<br>returns within 10 days of delivery."
-          }
-        },
-        "33f623dc-1d9c-49e2-bd30-9391240e64a5": {
-          "type": "badge",
-          "settings": {
-            "svg": "",
-            "icon": "shopify://shop_images/money.svg",
+            "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/guarantee_1.svg?v=1714359860",
             "title": "LIMITED LIFETIME WARRANTY",
-            "text": "Any damages? We offer a lifetime warranty <br>on the frame & construction of the sofa."
+            "text": "Applies to all frame and construction-related components. Excludes normal wear & tear."
           }
         }
       },
       "block_order": [
-        "badge_qYPWmA",
-        "a4843bc9-d8c3-4556-a89d-a2c3cc66b9d3",
-        "6dd6b6cb-4fce-440f-9f30-f8b8c12681ce",
-        "33f623dc-1d9c-49e2-bd30-9391240e64a5"
+        "badge_idUhk7",
+        "badge_yWtapN",
+        "badge_bE4EtB"
       ],
-      "disabled": true,
       "settings": {
         "color": "#ffffff",
-        "bg_color": "#032e6b"
+        "bg_color": "#000000"
       }
     },
     "review": {
@@ -619,7 +569,6 @@
         "d966a3bd-da79-4989-a8f0-a25199b9ec32",
         "23be5805-742b-4335-b94a-11b5ea46f1d0"
       ],
-      "disabled": true,
       "settings": {
         "title": "Here’s what many of our satisfied customers have to say about their dream sofa",
         "btn_url": "shopify://pages/reviews",
@@ -627,33 +576,39 @@
         "speed": "5000"
       }
     },
-    "1650919648ecbeb0e5": {
-      "type": "showroom",
-      "disabled": true,
+    "showroom_v2_aHPiee": {
+      "type": "showroom-v2",
       "settings": {
-        "title": "Find a Showroom Near You",
-        "title_mob": "Find a Showroom Near You",
-        "subtitle": "Experience “The Worlds Greatest Modular Sofa” in person.",
-        "subtitle_mob": "",
+        "title": "Find a Showroom",
+        "subtitle": "EXPERIENCE “THE WORLDS GREATEST MODULAR SOFA” IN PERSON.",
         "get_data_from_metaobject": true,
         "box_per_row": 3,
-        "active_geo": true,
+        "button": "See all showrooms",
+        "button_url": "shopify://pages/find-a-showroom",
+        "share_enabled": false,
+        "sort_by_alphabetical": true,
+        "sort_by_location": true,
+        "sort_by_state": true,
+        "default_sort_option": "sort_by_location",
+        "limit": 9,
         "border_top": false,
         "border_bot": false,
         "color": "#000000",
         "bg_color": "#ffffff",
+        "button_color": "#ffffff",
+        "button_bg": "#000000",
+        "button_bg_hover": "#032e6a",
         "card_bg": "#f3f3f3",
         "bt_color": "#ffffff",
-        "bt_bg": "#032e6b",
+        "bt_bg": "#032e6a",
         "padding_top": 20,
         "padding_bot": 40,
         "padding_top_mob": 20,
-        "padding_bot_mob": 0
+        "padding_bot_mob": 20
       }
     },
     "f47b81bf-45ff-494e-8bc2-664c4fca2a80": {
       "type": "image-with-text",
-      "disabled": true,
       "settings": {
         "box": true,
         "image": "shopify://shop_images/Website_Virtual_Appointment_-_2.jpg",
@@ -680,7 +635,7 @@
         "17c4026a-278d-4dfe-8d6f-b798bf2a798b": {
           "type": "collection",
           "settings": {
-            "collection": "best-sellers",
+            "collection": "best-sellers-outdoor",
             "title": "",
             "show_desktop": false,
             "show_mobile": false
@@ -689,8 +644,8 @@
         "61866240-3c4f-410c-9758-621cb1c5bbf0": {
           "type": "collection",
           "settings": {
-            "collection": "sectionals",
-            "title": "",
+            "collection": "outdoor-sectionals",
+            "title": "Sectionals",
             "show_desktop": false,
             "show_mobile": false
           }
@@ -698,8 +653,8 @@
         "961ae567-6f32-4119-b675-b5e51b84d395": {
           "type": "collection",
           "settings": {
-            "collection": "sofas-and-loveseats",
-            "title": "",
+            "collection": "outdoor-sofas-loveseats",
+            "title": "Sofas & Loveseats",
             "show_desktop": false,
             "show_mobile": false
           }
@@ -707,8 +662,8 @@
         "391a416f-df99-4ae7-bce4-d1606a9c0f76": {
           "type": "collection",
           "settings": {
-            "collection": "armchairs",
-            "title": "",
+            "collection": "outdoor-armchairs",
+            "title": "Armchairs",
             "show_desktop": false,
             "show_mobile": false
           }
@@ -716,8 +671,8 @@
         "380f9580-56ac-4cb3-a7f6-51a73290377f": {
           "type": "collection",
           "settings": {
-            "collection": "daybeds-and-pits",
-            "title": "",
+            "collection": "outdoor-daybeds",
+            "title": "Daybeds & Pits",
             "show_desktop": false,
             "show_mobile": false
           }
@@ -725,7 +680,7 @@
         "ac973561-6f90-48ea-b44f-5cf63bf8d69a": {
           "type": "collection",
           "settings": {
-            "collection": "living-room-sets",
+            "collection": "outdoor-sets",
             "title": "",
             "show_desktop": false,
             "show_mobile": false
@@ -740,7 +695,6 @@
         "380f9580-56ac-4cb3-a7f6-51a73290377f",
         "ac973561-6f90-48ea-b44f-5cf63bf8d69a"
       ],
-      "disabled": true,
       "settings": {
         "title": "",
         "text": "",
@@ -754,43 +708,55 @@
         "bottom_gutter_m": 25
       }
     },
-    "sofa_page_badge_tyJrRM": {
-      "type": "sofa-page-badge",
+    "badge": {
+      "type": "badge",
       "blocks": {
-        "badge_fAzCte": {
+        "badge_CJihKc": {
           "type": "badge",
           "settings": {
-            "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/switch-camera.svg?v=1714359567",
-            "title": "30-DAY FREE FABRIC EXCHANGES",
-            "text": "If you're unhappy with your fabric choice or color selection, exchange for free within 30-days."
+            "svg": "",
+            "icon": "shopify://shop_images/exchange_pdp_white.svg",
+            "title": "Free 30-Day Fabric Exchange",
+            "text": "Can’t decide a color? We offer free fabric exchange within 30 days of delivery"
           }
         },
-        "badge_QGzwnE": {
+        "a4843bc9-d8c3-4556-a89d-a2c3cc66b9d3": {
           "type": "badge",
+          "disabled": true,
           "settings": {
-            "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/waterproof-fabric-70.svg?v=1714359834",
-            "title": "FREE OUTDOOR PROTECTIVE COVERS",
-            "text": "Buy matching indoor & outdoor configurations and get free outdoor waterproof covers."
+            "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/shipped_acbf6ef3-3676-46e8-a5cd-a1916a17b1e7.svg?v=1635203974",
+            "title": "NATIONWIDE DELIVERY & ASSEMBLY",
+            "text": "We offer delivery & assembly services nationwide throughout contiguous U.S."
           }
         },
-        "badge_KVFpmn": {
+        "6dd6b6cb-4fce-440f-9f30-f8b8c12681ce": {
           "type": "badge",
           "settings": {
-            "svg": "https://cdn.shopify.com/s/files/1/0602/7195/2115/files/guarantee_1.svg?v=1714359860",
-            "title": "LIMITED LIFETIME WARRANTY",
-            "text": "Applies to all frame and construction-related components. Excludes normal wear & tear."
+            "svg": "",
+            "icon": "shopify://shop_images/returns.svg",
+            "title": "RISK-FREE HOME TRIALS",
+            "text": "Don't like your sofa? We offer free returns<br>within 10 days of delivery."
+          }
+        },
+        "33f623dc-1d9c-49e2-bd30-9391240e64a5": {
+          "type": "badge",
+          "settings": {
+            "svg": "",
+            "icon": "shopify://shop_images/money.svg",
+            "title": "BEST-IN-CLASS WARRANTY",
+            "text": "Any damages? We offer a lifetime warranty <br>on the frame & construction of the sofa."
           }
         }
       },
       "block_order": [
-        "badge_fAzCte",
-        "badge_QGzwnE",
-        "badge_KVFpmn"
+        "badge_CJihKc",
+        "a4843bc9-d8c3-4556-a89d-a2c3cc66b9d3",
+        "6dd6b6cb-4fce-440f-9f30-f8b8c12681ce",
+        "33f623dc-1d9c-49e2-bd30-9391240e64a5"
       ],
-      "disabled": true,
       "settings": {
         "color": "#ffffff",
-        "bg_color": "#000000"
+        "bg_color": "#032e6b"
       }
     },
     "4a0d3e37-3ba7-4be8-ae02-9be6db95d035": {
@@ -874,9 +840,8 @@
         "13aabf51-fe75-41f6-971d-63620c21e39d",
         "4661df7b-6618-49a9-9347-897dc25ca083"
       ],
-      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/Affirm_Photo_fd50769f-a55c-4837-82b2-c0b6bd5264f4.jpg",
+        "image": "shopify://shop_images/Homepage_Hero_-_Mobile_-_Outdoor_Aluminum_Back_fadc9e0f-0772-4d14-8608-6ceaa60a614f.jpg",
         "before_price": "Buy now, pay later. Starts at",
         "after_price": "with",
         "month": "36",
@@ -913,7 +878,13 @@
         "7afa87ea-773b-406f-be7c-48901d285cb2"
       ],
       "disabled": true,
-      "settings": {}
+      "settings": {
+        "paddingTop": 20,
+        "paddingBottom": 25,
+        "paddingTopMobile": 10,
+        "paddingBottomMobile": 10,
+        "background": "#F3F3F3"
+      }
     },
     "8a7127b0-c708-4fc6-b034-ea665c556df8": {
       "type": "collection-instagram-gallery",
@@ -939,14 +910,13 @@
     "video",
     "specialFeature",
     "advancedContent",
-    "sofa_page_feature_product_TNV3kg",
     "1662924910155a782c",
-    "badge",
+    "sofa_page_badge_TMrabR",
     "review",
-    "1650919648ecbeb0e5",
+    "showroom_v2_aHPiee",
     "f47b81bf-45ff-494e-8bc2-664c4fca2a80",
     "collectionList",
-    "sofa_page_badge_tyJrRM",
+    "badge",
     "4a0d3e37-3ba7-4be8-ae02-9be6db95d035",
     "1667672863c4281f68",
     "8a7127b0-c708-4fc6-b034-ea665c556df8",

@@ -13,7 +13,7 @@
 <script>
     window.addEventListener("DOMContentLoaded", (function () { setTimeout((function () { document.body.classList.remove("loading"), document.getElementById("page_loader").style.display = "none" }), 1500), function () { let e = 0, t = 0; const o = document.querySelector(".product-sticky-button"), n = document.querySelector(".topbar.hide-on-scroll"), s = document.querySelector("#navigation.make-small"), d = (document.querySelector(".product-photos.make-product-gallery-sticky"), document.querySelector("#gallery-sticky-terminate-indicator"), document.querySelector("header")); let i = !1; function l() { if (d) { let t = window.innerWidth, n = d.classList.contains("hide-header-on-pdp-on-scroll"), s = document.body.classList.contains("template-product"); (!n && !s || n && s && t >= 980 || !n && s || n && !s) && (e = d.offsetHeight), o && (o.style.paddingTop = 0 === e ? "7px" : "0"), document.body.style.setProperty("--header", `${e}px`), document.body.style.setProperty("--gallery", `${e}px`) } } function c() { let e = window.pageYOffset || document.documentElement.scrollTop; window.innerWidth <= 981 ? Math.abs(e - t) > 50 && (e > t ? (n && n.classList.add("hide"), s && e >= 400 && s.classList.add("small")) : (n && n.classList.remove("hide"), s && s.classList.remove("small")), t = e <= 0 ? 0 : e) : (n && n.classList.remove("hide"), s && s.classList.remove("small")), l(), i = !1 } setTimeout((() => { !function () { if (d) { const e = d.offsetHeight; window.scrollY < e && window.scrollTo(0, 0) } }(), l(), c() }), 1e3), window.addEventListener("scroll", (function () { i || (window.requestAnimationFrame(c), i = !0) })), window.addEventListener("resize", (() => { l() })), window.addEventListener("orientationchange", (() => { l() })) }() }));
 </script>
-
+{% comment %}
 <!-- Google =========== -->
 <script>
     window['GoogleAnalyticsObject'] = 'ga';
@@ -21,24 +21,8 @@
         (window['ga'].q = window['ga'].q || []).push(arguments)
     };
 </script>
-
-<script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PPZBGG7');
-</script>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10811833326"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-10811833326');
-</script>
-
 <!-- bing =========== -->
 <script>
     (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"187004924"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");
 </script>
+{% endcomment %}

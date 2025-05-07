@@ -85,6 +85,7 @@
     "rounded_buttons": false,
     "breadcrumb": false,
     "scrolling_bar_position": "none",
+    "variant_addon": false,
     "Offered_free_products": true,
     "grid_space": 30,
     "details_align": "left",
@@ -154,7 +155,7 @@
     "email_image": "shopify://shop_images/Mobile_Pop_Up_01a1187d-327c-422b-bb16-386a297bdd2a.jpg",
     "favicon": "shopify://shop_images/Favicon_-_Borders.png",
     "custom_selected_option": "Natural White",
-    "color_option_order": "Pure White, Natural White, Grey Beige (Greige), Charcoal Black, Oatmeal Beige, Heather Grey, Graphite Grey, Ivory White, Sand Beige, Camel Beige, Olive Green, Navy Blue, Onyx Black",
+    "color_option_order": "Pure White, Natural White, Grey Beige (Greige), Charcoal Black, Oatmeal Beige, Heather Grey, Graphite Grey, Ivory White, Sand Beige, Camel Beige, Chocolate Brown, Olive Green, Navy Blue, Onyx Black",
     "fabric_option_order": "Performance Classic Textured, Performance Textured Weave, Performance Woven Chenille, Premium Performance Velvet, Performance Classic Weave, Performance Classic Crossweave",
     "classic-depth": "(39”)",
     "extra-deep-depth": "(47\")",
@@ -532,7 +533,7 @@
           "header_border": false,
           "header_animation_time": "200",
           "show_timer": false,
-          "countdown_text": "<div class=\"countdown\">Black Friday Cyber Monday Sale. Get 10% Off + Free Throw Pillows with code: BFCM. Sale ends in <span class=\"clock\" data-final-date=\"11/28/2023\">5 hours</span>.</div>\n\nNew:  \n\n<div class=\"countdown\">Memorial Day Sale ends in <span class=\"clock\" data-final-date=\"05/28/2024\">5 hours</span>.</div>",
+          "countdown_text": "<div class=\"countdown\">Black Friday Cyber Monday Sale. Get 10% Off + Free Throw Pillows with code: BFCM. Sale ends in <span class=\"clock\" data-final-date=\"11/28/2023\">5 hours</span>.</div>\n\nNew: \n\n<div class=\"countdown\">Memorial Day Sale ends in <span class=\"clock\" data-final-date=\"05/28/2024\">5 hours</span>.</div>",
           "countdown_final": "11/25/2022",
           "countdown_color": "#ffffff",
           "countdown_bg": "#032e6b",
@@ -540,14 +541,14 @@
           "hide_announceemnt_mobile": false,
           "announceemnt_animation_time": "100",
           "autoplayspeed": "6000",
-          "announcement_text_1": "<p>Visit our showrooms in NYC, LA, OC, SF, San Jose, Boston, Dallas, Houston, & Vegas. Book an appointment <a href=\"https://7thavenue.co/pages/find-a-showroom\" target=\"_blank\" style=\"text-decoration: underline;\">here</a>.</p>",
-          "announcement_text_2": "<p>Can't visit a showroom? Book a virtual appointment with one of our Design Consultants <a href=\"https://calendly.com/7thavenue/virtual-design-consult\" target=\"_blank\" style=\"text-decoration: underline;\">here</a>.</p>",
-          "announcement_text_3": "",
+          "announcement_text_1": "<p>Memorial Day Sale. Get 10% Off Sitewide + Free Throw Pillows With Code: MEMDAY</p>",
+          "announcement_text_2": "<p>Visit our showrooms in NYC, LA, OC, SF, San Jose, Boston, Dallas, Houston, & Vegas. Book an appointment <a href=\"https://7thavenue.co/pages/find-a-showroom\" target=\"_blank\" style=\"text-decoration: underline;\">here</a>.</p>",
+          "announcement_text_3": "<p>Can't visit a showroom? Book a virtual appointment with one of our Design Consultants <a href=\"https://calendly.com/7thavenue/virtual-design-consult\" target=\"_blank\" style=\"text-decoration: underline;\">here</a>.</p>",
           "announcement_text_4": "",
           "announcement_text_5": "",
-          "announcement_text_m_1": "<p>Visit our showrooms in NYC, LA, OC, SF, San Jose, Boston, Dallas, Houston, & Vegas. Book an appointment <a href=\"https://7thavenue.co/pages/find-a-showroom\" target=\"_blank\" style=\"text-decoration: underline;\">here</a>.</p>",
-          "announcement_text_m_2": "<p>Can't visit a showroom? Book a virtual appointment with one of our Design Consultants <a href=\"https://calendly.com/7thavenue/virtual-design-consult\" target=\"_blank\" style=\"text-decoration: underline;\">here</a>.</p>",
-          "announcement_text_m_3": "",
+          "announcement_text_m_1": "<p>Memorial Day Sale. Get 10% Off Sitewide + Free Throw Pillows With Code: MEMDAY</p>",
+          "announcement_text_m_2": "<p>Visit our showrooms in NYC, LA, OC, SF, San Jose, Boston, Dallas, Houston, & Vegas. Book an appointment <a href=\"https://7thavenue.co/pages/find-a-showroom\" target=\"_blank\" style=\"text-decoration: underline;\">here</a>.</p>",
+          "announcement_text_m_3": "<p>Can't visit a showroom? Book a virtual appointment with one of our Design Consultants <a href=\"https://calendly.com/7thavenue/virtual-design-consult\" target=\"_blank\" style=\"text-decoration: underline;\">here</a>.</p>",
           "announcement_text_m_4": "",
           "announcement_text_m_5": "",
           "announcement_text_size": 12,
@@ -3655,6 +3656,15 @@
         "type": "shopify://apps/tinyseo/blocks/breadcrumbs-json-ld-embed/0605268f-f7c4-4e95-b560-e43df7d59ae4",
         "disabled": true,
         "settings": {}
+      },
+      "881952305448416657": {
+        "type": "shopify://apps/synchrony-marketing-messaging/blocks/syf-unifi-embed/6cbea19b-c25e-432f-9e83-819fb723f147",
+        "disabled": true,
+        "settings": {
+          "theme_app_block": "widget",
+          "syf_promo_tag": "",
+          "syf_promo_code": ""
+        }
       }
     }
   }

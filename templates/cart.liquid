@@ -44,7 +44,7 @@
             assign addon_product_ids_loop = addon_product_ids | split: ','
             for a_p_id in addon_product_ids_loop
               assign temp_a_p_id = a_p_id | plus: 0
-              if temp_a_p_id == item.variant.id
+              if temp_a_p_id == item.variant.id 
                 assign bundle_true = true
               endif
             endfor
@@ -55,7 +55,7 @@
               {%- if forloop.first -%},{%- endif -%}{{ product_item.variant.value.id }}{%- unless forloop.last -%},{%- endunless -%}
             {%- endfor -%}
           {%- endcapture -%}
-
+          
           {%- capture on_click -%}
             {%- if quick_configured -%}
               {%- for mainvariant in item.product.variants -%}
@@ -90,7 +90,7 @@
               {%- endfor -%}
             {%- endif -%}
           {%- endcapture -%}
-
+          
           <div class="cart-item">
             <a
               class="remove"
@@ -294,71 +294,7 @@
           {% if settings.show_shipping_countdown %}
             {% render 'cart-free-shipping' %}
           {% endif %}
-          <div id="cart-notes" class="item">
-            {%- liquid
-              assign notes = ''
-              for item in cart.items
-                unless item.final_price == 0
-                  assign note = ''
-                  assign product = item.product
-                  assign title = product.title
-                  assign variant = item.variant
-                  assign position = product.options_by_name['Seating Depth'].position
-                  assign option = 'option' | append: position
-                  assign depth = variant[option]
-                  assign variant_title = variant.title | split: '/'
-                  assign variant_title_first = variant_title[0] | strip
-                  assign variant_title_last = variant_title[1] | strip
-                  assign stock_message = ''
 
-                  for stock_info in shop.metaobjects.stock_messages_lead_times.values
-                    assign name = stock_info.name
-                    assign message = stock_info.message
-                    if message != blank
-                      if name contains '&'
-                        assign fname = name | split: '&'
-                        assign name_first = fname[0] | strip
-                        assign name_last = fname[1] | strip
-
-                        if variant_title_first == name_first and variant_title_last == name_last and stock_message == ''
-                          assign stock_message = message
-                        elsif variant_title_first contains name_first and variant_title_last contains name_last and stock_message == ''
-                          assign stock_message = message
-                        elsif variant_title_first contains name_last and variant_title_last contains name_first and stock_message == ''
-                          assign stock_message = message
-                        endif
-                      else
-                        if variant_title_first contains name or variant_title_first == name or variant_title_last contains name or variant_title_last == name
-                          assign stock_message = message
-                        endif
-                      endif
-                    endif
-                  endfor
-
-                  if title != blank and depth != blank and stock_message != blank
-                    assign note = title | append: ' | ' | append: depth | append: ' | ' | append: stock_message
-                  elsif title != blank and depth != blank
-                    assign note = title | append: ' | ' | append: depth
-                  elsif title != blank and stock_message != blank
-                    assign note = title | append: ' | ' | append: stock_message
-                  endif
-
-                  if notes == ''
-                    assign notes = note
-                  else
-                    assign notes = notes | append: '###' | append: note
-                  endif
-                endunless
-              endfor
-            -%}
-            <input class="trigger" id="item-one" type="checkbox" name="items">
-            <label class="accordion-label" for="item-one"
-              ><span class="item-heading">{{ 'cart.general.note' | t }}</span></label
-            >
-            <cart-page-note class="item-content" style="display: block;">
-              <textarea name="note" id="note" rows="5" cols="60">{{ notes }}</textarea>
-            </cart-page-note>
-          </div>
           {% if settings.show_shipping_calculator %}
             {% render 'shipping-calculator' %}
           {% endif %}
@@ -396,9 +332,7 @@
   {% endif %}
 </div>
 
-<script
-  type="text/javascript"
->
+<script type="text/javascript">
   function removeFromCart(...items) {
     fetch('/cart.js')
       .then((response) => response.json())
@@ -480,12 +414,10 @@
         }
       })
       .catch((error) => console.error('Error fetching cart:', error));
-  });
+  });  
 </script>
 
-<script
-  id="cartform-submit"
->
+<script id="cartform-submit">
   const cartItemsString = {{ cart.items | json }};
   document.addEventListener('DOMContentLoaded', function () {
     const button = document.querySelector('#shadowCheckout');

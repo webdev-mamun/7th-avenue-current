@@ -179,12 +179,13 @@
     "bestSeller": {
       "type": "sofa-page-feature-product",
       "settings": {
-        "title": "Shop Best Sellers: Outdoor",
+        "title": "Shop Best Sellers: Teak Outdoor",
         "text": "Our best selling modular outdoor configurations.<br>Find the perfect fit for every patio & backyard.",
-        "collection": "best-sellers-outdoor",
+        "collection": "teak-outdoor-best-sellers",
         "product_limit": 10,
+        "selected_color": "",
         "speed": "5000",
-        "btn_url": "shopify://collections/best-sellers",
+        "btn_url": "shopify://collections/teak-outdoor-best-sellers",
         "btn_text": "SHOP ALL SEATING",
         "info": "",
         "paddingTop": 20,
@@ -278,8 +279,7 @@
         "6c18ffaa-08e9-497b-a719-af9316e2f6cc",
         "feature_JynRnR"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "advancedContent": {
       "type": "sofa-page-advanced-content",
@@ -319,8 +319,7 @@
         "40618786-dc98-47d2-8e75-d4d70c98d545",
         "d8240561-3ec4-434f-af71-28536857ee5e"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "1662924910155a782c": {
       "type": "sofa-compare",
@@ -355,7 +354,7 @@
         "title_2": "PRICE",
         "brand_1_comp_2_checked": false,
         "brand_1_comp_2_crossed": false,
-        "brand_1_comp_2": "$4,350 (Open Arms)<br>$4,500 (Bench Arms)",
+        "brand_1_comp_2": "$4,500",
         "brand_2_comp_2_checked": false,
         "brand_2_comp_2_crossed": false,
         "brand_2_comp_2": "$7,175",
@@ -585,27 +584,34 @@
         "speed": "5000"
       }
     },
-    "1650919648ecbeb0e5": {
-      "type": "showroom",
+    "showroom_v2_aHPiee": {
+      "type": "showroom-v2",
       "settings": {
-        "title": "Find a Showroom Near You",
-        "title_mob": "California",
-        "subtitle": "Experience “The Worlds Greatest Modular Sofa” in person.",
-        "subtitle_mob": "",
+        "title": "Find a Showroom",
+        "subtitle": "EXPERIENCE “THE WORLDS GREATEST MODULAR SOFA” IN PERSON.",
         "get_data_from_metaobject": true,
         "box_per_row": 3,
-        "active_geo": true,
+        "button": "See all showrooms",
+        "button_url": "shopify://pages/find-a-showroom",
+        "sort_by_alphabetical": true,
+        "sort_by_location": true,
+        "sort_by_state": true,
+        "default_sort_option": "sort_by_location",
+        "limit": 9,
         "border_top": false,
         "border_bot": false,
         "color": "#000000",
         "bg_color": "#ffffff",
+        "button_color": "#ffffff",
+        "button_bg": "#000000",
+        "button_bg_hover": "#032e6a",
         "card_bg": "#f3f3f3",
         "bt_color": "#ffffff",
-        "bt_bg": "#032e6b",
-        "padding_top": 18,
+        "bt_bg": "#032e6a",
+        "padding_top": 20,
         "padding_bot": 40,
         "padding_top_mob": 20,
-        "padding_bot_mob": 0
+        "padding_bot_mob": 20
       }
     },
     "f47b81bf-45ff-494e-8bc2-664c4fca2a80": {
@@ -879,8 +885,7 @@
         "7afa87ea-773b-406f-be7c-48901d285cb2"
       ],
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "8a7127b0-c708-4fc6-b034-ea665c556df8": {
       "type": "collection-instagram-gallery",
@@ -895,11 +900,8 @@
     "1bdb2963-08d1-430f-ab42-1498cc8c1e14": {
       "type": "okendo-reviews",
       "disabled": true,
-      "custom_css": [
-
-      ],
-      "settings": {
-      }
+      "custom_css": [],
+      "settings": {}
     }
   },
   "order": [
@@ -912,7 +914,7 @@
     "1662924910155a782c",
     "sofa_page_badge_TMrabR",
     "review",
-    "1650919648ecbeb0e5",
+    "showroom_v2_aHPiee",
     "f47b81bf-45ff-494e-8bc2-664c4fca2a80",
     "collectionList",
     "badge",

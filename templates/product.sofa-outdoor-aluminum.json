@@ -27,7 +27,7 @@
         "thumbs_to_show_mobile": 4,
         "slide_controls": "arrows",
         "product_description_title": "Details",
-        "product_description": "<ul>\n<li>Premium, grade A solid Indonesian teak.</li>\n<li>Solid teak is naturally weather-resistant as the wood produces natural oils that make it resistant to moisture, warping, rotting, and splitting. The natural oils create a beautiful silvery patina that emerges over time.</li>\n<li>Outdoor fabrics with fade resistance rated for up to 2,000 hours of UV Fastness.</li>\n<li>Quick-dry cushion foam that are resistant to mold, rot, and mildew due to its open-cell structure and inability to retain water and humidity. Typically used in boats, yachts, and poolside settings.</li>\n<li>Variations in grain and color are natural and make each piece of teak unique.</li>\n<li>Sustainably and responsibly-sourced teak wood certified by the Indonesian Sustainable Forest Management (SFM) and Verification of Timber Legality (V-Legal Export Certificate). Strictly adheres to the Indonesian government’s best sustainability practices.</li>\n<li>Water-repellent & stain-resistant covers using PFAS-free DWR coating technology.</li>\n<li>Endlessly modular & re-arrangeable into any configuration. If your household grows, simply add a seat instead of buying a new sofa.</li>\n<li>Removable & washable covers allow for fabrics to be easily cleaned when they get dirty. Dry clean or machine-wash at home in cold water & delicate setting. Air dry or tumble dry no heat.</li>\n<li>Ready for a refresh? Removable covers also means that sofa color can be changed anytime you get bored or need a home makeover.</li>\n<li>Adjustable back cushion firmness. Use our complimentary fill packets to customize your own back cushion firmness.</li>\n<li>Our back cushions use premium Quick-Dry Down Alternative which makes it hypoallergenic, vegan, and cruelty-free. Our cushions maintain their shape and don't require constant fluffing to look their best.\n</li>\n<li>OEKO-TEX & GreenGuard Gold certified cover fabrics, meaning that they passed rigorous testing to be free from harmful chemicals that pollute skin and the environment.\n</li>\n<li>Free from fluorine (PFAS/PFOA/PFC), formaldehyde, melamine derivatives, and contain no APEOs.</li>\n<li>Lifetime durability of 10 years or more.</li>\n<li>\nQuick & easy assembly in 5-10 minutes per seat.\n</li>\n</ul>",
+        "product_description": "<ul>\n<li>Sleek and heavy-duty premium aluminum frames.</li>\n<li>Double powder-coated aluminum frames  designed to be resistant to rust, corrosion, fading, and warping.</li>\n<li>Outdoor seats that are as comfortable as our legendary indoor seats using innovative & proprietary spring system comprised of galvanized steel.</li>\n<li>Outdoor fabrics with fade resistance rated for up to 2,000 hours of UV Fastness.</li>\n<li>Quick-dry cushion foam that are resistant to mold, rot, and mildew due to its open-cell structure and inability to retain water and humidity. Typically used in boats, yachts, and poolside settings.</li>\n<li>Variations in grain and color are natural and make each piece of teak unique.</li>\n<li>Water-repellent & stain-resistant covers using PFAS-free DWR coating technology.</li>\n<li>Endlessly modular & re-arrangeable into any configuration. If your household grows, simply add a seat instead of buying a new sofa.</li>\n<li>Removable & washable covers allow for fabrics to be easily cleaned when they get dirty. Dry clean or machine-wash at home in cold water & delicate setting. Air dry or tumble dry no heat.</li>\n<li>Ready for a refresh? Removable covers also means that sofa color can be changed anytime you get bored or need a home makeover.</li>\n<li>Adjustable back cushion firmness. Use our complimentary fill packets to customize your own back cushion firmness.</li>\n<li>Our back cushions use premium Quick-Dry Down Alternative which makes it hypoallergenic, vegan, and cruelty-free. Our cushions maintain their shape and don't require constant fluffing to look their best.\n</li>\n<li>OEKO-TEX & GreenGuard Gold certified cover fabrics, meaning that they passed rigorous testing to be free from harmful chemicals that pollute skin and the environment.\n</li>\n<li>Free from fluorine (PFAS/PFOA/PFC), formaldehyde, melamine derivatives, and contain no APEOs.</li>\n<li>Lifetime durability of 10 years or more.</li>\n<li>\nQuick & easy assembly in 5-10 minutes per seat.\n</li>\n</ul>",
         "product_return_title": "Shipping & Assembly",
         "product_return": "<ul>\n<li>We currently ship all orders from our warehouse in Los Angeles, CA. We charge a flat shipping rate shown at checkout. </li>\n<li>We want to make you sure you love your sofa. We will cover all damages that occur in shipping or sofa parts that are missing.</li>\n<li>We will ship all modular pieces via FedEx. For safety, signature is required upon FedEx delivery unless requested otherwise.</li>\n<li>If you are located within 40 miles of Los Angeles, orders are delivered via our own White Glove Delivery Team who will deliver, unbox, and assemble your sofa.</li>\n<li>For a small fee, you may also choose to include assembly with your order. Assembly will be conducted by a verified 3rd party assembler from TaskRabbit or other platforms.</li>\n<li>For shipping outside of the contiguous U.S or internationally, please contact our team at <u><a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a></u>\n</li>\n</ul>",
         "product_tab_5_title": "Returns & Exchanges",
@@ -36,6 +36,7 @@
         "show_vendor": false,
         "show_sku": false,
         "show_quantity_selector": false,
+        "show_storage_option": true,
         "product_variants": "swatches",
         "color_swatch_options": "custom-image",
         "back_in_stock": false,
@@ -87,16 +88,25 @@
           "type": "feature",
           "settings": {
             "extra_deep": false,
-            "videotype": "shopify://files/videos/Teak COMPRESSED.mov",
-            "title": "Premium solid Indonesian teak.",
-            "text": "One of the most premium and sought-after hardwoods on ​the market, our Grade-A Solid Teak frames are strong, ​durable, and sleek. Natural protective oils produced by the solid teak make it resistant to moisture, rotting, and splitting while creating a beautiful silvery patina over time."
+            "videotype": "shopify://files/videos/May 6 EDIT Aluminum Frame.mp4",
+            "title": "Premium all-weather solid aluminum.",
+            "text": "Our sleek and modern black aluminum frame is welded & double powder-coated to be resistant to rust, corrosion, fading, and warping with minimal upkeep. They are sturdy and extremely durable - perfect for use in your outdoor space."
+          }
+        },
+        "feature_eQmUBQ": {
+          "type": "feature",
+          "settings": {
+            "extra_deep": false,
+            "videotype": "shopify://files/videos/Comfortable V2.mov",
+            "title": "Indoor comfort, outdoor durability.",
+            "text": "Unlike other outdoor sofas that aren't comfortable to sit on, our sofas are built for lounging. We use a proprietary spring system using galvanized steel and plush quick-dry foam to ensure that our outdoor aluminum seats are as comfortable as our legendary indoor seats."
           }
         },
         "feature_hyzT6D": {
           "type": "feature",
           "settings": {
             "extra_deep": false,
-            "videotype": "shopify://files/videos/Water Repellent COMPRESSED.mov",
+            "videotype": "shopify://files/videos/Aluminum 2 FINAL 4K (1).mp4",
             "title": "Water repellent & stain resistant.",
             "text": "Our fabrics have the ability to withstand & temporarily repel everyday household spills such as water, coffee, sodas, juices, soy sauce, energy drinks, and even wine. Perfect for households with kids, pets, or drunk people."
           }
@@ -105,7 +115,7 @@
           "type": "feature",
           "settings": {
             "extra_deep": false,
-            "videotype": "shopify://files/videos/Elements COMPRESSED.mov",
+            "videotype": "shopify://files/videos/Aluminum 3 V2 (Higher Res).mov",
             "title": "Designed to withstand the elements.",
             "text": "Our proprietary outdoor fabrics are designed to be resistant to fading and withstand ​intense sun exposure. ​We use premium quick-dry foam cushions - typically used in boats, yachts, and poolside settings - that do not retain water and are resistant to mold & mildew."
           }
@@ -114,27 +124,18 @@
           "type": "feature",
           "settings": {
             "extra_deep": false,
-            "videotype": "shopify://files/videos/Machine Washable COMPRESSED.mov",
+            "videotype": "shopify://files/videos/Washable V3.mov",
             "title": "Removable, washable, & replaceable covers.",
             "text": "All of our outdoor covers are ​removable & machine washable. Ready for a new look? ​Now you can extend the life of your existing fabrics by ​swapping out the covers to a new color instead of buying ​an entirely new piece of furniture."
-          }
-        },
-        "feature_LFxnnT": {
-          "type": "feature",
-          "settings": {
-            "extra_deep": false,
-            "videotype": "shopify://files/videos/Back Cushion COMPRESSED.mov",
-            "title": "Adjustable back cushion firmness.",
-            "text": "Our back cushions are adjustable to your liking. Want them firmer? Simple use our complimentary fill packets to firm up your back cushion firmness to your liking. Alternatively, you can remove some of the down alternative from the back cushion to make them softer."
           }
         }
       },
       "block_order": [
         "feature_EDDLtB",
+        "feature_eQmUBQ",
         "feature_hyzT6D",
         "feature_BNUmLe",
-        "feature_XFiVT8",
-        "feature_LFxnnT"
+        "feature_XFiVT8"
       ],
       "settings": {}
     },
@@ -144,7 +145,7 @@
         "advanced_content_BacJ7X": {
           "type": "advanced_content",
           "settings": {
-            "video": "https://cdn.shopify.com/videos/c/o/v/e6388e7263f24cfeb07e94d07f65c438.mp4",
+            "video": "https://cdn.shopify.com/videos/c/o/v/f8cff5a005464d1c85476938673c7ed3.mov",
             "image_right": true,
             "title": "Endlessly modular for any configuration.",
             "text": "Our simple modular outdoor system features 3 core components - a Corner Seat, an Armless Seat, and an Ottoman - all of which can be arranged into any configuration to perfectly fit your outdoor space."
@@ -162,6 +163,7 @@
         },
         "advanced_content_ezzWmx": {
           "type": "advanced_content",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/PDP_-_Teak.jpg",
             "video": "",
@@ -222,6 +224,7 @@
         "box_per_row": 3,
         "button": "See all showrooms",
         "button_url": "shopify://pages/find-a-showroom",
+        "share_enabled": false,
         "sort_by_alphabetical": true,
         "sort_by_location": true,
         "sort_by_state": true,
@@ -347,7 +350,7 @@
         "logo_R4ewd7"
       ],
       "settings": {
-        "image": "shopify://shop_images/Buy_Now_Pay_Later_-_Outdoor_cb2f37d1-6738-4efe-b111-f3e2f50e0e28.jpg",
+        "image": "shopify://shop_images/Homepage_Hero_-_Mobile_-_Outdoor_Aluminum_Back_fadc9e0f-0772-4d14-8608-6ceaa60a614f.jpg",
         "before_price": "Buy now, pay later. Starts at",
         "after_price": "with",
         "month": "36",

@@ -2,9 +2,9 @@
    assign current_variant = product.selected_or_first_available_variant
 -%}
 {% liquid
-  assign deSelect = false
+  assign de_select = false
   if template contains 'product.sofa-outdoor-teak'
-    assign deSelect = true
+    assign de_select = true
   endif
 %}
 
@@ -22,6 +22,13 @@
     if product.selected_variant == nil and custom_selected_option_found
      assign current_variant = product.variants | where: 'option1', actual_value | first
     endif
+  endif
+
+  assign spec = product.metafields.specification
+  if current_variant.title contains 'Extra-Deep' and spec.description_for_extra_deep != blank
+    assign prod_desc = spec.description_for_extra_deep
+  else
+    assign prod_desc = product.description
   endif
 -%}
 
@@ -54,9 +61,9 @@
 
   <meta itemprop="name" content="{{ product.title }}">
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
-  <meta itemprop="image" content="{{ product.featured_image.src | img_url: '800x' }}">
+  <meta itemprop="image" content="{{ product.featured_image.src | image_url: width: 800 }}">
 
-  {% render 'product-json', product: product, deSelect: deSelect %}
+  {% render 'product-json', product: product, de_select: de_select %}
 
   {% if template != 'product.quick' %}
     {% if collection.description contains '[banner]' and section.settings.show_banner %}
@@ -81,13 +88,12 @@
         </div>
         {% endcapture %}
         {{ act_button }}
-        {% if section.settings.show_payment_button %}
-          {{ form | payment_button }}
-        {% else %}
+        {% unless section.settings.show_payment_button %}
           <div class="custom-checkout-button__wrapper">
-            <a class="custom-checkout-button checkout-buy-now-btn" href="/cart/{{ current_variant.id }}:1" data-handle="{{ product.handle }}" data-variant-id="{{ current_variant.id }}">Buy now</a>
+            <a class="custom-checkout-button checkout-buy-now-btn" href="/cart/{{ current_variant.id }}:1" 
+               data-variant-id="{{ current_variant.id }}">Buy now</a>
           </div>
-        {% endif %}
+        {% endunless %}
       </div>
     {% endif %}
   <div id="product-content" class="row grid_wrapper {% if template == 'product.quick' %}quickview{% endif %}">
@@ -182,16 +188,16 @@
 
           <div class="section-title">
             {%- liquid 
-              assign currentVariantTitle = current_variant.title
+              assign current_variant_title = current_variant.title
               assign spec = product.metafields.specification
-              if currentVariantTitle contains 'Extra-Deep'
+              if current_variant_title contains 'Extra-Deep'
                if spec.title_for_extra_deep != blank
                  assign title = spec.title_for_extra_deep
                else
                  assign title = product.title
                endif
               assign dimensions = spec.dimensions-extra-deep
-              elsif currentVariantTitle contains 'Classic'
+              elsif current_variant_title contains 'Classic'
                 assign title = product.title
                 assign dimensions = spec.dimensions
                else 
@@ -199,7 +205,7 @@
                 assign dimensions = spec.dimensions
               endif
             -%}
-            {% if title != blank or dimensions != blank or configuration != blank %}
+            {% if title != blank or dimensions != blank %}
               <script>
                 window.productSpecification = {
                   title: '{{ product.title }}',
@@ -212,7 +218,19 @@
             {% render 'okendo-reviews-product-rating-summary', product: product %}
             <h1 id="{{ product.title | handle }}" class="product_title">{{ title }}</h1>            
             {% if dimensions != blank %}
-              <p class="product_specification_pdp">{{ dimensions }}</p>
+              <div class="product_specification_pdp">
+                <span data-product-dimension>{{ dimensions }}</span>
+                <div class="product-specification-info">
+                   <div class="product-specification-icon">
+                      {{ 'icon-question-mark.svg' | inline_asset_content }}
+                   </div>
+                   <div class="product-specification-popup-wrapper">
+                      <div class="product-specification-popup">
+                         Looking for a narrower configuration for your space? <a href="https://7thavenue.co/pages/find-a-showroom" target="_blank"><strong>Visit a showroom</strong></a> or reach out to our Sales team at <a href="mailto:sales@7thavenue.co" target="_blank"><strong>sales@7thavenue.co</strong></a> to design custom configurations with widths of 78" / 116" / 154" / 162".
+                      </div>
+                   </div>
+                </div>
+             </div>
             {% endif %}
           </div>
           
@@ -777,6 +795,12 @@
       "default":true
     },
     {
+      "type":"checkbox",
+      "id":"show_storage_option",
+      "label":"Show storage option",
+      "default":true
+    },
+    {
       "type":"select",
       "id":"product_variants",
       "label":"Product variant display",
@@ -966,6 +990,9 @@
   ],
   "max_blocks":5,
   "blocks":[
+    {
+      "type": "@app"
+    },
     {
       "type":"description",
       "name":"Product Description",

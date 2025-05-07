@@ -29,7 +29,7 @@
         "product_description_title": "Details",
         "product_description": "<ul>\n<li>Water-repellent & stain-resistant covers using PFAS-free DWR coating technology. Withstands & temporarily repels everyday household spills such as water, coffee, sodas, juices, soy sauce, energy drinks, pet urine, and even wine.</li>\n<li>Endlessly modular & re-arrangeable into any configuration. If your household grows, simply add a modular seat instead of buying a new sofa.</li>\n<li>Removable & washable covers allowing for covers to be cleaned when they get dirty. Dry clean or machine-wash at home in cold & delicate setting. Air dry or tumble dry no heat. No bleach.</li>\n<li>Removable covers also means that sofa color can be changed anytime you get bored or need a home makeover.</li>\n<li>Adjustable back cushion firmness. Choose between Medium-Soft or Medium Firm, or use our complimentary fill packets to customize your own back cushion firmness.</li>\n<li>Our cushions use premium Down Alternative which makes it hypoallergenic, vegan, and cruelty-free. Unlike down feather sofas, our cushions maintain its shape well and don't need to be constantly fluffed after you sit down.\n</li>\n<li>Memory foam blend cushions for extra comfort and that feeling of sinking into the seat.</li>\n<li>OEKO-TEX certified cover fabrics, meaning that they passed rigorous testings to be free from harmful chemicals that pollute skin and the environment.</li>\n<li>Free from \"forever chemicals\" or microplastics such as PFAS/PFOA/PFOS. They are also free from any toxic flame-retardant chemicals, formaldehyde, and others.</li>\n<li>Our frames are structurally made out of solid wood and reinforced by furniture-grade plywood to prevent warping.</li>\n<li>Sustainably-sourced wood certified by the Forest Stewardship Council (FSC).</li>\n<li>Steel-reinforced legs & corner-joint blockings that give extra lifespan & durability.</li>\n<li>Lifetime durability of 10 years or more.</li>\n<li>\nQuick & easy assembly in 15-30 minutes per seat.\n</li>\n</ul>",
         "product_return_title": "Shipping & Assembly",
-        "product_return": "<ul>\n<li>We currently ship all orders from our warehouse in Los Angeles, CA. We charge a flat shipping rate shown at checkout. </li>\n<li>We want to make you sure you love your sofa. We will cover all damages that occur in shipping or sofa parts that are missing.</li>\n<li>We will ship all modular pieces via FedEx. For safety, signature is required upon FedEx delivery unless requested otherwise.</li>\n<li>If you are located within 40 miles of Los Angeles, orders are delivered via our own Local Delivery team who will deliver, unbox, and assemble your sofa.</li>\n<li>For a small fee, you may also choose to include assembly with your order. Assembly will be conducted by a verified 3rd party assembler from TaskRabbit or other platforms. Please note: we do not guarantee assemblies located in remote areas, same-day assemblies, or scheduling assemblies on certain holidays and blackout dates.</li>\n<li>For shipping outside of the contiguous U.S or internationally, please contact our team at <u><a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a></u>\n</li>\n</ul>",
+        "product_return": "<ul>\n<li>We currently ship all orders from our warehouse in Los Angeles, CA. We charge a flat shipping rate shown at checkout. </li>\n<li>We want to make you sure you love your sofa. We will cover all damages that occur in shipping or sofa parts that are missing.</li>\n<li>We will ship all modular pieces via FedEx. For safety, signature is required upon FedEx delivery unless requested otherwise.</li>\n<li>If you are located within 40 miles of Los Angeles, orders are delivered via our own White Glove Delivery Team who will deliver, unbox, and assemble your sofa.</li>\n<li>For a small fee, you may also choose to include assembly with your order. Assembly will be conducted by a verified 3rd party assembler from TaskRabbit or other platforms. Please note: we do not guarantee assemblies located in remote areas, same-day assemblies, or scheduling assemblies on certain holidays and blackout dates.</li>\n<li>For shipping outside of the contiguous U.S or internationally, please contact our team at <u><a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a></u>\n</li>\n</ul>",
         "product_tab_5_title": "Returns & Exchanges",
         "product_tab_5_content": "<ul>\n<li>We offer 10-day free returns or refunds for any purchase. Shipping charges would apply and must return in original packaging.</li>\n<li>If you are unhappy with your fabric color selection, we offer 30-day free exchanges if you’d like to change your fabrics color. Fabric exchanges are limited to one-time per order.</li>\n<li>If you would like to add assembly to your fabric exchange, contact <u><a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> for additional information. Additional assembly fee will apply.</u>\n</li>\n<li>Love your sofa but need to return a single seat/ back/ arm? Contact <u><a href=\"mailto:support@7thavenue.co\">support@7thavenue.co</a> for additional information.</u>\n</li>\n</ul>",
         "description_background": "rgba(0,0,0,0)",
@@ -122,7 +122,7 @@
             "extra_deep": false,
             "videotype": "shopify://files/videos/4 Fill Compressed.mp4",
             "title": "Adjustable back cushion firmness.",
-            "text": "Our back cushions are adjustable to your liking. Choose between Medium-Firm (recommended) and Medium-Soft, or use our complimentary fill packets to customize your own back cushion firmness."
+            "text": "Our back cushions are adjustable to your liking. Want them firmer? Simple use our complimentary fill packets to firm up your back cushion firmness to your liking. Alternatively, you can remove some of the down alternative from the back cushion to make them softer."
           }
         }
       },
@@ -154,7 +154,7 @@
             "video": "",
             "image_right": false,
             "title": "Ridiculously durable & made to last.",
-            "text": "Our sofas are designed to last 8-10 years - constructed by using Indonesian solid hardwood (never composite wood or MDF), steel reinforcements, and high-density foam."
+            "text": "Our frames are structurally made out of solid wood (never particle board or MDF) and reinforced by furniture-grade plywood to prevent warping. Steel reinforcements and high-density foam are used for extra structural support."
           }
         },
         "70e6be34-1cb0-4e76-881a-0b8de8b12839": {
@@ -200,20 +200,27 @@
         "subtitle": "A whole lot more features, at an even better pricing."
       }
     },
-    "showroom": {
-      "type": "showroom",
+    "showroom_v2_pXbiWU": {
+      "type": "showroom-v2",
       "settings": {
-        "title": "Find a Showroom Near You",
-        "title_mob": "Find a Showroom Near You",
-        "subtitle": "Experience “The Worlds Greatest Modular Sofa” in person.",
-        "subtitle_mob": "",
+        "title": "Find a Showroom",
+        "subtitle": "EXPERIENCE “THE WORLDS GREATEST MODULAR SOFA” IN PERSON.",
         "get_data_from_metaobject": true,
         "box_per_row": 3,
-        "active_geo": false,
+        "button": "See all showrooms",
+        "button_url": "shopify://pages/find-a-showroom",
+        "sort_by_alphabetical": true,
+        "sort_by_location": true,
+        "sort_by_state": true,
+        "default_sort_option": "sort_by_location",
+        "limit": 9,
         "border_top": false,
         "border_bot": false,
         "color": "#000000",
         "bg_color": "#ffffff",
+        "button_color": "#ffffff",
+        "button_bg": "#000000",
+        "button_bg_hover": "#032e6a",
         "card_bg": "#f3f3f3",
         "bt_color": "#ffffff",
         "bt_bg": "#032e6a",
@@ -399,7 +406,7 @@
     "product-special-feature",
     "sofa-page-advanced-content",
     "product_compare_838Ew6",
-    "showroom",
+    "showroom_v2_pXbiWU",
     "image-with-text",
     "pdp-sofa-affirm",
     "pdp-sofa-help",

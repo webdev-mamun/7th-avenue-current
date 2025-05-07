@@ -646,15 +646,22 @@
     ]
   },
   {
-    "name": "Offered free",
+    "name": "Product page",
     "settings": [
+      {
+        "type": "checkbox",
+        "id": "variant_addon",
+        "label": "Enable Variant addon",
+        "info": "Configure Variant addon metaobject with relevant products",
+        "default": false
+      },
       {
         "type": "checkbox",
         "id": "Offered_free_products",
         "label": "Enable Offered free products",
         "info": "Configure offered free metaobject with relevant products",
         "default": false
-      },
+      }
     ]
   },
   {
