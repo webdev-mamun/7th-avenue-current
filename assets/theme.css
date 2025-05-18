@@ -22386,6 +22386,10 @@ li.open.deselect .color__swatch--bg.snow-white {
   margin: 10px;
 }
 
+.collection__review .section-divider {
+  max-width: 1440px;
+}
+
 @media screen and (min-width: 741px) {
   .collection__review--title {
     font-size: 28pt;
