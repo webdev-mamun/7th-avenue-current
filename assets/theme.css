@@ -26281,7 +26281,7 @@ showroom-items {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  width: max(630px, 100%);
+  width: max(425px, 100%);
 }
 
 .showroom-sort-option {
@@ -26312,6 +26312,10 @@ showroom-items {
 
   .showroom-section-header.has-filter-option {
     grid-template-columns: 5fr 7fr;
+  }
+
+  .showroom-sort-option-wrapper {
+    width: max(630px, 100%);
   }
 
   .showroom-button-wrapper a.button {
