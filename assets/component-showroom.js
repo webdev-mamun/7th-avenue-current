@@ -190,27 +190,28 @@ if (!customElements.get('showroom-items')) {
           console.warn('No state provided');
           return;
         }
-
+      
         const normalizedState = state.toLowerCase();
         const matchingHandles = new Set(
           this.showroomData
             .filter(data => data.state && data.state.toLowerCase() === normalizedState)
             .map(data => data.handle)
         );
-
+      
         if (matchingHandles.size > 1) {
-          await this.sortByDistance();
+          this.sortByTitle();
         }
-
+      
         this.showroomElements.forEach(el => {
           el.hidden = !matchingHandles.has(el.dataset.handle);
         });
-
+      
         if (matchingHandles.size === 0) {
           console.warn(`No showrooms found for state: ${state}`);
           this.sortByTitle();
         }
       }
+      
 
       sortShowrooms(getSortKey) {
         const limit = Number(this.dataset.limit) || this.showroomElements.length;
