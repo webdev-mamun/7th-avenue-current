@@ -19956,7 +19956,8 @@ span.product-price.was {
   margin-left: 0;
 }
 
-span.product-price.sale {
+span.product-price.sale,
+span.product-price.sold-out {
   color: #b85455;
 }
 
@@ -29284,4 +29285,8 @@ html {
 
 #pdp-virtual-appointment {
   scroll-margin-block-start: calc(var(--header-size) - 2px);
+}
+
+#lanyard_root button {
+  width: auto;
 }

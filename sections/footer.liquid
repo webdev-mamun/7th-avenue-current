@@ -201,15 +201,22 @@
             <li>{{ link.title | link_to: link.url }}</li>
           {% endfor %}
           <li>
-            <a id="preferenceCenterLink" href="#" onclick="ketch('showExperience', { preferenceOptions: {
-              tab: 'consentsTab',
-              dataSubjectTypeCodes: ['customer', 'other'],
-              showOverviewTab: false,
-              showConsentsTab: true,
-              showRightsTab: false,
-              showSubscriptionsTab: false,
-              supportedCountries: ['US', 'GB']
-              }})">
+            <a
+              id="preferenceCenterLink"
+              href="#"
+              onclick="
+                ketch('once', 'hideExperience', (reason) => window.scrollTo(0, 0)); ketch('showExperience', { preferenceOptions: {
+                    tab: 'consentsTab',
+                    dataSubjectTypeCodes: ['customer', 'other'],
+                    showOverviewTab: false,
+                    showConsentsTab: true,
+                    showRightsTab: false,
+                    showSubscriptionsTab: false,
+                    supportedCountries: ['US', 'GB']
+                  }
+                });
+              "
+            >
               Your Privacy Choices
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 14" style="width: 30px">
                 <title>California Consumer Privacy Act (CCPA) Opt-Out Icon</title><path d="m7.4,12.8h6.8l3.1-11.6H7.4c-3.2,0-5.8,2.6-5.8,5.8s2.6,5.8,5.8,5.8Z" style="fill:#fff;fill-rule:evenodd;stroke-width:0px"></path><path d="m22.6,0H7.4C3.5,0,.4,3.1.4,7s3.1,7,7,7h15.2c3.9,0,7-3.1,7-7S26.4,0,22.6,0ZM1.6,7C1.6,3.8,4.2,1.2,7.4,1.2h9.9l-3.1,11.6h-6.8c-3.2,0-5.8-2.6-5.8-5.8Z" style="fill: #3b3b3b;fill-rule:evenodd;stroke-width:0px"></path><path d="m24.6,4c.2.2.2.6,0,.8h0l-2.1,2.2,2.2,2.2c.2.2.2.6,0,.8s-.6.2-.8,0h0l-2.2-2.2-2.2,2.2c-.2.2-.6.2-.8,0-.2-.2-.2-.6,0-.8h0l2.1-2.2-2.2-2.2c-.2-.2-.2-.6,0-.8.2-.2.6-.2.8,0h0l2.2,2.2,2.2-2.2c.2-.2.6-.2.8,0Z" style="fill:#fff;stroke-width:0px"></path><path d="m12.7,4.1c.2.2.3.6.1.8h0l-4.2,4.9c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1h0l-2.2-2.2c-.2-.2-.2-.6,0-.8.2-.2.6-.2.8,0h0l1.8,1.7,3.8-4.5c.2-.2.6-.2.9,0Z" style="fill: #3b3b3b;stroke-width:0px"></path>
@@ -222,15 +229,22 @@
             <li>{{ link.title | link_to: link.url }}</li>
           {% endfor %}
           <li id="preferenceCenter">
-            <a id="preferenceCenterLink" href="#" onclick="ketch('showExperience', { preferenceOptions: {
-              tab: 'consentsTab',
-              dataSubjectTypeCodes: ['customer', 'other'],
-              showOverviewTab: false,
-              showConsentsTab: true,
-              showRightsTab: false,
-              showSubscriptionsTab: false,
-              supportedCountries: ['US', 'GB']
-              }})">
+            <a
+              id="preferenceCenterLink"
+              href="#"
+              onclick="
+                ketch('once', 'hideExperience', (reason) => window.scrollTo(0, 0)); ketch('showExperience', { preferenceOptions: {
+                    tab: 'consentsTab',
+                    dataSubjectTypeCodes: ['customer', 'other'],
+                    showOverviewTab: false,
+                    showConsentsTab: true,
+                    showRightsTab: false,
+                    showSubscriptionsTab: false,
+                    supportedCountries: ['US', 'GB']
+                  }
+                });
+              "
+            >
               Your Privacy Choices
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 14" style="width: 30px">
                 <title>California Consumer Privacy Act (CCPA) Opt-Out Icon</title><path d="m7.4,12.8h6.8l3.1-11.6H7.4c-3.2,0-5.8,2.6-5.8,5.8s2.6,5.8,5.8,5.8Z" style="fill:#fff;fill-rule:evenodd;stroke-width:0px"></path><path d="m22.6,0H7.4C3.5,0,.4,3.1.4,7s3.1,7,7,7h15.2c3.9,0,7-3.1,7-7S26.4,0,22.6,0ZM1.6,7C1.6,3.8,4.2,1.2,7.4,1.2h9.9l-3.1,11.6h-6.8c-3.2,0-5.8-2.6-5.8-5.8Z" style="fill: #3b3b3b;fill-rule:evenodd;stroke-width:0px"></path><path d="m24.6,4c.2.2.2.6,0,.8h0l-2.1,2.2,2.2,2.2c.2.2.2.6,0,.8s-.6.2-.8,0h0l-2.2-2.2-2.2,2.2c-.2.2-.6.2-.8,0-.2-.2-.2-.6,0-.8h0l2.1-2.2-2.2-2.2c-.2-.2-.2-.6,0-.8.2-.2.6-.2.8,0h0l2.2,2.2,2.2-2.2c.2-.2.6-.2.8,0Z" style="fill:#fff;stroke-width:0px"></path><path d="m12.7,4.1c.2.2.3.6.1.8h0l-4.2,4.9c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1h0l-2.2-2.2c-.2-.2-.2-.6,0-.8.2-.2.6-.2.8,0h0l1.8,1.7,3.8-4.5c.2-.2.6-.2.9,0Z" style="fill: #3b3b3b;stroke-width:0px"></path>
@@ -251,107 +265,107 @@
 
 {% schema %}
 {
-  "name":"Footer",
-  "max_blocks":5,
-  "settings":[
-     {
-        "type":"select",
-        "id":"footer_text_align",
-        "label":"Footer text align",
-        "options":[
-           {
-              "value":"left",
-              "label":"Left"
-           },
-           {
-              "value":"center",
-              "label":"Center"
-           },
-           {
-              "value":"right",
-              "label":"Right"
-           }
-        ]
-     },
-     {
-        "type":"checkbox",
-        "id":"show_credit_cards",
-        "label":"Show credit card icons",
-        "default":true,
-        "info":"The icons that show are determined by your store's payment settings."
-     },
-     {
-        "type":"link_list",
-        "id":"footer_bottom_nav",
-        "label":"Footer Bottom menu(Mobile)"
-     },
+  "name": "Footer",
+  "max_blocks": 5,
+  "settings": [
     {
-        "type":"link_list",
-        "id":"footer_bottom_nav_desktop",
-        "label":"Footer Bottom menu(desktop)"
-     },
-     {
-        "type":"url",
-        "id":"footer_bottom_logo",
-        "label":"Footer bottom logo"
-     }
+      "type": "select",
+      "id": "footer_text_align",
+      "label": "Footer text align",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_credit_cards",
+      "label": "Show credit card icons",
+      "default": true,
+      "info": "The icons that show are determined by your store's payment settings."
+    },
+    {
+      "type": "link_list",
+      "id": "footer_bottom_nav",
+      "label": "Footer Bottom menu(Mobile)"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_bottom_nav_desktop",
+      "label": "Footer Bottom menu(desktop)"
+    },
+    {
+      "type": "url",
+      "id": "footer_bottom_logo",
+      "label": "Footer bottom logo"
+    }
   ],
-  "blocks":[
-     {
-        "type":"menu",
-        "name":"Menu",
-        "settings":[
-           {
-              "type":"link_list",
-              "id":"footer_nav",
-              "label":"Sidebar menu",
-              "info":"This menu won't show dropdown items"
-           },
-           {
-              "type":"text",
-              "id":"title",
-              "label":"Menu title",
-              "default":"Explore"
-           }
-        ]
-     },
-     {
-        "type":"text",
-        "name":"Text",
-        "settings":[
-           {
-              "type":"text",
-              "id":"title",
-              "label":"Text title",
-              "default":"About"
-           },
-           {
-              "id":"footer_text",
-              "type":"textarea",
-              "label":"Text",
-              "default":"<p>Adding text to your footer helps introduce your business to new customers.</p>"
-           }
-        ]
-     },
-     {
-        "type":"newsletter",
-        "name":"Newsletter signup",
-        "limit":1,
-        "settings":[
-           {
-              "type":"text",
-              "id":"title",
-              "label":"Mailing list section title",
-              "default":"connect"
-           },
-           {
-              "type":"richtext",
-              "id":"mailing_subheading",
-              "label":"Mailing list subheading",
-              "default":"<p>Join our mailing list for updates</p>"
-           }
-        ]
-     }
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "footer_nav",
+          "label": "Sidebar menu",
+          "info": "This menu won't show dropdown items"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Menu title",
+          "default": "Explore"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Text title",
+          "default": "About"
+        },
+        {
+          "id": "footer_text",
+          "type": "textarea",
+          "label": "Text",
+          "default": "<p>Adding text to your footer helps introduce your business to new customers.</p>"
+        }
+      ]
+    },
+    {
+      "type": "newsletter",
+      "name": "Newsletter signup",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Mailing list section title",
+          "default": "connect"
+        },
+        {
+          "type": "richtext",
+          "id": "mailing_subheading",
+          "label": "Mailing list subheading",
+          "default": "<p>Join our mailing list for updates</p>"
+        }
+      ]
+    }
   ]
 }
 {% endschema %}
