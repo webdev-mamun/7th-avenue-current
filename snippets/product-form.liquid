@@ -103,7 +103,7 @@
     </span>
     {% endif %}
     
-    <span class="product-price current{% if onsale and current_variant.available %} sale{%endif%}" itemprop="price">
+    <span class="product-price {% unless current_variant.available %}sold-out{% else %}current{% endunless %}{% if onsale and current_variant.available %} sale{% endif %}" itemprop="price">
       <span class="money">{% if current_variant.available %}{{ price }}{% else %}Sold Out{% endif %}</span>
     </span>
     {% if current_variant.compare_at_price > current_variant.price and current_variant.available %}

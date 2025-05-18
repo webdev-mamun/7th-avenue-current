@@ -19956,7 +19956,8 @@ span.product-price.was {
   margin-left: 0;
 }
 
-span.product-price.sale {
+span.product-price.sale,
+span.product-price.sold-out {
   color: #b85455;
 }
 
@@ -26263,7 +26264,7 @@ showroom-items {
   grid-template-columns: 1fr;
   align-items: center;
   gap: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .showroom-sort-option-scroller {
@@ -26275,7 +26276,7 @@ showroom-items {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  width: 680px;
+  width: max(630px, 100%);
 }
 
 .showroom-sort-option {
@@ -29284,4 +29285,8 @@ html {
 
 #pdp-virtual-appointment {
   scroll-margin-block-start: calc(var(--header-size) - 2px);
+}
+
+#lanyard_root button {
+  width: auto;
 }
